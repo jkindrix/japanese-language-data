@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/kana.schema.json",
+  "title": "Kana",
+  "description": "Hand-curated dataset of hiragana, katakana, and kana variants (dakuten, handakuten, yōon). Each entry describes one kana character with its romanization, type classification, stroke count, and usage notes.",
+  "schemaVersion": "0.0.0",
+  "type": "object",
+  "required": ["metadata", "kana"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "kana": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/kanaEntry"
+      }
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": ["source", "license", "generated", "count", "field_notes"],
+      "properties": {
+        "source": {"type": "string"},
+        "source_url": {"type": "string", "format": "uri"},
+        "license": {"type": "string"},
+        "source_version": {"type": "string"},
+        "generated": {"type": "string", "format": "date"},
+        "count": {"type": "integer", "minimum": 0},
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        }
+      }
+    },
+    "kanaEntry": {
+      "type": "object",
+      "required": ["character", "script", "romaji", "type"],
+      "properties": {
+        "character": {
+          "type": "string",
+          "description": "The kana character itself.",
+          "minLength": 1,
+          "maxLength": 4
+        },
+        "script": {
+          "type": "string",
+          "enum": ["hiragana", "katakana"],
+          "description": "Which kana script this character belongs to."
+        },
+        "romaji": {
+          "type": "string",
+          "description": "Hepburn romanization."
+        },
+        "romaji_alt": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Alternative romanizations (Kunrei, Nihon-shiki, etc.)."
+        },
+        "type": {
+          "type": "string",
+          "enum": ["base", "dakuten", "handakuten", "yoon", "yoon_dakuten", "yoon_handakuten", "sokuon", "other"],
+          "description": "Classification of the kana: base form, voiced (dakuten), semi-voiced (handakuten), palatalized combination (yōon), etc."
+        },
+        "base": {
+          "type": "string",
+          "description": "For derived forms (dakuten/handakuten/yōon), the base kana this is derived from.",
+          "minLength": 1
+        },
+        "stroke_count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "unicode": {
+          "type": "string",
+          "description": "Unicode codepoint in hex (lowercase)."
+        },
+        "usage_notes": {
+          "type": "string",
+          "description": "Human-readable notes on when and how this kana is used."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

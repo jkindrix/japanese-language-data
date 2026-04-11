@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/jlpt.schema.json",
+  "title": "JLPT classifications",
+  "description": "Community-standard JLPT (Japanese Language Proficiency Test) level classifications for vocabulary, kanji, and grammar points. Derived from Jonathan Waller's JLPT Resources at tanos.co.uk under CC-BY. JLPT stopped publishing official vocabulary lists in 2010; these classifications are community-reverse-engineered consensus and should not be treated as JLPT-official.",
+  "schemaVersion": "0.0.0",
+  "type": "object",
+  "required": ["metadata", "classifications"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "classifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/classificationEntry"
+      }
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": ["source", "license", "generated", "count", "field_notes", "disclaimer"],
+      "properties": {
+        "source": {"type": "string"},
+        "source_url": {"type": "string", "format": "uri"},
+        "license": {"type": "string"},
+        "source_version": {"type": "string"},
+        "generated": {"type": "string", "format": "date"},
+        "count": {"type": "integer", "minimum": 0},
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        },
+        "attribution": {"type": "string"},
+        "disclaimer": {
+          "type": "string",
+          "description": "Explicit statement that these classifications are community-reverse-engineered and not JLPT-official."
+        }
+      }
+    },
+    "classificationEntry": {
+      "type": "object",
+      "required": ["text", "kind", "level"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "The word, kanji, or grammar pattern."
+        },
+        "reading": {
+          "type": ["string", "null"],
+          "description": "For vocabulary, the kana reading for disambiguation."
+        },
+        "kind": {
+          "type": "string",
+          "enum": ["kanji", "vocab", "grammar"]
+        },
+        "level": {
+          "type": "string",
+          "enum": ["N5", "N4", "N3", "N2", "N1"]
+        },
+        "meaning_en": {
+          "type": ["string", "null"],
+          "description": "Short English meaning or gloss for convenience. Authoritative meanings live in words.json or kanji.json."
+        },
+        "source_retrieved": {
+          "type": "string",
+          "format": "date",
+          "description": "Date this entry was retrieved from Waller's site."
+        }
+      }
+    }
+  }
+}

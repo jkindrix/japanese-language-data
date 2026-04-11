@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/grammar.schema.json",
+  "title": "Grammar",
+  "description": "Structured Japanese grammar patterns. This is the project's largest original contribution — there is no authoritative open grammar dataset upstream, so this file is curated from multiple sources (Tae Kim, Waller JLPT grammar lists, JMdict expression entries, Wiktionary) with explicit provenance per entry. Every entry carries a review_status field tracking whether it has been reviewed by the community or by a native speaker.",
+  "schemaVersion": "0.0.0",
+  "type": "object",
+  "required": ["metadata", "grammar_points"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "grammar_points": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/grammarPoint"
+      }
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": ["source", "license", "generated", "count", "field_notes", "review_coverage"],
+      "properties": {
+        "source": {"type": "string"},
+        "source_url": {"type": "string", "format": "uri"},
+        "license": {"type": "string"},
+        "source_version": {"type": "string"},
+        "generated": {"type": "string", "format": "date"},
+        "count": {"type": "integer", "minimum": 0},
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        },
+        "attribution": {"type": "string"},
+        "review_coverage": {
+          "type": "object",
+          "description": "Summary of how many entries are at each review status.",
+          "properties": {
+            "draft": {"type": "integer", "minimum": 0},
+            "community_reviewed": {"type": "integer", "minimum": 0},
+            "native_speaker_reviewed": {"type": "integer", "minimum": 0}
+          }
+        }
+      }
+    },
+    "grammarPoint": {
+      "type": "object",
+      "required": ["id", "pattern", "level", "meaning_en", "formation", "examples", "review_status", "sources"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable project-assigned identifier for this grammar point (slug-form, e.g., 'te-form-kudasai')."
+        },
+        "pattern": {
+          "type": "string",
+          "description": "The grammar pattern in Japanese notation (e.g., '～ください', '～たい', 'AはBよりC')."
+        },
+        "pattern_alt": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Alternative spellings or notations of the same pattern."
+        },
+        "level": {
+          "type": "string",
+          "enum": ["N5", "N4", "N3", "N2", "N1"],
+          "description": "Community-consensus JLPT level, sourced primarily from Waller. Not JLPT-official."
+        },
+        "meaning_en": {
+          "type": "string",
+          "description": "Concise English explanation of what this pattern means or does."
+        },
+        "meaning_detailed": {
+          "type": "string",
+          "description": "Longer explanation covering nuance, usage notes, and contrasts with related patterns. Written in this project's own words."
+        },
+        "formation": {
+          "type": "string",
+          "description": "How to form this pattern (e.g., 'Verb-て-form + ください', 'い-adjective stem + く + ありません')."
+        },
+        "formation_notes": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Additional notes on formation, including irregular cases and exceptions."
+        },
+        "formality": {
+          "type": "string",
+          "enum": ["very_formal", "formal", "neutral", "casual", "intimate", "vulgar"],
+          "description": "Register appropriateness for this pattern."
+        },
+        "related": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "IDs of related grammar points (synonymous, contrasting, or building blocks)."
+        },
+        "examples": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["japanese", "english"],
+            "properties": {
+              "japanese": {"type": "string"},
+              "english": {"type": "string"},
+              "sentence_id": {
+                "type": ["string", "null"],
+                "description": "Tatoeba sentence ID if this example is sourced from Tatoeba."
+              },
+              "source": {
+                "type": "string",
+                "description": "Where this example came from: 'tatoeba', 'original' (written for this project), 'waller', etc."
+              }
+            }
+          }
+        },
+        "review_status": {
+          "type": "string",
+          "enum": ["draft", "community_reviewed", "native_speaker_reviewed"],
+          "description": "Current review state of this entry. New entries start at 'draft'."
+        },
+        "reviewer_notes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "reviewer": {"type": "string"},
+              "date": {"type": "string", "format": "date"},
+              "note": {"type": "string"}
+            }
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Explicit list of references consulted when writing this entry (URLs, book citations, etc.)."
+        }
+      }
+    }
+  }
+}

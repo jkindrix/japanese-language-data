@@ -1,0 +1,35 @@
+{
+  "project": "japanese-language-data",
+  "version": "0.0.0",
+  "phase": 0,
+  "phase_description": "Foundation: scaffolding, documentation, schemas, and build pipeline skeleton. No data files built.",
+  "generated": "2026-04-11",
+  "license": "CC-BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "upstream_update_obligation": "Monthly (per EDRDG License §4).",
+  "sources": {},
+  "counts": {
+    "data/core/kana.json": 0,
+    "data/core/kanji.json": 0,
+    "data/core/words.json": 0,
+    "data/core/radicals.json": 0,
+    "data/optional/names.json": 0,
+    "data/corpus/sentences.json": 0,
+    "data/enrichment/pitch-accent.json": 0,
+    "data/enrichment/frequency-newspaper.json": 0,
+    "data/enrichment/frequency-modern.json": 0,
+    "data/enrichment/jlpt-classifications.json": 0,
+    "data/enrichment/stroke-order-index.json": 0,
+    "data/grammar/grammar.json": 0,
+    "data/cross-refs/kanji-to-words.json": 0,
+    "data/cross-refs/word-to-kanji.json": 0,
+    "data/cross-refs/word-to-sentences.json": 0,
+    "data/cross-refs/kanji-to-radicals.json": 0
+  },
+  "next_actions": [
+    "Phase 1: implement core transforms (kana, kanji, words, radicals, sentences).",
+    "Phase 2: implement enrichment transforms (stroke_order, pitch, frequency, jlpt) and cross_links.",
+    "Phase 3: curate grammar dataset with review_status tracking.",
+    "Phase 4: evaluate candidates in docs/phase4-candidates.md."
+  ]
+}

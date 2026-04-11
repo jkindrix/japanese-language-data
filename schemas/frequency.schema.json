@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/frequency.schema.json",
+  "title": "Frequency",
+  "description": "Generic frequency ranking schema used by multiple frequency files (newspaper corpus from KANJIDIC2, modern media corpus from JPDB, etc.). Each file lists entries ranked by frequency with 1 = most common.",
+  "schemaVersion": "0.0.0",
+  "type": "object",
+  "required": ["metadata", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/frequencyEntry"
+      }
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": ["source", "license", "generated", "count", "corpus", "kind", "field_notes"],
+      "properties": {
+        "source": {"type": "string"},
+        "source_url": {"type": "string", "format": "uri"},
+        "license": {"type": "string"},
+        "source_version": {"type": "string"},
+        "generated": {"type": "string", "format": "date"},
+        "count": {"type": "integer", "minimum": 0},
+        "corpus": {
+          "type": "string",
+          "description": "Human-readable description of the corpus the frequencies are derived from (e.g., 'Newspaper corpus (KANJIDIC2)', 'JPDB modern media: light novels + visual novels + anime + drama')."
+        },
+        "kind": {
+          "type": "string",
+          "enum": ["kanji", "word", "reading"],
+          "description": "What kind of thing is being ranked."
+        },
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        },
+        "attribution": {"type": "string"}
+      }
+    },
+    "frequencyEntry": {
+      "type": "object",
+      "required": ["text", "rank"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "The word, kanji, or reading being ranked."
+        },
+        "reading": {
+          "type": ["string", "null"],
+          "description": "For word-frequency files, the kana reading used for disambiguation."
+        },
+        "rank": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Rank in the corpus. 1 = most common."
+        },
+        "count": {
+          "type": ["integer", "null"],
+          "description": "Raw occurrence count, if the upstream source provides it."
+        }
+      }
+    }
+  }
+}

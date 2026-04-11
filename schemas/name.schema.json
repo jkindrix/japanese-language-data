@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/name.schema.json",
+  "title": "Name",
+  "description": "Japanese proper nouns dataset from JMnedict via scriptin/jmdict-simplified. Covers personal names, place names, company names, and other proper nouns. Built on-demand via 'just build-names' and gitignored by default due to size (~150 MB uncompressed).",
+  "schemaVersion": "0.0.0",
+  "type": "object",
+  "required": ["metadata", "names"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "names": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/nameEntry"
+      }
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": ["source", "license", "generated", "count", "field_notes"],
+      "properties": {
+        "source": {"type": "string"},
+        "source_url": {"type": "string", "format": "uri"},
+        "license": {"type": "string"},
+        "source_version": {"type": "string"},
+        "generated": {"type": "string", "format": "date"},
+        "count": {"type": "integer", "minimum": 0},
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        },
+        "attribution": {"type": "string"},
+        "tags": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        }
+      }
+    },
+    "nameEntry": {
+      "type": "object",
+      "required": ["id", "kanji", "kana", "translation"],
+      "properties": {
+        "id": {"type": "string"},
+        "kanji": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["text", "tags"],
+            "properties": {
+              "text": {"type": "string"},
+              "tags": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        },
+        "kana": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["text", "tags", "appliesToKanji"],
+            "properties": {
+              "text": {"type": "string"},
+              "tags": {"type": "array", "items": {"type": "string"}},
+              "appliesToKanji": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        },
+        "translation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "translation"],
+            "properties": {
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "description": "Name type tags: 'person', 'place', 'company', 'organization', 'product', 'work', 'station', 'given', 'surname', 'unclass', etc."
+                }
+              },
+              "related": {
+                "type": "array",
+                "items": {"type": "array"}
+              },
+              "translation": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "lang": {"type": "string"},
+                    "text": {"type": "string"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

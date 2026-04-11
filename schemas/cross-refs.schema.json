@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/cross-refs.schema.json",
+  "title": "Cross references",
+  "description": "Generic schema for the cross-reference files in data/cross-refs/. Each cross-reference file maps a lookup key (a kanji, a word ID, a sentence ID, etc.) to an array of related identifiers. The specific kind of cross-reference is declared in the metadata.",
+  "schemaVersion": "0.0.0",
+  "type": "object",
+  "required": ["metadata", "mapping"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "mapping": {
+      "type": "object",
+      "description": "Key-to-array-of-IDs lookup.",
+      "additionalProperties": {
+        "type": "array",
+        "items": {"type": "string"}
+      }
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": ["generated", "count", "direction", "key_type", "value_type", "field_notes"],
+      "properties": {
+        "generated": {"type": "string", "format": "date"},
+        "count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of keys in the mapping."
+        },
+        "direction": {
+          "type": "string",
+          "description": "Human-readable description of what this cross-reference maps (e.g., 'kanji → word IDs using this kanji')."
+        },
+        "key_type": {
+          "type": "string",
+          "enum": ["kanji_char", "word_id", "sentence_id", "radical_char", "grammar_id", "reading"]
+        },
+        "value_type": {
+          "type": "string",
+          "enum": ["kanji_char", "word_id", "sentence_id", "radical_char", "grammar_id", "reading"]
+        },
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        },
+        "source_files": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Paths of the data files this cross-reference was derived from."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# Runtime dependencies for the build pipeline.
+# Pinned versions for reproducibility.
+requests==2.32.3
+jsonschema==4.23.0
+
+# Development / test dependencies.
+pytest==8.3.3

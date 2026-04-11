@@ -1,0 +1,216 @@
+Japanese Language Data
+Copyright (c) 2026 Justin Kindrix and contributors
+
+================================================================================
+LICENSE
+================================================================================
+
+This work — comprising the aggregated dataset, the build pipeline source code,
+the schemas, and the documentation — is licensed under the Creative Commons
+Attribution-ShareAlike 4.0 International License (CC-BY-SA 4.0).
+
+Full license text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+License summary:   https://creativecommons.org/licenses/by-sa/4.0/
+
+You are free to:
+
+    Share — copy and redistribute the material in any medium or format for
+    any purpose, even commercially.
+
+    Adapt — remix, transform, and build upon the material for any purpose,
+    even commercially.
+
+Under the following terms:
+
+    Attribution — You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made. You may do so in any
+    reasonable manner, but not in any way that suggests the licensor
+    endorses you or your use.
+
+    ShareAlike — If you remix, transform, or build upon the material, you
+    must distribute your contributions under the same license as the
+    original.
+
+    No additional restrictions — You may not apply legal terms or
+    technological measures that legally restrict others from doing anything
+    the license permits.
+
+================================================================================
+UPSTREAM LICENSE OBLIGATIONS
+================================================================================
+
+This dataset is built from several upstream sources. Each carries its own
+license and attribution requirements that flow through to any use of this
+dataset. The aggregate license is CC-BY-SA 4.0, but specific attribution
+requirements from the upstream sources must also be honored.
+
+-------------------------------------------------------------------------------
+1. EDRDG: JMdict, JMnedict, KANJIDIC2, KRADFILE, RADKFILE
+-------------------------------------------------------------------------------
+
+Copyright: James William Breen and The Electronic Dictionary Research and
+Development Group.
+
+License: Creative Commons Attribution-ShareAlike 4.0 International.
+
+Additional requirements from the EDRDG General Dictionary Licence Statement
+(https://www.edrdg.org/edrdg/licence.html) that flow through to users of this
+dataset:
+
+(a) Acknowledgment: Any publication, software package, web server, smartphone
+    app, or other product that uses this dataset must acknowledge the usage
+    and source of the EDRDG files in its documentation, publicity material,
+    and/or website.
+
+(b) Link provision: Users must provide links to the EDRDG project pages:
+      https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project
+      https://www.edrdg.org/wiki/index.php/KANJIDIC_Project
+
+(c) Web dictionary servers: Web-facing dictionary applications that use this
+    data must update their data at least once per month. This repository
+    commits to rebuilding against upstream monthly and tagging releases
+    accordingly.
+
+(d) Mobile applications: Acknowledgment must be made on a separate screen
+    accessed from a menu such as "About" or "Sources". It is not sufficient
+    to mention it only on a start-up/launch page.
+
+(e) On-screen display: If a web server provides a dictionary function or
+    on-screen display, the acknowledgment must be made on each screen
+    display (e.g., at the foot of the page).
+
+(f) No claim of copyright: Users of material from the EDRDG files must not
+    claim copyright over that material. Additions do not diminish EDRDG's
+    copyright over the underlying material.
+
+(g) Indemnification: Users agree to indemnify the EDRDG in the case of
+    action by a third party on the basis of use of the files.
+
+(h) No warranty: The EDRDG files are provided without any warranty as to
+    their accuracy or suitability for any particular application.
+
+-------------------------------------------------------------------------------
+1a. KANJIDIC2 special conditions (EDRDG License §8)
+-------------------------------------------------------------------------------
+
+Certain fields within KANJIDIC2-derived content are contributed by named
+copyright holders who have granted permission for inclusion while retaining
+their individual copyright. Use of those fields requires acknowledgment:
+
+    * SKIP codes                  — Jack HALPERN
+      (SKIP codes are under their own similar Creative Commons licence.
+       See Jack Halpern's conditions of use.)
+    * Pinyin readings              — Christian WITTERN and Koichi YASUOKA
+    * Four Corner codes            — Urs APP
+    * Morohashi index information  — Urs APP
+    * Spahn/Hadamitzky descriptors — Mark SPAHN and Wolfgang HADAMITZKY
+    * Korean readings              — Charles MULLER
+    * De Roo codes                 — Joseph DE ROO
+
+Where this dataset includes any of these fields, attribution to the respective
+individual(s) must flow through to downstream users.
+
+-------------------------------------------------------------------------------
+2. KanjiVG
+-------------------------------------------------------------------------------
+
+Copyright: Ulrich Apel and contributors.
+License: Creative Commons Attribution-Share Alike 3.0 Unported.
+Upgrade notice: CC provides that CC-BY-SA 3.0 content may be combined into
+CC-BY-SA 4.0 derivatives. This dataset's CC-BY-SA 4.0 output includes content
+originally released under CC-BY-SA 3.0, in accordance with that compatibility.
+
+Attribution: "Stroke order data (kanji vector graphics) from the KanjiVG
+project, by Ulrich Apel and contributors, released under CC-BY-SA 3.0. See
+https://kanjivg.tagaini.net/"
+
+-------------------------------------------------------------------------------
+3. Tatoeba
+-------------------------------------------------------------------------------
+
+Copyright: Tatoeba and its individual sentence contributors.
+License: Creative Commons Attribution 2.0 France (CC-BY 2.0 FR). A subset of
+sentences is additionally released under CC0 1.0.
+
+CC-BY 2.0 FR is compatible with CC-BY-SA 4.0 for inclusion in a ShareAlike
+derivative; the ShareAlike requirement applies to the derivative as a whole.
+
+Attribution: "Example sentences from the Tatoeba Project (https://tatoeba.org/)
+under CC-BY 2.0 FR. Individual sentences may have different contributors;
+sentence IDs preserved in this dataset allow upstream lookup."
+
+-------------------------------------------------------------------------------
+4. Kanjium (pitch accent data)
+-------------------------------------------------------------------------------
+
+Copyright: mifunetoshiro and Kanjium contributors.
+License: Creative Commons Attribution-ShareAlike 4.0 International.
+
+Attribution: "Pitch accent data from the Kanjium project by mifunetoshiro and
+contributors, released under CC-BY-SA 4.0. See
+https://github.com/mifunetoshiro/kanjium"
+
+-------------------------------------------------------------------------------
+5. Jonathan Waller's JLPT Resources (tanos.co.uk)
+-------------------------------------------------------------------------------
+
+Copyright: Jonathan Waller.
+License: Creative Commons Attribution (CC-BY). Commercial use and
+redistribution are explicitly permitted; attribution with a link to the source
+site is required.
+
+Attribution: "JLPT classifications adapted from Jonathan Waller's JLPT
+Resources at http://www.tanos.co.uk/jlpt/, used under CC-BY."
+
+-------------------------------------------------------------------------------
+6. JPDB frequency list (MarvNC)
+-------------------------------------------------------------------------------
+
+Copyright: MarvNC and contributors; derived from jpdb.io corpus analysis.
+License: Verified per release. See `docs/sources.md` for current release
+pinning and its associated license.
+
+Attribution: "Modern media frequency rankings from the JPDB frequency list
+(https://github.com/MarvNC/jpdb-freq-list), itself derived from jpdb.io's
+analysis of light novels, visual novels, anime, and drama."
+
+-------------------------------------------------------------------------------
+7. scriptin/jmdict-simplified
+-------------------------------------------------------------------------------
+
+The pre-parsed JSON distributions of JMdict/JMnedict/KANJIDIC2/KRADFILE/
+RADKFILE that we ingest are produced by the jmdict-simplified project.
+
+Source code license: CC-BY-SA 4.0.
+Underlying data license: As described in Section 1 (EDRDG) above.
+
+Attribution: "JMdict, JMnedict, KANJIDIC2, KRADFILE, and RADKFILE data
+ingested via scriptin/jmdict-simplified
+(https://github.com/scriptin/jmdict-simplified), which provides a JSON
+transformation of the EDRDG source files."
+
+================================================================================
+PIPELINE SOURCE CODE
+================================================================================
+
+The Python code in `build/` that fetches, transforms, validates, and
+cross-links the dataset is a separate component from the data itself. It is
+also licensed CC-BY-SA 4.0 for consistency with the aggregate output. This
+applies to all files under `build/`, `tests/`, the `justfile`, the schemas
+under `schemas/`, and the documentation under `docs/`.
+
+================================================================================
+NO WARRANTY
+================================================================================
+
+This dataset is provided "as is", without warranty of any kind, express or
+implied, including but not limited to the warranties of merchantability,
+fitness for a particular purpose, non-infringement, or accuracy. While every
+reasonable effort has been made to ensure correctness, neither the authors of
+this dataset nor the authors of any upstream source bear any liability for
+errors, omissions, or consequences of use. Users are solely responsible for
+verifying suitability for their own purposes and for maintaining currency
+with upstream corrections.
+
+For the canonical and legally binding text of CC-BY-SA 4.0, see:
+https://creativecommons.org/licenses/by-sa/4.0/legalcode

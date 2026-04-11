@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/kanji.schema.json",
+  "title": "Kanji",
+  "description": "Full kanji dataset derived from KANJIDIC2 via scriptin/jmdict-simplified. Each entry represents one kanji character with readings, meanings, stroke count, grade, frequency, JLPT classifications, radical information, dictionary references, query codes, and variants.",
+  "schemaVersion": "0.0.0",
+  "type": "object",
+  "required": ["metadata", "kanji"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "kanji": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/kanjiEntry"
+      }
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": ["source", "license", "generated", "count", "field_notes"],
+      "properties": {
+        "source": {"type": "string"},
+        "source_url": {"type": "string", "format": "uri"},
+        "license": {"type": "string"},
+        "source_version": {"type": "string"},
+        "generated": {"type": "string", "format": "date"},
+        "count": {"type": "integer", "minimum": 0},
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        },
+        "attribution": {
+          "type": "string",
+          "description": "Required attribution wording per upstream license."
+        }
+      }
+    },
+    "kanjiEntry": {
+      "type": "object",
+      "required": ["character", "stroke_count", "readings", "meanings"],
+      "properties": {
+        "character": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2,
+          "description": "The kanji character itself (may be a surrogate pair for characters outside BMP)."
+        },
+        "unicode": {
+          "type": "string",
+          "description": "Unicode codepoint in hex (lowercase)."
+        },
+        "jis208": {
+          "type": ["string", "null"],
+          "description": "JIS X 0208 code (if applicable)."
+        },
+        "jis212": {
+          "type": ["string", "null"]
+        },
+        "jis213": {
+          "type": ["string", "null"]
+        },
+        "stroke_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "stroke_count_variants": {
+          "type": "array",
+          "items": {"type": "integer", "minimum": 1}
+        },
+        "grade": {
+          "type": ["integer", "null"],
+          "description": "1-6 = kyōiku (elementary school year). 8 = secondary school jōyō. 9-10 = jinmeiyō. null = non-list."
+        },
+        "jlpt_old": {
+          "type": ["integer", "null"],
+          "description": "Pre-2010 JLPT level, 1-4 (1 = advanced). Not the current N1-N5 system."
+        },
+        "jlpt_waller": {
+          "type": ["string", "null"],
+          "description": "Current N1-N5 level from Jonathan Waller's JLPT Resources. Community-consensus, not JLPT-official.",
+          "enum": ["N1", "N2", "N3", "N4", "N5", null]
+        },
+        "frequency": {
+          "type": ["integer", "null"],
+          "description": "Newspaper frequency rank, 1 = most common. Only populated for the ~2,500 most common kanji."
+        },
+        "radical": {
+          "type": "object",
+          "properties": {
+            "classical": {"type": ["integer", "null"]},
+            "nelson": {"type": ["integer", "null"]}
+          }
+        },
+        "radical_components": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Component radicals, derived from KRADFILE."
+        },
+        "meanings": {
+          "type": "object",
+          "properties": {
+            "en": {"type": "array", "items": {"type": "string"}},
+            "fr": {"type": "array", "items": {"type": "string"}},
+            "es": {"type": "array", "items": {"type": "string"}},
+            "pt": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "readings": {
+          "type": "object",
+          "properties": {
+            "on": {
+              "type": "array",
+              "items": {"type": "string"},
+              "description": "On-yomi (Sino-Japanese readings), in katakana."
+            },
+            "kun": {
+              "type": "array",
+              "items": {"type": "string"},
+              "description": "Kun-yomi (native Japanese readings), in hiragana. Dots mark okurigana boundaries; hyphens mark prefix/suffix."
+            }
+          }
+        },
+        "readings_cjk": {
+          "type": "object",
+          "properties": {
+            "pinyin": {"type": "array", "items": {"type": "string"}},
+            "korean_romanized": {"type": "array", "items": {"type": "string"}},
+            "korean_hangul": {"type": "array", "items": {"type": "string"}},
+            "vietnamese": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "nanori": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Name-only readings used in personal and place names."
+        },
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {"type": "string"},
+              "value": {"type": "string"}
+            }
+          }
+        },
+        "dic_refs": {
+          "type": "object",
+          "additionalProperties": {"type": "string"},
+          "description": "Dictionary reference indices (Heisig, Nelson, Halpern, etc.)."
+        },
+        "query_codes": {
+          "type": "object",
+          "properties": {
+            "skip": {"type": "string", "description": "SKIP code by Jack Halpern."},
+            "four_corner": {"type": "string", "description": "Four Corner code by Urs App."},
+            "sh_desc": {"type": "string", "description": "Spahn/Hadamitzky descriptor."},
+            "deroo": {"type": "string", "description": "De Roo code."}
+          }
+        }
+      }
+    }
+  }
+}

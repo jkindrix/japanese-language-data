@@ -1,0 +1,24 @@
+# Normalize line endings — LF everywhere
+* text=auto eol=lf
+
+# JSON data files — ensure diffable
+*.json text diff
+
+# Python source — diffable
+*.py text diff
+
+# Documentation — diffable
+*.md text diff
+
+# Schemas — diffable
+*.schema.json text diff
+
+# SVG stroke order files — treat as text for diff (they are XML)
+*.svg text diff
+
+# Justfile — text
+justfile text eol=lf
+*.justfile text eol=lf
+
+# Shell scripts — ensure executable bits preserved
+*.sh text eol=lf

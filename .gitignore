@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+build/dist/
+build/eggs/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Cached upstream source downloads — always reproducible from manifest.json
+sources/jmdict-simplified/
+sources/kanjivg/
+sources/tatoeba/
+sources/kanjium/
+sources/jpdb-freq/
+sources/waller-jlpt/
+sources/*.tgz
+sources/*.zip
+sources/*.tar.bz2
+sources/*.tar.gz
+sources/*.gz
+sources/*.bz2
+
+# Optional data files not built by default
+data/optional/*.json
+
+# Scratch space for experiments — never committed
+scratch/*
+!scratch/.gitkeep
+
+# IDE and editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS
+.directory
+
+# Environment files
+.env
+.env.local
+.envrc
+
+# Temporary
+*.tmp
+*.log
+*.bak

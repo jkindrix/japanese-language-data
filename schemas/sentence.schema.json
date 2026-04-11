@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/sentence.schema.json",
+  "title": "Sentences",
+  "description": "Japanese–English example sentence pairs from the Tatoeba Project, ingested via jmdict-examples-eng (editor-curated) or optionally via the full Tatoeba export (unfiltered).",
+  "schemaVersion": "0.0.0",
+  "type": "object",
+  "required": ["metadata", "sentences"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "sentences": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/sentenceEntry"
+      }
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": ["source", "license", "generated", "count", "field_notes"],
+      "properties": {
+        "source": {"type": "string"},
+        "source_url": {"type": "string", "format": "uri"},
+        "license": {"type": "string"},
+        "source_version": {"type": "string"},
+        "generated": {"type": "string", "format": "date"},
+        "count": {"type": "integer", "minimum": 0},
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        },
+        "attribution": {"type": "string"}
+      }
+    },
+    "sentenceEntry": {
+      "type": "object",
+      "required": ["id", "japanese", "english", "curated"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Tatoeba sentence ID."
+        },
+        "japanese": {
+          "type": "string",
+          "description": "Japanese sentence text."
+        },
+        "english": {
+          "type": "string",
+          "description": "English translation (if available)."
+        },
+        "translation_id": {
+          "type": ["string", "null"],
+          "description": "Tatoeba sentence ID of the English translation."
+        },
+        "curated": {
+          "type": "boolean",
+          "description": "True if this sentence is part of the editor-curated jmdict-examples set; false if from the full unfiltered Tatoeba corpus."
+        },
+        "license_flag": {
+          "type": "string",
+          "enum": ["CC-BY-2.0-FR", "CC0-1.0"],
+          "description": "License of this specific sentence. Defaults to CC-BY 2.0 FR; some sentences are CC0."
+        },
+        "has_audio": {
+          "type": "boolean",
+          "default": false
+        },
+        "japanese_contributor": {
+          "type": ["string", "null"]
+        },
+        "english_contributor": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  }
+}

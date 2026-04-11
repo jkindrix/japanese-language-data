@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/word.schema.json",
+  "title": "Word",
+  "description": "Japanese vocabulary dataset derived from JMdict via scriptin/jmdict-simplified (examples variant). Each entry represents a word with its kanji writings, kana readings (with applies-to relationships), senses (parts of speech, domains, dialects, translations), language-source information for loanwords, and example sentence links.",
+  "schemaVersion": "0.0.0",
+  "type": "object",
+  "required": ["metadata", "words"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "words": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/wordEntry"
+      }
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": ["source", "license", "generated", "count", "field_notes"],
+      "properties": {
+        "source": {"type": "string"},
+        "source_url": {"type": "string", "format": "uri"},
+        "license": {"type": "string"},
+        "source_version": {"type": "string"},
+        "generated": {"type": "string", "format": "date"},
+        "count": {"type": "integer", "minimum": 0},
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        },
+        "attribution": {"type": "string"},
+        "tags": {
+          "type": "object",
+          "description": "Tag definitions from JMdict source (parts of speech, dialects, fields, etc.).",
+          "additionalProperties": {"type": "string"}
+        },
+        "dictRevisions": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "dictDate": {"type": "string"}
+      }
+    },
+    "wordEntry": {
+      "type": "object",
+      "required": ["id", "kanji", "kana", "sense"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique JMdict entry identifier."
+        },
+        "kanji": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/kanjiWriting"
+          }
+        },
+        "kana": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/kanaWriting"
+          }
+        },
+        "sense": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sense"
+          }
+        },
+        "jlpt_waller": {
+          "type": ["string", "null"],
+          "enum": ["N1", "N2", "N3", "N4", "N5", null]
+        },
+        "frequency_media": {
+          "type": ["integer", "null"],
+          "description": "Rank in modern media corpus (JPDB). 1 = most common."
+        }
+      }
+    },
+    "kanjiWriting": {
+      "type": "object",
+      "required": ["common", "text", "tags"],
+      "properties": {
+        "common": {
+          "type": "boolean",
+          "description": "True if this writing is considered a common form (derived from JMdict news1/ichi1/spec1 priority markers)."
+        },
+        "text": {"type": "string"},
+        "tags": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "kanaWriting": {
+      "type": "object",
+      "required": ["common", "text", "tags", "appliesToKanji"],
+      "properties": {
+        "common": {"type": "boolean"},
+        "text": {"type": "string"},
+        "tags": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "appliesToKanji": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "List of kanji writings this reading applies to. '*' means all; empty array means none (kana-only writing)."
+        }
+      }
+    },
+    "sense": {
+      "type": "object",
+      "required": ["partOfSpeech", "gloss"],
+      "properties": {
+        "partOfSpeech": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "appliesToKanji": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "appliesToKana": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "related": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "description": "Cross-reference to another entry: [kanji, kana, sense_index] or prefix."
+          }
+        },
+        "antonym": {
+          "type": "array",
+          "items": {"type": "array"}
+        },
+        "field": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "dialect": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "misc": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "info": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "languageSource": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "lang": {"type": "string"},
+              "full": {"type": "boolean"},
+              "wasei": {"type": "boolean"},
+              "text": {"type": ["string", "null"]}
+            }
+          }
+        },
+        "gloss": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["lang", "text"],
+            "properties": {
+              "lang": {"type": "string"},
+              "gender": {"type": ["string", "null"]},
+              "type": {"type": ["string", "null"]},
+              "text": {"type": "string"}
+            }
+          }
+        },
+        "examples": {
+          "type": "array",
+          "description": "Example sentence references from jmdict-examples (Tatoeba-sourced).",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {"type": "string"},
+              "sentence_id": {"type": "string"},
+              "text": {"type": "string"},
+              "translation": {"type": "string"}
+            }
+          }
+        }
+      }
+    }
+  }
+}
