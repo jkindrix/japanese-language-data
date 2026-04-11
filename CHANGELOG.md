@@ -16,7 +16,22 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
-Continuing multi-batch grammar expansion push toward the ~500-700 community-standard target. After Batches B1 + B2: 211 entries total (60 N5 + 91 N4 + 60 N3), 30–42% of target. All new entries `review_status: "draft"`, authorship statement unchanged.
+Continuing multi-batch grammar expansion push toward the ~500-700 community-standard target. After Batches B1 + B2 + B3: 251 entries total (60 N5 + 91 N4 + 100 N3), 36–50% of target. All new entries `review_status: "draft"`, authorship statement unchanged.
+
+### Added (Batch B3)
+
+- **N3 expansion batch 3 (40 entries)** bringing N3 from 60 → 100: relational markers 〜に対して, 〜に関して, 〜に沿って, 〜にかわって, 〜として, 〜において; targeted-for markers 〜向け and 〜向き; parallel-change 〜につれて and 〜とともに; exclusivity 〜きり and temporal 〜たきり; causal-proportional 〜だけに and 〜だけあって; trigger-consequence 〜ばかりに and additive 〜ばかりか; speech/topic markers 〜というより, 〜と言えば, 〜と言っても, 〜といった; appearance suffixes 〜っぽい and 〜げ; strong contrastive 〜どころか and 〜どころではない; balance 〜一方で and trend 〜一方だ; addition 〜上に and prerequisite 〜上で; relative-standard 〜わりに; overwhelming states 〜てたまらない and 〜てならない; temporal 〜中 and tendency 〜気味; verb-compound auxiliaries 〜続ける, 〜直す, 〜合う, 〜出す, 〜込む; and 〜をもとに (based on) and 〜最中 (in the middle of).
+
+### Verification (Batch B3)
+
+- **62/62 tests pass** — existing invariants cover the new entries.
+- **19/19 data files validate** against their schemas.
+- **`data/grammar/grammar.json`**: 211 → **251 entries** (+40 N3).
+- **`data/enrichment/jlpt-classifications.json`**: 10,715 → **10,755**.
+- **`manifest.json.grammar_curation_status`** refreshed: total 211 → 251; N3 60 → 100; coverage_pct 30–42 → 36–50.
+- One self-caught broken `related` reference during the initial build (placeholder slug `nanishiro-iro` typo in `to-iu-yori-rather` — caught by the build-time check in `build/transform/grammar.py`, fixed before commit).
+
+
 
 ### Added (Batch B2)
 

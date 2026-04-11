@@ -6,7 +6,7 @@
     "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
     "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
     "generated": "2026-04-11",
-    "count": 10715,
+    "count": 10755,
     "counts_by_kind_and_level": {
       "vocab_N5": 684,
       "vocab_N4": 640,
@@ -20,7 +20,7 @@
       "kanji_N5": 79,
       "grammar_N5": 60,
       "grammar_N4": 91,
-      "grammar_N3": 60,
+      "grammar_N3": 100,
       "grammar_N2": 0,
       "grammar_N1": 0
     },
@@ -92901,6 +92901,366 @@
       "level": "N3",
       "meaning_en": "ever since / since (a specific past event)",
       "grammar_id": "irai-since",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + に対して",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "toward / against / in contrast to",
+      "grammar_id": "ni-taishite-toward",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + に関して / に関する",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "regarding / concerning (formal)",
+      "grammar_id": "ni-kanshite-regarding",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + に沿って",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "along / in accordance with",
+      "grammar_id": "ni-sotte-along",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + にかわって / にかわり",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "instead of / on behalf of / in place of",
+      "grammar_id": "ni-kawatte-instead",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + として",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "as / in the role of / in the capacity of",
+      "grammar_id": "toshite-as",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + において / における",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "in / at / regarding (formal)",
+      "grammar_id": "ni-oite-in-at",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + 向け(に / の)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "targeted at / for (a specific audience)",
+      "grammar_id": "muke-targeted-for",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + 向き(の / に)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "suitable for / naturally fitting",
+      "grammar_id": "muki-suitable-for",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain non-past / noun + につれて",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "as (X progresses/increases), correspondingly",
+      "grammar_id": "ni-tsurete-as",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / V plain + とともに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "together with / as X happens",
+      "grammar_id": "to-tomoni-together",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / number + 切り / きり",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "only / exclusively / just",
+      "grammar_id": "kiri-only",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-た form + きり + (negative continuation)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "since last doing X, (haven't done Y) / only doing X and no more",
+      "grammar_id": "ta-kiri-since-last",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + だけに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "precisely because / being X, all the more",
+      "grammar_id": "dake-ni-precisely",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + だけあって",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "as one would expect from / fittingly",
+      "grammar_id": "dake-atte-as-expected",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + ばかりに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "merely because / just because (often with negative outcome)",
+      "grammar_id": "bakari-ni-merely",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + ばかりか",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "not only X but also Y",
+      "grammar_id": "bakari-ka-not-only",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + というより",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "rather than / more than saying X",
+      "grammar_id": "to-iu-yori-rather",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / plain form + と言えば",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "speaking of / when it comes to",
+      "grammar_id": "to-ieba-speaking-of",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + と言っても",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "although I say / although we call it",
+      "grammar_id": "to-itte-mo-although",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + といった + noun",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "such as / things like",
+      "grammar_id": "to-itta-such-as",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / i-adj stem / V stem + っぽい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "seems / looks / -ish / tends to",
+      "grammar_id": "ppoi-seems",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "i-adj / na-adj / V stem + げ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "looking / appearing (-like)",
+      "grammar_id": "ge-looking",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + どころか",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "far from / let alone / on the contrary",
+      "grammar_id": "dokoro-ka-far-from",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / V plain + どころではない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "no time for / can't afford to / out of the question",
+      "grammar_id": "dokoro-dewa-nai-no-time",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + 一方で",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "on the other hand / while at the same time",
+      "grammar_id": "ippou-de-one-hand",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb plain non-past + 一方だ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "keeps X-ing / continues to increase (one direction)",
+      "grammar_id": "ippou-da-keeps",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + 上に",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "in addition to / on top of (that)",
+      "grammar_id": "ue-ni-in-addition",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-た form / noun + の + 上で",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "upon doing / after careful X (as a prerequisite)",
+      "grammar_id": "ue-de-upon",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + わりに(は)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "considering / for (an X), (relatively) Y",
+      "grammar_id": "warini-considering",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form / i-adj 〜くて / na-adj で + たまらない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "unbearably / can't stand how",
+      "grammar_id": "te-tamaranai-unbearably",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form / i-adj 〜くて / na-adj で + ならない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "can't help feeling / uncontrollably",
+      "grammar_id": "te-naranai-cant-help",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + 中 (ちゅう / じゅう)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "during / in the middle of / throughout",
+      "grammar_id": "chuu-during",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / V ます-stem + 気味",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "appearing / tending to / looking slightly",
+      "grammar_id": "gimi-tendency",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + 続ける",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "continue doing / keep doing",
+      "grammar_id": "tsuzukeru-continue",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + 直す",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "redo / do (X) over again",
+      "grammar_id": "naoshi-redo",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + 合う",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "do X mutually / reciprocally",
+      "grammar_id": "au-together",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + 出す",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "suddenly start (doing X) / begin abruptly",
+      "grammar_id": "dashi-suddenly-start",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + 込む",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "do X thoroughly / into (a space or state)",
+      "grammar_id": "komi-into",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + をもとに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "based on / on the basis of",
+      "grammar_id": "wo-motoni-based-on",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / V 〜ている + 最中",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "in the middle of / right in the midst of",
+      "grammar_id": "saichu-in-the-middle",
       "source_retrieved": "2026-04-11"
     },
     {
