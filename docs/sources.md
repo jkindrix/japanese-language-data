@@ -139,40 +139,62 @@ Kanjium's pitch data is roughly frozen at 2022 levels. Words added to Japanese a
 
 ## Jonathan Waller's JLPT Resources (tanos.co.uk)
 
-**Project**: http://www.tanos.co.uk/jlpt/
+**Original project**: http://www.tanos.co.uk/jlpt/
 **Sharing page**: http://www.tanos.co.uk/jlpt/sharing/
-**Maintainer**: Jonathan Waller
+**Original author**: Jonathan Waller
 **License**: CC-BY (explicit: "use anything here however you like (commercial or non-commercial), but credit my site. (A link would be nice.)")
-**Update cadence**: Irregular; reflects community consensus snapshots
-**Our pin**: To be set at Phase 2 build time.
 
-JLPT stopped publishing official vocabulary lists in 2010. Jonathan Waller's lists are the de-facto community standard for JLPT level classification and are the upstream for virtually every other JLPT classification project (Jisho.org, Yomitan JLPT tags, many Anki decks). We use them as the authoritative community-consensus source with the explicit caveat that they are not JLPT-official.
+JLPT stopped publishing official vocabulary lists in 2010. Jonathan Waller's lists are the de-facto community standard for JLPT level classification and are the upstream for virtually every other JLPT classification project (Jisho.org, Yomitan JLPT tags, many Anki decks).
+
+### Why we don't scrape tanos.co.uk directly
+
+The tanos.co.uk server returns HTTP 500 to user agents it does not recognize (confirmed via curl during Phase 2 investigation — `Vary: User-Agent` header is set). Programmatic scraping is fragile and would require maintaining a user-agent spoof that could break at any time.
+
+Instead, we ingest Waller's data via two redistribution channels that have already done the scraping work and published it in structured form with compatible licenses:
+
+### Redistribution channel 1: `stephenmk/yomitan-jlpt-vocab` (vocabulary)
+
+**Project**: https://github.com/stephenmk/yomitan-jlpt-vocab
+**License**: CC-BY-SA 4.0 (compatible with our CC-BY-SA 4.0 output)
+**Our pin**: `main` branch (SHA256 per-file, in `manifest.json`)
+**Assets we use**: `original_data/n{5,4,3,2,1}.csv` — 5 CSV files, roughly 24–199 KB each.
+
+### Redistribution channel 2: `davidluzgouveia/kanji-data` (kanji)
+
+**Project**: https://github.com/davidluzgouveia/kanji-data
+**License**: MIT (code); underlying data combines KANJIDIC (CC-BY-SA) and Waller (CC-BY). We use only the Waller-derived `jlpt_new` field.
+**Our pin**: `master` branch `kanji.json` (SHA256 in `manifest.json`)
+
+**Important**: This project's `kanji.json` also contains WaniKani-derived fields (`wk_level`, `wk_meanings`, `wk_readings`, `wk_radicals`). **We deliberately do not use these fields** because the WaniKani license is not compatible with our CC-BY-SA 4.0 output. Only the `jlpt_new` field is extracted per kanji.
 
 ### What we extract
 
-- Vocabulary lists for N5, N4, N3, N2, N1 — each word with its JLPT level
-- Kanji lists for N5, N4, N3, N2, N1 — each kanji with its JLPT level
-- Grammar point lists for N5, N4, N3, N2, N1 — each pattern with its level (used as a seed for the Phase 3 grammar dataset)
+- **Vocabulary** (from stephenmk CSVs): 8,293 entries total across N5-N1. Each CSV row contains `jmdict_seq, kana, kanji, waller_definition`. The `jmdict_seq` field allows clean joins with our `words.json` by the same ID.
+- **Kanji** (from davidluzgouveia): 2,211 entries with N5-N1 classifications. Only the `jlpt_new` field is extracted per character.
+- **Grammar**: deferred to Phase 3. Waller's grammar lists are HTML only and would require either tanos.co.uk scraping or a separate redistribution source. Phase 3 will curate grammar from scratch.
 
-### Transformation
+### Transformation output
 
-The tanos.co.uk lists are scraped (they are HTML pages, not downloadable files) into `data/enrichment/jlpt-classifications.json` with entries of the form:
+Produced at `data/enrichment/jlpt-classifications.json` with entries of the form:
 
 ```json
 {
   "text": "猫",
-  "kind": "kanji",  // "kanji" | "vocab" | "grammar"
+  "reading": "ねこ",
+  "kind": "vocab",
   "level": "N5",
-  "source": "waller-tanos",
-  "retrieved": "YYYY-MM-DD"
+  "meaning_en": "cat",
+  "jmdict_seq": "1467640",
+  "source_retrieved": "YYYY-MM-DD"
 }
 ```
 
 ### Known caveats
 
-- Not JLPT-official. The lists are reverse-engineered from past test questions, study guides, and community consensus. Some entries are disputed; edge cases between levels are unclear.
-- We report them as `jlpt_waller` rather than `jlpt` to avoid suggesting official provenance.
-- Waller's own site notes that grammar lists in particular are fuzzy; different sources put some patterns at different levels.
+- Not JLPT-official. The lists are reverse-engineered from past test questions and community consensus. Some entries are disputed; edge cases between levels are unclear.
+- We report them as `jlpt_waller` (not `jlpt`) on kanji/word entries to avoid suggesting official provenance.
+- **~6.6% of stephenmk's JLPT vocab entries reference JMdict IDs that no longer match current JMdict** due to upstream JMdict ID drift across revisions. These are still included in `jlpt-classifications.json` but cannot be joined to `words.json` by ID. A later patch could add text-based fallback matching.
+- Waller's own grammar lists are also fuzzy; Phase 3 grammar classification will rely on multiple sources for cross-validation.
 
 ---
 

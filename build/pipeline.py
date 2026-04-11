@@ -71,22 +71,22 @@ def _build_stages() -> list[Stage]:
     )
 
     return [
-        # Core data (Phase 1)
+        # ---- Independent transforms (no dependencies on other data files) ----
         Stage("kana", "Hand-curated hiragana/katakana dataset.", kana.build, phase=1),
-        Stage("kanji", "Kanji entries from KANJIDIC2.", kanji.build, phase=1),
-        Stage("words", "Vocabulary from JMdict-examples.", words.build, phase=1),
         Stage("radicals", "Radical data from KRADFILE/RADKFILE.", radicals.build, phase=1),
-        Stage("sentences", "Example sentences from Tatoeba via jmdict-examples.", sentences.build, phase=1),
-        # Enrichment (Phase 2)
         Stage("stroke_order", "Stroke order SVGs from KanjiVG.", stroke_order.build, phase=2),
         Stage("pitch", "Pitch accent data from Kanjium.", pitch.build, phase=2),
-        Stage("frequency", "Frequency rankings (newspaper + modern media).", frequency.build, phase=2),
         Stage("jlpt", "JLPT level classifications from Waller.", jlpt.build, phase=2),
-        # Cross-references (Phase 2+)
+        Stage("frequency", "Frequency rankings (newspaper corpus from KANJIDIC2).", frequency.build, phase=2),
+        # ---- Main transforms (depend on enrichment for augmentation fields) ----
+        Stage("kanji", "Kanji entries from KANJIDIC2, enriched with radical components and JLPT level.", kanji.build, phase=1),
+        Stage("words", "Vocabulary from JMdict-examples, enriched with JLPT level.", words.build, phase=1),
+        Stage("sentences", "Example sentences from Tatoeba via jmdict-examples.", sentences.build, phase=1),
+        # ---- Cross-references (depend on core data being built) ----
         Stage("cross_links", "Generate all cross-reference files.", cross_links.build, phase=2),
-        # Grammar (Phase 3 — original contribution)
+        # ---- Grammar (Phase 3 — original contribution) ----
         Stage("grammar", "Curated Japanese grammar dataset (original).", grammar.build, phase=3),
-        # Names (optional, any phase)
+        # ---- Names (optional, any phase) ----
         Stage("names", "Proper nouns from JMnedict (optional build target).", names.build, phase=1),
     ]
 

@@ -45,6 +45,12 @@ SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "kanjidic2-all.json.t
 OUT_FULL = REPO_ROOT / "data" / "core" / "kanji.json"
 OUT_JOYO = REPO_ROOT / "data" / "core" / "kanji-joyo.json"
 
+# Optional enrichment inputs produced by other transforms. kanji.build()
+# will read these if they exist and populate the corresponding fields;
+# otherwise those fields stay null/empty (backward-compatible with Phase 1).
+JLPT_ENRICHMENT = REPO_ROOT / "data" / "enrichment" / "jlpt-classifications.json"
+RADICALS_ENRICHMENT = REPO_ROOT / "data" / "core" / "radicals.json"
+
 # Dictionary reference types to keep (from EDRDG License §8 contributors)
 WANTED_DIC_REFS = {
     "nelson_c",
@@ -78,8 +84,37 @@ def _load_source() -> dict:
     raise RuntimeError(f"No JSON file found in {SOURCE_TGZ}")
 
 
-def _transform_character(ch: dict) -> dict:
+def _load_kanji_jlpt_map() -> dict[str, str]:
+    """Build a char → JLPT level map from the enrichment file if it exists."""
+    if not JLPT_ENRICHMENT.exists():
+        return {}
+    data = json.loads(JLPT_ENRICHMENT.read_text(encoding="utf-8"))
+    result: dict[str, str] = {}
+    for entry in data.get("classifications", []):
+        if entry.get("kind") == "kanji":
+            text = entry.get("text", "")
+            level = entry.get("level")
+            if text and level:
+                result[text] = level
+    return result
+
+
+def _load_radical_components_map() -> dict[str, list[str]]:
+    """Build a kanji → component radicals map from radicals.json if it exists."""
+    if not RADICALS_ENRICHMENT.exists():
+        return {}
+    data = json.loads(RADICALS_ENRICHMENT.read_text(encoding="utf-8"))
+    return data.get("kanji_to_radicals", {}) or {}
+
+
+def _transform_character(
+    ch: dict,
+    jlpt_map: dict[str, str] | None = None,
+    radical_map: dict[str, list[str]] | None = None,
+) -> dict:
     """Transform a single KANJIDIC2 character entry to our schema."""
+    jlpt_map = jlpt_map or {}
+    radical_map = radical_map or {}
     literal = ch["literal"]
 
     # Codepoints — demux by type
@@ -188,13 +223,13 @@ def _transform_character(ch: dict) -> dict:
         "stroke_count_variants": stroke_count_variants,
         "grade": grade,
         "jlpt_old": jlpt_old,
-        "jlpt_waller": None,  # filled in Phase 2
+        "jlpt_waller": jlpt_map.get(literal),  # None if no Waller classification
         "frequency": frequency,
         "radical": {
             "classical": rad_classical,
             "nelson": rad_nelson,
         },
-        "radical_components": [],  # filled by cross_links in Phase 2
+        "radical_components": list(radical_map.get(literal, [])),
         "meanings": meanings,
         "readings": {
             "on": on_readings,
@@ -274,9 +309,25 @@ def build() -> None:
     print(f"[kanji]    loading {SOURCE_TGZ.name}")
     source = _load_source()
     characters = source.get("characters", [])
-    print(f"[kanji]    transforming {len(characters):,} characters")
 
-    kanji_entries = [_transform_character(c) for c in characters]
+    jlpt_map = _load_kanji_jlpt_map()
+    radical_map = _load_radical_components_map()
+    if jlpt_map:
+        print(f"[kanji]    found JLPT enrichment: {len(jlpt_map):,} kanji classified")
+    else:
+        print("[kanji]    no JLPT enrichment file; jlpt_waller will be null")
+    if radical_map:
+        print(f"[kanji]    found radical enrichment: {len(radical_map):,} kanji → components")
+    else:
+        print("[kanji]    no radical enrichment file; radical_components will be empty")
+
+    print(f"[kanji]    transforming {len(characters):,} characters")
+    kanji_entries = [_transform_character(c, jlpt_map, radical_map) for c in characters]
+
+    # Coverage stats
+    enriched_jlpt = sum(1 for k in kanji_entries if k.get("jlpt_waller"))
+    enriched_radicals = sum(1 for k in kanji_entries if k.get("radical_components"))
+    print(f"[kanji]    enriched: jlpt_waller={enriched_jlpt:,} radical_components={enriched_radicals:,}")
 
     OUT_FULL.parent.mkdir(parents=True, exist_ok=True)
     output_full = {

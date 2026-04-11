@@ -1,8 +1,8 @@
 {
   "project": "japanese-language-data",
-  "version": "0.1.0",
-  "phase": 1,
-  "phase_description": "Core data built: kana, kanji (full + Jōyō view), words (common subset committed, full gitignored), radicals, and example sentences. All files schema-validated. Phase 2 enrichment and Phase 3 grammar still pending.",
+  "version": "0.2.0",
+  "phase": 2,
+  "phase_description": "Core + enrichment data built: Phase 1 core files plus stroke order SVGs from KanjiVG, pitch accent from Kanjium, JLPT classifications (kanji+vocab) from Waller via stephenmk and davidluzgouveia, newspaper frequency from KANJIDIC2, and 4 cross-reference indices. Kanji entries now have jlpt_waller and radical_components populated; word entries have jlpt_waller populated. Phase 3 grammar and Phase 4 modern frequency (blocked on JPDB license clarification) still pending.",
   "generated": "2026-04-11",
   "license": "CC-BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -56,6 +56,48 @@
       "description": "KANJIDIC2 kanji data, all languages (13,108 characters, full coverage).",
       "sha256": "749b944a902bcdf111439714483af24cae920775e8d443e719c50e51cdaa904b",
       "size_bytes": 1552895
+    },
+    "waller-jlpt-vocab-n5": {
+      "url": "https://raw.githubusercontent.com/stephenmk/yomitan-jlpt-vocab/main/original_data/n5.csv",
+      "license": "CC-BY 4.0 (Waller) distributed under CC-BY-SA 4.0 (stephenmk)",
+      "description": "Jonathan Waller JLPT N5 vocabulary list (CSV) via stephenmk/yomitan-jlpt-vocab.",
+      "sha256": "07dc6f197b51cc076c65c3c9f23218d10c2b67f76545f5c1c4d9e3750495533a",
+      "size_bytes": 24010
+    },
+    "waller-jlpt-vocab-n4": {
+      "url": "https://raw.githubusercontent.com/stephenmk/yomitan-jlpt-vocab/main/original_data/n4.csv",
+      "license": "CC-BY 4.0 (Waller) distributed under CC-BY-SA 4.0 (stephenmk)",
+      "description": "Jonathan Waller JLPT N4 vocabulary list (CSV) via stephenmk/yomitan-jlpt-vocab.",
+      "sha256": "a14dcc7fdc02259b22331a486c6ff66df74c16472c8aeb5a0ebe7e5fa8ee8eb4",
+      "size_bytes": 24772
+    },
+    "waller-jlpt-vocab-n3": {
+      "url": "https://raw.githubusercontent.com/stephenmk/yomitan-jlpt-vocab/main/original_data/n3.csv",
+      "license": "CC-BY 4.0 (Waller) distributed under CC-BY-SA 4.0 (stephenmk)",
+      "description": "Jonathan Waller JLPT N3 vocabulary list (CSV) via stephenmk/yomitan-jlpt-vocab.",
+      "sha256": "bd4d68c59cfee861351e1bdf9d99818e434392201eabbed4d3657225fe53a3ac",
+      "size_bytes": 88623
+    },
+    "waller-jlpt-vocab-n2": {
+      "url": "https://raw.githubusercontent.com/stephenmk/yomitan-jlpt-vocab/main/original_data/n2.csv",
+      "license": "CC-BY 4.0 (Waller) distributed under CC-BY-SA 4.0 (stephenmk)",
+      "description": "Jonathan Waller JLPT N2 vocabulary list (CSV) via stephenmk/yomitan-jlpt-vocab.",
+      "sha256": "42a4413326e857d701dc9659b2711637ab612304a339fe0d09f4f0f042d3a214",
+      "size_bytes": 95356
+    },
+    "waller-jlpt-vocab-n1": {
+      "url": "https://raw.githubusercontent.com/stephenmk/yomitan-jlpt-vocab/main/original_data/n1.csv",
+      "license": "CC-BY 4.0 (Waller) distributed under CC-BY-SA 4.0 (stephenmk)",
+      "description": "Jonathan Waller JLPT N1 vocabulary list (CSV) via stephenmk/yomitan-jlpt-vocab.",
+      "sha256": "7a58f0584e9ec2b0299ccb9b109f3bd03e08b90d129a714307c0a1cb72f07b32",
+      "size_bytes": 199103
+    },
+    "waller-jlpt-kanji": {
+      "url": "https://raw.githubusercontent.com/davidluzgouveia/kanji-data/master/kanji.json",
+      "license": "CC-BY 4.0 (Waller JLPT data)",
+      "description": "Jonathan Waller JLPT kanji classifications via davidluzgouveia/kanji-data (jlpt_new field only). Code is MIT; data fields derive from Waller CC-BY.",
+      "sha256": "561b72ea9df703c58fae0c68585812e172aaa7611d2fcee6719d55fd2dfd4fa4",
+      "size_bytes": 5508152
     }
   },
   "counts": {
@@ -67,20 +109,19 @@
     "data/core/radicals.json": 253,
     "data/optional/names.json": 0,
     "data/corpus/sentences.json": 25980,
-    "data/enrichment/pitch-accent.json": 0,
-    "data/enrichment/frequency-newspaper.json": 0,
+    "data/enrichment/pitch-accent.json": 124011,
+    "data/enrichment/frequency-newspaper.json": 2501,
     "data/enrichment/frequency-modern.json": 0,
-    "data/enrichment/jlpt-classifications.json": 0,
-    "data/enrichment/stroke-order-index.json": 0,
+    "data/enrichment/jlpt-classifications.json": 10504,
+    "data/enrichment/stroke-order-index.json": 13108,
     "data/grammar/grammar.json": 0,
-    "data/cross-refs/kanji-to-words.json": 0,
-    "data/cross-refs/word-to-kanji.json": 0,
-    "data/cross-refs/word-to-sentences.json": 0,
-    "data/cross-refs/kanji-to-radicals.json": 0
+    "data/cross-refs/kanji-to-words.json": 3533,
+    "data/cross-refs/word-to-kanji.json": 18084,
+    "data/cross-refs/word-to-sentences.json": 14550,
+    "data/cross-refs/kanji-to-radicals.json": 12156
   },
   "next_actions": [
-    "Phase 2: implement enrichment transforms (stroke_order, pitch, frequency, jlpt) and cross_links.",
-    "Phase 3: curate grammar dataset with review_status tracking.",
-    "Phase 4: evaluate candidates in docs/phase4-candidates.md."
+    "Phase 3: curate grammar dataset with review_status tracking. Grammar JLPT classifications will be added to jlpt-classifications.json alongside the grammar corpus.",
+    "Phase 4: evaluate candidates in docs/phase4-candidates.md — notably JPDB modern frequency (blocked on license clarification) and radical meanings/Kangxi numbers from external sources."
   ]
 }

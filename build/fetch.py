@@ -119,6 +119,57 @@ SOURCES: tuple[Source, ...] = (
         description="Kanjium pitch accent TSV (word, reading, mora positions).",
         license="CC-BY-SA 4.0",
     ),
+    # ---- Phase 2 additions ---------------------------------------------------
+    # Waller JLPT vocabulary CSVs via stephenmk/yomitan-jlpt-vocab.
+    # Each file is a raw export of Jonathan Waller's N<level> vocab list with
+    # columns: jmdict_seq, kana, kanji, waller_definition.
+    # Last maintained 2025-08; CC-BY-SA 4.0.
+    Source(
+        name="waller-jlpt-vocab-n5",
+        url="https://raw.githubusercontent.com/stephenmk/yomitan-jlpt-vocab/main/original_data/n5.csv",
+        cache_path="waller-jlpt/n5.csv",
+        description="Jonathan Waller JLPT N5 vocabulary list (CSV) via stephenmk/yomitan-jlpt-vocab.",
+        license="CC-BY 4.0 (Waller) distributed under CC-BY-SA 4.0 (stephenmk)",
+    ),
+    Source(
+        name="waller-jlpt-vocab-n4",
+        url="https://raw.githubusercontent.com/stephenmk/yomitan-jlpt-vocab/main/original_data/n4.csv",
+        cache_path="waller-jlpt/n4.csv",
+        description="Jonathan Waller JLPT N4 vocabulary list (CSV) via stephenmk/yomitan-jlpt-vocab.",
+        license="CC-BY 4.0 (Waller) distributed under CC-BY-SA 4.0 (stephenmk)",
+    ),
+    Source(
+        name="waller-jlpt-vocab-n3",
+        url="https://raw.githubusercontent.com/stephenmk/yomitan-jlpt-vocab/main/original_data/n3.csv",
+        cache_path="waller-jlpt/n3.csv",
+        description="Jonathan Waller JLPT N3 vocabulary list (CSV) via stephenmk/yomitan-jlpt-vocab.",
+        license="CC-BY 4.0 (Waller) distributed under CC-BY-SA 4.0 (stephenmk)",
+    ),
+    Source(
+        name="waller-jlpt-vocab-n2",
+        url="https://raw.githubusercontent.com/stephenmk/yomitan-jlpt-vocab/main/original_data/n2.csv",
+        cache_path="waller-jlpt/n2.csv",
+        description="Jonathan Waller JLPT N2 vocabulary list (CSV) via stephenmk/yomitan-jlpt-vocab.",
+        license="CC-BY 4.0 (Waller) distributed under CC-BY-SA 4.0 (stephenmk)",
+    ),
+    Source(
+        name="waller-jlpt-vocab-n1",
+        url="https://raw.githubusercontent.com/stephenmk/yomitan-jlpt-vocab/main/original_data/n1.csv",
+        cache_path="waller-jlpt/n1.csv",
+        description="Jonathan Waller JLPT N1 vocabulary list (CSV) via stephenmk/yomitan-jlpt-vocab.",
+        license="CC-BY 4.0 (Waller) distributed under CC-BY-SA 4.0 (stephenmk)",
+    ),
+    # davidluzgouveia/kanji-data provides the only reliably-downloadable form
+    # of Waller's kanji JLPT classifications. We extract ONLY the jlpt_new
+    # field per kanji; the WaniKani fields (wk_*) are deliberately ignored
+    # because their license is not compatible with our CC-BY-SA output.
+    Source(
+        name="waller-jlpt-kanji",
+        url="https://raw.githubusercontent.com/davidluzgouveia/kanji-data/master/kanji.json",
+        cache_path="waller-jlpt/kanji-data.json",
+        description="Jonathan Waller JLPT kanji classifications via davidluzgouveia/kanji-data (jlpt_new field only). Code is MIT; data fields derive from Waller CC-BY.",
+        license="CC-BY 4.0 (Waller JLPT data)",
+    ),
 )
 
 

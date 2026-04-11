@@ -1,38 +1,181 @@
 """JLPT classifications transform.
 
-Phase 2 deliverable. Fetches Jonathan Waller's JLPT vocabulary, kanji,
-and grammar lists from http://www.tanos.co.uk/jlpt/ and produces a
-single structured classifications file.
+Produces a unified JLPT classification file covering vocabulary and
+kanji, derived from Jonathan Waller's JLPT Resources via two reliable
+distribution channels:
 
-Input: web pages at tanos.co.uk (scraped at Phase 2 build time; the
-source list in ``build/fetch.py`` is extended in Phase 2 to include
-the relevant URLs).
+    1. ``stephenmk/yomitan-jlpt-vocab`` CSV files (N5-N1 vocabulary),
+       licensed CC-BY-SA 4.0. Each line is:
+         ``jmdict_seq,kana,kanji,waller_definition``
+       where jmdict_seq matches the JMdict ID used in our words.json.
+
+    2. ``davidluzgouveia/kanji-data`` kanji.json (kanji JLPT levels).
+       We extract ONLY the ``jlpt_new`` field per kanji; we deliberately
+       ignore the WaniKani-derived fields because their license is not
+       compatible with our CC-BY-SA output.
+
+Grammar JLPT classifications are deferred to Phase 3, where the grammar
+dataset itself is built. The JLPT schema supports ``kind: grammar`` so
+grammar entries can be added in Phase 3 without a schema change.
+
+Input:
+    * ``sources/waller-jlpt/n{5,4,3,2,1}.csv``
+    * ``sources/waller-jlpt/kanji-data.json``
 
 Output: ``data/enrichment/jlpt-classifications.json`` conforming to
 ``schemas/jlpt.schema.json``.
-
-Each entry has the text, kind (kanji/vocab/grammar), level (N5–N1), and
-source attribution. The metadata header includes an explicit disclaimer
-that these classifications are community-reverse-engineered from past
-test questions and are not JLPT-official; JLPT stopped publishing
-official word lists in 2010.
-
-After this transform runs, the kanji and word transforms (Phase 1) can
-be re-run to populate their ``jlpt_waller`` fields by joining against
-this classification file. Alternatively, the cross_links stage performs
-the join in-memory at build time.
-
-Grammar points from Waller's lists become the **seed** for the Phase 3
-original grammar dataset — they are not themselves the grammar dataset,
-which is written from scratch with proper schema, provenance, and
-native-speaker review.
 """
 
 from __future__ import annotations
 
+import csv
+import json
+from pathlib import Path
+from datetime import date
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+VOCAB_DIR = REPO_ROOT / "sources" / "waller-jlpt"
+KANJI_JSON = REPO_ROOT / "sources" / "waller-jlpt" / "kanji-data.json"
+OUT = REPO_ROOT / "data" / "enrichment" / "jlpt-classifications.json"
+
+VOCAB_FILES = {
+    "N5": "n5.csv",
+    "N4": "n4.csv",
+    "N3": "n3.csv",
+    "N2": "n2.csv",
+    "N1": "n1.csv",
+}
+
+
+def _parse_vocab_csv(path: Path, level: str, retrieved: str) -> list[dict]:
+    """Parse a stephenmk JLPT vocab CSV into classification entries."""
+    entries: list[dict] = []
+    with path.open("r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            kanji = row.get("kanji", "").strip()
+            kana = row.get("kana", "").strip()
+            definition = row.get("waller_definition", "").strip()
+            jmdict_seq = row.get("jmdict_seq", "").strip()
+            # Prefer the kanji writing; fall back to kana for kana-only words
+            text = kanji if kanji else kana
+            entries.append({
+                "text": text,
+                "reading": kana,
+                "kind": "vocab",
+                "level": level,
+                "meaning_en": definition,
+                "jmdict_seq": jmdict_seq,  # extra field, useful for word join
+                "source_retrieved": retrieved,
+            })
+    return entries
+
+
+def _parse_kanji_jlpt(path: Path, retrieved: str) -> list[dict]:
+    """Parse davidluzgouveia kanji.json for the jlpt_new field.
+
+    Ignores all other fields. Yields entries with kind='kanji' for every
+    kanji that has a non-null jlpt_new value.
+    """
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    entries: list[dict] = []
+    for char, info in data.items():
+        jlpt_new = info.get("jlpt_new")
+        if jlpt_new is None:
+            continue
+        level = f"N{jlpt_new}"
+        # Use the first English meaning as a brief gloss (authoritative
+        # meanings live in kanji.json; this is just for convenience)
+        meanings = info.get("meanings") or []
+        meaning_en = meanings[0] if meanings else None
+        entries.append({
+            "text": char,
+            "reading": None,
+            "kind": "kanji",
+            "level": level,
+            "meaning_en": meaning_en,
+            "source_retrieved": retrieved,
+        })
+    return entries
+
 
 def build() -> None:
-    raise NotImplementedError(
-        "jlpt.build() is scheduled for Phase 2. Input: tanos.co.uk "
-        "scraped pages. Output: data/enrichment/jlpt-classifications.json."
-    )
+    retrieved = date.today().isoformat()
+
+    print("[jlpt]     parsing Waller vocab CSVs (via stephenmk/yomitan-jlpt-vocab)")
+    all_classifications: list[dict] = []
+    per_level_counts: dict[str, int] = {}
+    for level, filename in VOCAB_FILES.items():
+        path = VOCAB_DIR / filename
+        if not path.exists():
+            print(f"[jlpt]     WARNING: missing {path}, skipping {level}")
+            continue
+        vocab_entries = _parse_vocab_csv(path, level, retrieved)
+        per_level_counts[f"vocab_{level}"] = len(vocab_entries)
+        all_classifications.extend(vocab_entries)
+        print(f"[jlpt]       {level} vocab: {len(vocab_entries):,}")
+
+    print("[jlpt]     parsing kanji JLPT levels (via davidluzgouveia/kanji-data)")
+    kanji_entries = _parse_kanji_jlpt(KANJI_JSON, retrieved)
+    # Count per level
+    from collections import Counter
+    kanji_level_counts = Counter(e["level"] for e in kanji_entries)
+    for level in ("N1", "N2", "N3", "N4", "N5"):
+        per_level_counts[f"kanji_{level}"] = kanji_level_counts.get(level, 0)
+        print(f"[jlpt]       {level} kanji: {kanji_level_counts.get(level, 0):,}")
+    all_classifications.extend(kanji_entries)
+
+    print(f"[jlpt]     total: {len(all_classifications):,}")
+
+    output = {
+        "metadata": {
+            "source": (
+                "Jonathan Waller JLPT Resources, distributed via "
+                "stephenmk/yomitan-jlpt-vocab (vocab) and "
+                "davidluzgouveia/kanji-data (kanji)"
+            ),
+            "source_url": "http://www.tanos.co.uk/jlpt/",
+            "license": "CC-BY 4.0 (original Waller data) / CC-BY-SA 4.0 (redistribution)",
+            "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
+            "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
+            "generated": retrieved,
+            "count": len(all_classifications),
+            "counts_by_kind_and_level": per_level_counts,
+            "attribution": (
+                "JLPT classifications adapted from Jonathan Waller's JLPT "
+                "Resources at http://www.tanos.co.uk/jlpt/ under CC-BY. "
+                "Vocabulary data distributed via stephenmk/yomitan-jlpt-vocab "
+                "(CC-BY-SA 4.0). Kanji classifications extracted from "
+                "davidluzgouveia/kanji-data (code MIT, Waller data CC-BY). "
+                "Only the jlpt_new field was used from davidluzgouveia; "
+                "WaniKani-derived fields were deliberately ignored due to "
+                "incompatible license."
+            ),
+            "disclaimer": (
+                "These classifications are community-reverse-engineered from "
+                "past JLPT test questions and are NOT JLPT-official. JLPT "
+                "stopped publishing official vocabulary lists in 2010. Edge "
+                "cases between levels are particularly uncertain; some entries "
+                "are disputed in the community. Treat these as the best "
+                "available community consensus, not canonical truth."
+            ),
+            "field_notes": {
+                "text": "The kanji character, word (kanji writing), or grammar pattern.",
+                "reading": "For vocabulary, the kana reading. Null for kanji entries.",
+                "kind": "Entry kind: 'vocab' or 'kanji'. Grammar entries (kind='grammar') will be added in Phase 3.",
+                "level": "JLPT level N5 (beginner) to N1 (advanced). Not JLPT-official.",
+                "meaning_en": "Short English gloss for convenience. Authoritative meanings live in data/core/kanji.json and data/core/words.json.",
+                "jmdict_seq": "On vocab entries only: the JMdict entry ID. Can be joined with data/core/words.json via the id field.",
+                "source_retrieved": "Date this entry was retrieved from the upstream distribution.",
+            },
+        },
+        "classifications": all_classifications,
+    }
+
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    with OUT.open("w", encoding="utf-8") as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    print(f"[jlpt]     wrote {OUT.relative_to(REPO_ROOT)}")

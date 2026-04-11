@@ -46,6 +46,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "jmdict-examples-eng.json.tgz"
 OUT_COMMON = REPO_ROOT / "data" / "core" / "words.json"
 OUT_FULL = REPO_ROOT / "data" / "core" / "words-full.json"
+JLPT_ENRICHMENT = REPO_ROOT / "data" / "enrichment" / "jlpt-classifications.json"
 
 
 def _load_source() -> dict:
@@ -57,6 +58,21 @@ def _load_source() -> dict:
                     raise RuntimeError(f"Cannot extract {member.name}")
                 return json.loads(f.read().decode("utf-8"))
     raise RuntimeError(f"No JSON file found in {SOURCE_TGZ}")
+
+
+def _load_vocab_jlpt_map() -> dict[str, str]:
+    """Build a jmdict_seq → level map from the vocab portion of jlpt enrichment."""
+    if not JLPT_ENRICHMENT.exists():
+        return {}
+    data = json.loads(JLPT_ENRICHMENT.read_text(encoding="utf-8"))
+    result: dict[str, str] = {}
+    for entry in data.get("classifications", []):
+        if entry.get("kind") == "vocab":
+            seq = entry.get("jmdict_seq", "")
+            level = entry.get("level")
+            if seq and level:
+                result[seq] = level
+    return result
 
 
 def _transform_example(ex: dict) -> dict:
@@ -84,13 +100,14 @@ def _transform_example(ex: dict) -> dict:
     }
 
 
-def _transform_word(w: dict) -> dict:
+def _transform_word(w: dict, jlpt_map: dict[str, str] | None = None) -> dict:
     """Transform an upstream JMdict word entry into our schema.
 
     The upstream structure is already close to our target — we preserve it
     mostly unchanged, adding our augmentation fields and transforming the
     examples sub-structure.
     """
+    jlpt_map = jlpt_map or {}
     senses = []
     for s in w.get("sense", []) or []:
         sense = dict(s)  # shallow copy so we don't mutate upstream data
@@ -98,13 +115,14 @@ def _transform_word(w: dict) -> dict:
             sense["examples"] = [_transform_example(ex) for ex in sense.get("examples", []) or []]
         senses.append(sense)
 
+    wid = str(w.get("id", ""))
     return {
-        "id": str(w.get("id", "")),
+        "id": wid,
         "kanji": list(w.get("kanji", []) or []),
         "kana": list(w.get("kana", []) or []),
         "sense": senses,
-        "jlpt_waller": None,  # Phase 2
-        "frequency_media": None,  # Phase 2
+        "jlpt_waller": jlpt_map.get(wid),  # None if not classified
+        "frequency_media": None,  # Deferred to Phase 4 pending JPDB license clarification
     }
 
 
@@ -162,11 +180,21 @@ def build() -> None:
     source = _load_source()
     upstream_words = source.get("words", [])
     upstream_tags = source.get("tags", {}) or {}
-    print(f"[words]    transforming {len(upstream_words):,} entries")
 
-    all_entries = [_transform_word(w) for w in upstream_words]
+    jlpt_map = _load_vocab_jlpt_map()
+    if jlpt_map:
+        print(f"[words]    found JLPT enrichment: {len(jlpt_map):,} words classified")
+    else:
+        print("[words]    no JLPT enrichment file; jlpt_waller will be null")
+
+    print(f"[words]    transforming {len(upstream_words):,} entries")
+    all_entries = [_transform_word(w, jlpt_map) for w in upstream_words]
     common_entries = [w for w in all_entries if _is_common(w)]
     print(f"[words]    common: {len(common_entries):,}  full: {len(all_entries):,}")
+
+    enriched_jlpt_common = sum(1 for w in common_entries if w.get("jlpt_waller"))
+    enriched_jlpt_full = sum(1 for w in all_entries if w.get("jlpt_waller"))
+    print(f"[words]    enriched jlpt_waller: common={enriched_jlpt_common:,} full={enriched_jlpt_full:,}")
 
     OUT_COMMON.parent.mkdir(parents=True, exist_ok=True)
 

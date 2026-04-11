@@ -2,7 +2,7 @@
 
 **A unified, cross-linked, reproducible, openly-licensed dataset for learning Japanese.**
 
-Status: **Phase 1 — Core data built.** Core data files (kana, kanji, words, radicals, sentences) are built and committed. Phase 2 (enrichment: stroke order, pitch accent, frequency, JLPT classifications, cross-links) and Phase 3 (original grammar curation) are still pending.
+Status: **Phase 2 — Core + enrichment built.** All files from Phase 1 plus stroke order SVGs (6,416 characters), pitch accent data (124k entries), JLPT classifications (kanji + vocab, ~10.5k entries), newspaper frequency rankings, and 4 cross-reference indices. Kanji entries are now enriched with component radicals and JLPT levels; word entries with JLPT levels. Phase 3 (original grammar curation) is still pending. Modern media frequency (JPDB) is deferred to Phase 4 pending license clarification.
 
 ---
 

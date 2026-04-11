@@ -149,6 +149,23 @@ Status values:
 
 ---
 
+## Frequency data (discovered during Phase 2)
+
+### Modern media frequency (JPDB-based) — **BLOCKED on license clarification**
+
+- **Status**: PROMOTED to Phase 4. Deferred from Phase 2 during investigation (2026-04-11).
+- **Candidate sources** and their license situations:
+  - `MarvNC/jpdb-freq-list` — last release 2022-05 (stale). No `LICENSE` file. The maintainer explicitly recommends Kuuuube's newer version as superior.
+  - `Kuuuube/yomitan-dictionaries` — `JPDB_v2.2_Frequency_2024-10-13` is current with excellent coverage (99.99% up to 25k words, 98.6% up to 100k), but **no `LICENSE` file** in the repo. The data inside carries `"author": "jpdb, Kuuube, Gecko"` metadata but no declared license.
+- **Underlying concern**: The JPDB.io corpus derives from copyrighted media (light novels, visual novels, anime, drama). Frequency counts themselves are facts (not copyrightable), but the specific corpus selection and rank ordering is arguably a creative act with unclear redistribution rights for a CC-BY-SA output.
+- **Why we care**: Modern media frequency is significantly more useful for contemporary learners than the early-2000s newspaper corpus we currently ship. The coverage (particularly up to 25k words) matches exactly what learners need to prioritize their studies.
+- **Paths to resolution**:
+  1. **Contact the Kuuuube maintainer** and request an explicit license declaration. If they respond with CC-BY, CC-BY-SA, or CC0, we can promote to the next patch release.
+  2. **Use an alternative modern-corpus source** with clear licensing — NINJAL public frequency tools, BCCWJ short-form CSVs if distributable, or a community-maintained Anki deck with a clear license.
+  3. **Derive our own modern frequency list** from openly-licensed corpora: Aozora Bunko (public domain, but literary/classical slant) and Japanese Wikipedia (CC-BY-SA, modern but encyclopedic). Could be complementary to a media-specific source.
+  4. **Accept newspaper frequency as our only source** and document the gap explicitly. This is the Phase 2 fallback we shipped.
+- **Recommendation**: Pursue option 1 first (low effort — a GitHub issue or email). If no response in 30 days, pursue option 3 as a fallback (derive from Wikipedia JA).
+
 ## Lexical supplements
 
 ### Jinmeiyō-specific view
