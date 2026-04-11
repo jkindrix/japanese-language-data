@@ -135,3 +135,72 @@ def test_d5_kanji_to_words_orphan_count_matches() -> None:
         "D5 regression: orphan_count missing from kanji-to-words.json metadata"
     assert metadata["orphan_count"] == len(actual_orphans), \
         f"D5 regression: metadata.orphan_count={metadata['orphan_count']} != actual {len(actual_orphans)}"
+
+
+# ---------------------------------------------------------------------------
+# M4: invariant tests (not tied to a specific past defect; these are the
+# pure invariants that should hold on every build)
+# ---------------------------------------------------------------------------
+
+def test_invariant_jlpt_waller_values_valid() -> None:
+    """Every jlpt_waller value on kanji and word entries must be in
+    {N1,N2,N3,N4,N5} or null. Any other value would be a pipeline bug."""
+    valid = {None, "N1", "N2", "N3", "N4", "N5"}
+    for path, payload_key in (
+        (REPO_ROOT / "data" / "core" / "kanji.json", "kanji"),
+        (REPO_ROOT / "data" / "core" / "words.json", "words"),
+    ):
+        data = _load_if_exists(path)
+        if data is None:
+            continue
+        for entry in data.get(payload_key, []):
+            value = entry.get("jlpt_waller")
+            assert value in valid, \
+                f"{path.name} entry has invalid jlpt_waller={value!r}"
+
+
+def test_invariant_word_to_sentences_ids_exist() -> None:
+    """Every sentence_id in word-to-sentences.json must exist in
+    sentences.json. A dangling reference would be a cross-link bug."""
+    xref = _load_if_exists(REPO_ROOT / "data" / "cross-refs" / "word-to-sentences.json")
+    sentences = _load_if_exists(REPO_ROOT / "data" / "corpus" / "sentences.json")
+    if xref is None or sentences is None:
+        pytest.skip("files not built")
+    known_ids = {s["id"] for s in sentences.get("sentences", [])}
+    for word_id, sentence_ids in xref.get("mapping", {}).items():
+        for sid in sentence_ids:
+            assert sid in known_ids, \
+                f"word_id {word_id} references unknown sentence_id {sid}"
+
+
+def test_invariant_grammar_jlpt_ids_resolve() -> None:
+    """Every grammar_id in jlpt-classifications.json (kind=grammar)
+    must resolve to a grammar point in grammar.json."""
+    jlpt = _load_if_exists(REPO_ROOT / "data" / "enrichment" / "jlpt-classifications.json")
+    grammar = _load_if_exists(REPO_ROOT / "data" / "grammar" / "grammar.json")
+    if jlpt is None or grammar is None:
+        pytest.skip("files not built")
+    known = {gp["id"] for gp in grammar.get("grammar_points", [])}
+    for entry in jlpt.get("classifications", []):
+        if entry.get("kind") != "grammar":
+            continue
+        gid = entry.get("grammar_id")
+        assert gid in known, \
+            f"jlpt grammar classification references unknown grammar_id {gid!r}"
+
+
+def test_invariant_word_to_kanji_inverse_of_kanji_to_words() -> None:
+    """word-to-kanji should be the exact inverse of kanji-to-words
+    restricted to non-orphan characters. For every (kanji -> word_id)
+    in kanji-to-words, there should be a matching (word_id -> kanji)
+    in word-to-kanji."""
+    k2w = _load_if_exists(REPO_ROOT / "data" / "cross-refs" / "kanji-to-words.json")
+    w2k = _load_if_exists(REPO_ROOT / "data" / "cross-refs" / "word-to-kanji.json")
+    if k2w is None or w2k is None:
+        pytest.skip("files not built")
+    w2k_map = w2k.get("mapping", {})
+    for kanji, word_ids in k2w.get("mapping", {}).items():
+        for wid in word_ids:
+            assert kanji in w2k_map.get(wid, []), \
+                f"Inverse mismatch: {kanji!r} in kanji-to-words[{wid}] " \
+                f"but not in word-to-kanji[{wid}]"
