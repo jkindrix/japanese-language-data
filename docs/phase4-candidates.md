@@ -149,6 +149,16 @@ Status values:
 
 ---
 
+## Addressed Phase 4 items
+
+### Radical meanings and Kangxi numbers — **ADDRESSED (v0.4.0)**
+
+- **Status**: DELIVERED in v0.4.0. First Phase 4 candidate actually shipped.
+- **Source**: Wikipedia "Kangxi radicals" article, pinned to revision 1346511063, licensed CC-BY-SA 4.0 (compatible with our output). Fetched via `index.php?action=raw` for stable wikitext without JSON wrapping.
+- **Coverage**: 197 of 253 radicals (77.9%) now have authoritative English meanings and Kangxi numbers populated directly from Wikipedia's Kangxi radical table. The 214 primary Kangxi radicals plus their documented alternate forms (e.g., 亻 listed as alternate for 人) are all mapped.
+- **Remaining gap**: 56 radicals (22.1%) are Japanese-dictionary-specific forms — simplified variants (亀 for 龜), katakana-shaped markers (ノ, ハ, マ, ユ, ヨ), fullwidth pipe (｜ for 丨), and Nelson-style dictionary variants — that have no direct match in Wikipedia's Kangxi table. Closing this gap requires a curated variant-to-Kangxi alias table, deferred as a future patch (potentially v0.4.1 or v0.4.2).
+- **Parser**: lives in `build/transform/radicals.py`. Reusable pattern for future Wikipedia ingestion (wikitable extraction, template unpacking, cell parsing).
+
 ## Frequency data (discovered during Phase 2)
 
 ### Modern media frequency (JPDB-based) — **BLOCKED on license clarification**

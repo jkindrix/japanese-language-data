@@ -1,26 +1,37 @@
 {
   "metadata": {
-    "source": "KRADFILE and RADKFILE via scriptin/jmdict-simplified",
+    "source": "KRADFILE + RADKFILE + Wikipedia Kangxi radicals",
     "source_url": "https://github.com/scriptin/jmdict-simplified",
-    "license": "CC-BY-SA 4.0 (EDRDG License)",
+    "license": "CC-BY-SA 4.0: EDRDG License for KRADFILE/RADKFILE; CC-BY-SA 4.0 for Wikipedia-derived meanings and Kangxi numbers",
     "source_version_kradfile": "3.6.2",
     "source_version_radkfile": "3.6.2",
-    "generated": "2026-04-11",
-    "attribution": "This work uses KRADFILE and RADKFILE from the Electronic Dictionary Research and Development Group (EDRDG), used in conformance with the Group's license (https://www.edrdg.org/edrdg/licence.html).",
-    "field_notes": {
-      "radicals": "List view: each radical with stroke count and the kanji that contain it. Derived from RADKFILE.",
-      "kanji_to_radicals": "Inverse view: each kanji mapped to its component radicals. Derived from KRADFILE.",
-      "classical_number": "Kangxi radical number. Not present in RADKFILE; a future phase can join this from an external Kangxi radical table.",
-      "meanings": "Radical meanings. Not present in RADKFILE; a future phase can join these from Wikipedia or an external radical table."
+    "source_version_wikipedia": {
+      "article": "Kangxi radicals",
+      "revision": 1346511063,
+      "url": "https://en.wikipedia.org/w/index.php?title=Kangxi_radicals&oldid=1346511063"
     },
-    "warning": "Every radical entry in this file has an empty `meanings` array and `classical_number: null`. RADKFILE does not provide these fields, and no CC-BY-SA-compatible upstream joining source is currently integrated. See docs/phase4-candidates.md for planned resolution."
+    "generated": "2026-04-11",
+    "radicals_total": 253,
+    "radicals_with_meaning": 197,
+    "radicals_meaning_coverage_pct": 77.87,
+    "attribution": "This work uses KRADFILE and RADKFILE from the Electronic Dictionary Research and Development Group (EDRDG), used in conformance with the Group's license (https://www.edrdg.org/edrdg/licence.html). Radical English meanings and Kangxi radical numbers are derived from the Wikipedia 'Kangxi radicals' article (revision 1346511063, https://en.wikipedia.org/w/index.php?title=Kangxi_radicals&oldid=1346511063), used under CC-BY-SA 4.0. Wikipedia content is authored by Wikipedia contributors; see the article's revision history for attribution.",
+    "field_notes": {
+      "radicals": "List view: each radical with stroke count (from RADKFILE), Kangxi number and meanings (from Wikipedia), and the kanji that contain it (from RADKFILE).",
+      "kanji_to_radicals": "Inverse view: each kanji mapped to its component radicals. Derived from KRADFILE.",
+      "classical_number": "Kangxi radical number (1–214). Sourced from the Wikipedia 'Kangxi radicals' article. Null for Japanese-dictionary-specific variants that do not appear in the Kangxi table.",
+      "meanings": "English meanings. Sourced from the Wikipedia Kangxi article's 'Meaning' column, split on commas when the column contains multiple equivalent words (e.g., radical 10 儿 → ['son', 'legs']). Empty array for radicals not found in Wikipedia's Kangxi table.",
+      "stroke_count": "Stroke count from RADKFILE (the authoritative source; Wikipedia's column is ignored to avoid conflicts)."
+    },
+    "warning": "197 of 253 radicals (77.9%) have English meanings and Kangxi numbers populated from the Wikipedia 'Kangxi radicals' article (CC-BY-SA 4.0, pinned to revision 1346511063). The remaining 56 radicals are Japanese-dictionary-specific forms — simplified variants (e.g., 亀 for 龜), katakana-shaped markers (ノ, ハ, マ, ユ, ヨ), fullwidth pipe (｜ for 丨), and other Nelson-style forms — which have no direct match in the Wikipedia Kangxi table. Filling these requires a curated variant-to-Kangxi alias table, deferred as a future patch. See docs/phase4-candidates.md."
   },
   "radicals": [
     {
       "radical": "一",
       "stroke_count": 1,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 1,
+      "meanings": [
+        "one"
+      ],
       "kanji": [
         "亜",
         "唖",
@@ -4388,8 +4399,10 @@
     {
       "radical": "丶",
       "stroke_count": 1,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 3,
+      "meanings": [
+        "dot"
+      ],
       "kanji": [
         "以",
         "為",
@@ -7295,8 +7308,10 @@
     {
       "radical": "乙",
       "stroke_count": 1,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 5,
+      "meanings": [
+        "second"
+      ],
       "kanji": [
         "穐",
         "曳",
@@ -7622,8 +7637,10 @@
     {
       "radical": "亅",
       "stroke_count": 1,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 6,
+      "meanings": [
+        "hook"
+      ],
       "kanji": [
         "阿",
         "椅",
@@ -7981,8 +7998,10 @@
     {
       "radical": "二",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 7,
+      "meanings": [
+        "two"
+      ],
       "kanji": [
         "逢",
         "葵",
@@ -9042,8 +9061,10 @@
     {
       "radical": "亠",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 8,
+      "meanings": [
+        "lid"
+      ],
       "kanji": [
         "哀",
         "虻",
@@ -9817,8 +9838,10 @@
     {
       "radical": "人",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 9,
+      "meanings": [
+        "man"
+      ],
       "kanji": [
         "葵",
         "以",
@@ -11423,8 +11446,11 @@
     {
       "radical": "儿",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 10,
+      "meanings": [
+        "son",
+        "legs"
+      ],
       "kanji": [
         "綾",
         "逸",
@@ -12074,8 +12100,10 @@
     {
       "radical": "入",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 11,
+      "meanings": [
+        "enter"
+      ],
       "kanji": [
         "久",
         "込",
@@ -14065,8 +14093,10 @@
     {
       "radical": "冂",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 13,
+      "meanings": [
+        "wide"
+      ],
       "kanji": [
         "渦",
         "円",
@@ -14800,8 +14830,10 @@
     {
       "radical": "冖",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 14,
+      "meanings": [
+        "cloth cover"
+      ],
       "kanji": [
         "愛",
         "壱",
@@ -15300,8 +15332,10 @@
     {
       "radical": "冫",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 15,
+      "meanings": [
+        "ice"
+      ],
       "kanji": [
         "茨",
         "鰯",
@@ -15567,8 +15601,10 @@
     {
       "radical": "几",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 16,
+      "meanings": [
+        "table"
+      ],
       "kanji": [
         "疫",
         "殴",
@@ -15783,8 +15819,10 @@
     {
       "radical": "凵",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 17,
+      "meanings": [
+        "receptacle"
+      ],
       "kanji": [
         "凹",
         "画",
@@ -16012,8 +16050,10 @@
     {
       "radical": "刀",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 18,
+      "meanings": [
+        "knife"
+      ],
       "kanji": [
         "寡",
         "解",
@@ -16420,8 +16460,10 @@
     {
       "radical": "力",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 19,
+      "meanings": [
+        "power"
+      ],
       "kanji": [
         "甥",
         "伽",
@@ -16603,8 +16645,10 @@
     {
       "radical": "勹",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 20,
+      "meanings": [
+        "wrap"
+      ],
       "kanji": [
         "穐",
         "絢",
@@ -17198,8 +17242,10 @@
     {
       "radical": "匕",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 21,
+      "meanings": [
+        "spoon"
+      ],
       "kanji": [
         "壱",
         "嘘",
@@ -17683,8 +17729,10 @@
     {
       "radical": "匚",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 22,
+      "meanings": [
+        "box"
+      ],
       "kanji": [
         "医",
         "堰",
@@ -17867,8 +17915,10 @@
     {
       "radical": "十",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 24,
+      "meanings": [
+        "ten"
+      ],
       "kanji": [
         "梓",
         "斡",
@@ -18752,8 +18802,10 @@
     {
       "radical": "卜",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 25,
+      "meanings": [
+        "divination"
+      ],
       "kanji": [
         "鮎",
         "嘘",
@@ -19039,8 +19091,10 @@
     {
       "radical": "卩",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 26,
+      "meanings": [
+        "seal (device)"
+      ],
       "kanji": [
         "宛",
         "印",
@@ -19178,8 +19232,10 @@
     {
       "radical": "厂",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 27,
+      "meanings": [
+        "cliff"
+      ],
       "kanji": [
         "圧",
         "威",
@@ -19602,8 +19658,10 @@
     {
       "radical": "厶",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 28,
+      "meanings": [
+        "private"
+      ],
       "kanji": [
         "挨",
         "握",
@@ -20182,8 +20240,10 @@
     {
       "radical": "又",
       "stroke_count": 2,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 29,
+      "meanings": [
+        "again"
+      ],
       "kanji": [
         "鰻",
         "叡",
@@ -21582,8 +21642,10 @@
     {
       "radical": "口",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 30,
+      "meanings": [
+        "mouth"
+      ],
       "kanji": [
         "亜",
         "唖",
@@ -24426,8 +24488,10 @@
     {
       "radical": "囗",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 31,
+      "meanings": [
+        "enclosure"
+      ],
       "kanji": [
         "囲",
         "咽",
@@ -24622,8 +24686,10 @@
     {
       "radical": "土",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 32,
+      "meanings": [
+        "earth"
+      ],
       "kanji": [
         "娃",
         "握",
@@ -25568,8 +25634,10 @@
     {
       "radical": "士",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 33,
+      "meanings": [
+        "scholar"
+      ],
       "kanji": [
         "壱",
         "淫",
@@ -25780,8 +25848,10 @@
     {
       "radical": "夂",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 34,
+      "meanings": [
+        "go"
+      ],
       "kanji": [
         "愛",
         "逢",
@@ -26059,8 +26129,10 @@
     {
       "radical": "夕",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 36,
+      "meanings": [
+        "evening"
+      ],
       "kanji": [
         "宛",
         "移",
@@ -26236,8 +26308,10 @@
     {
       "radical": "大",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 37,
+      "meanings": [
+        "big"
+      ],
       "kanji": [
         "葵",
         "鯵",
@@ -26933,8 +27007,10 @@
     {
       "radical": "女",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 38,
+      "meanings": [
+        "woman"
+      ],
       "kanji": [
         "娃",
         "姶",
@@ -27316,8 +27392,10 @@
     {
       "radical": "子",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 39,
+      "meanings": [
+        "child"
+      ],
       "kanji": [
         "廓",
         "郭",
@@ -27467,8 +27545,10 @@
     {
       "radical": "宀",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 40,
+      "meanings": [
+        "roof"
+      ],
       "kanji": [
         "宛",
         "安",
@@ -27902,8 +27982,10 @@
     {
       "radical": "寸",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 41,
+      "meanings": [
+        "inch"
+      ],
       "kanji": [
         "尉",
         "慰",
@@ -28138,8 +28220,10 @@
     {
       "radical": "小",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 42,
+      "meanings": [
+        "small"
+      ],
       "kanji": [
         "絢",
         "綾",
@@ -29006,8 +29090,10 @@
     {
       "radical": "尢",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 43,
+      "meanings": [
+        "lame"
+      ],
       "kanji": [
         "就",
         "蹴",
@@ -29054,8 +29140,10 @@
     {
       "radical": "尸",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 44,
+      "meanings": [
+        "corpse"
+      ],
       "kanji": [
         "握",
         "渥",
@@ -29351,8 +29439,10 @@
     {
       "radical": "屮",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 45,
+      "meanings": [
+        "sprout"
+      ],
       "kanji": [
         "逆",
         "朔",
@@ -29404,8 +29494,10 @@
     {
       "radical": "山",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 46,
+      "meanings": [
+        "mountain"
+      ],
       "kanji": [
         "岡",
         "峨",
@@ -29736,8 +29828,10 @@
     {
       "radical": "川",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 47,
+      "meanings": [
+        "river"
+      ],
       "kanji": [
         "侃",
         "釧",
@@ -29781,8 +29875,10 @@
     {
       "radical": "巛",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 47,
+      "meanings": [
+        "river"
+      ],
       "kanji": [
         "災",
         "拶",
@@ -29853,8 +29949,10 @@
     {
       "radical": "工",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 48,
+      "meanings": [
+        "work"
+      ],
       "kanji": [
         "恐",
         "空",
@@ -30177,8 +30275,10 @@
     {
       "radical": "巾",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 50,
+      "meanings": [
+        "turban"
+      ],
       "kanji": [
         "柿",
         "希",
@@ -30369,8 +30469,10 @@
     {
       "radical": "干",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 51,
+      "meanings": [
+        "dry"
+      ],
       "kanji": [
         "芋",
         "宇",
@@ -30519,8 +30621,10 @@
     {
       "radical": "幺",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 52,
+      "meanings": [
+        "short thread"
+      ],
       "kanji": [
         "絢",
         "綾",
@@ -31046,8 +31150,10 @@
     {
       "radical": "广",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 53,
+      "meanings": [
+        "dotted cliff"
+      ],
       "kanji": [
         "庵",
         "応",
@@ -31291,8 +31397,10 @@
     {
       "radical": "廴",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 54,
+      "meanings": [
+        "long stride"
+      ],
       "kanji": [
         "延",
         "廻",
@@ -31340,8 +31448,10 @@
     {
       "radical": "廾",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 55,
+      "meanings": [
+        "arch"
+      ],
       "kanji": [
         "横",
         "戒",
@@ -31633,8 +31743,10 @@
     {
       "radical": "弋",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 56,
+      "meanings": [
+        "shoot"
+      ],
       "kanji": [
         "試",
         "式",
@@ -31695,8 +31807,10 @@
     {
       "radical": "弓",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 57,
+      "meanings": [
+        "bow"
+      ],
       "kanji": [
         "夷",
         "鰯",
@@ -32154,8 +32268,10 @@
     {
       "radical": "彑",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 58,
+      "meanings": [
+        "snout"
+      ],
       "kanji": [
         "互",
         "冱",
@@ -32190,8 +32306,10 @@
     {
       "radical": "彡",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 59,
+      "meanings": [
+        "bristle"
+      ],
       "kanji": [
         "鯵",
         "影",
@@ -32373,8 +32491,10 @@
     {
       "radical": "彳",
       "stroke_count": 3,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 60,
+      "meanings": [
+        "step"
+      ],
       "kanji": [
         "衛",
         "往",
@@ -35277,8 +35397,10 @@
     {
       "radical": "老",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 125,
+      "meanings": [
+        "old"
+      ],
       "kanji": [
         "姥",
         "教",
@@ -35367,8 +35489,10 @@
     {
       "radical": "心",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 61,
+      "meanings": [
+        "heart"
+      ],
       "kanji": [
         "愛",
         "悪",
@@ -35700,8 +35824,10 @@
     {
       "radical": "戈",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 62,
+      "meanings": [
+        "halberd"
+      ],
       "kanji": [
         "或",
         "威",
@@ -35975,8 +36101,10 @@
     {
       "radical": "戸",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 63,
+      "meanings": [
+        "door"
+      ],
       "kanji": [
         "芦",
         "啓",
@@ -36055,8 +36183,10 @@
     {
       "radical": "手",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 64,
+      "meanings": [
+        "hand"
+      ],
       "kanji": [
         "俄",
         "峨",
@@ -36115,8 +36245,10 @@
     {
       "radical": "支",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 65,
+      "meanings": [
+        "branch"
+      ],
       "kanji": [
         "伎",
         "岐",
@@ -36408,8 +36540,10 @@
     {
       "radical": "文",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 67,
+      "meanings": [
+        "script"
+      ],
       "kanji": [
         "蚊",
         "済",
@@ -36450,8 +36584,10 @@
     {
       "radical": "斗",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 68,
+      "meanings": [
+        "dipper"
+      ],
       "kanji": [
         "斡",
         "科",
@@ -36485,8 +36621,10 @@
     {
       "radical": "斤",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 69,
+      "meanings": [
+        "axe"
+      ],
       "kanji": [
         "蛎",
         "岳",
@@ -36621,8 +36759,10 @@
     {
       "radical": "方",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 70,
+      "meanings": [
+        "square"
+      ],
       "kanji": [
         "於",
         "旗",
@@ -36760,8 +36900,10 @@
     {
       "radical": "无",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 71,
+      "meanings": [
+        "not"
+      ],
       "kanji": [
         "僭",
         "廐",
@@ -36789,8 +36931,10 @@
     {
       "radical": "日",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 72,
+      "meanings": [
+        "sun"
+      ],
       "kanji": [
         "旭",
         "斡",
@@ -38126,8 +38270,10 @@
     {
       "radical": "曰",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 73,
+      "meanings": [
+        "say"
+      ],
       "kanji": [
         "倬",
         "嶂",
@@ -38274,8 +38420,10 @@
     {
       "radical": "月",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 74,
+      "meanings": [
+        "moon"
+      ],
       "kanji": [
         "胃",
         "謂",
@@ -38950,8 +39098,10 @@
     {
       "radical": "木",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 75,
+      "meanings": [
+        "tree"
+      ],
       "kanji": [
         "梓",
         "案",
@@ -40184,8 +40334,10 @@
     {
       "radical": "欠",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 76,
+      "meanings": [
+        "lack"
+      ],
       "kanji": [
         "茨",
         "飲",
@@ -40292,8 +40444,10 @@
     {
       "radical": "止",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 77,
+      "meanings": [
+        "stop"
+      ],
       "kanji": [
         "延",
         "卸",
@@ -40648,8 +40802,10 @@
     {
       "radical": "歹",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 78,
+      "meanings": [
+        "death"
+      ],
       "kanji": [
         "残",
         "屍",
@@ -40713,8 +40869,10 @@
     {
       "radical": "殳",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 79,
+      "meanings": [
+        "weapon"
+      ],
       "kanji": [
         "疫",
         "殴",
@@ -40818,8 +40976,10 @@
     {
       "radical": "比",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 81,
+      "meanings": [
+        "compare"
+      ],
       "kanji": [
         "皆",
         "階",
@@ -40948,8 +41108,10 @@
     {
       "radical": "毛",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 82,
+      "meanings": [
+        "fur"
+      ],
       "kanji": [
         "梶",
         "尾",
@@ -40975,8 +41137,10 @@
     {
       "radical": "氏",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 83,
+      "meanings": [
+        "clan"
+      ],
       "kanji": [
         "祇",
         "婚",
@@ -41076,8 +41240,10 @@
     {
       "radical": "气",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 84,
+      "meanings": [
+        "steam"
+      ],
       "kanji": [
         "気",
         "汽",
@@ -41101,8 +41267,10 @@
     {
       "radical": "水",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 85,
+      "meanings": [
+        "water"
+      ],
       "kanji": [
         "永",
         "泳",
@@ -41239,8 +41407,10 @@
     {
       "radical": "火",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 86,
+      "meanings": [
+        "fire"
+      ],
       "kanji": [
         "炎",
         "焔",
@@ -42134,8 +42304,10 @@
     {
       "radical": "爪",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 87,
+      "meanings": [
+        "claw"
+      ],
       "kanji": [
         "愛",
         "稲",
@@ -42323,8 +42495,10 @@
     {
       "radical": "父",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 88,
+      "meanings": [
+        "father"
+      ],
       "kanji": [
         "較",
         "釜",
@@ -42371,8 +42545,10 @@
     {
       "radical": "爻",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 89,
+      "meanings": [
+        "trigrams"
+      ],
       "kanji": [
         "爾",
         "璽",
@@ -42417,8 +42593,10 @@
     {
       "radical": "爿",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 90,
+      "meanings": [
+        "split wood"
+      ],
       "kanji": [
         "燕",
         "奨",
@@ -42501,8 +42679,10 @@
     {
       "radical": "片",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 91,
+      "meanings": [
+        "slice"
+      ],
       "kanji": [
         "牒",
         "鼎",
@@ -42540,8 +42720,10 @@
     {
       "radical": "牛",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 93,
+      "meanings": [
+        "cow"
+      ],
       "kanji": [
         "牡",
         "解",
@@ -42641,8 +42823,10 @@
     {
       "radical": "犬",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 94,
+      "meanings": [
+        "dog"
+      ],
       "kanji": [
         "厭",
         "犬",
@@ -42798,8 +42982,10 @@
     {
       "radical": "王",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 96,
+      "meanings": [
+        "jade"
+      ],
       "kanji": [
         "淫",
         "閏",
@@ -43586,8 +43772,10 @@
     {
       "radical": "毋",
       "stroke_count": 4,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 80,
+      "meanings": [
+        "do not"
+      ],
       "kanji": [
         "悔",
         "晦",
@@ -43628,8 +43816,10 @@
     {
       "radical": "玄",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 95,
+      "meanings": [
+        "profound"
+      ],
       "kanji": [
         "弦",
         "玄",
@@ -43677,8 +43867,10 @@
     {
       "radical": "瓦",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 98,
+      "meanings": [
+        "tile"
+      ],
       "kanji": [
         "瓦",
         "甑",
@@ -43704,8 +43896,10 @@
     {
       "radical": "甘",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 99,
+      "meanings": [
+        "sweet"
+      ],
       "kanji": [
         "勘",
         "堪",
@@ -43795,8 +43989,10 @@
     {
       "radical": "生",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 100,
+      "meanings": [
+        "life"
+      ],
       "kanji": [
         "甥",
         "薩",
@@ -43846,8 +44042,10 @@
     {
       "radical": "用",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 101,
+      "meanings": [
+        "use"
+      ],
       "kanji": [
         "浦",
         "桶",
@@ -43917,8 +44115,10 @@
     {
       "radical": "田",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 102,
+      "meanings": [
+        "field"
+      ],
       "kanji": [
         "穐",
         "鯵",
@@ -44796,8 +44996,10 @@
     {
       "radical": "疋",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 103,
+      "meanings": [
+        "bolt of cloth"
+      ],
       "kanji": [
         "擬",
         "疑",
@@ -45044,8 +45246,10 @@
     {
       "radical": "癶",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 105,
+      "meanings": [
+        "footsteps"
+      ],
       "kanji": [
         "葵",
         "祭",
@@ -45086,8 +45290,10 @@
     {
       "radical": "白",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 106,
+      "meanings": [
+        "white"
+      ],
       "kanji": [
         "皆",
         "階",
@@ -45291,8 +45497,10 @@
     {
       "radical": "皮",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 107,
+      "meanings": [
+        "skin"
+      ],
       "kanji": [
         "頗",
         "波",
@@ -45322,8 +45530,10 @@
     {
       "radical": "皿",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 108,
+      "meanings": [
+        "dish"
+      ],
       "kanji": [
         "溢",
         "盈",
@@ -45501,8 +45711,10 @@
     {
       "radical": "目",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 109,
+      "meanings": [
+        "eye"
+      ],
       "kanji": [
         "姐",
         "遺",
@@ -46328,8 +46540,10 @@
     {
       "radical": "矛",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 110,
+      "meanings": [
+        "spear"
+      ],
       "kanji": [
         "茅",
         "橘",
@@ -46395,8 +46609,10 @@
     {
       "radical": "矢",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 111,
+      "meanings": [
+        "arrow"
+      ],
       "kanji": [
         "挨",
         "医",
@@ -46496,8 +46712,10 @@
     {
       "radical": "石",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 112,
+      "meanings": [
+        "stone"
+      ],
       "kanji": [
         "磯",
         "碓",
@@ -46690,8 +46908,10 @@
     {
       "radical": "示",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 113,
+      "meanings": [
+        "spirit"
+      ],
       "kanji": [
         "尉",
         "慰",
@@ -46853,8 +47073,10 @@
     {
       "radical": "禾",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 115,
+      "meanings": [
+        "grain"
+      ],
       "kanji": [
         "穐",
         "委",
@@ -47119,8 +47341,10 @@
     {
       "radical": "穴",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 116,
+      "meanings": [
+        "cave"
+      ],
       "kanji": [
         "窺",
         "竃",
@@ -47178,8 +47402,10 @@
     {
       "radical": "立",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 117,
+      "meanings": [
+        "stand"
+      ],
       "kanji": [
         "梓",
         "暗",
@@ -47784,8 +48010,10 @@
     {
       "radical": "母",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 80,
+      "meanings": [
+        "do not"
+      ],
       "kanji": [
         "悔",
         "晦",
@@ -48040,8 +48268,10 @@
     {
       "radical": "牙",
       "stroke_count": 5,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 92,
+      "meanings": [
+        "fang"
+      ],
       "kanji": [
         "厩",
         "牙",
@@ -48079,8 +48309,10 @@
     {
       "radical": "瓜",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 97,
+      "meanings": [
+        "melon"
+      ],
       "kanji": [
         "瓜",
         "孤",
@@ -48112,8 +48344,10 @@
     {
       "radical": "竹",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 118,
+      "meanings": [
+        "bamboo"
+      ],
       "kanji": [
         "箇",
         "笠",
@@ -48367,8 +48601,10 @@
     {
       "radical": "米",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 119,
+      "meanings": [
+        "rice"
+      ],
       "kanji": [
         "粟",
         "奥",
@@ -48597,8 +48833,10 @@
     {
       "radical": "糸",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 120,
+      "meanings": [
+        "silk"
+      ],
       "kanji": [
         "絢",
         "綾",
@@ -48986,8 +49224,10 @@
     {
       "radical": "缶",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 121,
+      "meanings": [
+        "jar"
+      ],
       "kanji": [
         "缶",
         "淘",
@@ -49039,8 +49279,10 @@
     {
       "radical": "羊",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 123,
+      "meanings": [
+        "sheep"
+      ],
       "kanji": [
         "儀",
         "犠",
@@ -49166,8 +49408,10 @@
     {
       "radical": "羽",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 124,
+      "meanings": [
+        "feather"
+      ],
       "kanji": [
         "羽",
         "翁",
@@ -49294,8 +49538,10 @@
     {
       "radical": "而",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 126,
+      "meanings": [
+        "and"
+      ],
       "kanji": [
         "而",
         "儒",
@@ -49359,8 +49605,10 @@
     {
       "radical": "耒",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 127,
+      "meanings": [
+        "plough"
+      ],
       "kanji": [
         "業",
         "耕",
@@ -49393,8 +49641,10 @@
     {
       "radical": "耳",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 128,
+      "meanings": [
+        "ear"
+      ],
       "kanji": [
         "餌",
         "敢",
@@ -49534,8 +49784,10 @@
     {
       "radical": "聿",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 129,
+      "meanings": [
+        "brush"
+      ],
       "kanji": [
         "劃",
         "健",
@@ -49591,8 +49843,10 @@
     {
       "radical": "肉",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 130,
+      "meanings": [
+        "meat"
+      ],
       "kanji": [
         "肉",
         "腐",
@@ -49609,8 +49863,10 @@
     {
       "radical": "自",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 132,
+      "meanings": [
+        "self"
+      ],
       "kanji": [
         "榎",
         "夏",
@@ -49698,8 +49954,10 @@
     {
       "radical": "至",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 133,
+      "meanings": [
+        "arrive"
+      ],
       "kanji": [
         "握",
         "渥",
@@ -49751,8 +50009,10 @@
     {
       "radical": "臼",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 134,
+      "meanings": [
+        "mortar"
+      ],
       "kanji": [
         "臼",
         "潟",
@@ -49885,8 +50145,10 @@
     {
       "radical": "舌",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 135,
+      "meanings": [
+        "tongue"
+      ],
       "kanji": [
         "括",
         "活",
@@ -49926,8 +50188,10 @@
     {
       "radical": "舟",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 137,
+      "meanings": [
+        "boat"
+      ],
       "kanji": [
         "艦",
         "舷",
@@ -49993,8 +50257,10 @@
     {
       "radical": "艮",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 138,
+      "meanings": [
+        "stopping"
+      ],
       "kanji": [
         "欝",
         "厩",
@@ -50085,8 +50351,10 @@
     {
       "radical": "色",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 139,
+      "meanings": [
+        "color"
+      ],
       "kanji": [
         "艶",
         "色",
@@ -50106,8 +50374,10 @@
     {
       "radical": "虍",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 141,
+      "meanings": [
+        "tiger"
+      ],
       "kanji": [
         "嘘",
         "戯",
@@ -50224,8 +50494,10 @@
     {
       "radical": "虫",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 142,
+      "meanings": [
+        "insect"
+      ],
       "kanji": [
         "虻",
         "蝦",
@@ -50621,8 +50893,10 @@
     {
       "radical": "血",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 143,
+      "meanings": [
+        "blood"
+      ],
       "kanji": [
         "血",
         "衆",
@@ -50645,8 +50919,10 @@
     {
       "radical": "行",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 144,
+      "meanings": [
+        "walk enclosure"
+      ],
       "kanji": [
         "衛",
         "街",
@@ -50687,8 +50963,10 @@
     {
       "radical": "衣",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 145,
+      "meanings": [
+        "clothes"
+      ],
       "kanji": [
         "哀",
         "依",
@@ -50864,8 +51142,10 @@
     {
       "radical": "西",
       "stroke_count": 6,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 146,
+      "meanings": [
+        "cover"
+      ],
       "kanji": [
         "茜",
         "粟",
@@ -50965,8 +51245,10 @@
     {
       "radical": "臣",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 131,
+      "meanings": [
+        "minister"
+      ],
       "kanji": [
         "臥",
         "樫",
@@ -51041,8 +51323,10 @@
     {
       "radical": "見",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 147,
+      "meanings": [
+        "see"
+      ],
       "kanji": [
         "窺",
         "撹",
@@ -51119,8 +51403,10 @@
     {
       "radical": "角",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 148,
+      "meanings": [
+        "horn"
+      ],
       "kanji": [
         "解",
         "蟹",
@@ -51170,8 +51456,10 @@
     {
       "radical": "言",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 149,
+      "meanings": [
+        "speech"
+      ],
       "kanji": [
         "謂",
         "詠",
@@ -51529,8 +51817,10 @@
     {
       "radical": "谷",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 150,
+      "meanings": [
+        "valley"
+      ],
       "kanji": [
         "俗",
         "谷",
@@ -51570,8 +51860,10 @@
     {
       "radical": "豆",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 151,
+      "meanings": [
+        "bean"
+      ],
       "kanji": [
         "艶",
         "凱",
@@ -51713,8 +52005,10 @@
     {
       "radical": "豕",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 152,
+      "meanings": [
+        "pig"
+      ],
       "kanji": [
         "縁",
         "嫁",
@@ -51824,8 +52118,10 @@
     {
       "radical": "豸",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 153,
+      "meanings": [
+        "badger"
+      ],
       "kanji": [
         "墾",
         "懇",
@@ -51862,8 +52158,10 @@
     {
       "radical": "貝",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 154,
+      "meanings": [
+        "shell"
+      ],
       "kanji": [
         "遺",
         "員",
@@ -52300,8 +52598,10 @@
     {
       "radical": "赤",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 155,
+      "meanings": [
+        "red"
+      ],
       "kanji": [
         "嚇",
         "赫",
@@ -52329,8 +52629,10 @@
     {
       "radical": "走",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 156,
+      "meanings": [
+        "run"
+      ],
       "kanji": [
         "越",
         "起",
@@ -52376,8 +52678,10 @@
     {
       "radical": "足",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 157,
+      "meanings": [
+        "foot"
+      ],
       "kanji": [
         "距",
         "跨",
@@ -52545,8 +52849,10 @@
     {
       "radical": "身",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 158,
+      "meanings": [
+        "body"
+      ],
       "kanji": [
         "窮",
         "躯",
@@ -52581,8 +52887,10 @@
     {
       "radical": "車",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 159,
+      "meanings": [
+        "cart"
+      ],
       "kanji": [
         "運",
         "較",
@@ -52773,8 +53081,10 @@
     {
       "radical": "辛",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 160,
+      "meanings": [
+        "bitter"
+      ],
       "kanji": [
         "梓",
         "倖",
@@ -52862,8 +53172,10 @@
     {
       "radical": "辰",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 161,
+      "meanings": [
+        "morning"
+      ],
       "kanji": [
         "辱",
         "唇",
@@ -52908,8 +53220,10 @@
     {
       "radical": "酉",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 164,
+      "meanings": [
+        "wine"
+      ],
       "kanji": [
         "醐",
         "酵",
@@ -53033,8 +53347,10 @@
     {
       "radical": "釆",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 165,
+      "meanings": [
+        "distinguish"
+      ],
       "kanji": [
         "襖",
         "悉",
@@ -53074,8 +53390,10 @@
     {
       "radical": "里",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 166,
+      "meanings": [
+        "village"
+      ],
       "kanji": [
         "浬",
         "鯉",
@@ -53183,8 +53501,10 @@
     {
       "radical": "舛",
       "stroke_count": 7,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 136,
+      "meanings": [
+        "oppose"
+      ],
       "kanji": [
         "傑",
         "瞬",
@@ -53240,8 +53560,10 @@
     {
       "radical": "金",
       "stroke_count": 8,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 167,
+      "meanings": [
+        "gold"
+      ],
       "kanji": [
         "鋭",
         "鉛",
@@ -53693,8 +54015,10 @@
     {
       "radical": "長",
       "stroke_count": 8,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 168,
+      "meanings": [
+        "long"
+      ],
       "kanji": [
         "帳",
         "張",
@@ -53771,8 +54095,10 @@
     {
       "radical": "門",
       "stroke_count": 8,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 169,
+      "meanings": [
+        "gate"
+      ],
       "kanji": [
         "闇",
         "閏",
@@ -53911,8 +54237,10 @@
     {
       "radical": "隶",
       "stroke_count": 8,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 171,
+      "meanings": [
+        "slave"
+      ],
       "kanji": [
         "康",
         "糠",
@@ -53942,8 +54270,10 @@
     {
       "radical": "隹",
       "stroke_count": 8,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 172,
+      "meanings": [
+        "short-tailed bird"
+      ],
       "kanji": [
         "惟",
         "維",
@@ -54205,8 +54535,10 @@
     {
       "radical": "雨",
       "stroke_count": 8,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 173,
+      "meanings": [
+        "rain"
+      ],
       "kanji": [
         "雨",
         "雲",
@@ -54336,8 +54668,10 @@
     {
       "radical": "青",
       "stroke_count": 8,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 174,
+      "meanings": [
+        "blue"
+      ],
       "kanji": [
         "鯖",
         "錆",
@@ -54375,8 +54709,10 @@
     {
       "radical": "非",
       "stroke_count": 8,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 175,
+      "meanings": [
+        "wrong"
+      ],
       "kanji": [
         "罪",
         "俳",
@@ -54500,8 +54836,10 @@
     {
       "radical": "斉",
       "stroke_count": 8,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 210,
+      "meanings": [
+        "even"
+      ],
       "kanji": [
         "済",
         "斎",
@@ -54513,8 +54851,10 @@
     {
       "radical": "面",
       "stroke_count": 9,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 176,
+      "meanings": [
+        "face"
+      ],
       "kanji": [
         "緬",
         "面",
@@ -54533,8 +54873,10 @@
     {
       "radical": "革",
       "stroke_count": 9,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 177,
+      "meanings": [
+        "leather"
+      ],
       "kanji": [
         "鞍",
         "革",
@@ -54632,8 +54974,10 @@
     {
       "radical": "韭",
       "stroke_count": 9,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 179,
+      "meanings": [
+        "leek"
+      ],
       "kanji": [
         "韮",
         "孅",
@@ -54655,8 +54999,10 @@
     {
       "radical": "音",
       "stroke_count": 9,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 180,
+      "meanings": [
+        "sound"
+      ],
       "kanji": [
         "暗",
         "闇",
@@ -54715,8 +55061,10 @@
     {
       "radical": "頁",
       "stroke_count": 9,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 181,
+      "meanings": [
+        "leaf"
+      ],
       "kanji": [
         "穎",
         "頴",
@@ -54847,8 +55195,10 @@
     {
       "radical": "風",
       "stroke_count": 9,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 182,
+      "meanings": [
+        "wind"
+      ],
       "kanji": [
         "楓",
         "風",
@@ -54884,8 +55234,10 @@
     {
       "radical": "飛",
       "stroke_count": 9,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 183,
+      "meanings": [
+        "fly"
+      ],
       "kanji": [
         "飛",
         "飜"
@@ -54894,8 +55246,10 @@
     {
       "radical": "食",
       "stroke_count": 9,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 184,
+      "meanings": [
+        "eat"
+      ],
       "kanji": [
         "飴",
         "飲",
@@ -54949,8 +55303,10 @@
     {
       "radical": "首",
       "stroke_count": 9,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 185,
+      "meanings": [
+        "head"
+      ],
       "kanji": [
         "首",
         "導",
@@ -54969,8 +55325,10 @@
     {
       "radical": "香",
       "stroke_count": 9,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 186,
+      "meanings": [
+        "fragrant"
+      ],
       "kanji": [
         "馨",
         "香",
@@ -55016,8 +55374,10 @@
     {
       "radical": "馬",
       "stroke_count": 10,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 187,
+      "meanings": [
+        "horse"
+      ],
       "kanji": [
         "駅",
         "駕",
@@ -55155,8 +55515,10 @@
     {
       "radical": "骨",
       "stroke_count": 10,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 188,
+      "meanings": [
+        "bone"
+      ],
       "kanji": [
         "骸",
         "滑",
@@ -55204,8 +55566,10 @@
     {
       "radical": "高",
       "stroke_count": 10,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 189,
+      "meanings": [
+        "tall"
+      ],
       "kanji": [
         "稿",
         "膏",
@@ -55246,8 +55610,10 @@
     {
       "radical": "髟",
       "stroke_count": 10,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 190,
+      "meanings": [
+        "hair"
+      ],
       "kanji": [
         "髪",
         "髭",
@@ -55305,8 +55671,10 @@
     {
       "radical": "鬥",
       "stroke_count": 10,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 191,
+      "meanings": [
+        "fight"
+      ],
       "kanji": [
         "鬥",
         "鬧",
@@ -55319,8 +55687,10 @@
     {
       "radical": "鬯",
       "stroke_count": 10,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 192,
+      "meanings": [
+        "sacrificial wine"
+      ],
       "kanji": [
         "鬱",
         "鬯"
@@ -55329,8 +55699,10 @@
     {
       "radical": "鬲",
       "stroke_count": 10,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 193,
+      "meanings": [
+        "cauldron"
+      ],
       "kanji": [
         "隔",
         "融",
@@ -55359,8 +55731,10 @@
     {
       "radical": "鬼",
       "stroke_count": 10,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 194,
+      "meanings": [
+        "ghost"
+      ],
       "kanji": [
         "塊",
         "魁",
@@ -55433,8 +55807,10 @@
     {
       "radical": "韋",
       "stroke_count": 10,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 178,
+      "meanings": [
+        "tanned leather"
+      ],
       "kanji": [
         "葦",
         "偉",
@@ -55476,8 +55852,10 @@
     {
       "radical": "魚",
       "stroke_count": 11,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 195,
+      "meanings": [
+        "fish"
+      ],
       "kanji": [
         "鯵",
         "鮎",
@@ -55689,8 +56067,10 @@
     {
       "radical": "鳥",
       "stroke_count": 11,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 196,
+      "meanings": [
+        "bird"
+      ],
       "kanji": [
         "烏",
         "鵜",
@@ -55895,8 +56275,10 @@
     {
       "radical": "鹵",
       "stroke_count": 11,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 197,
+      "meanings": [
+        "salt"
+      ],
       "kanji": [
         "鹸",
         "滷",
@@ -55912,8 +56294,10 @@
     {
       "radical": "鹿",
       "stroke_count": 11,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 198,
+      "meanings": [
+        "deer"
+      ],
       "kanji": [
         "漉",
         "鹿",
@@ -55974,8 +56358,10 @@
     {
       "radical": "麻",
       "stroke_count": 11,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 200,
+      "meanings": [
+        "hemp"
+      ],
       "kanji": [
         "摩",
         "磨",
@@ -56123,8 +56509,10 @@
     {
       "radical": "黍",
       "stroke_count": 12,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 202,
+      "meanings": [
+        "millet"
+      ],
       "kanji": [
         "黍",
         "藜",
@@ -56136,8 +56524,10 @@
     {
       "radical": "黹",
       "stroke_count": 12,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 204,
+      "meanings": [
+        "embroidery"
+      ],
       "kanji": [
         "黹",
         "黻",
@@ -56213,8 +56603,10 @@
     {
       "radical": "黽",
       "stroke_count": 13,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 205,
+      "meanings": [
+        "frog"
+      ],
       "kanji": [
         "竈",
         "繩",
@@ -56233,8 +56625,10 @@
     {
       "radical": "鼎",
       "stroke_count": 13,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 206,
+      "meanings": [
+        "tripod"
+      ],
       "kanji": [
         "鼎",
         "鼏",
@@ -56246,8 +56640,10 @@
     {
       "radical": "鼓",
       "stroke_count": 13,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 207,
+      "meanings": [
+        "drum"
+      ],
       "kanji": [
         "鼓",
         "瞽",
@@ -56265,8 +56661,10 @@
     {
       "radical": "鼠",
       "stroke_count": 13,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 208,
+      "meanings": [
+        "rat"
+      ],
       "kanji": [
         "鼠",
         "獵",
@@ -56293,8 +56691,10 @@
     {
       "radical": "鼻",
       "stroke_count": 14,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 209,
+      "meanings": [
+        "nose"
+      ],
       "kanji": [
         "鼻",
         "嚊",
@@ -56318,8 +56718,10 @@
     {
       "radical": "齊",
       "stroke_count": 14,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 210,
+      "meanings": [
+        "even"
+      ],
       "kanji": [
         "儕",
         "劑",
@@ -56344,8 +56746,10 @@
     {
       "radical": "龠",
       "stroke_count": 17,
-      "classical_number": null,
-      "meanings": [],
+      "classical_number": 214,
+      "meanings": [
+        "flute"
+      ],
       "kanji": [
         "籥",
         "鑰",

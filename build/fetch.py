@@ -170,13 +170,38 @@ SOURCES: tuple[Source, ...] = (
         description="Jonathan Waller JLPT kanji classifications via davidluzgouveia/kanji-data (jlpt_new field only). Code is MIT; data fields derive from Waller CC-BY.",
         license="CC-BY 4.0 (Waller JLPT data)",
     ),
+    # ---- Phase 4 additions --------------------------------------------------
+    # Wikipedia "Kangxi radicals" article, pinned to revision 1346511063 via
+    # index.php's action=raw endpoint. This returns the raw wikitext for that
+    # specific revision as a plain text file (no JSON wrapping), so the
+    # SHA256 is stable across rebuilds. Source for authoritative English
+    # meanings and Kangxi numbers for the 214 classical radicals.
+    Source(
+        name="wikipedia-kangxi-radicals",
+        url="https://en.wikipedia.org/w/index.php?title=Kangxi_radicals&oldid=1346511063&action=raw",
+        cache_path="wikipedia/kangxi-radicals.wikitext",
+        description="Wikipedia 'Kangxi radicals' article raw wikitext, pinned to revision 1346511063 (2024). Source for radical English meanings and Kangxi numbers used to populate data/core/radicals.json.",
+        license="CC-BY-SA 4.0",
+    ),
 )
 
 
 def _download(url: str, destination: Path) -> None:
-    """Stream a download to *destination*, creating parent directories."""
+    """Stream a download to *destination*, creating parent directories.
+
+    Sends a descriptive User-Agent per Wikipedia's UA policy (required for
+    api.wikipedia.org) and polite practice on other hosts.
+    See https://meta.wikimedia.org/wiki/User-Agent_policy
+    """
     destination.parent.mkdir(parents=True, exist_ok=True)
-    with requests.get(url, stream=True, timeout=60) as response:
+    headers = {
+        "User-Agent": (
+            "japanese-language-data/0.4.0 "
+            "(https://github.com/jkindrix/japanese-language-data; "
+            "reproducible-build fetcher)"
+        )
+    }
+    with requests.get(url, stream=True, timeout=60, headers=headers) as response:
         response.raise_for_status()
         with destination.open("wb") as handle:
             for chunk in response.iter_content(chunk_size=65536):

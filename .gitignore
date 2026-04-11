@@ -33,12 +33,14 @@ sources/tatoeba/
 sources/kanjium/
 sources/jpdb-freq/
 sources/waller-jlpt/
+sources/wikipedia/
 sources/*.tgz
 sources/*.zip
 sources/*.tar.bz2
 sources/*.tar.gz
 sources/*.gz
 sources/*.bz2
+sources/*.wikitext
 
 # Optional data files not built by default
 data/optional/*.json

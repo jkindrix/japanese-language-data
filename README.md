@@ -2,7 +2,7 @@
 
 **A unified, cross-linked, reproducible, openly-licensed dataset for learning Japanese.**
 
-Status: **Phase 3 — Grammar foundation added.** All files from Phases 1 and 2 plus the first tranche of original grammar content: 81 hand-curated grammar points covering N5 essentials and selected N4 items (all in `draft` review status, awaiting native-speaker review), 13,220 lexicalized expressions extracted from JMdict's `exp` entries, and 3,492 auto-generated verb and adjective conjugation tables. JLPT classifications now cover grammar patterns in addition to kanji and vocabulary. Phase 4 (JPDB modern frequency license clarification, radical meanings, classical handwriting, audio corpora) is still pending — see `docs/phase4-candidates.md`.
+Status: **Phase 4 — Active, first candidate delivered.** All files from Phases 1–3 plus Wikipedia-sourced Kangxi radical meanings and numbers: 197 of 253 radicals now have authoritative English meanings and Kangxi numbers populated (77.9% coverage) from the Wikipedia "Kangxi radicals" article (pinned revision, CC-BY-SA 4.0). Wikipedia is now a first-class pinned upstream source with SHA256 verification. The remaining 22.1% are Japanese-dictionary-specific variant forms (simplified kanji, katakana-shaped markers) deferred to a v0.4.x patch with a curated alias table. Other Phase 4 candidates (JPDB modern frequency, classical handwriting, audio corpora) remain pending — see `docs/phase4-candidates.md`.
 
 ---
 

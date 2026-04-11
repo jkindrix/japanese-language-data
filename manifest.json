@@ -1,8 +1,8 @@
 {
   "project": "japanese-language-data",
-  "version": "0.3.2",
-  "phase": 3,
-  "phase_description": "Phase 3 second post-review defect-fix cycle. All v0.3.1 content plus: B1 — v5r-i compound verbs emit correct nai_form with stem prefix (でない/ことがない/でもない) and blank malformed potential/passive/imperative/volitional/causative/conditional_ba on compound entries; M1 — display_forms companion field on conjugations preserves kanji prefix via common-suffix heuristic for verbs/adj-i and class-aware branch for adj-na (100% across 3,174 kanji-containing entries); B2 — docs/gaps.md jinmeiyō entry marked ADDRESSED; B3 — docs/sources.md kanjidic2-en row updated to kanjidic2-all; M2 — schemas/stroke-order.schema.json documents warnings and stroke_count_mismatches metadata fields; M3 — stats.py prints both TOTAL (all rows) and UNIQUE COMMITTED, CHANGELOG [0.3.0] rows/unique split; M4 — four data integrity invariant tests added; B1/M1/determinism regression tests; stroke_order.py determinism fix (sort iteration + sort output) to close byte-reproducibility defect discovered during verification. Also ships the previously-unreleased jinmeiyō view (863 entries), Tatoeba linkage for grammar examples, CI smoke test workflow, and stroke-count-mismatch metadata. Schemas stroke-order and conjugations bumped to 0.3.2. 56/56 tests passing. Phase 4 remains pending.",
+  "version": "0.4.0",
+  "phase": 4,
+  "phase_description": "Phase 4 active — first candidate delivered. All v0.3.2 content plus: Wikipedia 'Kangxi radicals' source pinned at revision 1346511063 via index.php action=raw (CC-BY-SA 4.0); new wikitable parser in build/transform/radicals.py extracting 214 classical radicals + 46 documented alternate forms; data/core/radicals.json now has 197 of 253 radicals (77.9%) populated with authoritative English meanings and Kangxi numbers (previously all empty); global User-Agent header added to build/fetch.py per Wikipedia's UA policy; schemas/radical.schema.json bumped to 0.4.0; regression test for Wikipedia ingestion added; trailing-edge cleanup: CHANGELOG [0.1.0] and [0.2.0] updated with rows/unique split to match [0.3.0], CI workflow summary message no longer has stale hardcoded test count. 57/57 tests passing. Remaining 56 radicals (22.1%) are Japanese-dictionary-specific variant forms whose Wikipedia mapping requires a curated alias table, deferred to v0.4.x.",
   "generated": "2026-04-11",
   "license": "CC-BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -98,6 +98,13 @@
       "description": "Jonathan Waller JLPT kanji classifications via davidluzgouveia/kanji-data (jlpt_new field only). Code is MIT; data fields derive from Waller CC-BY.",
       "sha256": "561b72ea9df703c58fae0c68585812e172aaa7611d2fcee6719d55fd2dfd4fa4",
       "size_bytes": 5508152
+    },
+    "wikipedia-kangxi-radicals": {
+      "url": "https://en.wikipedia.org/w/index.php?title=Kangxi_radicals&oldid=1346511063&action=raw",
+      "license": "CC-BY-SA 4.0",
+      "description": "Wikipedia 'Kangxi radicals' article raw wikitext, pinned to revision 1346511063 (2024). Source for radical English meanings and Kangxi numbers used to populate data/core/radicals.json.",
+      "sha256": "62e0c85ebcc339760dabe3ca5daee64d5d6e144926f550b409cdabb6244d3fe2",
+      "size_bytes": 74968
     }
   },
   "counts": {

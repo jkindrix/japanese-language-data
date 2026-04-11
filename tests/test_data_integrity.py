@@ -314,6 +314,42 @@ def test_invariant_grammar_jlpt_ids_resolve() -> None:
             f"jlpt grammar classification references unknown grammar_id {gid!r}"
 
 
+def test_radicals_wikipedia_coverage_above_threshold() -> None:
+    """v0.4.0 regression: radicals.json must have at least 77% of its 253
+    entries populated with Kangxi numbers and English meanings from
+    Wikipedia. If the parser regresses or the Wikipedia pin drifts, this
+    test fails before the build ships."""
+    data = _load_if_exists(REPO_ROOT / "data" / "core" / "radicals.json")
+    if data is None:
+        pytest.skip("radicals.json not built yet")
+    radicals = data.get("radicals", [])
+    assert radicals, "radicals list is empty"
+    with_meaning = sum(1 for r in radicals if r.get("meanings"))
+    with_classical = sum(1 for r in radicals if r.get("classical_number") is not None)
+    total = len(radicals)
+    # Coverage floor is 77% — actual ingestion at v0.4.0 is 77.9% (197/253).
+    # If this drops, either Wikipedia's pinned revision is missing data
+    # or the parser has regressed.
+    assert with_meaning >= int(total * 0.77), \
+        f"radicals meaning coverage {with_meaning}/{total} below 77% threshold"
+    assert with_classical == with_meaning, \
+        f"classical_number coverage ({with_classical}) should equal meaning " \
+        f"coverage ({with_meaning}) — they are populated together"
+    # Spot checks: canonical radicals must be populated with correct values.
+    by_char = {r["radical"]: r for r in radicals}
+    for ch, expected_number, expected_meaning in (
+        ("一", 1, "one"),
+        ("人", 9, "man"),
+        ("水", 85, "water"),
+    ):
+        entry = by_char.get(ch)
+        assert entry is not None, f"radical {ch!r} missing from radicals.json"
+        assert entry["classical_number"] == expected_number, \
+            f"radical {ch!r} should have Kangxi #{expected_number}, got {entry['classical_number']!r}"
+        assert expected_meaning in entry["meanings"], \
+            f"radical {ch!r} meanings should include {expected_meaning!r}, got {entry['meanings']!r}"
+
+
 def test_invariant_word_to_kanji_inverse_of_kanji_to_words() -> None:
     """word-to-kanji should be the exact inverse of kanji-to-words
     restricted to non-orphan characters. For every (kanji -> word_id)

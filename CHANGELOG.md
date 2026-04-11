@@ -16,6 +16,48 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+## [0.4.0] — 2026-04-11
+
+**First Phase 4 candidate delivered**: Wikipedia ingestion for Kangxi radical meanings. Also integrates a global User-Agent header for polite HTTP fetches (required by Wikipedia, polite elsewhere) and a trailing-edge cleanup of the CHANGELOG double-count presentation in [0.1.0] and [0.2.0].
+
+This release introduces Wikipedia as a new pinned upstream source — the first source outside the EDRDG / KanjiVG / Tatoeba / Kanjium / Waller set used through v0.3.2. The ingestion pattern (action=raw wikitext, regex-based wikitable parsing, schema-stable join) is reusable for future Wikipedia-sourced data.
+
+### Added
+
+- **Wikipedia Kangxi radicals source** pinned in `build/fetch.py` at revision `1346511063` of the Wikipedia article "Kangxi radicals". Uses the `action=raw` endpoint on `index.php` for stable wikitext without JSON wrapping; SHA256-verified like every other source. Cached at `sources/wikipedia/kangxi-radicals.wikitext`.
+- **Wikipedia Kangxi wikitable parser** in `build/transform/radicals.py` that extracts the 214 classical radicals, their English meanings, Kangxi numbers, and alternate forms (e.g., `亻` and `𠆢` listed under radical 9 `人`). Uses regex-based wikitext parsing with MediaWiki `{{lang|...}}` template unpacking. Reusable pattern for future Wikipedia-sourced data.
+- **Global User-Agent header** on every `build/fetch.py` download, compliant with [Wikipedia's User-Agent policy](https://meta.wikimedia.org/wiki/User-Agent_policy). UA string: `japanese-language-data/0.4.0 (https://github.com/jkindrix/japanese-language-data; reproducible-build fetcher)` — descriptive, includes a contact URL, polite to all hosts.
+- **Regression test** `test_radicals_wikipedia_coverage_above_threshold` in `tests/test_data_integrity.py`: asserts ≥77% radical-meaning coverage, equal meaning/classical_number coverage, and canonical spot-checks (一 #1 "one", 人 #9 "man", 水 #85 "water").
+
+### Changed
+
+- **`data/core/radicals.json` enriched**: **197 of 253 radicals (77.9%)** now have non-empty `meanings` arrays and non-null `classical_number` fields, populated from Wikipedia. Previously 0 of 253. Each Wikipedia row with multiple equivalent English words (e.g., radical 10 `儿` "son, legs") becomes a multi-element meanings array.
+- **Schema `schemas/radical.schema.json`** bumped from `0.3.2` to `0.4.0` to reflect the populated-by-default semantics of `meanings` and `classical_number`.
+- **Metadata fields added to `data/core/radicals.json`**: `source_version_wikipedia` (article, revision, URL), `radicals_total`, `radicals_with_meaning`, `radicals_meaning_coverage_pct`, attribution extended with Wikipedia credit, and the `warning` field updated to reflect actual coverage and enumerate the specific variant forms still without meanings.
+- **`ATTRIBUTION.md`** adds a Wikipedia Kangxi radicals entry with required attribution wording.
+- **`docs/sources.md`** adds a full Wikipedia Kangxi radicals section describing fetch method, coverage, known limitations, and attribution.
+- **`docs/phase4-candidates.md`** adds an "Addressed Phase 4 items" section marking "Radical meanings and Kangxi numbers" as DELIVERED in v0.4.0 and explains the remaining 22.1% gap.
+- **`manifest.json`** version bump to `0.4.0`, phase from 3 to 4, phase description rewritten to reflect Phase 4 activity.
+- **`README.md`** status line reflects Phase 4 activity.
+
+### Changed (trailing-edge cleanup of v0.3.2 review)
+
+- **CHANGELOG [0.1.0] and [0.2.0]** — extended the M3 double-count presentation fix to these two earlier version entries. The v0.3.2 plan only updated [0.3.0] per explicit scope; the v0.3.2 completion report flagged the rest as follow-up. [0.1.0] now shows 280,445 rows / 62,136 unique; [0.2.0] now shows 478,892 rows / 260,583 unique, consistent with [0.3.0]'s format.
+- **`.github/workflows/build.yml`** — the summary message had hardcoded `"18 files"` and `"tests (48)"` which were stale after v0.3.1 and v0.3.2. Replaced with a counts-free message that points to the stats report step output, so it no longer drifts when counts change.
+
+### Known limitations
+
+- **56 radicals still have empty meanings (22.1% of 253)**. These are Japanese-dictionary-specific variants that do not appear in the Wikipedia Kangxi table: simplified forms (`亀` for `龜`, `歯` for `齒`, `麦` for `麥`, `黄` for `黃`, `黒` for `黑`, `竜` for `龍`), katakana-shaped markers (`ノ`, `ハ`, `マ`, `ユ`, `ヨ`), fullwidth pipe (`｜` vs Kangxi's `丨`), and Nelson-style dictionary variants (`个`, `乃`, `久`, `九`, ...). Closing this requires a curated variant-to-Kangxi alias table, deferred as a v0.4.x patch.
+- **Wikipedia's stroke count column is ignored.** RADKFILE is the authoritative source for stroke counts in this dataset; pulling a second source for the same field risks divergence. Documented in radicals.json metadata field_notes.
+- **Revision drift**: the Wikipedia article can change over time. We pin to a specific revision (1346511063). A future maintainer wanting fresher Wikipedia content must bump the pin in both `build/fetch.py` and `build/transform/radicals.py` deliberately.
+
+### Verification
+
+- 57/57 tests pass (56 prior + 1 new radicals regression test)
+- 19/19 data files validate against their schemas
+- Wikipedia source SHA256-verified at fetch time (sha256=62e0c85ebcc33976…, size=74,968 bytes)
+- `just ci` passes end-to-end with byte-stable output
+
 ---
 
 ## [0.3.2] — 2026-04-11

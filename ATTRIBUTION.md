@@ -95,6 +95,24 @@ These contributors have granted permission for inclusion under the broader EDRDG
 
 > JLPT classifications adapted from Jonathan Waller's JLPT Resources at http://www.tanos.co.uk/jlpt/, used under CC-BY.
 
+### Wikipedia: "Kangxi radicals" article
+
+**Copyright holder**: Wikipedia contributors.
+
+**License**: Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA 4.0).
+
+**Project page**: https://en.wikipedia.org/wiki/Kangxi_radicals
+
+**Pinned revision**: 1346511063 — permanent URL https://en.wikipedia.org/w/index.php?title=Kangxi_radicals&oldid=1346511063
+
+**What we extract**: The English meaning (from the "Meaning" column) and the Kangxi radical number (1–214) for each of the 214 classical radicals, plus the alternate form characters listed for each radical (e.g., 亻 and 𠆢 listed under 人, radical 9). We deliberately do NOT use the Wikipedia stroke count column — RADKFILE is the authoritative source for stroke counts in our dataset and using two sources risks divergence.
+
+**Target**: `data/core/radicals.json` `meanings` and `classical_number` fields. 197 of 253 radicals (77.9%) are populated via this source. The remaining 56 are Japanese-dictionary-specific variants that have no direct Kangxi table match.
+
+**Required attribution wording**:
+
+> Kangxi radical English meanings and Kangxi numbers in this dataset are derived from the Wikipedia article "Kangxi radicals" (https://en.wikipedia.org/wiki/Kangxi_radicals, revision 1346511063), authored by Wikipedia contributors and licensed under CC-BY-SA 4.0. See the article's revision history for per-contribution attribution.
+
 ### JPDB frequency list
 
 **Copyright holder**: MarvNC and contributors; underlying corpus analysis by jpdb.io.

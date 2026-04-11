@@ -220,6 +220,46 @@ Modern media frequency data derived from analysis of light novels, visual novels
 
 ---
 
+## Wikipedia: Kangxi radicals article (added v0.4.0)
+
+**Project**: https://en.wikipedia.org/wiki/Kangxi_radicals
+**License**: CC-BY-SA 4.0 (compatible with our CC-BY-SA 4.0 output).
+**Pinned revision**: `1346511063` (2024). Permanent URL: `https://en.wikipedia.org/w/index.php?title=Kangxi_radicals&oldid=1346511063`
+**Fetch method**: `action=raw` endpoint on `index.php`, which returns the raw wikitext of the pinned revision as plain text. Avoids the `action=parse` JSON wrapping and MediaWiki API parameter constraints. SHA256-verified like every other source.
+
+### Why Wikipedia for this specific dataset
+
+RADKFILE (from EDRDG) provides 253 radicals with their stroke counts and the kanji that contain them, but does NOT provide English meanings or Kangxi radical numbers (1–214). Those fields are widely known facts but are not available in any CC-BY-SA-compatible structured source we've found. Wikipedia's "Kangxi radicals" article has a single well-structured wikitable with all 214 classical radicals plus their documented alternate forms, English meanings, and explicit Kangxi numbers, and is licensed CC-BY-SA 4.0 — a direct license match.
+
+### What we extract
+
+For each row of the Wikipedia wikitable:
+- Kangxi radical number (1–214) → populates `classical_number` on the matching RADKFILE entry
+- English meaning (from the "Meaning" column, split on commas when multiple equivalent words are listed, e.g., radical 10 儿 → `["son", "legs"]`) → populates `meanings`
+- Alternate radical forms (e.g., 亻 listed as alternate for 人) → meanings and numbers propagate to all alternate forms
+
+### What we do NOT use
+
+- **Stroke count column**: we rely on RADKFILE, which is the authoritative upstream for stroke counts in this dataset. Using two sources for the same field risks divergence.
+- **Pinyin, Vietnamese, Korean, Japanese readings**: the radicals dataset is scoped to Japanese dictionary lookup, not multilingual phonology. Cross-linguistic radical readings are a separate Phase 4 candidate.
+- **Frequency and example kanji columns**: these are interesting but out of scope for this release.
+
+### Coverage and known limitations
+
+- **197 of 253 radicals (77.9%)** are populated by this source. The 56 unmatched are Japanese-dictionary-specific forms — simplified variants (亀 for 龜), katakana-shaped markers (ノ, ハ, マ, ユ, ヨ), fullwidth pipe (｜ for 丨), and other Nelson-style forms. These have no direct match in the Wikipedia Kangxi table and would require a curated alias table to bridge, deferred as a future patch.
+- **Stroke count mismatches are not expected** (Wikipedia's stroke column is read for reference only but not emitted).
+- **Revision drift**: Wikipedia articles change over time. Our pin to revision 1346511063 locks the data to a specific snapshot. Updating requires a deliberate pin bump in `build/fetch.py` and `build/transform/radicals.py`.
+
+### Attribution requirement
+
+Per Wikipedia's CC-BY-SA 4.0 terms, downstream uses of the radicals data must include attribution equivalent to:
+
+> Kangxi radical English meanings and Kangxi numbers derived from the Wikipedia article "Kangxi radicals" (https://en.wikipedia.org/wiki/Kangxi_radicals, revision 1346511063), authored by Wikipedia contributors under CC-BY-SA 4.0.
+
+This attribution is also baked into `data/core/radicals.json` metadata.
+
+---
+
 ## KANJIDIC2 frequency (from jmdict-simplified ingest)
 
 The `freq` field in KANJIDIC2 entries (ingested via jmdict-simplified) provides newspaper frequency rank for the top ~2,500 most common kanji. This is extracted into `data/enrichment/frequency-newspaper.json` during the kanji transform and cross-linked with the modern frequency for consumers who want both.
