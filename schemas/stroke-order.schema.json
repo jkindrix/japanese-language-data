@@ -3,7 +3,7 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/stroke-order.schema.json",
   "title": "Stroke order index",
   "description": "Index file mapping each kanji character to its stroke-order SVG filename (from KanjiVG) and total stroke count. The actual SVG files live in data/enrichment/stroke-order/ and are not validated by this schema.",
-  "schemaVersion": "0.0.0",
+  "schemaVersion": "0.3.0",
   "type": "object",
   "required": ["metadata", "characters"],
   "additionalProperties": false,

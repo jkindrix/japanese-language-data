@@ -16,7 +16,52 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
-_No unreleased changes._
+## [0.3.1] — 2026-04-11
+
+Post-review defect fixes. This patch addresses every defect and stale-metadata issue flagged in the external review of the v0.3.0 release (D1–D5 and M1–M6 from the review notes). No new data sources or schemas are added; existing data is corrected where the review identified a wrong output.
+
+### Fixed
+
+- **D1**: `build/transform/conjugations.py` now handles the special-ending godan verb classes `v5k-s`, `v5u-s`, `v5aru`, and `v5r-i`. The previous version silently dropped all verbs in these classes, including `行く` (the canonical `v5k-s` verb), because `GODAN_POS_TO_ENDING` had no entry for these POS tags. The fix adds them to the map and applies per-POS overrides in `_conjugate_godan`:
+  - `v5k-s`: te/ta forms use って/った instead of いて/いた (for 行く, 逝く, 往く)
+  - `v5u-s`: te/ta forms use うて/うた instead of って/った (for 問う, 請う)
+  - `v5aru`: i-stem and imperative use い instead of り (for いらっしゃる, ござる, なさる, おっしゃる)
+  - `v5r-i`: nai/nakatta forms use the suppletive ない/なかった (for ある)
+  - The previous dead `if stem == "行く" ...` check in `_conjugate_godan` has been removed; it is replaced by the POS-based handling which covers all v5k-s verbs, not just `行く`.
+- **D2**: Broken `related` cross-references in the curated grammar data. `counter-tsu` referenced `counter-objects-ko` (which doesn't exist); removed. `potential-form` referenced `dekiru-potential` (which doesn't exist); removed. `build/transform/grammar.py` now validates that every `related` id resolves to an existing grammar entry and fails the build with a clear error if not.
+- **D3**: Corrected the stale "6.6% JMdict ID drift" explanation in both `CHANGELOG.md` [0.2.0] and `docs/sources.md`. The ~6.6% of Waller JLPT vocab entries that don't appear in `data/core/words.json` are NOT due to JMdict ID drift (all 8,279 Waller seq IDs exist in the full JMdict); they are entries outside the common subset our `words.json` ships. They can be joined against `words-full.json` or they stand alone in `jlpt-classifications.json`.
+- **D4**: Non-deterministic `jlpt_waller` assignment for words whose JMdict ID covers multiple homographic variants. When a single `jmdict_seq` appeared in multiple Waller level CSVs (e.g., 会う at N5 and 遭う at N2 sharing seq 1198180), the previous `_load_vocab_jlpt_map` in both `build/transform/words.py` and `build/transform/expressions.py` used the last-iterated level, which was deterministic (stable across runs) but semantically wrong. The fix: for duplicate `jmdict_seq`, the easier level wins (N5 > N4 > N3 > N2 > N1). Pedagogically, this reflects the level at which a learner first encounters the common form of the word. Documented in the `jlpt_waller` field_note on `words.json`.
+- **D5**: `build/transform/cross_links.py` now detects and records characters in `kanji-to-words.json` that have no corresponding entry in `kanji.json`. The fix loads `kanji.json`, computes the set of orphan characters (words-side kanji that KANJIDIC2 does not index), logs a warning with the first 20 orphans, and writes `metadata.orphan_count` and `metadata.orphan_chars` to `kanji-to-words.json`. Consumers joining these two files can detect the integrity gap at read time instead of silently missing lookups.
+- **M1**: Bumped `schemaVersion` from `"0.0.0"` to `"0.3.0"` in every schema that was still stale: `kana`, `kanji`, `word`, `name`, `radical`, `sentence`, `pitch-accent`, `frequency`, `jlpt`, `stroke-order`, `grammar`, `cross-refs` (12 files). `expressions.schema.json` and `conjugations.schema.json` were already at `0.3.0` and are unchanged.
+- **M2**: `schemas/grammar.schema.json` description no longer claims the grammar dataset is derived from Tae Kim. The stale description was a Phase 0 scaffolding artifact that contradicted the Phase 3 authorship statement and could be read as a license-risk inconsistency. The description now correctly states that the data is hand-curated from general, non-copyrightable facts and explicitly NOT derived from Tae Kim or other copyrighted sources.
+- **M3**: `docs/gaps.md` "Native-speaker reviewed grammar" section no longer claims Tae Kim is a source. Same correction as M2 but in the gaps doc.
+- **M4**: `docs/phase4-candidates.md` JPDB entry status changed from "PROMOTED to Phase 4" to "DEFERRED (license-blocked)". Phase 4 is not active; "PROMOTED" was misleading.
+- **M6**: `build/transform/radicals.py` now emits a `warning` field in `data/core/radicals.json` metadata, explicitly stating that every radical's `meanings` array is empty and `classical_number` is null because RADKFILE does not provide those fields and no CC-BY-SA-compatible upstream joining source is currently integrated.
+
+### Added
+
+- **T1** (test-coverage gap from review): new `tests/test_data_integrity.py` with 5 targeted regression tests corresponding to D1, D2, D4, and D5. Each test reads a built data file and verifies an invariant that would have caught the original defect. Tests gracefully skip if the file has not been built, preserving the ability to run `pytest tests/` on a fresh checkout.
+  - `test_d1_conjugations_covers_iku`: verifies 行く has a conjugation table and the te/ta forms are いって/いった
+  - `test_d1_conjugations_covers_v5aru_and_v5r_i`: verifies at least one v5aru and one v5r-i verb is emitted
+  - `test_d2_grammar_related_references_resolve`: verifies every grammar `related` id resolves
+  - `test_d4_words_jlpt_easier_level_wins`: verifies word 1198180 has `jlpt_waller=N5`
+  - `test_d5_kanji_to_words_orphan_count_matches`: verifies `orphan_count` metadata matches reality
+
+### Changed
+
+- `data/grammar/conjugations.json` regenerated: entries with `v5k-s`, `v5u-s`, `v5aru`, `v5r-i` classes are now emitted where previously silently dropped. New entries cover 行く and other verbs in these classes.
+- `data/core/words.json`, `data/core/kanji.json`, `data/core/kanji-joyo.json`, `data/core/words-full.json` regenerated with deterministic D4 JLPT join. For words with multi-level JLPT entries, `jlpt_waller` now reflects the easier level.
+- `data/cross-refs/kanji-to-words.json` regenerated with new `orphan_count` and `orphan_chars` metadata fields.
+- `data/core/radicals.json` regenerated with new `warning` metadata field.
+- `data/enrichment/stroke-order-index.json`, `data/enrichment/jlpt-classifications.json`, etc. regenerated; content is unchanged except for the `generated` date.
+- `grammar-curated/n5.json` — removed broken reference to `counter-objects-ko`.
+- `grammar-curated/n4.json` — removed broken reference to `dekiru-potential`.
+
+### Not changed (deliberately)
+
+- **M5**: The review's M5 recommendation was a 15-minute middle-ground for the case where D1 was NOT fixed. Since D1 is fully fixed in this patch, adding a "known exclusions" note for v5k-s/v5aru/v5r-i/v5u-s would be misleading — they are no longer excluded.
+- **M7**: The review noted this as "minor, not a bug" (a forward reference to a planned `stroke-order-metadata.json` in `docs/gaps.md`). No fix applied.
+- **Observations (the green section of the review)**: 48.9% KanjiVG coverage, 109 stroke-count mismatches, 14 empty Waller jmdict_seq, 0.7% expression JLPT coverage, draft review_status, kana stroke-count caveat, single-maintainer upstream risk, `frequency-modern.json` placeholder, `names.json` gitignored — none of these were flagged as defects; no changes applied.
 
 ---
 
@@ -124,7 +169,7 @@ Phase 2 — Enrichment and cross-references. All Phase 1 files are re-emitted wi
 
 - **Pipeline order reorganized** in `build/pipeline.py` so that independent transforms (kana, radicals, stroke_order, pitch, jlpt, frequency) run before main transforms (kanji, words, sentences) that consume their output. This enables kanji and words to read enrichment data during their build.
 - `build/transform/kanji.py` now reads `data/enrichment/jlpt-classifications.json` and `data/core/radicals.json` if they exist, and populates `jlpt_waller` and `radical_components` fields per entry. Backward-compatible: if enrichment files are absent, those fields remain null/empty as in Phase 1. 2,211 kanji now have `jlpt_waller` populated (N5-N1 classifications), and 12,156 kanji have `radical_components` populated.
-- `build/transform/words.py` now reads `data/enrichment/jlpt-classifications.json` and populates `jlpt_waller` via the JMdict sequence ID join. 7,208 common-subset words (out of 22,580) and 7,747 full-dataset words are now classified to an N5-N1 level. The remaining ~6.6% mismatch between upstream JLPT CSV entries and our word IDs is due to JMdict ID drift across JMdict revisions — not a data error.
+- `build/transform/words.py` now reads `data/enrichment/jlpt-classifications.json` and populates `jlpt_waller` via the JMdict sequence ID join. 7,208 common-subset words (out of 22,580) and 7,747 full-dataset words are now classified to an N5-N1 level. The remaining ~6.6% of Waller entries don't appear in `words.json` because they are not in the common subset (they reference valid JMdict IDs that the common filter excludes); all 8,279 Waller seq IDs exist in the full JMdict.
 - `data/core/kanji.json`, `data/core/kanji-joyo.json`, `data/core/words.json` are updated in place with the newly-populated enrichment fields. `data/core/words-full.json` (gitignored) is similarly updated.
 - README status updated to reflect Phase 2 completion.
 
@@ -159,7 +204,7 @@ Phase 2 — Enrichment and cross-references. All Phase 1 files are re-emitted wi
 
 ### Known limitations
 
-- **JLPT vocab mismatch**: 6.6% of Waller's JLPT vocab entries reference JMdict IDs that no longer match current JMdict entries (likely due to upstream ID drift across JMdict revisions). These entries are still included in `jlpt-classifications.json` but cannot be joined with `words.json` by ID. A later patch release could improve the match by using text-based fallback matching (by kanji + kana), at the cost of potential false positives.
+- **JLPT vocab coverage gap**: ~6.6% of Waller's JLPT vocab entries cannot be joined to `data/core/words.json` by ID — not because of JMdict ID drift (all Waller seq IDs DO exist in the full JMdict) but because those entries are outside the common subset that `words.json` ships. They can be joined against `words-full.json` (gitignored build artifact) or stand alone in `jlpt-classifications.json`.
 - **Cross-references are scoped to the common-subset words**: `kanji-to-words.json` and `word-to-kanji.json` reference the common-subset word IDs in `words.json`. Consumers wanting full 216k cross-references should re-run the pipeline against `words-full.json`.
 - **Stroke order count may differ from KANJIDIC2**: we derive stroke counts by counting SVG path elements in KanjiVG, which can differ by ±1 from KANJIDIC2 in edge cases (e.g., how a cross-stroke is counted). Consumers should prefer KANJIDIC2's `stroke_count` in `kanji.json` as the canonical count.
 - **Pitch accent data is ~2022 vintage** (upstream Kanjium is currently stale). Vocabulary added to Japanese after 2022 lacks pitch accent entries. Documented in `docs/gaps.md` and `pitch-accent.json` metadata.

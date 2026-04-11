@@ -101,18 +101,21 @@ def _build_word_cross_refs(words_data: dict) -> tuple[dict, dict, dict]:
     return kanji_to_words, word_to_kanji, word_to_sentences
 
 
-def _write_xref(out_path: Path, mapping: dict, direction: str, key_type: str, value_type: str, source_files: list[str], notes: dict | None = None) -> None:
+def _write_xref(out_path: Path, mapping: dict, direction: str, key_type: str, value_type: str, source_files: list[str], notes: dict | None = None, extra_metadata: dict | None = None) -> None:
     """Write a single cross-reference file per schemas/cross-refs.schema.json."""
+    output_metadata = {
+        "generated": date.today().isoformat(),
+        "count": len(mapping),
+        "direction": direction,
+        "key_type": key_type,
+        "value_type": value_type,
+        "source_files": source_files,
+        "field_notes": notes or {},
+    }
+    if extra_metadata:
+        output_metadata.update(extra_metadata)
     output = {
-        "metadata": {
-            "generated": date.today().isoformat(),
-            "count": len(mapping),
-            "direction": direction,
-            "key_type": key_type,
-            "value_type": value_type,
-            "source_files": source_files,
-            "field_notes": notes or {},
-        },
+        "metadata": output_metadata,
         "mapping": mapping,
     }
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -139,6 +142,8 @@ def build() -> None:
     print("[xref]     loading words, kanji, radicals")
     words_data = _load_json(WORDS_JSON)
     radicals_data = _load_json(RADICALS_JSON)
+    kanji_data = _load_json(KANJI_JSON)
+    kanji_char_set = {k["character"] for k in kanji_data.get("kanji", [])}
 
     kanji_to_words, word_to_kanji, word_to_sentences = _build_word_cross_refs(words_data)
     print(
@@ -146,6 +151,18 @@ def build() -> None:
         f"words→kanji: {len(word_to_kanji):,}  "
         f"words→sentences: {len(word_to_sentences):,}"
     )
+
+    # D5 fix: characters that appear in word kanji writings but are not in
+    # kanji.json are "orphan" references. Record the count (and the specific
+    # characters, up to a limit) in the kanji-to-words.json metadata so
+    # consumers can detect this integrity gap at read time.
+    orphan_chars = sorted(ch for ch in kanji_to_words if ch not in kanji_char_set)
+    if orphan_chars:
+        print(
+            f"[xref]     WARNING: {len(orphan_chars)} characters in kanji-to-words "
+            f"are not in kanji.json: {''.join(orphan_chars[:20])}"
+            + ("..." if len(orphan_chars) > 20 else "")
+        )
 
     # kanji-to-radicals comes directly from radicals.json
     kanji_to_radicals = radicals_data.get("kanji_to_radicals", {})
@@ -158,7 +175,14 @@ def build() -> None:
         "kanji_char",
         "word_id",
         ["data/core/words.json"],
-        {"mapping": "Note: scope is the common-subset words.json. For the full 216k entries, re-run the pipeline against words-full.json or query that file directly."},
+        {
+            "mapping": "Note: scope is the common-subset words.json. For the full 216k entries, re-run the pipeline against words-full.json or query that file directly.",
+            "orphan_chars": "Characters that appear in a word's kanji writing but are not present in data/core/kanji.json. These are rare/archaic CJK characters that JMdict uses but KANJIDIC2 does not index. Consumers joining this file with kanji.json should handle the orphan case (lookup will miss).",
+        },
+        extra_metadata={
+            "orphan_count": len(orphan_chars),
+            "orphan_chars": orphan_chars,
+        },
     )
     _write_xref(
         OUT_DIR / "word-to-kanji.json",

@@ -3,7 +3,7 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/sentence.schema.json",
   "title": "Sentences",
   "description": "Japanese–English example sentence pairs from the Tatoeba Project, ingested via jmdict-examples-eng (editor-curated) or optionally via the full Tatoeba export (unfiltered).",
-  "schemaVersion": "0.0.0",
+  "schemaVersion": "0.3.0",
   "type": "object",
   "required": ["metadata", "sentences"],
   "additionalProperties": false,

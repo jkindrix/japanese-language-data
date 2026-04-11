@@ -61,7 +61,16 @@ def _load_source() -> dict:
 
 
 def _load_vocab_jlpt_map() -> dict[str, str]:
-    """Build a jmdict_seq → level map from the vocab portion of jlpt enrichment."""
+    """Build a jmdict_seq → level map from the vocab portion of jlpt enrichment.
+
+    D4 fix: for jmdict_seq values that appear at multiple JLPT levels (due to
+    homographic variants — e.g., 会う at N5 and 遭う at N2 sharing seq 1198180),
+    the easier level (higher N-number, closer to beginner) wins. This makes the
+    mapping deterministic and pedagogically sensible: a learner encountering the
+    common form of the word first sees it at the easiest level it's taught.
+    """
+    # Lower value = easier level; N5 wins over N1
+    LEVEL_ORDER = {"N5": 0, "N4": 1, "N3": 2, "N2": 3, "N1": 4}
     if not JLPT_ENRICHMENT.exists():
         return {}
     data = json.loads(JLPT_ENRICHMENT.read_text(encoding="utf-8"))
@@ -70,7 +79,12 @@ def _load_vocab_jlpt_map() -> dict[str, str]:
         if entry.get("kind") == "vocab":
             seq = entry.get("jmdict_seq", "")
             level = entry.get("level")
-            if seq and level:
+            if not seq or not level:
+                continue
+            if seq in result:
+                if LEVEL_ORDER.get(level, 99) < LEVEL_ORDER.get(result[seq], 99):
+                    result[seq] = level
+            else:
                 result[seq] = level
     return result
 
@@ -167,7 +181,7 @@ def _metadata(source: dict, count: int, filter_note: str, tags: dict) -> dict:
             "sense": "Senses = translations plus metadata (parts of speech, fields, dialects, misc).",
             "sense.gloss.lang": "Translation language code (eng=English etc.) per jmdict-simplified convention.",
             "sense.examples": "Editor-curated example sentences from Tatoeba, linked by sentence_id. The sentence_id can be used to look up the original at https://tatoeba.org/en/sentences/show/<id>.",
-            "jlpt_waller": "Current N1-N5 level from Jonathan Waller's JLPT lists (tanos.co.uk). Filled in Phase 2. Null in Phase 1 output.",
+            "jlpt_waller": "Current N1-N5 level from Jonathan Waller's JLPT lists (tanos.co.uk). For words whose JMdict entry covers multiple homographic variants assigned to different JLPT levels, the easier level (higher N-number, closer to beginner) wins. See the classifications file for all per-variant assignments.",
             "frequency_media": "Rank in modern media corpus (JPDB light novels/anime/drama). Filled in Phase 2. Null in Phase 1 output.",
             "kanji.common and kana.common": "Derived from JMdict priority markers (news1, ichi1, spec1, spec2, gai1). True = common usage.",
         },

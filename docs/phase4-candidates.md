@@ -153,7 +153,7 @@ Status values:
 
 ### Modern media frequency (JPDB-based) — **BLOCKED on license clarification**
 
-- **Status**: PROMOTED to Phase 4. Deferred from Phase 2 during investigation (2026-04-11).
+- **Status**: DEFERRED (license-blocked). Deferred from Phase 2 during investigation (2026-04-11); Phase 4 is not yet active.
 - **Candidate sources** and their license situations:
   - `MarvNC/jpdb-freq-list` — last release 2022-05 (stale). No `LICENSE` file. The maintainer explicitly recommends Kuuuube's newer version as superior.
   - `Kuuuube/yomitan-dictionaries` — `JPDB_v2.2_Frequency_2024-10-13` is current with excellent coverage (99.99% up to 25k words, 98.6% up to 100k), but **no `LICENSE` file** in the repo. The data inside carries `"author": "jpdb, Kuuube, Gecko"` metadata but no declared license.

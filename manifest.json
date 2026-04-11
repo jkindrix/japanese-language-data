@@ -1,8 +1,8 @@
 {
   "project": "japanese-language-data",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "phase": 3,
-  "phase_description": "Grammar foundation added. Phase 1 core + Phase 2 enrichment + Phase 3 grammar dataset: 81 hand-curated grammar points (50 N5 + 31 N4) all marked draft pending native-speaker review; 13,220 lexicalized expressions extracted from JMdict exp entries; 3,492 auto-generated verb and adjective conjugation tables. JLPT classifications now include grammar entries (kanji + vocab + grammar = 10,585 total). Phase 4 remains pending: JPDB modern frequency (license-blocked), radical meanings/Kangxi numbers, classical handwriting, audio corpora, and other candidates in docs/phase4-candidates.md.",
+  "phase_description": "Phase 3 post-review defect fixes. All v0.3.0 content plus: D1 — v5k-s/v5u-s/v5aru/v5r-i conjugation coverage (15 new tables incl. 行く); D2 — broken grammar cross-references fixed and validator added; D3 — corrected '6.6% drift' mischaracterization in CHANGELOG/sources; D4 — deterministic JLPT join with easier-level-wins semantics; D5 — orphan_count metadata added to kanji-to-words.json; M1–M6 — schemaVersion bumps, stale Tae Kim claims corrected, radicals.json warning added; T1 — 5 new data integrity regression tests. 48/48 tests passing. Phase 4 remains pending.",
   "generated": "2026-04-11",
   "license": "CC-BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",

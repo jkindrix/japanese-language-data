@@ -3,7 +3,7 @@
     "source": "Auto-generated from JMdict verb and adjective entries",
     "license": "CC-BY-SA 4.0",
     "generated": "2026-04-11",
-    "count": 3492,
+    "count": 3507,
     "conjugation_rules_reference": "Conjugation rules encoded directly in build/transform/conjugations.py. They follow the standard ichidan/godan conjugation rules taught in any introductory Japanese grammar reference. Any incorrectness is a bug in the rule implementation, not in the data.",
     "attribution": "Conjugation tables auto-generated from JMdict verb and adjective entries (EDRDG License, CC-BY-SA 4.0). Rules are formally defined and deterministic; no native-speaker review is required for the conjugation logic itself.",
     "field_notes": {
@@ -82,6 +82,30 @@
         "te_form": "いけなくて",
         "conditional_ba": "いけなければ",
         "conditional_tara": "いけなかったら"
+      }
+    },
+    {
+      "id": "1000940",
+      "dictionary_form": "居らっしゃる",
+      "reading": "いらっしゃる",
+      "class": "v5aru",
+      "forms": {
+        "dictionary": "いらっしゃる",
+        "polite_nonpast": "いらっしゃいます",
+        "polite_past": "いらっしゃいました",
+        "polite_negative": "いらっしゃいません",
+        "polite_past_negative": "いらっしゃいませんでした",
+        "te_form": "いらっしゃって",
+        "ta_form": "いらっしゃった",
+        "nai_form": "いらっしゃらない",
+        "nakatta_form": "いらっしゃらなかった",
+        "potential": "いらっしゃれる",
+        "passive": "いらっしゃられる",
+        "causative": "いらっしゃらせる",
+        "imperative": "いらっしゃい",
+        "volitional": "いらっしゃろう",
+        "conditional_ba": "いらっしゃれば",
+        "conditional_tara": "いらっしゃったら"
       }
     },
     {
@@ -538,6 +562,30 @@
         "volitional": "こだわろう",
         "conditional_ba": "こだわれば",
         "conditional_tara": "こだわったら"
+      }
+    },
+    {
+      "id": "1004540",
+      "dictionary_form": "事がある",
+      "reading": "ことがある",
+      "class": "v5r-i",
+      "forms": {
+        "dictionary": "ことがある",
+        "polite_nonpast": "ことがあります",
+        "polite_past": "ことがありました",
+        "polite_negative": "ことがありません",
+        "polite_past_negative": "ことがありませんでした",
+        "te_form": "ことがあって",
+        "ta_form": "ことがあった",
+        "nai_form": "ない",
+        "nakatta_form": "なかった",
+        "potential": "ことがあれる",
+        "passive": "ことがあられる",
+        "causative": "ことがあらせる",
+        "imperative": "ことがあれ",
+        "volitional": "ことがあろう",
+        "conditional_ba": "ことがあれば",
+        "conditional_tara": "ことがあったら"
       }
     },
     {
@@ -1066,6 +1114,30 @@
         "te_form": "つるつるで",
         "nai_form": "つるつるではない",
         "attributive": "つるつるな"
+      }
+    },
+    {
+      "id": "1008340",
+      "dictionary_form": "である",
+      "reading": "である",
+      "class": "v5r-i",
+      "forms": {
+        "dictionary": "である",
+        "polite_nonpast": "であります",
+        "polite_past": "でありました",
+        "polite_negative": "でありません",
+        "polite_past_negative": "でありませんでした",
+        "te_form": "であって",
+        "ta_form": "であった",
+        "nai_form": "ない",
+        "nakatta_form": "なかった",
+        "potential": "であれる",
+        "passive": "であられる",
+        "causative": "であらせる",
+        "imperative": "であれ",
+        "volitional": "であろう",
+        "conditional_ba": "であれば",
+        "conditional_tara": "であったら"
       }
     },
     {
@@ -6573,6 +6645,30 @@
       }
     },
     {
+      "id": "1157090",
+      "dictionary_form": "為さる",
+      "reading": "なさる",
+      "class": "v5aru",
+      "forms": {
+        "dictionary": "なさる",
+        "polite_nonpast": "なさいます",
+        "polite_past": "なさいました",
+        "polite_negative": "なさいません",
+        "polite_past_negative": "なさいませんでした",
+        "te_form": "なさって",
+        "ta_form": "なさった",
+        "nai_form": "なさらない",
+        "nakatta_form": "なさらなかった",
+        "potential": "なされる",
+        "passive": "なさられる",
+        "causative": "なさらせる",
+        "imperative": "なさい",
+        "volitional": "なさろう",
+        "conditional_ba": "なされば",
+        "conditional_tara": "なさったら"
+      }
+    },
+    {
       "id": "1157130",
       "dictionary_form": "成す",
       "reading": "なす",
@@ -8826,6 +8922,30 @@
         "volitional": "さげよう",
         "conditional_ba": "さげれば",
         "conditional_tara": "さげたら"
+      }
+    },
+    {
+      "id": "1184280",
+      "dictionary_form": "下さる",
+      "reading": "くださる",
+      "class": "v5aru",
+      "forms": {
+        "dictionary": "くださる",
+        "polite_nonpast": "くださいます",
+        "polite_past": "くださいました",
+        "polite_negative": "くださいません",
+        "polite_past_negative": "くださいませんでした",
+        "te_form": "くださって",
+        "ta_form": "くださった",
+        "nai_form": "くださらない",
+        "nakatta_form": "くださらなかった",
+        "potential": "くだされる",
+        "passive": "くださられる",
+        "causative": "くださらせる",
+        "imperative": "ください",
+        "volitional": "くださろう",
+        "conditional_ba": "くだされば",
+        "conditional_tara": "くださったら"
       }
     },
     {
@@ -14938,6 +15058,30 @@
         "volitional": "あおごう",
         "conditional_ba": "あおげば",
         "conditional_tara": "あおいだら"
+      }
+    },
+    {
+      "id": "1238840",
+      "dictionary_form": "仰る",
+      "reading": "おっしゃる",
+      "class": "v5aru",
+      "forms": {
+        "dictionary": "おっしゃる",
+        "polite_nonpast": "おっしゃいます",
+        "polite_past": "おっしゃいました",
+        "polite_negative": "おっしゃいません",
+        "polite_past_negative": "おっしゃいませんでした",
+        "te_form": "おっしゃって",
+        "ta_form": "おっしゃった",
+        "nai_form": "おっしゃらない",
+        "nakatta_form": "おっしゃらなかった",
+        "potential": "おっしゃれる",
+        "passive": "おっしゃられる",
+        "causative": "おっしゃらせる",
+        "imperative": "おっしゃい",
+        "volitional": "おっしゃろう",
+        "conditional_ba": "おっしゃれば",
+        "conditional_tara": "おっしゃったら"
       }
     },
     {
@@ -21701,6 +21845,30 @@
       }
     },
     {
+      "id": "1296400",
+      "dictionary_form": "有る",
+      "reading": "ある",
+      "class": "v5r-i",
+      "forms": {
+        "dictionary": "ある",
+        "polite_nonpast": "あります",
+        "polite_past": "ありました",
+        "polite_negative": "ありません",
+        "polite_past_negative": "ありませんでした",
+        "te_form": "あって",
+        "ta_form": "あった",
+        "nai_form": "ない",
+        "nakatta_form": "なかった",
+        "potential": "あれる",
+        "passive": "あられる",
+        "causative": "あらせる",
+        "imperative": "あれ",
+        "volitional": "あろう",
+        "conditional_ba": "あれば",
+        "conditional_tara": "あったら"
+      }
+    },
+    {
       "id": "1296680",
       "dictionary_form": "罪",
       "reading": "つみ",
@@ -23165,6 +23333,30 @@
       }
     },
     {
+      "id": "1310500",
+      "dictionary_form": "上手く行く",
+      "reading": "うまくいく",
+      "class": "v5k-s",
+      "forms": {
+        "dictionary": "うまくいく",
+        "polite_nonpast": "うまくいきます",
+        "polite_past": "うまくいきました",
+        "polite_negative": "うまくいきません",
+        "polite_past_negative": "うまくいきませんでした",
+        "te_form": "うまくいって",
+        "ta_form": "うまくいった",
+        "nai_form": "うまくいかない",
+        "nakatta_form": "うまくいかなかった",
+        "potential": "うまくいける",
+        "passive": "うまくいかれる",
+        "causative": "うまくいかせる",
+        "imperative": "うまくいけ",
+        "volitional": "うまくいこう",
+        "conditional_ba": "うまくいけば",
+        "conditional_tara": "うまくいったら"
+      }
+    },
+    {
       "id": "1310600",
       "dictionary_form": "止す",
       "reading": "よす",
@@ -23754,6 +23946,30 @@
         "volitional": "もちなおそう",
         "conditional_ba": "もちなおせば",
         "conditional_tara": "もちなおしたら"
+      }
+    },
+    {
+      "id": "1315700",
+      "dictionary_form": "持っていく",
+      "reading": "もっていく",
+      "class": "v5k-s",
+      "forms": {
+        "dictionary": "もっていく",
+        "polite_nonpast": "もっていきます",
+        "polite_past": "もっていきました",
+        "polite_negative": "もっていきません",
+        "polite_past_negative": "もっていきませんでした",
+        "te_form": "もっていって",
+        "ta_form": "もっていった",
+        "nai_form": "もっていかない",
+        "nakatta_form": "もっていかなかった",
+        "potential": "もっていける",
+        "passive": "もっていかれる",
+        "causative": "もっていかせる",
+        "imperative": "もっていけ",
+        "volitional": "もっていこう",
+        "conditional_ba": "もっていけば",
+        "conditional_tara": "もっていったら"
       }
     },
     {
@@ -46117,6 +46333,30 @@
       }
     },
     {
+      "id": "1495580",
+      "dictionary_form": "ついて行く",
+      "reading": "ついていく",
+      "class": "v5k-s",
+      "forms": {
+        "dictionary": "ついていく",
+        "polite_nonpast": "ついていきます",
+        "polite_past": "ついていきました",
+        "polite_negative": "ついていきません",
+        "polite_past_negative": "ついていきませんでした",
+        "te_form": "ついていって",
+        "ta_form": "ついていった",
+        "nai_form": "ついていかない",
+        "nakatta_form": "ついていかなかった",
+        "potential": "ついていける",
+        "passive": "ついていかれる",
+        "causative": "ついていかせる",
+        "imperative": "ついていけ",
+        "volitional": "ついていこう",
+        "conditional_ba": "ついていけば",
+        "conditional_tara": "ついていったら"
+      }
+    },
+    {
       "id": "1495740",
       "dictionary_form": "付く",
       "reading": "つく",
@@ -51122,6 +51362,30 @@
         "volitional": "といあわせよう",
         "conditional_ba": "といあわせれば",
         "conditional_tara": "といあわせたら"
+      }
+    },
+    {
+      "id": "1536000",
+      "dictionary_form": "問う",
+      "reading": "とう",
+      "class": "v5u-s",
+      "forms": {
+        "dictionary": "とう",
+        "polite_nonpast": "といます",
+        "polite_past": "といました",
+        "polite_negative": "といません",
+        "polite_past_negative": "といませんでした",
+        "te_form": "とうて",
+        "ta_form": "とうた",
+        "nai_form": "とわない",
+        "nakatta_form": "とわなかった",
+        "potential": "とえる",
+        "passive": "とわれる",
+        "causative": "とわせる",
+        "imperative": "とえ",
+        "volitional": "とおう",
+        "conditional_ba": "とえば",
+        "conditional_tara": "とうたら"
       }
     },
     {
@@ -56509,6 +56773,30 @@
       }
     },
     {
+      "id": "1578850",
+      "dictionary_form": "行く",
+      "reading": "いく",
+      "class": "v5k-s",
+      "forms": {
+        "dictionary": "いく",
+        "polite_nonpast": "いきます",
+        "polite_past": "いきました",
+        "polite_negative": "いきません",
+        "polite_past_negative": "いきませんでした",
+        "te_form": "いって",
+        "ta_form": "いった",
+        "nai_form": "いかない",
+        "nakatta_form": "いかなかった",
+        "potential": "いける",
+        "passive": "いかれる",
+        "causative": "いかせる",
+        "imperative": "いけ",
+        "volitional": "いこう",
+        "conditional_ba": "いけば",
+        "conditional_tara": "いったら"
+      }
+    },
+    {
       "id": "1578880",
       "dictionary_form": "香ばしい",
       "reading": "こうばしい",
@@ -59381,6 +59669,30 @@
       }
     },
     {
+      "id": "1592920",
+      "dictionary_form": "乞う",
+      "reading": "こう",
+      "class": "v5u-s",
+      "forms": {
+        "dictionary": "こう",
+        "polite_nonpast": "こいます",
+        "polite_past": "こいました",
+        "polite_negative": "こいません",
+        "polite_past_negative": "こいませんでした",
+        "te_form": "こうて",
+        "ta_form": "こうた",
+        "nai_form": "こわない",
+        "nakatta_form": "こわなかった",
+        "potential": "こえる",
+        "passive": "こわれる",
+        "causative": "こわせる",
+        "imperative": "こえ",
+        "volitional": "こおう",
+        "conditional_ba": "こえば",
+        "conditional_tara": "こうたら"
+      }
+    },
+    {
       "id": "1592930",
       "dictionary_form": "幸運",
       "reading": "こううん",
@@ -60514,6 +60826,30 @@
         "volitional": "つまもう",
         "conditional_ba": "つまめば",
         "conditional_tara": "つまんだら"
+      }
+    },
+    {
+      "id": "1598220",
+      "dictionary_form": "連れて行く",
+      "reading": "つれていく",
+      "class": "v5k-s",
+      "forms": {
+        "dictionary": "つれていく",
+        "polite_nonpast": "つれていきます",
+        "polite_past": "つれていきました",
+        "polite_negative": "つれていきません",
+        "polite_past_negative": "つれていきませんでした",
+        "te_form": "つれていって",
+        "ta_form": "つれていった",
+        "nai_form": "つれていかない",
+        "nakatta_form": "つれていかなかった",
+        "potential": "つれていける",
+        "passive": "つれていかれる",
+        "causative": "つれていかせる",
+        "imperative": "つれていけ",
+        "volitional": "つれていこう",
+        "conditional_ba": "つれていけば",
+        "conditional_tara": "つれていったら"
       }
     },
     {
@@ -67770,6 +68106,30 @@
         "te_form": "なくてはならなくて",
         "conditional_ba": "なくてはならなければ",
         "conditional_tara": "なくてはならなかったら"
+      }
+    },
+    {
+      "id": "2098230",
+      "dictionary_form": "でもある",
+      "reading": "でもある",
+      "class": "v5r-i",
+      "forms": {
+        "dictionary": "でもある",
+        "polite_nonpast": "でもあります",
+        "polite_past": "でもありました",
+        "polite_negative": "でもありません",
+        "polite_past_negative": "でもありませんでした",
+        "te_form": "でもあって",
+        "ta_form": "でもあった",
+        "nai_form": "ない",
+        "nakatta_form": "なかった",
+        "potential": "でもあれる",
+        "passive": "でもあられる",
+        "causative": "でもあらせる",
+        "imperative": "でもあれ",
+        "volitional": "でもあろう",
+        "conditional_ba": "でもあれば",
+        "conditional_tara": "でもあったら"
       }
     },
     {

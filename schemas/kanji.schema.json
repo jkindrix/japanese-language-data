@@ -3,7 +3,7 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/kanji.schema.json",
   "title": "Kanji",
   "description": "Full kanji dataset derived from KANJIDIC2 via scriptin/jmdict-simplified. Each entry represents one kanji character with readings, meanings, stroke count, grade, frequency, JLPT classifications, radical information, dictionary references, query codes, and variants.",
-  "schemaVersion": "0.0.0",
+  "schemaVersion": "0.3.0",
   "type": "object",
   "required": ["metadata", "kanji"],
   "additionalProperties": false,

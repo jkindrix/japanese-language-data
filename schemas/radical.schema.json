@@ -3,7 +3,7 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/radical.schema.json",
   "title": "Radicals",
   "description": "Bidirectional radical data combining KRADFILE (kanji → component radicals) and RADKFILE (radical → kanji containing it), both from EDRDG via scriptin/jmdict-simplified.",
-  "schemaVersion": "0.0.0",
+  "schemaVersion": "0.3.0",
   "type": "object",
   "required": ["metadata", "radicals", "kanji_to_radicals"],
   "additionalProperties": false,

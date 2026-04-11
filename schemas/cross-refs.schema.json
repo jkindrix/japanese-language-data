@@ -3,7 +3,7 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/cross-refs.schema.json",
   "title": "Cross references",
   "description": "Generic schema for the cross-reference files in data/cross-refs/. Each cross-reference file maps a lookup key (a kanji, a word ID, a sentence ID, etc.) to an array of related identifiers. The specific kind of cross-reference is declared in the metadata.",
-  "schemaVersion": "0.0.0",
+  "schemaVersion": "0.3.0",
   "type": "object",
   "required": ["metadata", "mapping"],
   "additionalProperties": false,

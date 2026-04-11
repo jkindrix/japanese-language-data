@@ -3,7 +3,7 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/kana.schema.json",
   "title": "Kana",
   "description": "Hand-curated dataset of hiragana, katakana, and kana variants (dakuten, handakuten, yōon). Each entry describes one kana character with its romanization, type classification, stroke count, and usage notes.",
-  "schemaVersion": "0.0.0",
+  "schemaVersion": "0.3.0",
   "type": "object",
   "required": ["metadata", "kana"],
   "additionalProperties": false,

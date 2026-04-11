@@ -3,7 +3,7 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/frequency.schema.json",
   "title": "Frequency",
   "description": "Generic frequency ranking schema used by multiple frequency files (newspaper corpus from KANJIDIC2, modern media corpus from JPDB, etc.). Each file lists entries ranked by frequency with 1 = most common.",
-  "schemaVersion": "0.0.0",
+  "schemaVersion": "0.3.0",
   "type": "object",
   "required": ["metadata", "entries"],
   "additionalProperties": false,

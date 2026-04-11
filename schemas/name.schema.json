@@ -3,7 +3,7 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/name.schema.json",
   "title": "Name",
   "description": "Japanese proper nouns dataset from JMnedict via scriptin/jmdict-simplified. Covers personal names, place names, company names, and other proper nouns. Built on-demand via 'just build-names' and gitignored by default due to size (~150 MB uncompressed).",
-  "schemaVersion": "0.0.0",
+  "schemaVersion": "0.3.0",
   "type": "object",
   "required": ["metadata", "names"],
   "additionalProperties": false,

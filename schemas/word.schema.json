@@ -3,7 +3,7 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/word.schema.json",
   "title": "Word",
   "description": "Japanese vocabulary dataset derived from JMdict via scriptin/jmdict-simplified (examples variant). Each entry represents a word with its kanji writings, kana readings (with applies-to relationships), senses (parts of speech, domains, dialects, translations), language-source information for loanwords, and example sentence links.",
-  "schemaVersion": "0.0.0",
+  "schemaVersion": "0.3.0",
   "type": "object",
   "required": ["metadata", "words"],
   "additionalProperties": false,

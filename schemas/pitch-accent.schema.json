@@ -3,7 +3,7 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/pitch-accent.schema.json",
   "title": "Pitch accent",
   "description": "Pitch accent data for Japanese words, derived from the Kanjium accents.txt file. Each entry maps a word (in kanji+kana form) to its pitch accent mora positions. Accent positions are 0 for heiban (flat) or N where the accent falls after the Nth mora.",
-  "schemaVersion": "0.0.0",
+  "schemaVersion": "0.3.0",
   "type": "object",
   "required": ["metadata", "entries"],
   "additionalProperties": false,

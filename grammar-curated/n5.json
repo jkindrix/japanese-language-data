@@ -925,7 +925,7 @@
       "Cannot be used for people or animals — those have their own counters."
     ],
     "formality": "neutral",
-    "related": ["counter-people-nin", "counter-objects-ko"],
+    "related": ["counter-people-nin"],
     "examples": [
       {"japanese": "りんごを三つください。", "english": "Three apples, please.", "source": "original"},
       {"japanese": "質問が一つあります。", "english": "I have one question.", "source": "original"}

@@ -9,8 +9,16 @@
       "data/core/words.json"
     ],
     "field_notes": {
-      "mapping": "Note: scope is the common-subset words.json. For the full 216k entries, re-run the pipeline against words-full.json or query that file directly."
-    }
+      "mapping": "Note: scope is the common-subset words.json. For the full 216k entries, re-run the pipeline against words-full.json or query that file directly.",
+      "orphan_chars": "Characters that appear in a word's kanji writing but are not present in data/core/kanji.json. These are rare/archaic CJK characters that JMdict uses but KANJIDIC2 does not index. Consumers joining this file with kanji.json should handle the orphan case (lookup will miss)."
+    },
+    "orphan_count": 4,
+    "orphan_chars": [
+      "內",
+      "卄",
+      "喱",
+      "畵"
+    ]
   },
   "mapping": {
     "明": [

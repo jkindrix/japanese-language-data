@@ -3,7 +3,7 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/jlpt.schema.json",
   "title": "JLPT classifications",
   "description": "Community-standard JLPT (Japanese Language Proficiency Test) level classifications for vocabulary, kanji, and grammar points. Derived from Jonathan Waller's JLPT Resources at tanos.co.uk under CC-BY. JLPT stopped publishing official vocabulary lists in 2010; these classifications are community-reverse-engineered consensus and should not be treated as JLPT-official.",
-  "schemaVersion": "0.0.0",
+  "schemaVersion": "0.3.0",
   "type": "object",
   "required": ["metadata", "classifications"],
   "additionalProperties": false,

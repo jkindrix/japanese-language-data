@@ -94,6 +94,7 @@ def build() -> None:
                 "classical_number": "Kangxi radical number. Not present in RADKFILE; a future phase can join this from an external Kangxi radical table.",
                 "meanings": "Radical meanings. Not present in RADKFILE; a future phase can join these from Wikipedia or an external radical table.",
             },
+            "warning": "Every radical entry in this file has an empty `meanings` array and `classical_number: null`. RADKFILE does not provide these fields, and no CC-BY-SA-compatible upstream joining source is currently integrated. See docs/phase4-candidates.md for planned resolution.",
         },
         "radicals": radicals_list,
         "kanji_to_radicals": kanji_to_radicals,

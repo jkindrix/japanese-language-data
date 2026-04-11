@@ -22,7 +22,7 @@ The grammar dataset in Phase 3 targets 500–700 points across JLPT levels N5–
 
 ### Native-speaker reviewed grammar (UNCERTAIN)
 
-Our grammar curation is done from English-language sources (Tae Kim, Waller, Wiktionary, JMdict expression entries, Handbook of Japanese Grammar Patterns *as reference only*). It is not reviewed by professional Japanese linguists or native-speaker reviewers at the time of v1.0.
+Our grammar curation is hand-written from general, non-copyrightable facts about Japanese grammar. We explicitly do NOT draw on Tae Kim's Guide to Japanese (CC-BY-NC-SA, license incompatible with our CC-BY-SA 4.0 output), nor on proprietary references (Dictionary of Basic Japanese Grammar, Handbook of Japanese Grammar Patterns), nor on Hanabira (license unclear). See the authorship_statement in data/grammar/grammar.json metadata and the Phase 3 entry in CHANGELOG.md for full provenance details. The dataset is not reviewed by professional Japanese linguists or native-speaker reviewers at the time of v1.0.
 
 Every grammar entry carries a `review_status` field. Community-reviewed entries are the baseline; native-speaker-reviewed entries are the aspiration. The gap here is that we do not currently have a native-speaker reviewer pipeline, and we have no timeline for establishing one. See `docs/contributing.md` for how native-speaker reviewers can get involved.
 

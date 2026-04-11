@@ -84,6 +84,13 @@ GODAN_POS_TO_ENDING = {
     "v5b": "ぶ",
     "v5m": "む",
     "v5r": "る",
+    # Special-ending godan classes (D1 fix). These share a base u-row
+    # ending with a standard godan class but have irregular forms that
+    # are applied as per-POS overrides in _conjugate_godan().
+    "v5k-s": "く",   # 行く-style: te/ta use って/った
+    "v5u-s": "う",   # 問う-style: te/ta use うて/うた
+    "v5aru": "る",   # Honorific: いらっしゃる family; i-stem and imperative use い
+    "v5r-i": "る",   # ある: suppletive negative (ない/なかった)
 }
 
 # Godan te-form and ta-form are irregular depending on ending:
@@ -141,11 +148,15 @@ def _conjugate_godan(stem: str, pos: str) -> dict[str, str] | None:
     a_kana, i_kana, e_kana, o_kana = GODAN_VOWEL_MAP[ending]
     te, ta = TE_FORM_TRANSFORMS[ending]
 
-    # Handle 行く irregularity: uses って/った, not いて/いた
-    if stem == "行く" or stem == "いく" or stem == "ゆく":
+    # Per-POS overrides for te/ta forms on special-ending godan classes (D1 fix)
+    if pos == "v5k-s":
+        # 行く, 逝く, 往く use って/った, not いて/いた
         te, ta = "って", "った"
+    elif pos == "v5u-s":
+        # 問う, 請う use うて/うた, not って/った
+        te, ta = "うて", "うた"
 
-    return {
+    forms = {
         "dictionary": stem,
         "polite_nonpast": root + i_kana + "ます",
         "polite_past": root + i_kana + "ました",
@@ -163,6 +174,22 @@ def _conjugate_godan(stem: str, pos: str) -> dict[str, str] | None:
         "conditional_ba": root + e_kana + "ば",
         "conditional_tara": root + ta + "ら",
     }
+
+    # Per-POS overrides that affect multiple form types (D1 fix)
+    if pos == "v5aru":
+        # Honorific godan: いらっしゃる, ござる, なさる, おっしゃる.
+        # i-stem and imperative are い (not り) in these four verbs.
+        forms["polite_nonpast"] = root + "います"
+        forms["polite_past"] = root + "いました"
+        forms["polite_negative"] = root + "いません"
+        forms["polite_past_negative"] = root + "いませんでした"
+        forms["imperative"] = root + "い"
+    elif pos == "v5r-i":
+        # ある: suppletive negative forms (not あらない, but ない).
+        forms["nai_form"] = "ない"
+        forms["nakatta_form"] = "なかった"
+
+    return forms
 
 
 def _conjugate_suru_compound(stem: str) -> dict[str, str]:

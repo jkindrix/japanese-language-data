@@ -41,6 +41,9 @@ def _load_source() -> dict:
 
 
 def _load_vocab_jlpt_map() -> dict[str, str]:
+    """D4 fix: for duplicate jmdict_seq, the easier level (higher N-number) wins.
+    See build/transform/words.py for the full rationale."""
+    LEVEL_ORDER = {"N5": 0, "N4": 1, "N3": 2, "N2": 3, "N1": 4}
     if not JLPT_ENRICHMENT.exists():
         return {}
     data = json.loads(JLPT_ENRICHMENT.read_text(encoding="utf-8"))
@@ -49,7 +52,12 @@ def _load_vocab_jlpt_map() -> dict[str, str]:
         if entry.get("kind") == "vocab":
             seq = entry.get("jmdict_seq", "")
             level = entry.get("level")
-            if seq and level:
+            if not seq or not level:
+                continue
+            if seq in result:
+                if LEVEL_ORDER.get(level, 99) < LEVEL_ORDER.get(result[seq], 99):
+                    result[seq] = level
+            else:
                 result[seq] = level
     return result
 

@@ -84,6 +84,18 @@ def build() -> None:
                 entries.append(entry)
             print(f"[grammar]    {sf.name}: {len(data):,} entries")
 
+        # D2 fix: validate that every 'related' reference resolves to a known entry.
+        # Broken cross-references are a hard error and fail the build.
+        all_ids = {e["id"] for e in entries}
+        for entry in entries:
+            for rel_id in entry.get("related", []):
+                if rel_id not in all_ids:
+                    raise ValueError(
+                        f"Grammar entry {entry['id']!r} references unknown related "
+                        f"id {rel_id!r}. Either add the referenced entry or remove "
+                        f"the broken reference from grammar-curated/."
+                    )
+
     # Stats
     by_level: dict[str, int] = {}
     by_status: dict[str, int] = {"draft": 0, "community_reviewed": 0, "native_speaker_reviewed": 0}

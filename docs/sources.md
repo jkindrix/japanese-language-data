@@ -193,7 +193,7 @@ Produced at `data/enrichment/jlpt-classifications.json` with entries of the form
 
 - Not JLPT-official. The lists are reverse-engineered from past test questions and community consensus. Some entries are disputed; edge cases between levels are unclear.
 - We report them as `jlpt_waller` (not `jlpt`) on kanji/word entries to avoid suggesting official provenance.
-- **~6.6% of stephenmk's JLPT vocab entries reference JMdict IDs that no longer match current JMdict** due to upstream JMdict ID drift across revisions. These are still included in `jlpt-classifications.json` but cannot be joined to `words.json` by ID. A later patch could add text-based fallback matching.
+- **~6.6% of stephenmk's JLPT vocab entries (~546 of ~8,279) cannot be joined to `data/core/words.json` by ID** — not because of JMdict ID drift (all 8,279 seq IDs DO exist in the full JMdict), but because those specific entries are NOT in our common-subset `words.json`. The common filter drops them because JMdict does not flag them as common. They can still be joined against the full `words-full.json` (gitignored build artifact) or their Waller entries stand alone in `jlpt-classifications.json` without a word join.
 - Waller's own grammar lists are also fuzzy; Phase 3 grammar classification will rely on multiple sources for cross-validation.
 
 ---

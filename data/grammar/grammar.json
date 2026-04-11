@@ -45,9 +45,7 @@
         "できる is a standalone word meaning 'can do'; it is the potential form of する and also used for general ability."
       ],
       "formality": "neutral",
-      "related": [
-        "dekiru-potential"
-      ],
+      "related": [],
       "examples": [
         {
           "japanese": "日本語が話せます。",
@@ -2602,8 +2600,7 @@
       ],
       "formality": "neutral",
       "related": [
-        "counter-people-nin",
-        "counter-objects-ko"
+        "counter-people-nin"
       ],
       "examples": [
         {
