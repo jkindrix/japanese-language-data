@@ -246,7 +246,8 @@ Phase 2 — Enrichment and cross-references. All Phase 1 files are re-emitted wi
 | `data/cross-refs/word-to-sentences.json` | 14,550 | new |
 | `data/cross-refs/kanji-to-radicals.json` | 12,156 | new |
 
-**Total committed entries: 478,892** (plus 6,416 SVG files).
+**Total rows (with derivatives and gitignored): 478,892** (up from 280,445 in v0.1.0).
+**Unique committed entries: 260,583** (excludes `kanji-joyo.json` as a derived view of `kanji.json`, and `words-full.json` as a gitignored build artifact). Plus 6,416 stroke-order SVG files.
 
 ### Deliberate deferrals (with 15-minute middle-grounds applied)
 
@@ -293,7 +294,9 @@ Phase 1 — Core data foundation. First release that produces actual data files.
 
 ### Data summary
 
-Total committed entries across all Phase 1 files: **280,445**
+Total rows across all Phase 1 files: **280,445**.
+Unique committed entries: **62,136** (excludes `kanji-joyo.json` as a derived view of `kanji.json`, and `words-full.json` as a gitignored build artifact).
+
 - kana.json: 215 entries
 - kanji.json: 13,108 entries (15.6 MB)
 - kanji-joyo.json: 2,136 entries (3.5 MB)

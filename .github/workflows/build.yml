@@ -78,4 +78,4 @@ jobs:
 
       - name: Summarize reproducibility check
         run: |
-          echo "::notice::Reproducible build completed: fetch (7 sources, SHA256-verified) → build → validate (18 files) → tests (48) → stats."
+          echo "::notice::Reproducible build completed: fetch (SHA256-verified) → build → validate → tests → stats. Counts: see 'Print stats report' step above."
