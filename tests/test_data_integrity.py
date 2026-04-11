@@ -62,6 +62,57 @@ def test_d1_conjugations_covers_v5aru_and_v5r_i() -> None:
 
 
 # ---------------------------------------------------------------------------
+# B1: v5r-i compound verbs must strip the ある suffix in nai_form and must
+# not emit nonsensical potential/passive/causative/imperative/volitional
+# forms for compound ある-based entries.
+# ---------------------------------------------------------------------------
+
+def test_b1_v5r_i_nai_form_has_correct_prefix() -> None:
+    """B1 regression: compound v5r-i verbs (ことがある, である, etc.)
+    must have nai_form prefixed with the stem minus 'ある', not the
+    bare literal 'ない'."""
+    data = _load_if_exists(REPO_ROOT / "data" / "grammar" / "conjugations.json")
+    if data is None:
+        pytest.skip("conjugations.json not built yet")
+    for e in data.get("entries", []):
+        if e.get("class") != "v5r-i":
+            continue
+        reading = e.get("reading", "")
+        nai = e.get("forms", {}).get("nai_form", "")
+        if reading == "ある":
+            assert nai == "ない", f"ある should have nai_form=ない, got {nai!r}"
+        else:
+            assert reading.endswith("ある"), \
+                f"v5r-i entry {reading!r} unexpectedly does not end in ある"
+            expected_prefix = reading[:-2]
+            assert nai.startswith(expected_prefix) and nai.endswith("ない"), \
+                f"v5r-i {reading!r} nai_form should start with {expected_prefix!r} " \
+                f"and end with ない, got {nai!r}"
+
+
+def test_b1_v5r_i_compound_has_no_malformed_imperatives() -> None:
+    """B1 regression: compound v5r-i verbs must not emit nonsensical
+    imperative/potential/passive/causative/volitional forms. For
+    compound v5r-i these should be empty strings."""
+    data = _load_if_exists(REPO_ROOT / "data" / "grammar" / "conjugations.json")
+    if data is None:
+        pytest.skip("conjugations.json not built yet")
+    for e in data.get("entries", []):
+        if e.get("class") != "v5r-i":
+            continue
+        if e.get("reading") == "ある":
+            # Bare ある: reference case; bare ある is also restricted but
+            # the plan scopes this check to compound entries only.
+            continue
+        forms = e.get("forms", {})
+        for f in ("imperative", "potential", "passive",
+                  "causative", "volitional"):
+            value = forms.get(f, "")
+            assert value == "", \
+                f"{e.get('reading')!r} {f} should be empty (not well-formed), got {value!r}"
+
+
+# ---------------------------------------------------------------------------
 # D2: grammar related-reference resolution
 # ---------------------------------------------------------------------------
 

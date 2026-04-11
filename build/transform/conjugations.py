@@ -185,9 +185,30 @@ def _conjugate_godan(stem: str, pos: str) -> dict[str, str] | None:
         forms["polite_past_negative"] = root + "いませんでした"
         forms["imperative"] = root + "い"
     elif pos == "v5r-i":
-        # ある: suppletive negative forms (not あらない, but ない).
-        forms["nai_form"] = "ない"
-        forms["nakatta_form"] = "なかった"
+        # "ある family" — the bare verb ある plus compounds that end in ある
+        # (e.g., ことがある, である, でもある). The suppletive negative ない
+        # REPLACES the final ある portion of the stem. For bare ある this
+        # produces "" + "ない" = "ない"; for ことがある it produces
+        # "ことが" + "ない" = "ことがない".
+        #
+        # B1 fix: the previous version set forms["nai_form"] = "ない" as a
+        # literal, which was correct for bare ある but wrong for compounds.
+        if stem.endswith("ある"):
+            prefix = stem[:-2]
+            forms["nai_form"] = prefix + "ない"
+            forms["nakatta_form"] = prefix + "なかった"
+            # Compound v5r-i entries (ことがある, である, でもある) do not
+            # have well-formed potential/passive/causative/imperative/
+            # volitional/conditional_ba forms — the bare verb ある is
+            # itself restricted in these and compounds inherit the
+            # restriction. The regular godan-r derivation produced
+            # nonsensical output like ことがあれ (imperative of 事がある).
+            # Blank them so downstream consumers can treat empty string
+            # as "form not well-defined" instead of shipping wrong data.
+            if prefix:
+                for f in ("potential", "passive", "causative",
+                          "imperative", "volitional", "conditional_ba"):
+                    forms[f] = ""
 
     return forms
 
