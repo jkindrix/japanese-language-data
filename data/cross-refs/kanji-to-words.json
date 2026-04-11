@@ -12,6 +12,8 @@
       "mapping": "Note: scope is the common-subset words.json. For the full 216k entries, re-run the pipeline against words-full.json or query that file directly.",
       "orphan_chars": "Characters that appear in a word's kanji writing but are not present in data/core/kanji.json. These are rare/archaic CJK characters that JMdict uses but KANJIDIC2 does not index. Consumers joining this file with kanji.json should handle the orphan case (lookup will miss)."
     },
+    "source": "Derived cross-reference built from data/core/words.json by build/transform/cross_links.py.",
+    "license": "CC-BY-SA 4.0. Inherits from the source files (EDRDG License / CC-BY-SA 4.0) and the pipeline code license (CC-BY-SA 4.0). See LICENSE and ATTRIBUTION.md for upstream details.",
     "orphan_count": 4,
     "orphan_chars": [
       "內",

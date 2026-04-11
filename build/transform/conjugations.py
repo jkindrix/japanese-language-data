@@ -312,6 +312,84 @@ def _is_common(word: dict) -> bool:
     return False
 
 
+def _longest_common_suffix_length(a: str, b: str) -> int:
+    """Return the length of the longest common suffix between two strings.
+
+    Used by the verb/adj-i display_forms heuristic to find where a
+    kanji-prefix dictionary form diverges from its kana reading. For
+    example, for 食べる / たべる, the common suffix is べる (length 2)
+    and the kanji prefix is 食 (length 1).
+    """
+    i = 0
+    while i < len(a) and i < len(b) and a[-1 - i] == b[-1 - i]:
+        i += 1
+    return i
+
+
+def _replace_prefix_in_forms(
+    forms: dict[str, str],
+    old_prefix: str,
+    new_prefix: str,
+) -> dict[str, str]:
+    """Return a new dict where every form that starts with ``old_prefix``
+    has that prefix replaced with ``new_prefix``. Forms that don't start
+    with ``old_prefix`` are kept unchanged (this is never wrong, only
+    sometimes suboptimal — e.g., くる → きます where the kanji-reading
+    stem shifts). Empty forms stay empty.
+    """
+    result: dict[str, str] = {}
+    for name, form in forms.items():
+        if not form:
+            result[name] = form
+        elif form.startswith(old_prefix):
+            result[name] = new_prefix + form[len(old_prefix):]
+        else:
+            result[name] = form
+    return result
+
+
+def _display_forms_adj_na(
+    dictionary_form: str,
+    reading: str,
+    forms: dict[str, str],
+) -> dict[str, str]:
+    """Class-aware branch for な-adjectives.
+
+    Every adj-na form is ``reading + copula`` (です / だ / でした / etc.),
+    so the full reading prefix is replaced with the dictionary_form.
+    This handles compound readings like 大切 (たいせつ) → 大切です where
+    the kanji and kana share no trailing character.
+    """
+    return _replace_prefix_in_forms(forms, old_prefix=reading, new_prefix=dictionary_form)
+
+
+def _display_forms_common_suffix(
+    dictionary_form: str,
+    reading: str,
+    forms: dict[str, str],
+) -> dict[str, str]:
+    """Common-suffix heuristic for verbs, adj-i, and other classes.
+
+    Find the longest common suffix between dictionary_form and reading;
+    the dictionary_form prefix before that is the kanji prefix, and the
+    reading prefix before the same position is what conjugated forms
+    begin with. Replace the reading prefix with the kanji prefix in
+    each form.
+
+    Returns a verbatim copy of ``forms`` when:
+        * the common suffix is empty (nothing to align on)
+        * the kanji prefix is empty (pure-kana dictionary form)
+    """
+    common_suffix_len = _longest_common_suffix_length(dictionary_form, reading)
+    if common_suffix_len == 0:
+        return dict(forms)
+    kanji_prefix = dictionary_form[:-common_suffix_len]
+    reading_prefix = reading[:-common_suffix_len]
+    if not kanji_prefix:
+        return dict(forms)
+    return _replace_prefix_in_forms(forms, old_prefix=reading_prefix, new_prefix=kanji_prefix)
+
+
 def _compute_display_forms(
     dictionary_form: str,
     reading: str,
@@ -321,63 +399,22 @@ def _compute_display_forms(
     """Return a companion dict to ``forms`` with the kanji prefix of the
     dictionary form preserved where possible.
 
-    Two strategies:
+    Dispatches to a class-specific helper:
+        * ``adj-na`` uses the full-reading-prefix replacement strategy
+          (because adj-na forms are always reading + copula)
+        * every other class uses the longest-common-suffix heuristic
 
-    * For ``adj-na``, use a class-aware branch. Every na-adjective form
-      is ``reading + copula`` (reading + です / reading + だ / etc.), so
-      the reading prefix is replaced with the dictionary_form directly.
-      This handles compound readings like 大切 (たいせつ) → 大切です
-      where the kanji and kana share no trailing character.
-
-    * For every other class, use a longest-common-suffix heuristic. Find
-      the longest common suffix between dictionary_form and reading; the
-      dictionary_form prefix before that is the kanji prefix, and the
-      reading prefix before the same position is what conjugated forms
-      begin with. Replace the reading prefix with the kanji prefix in
-      each form.
-
-    For pure-kana dictionary forms (no kanji, e.g., する, くる), or for
-    forms whose leading characters don't match the reading prefix (e.g.,
-    くる → きます, where the kanji reading shifts between stems), the
-    original kana form is preserved as-is. This is never wrong, only
-    sometimes suboptimal.
+    For pure-kana dictionary forms, display_forms equals forms (no kanji
+    to preserve). For forms whose leading characters don't match the
+    expected reading prefix (e.g., くる → きます, where the kanji reading
+    shifts between stems), the original kana form is preserved as-is.
+    This is never wrong, only sometimes suboptimal.
     """
     if dictionary_form == reading:
         return dict(forms)
-
     if cls == "adj-na":
-        # Every adj-na form starts with the reading; replace with dictionary_form.
-        display: dict[str, str] = {}
-        for name, form in forms.items():
-            if not form:
-                display[name] = form
-            elif form.startswith(reading):
-                display[name] = dictionary_form + form[len(reading):]
-            else:
-                display[name] = form
-        return display
-
-    # Longest-common-suffix heuristic (verbs, adj-i, etc.)
-    i = 0
-    while (i < len(dictionary_form) and i < len(reading)
-           and dictionary_form[-1 - i] == reading[-1 - i]):
-        i += 1
-    if i == 0:
-        return dict(forms)
-    kanji_prefix = dictionary_form[:-i]
-    reading_prefix = reading[:-i]
-    if not kanji_prefix:
-        return dict(forms)
-
-    display = {}
-    for name, form in forms.items():
-        if not form:
-            display[name] = form
-        elif form.startswith(reading_prefix):
-            display[name] = kanji_prefix + form[len(reading_prefix):]
-        else:
-            display[name] = form
-    return display
+        return _display_forms_adj_na(dictionary_form, reading, forms)
+    return _display_forms_common_suffix(dictionary_form, reading, forms)
 
 
 def build() -> None:

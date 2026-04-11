@@ -1,6 +1,6 @@
 {
   "project": "japanese-language-data",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "phase": 4,
   "phase_description": "Phase 4 active — first candidate delivered. All v0.3.2 content plus: Wikipedia 'Kangxi radicals' source pinned at revision 1346511063 via index.php action=raw (CC-BY-SA 4.0); new wikitable parser in build/transform/radicals.py extracting 214 classical radicals + 46 documented alternate forms; data/core/radicals.json now has 197 of 253 radicals (77.9%) populated with authoritative English meanings and Kangxi numbers (previously all empty); global User-Agent header added to build/fetch.py per Wikipedia's UA policy; schemas/radical.schema.json bumped to 0.4.0; regression test for Wikipedia ingestion added; trailing-edge cleanup: CHANGELOG [0.1.0] and [0.2.0] updated with rows/unique split to match [0.3.0], CI workflow summary message no longer has stale hardcoded test count. 57/57 tests passing. Remaining 56 radicals (22.1%) are Japanese-dictionary-specific variant forms whose Wikipedia mapping requires a curated alias table, deferred to v0.4.x.",
   "generated": "2026-04-11",
@@ -129,6 +129,19 @@
     "data/cross-refs/word-to-kanji.json": 18084,
     "data/cross-refs/word-to-sentences.json": 14550,
     "data/cross-refs/kanji-to-radicals.json": 12156
+  },
+  "grammar_curation_status": {
+    "total_entries": 81,
+    "target_entries": "500-700",
+    "coverage_pct": "11-16",
+    "review_status_distribution": {
+      "draft": 81,
+      "community_reviewed": 0,
+      "native_speaker_reviewed": 0
+    },
+    "operational_reviewers_engaged": 0,
+    "as_of": "2026-04-11",
+    "note": "Zero native-speaker reviewers engaged as of this release. docs/contributing.md has the aspirational call for reviewers but no operational pipeline exists yet. The grammar dataset is usable-but-not-authoritative until this changes. This is the single weakest dimension of the project by the maintainer's own admission in README.md and docs/gaps.md."
   },
   "next_actions": [
     "Grammar v0.3.x patches: expand coverage beyond N5+N4 selections. Target N3 grammar points in v0.3.1, N2 in v0.3.2, N1 in v0.3.3.",

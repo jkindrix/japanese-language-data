@@ -8,7 +8,9 @@
     "source_files": [
       "data/core/words.json"
     ],
-    "field_notes": {}
+    "field_notes": {},
+    "source": "Derived cross-reference built from data/core/words.json by build/transform/cross_links.py.",
+    "license": "CC-BY-SA 4.0. Inherits from the source files (EDRDG License / CC-BY-SA 4.0) and the pipeline code license (CC-BY-SA 4.0). See LICENSE and ATTRIBUTION.md for upstream details."
   },
   "mapping": {
     "1000220": [

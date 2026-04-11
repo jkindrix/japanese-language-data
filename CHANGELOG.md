@@ -16,6 +16,47 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+## [0.4.1] — 2026-04-11
+
+Third external-review response cycle. Addresses every finding (F1–F6) from the post-v0.4.0 review. No new data domains, no scope expansion; each change targets exactly one flagged concern.
+
+### Fixed / clarified
+
+- **F1 — Schema version drift clarification** (`docs/architecture.md`). The review observed that 11/14 schemas are at `schemaVersion: "0.3.0"`, 2 at `"0.3.2"`, 1 at `"0.4.0"`, and asked whether this is drift or deliberate. **It is deliberate.** Updated `docs/architecture.md` § "Versioning within the schema" with an explicit "schemas version independently from the repo and from each other" paragraph. Schemas that have not been meaningfully restructured stay at their last-meaningful-update version; bumping on every repo release would produce noise and diminish the signal value. No schema edits.
+- **F2 — Upstream contribution principle vs reality** (`docs/upstream-issues.md`). The review flagged that Design Principle 6 promises filing upstream, but zero items have been filed through Phase 4. **Added an explicit "Phase 1–4 filing status" section at the top of `docs/upstream-issues.md`** honestly accounting for what was found (and not found) in each phase. Phases 1, 2, 4 found no substantive upstream defects; Phase 3 is hand-curated and had no upstream interactions. The two internal schema gaps in "Pending" are *our* schemas, not upstream defects. Design Principle 6 is documented as an ethical commitment maintained even when there is nothing concrete to file.
+- **F3 — Grammar curation operational status** (`manifest.json`). The review flagged that the grammar review pipeline is documented in `docs/contributing.md` but nothing at the manifest level makes the operational status explicit. **Added `manifest.json.grammar_curation_status`** with exact counts (81 entries, all draft, zero reviewers engaged), target range, review-status distribution, and an honest note that "the grammar dataset is usable-but-not-authoritative until this changes."
+- **F4 — Cross-refs metadata gap** (`schemas/cross-refs.schema.json` + `build/transform/cross_links.py`). The review noted that the 4 files in `data/cross-refs/` do not carry `license` or `source` metadata — a doctrinal inconsistency with Design Principle 2 ("every data file carries metadata identifying its source(s) and license"). **Added `license` and `source` as optional (non-required) properties** to the cross-refs schema, and populated them in `build/transform/cross_links.py`. All 4 cross-reference files now carry a provenance statement and an explicit license declaration. Backward-compatible: fields are optional, existing consumers unaffected.
+- **F5 — Transformer unit tests added** (`tests/test_transform_units.py`, 5 tests). The review flagged that the test suite exercises transformer code indirectly through built-data invariants only — a subtle transformer bug must actually corrupt data to be caught. **Added function-level unit tests for `_conjugate_godan`** covering the v5k-s/v5u-s/v5aru/v5r-i edge cases that previously regressed (D1/B1):
+  - `test_conjugate_godan_v5k_s_iku_te_ta_forms` — 行く te/ta use って/った
+  - `test_conjugate_godan_v5u_s_tou_te_ta_forms` — 問う te/ta use うて/うた
+  - `test_conjugate_godan_v5aru_i_stem_and_imperative` — いらっしゃる polite i-stem and imperative
+  - `test_conjugate_godan_v5r_i_bare_aru_suppletive_negative` — bare ある suppletive ない, keeps あれ/あろう
+  - `test_conjugate_godan_v5r_i_compound_koto_ga_aru_prefix` — compound v5r-i prefix preservation and slot blanking
+  All 5 pass; total test count 57 → 62.
+- **F6 — `display_forms` heuristic refactored for auditability** (`build/transform/conjugations.py`). The review flagged the `_compute_display_forms` function as "dense and hard to audit by sight." **Split into four named helpers**:
+  - `_longest_common_suffix_length(a, b)` — the suffix-overlap computation
+  - `_replace_prefix_in_forms(forms, old, new)` — the form-by-form rewrite primitive
+  - `_display_forms_adj_na(...)` — the class-aware branch for na-adjectives
+  - `_display_forms_common_suffix(...)` — the verb/adj-i heuristic
+  - `_compute_display_forms(...)` — now just a 5-line dispatcher
+  Strictly behavior-preserving: `data/grammar/conjugations.json` output is byte-identical before and after. The existing `test_m1_display_forms_preserves_kanji_prefix` regression test continues to pass without modification.
+
+### Not changed (per the review's own finding F7 and out-of-scope items)
+
+- **F7 (Radicals Wikipedia parser is brittle)** — the review explicitly says "15-minute middle-ground: None needed — the tripwire is the right control." The `test_radicals_wikipedia_coverage_above_threshold` test is the correct defense for this risk class. No change.
+- **Schema version bumps on the 11 schemas at 0.3.0** — per the F1 clarification, these are deliberately stable. No change.
+- **Filing actual upstream issues** — per F2, through Phase 4 nothing substantive has been found to file. The principle is maintained; filing will occur when defects are actually discovered. No change.
+- **Recruiting native-speaker reviewers for grammar** — out of session scope (requires human outreach channels). The F3 fix makes the gap explicit in manifest.json so the operational status is no longer only in prose.
+
+### Verification
+
+- 62/62 tests pass (57 prior + 5 new transformer unit tests)
+- 19/19 data files validate against their schemas
+- `just ci` passes end-to-end with byte-stable output
+- `_compute_display_forms` refactor produces byte-identical conjugations.json output (verified via existing regression test)
+
+---
+
 ## [0.4.0] — 2026-04-11
 
 **First Phase 4 candidate delivered**: Wikipedia ingestion for Kangxi radical meanings. Also integrates a global User-Agent header for polite HTTP fetches (required by Wikipedia, polite elsewhere) and a trailing-edge cleanup of the CHANGELOG double-count presentation in [0.1.0] and [0.2.0].

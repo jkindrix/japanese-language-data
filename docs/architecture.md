@@ -221,7 +221,13 @@ Schemas use JSON Schema Draft 2020-12. Every schema is self-contained (no `$ref`
 
 ### Versioning within the schema
 
-Every schema declares a `schemaVersion` that matches the repo's version at the time the schema was last meaningfully updated. Consumers that need to handle multiple versions can key on this field.
+Every schema declares a `schemaVersion`. **Schemas version independently from the repo (`manifest.json.version`) and from each other.** The `schemaVersion` on a given schema reflects the repo version at the time the schema's structure, semantics, or documentation was last meaningfully updated — not the current repo version.
+
+Concretely: if `radical.schema.json` changed semantics in v0.4.0 (`meanings` and `classical_number` went from empty-by-default to populated-by-default), it is bumped to `"0.4.0"`. If `word.schema.json` was last meaningfully updated in v0.3.0 and has seen no structural or semantic change since, it stays at `"0.3.0"` even though the repo has since advanced to v0.4.0. This is intentional: bumping schema versions on every repo release would produce noise and diminish the signal value of the field.
+
+Consumers that need to handle multiple schema versions can key on this field per schema. A schema with `schemaVersion: "0.3.0"` on a repo tagged `v0.4.0` means "this schema has not changed since v0.3.0 and is stable against it."
+
+A reviewer who finds the distribution of schema versions across files confusing should interpret it as a feature, not a drift: schemas that have moved have newer versions, schemas that are stable have older ones.
 
 ---
 

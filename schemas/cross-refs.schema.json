@@ -51,6 +51,14 @@
           "type": "array",
           "items": {"type": "string"},
           "description": "Paths of the data files this cross-reference was derived from."
+        },
+        "source": {
+          "type": "string",
+          "description": "Provenance statement per Design Principle 2 — typically 'Derived cross-reference built from <source_files> by build/transform/cross_links.py'. Not required (backward-compatible), but populated going forward for doctrinal consistency with the other data files."
+        },
+        "license": {
+          "type": "string",
+          "description": "License of the cross-reference file itself. Inherits from the source files (all CC-BY-SA 4.0 via EDRDG) plus the pipeline code license (CC-BY-SA 4.0). Not required (backward-compatible), but populated going forward for doctrinal consistency."
         }
       }
     }

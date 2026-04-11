@@ -2,6 +2,17 @@
 
 This file tracks errors, gaps, and improvement suggestions discovered in upstream sources during this project's build phases. Items here are batched and filed upstream at the end of each phase, per the upstream contribution workflow described in `docs/architecture.md`.
 
+## Phase 1–4 filing status (as of v0.4.0, 2026-04-11)
+
+**Zero items have been filed to any upstream through Phase 4.** Honest accounting:
+
+- **Phase 1 (core ingestion, v0.1.0)**: No substantive upstream defects identified. JMdict, KANJIDIC2, KRADFILE, and RADKFILE all parsed cleanly. Two internal schema gaps were discovered during kanjidic2 inspection (`skipMisclassification` and `morohashi` volume/page detail) — these are tracked in "Pending" below but are *our* schema gaps, not upstream defects, so there is nothing to file.
+- **Phase 2 (enrichment, v0.2.0)**: No substantive upstream defects identified. Kanjium's `accents.txt` parsed cleanly. KanjiVG stroke counts differ from KANJIDIC2 for 109 characters (documented in `stroke-order-index.json` metadata.stroke_count_mismatches), but this is a known methodology difference (KanjiVG counts path elements; KANJIDIC2 gives canonical counts) rather than a defect — both sources are internally consistent.
+- **Phase 3 (grammar, v0.3.0)**: No upstream interactions; grammar content is hand-curated from general knowledge. 6.6% of Waller vocab entries were initially misdescribed as "JMdict ID drift" in v0.2.0 CHANGELOG; this was corrected in v0.3.1 to reflect the actual cause (common-subset filtering). The correction was internal; nothing upstream to file.
+- **Phase 4 (Wikipedia, v0.4.0)**: No substantive upstream defects identified in the Wikipedia Kangxi radicals article. 56 of 253 RADKFILE radicals do not appear in Wikipedia's Kangxi table, but this is a scope difference (Wikipedia covers the 214 classical radicals; RADKFILE includes ~40 Japanese dictionary variants) rather than an upstream defect.
+
+**Design Principle 6 assessment**: the principle ("upstream contribution as ongoing obligation") is aspirational in practice during Phases 1–4. The rigorous defect-fix cycles occurred against *this project's* outputs and schemas, not against upstream data. If substantive upstream defects are discovered during future phases or user reports, they will be filed and tracked in this log. The principle is maintained as an ethical commitment even when there is nothing concrete to file.
+
 Each entry should include:
 
 - **Date discovered**

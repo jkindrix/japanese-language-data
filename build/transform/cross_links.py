@@ -111,6 +111,16 @@ def _write_xref(out_path: Path, mapping: dict, direction: str, key_type: str, va
         "value_type": value_type,
         "source_files": source_files,
         "field_notes": notes or {},
+        "source": (
+            "Derived cross-reference built from "
+            + ", ".join(source_files)
+            + " by build/transform/cross_links.py."
+        ),
+        "license": (
+            "CC-BY-SA 4.0. Inherits from the source files (EDRDG License / "
+            "CC-BY-SA 4.0) and the pipeline code license (CC-BY-SA 4.0). "
+            "See LICENSE and ATTRIBUTION.md for upstream details."
+        ),
     }
     if extra_metadata:
         output_metadata.update(extra_metadata)
