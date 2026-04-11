@@ -6,7 +6,7 @@
     "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
     "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
     "generated": "2026-04-11",
-    "count": 10794,
+    "count": 10835,
     "counts_by_kind_and_level": {
       "vocab_N5": 684,
       "vocab_N4": 640,
@@ -21,7 +21,7 @@
       "grammar_N5": 60,
       "grammar_N4": 91,
       "grammar_N3": 139,
-      "grammar_N2": 0,
+      "grammar_N2": 41,
       "grammar_N1": 0
     },
     "attribution": "JLPT classifications adapted from Jonathan Waller's JLPT Resources at http://www.tanos.co.uk/jlpt/ under CC-BY. Vocabulary data distributed via stephenmk/yomitan-jlpt-vocab (CC-BY-SA 4.0). Kanji classifications extracted from davidluzgouveia/kanji-data (code MIT, Waller data CC-BY). Only the jlpt_new field was used from davidluzgouveia; WaniKani-derived fields were deliberately ignored due to incompatible license.",
@@ -92361,6 +92361,375 @@
       "kind": "kanji",
       "level": "N1",
       "meaning_en": "Bright",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain non-past / noun + にあたって / にあたり",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "on the occasion of / at the time of (formal)",
+      "grammar_id": "ni-atatte-occasion",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain / noun + に先立って / に先立ち",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "prior to / in advance of",
+      "grammar_id": "ni-sakidatte-prior",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / V plain + をきっかけに(して)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "triggered by / with X as the impetus",
+      "grammar_id": "wo-kikkake-ni",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + を契機に / を契機として",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "taking X as the opportunity / prompted by",
+      "grammar_id": "wo-keiki-ni",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + につき",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "due to / because of / per",
+      "grammar_id": "ni-tsuki-due-to",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + (が)ゆえに / 故に",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "because / therefore (literary)",
+      "grammar_id": "yue-ni-because",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + ことから",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "from the fact that / based on the fact",
+      "grammar_id": "koto-kara-from-fact",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain / i-adj / na-adj な / noun の + あまり",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "out of excess / from too much",
+      "grammar_id": "amari-too-much",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V ば-form + こそ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "precisely because / it is only because",
+      "grammar_id": "ba-koso-precisely-because",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + からこそ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "precisely because / it is exactly because",
+      "grammar_id": "kara-koso-precisely-because",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / V plain + に伴って / に伴い",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "accompanying / along with / as X progresses",
+      "grammar_id": "ni-tomonatte-accompany",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + に応じて",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "depending on / in response to / in accordance with",
+      "grammar_id": "ni-oujite-depending",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + にこたえて",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "in response to / responding to (expectations, requests)",
+      "grammar_id": "ni-kotaete-response",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form / noun + にかかわらず",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "regardless of / irrespective of",
+      "grammar_id": "ni-kakawarazu-regardless",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + にもかかわらず",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "despite / in spite of / even though",
+      "grammar_id": "ni-mo-kakawarazu-despite",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + を問わず",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "regardless of / without regard to",
+      "grammar_id": "wo-towazu-regardless",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + はともかく(として)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "setting X aside / putting X aside / regardless of",
+      "grammar_id": "wa-tomokaku",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + はさておき",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "setting X aside (formal)",
+      "grammar_id": "wa-sate-oki",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + に限って",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "of all (things/people/times) / precisely when",
+      "grammar_id": "ni-kagitte-only",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + に限らず",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "not limited to / not only X (but also)",
+      "grammar_id": "ni-kagirazu-not-only",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V negative stem + ずにはいられない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "can't help doing / can't stop oneself from",
+      "grammar_id": "zu-ni-wa-irarenai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V ない-form + ではいられない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "can't help doing / can't stop oneself from (casual variant)",
+      "grammar_id": "nai-dewa-irarenai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form + (は)いられない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "can't afford to be (doing X) / can't stay (in state X)",
+      "grammar_id": "te-wa-irarenai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + にしろ / にせよ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "even if / whether or not (formal)",
+      "grammar_id": "ni-shiro-ni-seyo",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + としても",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "even if / even assuming / even as",
+      "grammar_id": "toshite-mo-even-as",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb volitional + と / ようと",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "regardless of / no matter (what / who / how)",
+      "grammar_id": "you-to-regardless",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb volitional + と + verb ます-stem + まい(と)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "whether or not (one does) X",
+      "grammar_id": "you-to-mai-to",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb dict / ます-stem + まい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "will not / probably not / intention not to",
+      "grammar_id": "mai-not-likely",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + 抜く",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "do X to the very end / thoroughly",
+      "grammar_id": "nuku-fully-do",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + かねない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "might / could (something bad)",
+      "grammar_id": "kane-nai-might",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + かねる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "cannot (quite) / hard to / difficult to",
+      "grammar_id": "kane-ru-hard-to",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + づらい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "hard to do (emotionally / uncomfortably)",
+      "grammar_id": "dzurai-hard-emotional",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + がたい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "hard / difficult to (formal)",
+      "grammar_id": "gatai-difficult",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb dict-form + べく",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "in order to / for the purpose of (literary)",
+      "grammar_id": "beku-in-order-to",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + はもちろん(のこと)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "not to mention / of course / needless to say",
+      "grammar_id": "wa-mochiron",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + を通じて / を通して",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "through / via / throughout (all of)",
+      "grammar_id": "wo-tsuujite-through",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + にわたって / にわたり / にわたる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "over / spanning / across (a period or extent)",
+      "grammar_id": "ni-wataru-span",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + を中心に(して)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "centered on / focusing on / mainly",
+      "grammar_id": "wo-chuushin-ni-centered",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + を込めて",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "with (feeling) / putting (feeling) into",
+      "grammar_id": "wo-komete",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + にしては",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "for (a) / considering X (surprising)",
+      "grammar_id": "ni-shite-wa",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + にして",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "at (the point of) / being (X), (emphatic)",
+      "grammar_id": "ni-shite",
       "source_retrieved": "2026-04-11"
     },
     {

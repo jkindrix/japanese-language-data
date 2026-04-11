@@ -16,7 +16,13 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
-## [0.5.0] — 2026-04-11
+### Added (Batch B5)
+
+- **N2 batch 1** — new `grammar-curated/n2.json` file with **41 hand-curated N2 entries**: 〜にあたって, 〜に先立って, 〜をきっかけに, 〜を契機に, 〜につき, 〜ゆえに, 〜ことから, 〜あまり, 〜ばこそ, 〜からこそ, 〜に伴って, 〜に応じて, 〜にこたえて, 〜にかかわらず, 〜にもかかわらず, 〜を問わず, 〜はともかく, 〜はさておき, 〜に限って, 〜に限らず, 〜ずにはいられない, 〜ないではいられない, 〜てはいられない, 〜にしろ/〜にせよ, 〜としても, 〜(よ)うと, 〜(よ)うと〜まいと, 〜まい, 〜抜く, 〜かねない, 〜かねる, 〜づらい, 〜がたい, 〜べく, 〜はもちろん, 〜を通じて/通して, 〜にわたって, 〜を中心に, 〜を込めて, 〜にしては, 〜にして.
+- Grammar total: 290 → **331** (+41: first N2 content). By-level: N5 60, N4 91, N3 139, **N2 41**. Coverage 41–58 → **47–66%** of the 500–700 target.
+- `data/enrichment/jlpt-classifications.json`: 10,794 → **10,835** (+41 grammar classifications auto-emitted).
+
+
 
 **N3 grammar coverage reaches community-standard completeness.** After Batches B1 + B2 + B3 + B4 the grammar dataset stands at 290 entries (60 N5 + 91 N4 + 139 N3), 41–58% of the 500–700 community-standard target. N3 is now at 139 entries — within the ~140–160 community-consensus "complete N3" range. All new entries `review_status: "draft"`; authorship statement unchanged (written in our own words from general non-copyrightable grammar knowledge; no content from copyrighted grammar references).
 
