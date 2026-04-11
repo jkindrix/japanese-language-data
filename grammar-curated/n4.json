@@ -776,5 +776,807 @@
     ],
     "review_status": "draft",
     "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "te-kara-after-doing",
+    "pattern": "Verb-て form + から",
+    "level": "N4",
+    "meaning_en": "after doing X (then Y)",
+    "meaning_detailed": "〜てから expresses that the main-clause action happens after the 〜て form action is completed. It is sequential and emphasizes the 'after X' relationship between the two events. Distinct from the particle から ('because / from'), despite the shared から — here it is a compound with the て-form. Compare with 〜た後で, which more emphatically marks completion.",
+    "formation": "V-て + から.",
+    "formation_notes": [
+      "Sequential: the 〜てから action must be complete before the main clause begins.",
+      "Distinct from 〜た後で (more emphatic completion) and 〜前に (before).",
+      "Do not confuse with the particle から ('because / from') even though the characters are identical.",
+      "Common in instructions and routines: まず〜てから、そのあとに〜."
+    ],
+    "formality": "neutral",
+    "related": [
+      "te-form-basic",
+      "ato-de-after-doing",
+      "mae-ni-before-doing"
+    ],
+    "examples": [
+      {"japanese": "ご飯を食べてから、出かけます。", "english": "I'll go out after eating.", "source": "original"},
+      {"japanese": "手を洗ってから、食べてください。", "english": "Please eat after washing your hands.", "source": "original"},
+      {"japanese": "学校が終わってから、友達と遊びました。", "english": "After school ended, I played with friends.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "mae-ni-before-doing",
+    "pattern": "V plain non-past / noun + の + 前に",
+    "level": "N4",
+    "meaning_en": "before doing X / before X",
+    "meaning_detailed": "〜前に marks a temporal 'before' clause. The verb in the 前に clause is ALWAYS in dictionary (plain non-past) form, regardless of whether the main clause describes a past, present, or future event — this is a common error point for learners who want to match tenses. For noun references, use noun + の + 前に.",
+    "formation": "V plain non-past + 前に (always dictionary form); noun + の + 前に.",
+    "formation_notes": [
+      "Always use the dictionary (non-past) form of the verb in the 前に clause, even for past events.",
+      "For nouns: connect with の (会議の前に, not 会議前に for grammatical 'before').",
+      "Contrast with 〜た後で (uses past form); 〜前に is symmetrically non-past.",
+      "Without に, 前 alone is a noun meaning 'front / before'."
+    ],
+    "formality": "neutral",
+    "related": [
+      "ato-de-after-doing",
+      "te-kara-after-doing"
+    ],
+    "examples": [
+      {"japanese": "寝る前に、歯を磨きます。", "english": "Before going to bed, I brush my teeth.", "source": "original"},
+      {"japanese": "食事の前に、手を洗ってください。", "english": "Please wash your hands before the meal.", "source": "original"},
+      {"japanese": "日本に来る前に、日本語を勉強しました。", "english": "Before coming to Japan, I studied Japanese.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "ato-de-after-doing",
+    "pattern": "V-た form / noun + の + 後で",
+    "level": "N4",
+    "meaning_en": "after doing X / after X",
+    "meaning_detailed": "〜後で marks a temporal 'after' clause, using the past form of the verb (Vた) even when the main clause is in the future. More emphatic about the completion of the preceding action than 〜てから. For noun references, use noun + の + 後で.",
+    "formation": "V-た + 後で; noun + の + 後で.",
+    "formation_notes": [
+      "Verb must be in the past form (Vた) — the 前に / 後で symmetry is: 前に non-past, 後で past.",
+      "More completion-emphatic than 〜てから; both are valid but 〜後で feels more finished.",
+      "For nouns: use の (会議の後で, 仕事の後で).",
+      "The に / で distinction: 後 + に also exists (〜た後に) with similar meaning; 後で is more common in speech."
+    ],
+    "formality": "neutral",
+    "related": [
+      "te-kara-after-doing",
+      "mae-ni-before-doing"
+    ],
+    "examples": [
+      {"japanese": "ご飯を食べた後で、散歩します。", "english": "After eating, I'll take a walk.", "source": "original"},
+      {"japanese": "学校の後で、図書館へ行きます。", "english": "After school, I'll go to the library.", "source": "original"},
+      {"japanese": "仕事が終わった後で、飲みに行きましょう。", "english": "After work is over, let's go drinking.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "koto-ga-dekiru",
+    "pattern": "V plain non-past + ことができる",
+    "level": "N4",
+    "meaning_en": "can do / is able to do",
+    "meaning_detailed": "〜ことができる is an analytic way to express ability, equivalent to the potential form of the verb (食べられる). It is slightly more formal and more common in written Japanese, while the potential form dominates in speech. Both are fully grammatical and interchangeable in meaning, though the potential form is usually more concise. Negative: 〜ことができない.",
+    "formation": "V plain non-past + ことができる (polite: ことができます); negative: ことができない.",
+    "formation_notes": [
+      "More formal / written than the potential form, with identical meaning.",
+      "The potential form is more common in speech: 食べられる vs 食べることができる.",
+      "Noun version: noun + ができる ('can do X / X can be done'): 料理ができる ('can cook').",
+      "Chain with こと nominalization — builds on the more general こと nominalizer pattern."
+    ],
+    "formality": "neutral",
+    "related": [
+      "potential-form",
+      "koto-nominalizer"
+    ],
+    "examples": [
+      {"japanese": "私は日本語を話すことができます。", "english": "I can speak Japanese.", "source": "original"},
+      {"japanese": "ここで泳ぐことができません。", "english": "You cannot swim here.", "source": "original"},
+      {"japanese": "彼は料理することができる。", "english": "He can cook.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "koto-ni-suru-decide",
+    "pattern": "V plain non-past / V ない + ことにする",
+    "level": "N4",
+    "meaning_en": "decide to (active personal decision)",
+    "meaning_detailed": "〜ことにする expresses an active personal decision made by the speaker — 'I decided to do X'. Distinct from its passive counterpart 〜ことになる ('it has been decided'), where the decision comes from circumstance or others. The progressive form 〜ことにしている expresses a habitual decision or self-rule ('I make it a habit to'). Past form 〜ことにした = 'decided'.",
+    "formation": "V plain non-past + ことにする (decide to); V ない + ことにする (decide not to); past: ことにした; progressive: ことにしている.",
+    "formation_notes": [
+      "〜ことにする vs 〜ことになる: する is the speaker's active decision; なる is the passive 'it was decided'.",
+      "Different from the noun-based ni-suru-decide (noun + にする 'decide on X from a menu of options').",
+      "Progressive ことにしている is the standard 'make it a habit' / 'make it a rule' form.",
+      "Common for lifestyle changes: 毎日運動することにした ('I decided to exercise every day')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "koto-ni-naru-be-decided",
+      "ni-suru-decide",
+      "koto-nominalizer"
+    ],
+    "examples": [
+      {"japanese": "明日から毎日運動することにしました。", "english": "I decided to exercise every day from tomorrow.", "source": "original"},
+      {"japanese": "甘いものを食べないことにしている。", "english": "I've decided not to eat sweets (habitually).", "source": "original"},
+      {"japanese": "留学することにした。", "english": "I decided to study abroad.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "koto-ni-naru-be-decided",
+    "pattern": "V plain non-past / V ない + ことになる",
+    "level": "N4",
+    "meaning_en": "it is decided that / comes to be that",
+    "meaning_detailed": "〜ことになる expresses that a decision has been made by circumstance or others, without the speaker's direct agency — 'it was decided that X'. Its active counterpart is 〜ことにする ('I decided to do X'). The progressive form 〜ことになっている expresses an established rule, custom, or schedule. Past form 〜ことになった = 'it was (has been) decided'.",
+    "formation": "V plain non-past + ことになる; V ない + ことになる; past: ことになった; progressive: ことになっている.",
+    "formation_notes": [
+      "Passive counterpart of ことにする — the decision comes from outside the speaker.",
+      "〜ことになっている expresses social customs, rules, or regulations: 日本では〜することになっている.",
+      "Common in business and transfer announcements: 転勤することになりました ('it has been decided that I will transfer').",
+      "Different from ni-naru-become (noun → state change)."
+    ],
+    "formality": "neutral",
+    "related": [
+      "koto-ni-suru-decide",
+      "ni-naru-become",
+      "koto-nominalizer"
+    ],
+    "examples": [
+      {"japanese": "来月、東京に転勤することになりました。", "english": "It's been decided that I'll transfer to Tokyo next month.", "source": "original"},
+      {"japanese": "日本では靴を脱いで家に入ることになっている。", "english": "In Japan, it's the rule to take off your shoes before entering a house.", "source": "original"},
+      {"japanese": "会議は来週開くことになった。", "english": "It's been decided that the meeting will be held next week.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "nasai-command",
+    "pattern": "Verb ます-stem + なさい",
+    "level": "N4",
+    "meaning_en": "(do it) — gentle command",
+    "meaning_detailed": "〜なさい is a gentle command form, formed by adding なさい to the verb stem. It is less polite than 〜てください but not as abrupt as the bare imperative (食べろ). It is typical of parents to children, teachers to students, and written instructions ('answer the following' = 答えなさい). The form is too casual for polite adult-to-adult requests.",
+    "formation": "V ます-stem + なさい: 食べ → 食べなさい, 見 → 見なさい, 話し → 話しなさい. Irregular: する → しなさい, くる → きなさい.",
+    "formation_notes": [
+      "Register: gentle command, appropriate in parent/teacher contexts or written instructions.",
+      "Too casual / condescending for polite adult-to-adult requests — use 〜てください instead.",
+      "Test/instruction writing: 次の問題に答えなさい ('answer the following questions').",
+      "The imperative form it softens: the bare godan imperative (食べろ) is much blunter."
+    ],
+    "formality": "neutral",
+    "related": [
+      "te-kudasai-request",
+      "masu-polite-verb"
+    ],
+    "examples": [
+      {"japanese": "早く起きなさい。", "english": "Wake up quickly!", "source": "original"},
+      {"japanese": "宿題をしなさい。", "english": "Do your homework.", "source": "original"},
+      {"japanese": "野菜を食べなさい。", "english": "Eat your vegetables.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "te-hoshii-want-someone",
+    "pattern": "V-て form + ほしい",
+    "level": "N4",
+    "meaning_en": "want someone (else) to do X",
+    "meaning_detailed": "〜てほしい expresses the speaker's desire for another person to do something. The person being asked is typically marked with に. Distinct from 〜たい (own desire to do) and from ほしい alone (want a thing). The negative form 〜ないでほしい expresses 'want someone not to do X'.",
+    "formation": "V-て + ほしい; negative: V ないでほしい.",
+    "formation_notes": [
+      "The person being asked takes に: 私に話してほしい ('I want you to talk to me').",
+      "Contrast: 〜たい (first-person own desire) vs 〜てほしい (desire that someone else act).",
+      "Negative: 〜ないでほしい ('don't do that, please').",
+      "Softer than 〜てください (request) — expresses desire rather than direct request."
+    ],
+    "formality": "neutral",
+    "related": [
+      "tai-desire",
+      "ga-hoshii-wanting-thing",
+      "te-kudasai-request"
+    ],
+    "examples": [
+      {"japanese": "私の話を聞いてほしい。", "english": "I want you to listen to me.", "source": "original"},
+      {"japanese": "手伝ってほしいです。", "english": "I want (someone) to help me.", "source": "original"},
+      {"japanese": "早く帰ってきてほしい。", "english": "I want you to come home early.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "shi-reason-listing",
+    "pattern": "Plain form + し (+ plain form + し + ...)",
+    "level": "N4",
+    "meaning_en": "and / besides (non-exhaustive listing of reasons or facts)",
+    "meaning_detailed": "〜し lists reasons or facts non-exhaustively — 'and moreover', 'for one thing'. The listed items are not the complete set; し implies there may be more. Often paired with a concluding clause that follows from the listed reasons. It is different from the sequential て-form in that it is for reasons/facts rather than actions in sequence.",
+    "formation": "Plain-form predicate + し; can chain multiple. Noun / na-adj + だ + し.",
+    "formation_notes": [
+      "Non-exhaustive: implies there are more reasons than just those listed.",
+      "Often followed by から, a conclusion, or an implied consequence.",
+      "For noun/na-adj predicates, include だ: 便利だし, 学生だし.",
+      "Can stand alone at sentence end to trail off: 時間もないし... ('I don't have time, and...')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "tari-tari-suru",
+      "kara-cause",
+      "node-cause"
+    ],
+    "examples": [
+      {"japanese": "この部屋は広いし、静かだ。", "english": "This room is spacious, and (also) quiet.", "source": "original"},
+      {"japanese": "時間もないし、お金もない。", "english": "I have no time and no money.", "source": "original"},
+      {"japanese": "頭も痛いし、熱もあるし、今日は休みます。", "english": "I have a headache, I have a fever, so I'll take the day off.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "you-to-omou-volitional-intent",
+    "pattern": "Verb volitional form + と思う",
+    "level": "N4",
+    "meaning_en": "I think I will / intend to do",
+    "meaning_detailed": "〜ようと思う combines the volitional (よう/おう) form with と思う ('think'), expressing the speaker's intention at the moment of speaking — 'I think I'll do X'. Less firm than 〜つもり (settled plan) but stronger than a vague wish. The progressive form 〜ようと思っている = 'have been thinking of'. For ichidan verbs use よう; for godan verbs use おう ending.",
+    "formation": "Ichidan: 食べる → 食べよう + と思う. Godan: 行く → 行こう + と思う. Irregular: する → しよう, くる → こよう.",
+    "formation_notes": [
+      "First-person intention at the moment of speaking; not as settled as つもり.",
+      "Progressive form 〜ようと思っている is common for 'have been thinking of'.",
+      "Builds on the standalone volitional form (see volitional-form) which expresses 'let's do' or solitary resolve.",
+      "Contrast with 〜たいと思う ('think I want to do') — しよう is about intention, したい is about desire."
+    ],
+    "formality": "neutral",
+    "related": [
+      "volitional-form",
+      "to-omou",
+      "tsumori-intention"
+    ],
+    "examples": [
+      {"japanese": "明日、早く起きようと思います。", "english": "I think I'll wake up early tomorrow.", "source": "original"},
+      {"japanese": "日本語を勉強しようと思っています。", "english": "I'm thinking of studying Japanese.", "source": "original"},
+      {"japanese": "新しいパソコンを買おうと思う。", "english": "I think I'll buy a new computer.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "te-kureru-favor-received",
+    "pattern": "V-て form + くれる",
+    "level": "N4",
+    "meaning_en": "(someone) does a favor for me / us",
+    "meaning_detailed": "〜てくれる expresses that someone does something FOR the speaker or the speaker's in-group. The speaker benefits from the action. The honorific form 〜てくださる is used when the favor-giver is a superior. The giving-verb system (あげる / くれる / もらう) is central to Japanese expression of interpersonal kindness, and 〜てくれる captures the 'someone is kind to me' direction.",
+    "formation": "V-て + くれる (polite: くれます); honorific: V-て + くださる (polite: くださいます).",
+    "formation_notes": [
+      "The favor-giver takes が; the beneficiary (often 私 / us) is usually implied.",
+      "Part of the giving-verb trio: te-ageru (I do for others), te-kureru (others do for me), te-morau (I have someone do for me).",
+      "Honorific くださる: 先生が教えてくださった.",
+      "Negative くれない / くれなかった: 'didn't do the favor' — often with mild frustration."
+    ],
+    "formality": "neutral",
+    "related": [
+      "te-ageru-favor-given",
+      "te-morau-request-favor",
+      "kureru-give-toward"
+    ],
+    "examples": [
+      {"japanese": "友達がお金を貸してくれた。", "english": "My friend lent me money.", "source": "original"},
+      {"japanese": "母が弁当を作ってくれました。", "english": "My mother made me a bento.", "source": "original"},
+      {"japanese": "先生が日本語を教えてくださった。", "english": "The teacher kindly taught me Japanese.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "te-morau-request-favor",
+    "pattern": "V-て form + もらう",
+    "level": "N4",
+    "meaning_en": "I receive the favor of X doing Y / I have X do Y",
+    "meaning_detailed": "〜てもらう expresses that the speaker or in-group receives the benefit of another's action — 'I have someone do X for me'. The person performing the action takes に. The humble form 〜ていただく is used when the other party is a superior. Common as a polite request: 〜てもらえますか ('could you...?').",
+    "formation": "Subject (recipient) + に + Agent + V-て + もらう (polite: もらいます); humble: V-て + いただく.",
+    "formation_notes": [
+      "The agent (performer) takes に: 友達に手伝ってもらった ('had my friend help').",
+      "Request forms: 〜てもらえますか (polite), 〜てもらえる (plain), 〜ていただけますか (very polite).",
+      "Humble form 〜ていただく is essential in business and formal contexts.",
+      "Contrast with 〜てくれる: くれる focuses on the giver's action; もらう focuses on the recipient's receipt."
+    ],
+    "formality": "neutral",
+    "related": [
+      "te-kureru-favor-received",
+      "te-ageru-favor-given",
+      "morau-receive",
+      "te-itadaku-polite-favor-received"
+    ],
+    "examples": [
+      {"japanese": "友達に日本語を教えてもらった。", "english": "I had my friend teach me Japanese.", "source": "original"},
+      {"japanese": "医者に診てもらいました。", "english": "I had the doctor examine me.", "source": "original"},
+      {"japanese": "少し待ってもらえますか。", "english": "Could you wait a moment?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "te-ageru-favor-given",
+    "pattern": "V-て form + あげる",
+    "level": "N4",
+    "meaning_en": "I do a favor for (someone outside my in-group)",
+    "meaning_detailed": "〜てあげる expresses that the speaker does something FOR someone else, usually outside the speaker's close in-group. The recipient takes に. A usage caution: saying 〜てあげる directly to the hearer can sound condescending, because it draws attention to the favor. Humble form さしあげる is used for superiors.",
+    "formation": "V-て + あげる (polite: あげます); humble: V-て + さしあげる (polite: さしあげます).",
+    "formation_notes": [
+      "The recipient takes に: 友達に本を貸してあげる.",
+      "CAUTION: saying 'I'll ~てあげる' directly to someone can sound condescending; often softened in practice.",
+      "Humble さしあげる: 先生に手紙を書いてさしあげる — use for superiors, but sparingly (it can sound overly formal).",
+      "Part of the giving-verb trio (あげる / くれる / もらう)."
+    ],
+    "formality": "neutral",
+    "related": [
+      "te-kureru-favor-received",
+      "te-morau-request-favor",
+      "ageru-give-outward"
+    ],
+    "examples": [
+      {"japanese": "友達に本を貸してあげました。", "english": "I lent a book to my friend.", "source": "original"},
+      {"japanese": "妹の宿題を手伝ってあげた。", "english": "I helped my younger sister with her homework.", "source": "original"},
+      {"japanese": "先生に手紙を書いてさしあげる。", "english": "I'll write a letter for my teacher.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "ageru-give-outward",
+    "pattern": "Giver が Receiver に Object を あげる",
+    "level": "N4",
+    "meaning_en": "to give (outward, from in-group to out-group)",
+    "meaning_detailed": "あげる is the basic verb for 'give', used when the giver is the speaker or in-group and the receiver is outside that group. Crucially, do NOT use あげる when giving TO yourself (use くれる in that direction), and do NOT use あげる for superiors (use さしあげる or reformulate). The full giving-verb system is: あげる (outward), くれる (toward speaker), もらう (receive).",
+    "formation": "Plain verb あげる (polite: あげます). Particles: Giver が / は, Receiver に, Object を.",
+    "formation_notes": [
+      "Do NOT use あげる for gifts TO you — use くれる instead.",
+      "Do NOT use あげる for gifts to clearly superior persons — use さしあげる (humble) or paraphrase.",
+      "Direction matters: あげる = outward (from in-group to out-group), くれる = toward speaker.",
+      "Basic verb meaning 'give' — the foundation for the 〜てあげる auxiliary."
+    ],
+    "formality": "neutral",
+    "related": [
+      "kureru-give-toward",
+      "morau-receive",
+      "te-ageru-favor-given"
+    ],
+    "examples": [
+      {"japanese": "友達にプレゼントをあげました。", "english": "I gave a present to my friend.", "source": "original"},
+      {"japanese": "犬にえさをあげる。", "english": "I give food to the dog.", "source": "original"},
+      {"japanese": "これをあなたにあげる。", "english": "I'll give this to you.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "kureru-give-toward",
+    "pattern": "Giver が (Receiver に) Object を くれる",
+    "level": "N4",
+    "meaning_en": "to give (toward speaker / in-group)",
+    "meaning_detailed": "くれる is the verb 'give' used when the giver is someone else and the receiver is the speaker or in-group. The receiver (often 私) is commonly implied and omitted. The honorific form くださる is used when the giver is a superior. Parallel to あげる (outward direction) but from the opposite perspective.",
+    "formation": "Plain verb くれる (polite: くれます); honorific: くださる (polite: くださいます — irregular, note the final います not りまする).",
+    "formation_notes": [
+      "The receiver (typically 私 or in-group) can be implied and often is dropped from the sentence.",
+      "Honorific くださる — used when the giver is a superior (先生がくださった).",
+      "Note the irregular honorific polite form くださいます (not くださります).",
+      "Basic verb meaning 'give toward me/us' — the foundation for the 〜てくれる auxiliary."
+    ],
+    "formality": "neutral",
+    "related": [
+      "ageru-give-outward",
+      "morau-receive",
+      "te-kureru-favor-received"
+    ],
+    "examples": [
+      {"japanese": "友達が本をくれた。", "english": "My friend gave me a book.", "source": "original"},
+      {"japanese": "先生がくださった本を読んでいます。", "english": "I'm reading the book my teacher kindly gave me.", "source": "original"},
+      {"japanese": "妹がこのペンをくれました。", "english": "My younger sister gave me this pen.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "morau-receive",
+    "pattern": "Receiver が Giver に / から Object を もらう",
+    "level": "N4",
+    "meaning_en": "to receive",
+    "meaning_detailed": "もらう is the verb 'receive', used from the receiver's perspective in a giving transaction. The giver takes に or から; the receiver is the subject. Humble form いただく is used when receiving from superiors. Together with あげる and くれる, もらう completes the Japanese giving-verb system — each verb takes a different perspective on the same kind of event.",
+    "formation": "Plain verb もらう (polite: もらいます); humble: いただく (polite: いただきます).",
+    "formation_notes": [
+      "Giver particle: に or から (both grammatical; から is common when the giver is distant).",
+      "Humble form いただく — used when receiving from a superior or in formal contexts.",
+      "The polite form いただきます is also the pre-meal greeting — same word, same root idea.",
+      "Basic verb meaning 'receive' — the foundation for the 〜てもらう auxiliary."
+    ],
+    "formality": "neutral",
+    "related": [
+      "ageru-give-outward",
+      "kureru-give-toward",
+      "te-morau-request-favor",
+      "te-itadaku-polite-favor-received"
+    ],
+    "examples": [
+      {"japanese": "友達にプレゼントをもらいました。", "english": "I received a present from my friend.", "source": "original"},
+      {"japanese": "先生から手紙をいただいた。", "english": "I received a letter from the teacher.", "source": "original"},
+      {"japanese": "誕生日にケーキをもらった。", "english": "I received a cake for my birthday.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "o-v-kudasai-polite-honor",
+    "pattern": "お + V ます-stem + ください (or ご + Sino-Japanese noun + ください)",
+    "level": "N4",
+    "meaning_en": "please do (very polite honorific request)",
+    "meaning_detailed": "お〜ください is a very polite honorific request form, more formal than 〜てください. It is the form used in customer service announcements, public signage, and formal instructions. For native Japanese verbs, use お + ます-stem; for Sino-Japanese nouns ('suru' verbs), use ご + noun. Some verbs have fixed honorific forms that replace this pattern (e.g., 来る → お越しください).",
+    "formation": "お + V ます-stem + ください (native verbs): お待ちください, お座りください. ご + Sino-Japanese noun + ください: ご注意ください, ご利用ください.",
+    "formation_notes": [
+      "Very polite — typical of customer service, public announcements, formal instructions.",
+      "The お vs ご distinction tracks native vs Sino-Japanese: native verbs take お; Sino-Japanese nouns take ご.",
+      "Not all verbs work with this pattern — some have dedicated honorific forms (来る → お越しください, 見る → ご覧ください).",
+      "More formal than the basic 〜てください."
+    ],
+    "formality": "formal",
+    "related": [
+      "te-kudasai-request",
+      "sonkeigo-reru-rareru",
+      "humble-o-suru"
+    ],
+    "examples": [
+      {"japanese": "お待ちください。", "english": "Please wait.", "source": "original"},
+      {"japanese": "こちらにお座りください。", "english": "Please sit here.", "source": "original"},
+      {"japanese": "ご注意ください。", "english": "Please be careful.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "sonkeigo-reru-rareru",
+    "pattern": "Verb → passive form (honorific usage)",
+    "level": "N4",
+    "meaning_en": "honorific use of passive form (polite way to describe superior's actions)",
+    "meaning_detailed": "The 〜れる / 〜られる form (normally the passive) is also used as an honorific (尊敬語), describing the actions of a superior politely. The conjugation is identical to the passive; context determines whether it is passive or honorific — usually clear from the subject (a superior) and the non-patient nature of the action. Less formal than dedicated honorific verbs (いらっしゃる, ご覧になる) but common in business speech.",
+    "formation": "Same passive conjugation: Ichidan → 〜られる; Godan → u-row → a-row + れる; Irregular する → される, くる → こられる.",
+    "formation_notes": [
+      "Same FORM as the passive, but DIFFERENT FUNCTION — honorific.",
+      "Context disambiguates: a subject who is a superior performing their own (non-victim) action implies honorific.",
+      "Less formal than お〜になる or dedicated honorific verbs (いらっしゃる, なさる, おっしゃる).",
+      "Common in business and polite speech; easier to use than the full honorific vocabulary."
+    ],
+    "formality": "formal",
+    "related": [
+      "passive-form",
+      "o-v-kudasai-polite-honor",
+      "humble-o-suru"
+    ],
+    "examples": [
+      {"japanese": "社長が会議に来られました。", "english": "The president came to the meeting.", "source": "original"},
+      {"japanese": "先生は何と言われましたか。", "english": "What did the teacher say?", "source": "original"},
+      {"japanese": "何時に帰られますか。", "english": "What time will you go home?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "humble-o-suru",
+    "pattern": "お + V ます-stem + する (or ご + Sino-Japanese noun + する)",
+    "level": "N4",
+    "meaning_en": "humble form: I will do X (for a superior)",
+    "meaning_detailed": "お〜する is the 謙譲語 (humble) form for the speaker's own actions when speaking to or about a superior. It lowers the speaker to elevate the listener. Like the honorific お〜ください, the お vs ご distinction tracks native vs Sino-Japanese roots. Common in business contexts for everyday actions — 'I'll call you', 'I'll explain'.",
+    "formation": "お + V ます-stem + する (native verbs): お貸しする, お書きする. ご + Sino-Japanese noun + する: ご案内する, ご説明する.",
+    "formation_notes": [
+      "Emphasizes humility — the speaker is performing the action for a superior.",
+      "お vs ご: お for native verbs, ご for Sino-Japanese nouns.",
+      "Polite form: お〜します / ご〜します.",
+      "Common in business: お願いします, ご案内します."
+    ],
+    "formality": "formal",
+    "related": [
+      "o-v-kudasai-polite-honor",
+      "sonkeigo-reru-rareru"
+    ],
+    "examples": [
+      {"japanese": "先生に本をお貸しします。", "english": "I will lend the book to my teacher.", "source": "original"},
+      {"japanese": "後で、お電話します。", "english": "I will call you later.", "source": "original"},
+      {"japanese": "ご案内します。", "english": "I will show you around.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "te-goran-try-casual",
+    "pattern": "V-て form + ごらん(なさい)",
+    "level": "N4",
+    "meaning_en": "try doing (warm / parental suggestion)",
+    "meaning_detailed": "〜てごらん is a casual, often parental or warm form of 'try doing X'. It overlaps with 〜てみる but carries a recommending nuance — 'give it a try, I think you'll like it'. The longer form 〜てごらんなさい is slightly more polite/instructive. Typical of parent-to-child or teacher-to-student contexts, and friends suggesting something enthusiastically.",
+    "formation": "V-て + ごらん (casual); V-て + ごらんなさい (slightly more polite/parental).",
+    "formation_notes": [
+      "Warmer and more recommending than 〜てみる alone.",
+      "Not polite enough for strangers or business contexts — use 〜てみてください instead.",
+      "ごらん comes from ご覧 ('look / honorable seeing') but is purely a grammatical auxiliary here.",
+      "Common in children's stories and parental speech."
+    ],
+    "formality": "casual",
+    "related": [
+      "te-miru",
+      "te-kudasai-request",
+      "nasai-command"
+    ],
+    "examples": [
+      {"japanese": "この本を読んでごらん。面白いよ。", "english": "Try reading this book. It's interesting.", "source": "original"},
+      {"japanese": "やってごらんなさい。", "english": "Go on, try it.", "source": "original"},
+      {"japanese": "食べてごらん、おいしいから。", "english": "Try eating it, it's delicious.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "sou-iu-kou-iu",
+    "pattern": "こういう / そういう / ああいう / どういう + noun",
+    "level": "N4",
+    "meaning_en": "this kind of / that kind of / that kind of (over there) / what kind of",
+    "meaning_detailed": "こういう / そういう / ああいう / どういう forms a こ・そ・あ・ど series meaning 'this/that/that-over-there/what kind of N'. Structurally built from the demonstrative + いう ('say'), but functionally just a fixed demonstrative for kind/type. More casual and more common in speech than このような / そのような. どういう is the interrogative form and is very common ('どういう意味ですか' = 'what do you mean?').",
+    "formation": "こういう / そういう / ああいう / どういう + noun.",
+    "formation_notes": [
+      "Parallel to the こ・そ・あ・ど demonstrative series (これ/それ/あれ/どれ).",
+      "Structurally derived from the verb 言う ('say') but functionally a fixed demonstrative.",
+      "More casual than のような-based equivalents (このような etc.).",
+      "どういう意味 ('what meaning') is an extremely common fixed phrase."
+    ],
+    "formality": "neutral",
+    "related": [
+      "kore-sore-are-demonstratives",
+      "kono-sono-ano-dono-attributive"
+    ],
+    "examples": [
+      {"japanese": "こういう本が好きです。", "english": "I like this kind of book.", "source": "original"},
+      {"japanese": "そういう人に会ったことがある。", "english": "I've met that kind of person.", "source": "original"},
+      {"japanese": "どういう意味ですか。", "english": "What do you mean?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "ki-ga-suru-feel-like",
+    "pattern": "Plain form + 気がする",
+    "level": "N4",
+    "meaning_en": "feel like / have a feeling that",
+    "meaning_detailed": "〜気がする expresses an intuition, premonition, or vague feeling — less firm than 〜と思う. Used for hunches, emotional impressions, and non-evidential guesses. 気がした (past) = 'had a feeling'. 気 literally means 'spirit / mind / feeling', and the full phrase is 'there is a feeling of X'.",
+    "formation": "Plain-form predicate + 気がする. For noun/na-adj: include the copula (〜だ + 気がする or 〜な + 気がする).",
+    "formation_notes": [
+      "More tentative than 思う — expresses intuition rather than considered opinion.",
+      "Commonly used for premonitions and bodily feelings: 熱がある気がする ('I feel like I have a fever').",
+      "Contrast with 〜感じがする (similar, feeling-based) and 〜ような気がする (even more tentative).",
+      "気がした in past tense reports a previous feeling: あの時、誰かに見られている気がした."
+    ],
+    "formality": "neutral",
+    "related": [
+      "to-omou",
+      "rashii-seems",
+      "sou-da-appearance"
+    ],
+    "examples": [
+      {"japanese": "雨が降る気がする。", "english": "I have a feeling it's going to rain.", "source": "original"},
+      {"japanese": "誰かに見られている気がする。", "english": "I feel like someone's watching me.", "source": "original"},
+      {"japanese": "彼は来ない気がする。", "english": "I have a feeling he's not coming.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "tai-to-omou-want-to-think",
+    "pattern": "Verb stem + たいと思う",
+    "level": "N4",
+    "meaning_en": "I (think I) want to do",
+    "meaning_detailed": "〜たいと思う softens the direct 〜たい by framing it as something the speaker 'thinks'. Literally 'think I want to do X', functionally 'I'd like to do X'. Less direct and more polite than bare 〜たい. The progressive form 〜たいと思っている expresses a sustained wish ('I've been wanting to'). Commonly appears in self-introductions, plans, and polite expressions of preference.",
+    "formation": "V ます-stem + たいと思う / たいと思います.",
+    "formation_notes": [
+      "Softer and more polite than bare 〜たい — commonly used in formal self-introductions.",
+      "Progressive form 〜たいと思っている: 'have been wanting to do X'.",
+      "Frames the desire as a thought rather than an assertion.",
+      "Do not use 〜たいと思う for third-person wishes — third-person uses 〜たがる / 〜たがっている."
+    ],
+    "formality": "formal",
+    "related": [
+      "tai-desire",
+      "to-omou",
+      "you-to-omou-volitional-intent"
+    ],
+    "examples": [
+      {"japanese": "日本へ行きたいと思います。", "english": "I think I'd like to go to Japan.", "source": "original"},
+      {"japanese": "新しい仕事を探したいと思っている。", "english": "I've been thinking of looking for a new job.", "source": "original"},
+      {"japanese": "将来、医者になりたいと思う。", "english": "I think I want to become a doctor in the future.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "ba-ai-in-case",
+    "pattern": "V plain / i-adj / na-adj な / noun の + 場合(は)",
+    "level": "N4",
+    "meaning_en": "in the case of / in the event that / if",
+    "meaning_detailed": "〜場合 introduces a hypothetical scenario or specific case — 'in the event that X'. More formal than the basic たら/ば/と/なら conditionals and typical of instructions, warnings, rules, and documentation. The optional は after 場合 sets up the case as the topic. Very common in official signage and emergency instructions.",
+    "formation": "V plain + 場合; i-adj + 場合; na-adj + な + 場合; noun + の + 場合.",
+    "formation_notes": [
+      "More formal than たら/ば/と/なら — typical of official instructions and rules.",
+      "Often appears in warnings and emergency signage: 火事の場合, 遅れる場合.",
+      "The optional は (〜場合は) marks the case as a topic for contrast.",
+      "Past form 場合 + でした can express retrospective 'in the case where ___'."
+    ],
+    "formality": "formal",
+    "related": [
+      "tara-conditional",
+      "ba-conditional"
+    ],
+    "examples": [
+      {"japanese": "火事の場合、このボタンを押してください。", "english": "In case of fire, press this button.", "source": "original"},
+      {"japanese": "質問がある場合、手を挙げてください。", "english": "If you have questions, please raise your hand.", "source": "original"},
+      {"japanese": "遅れる場合は、必ず連絡してください。", "english": "If you're going to be late, please contact (us).", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "zutsu-each-per",
+    "pattern": "Number + counter + ずつ",
+    "level": "N4",
+    "meaning_en": "each / per / at a rate of",
+    "meaning_detailed": "〜ずつ attaches to a number + counter to express distribution — 'X each', 'X per unit', 'X at a time'. Common for fair distribution ('one each'), gradual progress ('little by little'), and instructing groups. Functions adverbially, modifying a verb or action.",
+    "formation": "Number + counter + ずつ: 一つずつ, 二人ずつ, 少しずつ, 一個ずつ.",
+    "formation_notes": [
+      "Distributive sense: each person/unit gets the quantity.",
+      "Gradual-progress sense: 少しずつ ('little by little'), 一歩ずつ ('step by step').",
+      "Works with any counter, including indefinite 少し ('little').",
+      "Adverbial in function — modifies the main verb."
+    ],
+    "formality": "neutral",
+    "related": [
+      "counter-tsu",
+      "counter-people-nin"
+    ],
+    "examples": [
+      {"japanese": "一つずつ取ってください。", "english": "Please take one each.", "source": "original"},
+      {"japanese": "少しずつ食べます。", "english": "I eat (it) little by little.", "source": "original"},
+      {"japanese": "二人ずつ並んでください。", "english": "Please line up in pairs (two each).", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "tsumori-datta-had-intended",
+    "pattern": "V plain non-past + つもりだった",
+    "level": "N4",
+    "meaning_en": "had intended to / was going to",
+    "meaning_detailed": "〜つもりだった is the past form of つもり (intention), expressing an intention held at a past moment — 'I had intended to do X'. Often implies the intention was NOT carried out, with an adversative follow-up ('I was going to, but...'). Distinct from 〜たつもり, which means 'thought I did X' (mistaken belief about having done something).",
+    "formation": "V plain non-past + つもりだった / つもりでした.",
+    "formation_notes": [
+      "Past form of つもり — the intention is placed in the past, regardless of whether it was carried out.",
+      "Often implies non-realization: 〜つもりだったけど、〜 ('was going to, but...').",
+      "Distinct from 〜たつもり, which uses the past verb form + つもり and means 'thought I did' (usually a mistaken belief).",
+      "Common for retrospection and apology."
+    ],
+    "formality": "neutral",
+    "related": [
+      "tsumori-intention",
+      "you-to-omou-volitional-intent"
+    ],
+    "examples": [
+      {"japanese": "昨日、勉強するつもりだったけど、疲れて寝てしまった。", "english": "I was going to study yesterday, but I was tired and fell asleep.", "source": "original"},
+      {"japanese": "来るつもりでしたが、都合が悪くなりました。", "english": "I was planning to come, but something came up.", "source": "original"},
+      {"japanese": "朝ごはんを食べるつもりだった。", "english": "I had intended to eat breakfast.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "hazu-datta-was-supposed",
+    "pattern": "V plain / i-adj / noun の / na-adj な + はずだった",
+    "level": "N4",
+    "meaning_en": "was supposed to / should have been",
+    "meaning_detailed": "〜はずだった is the past form of はず (expectation), expressing that an outcome was expected but did NOT occur. Often implies surprise, disappointment, or contradiction with reality. Commonly paired with のに or が/けど for the unexpected reality clause. Distinct from はずがない ('there's no way').",
+    "formation": "V plain + はずだった; i-adj + はずだった; noun + の + はずだった; na-adj + な + はずだった.",
+    "formation_notes": [
+      "Expresses an unrealized expectation — the expected outcome did not happen.",
+      "Often paired with のに or が for the contrary reality: 今日来るはずだったのに、来なかった.",
+      "Contrasted with the present はず (ordinary expectation).",
+      "Can also express 'should have been' without explicit contradiction, depending on context."
+    ],
+    "formality": "neutral",
+    "related": [
+      "hazu-expected",
+      "noni-although"
+    ],
+    "examples": [
+      {"japanese": "彼は今日来るはずだった。", "english": "He was supposed to come today.", "source": "original"},
+      {"japanese": "試験は簡単なはずだった。", "english": "The exam was supposed to be easy.", "source": "original"},
+      {"japanese": "昨日、雨が降るはずでしたが、晴れました。", "english": "It was supposed to rain yesterday, but it was sunny.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "demo-noun-even",
+    "pattern": "Noun + でも",
+    "level": "N4",
+    "meaning_en": "even (a) / or something (casual suggestion)",
+    "meaning_detailed": "Noun + でも has two related senses: (1) 'even (a) X' — expressing that even unlikely cases apply ('even a child can do it'); (2) 'or something / or the like' — used for non-specific casual suggestions ('how about tea or something?'). Distinct from sentence-initial でも ('however / but') which is a conjunction.",
+    "formation": "Noun + でも.",
+    "formation_notes": [
+      "Sense 1 (even a): 子供でもわかる, 忙しくても, etc.",
+      "Sense 2 (or something): お茶でも飲みませんか — non-specific casual suggestion, common in invitations.",
+      "Not the same as sentence-initial でも ('but / however'), which is a conjunction.",
+      "Also combines with pronouns: 誰でも ('anyone'), どこでも ('anywhere'), いつでも ('any time')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "te-mo-ii-permission",
+      "masenka-invitation"
+    ],
+    "examples": [
+      {"japanese": "子供でもわかる。", "english": "Even a child can understand.", "source": "original"},
+      {"japanese": "雨でも行きます。", "english": "I'll go even if it rains.", "source": "original"},
+      {"japanese": "お茶でもどうですか。", "english": "How about some tea (or something)?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "te-itadaku-polite-favor-received",
+    "pattern": "V-て form + いただく",
+    "level": "N4",
+    "meaning_en": "I humbly receive the favor of X doing Y (humble)",
+    "meaning_detailed": "〜ていただく is the humble-form version of 〜てもらう, used when the favor-doer is a superior or in formal contexts. It is essential in business and polite Japanese. The request form 〜ていただけますか ('could you kindly do X?') is very commonly used in customer service, formal requests, and polite inquiries — it is widely considered one of the softest/most polite ways to ask for something.",
+    "formation": "V-て + いただく (polite: いただきます). Request form: 〜ていただけますか / 〜ていただけませんか.",
+    "formation_notes": [
+      "Humble version of 〜てもらう — the speaker is receiving from a superior.",
+      "Request form 〜ていただけますか is one of the softest ways to ask for something in polite Japanese.",
+      "〜ていただけませんか is slightly softer still (literally 'won't you kindly?').",
+      "Common in business, customer service, and formal writing."
+    ],
+    "formality": "formal",
+    "related": [
+      "te-morau-request-favor",
+      "morau-receive",
+      "o-v-kudasai-polite-honor"
+    ],
+    "examples": [
+      {"japanese": "先生に説明していただきました。", "english": "I had my teacher explain it (to me).", "source": "original"},
+      {"japanese": "少し待っていただけますか。", "english": "Could you kindly wait a moment?", "source": "original"},
+      {"japanese": "教えていただいて、ありがとうございました。", "english": "Thank you for kindly teaching me.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "ba-ii-should",
+    "pattern": "Verb ば-form + いい",
+    "level": "N4",
+    "meaning_en": "should / just need to / it'd be good if",
+    "meaning_detailed": "〜ばいい expresses advice or a sufficient condition — 'you just need to do X' or 'it would be good if X'. The question form どうすればいい is an extremely common way to ask 'what should I do?'. Softer and more suggestion-like than 〜べきだ (moral should). Distinct from 〜ばよかった, which is the past form expressing regret about an unrealized past action.",
+    "formation": "V ば-form + いい / いいです. Question: どうすればいい(ですか).",
+    "formation_notes": [
+      "Expresses a sufficient/minimally-required action rather than a strong obligation.",
+      "Question form どうすればいい / どうすればいいですか — extremely common 'what should I do?'.",
+      "Contrast with 〜ばよかった (regret over past non-action, N3).",
+      "Softer than 〜べきだ (moral should, N3)."
+    ],
+    "formality": "neutral",
+    "related": [
+      "ba-conditional",
+      "ba-yokatta",
+      "beki-da",
+      "ta-hou-ga-ii"
+    ],
+    "examples": [
+      {"japanese": "分からなかったら、聞けばいいです。", "english": "If you don't understand, you can just ask.", "source": "original"},
+      {"japanese": "どうすればいいですか。", "english": "What should I do?", "source": "original"},
+      {"japanese": "早く寝ればいい。", "english": "You just need to go to bed early.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
   }
 ]

@@ -16,6 +16,22 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+Batch B1 of the multi-batch grammar expansion push toward the ~500-700 community-standard target. After this commit: 166 entries total (60 N5 + 66 N4 + 40 N3), 24–33% of target. All new entries `review_status: "draft"`, authorship statement unchanged.
+
+### Added (Batch B1)
+
+- **N5 fill (10 entries)** appended to `grammar-curated/n5.json`, bringing N5 from 50 → 60: 〜ませんか (invitation), もう + Vた (already), まだ + Vていない/Vている (not yet / still), 〜とき(に) (when basic), 〜と一緒に (together with), 〜だけ (only basic), i-adj 〜く adverbial, na-adj 〜に adverbial, i-adj 〜くて joining, na-adj/noun 〜で joining. Focuses on the essentials that were missing from the v0.3.0 N5 batch — most commonly taught in Genki I lessons but absent from our initial curation.
+- **N4 expansion batch 1 (30 entries)** appended to `grammar-curated/n4.json`, bringing N4 from 36 → 66: 〜てから, 〜前に, 〜後で (temporal sequence trio); 〜ことができる (can), 〜ことにする / 〜ことになる (decide / be decided); 〜なさい (gentle command), 〜てほしい (want someone to); 〜し (reason listing), 〜ようと思う (intend to); the giving-verb system (〜てくれる, 〜てもらう, 〜てあげる, あげる, くれる, もらう); keigo basics (お〜ください, 尊敬語 〜れる/られる, 謙譲語 お〜する); 〜てごらん (warm try-suggestion), こういう/そういう/ああいう/どういう (kind-of series), 気がする (feel like), 〜たいと思う (polite desire), 〜場合 (in case), 〜ずつ (each), 〜つもりだった (had intended), 〜はずだった (was supposed to), でも (even/casual suggestion), 〜ていただく (polite request), 〜ばいい (just need to).
+
+### Verification (Batch B1)
+
+- **62/62 tests pass** — existing invariants cover the new entries; no test count change.
+- **19/19 data files validate** against their schemas.
+- **`data/grammar/grammar.json`**: 126 → **166 entries** (+40: 10 N5 + 30 N4).
+- **`data/enrichment/jlpt-classifications.json`**: 10,630 → **10,670** (+40 grammar classifications).
+- **`manifest.json.grammar_curation_status`** refreshed: total_entries 126 → 166; by_level {N5:60, N4:66, N3:40}; coverage_pct 18–25 → 24–33; draft 126 → 166.
+- All new `related` cross-references resolve.
+
 First substantive grammar-content push after the v0.3.0 foundation. Also reconciles a documentation contradiction between `docs/gaps.md` and CHANGELOG [0.3.0] on what "N5+N4 complete" actually means, and refreshes `manifest.json.next_actions` which had gone stale during the v0.3.1/v0.3.2/v0.4.x review-fix cycles.
 
 ### Added

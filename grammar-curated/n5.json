@@ -1015,5 +1015,266 @@
     ],
     "review_status": "draft",
     "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "masenka-invitation",
+    "pattern": "Verb stem + ませんか",
+    "level": "N5",
+    "meaning_en": "won't you...? / would you like to...? (invitation)",
+    "meaning_detailed": "〜ませんか is formed on the polite negative verb ending ません plus the question particle か. Despite its literal 'won't you' shape, it functions as a polite invitation: 'would you like to do X with me?'. Contrast with 〜ましょうか, which is slightly more assertive ('shall we?'). Responses are typically はい or 〜ましょう for acceptance and a polite circumlocution for decline.",
+    "formation": "Verb ます-stem + ませんか (the same stem used for the ます form).",
+    "formation_notes": [
+      "Functionally an invitation, not a literal yes/no question despite the negative shape.",
+      "Compare with 〜ましょうか (shall we) — ましょうか assumes the other party is amenable, while ませんか leaves more room to decline.",
+      "Often paired with 一緒に for 'shall we do X together'."
+    ],
+    "formality": "formal",
+    "related": [
+      "mashou-volitional",
+      "mashou-ka-invitation",
+      "masu-polite-verb"
+    ],
+    "examples": [
+      {"japanese": "一緒に映画を見ませんか。", "english": "Would you like to watch a movie together?", "source": "original"},
+      {"japanese": "明日、一緒に食事しませんか。", "english": "Would you like to have a meal together tomorrow?", "source": "original"},
+      {"japanese": "公園に行きませんか。", "english": "Shall we go to the park?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "mou-ta-already",
+    "pattern": "もう + Verb-た / ました",
+    "level": "N5",
+    "meaning_en": "already did",
+    "meaning_detailed": "もう as an adverb of time means 'already' when used with past-tense verbs. The construction expresses that an action has been completed before some reference point. Its conceptual counterpart is まだ ('still / not yet'), which for 'not yet' uses the progressive negative rather than the simple past negative.",
+    "formation": "もう + V た (plain past) or V ました (polite past).",
+    "formation_notes": [
+      "For the opposite 'not yet', use まだ + V ていない (NOT まだ + V ませんでした).",
+      "For 'already + state/continuous', use もう + V ている (もうわかっている 'I already understand').",
+      "もう can also mean 'any more' with negative future (もう行かない 'I'm not going any more') — a distinct use."
+    ],
+    "formality": "neutral",
+    "related": [
+      "mada-not-yet",
+      "ta-form",
+      "mashita-polite-past-verb"
+    ],
+    "examples": [
+      {"japanese": "もう宿題をしました。", "english": "I already did my homework.", "source": "original"},
+      {"japanese": "もうご飯を食べました。", "english": "I've already eaten.", "source": "original"},
+      {"japanese": "もう読みましたか。", "english": "Have you already read it?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "mada-not-yet",
+    "pattern": "まだ + Verb-ていない / まだ + Verb-ている",
+    "level": "N5",
+    "meaning_en": "not yet / still",
+    "meaning_detailed": "まだ has two related uses as a temporal adverb: (1) 'not yet' — paired with the progressive negative Vていない, expressing that an action has not been completed; (2) 'still' — paired with the progressive affirmative Vている, expressing that an action/state is ongoing. Crucially, 'not yet' uses the progressive negative, NOT the simple past negative — まだ食べていません, not まだ食べませんでした.",
+    "formation": "Not yet: まだ + V ていない / まだ + V ていません. Still: まだ + V ている / まだ + V ています.",
+    "formation_notes": [
+      "'Not yet' uses the progressive negative — a common error point for English speakers who reach for the simple past negative instead.",
+      "'Still' uses the progressive affirmative.",
+      "Distinguished from その他の まだ usages like まだ + adjective ('still X') or まだ + noun ('still a N')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "mou-ta-already",
+      "te-imasu-progressive"
+    ],
+    "examples": [
+      {"japanese": "まだ宿題をしていません。", "english": "I haven't done my homework yet.", "source": "original"},
+      {"japanese": "まだ食べていません。", "english": "I haven't eaten yet.", "source": "original"},
+      {"japanese": "弟はまだ寝ています。", "english": "My little brother is still sleeping.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "toki-ni-when-basic",
+    "pattern": "V plain / i-adj / na-adj な / noun の + とき(に)",
+    "level": "N5",
+    "meaning_en": "when / at the time of",
+    "meaning_detailed": "とき creates a temporal 'when' clause that modifies a main-clause predicate. The に is optional and adds mild emphasis on timing. The verb in the とき clause can be present or past, which determines the temporal relationship to the main clause: V plain non-past + とき = 'when I do / am about to do X', V plain past + とき = 'when I did / was doing X'.",
+    "formation": "V plain (non-past or past) + とき(に); i-adj + とき(に); na-adj + な + とき(に); noun + の + とき(に).",
+    "formation_notes": [
+      "Non-past V + とき: action happens at the time of / as X begins.",
+      "Past V + とき: action happens after X has occurred / during an ongoing X.",
+      "The connector particle matters: な for na-adjectives, の for nouns.",
+      "Can be written 時 or とき; both are common."
+    ],
+    "formality": "neutral",
+    "related": [
+      "noun-modifying-clause",
+      "nagara",
+      "aida-ni"
+    ],
+    "examples": [
+      {"japanese": "子供のとき、よく公園で遊びました。", "english": "When I was a child, I often played in the park.", "source": "original"},
+      {"japanese": "日本へ行ったとき、友達に会いました。", "english": "When I went to Japan, I met a friend.", "source": "original"},
+      {"japanese": "暇なとき、本を読みます。", "english": "When I'm free, I read books.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "issho-ni-together",
+    "pattern": "Noun + と + 一緒に",
+    "level": "N5",
+    "meaning_en": "together with",
+    "meaning_detailed": "〜と一緒に expresses doing an action together with someone or something. The と particle marks the accompaniment partner; 一緒に is an adverb literally meaning 'together'. The full pattern 〜と一緒に is very common and is one of the standard ways to express 'with' in the sense of accompaniment. 一緒に can also stand alone without a partner (一緒に行きましょう 'let's go together').",
+    "formation": "Noun + と + 一緒に + main-clause verb.",
+    "formation_notes": [
+      "と marks the accompaniment partner; 一緒に is the adverbial 'together'.",
+      "Can also appear without と when the partner is contextually clear: 一緒に行きましょう.",
+      "Different from と alone (as comitative): 〜と一緒に is slightly more explicit and emphatic."
+    ],
+    "formality": "neutral",
+    "related": [
+      "particle-to-and-with",
+      "masenka-invitation"
+    ],
+    "examples": [
+      {"japanese": "友達と一緒に映画を見ました。", "english": "I watched a movie together with a friend.", "source": "original"},
+      {"japanese": "家族と一緒に日本へ行きたい。", "english": "I want to go to Japan together with my family.", "source": "original"},
+      {"japanese": "一緒に食事しませんか。", "english": "Shall we eat together?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "dake-only-basic",
+    "pattern": "Noun (or number + counter) + だけ",
+    "level": "N5",
+    "meaning_en": "only / just (basic noun restriction)",
+    "meaning_detailed": "だけ is the neutral restrictor meaning 'only' or 'just' — expressing that nothing else is included. It attaches to nouns, numbers, or counters. Contrast with ばかり (N3), which adds an emphatic 'nothing but' nuance often with implied criticism. だけ is the more neutral, register-appropriate choice for basic restriction.",
+    "formation": "Noun + だけ; Number/counter + だけ (一つだけ 'just one'). Can follow or replace case particles.",
+    "formation_notes": [
+      "Neutral register — contrast with ばかり which is emphatic/critical.",
+      "With numbers or counters, expresses 'just X much': 一人だけ ('just one person'), 少しだけ ('just a little').",
+      "Can combine with で to say 'just with X': これだけで ('just with this')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "bakari-only",
+      "counter-tsu"
+    ],
+    "examples": [
+      {"japanese": "水だけ飲みました。", "english": "I drank only water.", "source": "original"},
+      {"japanese": "一人だけ来ました。", "english": "Only one person came.", "source": "original"},
+      {"japanese": "これだけでいいです。", "english": "Just this is fine.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "i-adj-adverbial-ku",
+    "pattern": "i-adjective stem + く (+ verb)",
+    "level": "N5",
+    "meaning_en": "adverbial form of i-adjectives",
+    "meaning_detailed": "The 〜く form of an i-adjective is its adverbial form — used to modify a verb or another predicate ('do X -ly'). It is the same stem used as the base for negative (〜くない) and past (〜かった) forms, so it is a foundational component of i-adjective conjugation. The irregular exception is いい → よく.",
+    "formation": "Drop final い from the i-adjective, add く: 早い → 早く, 大きい → 大きく, 高い → 高く. Irregular: いい → よく.",
+    "formation_notes": [
+      "Exception: いい conjugates as よい throughout its stem-based forms — よく, よくない, よかった.",
+      "The same 〜く form is the stem for negatives (〜くない) and past (〜かった).",
+      "Parallel to the 〜に form for na-adjectives.",
+      "Commonly used with verbs of action or change: 早く起きる ('wake up early'), 大きく書く ('write big')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "i-adjective-nonpast",
+      "i-adjective-negative",
+      "na-adj-adverbial-ni"
+    ],
+    "examples": [
+      {"japanese": "早く起きてください。", "english": "Please wake up early.", "source": "original"},
+      {"japanese": "大きく書いてください。", "english": "Please write it large.", "source": "original"},
+      {"japanese": "よく勉強します。", "english": "I study a lot / often.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "na-adj-adverbial-ni",
+    "pattern": "na-adjective root + に (+ verb)",
+    "level": "N5",
+    "meaning_en": "adverbial form of na-adjectives",
+    "meaning_detailed": "The 〜に form of a na-adjective is its adverbial form — used to modify a verb ('do X in an X manner'). Parallel to the 〜く form for i-adjectives. The full phrase 〜にする ('make X so') is a productive construction built on this adverbial form (静かにする 'make quiet / be quiet'; 元気にする 'make/keep energetic').",
+    "formation": "na-adj root + に: 静か → 静かに, 上手 → 上手に, 元気 → 元気に, きれい → きれいに.",
+    "formation_notes": [
+      "Parallel to i-adj 〜く but with a different final particle (に vs く).",
+      "No conjugation: the に form is adverbial and stable.",
+      "The productive compound 〜にする ('make/keep it X') is used across many na-adjectives.",
+      "Pair with a verb for adverbial modification: 静かに歩く ('walk quietly')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "na-adjective-nonpast",
+      "i-adj-adverbial-ku"
+    ],
+    "examples": [
+      {"japanese": "静かにしてください。", "english": "Please be quiet.", "source": "original"},
+      {"japanese": "日本語を上手に話します。", "english": "(He) speaks Japanese skillfully.", "source": "original"},
+      {"japanese": "元気に歌いました。", "english": "(They) sang energetically.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "i-adj-te-joining-kute",
+    "pattern": "i-adjective stem + くて",
+    "level": "N5",
+    "meaning_en": "te-form of i-adjectives (joining / causal)",
+    "meaning_detailed": "〜くて is the 'te-form' of i-adjectives, used to join clauses. It functions like the verb te-form: linking adjective phrases together ('X and Y') or giving a reason/cause ('X, so Y'). It is distinct from the 〜で form used for na-adjectives and nouns. Exception: いい → よくて.",
+    "formation": "Drop final い, add くて: 高い → 高くて, おいしい → おいしくて, 寒い → 寒くて. Irregular: いい → よくて.",
+    "formation_notes": [
+      "Cannot use で for i-adjectives — that is reserved for na-adj and nouns.",
+      "Exception: いい → よくて (matching the よく / よかった pattern).",
+      "Can chain multiple adjectives: 高くて、重くて、使いにくい ('expensive, heavy, and hard to use').",
+      "Causal usage: 寒くて、外に出たくない ('it's cold, so I don't want to go out')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "i-adjective-nonpast",
+      "na-adj-te-joining-de",
+      "te-form-basic"
+    ],
+    "examples": [
+      {"japanese": "この本は高くて、重い。", "english": "This book is expensive and heavy.", "source": "original"},
+      {"japanese": "彼女は優しくて、きれいです。", "english": "She is kind and pretty.", "source": "original"},
+      {"japanese": "寒くて、外に出たくない。", "english": "It's cold, so I don't want to go outside.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "na-adj-te-joining-de",
+    "pattern": "na-adjective / noun + で",
+    "level": "N5",
+    "meaning_en": "te-form of na-adjectives and nouns (joining / causal)",
+    "meaning_detailed": "The 〜で form is the copular 'te-form' used for na-adjectives and nouns. It joins clauses just like 〜くて for i-adjectives: 'X and Y' or 'X, so Y'. The same で form works for both na-adjectives and noun predicates, reflecting the underlying shared copula だ.",
+    "formation": "na-adj root + で: 静か → 静かで, 元気 → 元気で. Noun + で: 学生 → 学生で, 会社員 → 会社員で.",
+    "formation_notes": [
+      "Parallel to 〜くて for i-adjectives but with a different particle (で instead of くて).",
+      "Same で form for na-adjectives and nouns, reflecting the shared copula.",
+      "Can chain: 静かで、きれいで、広い ('quiet, clean, and spacious').",
+      "Causal usage: 彼は医者で、とても忙しい ('he is a doctor, so he's very busy')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "na-adjective-nonpast",
+      "i-adj-te-joining-kute",
+      "te-form-basic"
+    ],
+    "examples": [
+      {"japanese": "この部屋は静かで、きれいです。", "english": "This room is quiet and clean.", "source": "original"},
+      {"japanese": "彼は学生で、20歳です。", "english": "He is a student and 20 years old.", "source": "original"},
+      {"japanese": "彼女は親切で、明るい。", "english": "She is kind and cheerful.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
   }
 ]

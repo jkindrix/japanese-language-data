@@ -6,7 +6,7 @@
     "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
     "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
     "generated": "2026-04-11",
-    "count": 10630,
+    "count": 10670,
     "counts_by_kind_and_level": {
       "vocab_N5": 684,
       "vocab_N4": 640,
@@ -18,8 +18,8 @@
       "kanji_N3": 367,
       "kanji_N4": 166,
       "kanji_N5": 79,
-      "grammar_N5": 50,
-      "grammar_N4": 36,
+      "grammar_N5": 60,
+      "grammar_N4": 66,
       "grammar_N3": 40,
       "grammar_N2": 0,
       "grammar_N1": 0
@@ -93048,6 +93048,276 @@
       "source_retrieved": "2026-04-11"
     },
     {
+      "text": "Verb-て form + から",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "after doing X (then Y)",
+      "grammar_id": "te-kara-after-doing",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain non-past / noun + の + 前に",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "before doing X / before X",
+      "grammar_id": "mae-ni-before-doing",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-た form / noun + の + 後で",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "after doing X / after X",
+      "grammar_id": "ato-de-after-doing",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain non-past + ことができる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "can do / is able to do",
+      "grammar_id": "koto-ga-dekiru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain non-past / V ない + ことにする",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "decide to (active personal decision)",
+      "grammar_id": "koto-ni-suru-decide",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain non-past / V ない + ことになる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "it is decided that / comes to be that",
+      "grammar_id": "koto-ni-naru-be-decided",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + なさい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "(do it) — gentle command",
+      "grammar_id": "nasai-command",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form + ほしい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "want someone (else) to do X",
+      "grammar_id": "te-hoshii-want-someone",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + し (+ plain form + し + ...)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "and / besides (non-exhaustive listing of reasons or facts)",
+      "grammar_id": "shi-reason-listing",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb volitional form + と思う",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "I think I will / intend to do",
+      "grammar_id": "you-to-omou-volitional-intent",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form + くれる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "(someone) does a favor for me / us",
+      "grammar_id": "te-kureru-favor-received",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form + もらう",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "I receive the favor of X doing Y / I have X do Y",
+      "grammar_id": "te-morau-request-favor",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form + あげる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "I do a favor for (someone outside my in-group)",
+      "grammar_id": "te-ageru-favor-given",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Giver が Receiver に Object を あげる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "to give (outward, from in-group to out-group)",
+      "grammar_id": "ageru-give-outward",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Giver が (Receiver に) Object を くれる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "to give (toward speaker / in-group)",
+      "grammar_id": "kureru-give-toward",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Receiver が Giver に / から Object を もらう",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "to receive",
+      "grammar_id": "morau-receive",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "お + V ます-stem + ください (or ご + Sino-Japanese noun + ください)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "please do (very polite honorific request)",
+      "grammar_id": "o-v-kudasai-polite-honor",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb → passive form (honorific usage)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "honorific use of passive form (polite way to describe superior's actions)",
+      "grammar_id": "sonkeigo-reru-rareru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "お + V ます-stem + する (or ご + Sino-Japanese noun + する)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "humble form: I will do X (for a superior)",
+      "grammar_id": "humble-o-suru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form + ごらん(なさい)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "try doing (warm / parental suggestion)",
+      "grammar_id": "te-goran-try-casual",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "こういう / そういう / ああいう / どういう + noun",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "this kind of / that kind of / that kind of (over there) / what kind of",
+      "grammar_id": "sou-iu-kou-iu",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + 気がする",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "feel like / have a feeling that",
+      "grammar_id": "ki-ga-suru-feel-like",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + たいと思う",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "I (think I) want to do",
+      "grammar_id": "tai-to-omou-want-to-think",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain / i-adj / na-adj な / noun の + 場合(は)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "in the case of / in the event that / if",
+      "grammar_id": "ba-ai-in-case",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Number + counter + ずつ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "each / per / at a rate of",
+      "grammar_id": "zutsu-each-per",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain non-past + つもりだった",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "had intended to / was going to",
+      "grammar_id": "tsumori-datta-had-intended",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain / i-adj / noun の / na-adj な + はずだった",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "was supposed to / should have been",
+      "grammar_id": "hazu-datta-was-supposed",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + でも",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "even (a) / or something (casual suggestion)",
+      "grammar_id": "demo-noun-even",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form + いただく",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "I humbly receive the favor of X doing Y (humble)",
+      "grammar_id": "te-itadaku-polite-favor-received",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ば-form + いい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "should / just need to / it'd be good if",
+      "grammar_id": "ba-ii-should",
+      "source_retrieved": "2026-04-11"
+    },
+    {
       "text": "Noun + です",
       "reading": null,
       "kind": "grammar",
@@ -93495,6 +93765,96 @@
       "level": "N5",
       "meaning_en": "X and Y (and so on) — non-exhaustive listing",
       "grammar_id": "particle-ya-non-exhaustive",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + ませんか",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "won't you...? / would you like to...? (invitation)",
+      "grammar_id": "masenka-invitation",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "もう + Verb-た / ました",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "already did",
+      "grammar_id": "mou-ta-already",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "まだ + Verb-ていない / まだ + Verb-ている",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "not yet / still",
+      "grammar_id": "mada-not-yet",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain / i-adj / na-adj な / noun の + とき(に)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "when / at the time of",
+      "grammar_id": "toki-ni-when-basic",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + と + 一緒に",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "together with",
+      "grammar_id": "issho-ni-together",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun (or number + counter) + だけ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "only / just (basic noun restriction)",
+      "grammar_id": "dake-only-basic",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "i-adjective stem + く (+ verb)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "adverbial form of i-adjectives",
+      "grammar_id": "i-adj-adverbial-ku",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "na-adjective root + に (+ verb)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "adverbial form of na-adjectives",
+      "grammar_id": "na-adj-adverbial-ni",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "i-adjective stem + くて",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "te-form of i-adjectives (joining / causal)",
+      "grammar_id": "i-adj-te-joining-kute",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "na-adjective / noun + で",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "te-form of na-adjectives and nouns (joining / causal)",
+      "grammar_id": "na-adj-te-joining-de",
       "source_retrieved": "2026-04-11"
     }
   ]
