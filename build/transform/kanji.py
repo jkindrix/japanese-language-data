@@ -44,6 +44,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "kanjidic2-all.json.tgz"
 OUT_FULL = REPO_ROOT / "data" / "core" / "kanji.json"
 OUT_JOYO = REPO_ROOT / "data" / "core" / "kanji-joyo.json"
+OUT_JINMEIYO = REPO_ROOT / "data" / "core" / "kanji-jinmeiyo.json"
 
 # Optional enrichment inputs produced by other transforms. kanji.build()
 # will read these if they exist and populate the corresponding fields;
@@ -69,6 +70,7 @@ WANTED_DIC_REFS = {
 WANTED_QUERY_CODES = {"skip", "four_corner", "sh_desc", "deroo"}
 
 JOYO_GRADES = {1, 2, 3, 4, 5, 6, 8}
+JINMEIYO_GRADES = {9, 10}  # Kanji approved for personal-name use (per the jinmeiyō list)
 
 
 def _load_source() -> dict:
@@ -353,3 +355,18 @@ def build() -> None:
         json.dump(output_joyo, f, ensure_ascii=False, indent=2)
         f.write("\n")
     print(f"[kanji]    wrote {OUT_JOYO.relative_to(REPO_ROOT)} ({len(joyo_entries):,} entries)")
+
+    # Derived Jinmeiyō view (kanji approved for personal-name use)
+    jinmeiyo_entries = [k for k in kanji_entries if k.get("grade") in JINMEIYO_GRADES]
+    output_jinmeiyo = {
+        "metadata": _metadata(
+            source,
+            len(jinmeiyo_entries),
+            filter_note="Jinmeiyō kanji only: grades 9 and 10 in KANJIDIC2 (kanji approved for personal-name use in Japan but not included in the Jōyō list). Derived from the same source as kanji.json.",
+        ),
+        "kanji": jinmeiyo_entries,
+    }
+    with OUT_JINMEIYO.open("w", encoding="utf-8") as f:
+        json.dump(output_jinmeiyo, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    print(f"[kanji]    wrote {OUT_JINMEIYO.relative_to(REPO_ROOT)} ({len(jinmeiyo_entries):,} entries)")

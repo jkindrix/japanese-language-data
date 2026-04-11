@@ -43,6 +43,7 @@ from datetime import date
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CURATED_DIR = REPO_ROOT / "grammar-curated"
 OUT = REPO_ROOT / "data" / "grammar" / "grammar.json"
+SENTENCES_JSON = REPO_ROOT / "data" / "corpus" / "sentences.json"
 
 REQUIRED_FIELDS = {"id", "pattern", "level", "meaning_en", "formation", "examples", "review_status", "sources"}
 
@@ -59,6 +60,57 @@ def _validate_entry(entry: dict, source_file: str) -> None:
         raise ValueError(
             f"Grammar entry {entry.get('id')} in {source_file} has no examples."
         )
+
+
+def _load_tatoeba_text_index() -> dict[str, str]:
+    """Build a Japanese-text → Tatoeba-sentence-id index from sentences.json.
+
+    Used for exact-match linkage of grammar example sentences. Returns an
+    empty dict if sentences.json does not exist yet (backward-compatible
+    with running grammar.build before sentences.build).
+
+    Collisions (multiple sentences with identical Japanese text) resolve
+    to the first one encountered, which is deterministic given the
+    upstream sorted output.
+    """
+    if not SENTENCES_JSON.exists():
+        return {}
+    data = json.loads(SENTENCES_JSON.read_text(encoding="utf-8"))
+    result: dict[str, str] = {}
+    for sentence in data.get("sentences", []):
+        text = sentence.get("japanese", "")
+        sid = sentence.get("id", "")
+        if not text or not sid:
+            continue
+        if text not in result:
+            result[text] = sid
+    return result
+
+
+def _link_examples_to_tatoeba(entries: list[dict], text_index: dict[str, str]) -> tuple[int, int]:
+    """Mutate grammar entries in place, populating sentence_id where the
+    example's Japanese text exactly matches a Tatoeba sentence.
+
+    Returns (total_examples, linked_count) for reporting.
+    """
+    total = 0
+    linked = 0
+    for entry in entries:
+        for example in entry.get("examples", []):
+            total += 1
+            if example.get("source") == "tatoeba" and example.get("sentence_id"):
+                # Already linked; leave alone (shouldn't happen in Phase 3 but
+                # forward-compatible with future curated entries that reference
+                # Tatoeba IDs directly)
+                linked += 1
+                continue
+            japanese = example.get("japanese", "")
+            sid = text_index.get(japanese)
+            if sid:
+                example["source"] = "tatoeba"
+                example["sentence_id"] = sid
+                linked += 1
+    return total, linked
 
 
 def build() -> None:
@@ -96,6 +148,27 @@ def build() -> None:
                         f"the broken reference from grammar-curated/."
                     )
 
+    # Tatoeba sentence linkage: text-match grammar examples against the
+    # sentences corpus and populate sentence_id where the Japanese text
+    # exactly matches. Low match rate is expected on initial curation
+    # (grammar examples are written for pedagogy, not to match corpus
+    # entries), but the mechanism is in place for future additions and
+    # fuzzy-matching passes.
+    tatoeba_index = _load_tatoeba_text_index()
+    if tatoeba_index and entries:
+        total_examples, linked_examples = _link_examples_to_tatoeba(entries, tatoeba_index)
+        link_rate_pct = (100.0 * linked_examples / total_examples) if total_examples else 0.0
+        print(
+            f"[grammar]  Tatoeba linkage: {linked_examples}/{total_examples} "
+            f"({link_rate_pct:.1f}%) examples matched by exact text"
+        )
+    else:
+        total_examples = sum(len(e.get("examples", [])) for e in entries)
+        linked_examples = 0
+        link_rate_pct = 0.0
+        if not tatoeba_index:
+            print("[grammar]  Tatoeba linkage: skipped (sentences.json not built)")
+
     # Stats
     by_level: dict[str, int] = {}
     by_status: dict[str, int] = {"draft": 0, "community_reviewed": 0, "native_speaker_reviewed": 0}
@@ -119,6 +192,12 @@ def build() -> None:
             "count": len(entries),
             "by_level": by_level,
             "review_coverage": by_status,
+            "tatoeba_linkage": {
+                "total_examples": total_examples,
+                "linked_examples": linked_examples,
+                "link_rate_pct": round(link_rate_pct, 2),
+                "method": "exact text match against data/corpus/sentences.json",
+            },
             "authorship_statement": (
                 "All grammar explanations are written in our own words based on "
                 "general, well-known, non-copyrightable facts about Japanese "

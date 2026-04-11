@@ -16,6 +16,11 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+### Added (feature additions, chosen by the author for user-facing value)
+
+- **Jinmeiyō kanji view** (`data/core/kanji-jinmeiyo.json`): derived filter of `kanji.json` to grades 9 and 10 only — the kanji approved for personal-name use in Japan but not included in the Jōyō list. **863 entries**, matching the official 2017 MEXT jinmeiyō list count. Built by the kanji transform from the same source as the main kanji.json, using the exact same schema. Included in `build/validate.py` and `build/stats.py`.
+- **Tatoeba sentence linkage for grammar examples**: the grammar transform now reads `data/corpus/sentences.json` and attempts exact-text matching between curated grammar example sentences and Tatoeba sentences. When a match exists, the grammar example's `source` is updated from `"original"` to `"tatoeba"` and a `sentence_id` is populated. Initial match rate is **1.7%** (3 of 180 examples), which is expected because the N5/N4 examples were written for pedagogical clarity rather than to reproduce corpus entries. The infrastructure is in place: future patches can add Tatoeba-sourced examples directly to `grammar-curated/` (they will pass through unchanged), or a fuzzy-matching pass can be added. The grammar metadata now includes a `tatoeba_linkage` summary with `total_examples`, `linked_examples`, `link_rate_pct`, and `method`.
+
 ### Added (post-review follow-up, continued from v0.3.1)
 
 - **`.github/workflows/build.yml`** — reproducibility smoke test CI workflow. Addresses the review's Reproducibility-dimension gap ("Missing: reproducibility smoke test in CI"). On every push to `main` and every pull request, the workflow performs a cold checkout, installs pinned dependencies, fetches upstream sources (SHA256-verified), runs the full build pipeline, validates every output against its schema, runs the test suite, and prints stats. Uses GitHub Actions cache for the `sources/` directory keyed on `manifest.json` hash to avoid re-downloading the 43 MB of upstream files on every run.

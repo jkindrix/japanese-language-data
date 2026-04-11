@@ -32,6 +32,7 @@ SCHEMA_MAP: dict[str, str] = {
     "data/core/kana.json": "kana.schema.json",
     "data/core/kanji.json": "kanji.schema.json",
     "data/core/kanji-joyo.json": "kanji.schema.json",
+    "data/core/kanji-jinmeiyo.json": "kanji.schema.json",
     "data/core/words.json": "word.schema.json",
     "data/core/words-full.json": "word.schema.json",
     "data/core/radicals.json": "radical.schema.json",

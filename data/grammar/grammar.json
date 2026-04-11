@@ -13,6 +13,12 @@
       "community_reviewed": 0,
       "native_speaker_reviewed": 0
     },
+    "tatoeba_linkage": {
+      "total_examples": 180,
+      "linked_examples": 3,
+      "link_rate_pct": 1.67,
+      "method": "exact text match against data/corpus/sentences.json"
+    },
     "authorship_statement": "All grammar explanations are written in our own words based on general, well-known, non-copyrightable facts about Japanese grammar. We do not copy from Tae Kim's Guide to Japanese (CC-BY-NC-SA, license incompatible with our CC-BY-SA 4.0 output), Dictionary of Basic Japanese Grammar, Handbook of Japanese Grammar Patterns, or any other copyrighted source. Every entry is marked review_status=draft and awaits native-speaker review. See docs/contributing.md for the call to native-speaker reviewers.",
     "attribution": "Grammar dataset from the Japanese Language Data project (https://github.com/jkindrix/japanese-language-data), CC-BY-SA 4.0.",
     "field_notes": {
@@ -1481,7 +1487,8 @@
         {
           "japanese": "机の上に本があります。",
           "english": "There is a book on the desk.",
-          "source": "original"
+          "source": "tatoeba",
+          "sentence_id": "2351690"
         },
         {
           "japanese": "七時に起きます。",
@@ -1944,7 +1951,8 @@
         {
           "japanese": "机の上に本があります。",
           "english": "There is a book on the desk.",
-          "source": "original"
+          "source": "tatoeba",
+          "sentence_id": "2351690"
         },
         {
           "japanese": "部屋にテレビがあります。",
@@ -2573,7 +2581,8 @@
         {
           "japanese": "富士山は日本で一番高い山です。",
           "english": "Mt. Fuji is the tallest mountain in Japan.",
-          "source": "original"
+          "source": "tatoeba",
+          "sentence_id": "84930"
         },
         {
           "japanese": "寿司が一番好きです。",
