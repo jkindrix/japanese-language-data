@@ -92,11 +92,9 @@ Hentaigana are obsolete variant forms of hiragana used in pre-modern Japanese. T
 
 ## Lexicon
 
-### Jinmeiyō (name-use) kanji (DEFERRED)
+### Jinmeiyō (name-use) kanji (ADDRESSED)
 
-The Jinmeiyō Kanji List is an official supplement to the Jōyō list, containing kanji approved for use in personal names but not for general writing. Our `data/core/kanji.json` includes the full KANJIDIC2 set, which already contains jinmeiyō kanji with `grade: 9` or `grade: 10`. So they *are* in the dataset — but they are not given special treatment or a derived `jinmeiyo` view.
-
-A Phase 4 task could add a `data/enrichment/jinmeiyo-view.json` that filters to just the jinmeiyō set with ordering per the official list.
+The Jinmeiyō Kanji List — kanji approved for personal-name use but not on the Jōyō list — is now shipped as `data/core/kanji-jinmeiyo.json` (863 entries, matching the official 2017 MEXT list count). This is a derived view of `data/core/kanji.json` filtered to grades 9 and 10 via `build/transform/kanji.py`. Consumers can use the Jinmeiyō view directly or join it back to the full kanji.json by the `character` field.
 
 ### Proper nouns — beyond JMnedict (LICENSE)
 
