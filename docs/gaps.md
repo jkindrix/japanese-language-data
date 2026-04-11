@@ -16,9 +16,9 @@ Gaps are organized by category. Within each category, items are marked:
 
 ## Grammar
 
-### Comprehensive grammar coverage (DEFERRED to Phase 3)
+### Comprehensive grammar coverage (IN PROGRESS — Phase 3)
 
-The grammar dataset in Phase 3 targets 500–700 points across JLPT levels N5–N1. At initial v0.3.0, we commit to N5 and N4 being complete (~140 points) with provenance per entry. N3, N2, and N1 will be progressively filled in over subsequent patch releases. The dataset will always be transparent about what is covered and what is not.
+The grammar dataset targets 500–700 points across JLPT levels N5–N1 as a progressive, phase-spanning goal filled in over successive patch releases. v0.3.0 shipped 81 foundational hand-curated entries (50 N5+ 31 N4) explicitly framed in CHANGELOG [0.3.0] § "Deliberate scope choices" as "N5 essentials + N4 selections, not complete N5+N4" — not as completion of N5 and N4. Coverage at each level expands as new entries are curated; the current count per level is tracked in `manifest.json.counts["data/grammar/grammar.json"]` and `manifest.json.grammar_curation_status`. The dataset will always be transparent about what is covered and what is not, and entries at every level will carry `review_status` reflecting their curation state.
 
 ### Native-speaker reviewed grammar (UNCERTAIN)
 
