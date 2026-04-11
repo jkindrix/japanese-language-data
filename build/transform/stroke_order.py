@@ -144,10 +144,12 @@ def build() -> None:
 
     print(f"[stroke]   total SVGs in ZIP: {total_svgs:,}  written: {written:,}")
 
-    # For kanji in our dataset without a stroke order SVG, record them with svg=null
+    # For kanji in our dataset without a stroke order SVG, record them with svg=null.
+    # Iterate in sorted order so the insertion sequence is deterministic: the
+    # output must be byte-reproducible across rebuilds (see docs/architecture.md §1).
     if kanji_set:
         missing = 0
-        for ch in kanji_set:
+        for ch in sorted(kanji_set):
             if ch not in index_entries:
                 missing += 1
                 if len(ch) == 1:
@@ -228,7 +230,9 @@ def build() -> None:
             "warnings": warnings,
             "stroke_count_mismatches": mismatches,
         },
-        "characters": index_entries,
+        # Emit characters in sorted Unicode-codepoint order so rebuilds
+        # produce byte-identical output (see docs/architecture.md §1).
+        "characters": dict(sorted(index_entries.items())),
     }
 
     OUT_INDEX.parent.mkdir(parents=True, exist_ok=True)

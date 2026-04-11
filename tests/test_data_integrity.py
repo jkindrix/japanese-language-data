@@ -158,6 +158,35 @@ def test_m1_display_forms_preserves_kanji_prefix() -> None:
 
 
 # ---------------------------------------------------------------------------
+# Determinism: stroke-order-index.json characters keys must appear in
+# sorted Unicode-codepoint order. Enforces byte-reproducibility (see
+# docs/architecture.md §1) — without the fix, the transform iterated a
+# Python set and produced different key orderings across rebuilds.
+# ---------------------------------------------------------------------------
+
+def test_stroke_order_characters_keys_are_sorted() -> None:
+    """The characters map in stroke-order-index.json must have its keys
+    in sorted Unicode-codepoint order. Regression guard for the
+    non-deterministic set iteration previously in stroke_order.py's
+    missing-kanji loop.
+
+    If keys are not sorted, rebuilds can emit the same content in
+    different order, violating docs/architecture.md §1 (byte
+    reproducibility).
+    """
+    data = _load_if_exists(REPO_ROOT / "data" / "enrichment" / "stroke-order-index.json")
+    if data is None:
+        pytest.skip("stroke-order-index.json not built yet")
+    keys = list(data.get("characters", {}).keys())
+    expected = sorted(keys)
+    assert keys == expected, (
+        f"stroke-order-index.json characters keys are not in sorted order. "
+        f"First divergence at index {next((i for i, (a, b) in enumerate(zip(keys, expected)) if a != b), -1)}: "
+        f"got {keys[:5]!r}... expected {expected[:5]!r}..."
+    )
+
+
+# ---------------------------------------------------------------------------
 # D2: grammar related-reference resolution
 # ---------------------------------------------------------------------------
 
