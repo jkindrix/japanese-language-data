@@ -158,6 +158,54 @@ def build() -> None:
                     }
         print(f"[stroke]   kanji without SVG (recorded as null): {missing:,}")
 
+    # Review recommendation #9: compute stroke-count mismatches against
+    # KANJIDIC2 and record in metadata so consumers are aware that
+    # KanjiVG's path-based stroke count can differ from KANJIDIC2's
+    # canonical count in ~2% of cases. Consumers should prefer KANJIDIC2
+    # for canonical counts.
+    mismatches: list[dict] = []
+    if KANJI_JSON.exists():
+        kanji_doc = json.loads(KANJI_JSON.read_text(encoding="utf-8"))
+        kanji_stroke_counts = {
+            k["character"]: k["stroke_count"]
+            for k in kanji_doc.get("kanji", [])
+            if k.get("stroke_count") is not None
+        }
+        for ch, entry in index_entries.items():
+            kvg_count = entry.get("stroke_count")
+            if kvg_count is None:
+                continue
+            kd_count = kanji_stroke_counts.get(ch)
+            if kd_count is None:
+                continue
+            if kvg_count != kd_count:
+                mismatches.append({
+                    "character": ch,
+                    "kanjidic2_count": kd_count,
+                    "kanjivg_count": kvg_count,
+                })
+        mismatches.sort(key=lambda m: m["character"])
+        print(f"[stroke]   stroke-count mismatches vs KANJIDIC2: {len(mismatches):,}")
+
+    warnings: list[str] = []
+    if mismatches:
+        warnings.append(
+            f"{len(mismatches)} characters have a KanjiVG stroke count that differs "
+            f"from KANJIDIC2's count (see stroke_count_mismatches below for details). "
+            f"KANJIDIC2 is the canonical source; prefer data/core/kanji.json for stroke counts."
+        )
+    total_chars = len(index_entries)
+    svg_available = sum(1 for e in index_entries.values() if e.get("svg") is not None)
+    if total_chars > 0:
+        coverage_pct = 100.0 * svg_available / total_chars
+        if coverage_pct < 80:
+            warnings.append(
+                f"Only {svg_available:,}/{total_chars:,} ({coverage_pct:.1f}%) characters "
+                f"in our kanji.json have a corresponding KanjiVG SVG. The remaining "
+                f"{total_chars - svg_available:,} characters are recorded with svg=null "
+                f"and have no stroke order data upstream."
+            )
+
     output = {
         "metadata": {
             "source": "KanjiVG (non-variant main distribution)",
@@ -177,6 +225,8 @@ def build() -> None:
                 "stroke_count": "Stroke count derived from counting <path> elements in the SVG. May differ from KANJIDIC2's stroke_count in edge cases; consumers should prefer KANJIDIC2 for canonical counts.",
                 "unicode": "Unicode codepoint in lowercase hex (the KanjiVG filename stem).",
             },
+            "warnings": warnings,
+            "stroke_count_mismatches": mismatches,
         },
         "characters": index_entries,
     }

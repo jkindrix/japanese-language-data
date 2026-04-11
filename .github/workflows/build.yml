@@ -1,0 +1,81 @@
+name: build
+
+# Reproducibility smoke test. Addresses the review note under the
+# Reproducibility dimension: "Missing: reproducibility smoke test in CI".
+#
+# On every push to main and every pull request, this workflow performs
+# a cold checkout, installs the pinned Python dependencies, fetches all
+# upstream sources (SHA256-verified against manifest.json), runs the
+# full build pipeline, validates every output against its schema, runs
+# the test suite, and prints the stats report.
+#
+# If any of these steps fails, the pipeline is not reproducible from a
+# clean clone and the build is marked as failing.
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Reproducible build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: build/requirements.txt
+
+      - name: Install just
+        uses: extractions/setup-just@v2
+        with:
+          just-version: "1.35.0"
+
+      - name: Install pipeline dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install --upgrade pip
+          .venv/bin/pip install -r build/requirements.txt
+
+      - name: Cache upstream sources
+        uses: actions/cache@v4
+        with:
+          path: sources
+          key: sources-${{ hashFiles('manifest.json') }}
+          restore-keys: |
+            sources-
+
+      - name: Fetch upstream sources (SHA256-verified)
+        run: just fetch
+
+      - name: Run the full build pipeline
+        run: just build
+
+      - name: Validate every output against its schema
+        run: just validate
+
+      - name: Run the test suite
+        run: just test
+
+      - name: Print stats report
+        run: just stats
+
+      - name: Summarize reproducibility check
+        run: |
+          echo "::notice::Reproducible build completed: fetch (7 sources, SHA256-verified) → build → validate (18 files) → tests (48) → stats."

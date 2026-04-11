@@ -16,6 +16,20 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+### Added (post-review follow-up, continued from v0.3.1)
+
+- **`.github/workflows/build.yml`** — reproducibility smoke test CI workflow. Addresses the review's Reproducibility-dimension gap ("Missing: reproducibility smoke test in CI"). On every push to `main` and every pull request, the workflow performs a cold checkout, installs pinned dependencies, fetches upstream sources (SHA256-verified), runs the full build pipeline, validates every output against its schema, runs the test suite, and prints stats. Uses GitHub Actions cache for the `sources/` directory keyed on `manifest.json` hash to avoid re-downloading the 43 MB of upstream files on every run.
+- **`just ci`** — local equivalent of the CI workflow: `just fetch && just build && just validate && just test && just stats`. Runs the same smoke test against the local checkout. Exits non-zero on any step failure.
+- **Stroke-count mismatch metadata** on `data/enrichment/stroke-order-index.json`. Addresses the remaining part of the review's recommendation #9 (the optional `metadata.warnings` for silent gaps — D5 orphan characters and M6 empty radicals were addressed in v0.3.1; the 109 stroke-count mismatches between KanjiVG and KANJIDIC2 are addressed here). New metadata fields:
+  - `metadata.warnings`: list of human-readable warnings, currently two: (1) the 109 stroke-count mismatches, (2) the 48.9% KanjiVG coverage.
+  - `metadata.stroke_count_mismatches`: structured list of all 109 affected characters, each with the KANJIDIC2 canonical count and the KanjiVG path-element-count. Consumers joining kanji.json with stroke-order-index.json can now detect and handle these cases explicitly. KANJIDIC2 remains the canonical source for stroke count; the mismatch list is documentation of the known divergence.
+
+### Changed
+
+- `build/transform/stroke_order.py`: emits the new `warnings` and `stroke_count_mismatches` metadata fields. Reads `data/core/kanji.json` when it exists to compute mismatches; gracefully falls back to empty lists when kanji.json is not yet built.
+
+---
+
 ## [0.3.1] — 2026-04-11
 
 Post-review defect fixes. This patch addresses every defect and stale-metadata issue flagged in the external review of the v0.3.0 release (D1–D5 and M1–M6 from the review notes). No new data sources or schemas are added; existing data is corrected where the review identified a wrong output.

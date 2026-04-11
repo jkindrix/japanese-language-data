@@ -100,6 +100,17 @@ test:
     @printf '{{cyan}}==> Running tests{{reset}}\n'
     {{python}} -m pytest tests/ -v
 
+# Reproducibility smoke test: fetch → build → validate → test → stats. Matches .github/workflows/build.yml.
+[group('validate')]
+ci:
+    @printf '{{cyan}}==> CI smoke test: fetch → build → validate → test → stats{{reset}}\n'
+    @just fetch
+    @just build
+    @just validate
+    @just test
+    @just stats
+    @printf '{{green}}==> CI smoke test PASSED{{reset}}\n'
+
 # ============================================================================
 # CLEANUP
 # ============================================================================
