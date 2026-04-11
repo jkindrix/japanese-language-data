@@ -6,7 +6,7 @@
     "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
     "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
     "generated": "2026-04-11",
-    "count": 10755,
+    "count": 10794,
     "counts_by_kind_and_level": {
       "vocab_N5": 684,
       "vocab_N4": 640,
@@ -20,7 +20,7 @@
       "kanji_N5": 79,
       "grammar_N5": 60,
       "grammar_N4": 91,
-      "grammar_N3": 100,
+      "grammar_N3": 139,
       "grammar_N2": 0,
       "grammar_N1": 0
     },
@@ -93261,6 +93261,357 @@
       "level": "N3",
       "meaning_en": "in the middle of / right in the midst of",
       "grammar_id": "saichu-in-the-middle",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + っけ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "was it the case that / I can't quite remember (casual)",
+      "grammar_id": "kke-casual-wondering",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + もの / もん",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "because / since (emotional or justifying)",
+      "grammar_id": "mono-reason-assertion",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + んだもん",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "(it's) because / that's why (casual whining)",
+      "grammar_id": "mon-casual-because",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ない-form + で",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "without doing / instead of doing",
+      "grammar_id": "nai-de-without-doing",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + にちがいない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "must be / certainly / no doubt",
+      "grammar_id": "ni-chigainai-must",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb plain non-past + ことだ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "should do / it's advisable / the important thing is to",
+      "grammar_id": "koto-da-emphatic",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb plain non-past + (より)ほか(は)ない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "have no choice but to / there's no option except",
+      "grammar_id": "hoka-nai-no-choice",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "i-adj / na-adj (+ な) / V-た + ことに(は)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "to X's surprise / delight / disappointment",
+      "grammar_id": "koto-ni-surprise",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain non-past + くらいなら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "rather than / if it comes to X, I'd rather Y",
+      "grammar_id": "kurai-nara-rather",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + から + Noun + にかけて",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "from X through Y / over the span of",
+      "grammar_id": "ni-kakete-through",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + 以上(は)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "since / now that / as long as",
+      "grammar_id": "ijou-since",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + 以外(に / には / は)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "other than / besides / except for",
+      "grammar_id": "igai-other-than",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Number + counter + おきに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "at intervals of / every other",
+      "grammar_id": "okini-intervals",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / V plain non-past + ごとに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "every / each / every time",
+      "grammar_id": "gotoni-each",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain / noun + の + 代わりに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "instead of / in exchange for",
+      "grammar_id": "kawari-ni-instead",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + んだから",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "since / because (emphatic)",
+      "grammar_id": "n-da-kara-emphatic",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + わけがない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "there's no way / it's impossible that",
+      "grammar_id": "wake-ga-nai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "しょうがない / しようがない (standalone)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "it can't be helped / nothing to do about it",
+      "grammar_id": "shou-ga-nai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て / i-adj 〜くて / na-adj で + しょうがない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "can't help feeling / unbearably",
+      "grammar_id": "te-shou-ga-nai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て / i-adj 〜くて / na-adj で + しかたがない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "can't help feeling / unbearably (more formal)",
+      "grammar_id": "te-shikata-ga-nai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + っこない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "absolutely not / no way / there's no chance",
+      "grammar_id": "kko-nai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Phrase + なんて",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "how / such (a thing) as (often surprise, disdain, or dismissal)",
+      "grammar_id": "nan-te-how",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + なんか",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "things like / (dismissive) such as",
+      "grammar_id": "nan-ka-dismissive",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Time period + ぶり(に)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "for the first time in / after X",
+      "grammar_id": "buri-ni-first-time",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain + 上は",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "now that / since (formal, implies commitment)",
+      "grammar_id": "ue-wa-now",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V ない-form + わけにはいかない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "can't not do / have to (social or moral obligation)",
+      "grammar_id": "nai-wake-ni-ikanai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain non-past + わけにはいかない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "can't afford to / can't simply do (due to circumstances)",
+      "grammar_id": "wake-ni-wa-ikanai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain / noun + の + ついでに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "while I'm at it / on the way / taking the opportunity",
+      "grammar_id": "tsuide-ni",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + をはじめ(として / とする)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "starting with / including / such as (representative example)",
+      "grammar_id": "wo-hajime-including",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V potential form + ものなら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "if (it were) possible / if I could",
+      "grammar_id": "mono-nara-if-possible",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form + こそ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "only by / it is precisely by doing",
+      "grammar_id": "te-koso-only-by",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + ばかりでなく",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "not only X but also Y (formal)",
+      "grammar_id": "bakari-de-naku",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + だけでなく",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "not only X but also Y (neutral)",
+      "grammar_id": "dake-de-naku",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + に決まっている",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "it's definitely / of course / for sure",
+      "grammar_id": "ni-kimatte-iru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V negative stem + ずに済む",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "get by without / manage without having to",
+      "grammar_id": "zuni-sumu",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + に比べて / に比べ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "compared to / in comparison with",
+      "grammar_id": "ni-kurabete-compared",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + となれば",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "if it comes to / in the event that",
+      "grammar_id": "to-nareba-if-comes-to",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + となると",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "when it comes to / if it's a matter of",
+      "grammar_id": "to-naru-to-when-comes",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form + 初めて",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "only after / not until",
+      "grammar_id": "te-hajimete-only-after",
       "source_retrieved": "2026-04-11"
     },
     {

@@ -16,6 +16,37 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+## [0.5.0] — 2026-04-11
+
+**N3 grammar coverage reaches community-standard completeness.** After Batches B1 + B2 + B3 + B4 the grammar dataset stands at 290 entries (60 N5 + 91 N4 + 139 N3), 41–58% of the 500–700 community-standard target. N3 is now at 139 entries — within the ~140–160 community-consensus "complete N3" range. All new entries `review_status: "draft"`; authorship statement unchanged (written in our own words from general non-copyrightable grammar knowledge; no content from copyrighted grammar references).
+
+### Added (Batch B4)
+
+- **N3 expansion batch 4 (39 entries)** bringing N3 from 100 → 139: 〜っけ (casual wondering), 〜もの / 〜もん (emotional reason); 〜ないで (without doing, casual of 〜ずに); 〜にちがいない (certainty), 〜ことだ (firm advice), 〜(より)ほかない (no choice but), 〜ことに (emotional reaction), 〜くらいなら (rather than), 〜にかけて (through / excel at), 〜以上(は) (since / as long as), 〜以外 (other than), 〜おきに (intervals), 〜ごとに (each), 〜代わりに (instead), 〜んだから (emphatic since), 〜わけがない (no way), しょうがない / 〜てしょうがない / 〜てしかたがない (can't be helped family), 〜っこない (absolutely not casual), 〜なんて (how / dismissive) and 〜なんか (dismissive casual), 〜ぶりに (for the first time in), 〜上は (now that, formal), 〜ないわけにはいかない (can't not) and 〜わけにはいかない (can't afford to), 〜ついでに (while I'm at it), 〜をはじめ (starting with), 〜ものなら (if possible), 〜てこそ (only by), 〜ばかりでなく / 〜だけでなく (not only X but also Y, formal and neutral), 〜に決まっている (definitely), 〜ずに済む (manage without), 〜に比べて (compared to), 〜となれば / 〜となると (if / when it comes to), 〜て初めて (only after).
+
+### Verification
+
+- **62/62 tests pass** — existing invariants continue to cover all new entries.
+- **19/19 data files validate** against their schemas (no schema changes across B1–B4).
+- **`data/grammar/grammar.json`**: 81 (v0.4.1 baseline) → **290 entries** (+209: 10 N5 + 60 N4 + 139 N3, of which 40 N3 were already in v0.4.1 baseline's N3 slot after batch 0).
+- **`data/enrichment/jlpt-classifications.json`**: 10,585 → **10,794** (+209 grammar classifications, auto-emitted by `build/transform/jlpt.py` reading the curated files).
+- **`manifest.json.grammar_curation_status`** refreshed: total 81 → 290; by_level {N5 50→60, N4 31→91, N3 0→139}; coverage_pct 11–16 → 41–58; draft 81 → 290.
+- All new `related` cross-references resolve (hard-enforced at build time and by `test_d2_grammar_related_references_resolve`).
+
+### Milestone
+
+This is the first batch where N3 reaches community-standard completeness (~140 entries). It is tagged as v0.5.0 to mark the N3 milestone within the larger grammar expansion effort. N4 is at 91 entries (community-standard is ~80–100, so also close to complete). N5 is at 60 entries (community-standard is ~80, so close but not quite). N2 and N1 remain to be curated in subsequent batches.
+
+Honest limitations:
+- Zero native-speaker reviewers engaged; everything is `draft`.
+- Level assignments are community-consensus judgments; some patterns live on the N3/N2 and N3/N4 borders and may shift with future review.
+- Example sentences are original (not from Tatoeba); a future batch could text-match with the sentences corpus.
+- Rare / formal patterns (especially in B3 and B4) may need nuance correction by native speakers.
+
+---
+
+## [Unreleased-prior]
+
 Continuing multi-batch grammar expansion push toward the ~500-700 community-standard target. After Batches B1 + B2 + B3: 251 entries total (60 N5 + 91 N4 + 100 N3), 36–50% of target. All new entries `review_status: "draft"`, authorship statement unchanged.
 
 ### Added (Batch B3)
