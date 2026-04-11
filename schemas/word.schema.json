@@ -184,14 +184,32 @@
         },
         "examples": {
           "type": "array",
-          "description": "Example sentence references from jmdict-examples (Tatoeba-sourced).",
+          "description": "Example sentence references from jmdict-examples (Tatoeba-sourced, editor-curated).",
           "items": {
             "type": "object",
+            "required": ["source", "sentence_id"],
             "properties": {
-              "source": {"type": "string"},
-              "sentence_id": {"type": "string"},
-              "text": {"type": "string"},
-              "translation": {"type": "string"}
+              "source": {
+                "type": "string",
+                "enum": ["tatoeba"],
+                "description": "Upstream source of the sentence."
+              },
+              "sentence_id": {
+                "type": "string",
+                "description": "Tatoeba sentence ID, stable across upstream revisions."
+              },
+              "word_form": {
+                "type": "string",
+                "description": "The specific surface form of the word as used in this example sentence."
+              },
+              "japanese": {
+                "type": "string",
+                "description": "The Japanese sentence text."
+              },
+              "english": {
+                "type": "string",
+                "description": "The English translation text."
+              }
             }
           }
         }

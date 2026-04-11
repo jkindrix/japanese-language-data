@@ -43,6 +43,9 @@ sources/*.bz2
 # Optional data files not built by default
 data/optional/*.json
 
+# Full word list (216k entries, ~150 MB) — built on demand, committed as release artifact
+data/core/words-full.json
+
 # Scratch space for experiments — never committed
 scratch/*
 !scratch/.gitkeep

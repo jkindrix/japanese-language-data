@@ -1,20 +1,72 @@
 {
   "project": "japanese-language-data",
-  "version": "0.0.0",
-  "phase": 0,
-  "phase_description": "Foundation: scaffolding, documentation, schemas, and build pipeline skeleton. No data files built.",
+  "version": "0.1.0",
+  "phase": 1,
+  "phase_description": "Core data built: kana, kanji (full + Jōyō view), words (common subset committed, full gitignored), radicals, and example sentences. All files schema-validated. Phase 2 enrichment and Phase 3 grammar still pending.",
   "generated": "2026-04-11",
   "license": "CC-BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
   "upstream_update_obligation": "Monthly (per EDRDG License §4).",
-  "sources": {},
+  "sources": {
+    "jmdict-examples-eng": {
+      "url": "https://github.com/scriptin/jmdict-simplified/releases/download/3.6.2%2B20260406125001/jmdict-examples-eng-3.6.2+20260406125001.json.tgz",
+      "license": "EDRDG License / CC-BY-SA 4.0",
+      "description": "JMdict English entries with Tatoeba example sentences pre-linked.",
+      "sha256": "2c4be6ecc6ac433280ef3783820fd10ddc2263def932148a14ebff5275d3feff",
+      "size_bytes": 13889806
+    },
+    "jmnedict": {
+      "url": "https://github.com/scriptin/jmdict-simplified/releases/download/3.6.2%2B20260406125001/jmnedict-all-3.6.2+20260406125001.json.tgz",
+      "license": "EDRDG License / CC-BY-SA 4.0",
+      "description": "JMnedict proper nouns (all languages).",
+      "sha256": "2c9271b64fa8a86da9f2a7528accde76448eedbef377e4a10cbecbd07c1c64a9",
+      "size_bytes": 13431369
+    },
+    "kradfile": {
+      "url": "https://github.com/scriptin/jmdict-simplified/releases/download/3.6.2%2B20260406125001/kradfile-3.6.2+20260406125001.json.tgz",
+      "license": "EDRDG License / CC-BY-SA 4.0",
+      "description": "KRADFILE kanji → radical components mapping.",
+      "sha256": "ee7e1ddf4d8a3c8cd4b38827056c0a8eee717897ad242b3a2b85cf957ae482be",
+      "size_bytes": 106129
+    },
+    "radkfile": {
+      "url": "https://github.com/scriptin/jmdict-simplified/releases/download/3.6.2%2B20260406125001/radkfile-3.6.2+20260406125001.json.tgz",
+      "license": "EDRDG License / CC-BY-SA 4.0",
+      "description": "RADKFILE radical → kanji lookup.",
+      "sha256": "0d88605ef79c6cb4b442b4c66135fbe6852eda3a7fbaf6eac69eb9a9ba59d720",
+      "size_bytes": 134312
+    },
+    "kanjivg": {
+      "url": "https://github.com/KanjiVG/kanjivg/releases/download/r20250816/kanjivg-20250816-main.zip",
+      "license": "CC-BY-SA 3.0 Unported",
+      "description": "KanjiVG stroke order SVG files (non-variant forms).",
+      "sha256": "69a2944ec1183086fdee5ba9c1f48bc306b867480a95b2f337f3203bf50689a3",
+      "size_bytes": 12589510
+    },
+    "kanjium-accents": {
+      "url": "https://raw.githubusercontent.com/mifunetoshiro/kanjium/master/data/source_files/raw/accents.txt",
+      "license": "CC-BY-SA 4.0",
+      "description": "Kanjium pitch accent TSV (word, reading, mora positions).",
+      "sha256": "8bd0dd127dab32ceec94cb03ab1ba6b68858ea73421dfa1731af2f373deb4f20",
+      "size_bytes": 3226405
+    },
+    "kanjidic2": {
+      "url": "https://github.com/scriptin/jmdict-simplified/releases/download/3.6.2%2B20260406125001/kanjidic2-all-3.6.2+20260406125001.json.tgz",
+      "license": "EDRDG License / CC-BY-SA 4.0",
+      "description": "KANJIDIC2 kanji data, all languages (13,108 characters, full coverage).",
+      "sha256": "749b944a902bcdf111439714483af24cae920775e8d443e719c50e51cdaa904b",
+      "size_bytes": 1552895
+    }
+  },
   "counts": {
-    "data/core/kana.json": 0,
-    "data/core/kanji.json": 0,
-    "data/core/words.json": 0,
-    "data/core/radicals.json": 0,
+    "data/core/kana.json": 215,
+    "data/core/kanji.json": 13108,
+    "data/core/kanji-joyo.json": 2136,
+    "data/core/words.json": 22580,
+    "data/core/words-full.json": 216173,
+    "data/core/radicals.json": 253,
     "data/optional/names.json": 0,
-    "data/corpus/sentences.json": 0,
+    "data/corpus/sentences.json": 25980,
     "data/enrichment/pitch-accent.json": 0,
     "data/enrichment/frequency-newspaper.json": 0,
     "data/enrichment/frequency-modern.json": 0,
@@ -27,7 +79,6 @@
     "data/cross-refs/kanji-to-radicals.json": 0
   },
   "next_actions": [
-    "Phase 1: implement core transforms (kana, kanji, words, radicals, sentences).",
     "Phase 2: implement enrichment transforms (stroke_order, pitch, frequency, jlpt) and cross_links.",
     "Phase 3: curate grammar dataset with review_status tracking.",
     "Phase 4: evaluate candidates in docs/phase4-candidates.md."

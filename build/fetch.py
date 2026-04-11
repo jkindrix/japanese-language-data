@@ -86,9 +86,9 @@ SOURCES: tuple[Source, ...] = (
     ),
     Source(
         name="kanjidic2",
-        url=f"{_JMDS}/kanjidic2-en-{JMDICT_SIMPLIFIED_VERSION}.json.tgz",
-        cache_path="jmdict-simplified/kanjidic2-en.json.tgz",
-        description="KANJIDIC2 kanji data, English meanings.",
+        url=f"{_JMDS}/kanjidic2-all-{JMDICT_SIMPLIFIED_VERSION}.json.tgz",
+        cache_path="jmdict-simplified/kanjidic2-all.json.tgz",
+        description="KANJIDIC2 kanji data, all languages (13,108 characters, full coverage).",
         license="EDRDG License / CC-BY-SA 4.0",
     ),
     Source(

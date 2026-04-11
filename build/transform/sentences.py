@@ -1,36 +1,126 @@
 """Example sentences transform.
 
-Phase 1 deliverable. Extracts example sentences from the jmdict-examples
-variant (which embeds Tatoeba sentences already linked to specific
-JMdict senses) and writes them as a standalone sentence corpus file.
+Extracts example sentences from the jmdict-examples variant (which embeds
+editor-curated Tatoeba sentences pre-linked to specific JMdict senses)
+and writes them as a standalone sentence corpus file.
 
 Input: ``sources/jmdict-simplified/jmdict-examples-eng.json.tgz``
-    (same file consumed by words.build — cached extraction is fine)
 
 Output: ``data/corpus/sentences.json`` conforming to
 ``schemas/sentence.schema.json``.
 
-Each entry preserves the Tatoeba sentence ID so consumers can look
-sentences up at https://tatoeba.org/en/sentences/show/<id> for audio,
-alternative translations, and community discussion.
+Sentences are deduplicated by Tatoeba sentence ID. A single sentence
+referenced by multiple word senses appears exactly once in the output.
+The word → sentence cross-reference is generated separately by the
+Phase 2 cross_links transform.
 
-The sentences in this file are the **editor-curated** subset, marked
-with ``curated: true``. They have been hand-selected by JMdict editors
-for quality and relevance. Phase 2 may optionally add a second file,
-``data/corpus/sentences-unfiltered.json``, containing the full Tatoeba
-Japanese corpus (~200k+ sentences, variable quality) with
-``curated: false`` for consumers needing broader coverage.
-
-The word → sentence cross-reference (``data/cross-refs/word-to-sentences.json``)
-is generated separately by ``cross_links.build``, which consumes both
-this file and ``data/core/words.json``.
+All sentences in this file are marked ``curated: true`` because they are
+editor-selected via JMdict's curation process. Phase 2 or later may add
+an unfiltered sentences file from the full Tatoeba export.
 """
 
 from __future__ import annotations
 
+import json
+import tarfile
+from pathlib import Path
+from datetime import date
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "jmdict-examples-eng.json.tgz"
+OUT = REPO_ROOT / "data" / "corpus" / "sentences.json"
+
+
+def _load_source() -> dict:
+    with tarfile.open(SOURCE_TGZ, "r:gz") as tf:
+        for member in tf.getmembers():
+            if member.name.endswith(".json"):
+                f = tf.extractfile(member)
+                if f is None:
+                    raise RuntimeError(f"Cannot extract {member.name}")
+                return json.loads(f.read().decode("utf-8"))
+    raise RuntimeError(f"No JSON file found in {SOURCE_TGZ}")
+
 
 def build() -> None:
-    raise NotImplementedError(
-        "sentences.build() is scheduled for Phase 1. Inputs: "
-        "jmdict-examples-eng.json.tgz. Output: data/corpus/sentences.json."
-    )
+    print(f"[sentences] loading {SOURCE_TGZ.name}")
+    source = _load_source()
+    upstream_words = source.get("words", [])
+
+    # Deduplicate sentences by Tatoeba ID.
+    seen: dict[str, dict] = {}
+    total_refs = 0
+    for w in upstream_words:
+        for sense in w.get("sense", []) or []:
+            for ex in sense.get("examples", []) or []:
+                total_refs += 1
+                src = ex.get("source", {}) or {}
+                if src.get("type") != "tatoeba":
+                    continue
+                sid = str(src.get("value", ""))
+                if not sid or sid in seen:
+                    continue
+
+                japanese = ""
+                english = ""
+                for sent in ex.get("sentences", []) or []:
+                    lang = sent.get("lang", "")
+                    text = sent.get("text", "")
+                    if lang == "jpn":
+                        japanese = text
+                    elif lang == "eng":
+                        english = text
+
+                if not japanese:
+                    # Skip malformed entries with no Japanese text
+                    continue
+
+                seen[sid] = {
+                    "id": sid,
+                    "japanese": japanese,
+                    "english": english,
+                    "translation_id": None,
+                    "curated": True,
+                    "license_flag": "CC-BY-2.0-FR",
+                    "has_audio": False,
+                    "japanese_contributor": None,
+                    "english_contributor": None,
+                }
+
+    sentences = sorted(seen.values(), key=lambda s: int(s["id"]) if s["id"].isdigit() else 0)
+    print(f"[sentences] {total_refs:,} upstream references, {len(sentences):,} unique sentences")
+
+    output = {
+        "metadata": {
+            "source": "Tatoeba via JMdict editor-curated examples (jmdict-examples-eng)",
+            "source_url": "https://tatoeba.org/",
+            "license": "CC-BY 2.0 FR (sentence text); subset under CC0 1.0",
+            "source_version": source.get("version", ""),
+            "upstream_dict_date": source.get("dictDate", ""),
+            "generated": date.today().isoformat(),
+            "count": len(sentences),
+            "attribution": (
+                "Example sentences from the Tatoeba Project (https://tatoeba.org/) "
+                "under CC-BY 2.0 FR. These sentences were selected and linked to "
+                "JMdict senses by JMdict editors. Individual sentences may have "
+                "different contributors; sentence IDs are preserved to allow "
+                "upstream lookup at https://tatoeba.org/en/sentences/show/<id>."
+            ),
+            "field_notes": {
+                "id": "Tatoeba sentence ID. Stable across revisions. Use https://tatoeba.org/en/sentences/show/<id> to view the original with audio and alternative translations.",
+                "japanese": "The Japanese sentence text as provided by Tatoeba.",
+                "english": "The English translation as linked by JMdict editors. May be empty if no English translation was associated.",
+                "curated": "True for these entries because they are editor-selected from JMdict. A later phase may add unfiltered Tatoeba sentences with curated=false.",
+                "license_flag": "Default CC-BY 2.0 FR. Individual Tatoeba sentences may be under CC0 1.0; we mark the default here and defer per-sentence license tracking to a later phase.",
+                "has_audio": "Whether Tatoeba has an audio recording. We do not currently populate this; a later phase may cross-reference Tatoeba's audio export.",
+                "japanese_contributor / english_contributor": "Not currently populated. Tatoeba provides this via the full corpus export, which is a Phase 2+ candidate.",
+            },
+        },
+        "sentences": sentences,
+    }
+
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    with OUT.open("w", encoding="utf-8") as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    print(f"[sentences] wrote {OUT.relative_to(REPO_ROOT)} ({len(sentences):,} entries)")

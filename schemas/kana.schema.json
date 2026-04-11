@@ -70,9 +70,10 @@
           "minLength": 1
         },
         "stroke_count": {
-          "type": "integer",
+          "type": ["integer", "null"],
           "minimum": 1,
-          "maximum": 10
+          "maximum": 10,
+          "description": "Stroke count for base/dakuten/handakuten/sokuon forms. Null for yōon compounds, which are composed of two base kana and do not have a single canonical stroke count."
         },
         "unicode": {
           "type": "string",

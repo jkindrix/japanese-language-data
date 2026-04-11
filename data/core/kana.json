@@ -1,0 +1,2210 @@
+{
+  "metadata": {
+    "source": "Hand-curated (project original)",
+    "license": "CC-BY-SA 4.0",
+    "generated": "2026-04-11",
+    "count": 215,
+    "field_notes": {
+      "character": "The kana character itself. Yōon entries (e.g., きゃ) are two-codepoint strings.",
+      "script": "Which script the entry belongs to: hiragana or katakana.",
+      "romaji": "Hepburn romanization. Doubled consonants for sokuon; double-vowel for long vowels (kōhī = ko-u-hi-i).",
+      "romaji_alt": "Alternative romanizations where Hepburn and Kunrei-shiki differ (e.g., shi vs si, fu vs hu, ja vs zya).",
+      "type": "Entry classification: base, dakuten, handakuten, yoon, yoon_dakuten, yoon_handakuten, sokuon, or other (archaic, long vowel mark).",
+      "base": "For derived forms (dakuten/handakuten/yōon), the base kana this is derived from.",
+      "stroke_count": "Standard stroke count. Null for yōon compound forms (because they are composed of two base kana, each with its own stroke count).",
+      "unicode": "Lowercase hex Unicode codepoint. For multi-codepoint forms (yōon), the codepoints are joined with '+'.",
+      "usage_notes": "Human-readable notes on when and how the entry is used. Present only where there is something non-obvious to say."
+    },
+    "authorship_caveat": "Stroke counts and romanizations are the author's best knowledge. Corrections welcome via docs/contributing.md and docs/upstream-issues.md."
+  },
+  "kana": [
+    {
+      "character": "あ",
+      "script": "hiragana",
+      "romaji": "a",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "3042"
+    },
+    {
+      "character": "ア",
+      "script": "katakana",
+      "romaji": "a",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30a2"
+    },
+    {
+      "character": "い",
+      "script": "hiragana",
+      "romaji": "i",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "3044"
+    },
+    {
+      "character": "イ",
+      "script": "katakana",
+      "romaji": "i",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30a4"
+    },
+    {
+      "character": "う",
+      "script": "hiragana",
+      "romaji": "u",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "3046"
+    },
+    {
+      "character": "ウ",
+      "script": "katakana",
+      "romaji": "u",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30a6"
+    },
+    {
+      "character": "え",
+      "script": "hiragana",
+      "romaji": "e",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "3048"
+    },
+    {
+      "character": "エ",
+      "script": "katakana",
+      "romaji": "e",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30a8"
+    },
+    {
+      "character": "お",
+      "script": "hiragana",
+      "romaji": "o",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "304a"
+    },
+    {
+      "character": "オ",
+      "script": "katakana",
+      "romaji": "o",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30aa"
+    },
+    {
+      "character": "か",
+      "script": "hiragana",
+      "romaji": "ka",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "304b"
+    },
+    {
+      "character": "カ",
+      "script": "katakana",
+      "romaji": "ka",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30ab"
+    },
+    {
+      "character": "き",
+      "script": "hiragana",
+      "romaji": "ki",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 4,
+      "unicode": "304d"
+    },
+    {
+      "character": "キ",
+      "script": "katakana",
+      "romaji": "ki",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30ad"
+    },
+    {
+      "character": "く",
+      "script": "hiragana",
+      "romaji": "ku",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "304f"
+    },
+    {
+      "character": "ク",
+      "script": "katakana",
+      "romaji": "ku",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30af"
+    },
+    {
+      "character": "け",
+      "script": "hiragana",
+      "romaji": "ke",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "3051"
+    },
+    {
+      "character": "ケ",
+      "script": "katakana",
+      "romaji": "ke",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30b1"
+    },
+    {
+      "character": "こ",
+      "script": "hiragana",
+      "romaji": "ko",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "3053"
+    },
+    {
+      "character": "コ",
+      "script": "katakana",
+      "romaji": "ko",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30b3"
+    },
+    {
+      "character": "さ",
+      "script": "hiragana",
+      "romaji": "sa",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "3055"
+    },
+    {
+      "character": "サ",
+      "script": "katakana",
+      "romaji": "sa",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30b5"
+    },
+    {
+      "character": "し",
+      "script": "hiragana",
+      "romaji": "shi",
+      "romaji_alt": [
+        "si"
+      ],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "3057"
+    },
+    {
+      "character": "シ",
+      "script": "katakana",
+      "romaji": "shi",
+      "romaji_alt": [
+        "si"
+      ],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30b7"
+    },
+    {
+      "character": "す",
+      "script": "hiragana",
+      "romaji": "su",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "3059"
+    },
+    {
+      "character": "ス",
+      "script": "katakana",
+      "romaji": "su",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30b9"
+    },
+    {
+      "character": "せ",
+      "script": "hiragana",
+      "romaji": "se",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "305b"
+    },
+    {
+      "character": "セ",
+      "script": "katakana",
+      "romaji": "se",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30bb"
+    },
+    {
+      "character": "そ",
+      "script": "hiragana",
+      "romaji": "so",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "305d"
+    },
+    {
+      "character": "ソ",
+      "script": "katakana",
+      "romaji": "so",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30bd"
+    },
+    {
+      "character": "た",
+      "script": "hiragana",
+      "romaji": "ta",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 4,
+      "unicode": "305f"
+    },
+    {
+      "character": "タ",
+      "script": "katakana",
+      "romaji": "ta",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30bf"
+    },
+    {
+      "character": "ち",
+      "script": "hiragana",
+      "romaji": "chi",
+      "romaji_alt": [
+        "ti"
+      ],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "3061"
+    },
+    {
+      "character": "チ",
+      "script": "katakana",
+      "romaji": "chi",
+      "romaji_alt": [
+        "ti"
+      ],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30c1"
+    },
+    {
+      "character": "つ",
+      "script": "hiragana",
+      "romaji": "tsu",
+      "romaji_alt": [
+        "tu"
+      ],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "3064"
+    },
+    {
+      "character": "ツ",
+      "script": "katakana",
+      "romaji": "tsu",
+      "romaji_alt": [
+        "tu"
+      ],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30c4"
+    },
+    {
+      "character": "て",
+      "script": "hiragana",
+      "romaji": "te",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "3066"
+    },
+    {
+      "character": "テ",
+      "script": "katakana",
+      "romaji": "te",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30c6"
+    },
+    {
+      "character": "と",
+      "script": "hiragana",
+      "romaji": "to",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "3068"
+    },
+    {
+      "character": "ト",
+      "script": "katakana",
+      "romaji": "to",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30c8"
+    },
+    {
+      "character": "な",
+      "script": "hiragana",
+      "romaji": "na",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 4,
+      "unicode": "306a"
+    },
+    {
+      "character": "ナ",
+      "script": "katakana",
+      "romaji": "na",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30ca"
+    },
+    {
+      "character": "に",
+      "script": "hiragana",
+      "romaji": "ni",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "306b"
+    },
+    {
+      "character": "ニ",
+      "script": "katakana",
+      "romaji": "ni",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30cb"
+    },
+    {
+      "character": "ぬ",
+      "script": "hiragana",
+      "romaji": "nu",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "306c"
+    },
+    {
+      "character": "ヌ",
+      "script": "katakana",
+      "romaji": "nu",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30cc"
+    },
+    {
+      "character": "ね",
+      "script": "hiragana",
+      "romaji": "ne",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "306d"
+    },
+    {
+      "character": "ネ",
+      "script": "katakana",
+      "romaji": "ne",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 4,
+      "unicode": "30cd"
+    },
+    {
+      "character": "の",
+      "script": "hiragana",
+      "romaji": "no",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "306e"
+    },
+    {
+      "character": "ノ",
+      "script": "katakana",
+      "romaji": "no",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "30ce"
+    },
+    {
+      "character": "は",
+      "script": "hiragana",
+      "romaji": "ha",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "306f"
+    },
+    {
+      "character": "ハ",
+      "script": "katakana",
+      "romaji": "ha",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30cf"
+    },
+    {
+      "character": "ひ",
+      "script": "hiragana",
+      "romaji": "hi",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "3072"
+    },
+    {
+      "character": "ヒ",
+      "script": "katakana",
+      "romaji": "hi",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30d2"
+    },
+    {
+      "character": "ふ",
+      "script": "hiragana",
+      "romaji": "fu",
+      "romaji_alt": [
+        "hu"
+      ],
+      "type": "base",
+      "stroke_count": 4,
+      "unicode": "3075"
+    },
+    {
+      "character": "フ",
+      "script": "katakana",
+      "romaji": "fu",
+      "romaji_alt": [
+        "hu"
+      ],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "30d5"
+    },
+    {
+      "character": "へ",
+      "script": "hiragana",
+      "romaji": "he",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "3078"
+    },
+    {
+      "character": "ヘ",
+      "script": "katakana",
+      "romaji": "he",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "30d8"
+    },
+    {
+      "character": "ほ",
+      "script": "hiragana",
+      "romaji": "ho",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 4,
+      "unicode": "307b"
+    },
+    {
+      "character": "ホ",
+      "script": "katakana",
+      "romaji": "ho",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 4,
+      "unicode": "30db"
+    },
+    {
+      "character": "ま",
+      "script": "hiragana",
+      "romaji": "ma",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "307e"
+    },
+    {
+      "character": "マ",
+      "script": "katakana",
+      "romaji": "ma",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30de"
+    },
+    {
+      "character": "み",
+      "script": "hiragana",
+      "romaji": "mi",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "307f"
+    },
+    {
+      "character": "ミ",
+      "script": "katakana",
+      "romaji": "mi",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30df"
+    },
+    {
+      "character": "む",
+      "script": "hiragana",
+      "romaji": "mu",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "3080"
+    },
+    {
+      "character": "ム",
+      "script": "katakana",
+      "romaji": "mu",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30e0"
+    },
+    {
+      "character": "め",
+      "script": "hiragana",
+      "romaji": "me",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "3081"
+    },
+    {
+      "character": "メ",
+      "script": "katakana",
+      "romaji": "me",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30e1"
+    },
+    {
+      "character": "も",
+      "script": "hiragana",
+      "romaji": "mo",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "3082"
+    },
+    {
+      "character": "モ",
+      "script": "katakana",
+      "romaji": "mo",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30e2"
+    },
+    {
+      "character": "や",
+      "script": "hiragana",
+      "romaji": "ya",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "3084"
+    },
+    {
+      "character": "ヤ",
+      "script": "katakana",
+      "romaji": "ya",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30e4"
+    },
+    {
+      "character": "ゆ",
+      "script": "hiragana",
+      "romaji": "yu",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "3086"
+    },
+    {
+      "character": "ユ",
+      "script": "katakana",
+      "romaji": "yu",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30e6"
+    },
+    {
+      "character": "よ",
+      "script": "hiragana",
+      "romaji": "yo",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "3088"
+    },
+    {
+      "character": "ヨ",
+      "script": "katakana",
+      "romaji": "yo",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30e8"
+    },
+    {
+      "character": "ら",
+      "script": "hiragana",
+      "romaji": "ra",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "3089"
+    },
+    {
+      "character": "ラ",
+      "script": "katakana",
+      "romaji": "ra",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30e9"
+    },
+    {
+      "character": "り",
+      "script": "hiragana",
+      "romaji": "ri",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "308a"
+    },
+    {
+      "character": "リ",
+      "script": "katakana",
+      "romaji": "ri",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30ea"
+    },
+    {
+      "character": "る",
+      "script": "hiragana",
+      "romaji": "ru",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "308b"
+    },
+    {
+      "character": "ル",
+      "script": "katakana",
+      "romaji": "ru",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30eb"
+    },
+    {
+      "character": "れ",
+      "script": "hiragana",
+      "romaji": "re",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "308c"
+    },
+    {
+      "character": "レ",
+      "script": "katakana",
+      "romaji": "re",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "30ec"
+    },
+    {
+      "character": "ろ",
+      "script": "hiragana",
+      "romaji": "ro",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "308d"
+    },
+    {
+      "character": "ロ",
+      "script": "katakana",
+      "romaji": "ro",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30ed"
+    },
+    {
+      "character": "わ",
+      "script": "hiragana",
+      "romaji": "wa",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "308f"
+    },
+    {
+      "character": "ワ",
+      "script": "katakana",
+      "romaji": "wa",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30ef"
+    },
+    {
+      "character": "を",
+      "script": "hiragana",
+      "romaji": "wo",
+      "romaji_alt": [
+        "o"
+      ],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "3092"
+    },
+    {
+      "character": "ヲ",
+      "script": "katakana",
+      "romaji": "wo",
+      "romaji_alt": [
+        "o"
+      ],
+      "type": "base",
+      "stroke_count": 3,
+      "unicode": "30f2"
+    },
+    {
+      "character": "ん",
+      "script": "hiragana",
+      "romaji": "n",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 1,
+      "unicode": "3093"
+    },
+    {
+      "character": "ン",
+      "script": "katakana",
+      "romaji": "n",
+      "romaji_alt": [],
+      "type": "base",
+      "stroke_count": 2,
+      "unicode": "30f3"
+    },
+    {
+      "character": "が",
+      "script": "hiragana",
+      "romaji": "ga",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "か",
+      "stroke_count": 5,
+      "unicode": "304c"
+    },
+    {
+      "character": "ガ",
+      "script": "katakana",
+      "romaji": "ga",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "カ",
+      "stroke_count": 4,
+      "unicode": "30ac"
+    },
+    {
+      "character": "ぎ",
+      "script": "hiragana",
+      "romaji": "gi",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "き",
+      "stroke_count": 6,
+      "unicode": "304e"
+    },
+    {
+      "character": "ギ",
+      "script": "katakana",
+      "romaji": "gi",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "キ",
+      "stroke_count": 5,
+      "unicode": "30ae"
+    },
+    {
+      "character": "ぐ",
+      "script": "hiragana",
+      "romaji": "gu",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "く",
+      "stroke_count": 3,
+      "unicode": "3050"
+    },
+    {
+      "character": "グ",
+      "script": "katakana",
+      "romaji": "gu",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "ク",
+      "stroke_count": 4,
+      "unicode": "30b0"
+    },
+    {
+      "character": "げ",
+      "script": "hiragana",
+      "romaji": "ge",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "け",
+      "stroke_count": 5,
+      "unicode": "3052"
+    },
+    {
+      "character": "ゲ",
+      "script": "katakana",
+      "romaji": "ge",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "ケ",
+      "stroke_count": 5,
+      "unicode": "30b2"
+    },
+    {
+      "character": "ご",
+      "script": "hiragana",
+      "romaji": "go",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "こ",
+      "stroke_count": 4,
+      "unicode": "3054"
+    },
+    {
+      "character": "ゴ",
+      "script": "katakana",
+      "romaji": "go",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "コ",
+      "stroke_count": 4,
+      "unicode": "30b4"
+    },
+    {
+      "character": "ざ",
+      "script": "hiragana",
+      "romaji": "za",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "さ",
+      "stroke_count": 5,
+      "unicode": "3056"
+    },
+    {
+      "character": "ザ",
+      "script": "katakana",
+      "romaji": "za",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "サ",
+      "stroke_count": 5,
+      "unicode": "30b6"
+    },
+    {
+      "character": "じ",
+      "script": "hiragana",
+      "romaji": "ji",
+      "romaji_alt": [
+        "zi"
+      ],
+      "type": "dakuten",
+      "base": "し",
+      "stroke_count": 3,
+      "unicode": "3058"
+    },
+    {
+      "character": "ジ",
+      "script": "katakana",
+      "romaji": "ji",
+      "romaji_alt": [
+        "zi"
+      ],
+      "type": "dakuten",
+      "base": "シ",
+      "stroke_count": 5,
+      "unicode": "30b8"
+    },
+    {
+      "character": "ず",
+      "script": "hiragana",
+      "romaji": "zu",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "す",
+      "stroke_count": 4,
+      "unicode": "305a"
+    },
+    {
+      "character": "ズ",
+      "script": "katakana",
+      "romaji": "zu",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "ス",
+      "stroke_count": 4,
+      "unicode": "30ba"
+    },
+    {
+      "character": "ぜ",
+      "script": "hiragana",
+      "romaji": "ze",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "せ",
+      "stroke_count": 5,
+      "unicode": "305c"
+    },
+    {
+      "character": "ゼ",
+      "script": "katakana",
+      "romaji": "ze",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "セ",
+      "stroke_count": 4,
+      "unicode": "30bc"
+    },
+    {
+      "character": "ぞ",
+      "script": "hiragana",
+      "romaji": "zo",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "そ",
+      "stroke_count": 3,
+      "unicode": "305e"
+    },
+    {
+      "character": "ゾ",
+      "script": "katakana",
+      "romaji": "zo",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "ソ",
+      "stroke_count": 4,
+      "unicode": "30be"
+    },
+    {
+      "character": "だ",
+      "script": "hiragana",
+      "romaji": "da",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "た",
+      "stroke_count": 6,
+      "unicode": "3060"
+    },
+    {
+      "character": "ダ",
+      "script": "katakana",
+      "romaji": "da",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "タ",
+      "stroke_count": 5,
+      "unicode": "30c0"
+    },
+    {
+      "character": "ぢ",
+      "script": "hiragana",
+      "romaji": "ji",
+      "romaji_alt": [
+        "zi"
+      ],
+      "type": "dakuten",
+      "base": "ち",
+      "stroke_count": 4,
+      "unicode": "3062"
+    },
+    {
+      "character": "ヂ",
+      "script": "katakana",
+      "romaji": "ji",
+      "romaji_alt": [
+        "zi"
+      ],
+      "type": "dakuten",
+      "base": "チ",
+      "stroke_count": 5,
+      "unicode": "30c2"
+    },
+    {
+      "character": "づ",
+      "script": "hiragana",
+      "romaji": "zu",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "つ",
+      "stroke_count": 3,
+      "unicode": "3065"
+    },
+    {
+      "character": "ヅ",
+      "script": "katakana",
+      "romaji": "zu",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "ツ",
+      "stroke_count": 5,
+      "unicode": "30c5"
+    },
+    {
+      "character": "で",
+      "script": "hiragana",
+      "romaji": "de",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "て",
+      "stroke_count": 3,
+      "unicode": "3067"
+    },
+    {
+      "character": "デ",
+      "script": "katakana",
+      "romaji": "de",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "テ",
+      "stroke_count": 5,
+      "unicode": "30c7"
+    },
+    {
+      "character": "ど",
+      "script": "hiragana",
+      "romaji": "do",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "と",
+      "stroke_count": 4,
+      "unicode": "3069"
+    },
+    {
+      "character": "ド",
+      "script": "katakana",
+      "romaji": "do",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "ト",
+      "stroke_count": 4,
+      "unicode": "30c9"
+    },
+    {
+      "character": "ば",
+      "script": "hiragana",
+      "romaji": "ba",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "は",
+      "stroke_count": 5,
+      "unicode": "3070"
+    },
+    {
+      "character": "バ",
+      "script": "katakana",
+      "romaji": "ba",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "ハ",
+      "stroke_count": 4,
+      "unicode": "30d0"
+    },
+    {
+      "character": "び",
+      "script": "hiragana",
+      "romaji": "bi",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "ひ",
+      "stroke_count": 3,
+      "unicode": "3073"
+    },
+    {
+      "character": "ビ",
+      "script": "katakana",
+      "romaji": "bi",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "ヒ",
+      "stroke_count": 4,
+      "unicode": "30d3"
+    },
+    {
+      "character": "ぶ",
+      "script": "hiragana",
+      "romaji": "bu",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "ふ",
+      "stroke_count": 6,
+      "unicode": "3076"
+    },
+    {
+      "character": "ブ",
+      "script": "katakana",
+      "romaji": "bu",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "フ",
+      "stroke_count": 3,
+      "unicode": "30d6"
+    },
+    {
+      "character": "べ",
+      "script": "hiragana",
+      "romaji": "be",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "へ",
+      "stroke_count": 3,
+      "unicode": "3079"
+    },
+    {
+      "character": "ベ",
+      "script": "katakana",
+      "romaji": "be",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "ヘ",
+      "stroke_count": 3,
+      "unicode": "30d9"
+    },
+    {
+      "character": "ぼ",
+      "script": "hiragana",
+      "romaji": "bo",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "ほ",
+      "stroke_count": 6,
+      "unicode": "307c"
+    },
+    {
+      "character": "ボ",
+      "script": "katakana",
+      "romaji": "bo",
+      "romaji_alt": [],
+      "type": "dakuten",
+      "base": "ホ",
+      "stroke_count": 6,
+      "unicode": "30dc"
+    },
+    {
+      "character": "ぱ",
+      "script": "hiragana",
+      "romaji": "pa",
+      "romaji_alt": [],
+      "type": "handakuten",
+      "base": "は",
+      "stroke_count": 4,
+      "unicode": "3071"
+    },
+    {
+      "character": "パ",
+      "script": "katakana",
+      "romaji": "pa",
+      "romaji_alt": [],
+      "type": "handakuten",
+      "base": "ハ",
+      "stroke_count": 3,
+      "unicode": "30d1"
+    },
+    {
+      "character": "ぴ",
+      "script": "hiragana",
+      "romaji": "pi",
+      "romaji_alt": [],
+      "type": "handakuten",
+      "base": "ひ",
+      "stroke_count": 2,
+      "unicode": "3074"
+    },
+    {
+      "character": "ピ",
+      "script": "katakana",
+      "romaji": "pi",
+      "romaji_alt": [],
+      "type": "handakuten",
+      "base": "ヒ",
+      "stroke_count": 3,
+      "unicode": "30d4"
+    },
+    {
+      "character": "ぷ",
+      "script": "hiragana",
+      "romaji": "pu",
+      "romaji_alt": [],
+      "type": "handakuten",
+      "base": "ふ",
+      "stroke_count": 5,
+      "unicode": "3077"
+    },
+    {
+      "character": "プ",
+      "script": "katakana",
+      "romaji": "pu",
+      "romaji_alt": [],
+      "type": "handakuten",
+      "base": "フ",
+      "stroke_count": 2,
+      "unicode": "30d7"
+    },
+    {
+      "character": "ぺ",
+      "script": "hiragana",
+      "romaji": "pe",
+      "romaji_alt": [],
+      "type": "handakuten",
+      "base": "へ",
+      "stroke_count": 2,
+      "unicode": "307a"
+    },
+    {
+      "character": "ペ",
+      "script": "katakana",
+      "romaji": "pe",
+      "romaji_alt": [],
+      "type": "handakuten",
+      "base": "ヘ",
+      "stroke_count": 2,
+      "unicode": "30da"
+    },
+    {
+      "character": "ぽ",
+      "script": "hiragana",
+      "romaji": "po",
+      "romaji_alt": [],
+      "type": "handakuten",
+      "base": "ほ",
+      "stroke_count": 5,
+      "unicode": "307d"
+    },
+    {
+      "character": "ポ",
+      "script": "katakana",
+      "romaji": "po",
+      "romaji_alt": [],
+      "type": "handakuten",
+      "base": "ホ",
+      "stroke_count": 5,
+      "unicode": "30dd"
+    },
+    {
+      "character": "きゃ",
+      "script": "hiragana",
+      "romaji": "kya",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "き",
+      "stroke_count": null,
+      "unicode": "304d+3083",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "キャ",
+      "script": "katakana",
+      "romaji": "kya",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "キ",
+      "stroke_count": null,
+      "unicode": "30ad+30e3",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "きゅ",
+      "script": "hiragana",
+      "romaji": "kyu",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "き",
+      "stroke_count": null,
+      "unicode": "304d+3085",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "キュ",
+      "script": "katakana",
+      "romaji": "kyu",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "キ",
+      "stroke_count": null,
+      "unicode": "30ad+30e5",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "きょ",
+      "script": "hiragana",
+      "romaji": "kyo",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "き",
+      "stroke_count": null,
+      "unicode": "304d+3087",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "キョ",
+      "script": "katakana",
+      "romaji": "kyo",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "キ",
+      "stroke_count": null,
+      "unicode": "30ad+30e7",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "しゃ",
+      "script": "hiragana",
+      "romaji": "sha",
+      "romaji_alt": [
+        "sya"
+      ],
+      "type": "yoon",
+      "base": "し",
+      "stroke_count": null,
+      "unicode": "3057+3083",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "シャ",
+      "script": "katakana",
+      "romaji": "sha",
+      "romaji_alt": [
+        "sya"
+      ],
+      "type": "yoon",
+      "base": "シ",
+      "stroke_count": null,
+      "unicode": "30b7+30e3",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "しゅ",
+      "script": "hiragana",
+      "romaji": "shu",
+      "romaji_alt": [
+        "syu"
+      ],
+      "type": "yoon",
+      "base": "し",
+      "stroke_count": null,
+      "unicode": "3057+3085",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "シュ",
+      "script": "katakana",
+      "romaji": "shu",
+      "romaji_alt": [
+        "syu"
+      ],
+      "type": "yoon",
+      "base": "シ",
+      "stroke_count": null,
+      "unicode": "30b7+30e5",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "しょ",
+      "script": "hiragana",
+      "romaji": "sho",
+      "romaji_alt": [
+        "syo"
+      ],
+      "type": "yoon",
+      "base": "し",
+      "stroke_count": null,
+      "unicode": "3057+3087",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ショ",
+      "script": "katakana",
+      "romaji": "sho",
+      "romaji_alt": [
+        "syo"
+      ],
+      "type": "yoon",
+      "base": "シ",
+      "stroke_count": null,
+      "unicode": "30b7+30e7",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ちゃ",
+      "script": "hiragana",
+      "romaji": "cha",
+      "romaji_alt": [
+        "tya"
+      ],
+      "type": "yoon",
+      "base": "ち",
+      "stroke_count": null,
+      "unicode": "3061+3083",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "チャ",
+      "script": "katakana",
+      "romaji": "cha",
+      "romaji_alt": [
+        "tya"
+      ],
+      "type": "yoon",
+      "base": "チ",
+      "stroke_count": null,
+      "unicode": "30c1+30e3",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ちゅ",
+      "script": "hiragana",
+      "romaji": "chu",
+      "romaji_alt": [
+        "tyu"
+      ],
+      "type": "yoon",
+      "base": "ち",
+      "stroke_count": null,
+      "unicode": "3061+3085",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "チュ",
+      "script": "katakana",
+      "romaji": "chu",
+      "romaji_alt": [
+        "tyu"
+      ],
+      "type": "yoon",
+      "base": "チ",
+      "stroke_count": null,
+      "unicode": "30c1+30e5",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ちょ",
+      "script": "hiragana",
+      "romaji": "cho",
+      "romaji_alt": [
+        "tyo"
+      ],
+      "type": "yoon",
+      "base": "ち",
+      "stroke_count": null,
+      "unicode": "3061+3087",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "チョ",
+      "script": "katakana",
+      "romaji": "cho",
+      "romaji_alt": [
+        "tyo"
+      ],
+      "type": "yoon",
+      "base": "チ",
+      "stroke_count": null,
+      "unicode": "30c1+30e7",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "にゃ",
+      "script": "hiragana",
+      "romaji": "nya",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "に",
+      "stroke_count": null,
+      "unicode": "306b+3083",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ニャ",
+      "script": "katakana",
+      "romaji": "nya",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "ニ",
+      "stroke_count": null,
+      "unicode": "30cb+30e3",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "にゅ",
+      "script": "hiragana",
+      "romaji": "nyu",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "に",
+      "stroke_count": null,
+      "unicode": "306b+3085",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ニュ",
+      "script": "katakana",
+      "romaji": "nyu",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "ニ",
+      "stroke_count": null,
+      "unicode": "30cb+30e5",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "にょ",
+      "script": "hiragana",
+      "romaji": "nyo",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "に",
+      "stroke_count": null,
+      "unicode": "306b+3087",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ニョ",
+      "script": "katakana",
+      "romaji": "nyo",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "ニ",
+      "stroke_count": null,
+      "unicode": "30cb+30e7",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ひゃ",
+      "script": "hiragana",
+      "romaji": "hya",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "ひ",
+      "stroke_count": null,
+      "unicode": "3072+3083",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ヒャ",
+      "script": "katakana",
+      "romaji": "hya",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "ヒ",
+      "stroke_count": null,
+      "unicode": "30d2+30e3",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ひゅ",
+      "script": "hiragana",
+      "romaji": "hyu",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "ひ",
+      "stroke_count": null,
+      "unicode": "3072+3085",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ヒュ",
+      "script": "katakana",
+      "romaji": "hyu",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "ヒ",
+      "stroke_count": null,
+      "unicode": "30d2+30e5",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ひょ",
+      "script": "hiragana",
+      "romaji": "hyo",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "ひ",
+      "stroke_count": null,
+      "unicode": "3072+3087",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ヒョ",
+      "script": "katakana",
+      "romaji": "hyo",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "ヒ",
+      "stroke_count": null,
+      "unicode": "30d2+30e7",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "みゃ",
+      "script": "hiragana",
+      "romaji": "mya",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "み",
+      "stroke_count": null,
+      "unicode": "307f+3083",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ミャ",
+      "script": "katakana",
+      "romaji": "mya",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "ミ",
+      "stroke_count": null,
+      "unicode": "30df+30e3",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "みゅ",
+      "script": "hiragana",
+      "romaji": "myu",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "み",
+      "stroke_count": null,
+      "unicode": "307f+3085",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ミュ",
+      "script": "katakana",
+      "romaji": "myu",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "ミ",
+      "stroke_count": null,
+      "unicode": "30df+30e5",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "みょ",
+      "script": "hiragana",
+      "romaji": "myo",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "み",
+      "stroke_count": null,
+      "unicode": "307f+3087",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ミョ",
+      "script": "katakana",
+      "romaji": "myo",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "ミ",
+      "stroke_count": null,
+      "unicode": "30df+30e7",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "りゃ",
+      "script": "hiragana",
+      "romaji": "rya",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "り",
+      "stroke_count": null,
+      "unicode": "308a+3083",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "リャ",
+      "script": "katakana",
+      "romaji": "rya",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "リ",
+      "stroke_count": null,
+      "unicode": "30ea+30e3",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "りゅ",
+      "script": "hiragana",
+      "romaji": "ryu",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "り",
+      "stroke_count": null,
+      "unicode": "308a+3085",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "リュ",
+      "script": "katakana",
+      "romaji": "ryu",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "リ",
+      "stroke_count": null,
+      "unicode": "30ea+30e5",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "りょ",
+      "script": "hiragana",
+      "romaji": "ryo",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "り",
+      "stroke_count": null,
+      "unicode": "308a+3087",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "リョ",
+      "script": "katakana",
+      "romaji": "ryo",
+      "romaji_alt": [],
+      "type": "yoon",
+      "base": "リ",
+      "stroke_count": null,
+      "unicode": "30ea+30e7",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ぎゃ",
+      "script": "hiragana",
+      "romaji": "gya",
+      "romaji_alt": [],
+      "type": "yoon_dakuten",
+      "base": "ぎ",
+      "stroke_count": null,
+      "unicode": "304e+3083",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ギャ",
+      "script": "katakana",
+      "romaji": "gya",
+      "romaji_alt": [],
+      "type": "yoon_dakuten",
+      "base": "ギ",
+      "stroke_count": null,
+      "unicode": "30ae+30e3",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ぎゅ",
+      "script": "hiragana",
+      "romaji": "gyu",
+      "romaji_alt": [],
+      "type": "yoon_dakuten",
+      "base": "ぎ",
+      "stroke_count": null,
+      "unicode": "304e+3085",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ギュ",
+      "script": "katakana",
+      "romaji": "gyu",
+      "romaji_alt": [],
+      "type": "yoon_dakuten",
+      "base": "ギ",
+      "stroke_count": null,
+      "unicode": "30ae+30e5",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ぎょ",
+      "script": "hiragana",
+      "romaji": "gyo",
+      "romaji_alt": [],
+      "type": "yoon_dakuten",
+      "base": "ぎ",
+      "stroke_count": null,
+      "unicode": "304e+3087",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ギョ",
+      "script": "katakana",
+      "romaji": "gyo",
+      "romaji_alt": [],
+      "type": "yoon_dakuten",
+      "base": "ギ",
+      "stroke_count": null,
+      "unicode": "30ae+30e7",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "じゃ",
+      "script": "hiragana",
+      "romaji": "ja",
+      "romaji_alt": [
+        "zya"
+      ],
+      "type": "yoon_dakuten",
+      "base": "じ",
+      "stroke_count": null,
+      "unicode": "3058+3083",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ジャ",
+      "script": "katakana",
+      "romaji": "ja",
+      "romaji_alt": [
+        "zya"
+      ],
+      "type": "yoon_dakuten",
+      "base": "ジ",
+      "stroke_count": null,
+      "unicode": "30b8+30e3",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "じゅ",
+      "script": "hiragana",
+      "romaji": "ju",
+      "romaji_alt": [
+        "zyu"
+      ],
+      "type": "yoon_dakuten",
+      "base": "じ",
+      "stroke_count": null,
+      "unicode": "3058+3085",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ジュ",
+      "script": "katakana",
+      "romaji": "ju",
+      "romaji_alt": [
+        "zyu"
+      ],
+      "type": "yoon_dakuten",
+      "base": "ジ",
+      "stroke_count": null,
+      "unicode": "30b8+30e5",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "じょ",
+      "script": "hiragana",
+      "romaji": "jo",
+      "romaji_alt": [
+        "zyo"
+      ],
+      "type": "yoon_dakuten",
+      "base": "じ",
+      "stroke_count": null,
+      "unicode": "3058+3087",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ジョ",
+      "script": "katakana",
+      "romaji": "jo",
+      "romaji_alt": [
+        "zyo"
+      ],
+      "type": "yoon_dakuten",
+      "base": "ジ",
+      "stroke_count": null,
+      "unicode": "30b8+30e7",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "びゃ",
+      "script": "hiragana",
+      "romaji": "bya",
+      "romaji_alt": [],
+      "type": "yoon_dakuten",
+      "base": "び",
+      "stroke_count": null,
+      "unicode": "3073+3083",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ビャ",
+      "script": "katakana",
+      "romaji": "bya",
+      "romaji_alt": [],
+      "type": "yoon_dakuten",
+      "base": "ビ",
+      "stroke_count": null,
+      "unicode": "30d3+30e3",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "びゅ",
+      "script": "hiragana",
+      "romaji": "byu",
+      "romaji_alt": [],
+      "type": "yoon_dakuten",
+      "base": "び",
+      "stroke_count": null,
+      "unicode": "3073+3085",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ビュ",
+      "script": "katakana",
+      "romaji": "byu",
+      "romaji_alt": [],
+      "type": "yoon_dakuten",
+      "base": "ビ",
+      "stroke_count": null,
+      "unicode": "30d3+30e5",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "びょ",
+      "script": "hiragana",
+      "romaji": "byo",
+      "romaji_alt": [],
+      "type": "yoon_dakuten",
+      "base": "び",
+      "stroke_count": null,
+      "unicode": "3073+3087",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ビョ",
+      "script": "katakana",
+      "romaji": "byo",
+      "romaji_alt": [],
+      "type": "yoon_dakuten",
+      "base": "ビ",
+      "stroke_count": null,
+      "unicode": "30d3+30e7",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ぴゃ",
+      "script": "hiragana",
+      "romaji": "pya",
+      "romaji_alt": [],
+      "type": "yoon_handakuten",
+      "base": "ぴ",
+      "stroke_count": null,
+      "unicode": "3074+3083",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ピャ",
+      "script": "katakana",
+      "romaji": "pya",
+      "romaji_alt": [],
+      "type": "yoon_handakuten",
+      "base": "ピ",
+      "stroke_count": null,
+      "unicode": "30d4+30e3",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ぴゅ",
+      "script": "hiragana",
+      "romaji": "pyu",
+      "romaji_alt": [],
+      "type": "yoon_handakuten",
+      "base": "ぴ",
+      "stroke_count": null,
+      "unicode": "3074+3085",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ピュ",
+      "script": "katakana",
+      "romaji": "pyu",
+      "romaji_alt": [],
+      "type": "yoon_handakuten",
+      "base": "ピ",
+      "stroke_count": null,
+      "unicode": "30d4+30e5",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ぴょ",
+      "script": "hiragana",
+      "romaji": "pyo",
+      "romaji_alt": [],
+      "type": "yoon_handakuten",
+      "base": "ぴ",
+      "stroke_count": null,
+      "unicode": "3074+3087",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "ピョ",
+      "script": "katakana",
+      "romaji": "pyo",
+      "romaji_alt": [],
+      "type": "yoon_handakuten",
+      "base": "ピ",
+      "stroke_count": null,
+      "unicode": "30d4+30e7",
+      "usage_notes": "Yōon (palatalized) compound. Written as the base kana plus small ya/yu/yo."
+    },
+    {
+      "character": "っ",
+      "script": "hiragana",
+      "romaji": "",
+      "romaji_alt": [],
+      "type": "sokuon",
+      "stroke_count": 1,
+      "unicode": "3063",
+      "usage_notes": "Small tsu. Indicates a doubled consonant (gemination), written as っ before the consonant it doubles. Transcribed as a doubled consonant in romaji (e.g., きっぷ kippu)."
+    },
+    {
+      "character": "ッ",
+      "script": "katakana",
+      "romaji": "",
+      "romaji_alt": [],
+      "type": "sokuon",
+      "stroke_count": 1,
+      "unicode": "30c3",
+      "usage_notes": "Katakana small tsu. Same function as っ; gemination in loanwords and emphatic writing."
+    },
+    {
+      "character": "ゐ",
+      "script": "hiragana",
+      "romaji": "wi",
+      "romaji_alt": [],
+      "type": "other",
+      "stroke_count": 2,
+      "unicode": "3090",
+      "usage_notes": "Archaic. Obsolete in modern Japanese (post-1946 orthography reform); replaced by い in most contexts. Still appears in historical texts and some proper names."
+    },
+    {
+      "character": "ゑ",
+      "script": "hiragana",
+      "romaji": "we",
+      "romaji_alt": [],
+      "type": "other",
+      "stroke_count": 3,
+      "unicode": "3091",
+      "usage_notes": "Archaic. Obsolete in modern Japanese (post-1946 orthography reform); replaced by え in most contexts. Still appears in historical texts."
+    },
+    {
+      "character": "ヰ",
+      "script": "katakana",
+      "romaji": "wi",
+      "romaji_alt": [],
+      "type": "other",
+      "stroke_count": 4,
+      "unicode": "30f0",
+      "usage_notes": "Archaic. Obsolete counterpart to ゐ."
+    },
+    {
+      "character": "ヱ",
+      "script": "katakana",
+      "romaji": "we",
+      "romaji_alt": [],
+      "type": "other",
+      "stroke_count": 3,
+      "unicode": "30f1",
+      "usage_notes": "Archaic. Obsolete counterpart to ゑ. Occasionally seen in brand names (e.g., ヱビス beer)."
+    },
+    {
+      "character": "ー",
+      "script": "katakana",
+      "romaji": "",
+      "romaji_alt": [],
+      "type": "other",
+      "stroke_count": 1,
+      "unicode": "30fc",
+      "usage_notes": "Chōonpu (long vowel mark). Lengthens the preceding vowel in katakana (e.g., コーヒー kōhī). Typically only used in katakana; long vowels in hiragana are written by doubling or with an extra vowel kana."
+    }
+  ]
+}

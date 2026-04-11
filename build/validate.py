@@ -31,7 +31,9 @@ DATA_DIR = REPO_ROOT / "data"
 SCHEMA_MAP: dict[str, str] = {
     "data/core/kana.json": "kana.schema.json",
     "data/core/kanji.json": "kanji.schema.json",
+    "data/core/kanji-joyo.json": "kanji.schema.json",
     "data/core/words.json": "word.schema.json",
+    "data/core/words-full.json": "word.schema.json",
     "data/core/radicals.json": "radical.schema.json",
     "data/optional/names.json": "name.schema.json",
     "data/corpus/sentences.json": "sentence.schema.json",

@@ -34,7 +34,9 @@ def _count_entries(data: dict, payload_key: str) -> int:
 TARGET_FILES: list[tuple[str, str]] = [
     ("data/core/kana.json", "kana"),
     ("data/core/kanji.json", "kanji"),
+    ("data/core/kanji-joyo.json", "kanji"),
     ("data/core/words.json", "words"),
+    ("data/core/words-full.json", "words"),
     ("data/core/radicals.json", "radicals"),
     ("data/optional/names.json", "names"),
     ("data/corpus/sentences.json", "sentences"),

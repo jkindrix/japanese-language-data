@@ -2,7 +2,7 @@
 
 **A unified, cross-linked, reproducible, openly-licensed dataset for learning Japanese.**
 
-Status: **Phase 0 — Foundation.** No data files are built yet. This repository currently contains only the scaffolding, documentation, schemas, and build pipeline that will produce the dataset.
+Status: **Phase 1 — Core data built.** Core data files (kana, kanji, words, radicals, sentences) are built and committed. Phase 2 (enrichment: stroke order, pitch accent, frequency, JLPT classifications, cross-links) and Phase 3 (original grammar curation) are still pending.
 
 ---
 
