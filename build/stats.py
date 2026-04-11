@@ -71,6 +71,20 @@ def compute_counts() -> dict[str, int]:
     return counts
 
 
+# Paths whose entries are derivative of another file in TARGET_FILES
+# (filtered views of kanji.json). They should not be counted again when
+# computing "unique committed entries".
+DERIVED_PATHS = {
+    "data/core/kanji-joyo.json",
+    "data/core/kanji-jinmeiyo.json",
+}
+
+# Paths that are gitignored build artifacts, not committed to the repo.
+GITIGNORED_PATHS = {
+    "data/core/words-full.json",
+}
+
+
 def print_report(counts: dict[str, int]) -> None:
     print(f"{'File':<48} {'Entries':>12}")
     print(f"{'-' * 48} {'-' * 12}")
@@ -78,8 +92,13 @@ def print_report(counts: dict[str, int]) -> None:
         label = "—" if count == 0 else (f"(error)" if count == -1 else f"{count:,}")
         print(f"{path:<48} {label:>12}")
     total = sum(c for c in counts.values() if c > 0)
+    unique_total = sum(
+        c for p, c in counts.items()
+        if c > 0 and p not in DERIVED_PATHS and p not in GITIGNORED_PATHS
+    )
     print(f"{'-' * 48} {'-' * 12}")
-    print(f"{'TOTAL':<48} {total:>12,}")
+    print(f"{'TOTAL (all rows)':<48} {total:>12,}")
+    print(f"{'UNIQUE COMMITTED (excludes derivatives + gitignored)':<48} {unique_total:>12,}")
 
 
 def update_manifest(counts: dict[str, int]) -> None:

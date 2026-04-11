@@ -141,7 +141,8 @@ Sources referenced in grammar entries are cited as "General Japanese grammar kno
 | `data/grammar/expressions.json` | new — 13,220 entries |
 | `data/grammar/conjugations.json` | new — 3,492 entries |
 
-**Total committed entries: 495,766** (up from 478,892 in v0.2.0).
+**Total rows (with derivatives and gitignored): 495,766** (up from 478,892 in v0.2.0).
+**Unique committed entries: 277,457** (excludes `kanji-joyo.json` as a derived view of `kanji.json`, and `words-full.json` as a gitignored build artifact).
 
 ### Deliberate scope choices (with 15-minute middle-grounds applied)
 
