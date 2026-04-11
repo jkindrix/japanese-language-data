@@ -3,7 +3,7 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/conjugations.schema.json",
   "title": "Conjugations",
   "description": "Auto-generated conjugation tables for Japanese verbs and adjectives. Derived from JMdict part-of-speech tags (v1 for ichidan verbs, v5u/v5k/v5g/etc. for godan verbs, adj-i for i-adjectives, adj-na for na-adjectives, plus irregular verbs する/くる) using formal conjugation rules. Because the rules are deterministic and well-documented, these conjugations do not require native-speaker review — any incorrectness indicates a bug in the rule implementation, not in the data.",
-  "schemaVersion": "0.3.0",
+  "schemaVersion": "0.3.2",
   "type": "object",
   "required": ["metadata", "entries"],
   "additionalProperties": false,
@@ -64,6 +64,13 @@
         "forms": {
           "type": "object",
           "description": "Map from form name to conjugated form in kana. For word classes with no conjugation logic implemented, the forms map may be empty.",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "display_forms": {
+          "type": "object",
+          "description": "Companion to `forms`: the same conjugated forms with the kanji prefix of the dictionary_form preserved where possible. For pure-kana dictionary forms, display_forms equals forms. For kanji-containing dictionary forms like 行く or 食べる, the common-suffix heuristic replaces the leading kana of each form with the leading kanji of the dictionary form (e.g., 行く → te_form: いって → display: 行って). For adj-na, a class-aware branch replaces the entire reading prefix with the dictionary form, handling compound readings like 大切 (たいせつ) → 大切です where the kanji and kana share no trailing character. Consumers that want to display the kanji-preserved form of a conjugation should prefer display_forms; consumers that want the unambiguous kana form should use forms.",
           "additionalProperties": {
             "type": "string"
           }

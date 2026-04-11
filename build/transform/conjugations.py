@@ -312,6 +312,74 @@ def _is_common(word: dict) -> bool:
     return False
 
 
+def _compute_display_forms(
+    dictionary_form: str,
+    reading: str,
+    forms: dict[str, str],
+    cls: str,
+) -> dict[str, str]:
+    """Return a companion dict to ``forms`` with the kanji prefix of the
+    dictionary form preserved where possible.
+
+    Two strategies:
+
+    * For ``adj-na``, use a class-aware branch. Every na-adjective form
+      is ``reading + copula`` (reading + です / reading + だ / etc.), so
+      the reading prefix is replaced with the dictionary_form directly.
+      This handles compound readings like 大切 (たいせつ) → 大切です
+      where the kanji and kana share no trailing character.
+
+    * For every other class, use a longest-common-suffix heuristic. Find
+      the longest common suffix between dictionary_form and reading; the
+      dictionary_form prefix before that is the kanji prefix, and the
+      reading prefix before the same position is what conjugated forms
+      begin with. Replace the reading prefix with the kanji prefix in
+      each form.
+
+    For pure-kana dictionary forms (no kanji, e.g., する, くる), or for
+    forms whose leading characters don't match the reading prefix (e.g.,
+    くる → きます, where the kanji reading shifts between stems), the
+    original kana form is preserved as-is. This is never wrong, only
+    sometimes suboptimal.
+    """
+    if dictionary_form == reading:
+        return dict(forms)
+
+    if cls == "adj-na":
+        # Every adj-na form starts with the reading; replace with dictionary_form.
+        display: dict[str, str] = {}
+        for name, form in forms.items():
+            if not form:
+                display[name] = form
+            elif form.startswith(reading):
+                display[name] = dictionary_form + form[len(reading):]
+            else:
+                display[name] = form
+        return display
+
+    # Longest-common-suffix heuristic (verbs, adj-i, etc.)
+    i = 0
+    while (i < len(dictionary_form) and i < len(reading)
+           and dictionary_form[-1 - i] == reading[-1 - i]):
+        i += 1
+    if i == 0:
+        return dict(forms)
+    kanji_prefix = dictionary_form[:-i]
+    reading_prefix = reading[:-i]
+    if not kanji_prefix:
+        return dict(forms)
+
+    display = {}
+    for name, form in forms.items():
+        if not form:
+            display[name] = form
+        elif form.startswith(reading_prefix):
+            display[name] = kanji_prefix + form[len(reading_prefix):]
+        else:
+            display[name] = form
+    return display
+
+
 def build() -> None:
     print(f"[conj]     loading {SOURCE_TGZ.name}")
     source = _load_source()
@@ -363,12 +431,16 @@ def build() -> None:
                 forms = _conjugate_na_adjective(reading)
 
             if forms:
+                dictionary_form = primary_kanji or reading
                 entries.append({
                     "id": wid,
-                    "dictionary_form": primary_kanji or reading,
+                    "dictionary_form": dictionary_form,
                     "reading": reading,
                     "class": cls,
                     "forms": forms,
+                    "display_forms": _compute_display_forms(
+                        dictionary_form, reading, forms, cls
+                    ),
                 })
                 by_class[cls] = by_class.get(cls, 0) + 1
             else:

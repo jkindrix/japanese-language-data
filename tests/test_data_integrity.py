@@ -113,6 +113,51 @@ def test_b1_v5r_i_compound_has_no_malformed_imperatives() -> None:
 
 
 # ---------------------------------------------------------------------------
+# M1: display_forms companion field preserves the kanji prefix of the
+# dictionary_form. Representative checks for v1, v5k-s, adj-i, adj-na.
+# The adj-na case is the zero-common-suffix branch (class-aware), the
+# others are the common-suffix heuristic.
+# ---------------------------------------------------------------------------
+
+def test_m1_display_forms_preserves_kanji_prefix() -> None:
+    """M1: display_forms should preserve the kanji prefix of dictionary_form
+    for at least one representative per word class.
+
+    Tests:
+      * 食べる (v1)      te_form display == 食べて
+      * 行く (v5k-s)     te_form display == 行って
+      * 高い (adj-i)     past display == 高かった
+      * 綺麗 (adj-na)    polite_nonpast display == 綺麗です
+      * 大切 (adj-na)    polite_nonpast display == 大切です (zero-common-suffix case)
+    """
+    data = _load_if_exists(REPO_ROOT / "data" / "grammar" / "conjugations.json")
+    if data is None:
+        pytest.skip("conjugations.json not built yet")
+
+    def find(dictionary_form: str, cls: str) -> dict:
+        for e in data.get("entries", []):
+            if e.get("dictionary_form") == dictionary_form and e.get("class") == cls:
+                return e
+        raise AssertionError(f"M1 test probe {dictionary_form} ({cls}) not found")
+
+    cases = [
+        ("食べる", "v1",      "te_form",        "食べて"),
+        ("行く",   "v5k-s",   "te_form",        "行って"),
+        ("高い",   "adj-i",   "past",           "高かった"),
+        ("綺麗",   "adj-na",  "polite_nonpast", "綺麗です"),
+        ("大切",   "adj-na",  "polite_nonpast", "大切です"),
+    ]
+    for df, cls, form_name, expected in cases:
+        e = find(df, cls)
+        assert "display_forms" in e, \
+            f"M1: {df} ({cls}) entry is missing the display_forms field"
+        actual = e["display_forms"].get(form_name)
+        assert actual == expected, \
+            f"M1: {df} ({cls}) display_forms.{form_name} " \
+            f"expected {expected!r}, got {actual!r}"
+
+
+# ---------------------------------------------------------------------------
 # D2: grammar related-reference resolution
 # ---------------------------------------------------------------------------
 
