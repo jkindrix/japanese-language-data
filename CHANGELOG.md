@@ -16,23 +16,26 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
-(M1 display_forms may land here pending user decision; otherwise deferred to v0.3.3.)
-
 ---
 
 ## [0.3.2] — 2026-04-11
 
-Second post-review defect-fix cycle. Addresses findings B1–B3 and M1–M4 from the external review of v0.3.1. Also includes the previously-unreleased jinmeiyō view, Tatoeba linkage, CI smoke test, and stroke-count mismatch metadata (originally slated for v0.3.1-continued; now shipped together with the B/M fixes).
+Second post-review defect-fix cycle. Addresses findings B1–B3 and M1–M4 from the external review of v0.3.1, plus a byte-reproducibility defect (non-deterministic set iteration in stroke_order.py) discovered during v0.3.2 verification. Also includes the previously-unreleased jinmeiyō view, Tatoeba linkage, CI smoke test, and stroke-count mismatch metadata (originally slated for v0.3.1-continued; now shipped together with the B/M fixes).
 
-### Fixed (post-review findings B1–B3, M2–M4)
+### Fixed (post-review findings B1–B3, M1–M4)
 
 - **B1**: `build/transform/conjugations.py` v5r-i override for compound verbs. The previous version set `forms["nai_form"] = "ない"` as a literal string, which was correct for the bare verb ある but wrong for the three compound v5r-i entries (である, 事がある, でもある) where the prefix before the final ある was dropped. Fix: when stem ends in `ある`, strip the final `ある` and prepend the remaining prefix to `ない` / `なかった`, producing でない / ことがない / でもない respectively. Bare ある still emits `"ない"` because its prefix is empty. Additionally, for compound v5r-i entries, the `potential` / `passive` / `causative` / `imperative` / `volitional` / `conditional_ba` forms are now blanked (empty string) — these are not well-formed for ある-compounds and previously emitted grammatically-nonsensical output like ことがあれ (imperative of 事がある) and ことがあろう. The bare verb ある still emits its regular forms (あれば, あろう, etc.), which are in active modern use.
+- **M1**: `data/grammar/conjugations.json` entries now include a `display_forms` companion dict alongside `forms`. The previous version emitted forms as kana only, forcing consumers to manually reconstruct kanji-preserving display forms (e.g., given `dictionary_form: "行く"` and `te_form: "いって"`, a consumer wanting to display `行って` had to know which leading characters of the dictionary were kanji). Fix: `build/transform/conjugations.py` now computes `display_forms` via two strategies — (1) a common-suffix heuristic for verbs and adj-i: find the longest common suffix between dictionary_form and reading, then replace the reading prefix with the kanji prefix in each form; (2) a class-aware branch for adj-na: every na-adjective form is `reading + copula`, so the reading prefix is replaced with `dictionary_form` directly, handling compound readings like 大切 (たいせつ) → 大切です where the kanji and kana share no trailing character. Verified against 3,174 kanji-containing entries: 100% improvement across v1, v5*, adj-i, adj-na. Zero wrong outputs — pure-kana dictionaries and forms that don't start with the reading prefix preserve the original kana form. `schemas/conjugations.schema.json` bumped to `0.3.2` with the new property documented.
 - **M2**: `schemas/stroke-order.schema.json` did not list the `metadata.warnings` and `metadata.stroke_count_mismatches` fields that the stroke-order transform emits (added in the unreleased 1b218ed commit). Validation passed only because the metadata `$def` did not set `additionalProperties: false`. Schema-only consumers had no way to discover these fields existed. Fix: adds explicit property definitions and descriptions. Schema version bumped to `0.3.2`.
 - **B2**: `docs/gaps.md` Jinmeiyō entry was stale. The 9293c76 commit added `data/core/kanji-jinmeiyo.json` (863 entries) but the gaps doc still listed the Jinmeiyō view as DEFERRED with a stale path suggestion (`data/enrichment/jinmeiyo-view.json`). Updated to ADDRESSED with the current path and count.
 - **B3**: `docs/sources.md` scriptin/jmdict-simplified asset table still listed `kanjidic2-en-<ver>.json.tgz | KANJIDIC2 English | 1.3 MB`. The upgrade to `kanjidic2-all` (13,108 characters, all languages, 1.55 MB) shipped in v0.1.0 and is documented in the CHANGELOG, but this table row was never updated. Corrected.
 - **M3**: `build/stats.py` `TOTAL` line double-counted the kanji derivative views (`kanji-joyo`, `kanji-jinmeiyo`) and included the gitignored `words-full.json`. The `CHANGELOG.md` [0.3.0] section copied the same inflated number ("Total committed entries: 495,766"). Fix: preserves the existing sum as `TOTAL (all rows)` for continuity and adds a new `UNIQUE COMMITTED` line that excludes derivative views and gitignored artifacts. The [0.3.0] CHANGELOG line is split into `Total rows (with derivatives and gitignored): 495,766` and `Unique committed entries: 277,457`.
 
-### Added (test coverage — M4)
+### Fixed (byte-reproducibility regression discovered during verification)
+
+- **stroke_order.py determinism**: `build/transform/stroke_order.py` iterated a Python `set` (`kanji_set`) when appending missing-SVG entries to the characters index. Python set iteration order is non-deterministic, so consecutive rebuilds produced the same content but with different key ordering in `data/enrichment/stroke-order-index.json` — a 13,386-line "diff" with zero semantic changes. This directly violated design principle #1 in `docs/architecture.md` ("Every byte of built data must be reproducible by running the pipeline from a clean clone"), and it undermines `just ci`'s source caching (keyed on `manifest.json` hash) and cold-clone byte-matching verification. Two-line fix: (1) iterate `sorted(kanji_set)` so the insertion sequence is deterministic; (2) emit `dict(sorted(index_entries.items()))` at the final output step so the characters map is in sorted Unicode-codepoint order. This normalizes both the ZIP-iterated portion (formerly in archive order) and the missing-entries portion. Manual double-build byte check confirmed byte-identical output on consecutive runs. This defect was not part of the original review plan — it was discovered during v0.3.2 verification, flagged, and promoted into scope rather than ship with a known regression from the v0.3.1 quality bar.
+
+### Added (test coverage — M4 and new regression guards)
 
 - **M4**: four data integrity invariant tests in `tests/test_data_integrity.py`. These are pure invariants that should hold on every build, not tied to a specific past defect:
   - `test_invariant_jlpt_waller_values_valid`: every `jlpt_waller` value on kanji and word entries is in `{N1,N2,N3,N4,N5}` or null.
@@ -40,6 +43,8 @@ Second post-review defect-fix cycle. Addresses findings B1–B3 and M1–M4 from
   - `test_invariant_grammar_jlpt_ids_resolve`: every `grammar_id` in the JLPT classifications (kind=grammar) resolves to a grammar point in `grammar.json`.
   - `test_invariant_word_to_kanji_inverse_of_kanji_to_words`: `word-to-kanji.json` is the exact inverse of `kanji-to-words.json` for every (kanji, word_id) pair.
 - **B1 regression tests** in `tests/test_data_integrity.py`: `test_b1_v5r_i_nai_form_has_correct_prefix` and `test_b1_v5r_i_compound_has_no_malformed_imperatives`. Both fail on the pre-fix data and pass on the post-fix data.
+- **M1 regression test** in `tests/test_data_integrity.py`: `test_m1_display_forms_preserves_kanji_prefix` covers 食べる (v1), 行く (v5k-s), 高い (adj-i), 綺麗 (adj-na), and 大切 (adj-na, zero-common-suffix case) at minimum.
+- **Determinism regression test** in `tests/test_data_integrity.py`: `test_stroke_order_characters_keys_are_sorted` asserts the characters keys in `stroke-order-index.json` are in sorted Unicode-codepoint order.
 
 ### Added (feature additions originally slated for v0.3.1-continued)
 
@@ -58,7 +63,6 @@ Second post-review defect-fix cycle. Addresses findings B1–B3 and M1–M4 from
 
 ### Not changed (deliberately)
 
-- **M1** (`display_forms` companion field on conjugations): heuristic verification completed (100% success on all verb classes and adj-i; 9.8% on adj-na due to compound-reading limitations of a suffix-matching heuristic). Deferred to a user decision; if deferred, it will land in v0.3.3 with a class-aware implementation.
 - **Green-section observations** from the review (48.9% KanjiVG coverage, 109 stroke-count mismatches, 14 empty Waller jmdict_seq, 0.7% expression JLPT coverage, kana stroke-count caveat, single-maintainer upstream risk, names.json gitignored, committed weight, character schema kanji-range enforcement) — none were flagged as defects; no changes applied.
 
 ---
