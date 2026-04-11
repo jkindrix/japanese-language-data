@@ -6,7 +6,7 @@
     "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
     "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
     "generated": "2026-04-11",
-    "count": 10670,
+    "count": 10715,
     "counts_by_kind_and_level": {
       "vocab_N5": 684,
       "vocab_N4": 640,
@@ -19,8 +19,8 @@
       "kanji_N4": 166,
       "kanji_N5": 79,
       "grammar_N5": 60,
-      "grammar_N4": 66,
-      "grammar_N3": 40,
+      "grammar_N4": 91,
+      "grammar_N3": 60,
       "grammar_N2": 0,
       "grammar_N1": 0
     },
@@ -92724,6 +92724,186 @@
       "source_retrieved": "2026-04-11"
     },
     {
+      "text": "Verb ます-stem + つつ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "while doing / although (formal)",
+      "grammar_id": "tsutsu-while",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + さえ (+ negative or extreme statement)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "even (emphatic, minimal case)",
+      "grammar_id": "sae-even",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + こそ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "precisely / the very / it is exactly",
+      "grammar_id": "koso-precisely",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-た form + とたん(に)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "the moment that / as soon as",
+      "grammar_id": "to-tan-moment",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + 次第 / V ます-stem + 次第",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "depending on / as soon as (formal)",
+      "grammar_id": "shidai-depending",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + にしたがって / V plain + にしたがって",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "in accordance with / as (X progresses)",
+      "grammar_id": "ni-shitagatte",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain / i-adj / noun + である + 限り",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "as long as / to the extent that / as far as",
+      "grammar_id": "kagiri-as-long-as",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + だらけ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "full of / covered with (usually negative)",
+      "grammar_id": "darake-full-of",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + ふりをする",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "to pretend to / act as if",
+      "grammar_id": "furi-wo-suru-pretend",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + くせに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "despite / although (critical / reproachful contrast)",
+      "grammar_id": "kuse-ni-despite",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + わけだ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "it means that / no wonder / that's why",
+      "grammar_id": "wake-da-meaning",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + わけではない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "it's not (necessarily) that / it doesn't mean that",
+      "grammar_id": "wake-dewa-nai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + ようがない / ようもない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "there's no way to / can't possibly",
+      "grammar_id": "you-ga-nai-no-way",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + っぱなし",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "leave X in a state / continuously / without stopping",
+      "grammar_id": "pponashi-left",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + ものの",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "although / even though (formal)",
+      "grammar_id": "mono-no-although",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + にしても",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "even if / even assuming / even for",
+      "grammar_id": "ni-shitemo-even",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + かのように",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "as if / as though",
+      "grammar_id": "ka-no-you-ni",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + とは限らない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "not necessarily / not always",
+      "grammar_id": "to-wa-kagiranai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V ない / i-adj くない + ことはない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "it's not that one doesn't / it's not impossible to",
+      "grammar_id": "nai-koto-wa-nai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form / noun + 以来",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "ever since / since (a specific past event)",
+      "grammar_id": "irai-since",
+      "source_retrieved": "2026-04-11"
+    },
+    {
       "text": "Verb → potential form",
       "reading": null,
       "kind": "grammar",
@@ -93315,6 +93495,231 @@
       "level": "N4",
       "meaning_en": "should / just need to / it'd be good if",
       "grammar_id": "ba-ii-should",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Giver が Receiver に Object を やる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "to give (casual / to inferiors, pets, plants)",
+      "grammar_id": "yaru-casual-giving",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form + も",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "even if / even though (hypothetical or counterfactual contrast)",
+      "grammar_id": "v-temo-even-if",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "いらっしゃる (honorific of 行く / 来る / いる)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "(honorific) to go / to come / to be (at a place)",
+      "grammar_id": "irassharu-honorific",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "おっしゃる (honorific of 言う)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "(honorific) to say",
+      "grammar_id": "ossharu-honorific",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "ご覧になる (honorific of 見る)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "(honorific) to see / to look at",
+      "grammar_id": "goran-ni-naru-honorific",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "なさる (honorific of する)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "(honorific) to do",
+      "grammar_id": "nasaru-honorific",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "参る (humble of 行く / 来る)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "(humble) to go / to come",
+      "grammar_id": "mairu-humble",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "申す (humble of 言う)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "(humble) to say / to be called (a name)",
+      "grammar_id": "mousu-humble",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "いただく (humble of もらう / 食べる / 飲む)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "(humble) to receive / to eat / to drink",
+      "grammar_id": "itadaku-humble-verb",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "くださる (honorific of くれる)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "(honorific) (someone superior) gives to me / us",
+      "grammar_id": "kudasaru-honorific-verb",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun (or V plain) + しか + negative predicate",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "only / nothing but (negative-polarity 'only')",
+      "grammar_id": "shika-nai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + が + 好き / 嫌い",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "like / dislike (object takes が, not を)",
+      "grammar_id": "ga-suki-kirai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + が + わかる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "understand (object takes が, not を)",
+      "grammar_id": "ga-wakaru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + が + できる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "can do / is possible (object takes が, not を)",
+      "grammar_id": "ga-dekiru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + が + 聞こえる / 見える",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "is audible / is visible (spontaneous perception; object takes が)",
+      "grammar_id": "ga-kikoeru-mieru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "たとえ + V-て form + も",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "even if (hypothetical emphatic)",
+      "grammar_id": "tatoe-temo",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "だから (sentence-initial)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "so / therefore / that's why",
+      "grammar_id": "dakara-so",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "それで (sentence-initial)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "and then / so / as a result",
+      "grammar_id": "sorede-and-then",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "それから (sentence-initial)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "and then / after that / in addition",
+      "grammar_id": "sorekara-after",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "しかし (sentence-initial)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "but / however (formal)",
+      "grammar_id": "shikashi-but",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "けれども (mid-sentence or sentence-initial)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "but / however (formal-neutral)",
+      "grammar_id": "kedomo-formal-but",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X とか Y (とか)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "like X and Y / things like (non-exhaustive casual listing)",
+      "grammar_id": "toka-listing",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form / phrase + って",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "(casual) that... / they said... / the thing called...",
+      "grammar_id": "tte-quotation",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + ものだ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "it's natural / should be / generally (general truth or tendency)",
+      "grammar_id": "mono-da-general",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "それでも (sentence-initial)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "even so / nonetheless / still",
+      "grammar_id": "soredemo-even-so",
       "source_retrieved": "2026-04-11"
     },
     {

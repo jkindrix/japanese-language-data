@@ -16,6 +16,23 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+Continuing multi-batch grammar expansion push toward the ~500-700 community-standard target. After Batches B1 + B2: 211 entries total (60 N5 + 91 N4 + 60 N3), 30–42% of target. All new entries `review_status: "draft"`, authorship statement unchanged.
+
+### Added (Batch B2)
+
+- **N4 expansion batch 2 (25 entries)** bringing N4 from 66 → 91: やる (casual give), 〜ても (even if, concessive); the honorific verb family いらっしゃる / おっしゃる / ご覧になる / なさる and the humble verb family 参る / 申す / いただく / くださる; 〜しか〜ない (only, negative-polarity); the が-marking predicate family 〜が好き/嫌い / 〜がわかる / 〜ができる / 〜が聞こえる/見える; たとえ〜ても (emphatic even if); sentence-initial conjunctions だから / それで / それから / しかし / けれども / それでも; 〜とか (casual listing), 〜って (casual quotation), 〜ものだ (general truth / nostalgic).
+- **N3 expansion batch 2 (20 entries)** bringing N3 from 40 → 60: 〜つつ (while/although formal), 〜さえ (even, emphatic), 〜こそ (precisely), 〜たとたん (the moment), 〜次第 (depending on / as soon as), 〜にしたがって (in accordance with), 〜限り (as long as / unless), 〜だらけ (full of), 〜ふりをする (pretend), 〜くせに (despite, critical), 〜わけだ (it means) and 〜わけではない (not necessarily), 〜ようがない (no way to), 〜っぱなし (left in state / nonstop), 〜ものの (although formal), 〜にしても (even if), 〜かのように (as if), 〜とは限らない (not necessarily), 〜ないことはない (it's not that I can't), 〜以来 (ever since).
+
+### Verification (Batch B2)
+
+- **62/62 tests pass** — existing invariants cover the new entries.
+- **19/19 data files validate** against their schemas.
+- **`data/grammar/grammar.json`**: 166 → **211 entries** (+45: 25 N4 + 20 N3).
+- **`data/enrichment/jlpt-classifications.json`**: 10,670 → **10,715**.
+- **`manifest.json.grammar_curation_status`** refreshed: total 166 → 211; N4 66 → 91, N3 40 → 60; coverage_pct 24–33 → 30–42; draft 166 → 211.
+
+### Added (Batch B1)
+
 Batch B1 of the multi-batch grammar expansion push toward the ~500-700 community-standard target. After this commit: 166 entries total (60 N5 + 66 N4 + 40 N3), 24–33% of target. All new entries `review_status: "draft"`, authorship statement unchanged.
 
 ### Added (Batch B1)
