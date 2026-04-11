@@ -22,7 +22,7 @@ This is the primary upstream for JMdict, JMnedict, KANJIDIC2, KRADFILE, and RADK
 |---|---|---|---|
 | `jmdict-examples-eng-<ver>.json.tgz` | JMdict English + Tatoeba example links | 13.9 MB | `data/core/words.json` + link data for `data/cross-refs/word-to-sentences.json` |
 | `jmnedict-all-<ver>.json.tgz` | JMnedict (all languages) | 13.4 MB | `data/optional/names.json` (opt-in, gitignored) |
-| `kanjidic2-en-<ver>.json.tgz` | KANJIDIC2 English | 1.3 MB | `data/core/kanji.json` |
+| `kanjidic2-all-<ver>.json.tgz` | KANJIDIC2 all languages (13,108 characters, full coverage) | 1.55 MB | `data/core/kanji.json` |
 | `kradfile-<ver>.json.tgz` | KRADFILE (kanji → radical decomposition) | 106 KB | part of `data/core/radicals.json` |
 | `radkfile-<ver>.json.tgz` | RADKFILE (radical → kanji lookup) | 134 KB | part of `data/core/radicals.json` |
 
