@@ -6,7 +6,7 @@
     "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
     "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
     "generated": "2026-04-11",
-    "count": 10835,
+    "count": 10876,
     "counts_by_kind_and_level": {
       "vocab_N5": 684,
       "vocab_N4": 640,
@@ -21,7 +21,7 @@
       "grammar_N5": 60,
       "grammar_N4": 91,
       "grammar_N3": 139,
-      "grammar_N2": 41,
+      "grammar_N2": 82,
       "grammar_N1": 0
     },
     "attribution": "JLPT classifications adapted from Jonathan Waller's JLPT Resources at http://www.tanos.co.uk/jlpt/ under CC-BY. Vocabulary data distributed via stephenmk/yomitan-jlpt-vocab (CC-BY-SA 4.0). Kanji classifications extracted from davidluzgouveia/kanji-data (code MIT, Waller data CC-BY). Only the jlpt_new field was used from davidluzgouveia; WaniKani-derived fields were deliberately ignored due to incompatible license.",
@@ -92730,6 +92730,375 @@
       "level": "N2",
       "meaning_en": "at (the point of) / being (X), (emphatic)",
       "grammar_id": "ni-shite",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-た form / noun + の + 末(に)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "after (a long process) / at the end of",
+      "grammar_id": "sue-ni-after",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + だけのことはある",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "(it's) as expected from / lives up to",
+      "grammar_id": "dake-no-koto-wa-aru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb dict-form + までもない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "no need to even / not worth (doing)",
+      "grammar_id": "made-mo-nai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + というものだ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "that's what X is / that's (the nature of) X",
+      "grammar_id": "to-iu-mono-da",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + というものではない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "it's not simply (a matter of) / it's not that",
+      "grammar_id": "to-iu-mono-dewa-nai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + ものだから / もので",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "because / it's because (excusing / justifying)",
+      "grammar_id": "mono-dakara",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + やら + noun + やら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "things like X and Y (disordered / overwhelming)",
+      "grammar_id": "yara-yara",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + からして",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "judging from / starting with (as a representative example)",
+      "grammar_id": "kara-shite",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + からすると / からすれば",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "from X's standpoint / judging from",
+      "grammar_id": "kara-suru-to",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + からには",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "now that / since (with strong obligation)",
+      "grammar_id": "kara-ni-wa",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + のみならず",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "not only X but also Y (literary)",
+      "grammar_id": "no-minarazu",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + とはいえ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "although / that said / even so",
+      "grammar_id": "to-wa-ie",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + とはいうものの",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "that said / although one says",
+      "grammar_id": "to-wa-iu-mono-no",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + にしてみれば / にしてみたら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "from X's perspective / from X's point of view",
+      "grammar_id": "ni-shite-mireba",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + からといって",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "just because / even though (one says)",
+      "grammar_id": "kara-to-itte",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + の + ことだから",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "knowing X / given that it's X",
+      "grammar_id": "koto-dakara",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form + からというもの",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "ever since / since that time",
+      "grammar_id": "te-kara-to-iu-mono",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + つつある",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "in the process of / gradually becoming",
+      "grammar_id": "tsutsu-aru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + だけましだ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "at least X (is better than nothing) / could be worse",
+      "grammar_id": "dake-mashi-da",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb dict-form + や否や",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "as soon as / the moment that (literary)",
+      "grammar_id": "ya-inaya",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V dict + か + V ない + かのうちに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "no sooner (had X) than Y / barely had one Xed when Y",
+      "grammar_id": "ka-nai-ka-no-uchi-ni",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb plain / V-た form + そばから",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "as soon as / immediately after (with repeated undoing)",
+      "grammar_id": "sobakara",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / plain form + じゃあるまいし",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "it's not as if / since it's not like",
+      "grammar_id": "ja-arumai-shi",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form / phrase + とばかりに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "as if to say / seemingly saying",
+      "grammar_id": "to-bakari-ni",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / plain form + とあれば",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "if it's (a case of) / if it's for",
+      "grammar_id": "to-areba",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V ない-form + までも",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "even if not quite X / not necessarily X, but at least",
+      "grammar_id": "nai-made-mo",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + のもとで / のもとに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "under (the guidance / condition / auspices of)",
+      "grammar_id": "no-moto-de",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb dict-form / noun + に足る",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "worth / sufficient to / deserving of",
+      "grammar_id": "ni-taru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb dict / noun + に堪える",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "can bear / is worth (X-ing)",
+      "grammar_id": "ni-taeru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb dict / noun + に堪えない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "unbearable / can't bear to / not worth",
+      "grammar_id": "ni-taenai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-て form + やまない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "never stop / can't help (feeling / doing)",
+      "grammar_id": "te-yamanai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + そうにない / そうもない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "doesn't look like / there's no sign of",
+      "grammar_id": "sou-ni-nai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V negative stem + ずじまい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "ended up not (doing) / didn't manage to",
+      "grammar_id": "zu-jimai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-た form + ところで",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "even if / no matter if (futile effort)",
+      "grammar_id": "ta-tokoro-de",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "なにしろ (sentence-initial)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "after all / you see / it's because",
+      "grammar_id": "nani-shiro",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "なにせ (sentence-initial)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "after all / the thing is",
+      "grammar_id": "nani-se",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-た form / noun + の + あげく(に)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "in the end / after all / finally (negative result)",
+      "grammar_id": "ageku-ni-end-up",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + 反面",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "on the other hand / while (one side)",
+      "grammar_id": "hanmen-on-other-hand",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + から見ると / から見れば / から見て",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "from the viewpoint of / from X's perspective",
+      "grammar_id": "kara-miru-to",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + ということだ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "I hear that / it means that",
+      "grammar_id": "to-iu-koto-da",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V-た form / noun + の + 結果",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N2",
+      "meaning_en": "as a result of / after",
+      "grammar_id": "kekka-result",
       "source_retrieved": "2026-04-11"
     },
     {
