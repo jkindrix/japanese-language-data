@@ -16,6 +16,28 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+First substantive grammar-content push after the v0.3.0 foundation. Also reconciles a documentation contradiction between `docs/gaps.md` and CHANGELOG [0.3.0] on what "N5+N4 complete" actually means, and refreshes `manifest.json.next_actions` which had gone stale during the v0.3.1/v0.3.2/v0.4.x review-fix cycles.
+
+### Added
+
+- **Grammar N3 batch 1** (`grammar-curated/n3.json`, **40 new hand-curated entries**): First substantial N3 curation after v0.3.0's N5+N4 foundation. Entries span modal/evidential (〜そうだ appearance, 〜そうだ hearsay, 〜ようだ, 〜みたい, 〜らしい), te-form auxiliaries (〜ておく, 〜てしまう, 〜てある, 〜てみる, 〜ていく, 〜てくる), temporal/sequence (〜ながら, 〜うちに, 〜間/間に, 〜たばかり, 〜たところ), reason/purpose/contrast (〜ために, 〜ように purpose, 〜のに, 〜おかげで/〜せいで), quantity/degree (〜ばかり, 〜かける, 〜ほど, 〜くらい), nominalizers (〜こと, 〜の), temporal/relational (〜たびに, 〜かどうか, 〜について, 〜にとって, 〜によって), should/obligation (〜べきだ, 〜たほうがいい, 〜なくちゃ/〜なきゃ), advanced conditional/causative (〜ばよかった, 〜ば〜ほど, causative-passive 〜させられる), and manner/state (〜まま, 〜ずに, 〜たがる). All 40 entries follow the established authorship statement: written in our own words from general non-copyrightable grammar knowledge, `review_status: "draft"`, `sources: ["General Japanese grammar knowledge (non-copyrightable facts)."]`, every example `source: "original"`. Cross-references to existing N4/N5 entries via the `related` field enable learner-pathing lookups. Pattern selection drew on community-consensus N3 inventories (JLPTsensei, Bunpro) for coverage, but every explanation is original.
+- **Grammar N4 supplement** (`grammar-curated/n4.json`, **5 new entries**): Fills the most glaring N4 holes identified during N3 curation and investigation — 〜たり〜たりする (non-exhaustive action lists), 自動詞/他動詞 (transitive/intransitive pair concept), 〜がる (third-person emotion), 〜方 (way of doing), and 〜ようにする (make it so / try to). Brings N4 count from 31 → 36 entries. These are all universally-N4 patterns (not borderline N3); more N4 fill is expected in subsequent batches.
+
+### Fixed / clarified
+
+- **`docs/gaps.md` grammar-coverage paragraph reconciled with CHANGELOG [0.3.0]**: The "Comprehensive grammar coverage" section in `docs/gaps.md` previously committed to "N5 and N4 being complete (~140 points)" at v0.3.0, which contradicted CHANGELOG [0.3.0] § "Deliberate scope choices", where v0.3.0 was explicitly framed as "N5 essentials + N4 selections, not complete N5+N4". Rewrote the paragraph to reflect the progressive, phase-spanning curation approach actually in use, reference CHANGELOG [0.3.0] for the original framing, and point readers to `manifest.json.grammar_curation_status` for up-to-date per-level counts. Section heading updated from "DEFERRED to Phase 3" to "IN PROGRESS — Phase 3".
+- **`manifest.json` `next_actions` refreshed** for the post-v0.4.1 state: The previous list read "Target N3 grammar points in v0.3.1, N2 in v0.3.2, N1 in v0.3.3" — a stale v0.3.0-era plan that was superseded when v0.3.1/v0.3.2 were consumed by external-review fix cycles and v0.4.x by radicals/review work. Rewrote to reflect the current plan: N3 expansion continues toward a v0.5.0 tag when a stable N3 milestone is reached; N4 fill continues in parallel; Tatoeba linkage text-match remains a pending low-effort improvement; Phase 4 radical alias table and post-2022 pitch accent fill remain pending. Also added `grammar_curation_status.by_level` so per-level counts are directly readable without needing to parse the full grammar dataset.
+
+### Verification
+
+- **62/62 tests pass** — no test count change; new entries are covered by existing invariants (`test_d2_grammar_related_references_resolve`, `test_invariant_grammar_jlpt_ids_resolve`).
+- **19/19 data files validate** against their schemas (no schema changes).
+- **`data/grammar/grammar.json`**: 81 → **126 entries** (50 N5 + 36 N4 + 40 N3).
+- **`data/enrichment/jlpt-classifications.json`**: 10,585 → **10,630** (+45 grammar classifications auto-emitted by `build/transform/jlpt.py` reading the new curated files).
+- All new `related` cross-references resolve (hard-enforced at build-time by `build/transform/grammar.py` and at test-time by the D2 regression test).
+
+---
+
 ## [0.4.1] — 2026-04-11
 
 Third external-review response cycle. Addresses every finding (F1–F6) from the post-v0.4.0 review. No new data domains, no scope expansion; each change targets exactly one flagged concern.

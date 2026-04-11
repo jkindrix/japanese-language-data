@@ -6,7 +6,7 @@
     "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
     "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
     "generated": "2026-04-11",
-    "count": 10585,
+    "count": 10630,
     "counts_by_kind_and_level": {
       "vocab_N5": 684,
       "vocab_N4": 640,
@@ -19,8 +19,8 @@
       "kanji_N4": 166,
       "kanji_N5": 79,
       "grammar_N5": 50,
-      "grammar_N4": 31,
-      "grammar_N3": 0,
+      "grammar_N4": 36,
+      "grammar_N3": 40,
       "grammar_N2": 0,
       "grammar_N1": 0
     },
@@ -92364,6 +92364,366 @@
       "source_retrieved": "2026-04-11"
     },
     {
+      "text": "Verb-stem / い-adj stem / な-adj root + そう(だ/です)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "looks like / seems (appearance-based judgment)",
+      "grammar_id": "sou-da-appearance",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + そう(だ/です)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "I heard that / apparently (reported speech)",
+      "grammar_id": "sou-da-hearsay",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + ようだ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "appears / seems (evidence-based, formal)",
+      "grammar_id": "you-da-appearance",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form / noun + みたい(だ/です)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "looks like / seems / is like (casual)",
+      "grammar_id": "mitai-looks-like",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form / noun + らしい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "seems / apparently / typical of",
+      "grammar_id": "rashii-seems",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-て form + おく",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "do in advance / leave in a state",
+      "grammar_id": "te-oku",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-て form + しまう",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "completion / regret (finish doing / end up doing)",
+      "grammar_id": "te-shimau",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Transitive verb-て form + ある",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "has been done (state from intentional action)",
+      "grammar_id": "te-aru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-て form + みる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "try doing (to see what happens)",
+      "grammar_id": "te-miru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-て form + いく",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "going on / away from reference point (spatially or temporally)",
+      "grammar_id": "te-iku",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-て form + くる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "coming to / becoming (toward reference point)",
+      "grammar_id": "te-kuru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + ながら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "while doing (two simultaneous actions, same subject)",
+      "grammar_id": "nagara",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain non-past / V ない-form / い-adj / noun-の / な-adj + な + うちに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "while (the state holds) / before (it changes)",
+      "grammar_id": "uchi-ni",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V 〜ている / noun-の / adj + 間 or 間に",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "during / while (a period within which something happens)",
+      "grammar_id": "aida-ni",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-た form + ばかり",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "just (recently) did",
+      "grammar_id": "ta-bakari",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb form + ところ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "just (now) did / just about to do / in the middle of doing",
+      "grammar_id": "ta-tokoro",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain / noun + の + ために",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "for the purpose of / for the sake of / because of",
+      "grammar_id": "tame-ni",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain non-past (potential / intransitive / ない-form) + ように",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "so that / in order to (non-volitional goal)",
+      "grammar_id": "you-ni-purpose",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + のに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "although / even though (contrary to expectation)",
+      "grammar_id": "noni-although",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain / noun-の + おかげで (positive) or せいで (negative)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "thanks to / because of (with explicit positive or negative attribution)",
+      "grammar_id": "okage-sei-de",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / verb (〜て form / plain) + ばかり",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "only / nothing but / just (emphatic)",
+      "grammar_id": "bakari-only",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + かける",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "half-done / in the middle of / about to (interrupted action)",
+      "grammar_id": "kakeru-halfway",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / verb plain + ほど; also A は B ほど [adj]-ない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "to the extent of / not as ___ as",
+      "grammar_id": "hodo-extent",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun / verb plain + くらい / ぐらい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "about / approximately / to the extent that",
+      "grammar_id": "kurai-extent",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb plain form / na-adj + な + こと",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "nominalizer: 'the act / fact of doing'",
+      "grammar_id": "koto-nominalizer",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb plain form / na-adj + な + の",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "nominalizer: 'the act / fact of doing' (perceptual/concrete)",
+      "grammar_id": "no-nominalizer",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "V plain non-past / noun-の + たびに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "every time / whenever",
+      "grammar_id": "tabi-ni-every-time",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form (or noun / na-adj root) + かどうか",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "whether or not",
+      "grammar_id": "ka-dou-ka",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + について",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "about / regarding",
+      "grammar_id": "ni-tsuite",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + にとって",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "for / to / from the perspective of",
+      "grammar_id": "ni-totte",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + によって",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "by means of / depending on / by (passive agent)",
+      "grammar_id": "ni-yotte",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb (dictionary form) + べきだ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "should / ought to (moral or social obligation)",
+      "grammar_id": "beki-da",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-た form + ほうがいい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "had better / it's better to",
+      "grammar_id": "ta-hou-ga-ii",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-ない stem + なくちゃ / なきゃ (+ いけない / ならない)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "must / have to (casual contractions)",
+      "grammar_id": "nakucha-nakya",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-ば form + よかった",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "should have / would have been better if",
+      "grammar_id": "ba-yokatta",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-ば form + Verb dictionary form + ほど",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "the more X, the more Y",
+      "grammar_id": "ba-hodo",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb → causative-passive form",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "be made to do / be forced to do",
+      "grammar_id": "causative-passive",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-た / noun-の / i-adj / demonstrative + まま",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "without changing / as is / the way it was",
+      "grammar_id": "mama",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb negative stem + ずに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "without doing",
+      "grammar_id": "zu-ni",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + たがる / たがっている",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N3",
+      "meaning_en": "(third person) wants to / shows signs of wanting",
+      "grammar_id": "tagaru-third-person-desire",
+      "source_retrieved": "2026-04-11"
+    },
+    {
       "text": "Verb → potential form",
       "reading": null,
       "kind": "grammar",
@@ -92640,6 +93000,51 @@
       "level": "N4",
       "meaning_en": "noun-modifying (attributive) clauses: 'the ___ that ___'",
       "grammar_id": "noun-modifying-clause",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-た + り + Verb-た + り + する",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "do things like X and Y (non-exhaustive list of actions)",
+      "grammar_id": "tari-tari-suru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Transitive verb (他動詞) vs intransitive verb (自動詞) pairs",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "verb pairs distinguishing 'X does Y' (transitive) from 'Y happens' (intransitive)",
+      "grammar_id": "jidoushi-tadoushi",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "i-adj stem / 〜たい stem + がる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "show signs of / appear to feel (third-person emotion)",
+      "grammar_id": "garu-third-person-emotion",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb ます-stem + 方",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "way of doing / how to do",
+      "grammar_id": "kata-way-of-doing",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb plain non-past + ようにする / ようにしている",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "make it so that / try to do (habitually)",
+      "grammar_id": "you-ni-suru",
       "source_retrieved": "2026-04-11"
     },
     {

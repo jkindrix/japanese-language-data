@@ -120,9 +120,9 @@
     "data/enrichment/pitch-accent.json": 124011,
     "data/enrichment/frequency-newspaper.json": 2501,
     "data/enrichment/frequency-modern.json": 0,
-    "data/enrichment/jlpt-classifications.json": 10585,
+    "data/enrichment/jlpt-classifications.json": 10630,
     "data/enrichment/stroke-order-index.json": 13108,
-    "data/grammar/grammar.json": 81,
+    "data/grammar/grammar.json": 126,
     "data/grammar/expressions.json": 13220,
     "data/grammar/conjugations.json": 3507,
     "data/cross-refs/kanji-to-words.json": 3533,
@@ -131,11 +131,16 @@
     "data/cross-refs/kanji-to-radicals.json": 12156
   },
   "grammar_curation_status": {
-    "total_entries": 81,
+    "total_entries": 126,
+    "by_level": {
+      "N5": 50,
+      "N4": 36,
+      "N3": 40
+    },
     "target_entries": "500-700",
-    "coverage_pct": "11-16",
+    "coverage_pct": "18-25",
     "review_status_distribution": {
-      "draft": 81,
+      "draft": 126,
       "community_reviewed": 0,
       "native_speaker_reviewed": 0
     },
@@ -144,9 +149,9 @@
     "note": "Zero native-speaker reviewers engaged as of this release. docs/contributing.md has the aspirational call for reviewers but no operational pipeline exists yet. The grammar dataset is usable-but-not-authoritative until this changes. This is the single weakest dimension of the project by the maintainer's own admission in README.md and docs/gaps.md."
   },
   "next_actions": [
-    "Grammar v0.3.x patches: expand coverage beyond N5+N4 selections. Target N3 grammar points in v0.3.1, N2 in v0.3.2, N1 in v0.3.3.",
+    "Grammar: expand N3 coverage from the current batch 1 (40 entries) toward ~80-100 entries across successive patch releases; tag v0.5.0 when N3 reaches a stable milestone. Continue filling remaining N4 gaps — N4 is at 36 entries against community-standard ~80-100 for a 'complete' N4 grammar set.",
     "Recruit native-speaker reviewers to move grammar entries from draft → native_speaker_reviewed (see docs/contributing.md).",
-    "Text-match Tatoeba sentences against grammar-curated examples to populate Tatoeba sentence IDs where exact matches exist.",
-    "Phase 4: evaluate candidates in docs/phase4-candidates.md — notably JPDB modern frequency (blocked on license clarification), radical meanings/Kangxi numbers, classical handwriting datasets, and audio corpora."
+    "Text-match Tatoeba sentences against grammar-curated examples to populate Tatoeba sentence IDs where exact matches exist (currently ~1.7% link rate on 180 original examples; expanded corpus brings new linkage opportunities).",
+    "Phase 4: evaluate remaining candidates in docs/phase4-candidates.md — notably JPDB modern frequency (blocked on license clarification), variant-to-Kangxi radical alias table (~22% radical gap), post-2022 Wiktionary pitch accent fill, classical handwriting datasets, and audio corpora."
   ]
 }

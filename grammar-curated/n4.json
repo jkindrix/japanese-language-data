@@ -643,5 +643,138 @@
     ],
     "review_status": "draft",
     "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "tari-tari-suru",
+    "pattern": "Verb-た + り + Verb-た + り + する",
+    "level": "N4",
+    "meaning_en": "do things like X and Y (non-exhaustive list of actions)",
+    "meaning_detailed": "〜たり〜たりする lists actions non-exhaustively — 'do things like X and Y (among others)'. Unlike the sequential 〜て form, たり does not imply any particular order or timing; it just enumerates example actions. The final する carries the tense of the whole construction. A single たり is also grammatical ('do things like X'). The pattern is one of the most common N4 constructions and is essential for describing daily routines and varied activities.",
+    "formation": "Vた form with vowel changed to り: 食べた → 食べたり, 飲んだ → 飲んだり. Chain multiple: 食べたり飲んだりする. Tense is carried by the final する: 食べたり飲んだりしました (past polite).",
+    "formation_notes": [
+      "Non-exhaustive: implies 'among others' — these are examples, not a complete list.",
+      "Different from the sequential て-form, which orders actions in time.",
+      "A single たり + する is grammatical: 泣いたりした ('did things like cry').",
+      "For nouns / na-adjectives, the pattern is Nだったり: 暇だったり忙しかったり ('sometimes free, sometimes busy')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "te-form-basic",
+      "particle-ya-non-exhaustive"
+    ],
+    "examples": [
+      {"japanese": "週末は映画を見たり、買い物をしたりします。", "english": "On weekends, I do things like watch movies and go shopping.", "source": "original"},
+      {"japanese": "泣いたり笑ったりして、忙しい一日だった。", "english": "It was a busy day with crying and laughing.", "source": "original"},
+      {"japanese": "休みの日は掃除したり洗濯したりする。", "english": "On days off I do things like cleaning and laundry.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "jidoushi-tadoushi",
+    "pattern": "Transitive verb (他動詞) vs intransitive verb (自動詞) pairs",
+    "level": "N4",
+    "meaning_en": "verb pairs distinguishing 'X does Y' (transitive) from 'Y happens' (intransitive)",
+    "meaning_detailed": "Japanese has many verb pairs where one form is transitive (an agent acts on something) and the other is intransitive (something happens on its own). The distinction is structural: transitive verbs take を for their object; intransitive verbs take が for the thing undergoing the action. Learning the pair patterns is essential to reading comprehension and to using the 〜ている / 〜てある state-of-affairs distinction correctly.",
+    "formation": "Common pairs (transitive / intransitive): 開ける/開く, 閉める/閉まる, 始める/始まる, 出す/出る, 入れる/入る, 上げる/上がる, 下げる/下がる, 見る/見える, 聞く/聞こえる, 消す/消える, 付ける/付く, 落とす/落ちる, 止める/止まる, 集める/集まる.",
+    "formation_notes": [
+      "Transitive verb: 誰か が 何か を Verb (someone does something to something).",
+      "Intransitive verb: 何か が Verb (something happens to something).",
+      "Intransitive + 〜ている = resulting state from a natural change (ドアが開いている 'the door is open').",
+      "Transitive + 〜てある = resulting state from an intentional action (ドアが開けてある 'the door has been opened').",
+      "Not every Japanese verb has a pair; some stand alone."
+    ],
+    "formality": "neutral",
+    "related": [
+      "particle-ga-subject",
+      "particle-o-object",
+      "te-aru"
+    ],
+    "examples": [
+      {"japanese": "ドアを開けました。", "english": "I opened the door. (transitive)", "source": "original"},
+      {"japanese": "ドアが開きました。", "english": "The door opened. (intransitive)", "source": "original"},
+      {"japanese": "電気を消してください。", "english": "Please turn off the light.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "garu-third-person-emotion",
+    "pattern": "i-adj stem / 〜たい stem + がる",
+    "level": "N4",
+    "meaning_en": "show signs of / appear to feel (third-person emotion)",
+    "meaning_detailed": "〜がる attaches to an adjective or a 〜たい form to express that a third person appears to feel a certain emotion, based on their observable behavior. Japanese treats one's own inner states (〜い, 〜たい) and the inner states of others differently: you can state your own feelings directly, but you must describe others' feelings as behaviorally observable — hence 〜がる ('show signs of being X'). Conjugates as a godan u-verb.",
+    "formation": "i-adj: drop い, add がる: 寒い → 寒がる, 嬉しい → 嬉しがる, 痛い → 痛がる. 〜たい form: drop い, add がる: 食べたい → 食べたがる (see tagaru-third-person-desire).",
+    "formation_notes": [
+      "Used for third-person observations: 彼は寒がっている ('he looks cold', inferred from his behavior).",
+      "Contrast: 私は寒い ('I am cold', direct) vs 彼は寒がっている (inferred).",
+      "Progressive form 〜がっている is most common for current observable state.",
+      "Conjugates as a regular godan -u verb: 寒がる, 寒がります, 寒がらない, 寒がった."
+    ],
+    "formality": "neutral",
+    "related": [
+      "tagaru-third-person-desire",
+      "tai-desire",
+      "ga-hoshii-wanting-thing"
+    ],
+    "examples": [
+      {"japanese": "弟は夏でも寒がる。", "english": "My little brother gets cold even in summer.", "source": "original"},
+      {"japanese": "彼女は子供を欲しがっている。", "english": "She wants a child. (showing signs of wanting)", "source": "original"},
+      {"japanese": "犬は散歩に行きたがる。", "english": "The dog wants to go for a walk.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "kata-way-of-doing",
+    "pattern": "Verb ます-stem + 方",
+    "level": "N4",
+    "meaning_en": "way of doing / how to do",
+    "meaning_detailed": "V ます-stem + 方 (かた) forms a noun meaning 'way of doing X' or 'how to do X'. It is the core construction for describing methods and techniques. The object of the underlying verb takes の instead of を when modifying 方 — a surprising but consistent rule: 漢字の書き方 ('how to write kanji'), NOT 漢字を書き方. Indispensable for instructions, recipes, and teaching contexts.",
+    "formation": "V ます-stem + 方: 食べ方 ('way of eating'), 読み方 ('way of reading'), 使い方 ('way of using'). Irregular: する → し方 or やり方 (both used); for suru-compounds: 勉強のし方 (の inserted before し方).",
+    "formation_notes": [
+      "The underlying verb's object takes の, not を, when attached to 方: 漢字の書き方.",
+      "Functions as a noun; can take particles, be a topic, be modified by adjectives.",
+      "Often used to ask 'how do I do X?': 〜方を教えてください ('please teach me how to ___').",
+      "やり方 is a common fixed form for 'way of doing' in general (not attached to a specific verb stem)."
+    ],
+    "formality": "neutral",
+    "related": [
+      "masu-polite-verb",
+      "noun-modifying-clause"
+    ],
+    "examples": [
+      {"japanese": "この漢字の書き方を教えてください。", "english": "Please teach me how to write this kanji.", "source": "original"},
+      {"japanese": "寿司の食べ方を知っていますか。", "english": "Do you know how to eat sushi?", "source": "original"},
+      {"japanese": "日本語の勉強の仕方は人それぞれだ。", "english": "Everyone has their own way of studying Japanese.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "you-ni-suru",
+    "pattern": "Verb plain non-past + ようにする / ようにしている",
+    "level": "N4",
+    "meaning_en": "make it so that / try to do (habitually)",
+    "meaning_detailed": "〜ようにする expresses making an effort to do something — either as a one-time decision ('I'll make sure to do X') or as an ongoing habit ('I try to do X'). The する form is the decision / resolve; the している form is the habitual effort. Negative 〜ないようにする means 'try not to do'. Distinct from ようになる ('come to be able to') and from ように-purpose ('in order to').",
+    "formation": "V plain non-past + ようにする (decision / resolve) or + ようにしている (ongoing habit). Negative: V ない + ようにする (try not to).",
+    "formation_notes": [
+      "する form: states a decision or resolution. している form: describes an ongoing habit.",
+      "Distinct from ようになる ('come to be able to') — that is a change-of-state construction.",
+      "Distinct from ように-purpose ('in order to') — that adverbially modifies a main-clause action.",
+      "Commonly used for lifestyle habits: 健康に気をつけるようにしている ('I try to be mindful of my health')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "you-ni-purpose",
+      "ni-suru-decide"
+    ],
+    "examples": [
+      {"japanese": "毎日運動するようにしています。", "english": "I make it a point to exercise every day.", "source": "original"},
+      {"japanese": "甘いものを食べないようにしている。", "english": "I'm trying not to eat sweets.", "source": "original"},
+      {"japanese": "早く寝るようにします。", "english": "I'll try to go to bed early.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
   }
 ]
