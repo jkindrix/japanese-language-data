@@ -20,6 +20,82 @@ _No unreleased changes._
 
 ---
 
+## [0.3.0] — 2026-04-11
+
+Phase 3 — Grammar foundation. First tranche of original grammar content plus derived grammar datasets (expressions and conjugations). **This is the largest amount of original content in the project.** Everything in the grammar dataset is written in our own words based on general, non-copyrightable facts about Japanese grammar; nothing is copied from Tae Kim's Guide (CC-BY-NC-SA, license incompatible with our CC-BY-SA 4.0 output) or any other copyrighted source.
+
+### Added
+
+- **Curated grammar dataset** (`data/grammar/grammar.json`): **81 grammar points** hand-written from the project author's general knowledge of Japanese, following the grammar schema. All entries are flagged `review_status: "draft"` — the aspiration is `native_speaker_reviewed`, but the project does not yet have a native-speaker review pipeline. See `docs/contributing.md` for the call to reviewers.
+  - **N5**: 50 entries covering copula (です/だ/でした/ではありません), polite verb forms (ます/ました/ません/ませんでした), particles (は, が, を, に, で, と, の, へ, から, まで, も, か, ね, よ, や), demonstratives (これ/それ/あれ, この/その/あの, ここ/そこ/あそこ), existence (あります/います), te-form basics (-て, -てください, -ています), -ない form, -た form, i-adjective and na-adjective conjugations, volitional (ましょう/ましょうか), desire (-たい, がほしい), comparison (のほうが...より, 一番), counters (~つ, ~人), question words, and -ないでください.
+  - **N4**: 31 entries covering potential form, passive form, causative form, -たことがある (experience), つもり (intention), と思う (opinion), と言う (quotation), だろう/でしょう (conjecture), かもしれない (possibility), はず (expectation), four conditionals (たら, ば, と, なら), volitional form, -てはいけない (prohibition), -てもいい (permission), -なければならない (obligation), -なくてもいい (lack of obligation), から/ので (because), が/けど (although), んです (explanation), なる/する (change/decision), verb-stem auxiliaries (-始める, -終わる, -すぎる, -やすい, -にくい), and noun-modifying clauses.
+- **JMdict expressions dataset** (`data/grammar/expressions.json`): **13,220 entries** — every JMdict entry with at least one sense tagged `exp` (expression). 436 of these are marked common. Each entry preserves its JMdict ID for cross-reference with `words.json`, plus all kanji writings, kana readings, English meanings of exp-tagged senses, and any Waller JLPT classification that matches by JMdict ID.
+- **Auto-generated conjugation tables** (`data/grammar/conjugations.json`): **3,492 entries** covering every supported word class in `words.json` (common subset). Generated using formal conjugation rules encoded in `build/transform/conjugations.py` — no native-speaker review needed for the rules themselves (any incorrectness indicates a bug in the rule implementation). Breakdown:
+  - v1 (ichidan): 555
+  - v5k, v5s, v5u, v5r, v5m, v5t, v5g, v5b, v5n: 1,143 total across godan classes
+  - vs-i (suru-verb compounds): 12
+  - vk (くる): 1
+  - adj-i: 312
+  - adj-na: 1,469
+  - Generates up to 16 forms per entry (dictionary, polite non-past/past/negative/past-negative, te-form, ta-form, nai-form, nakatta-form, potential, passive, causative, imperative, volitional, conditional_ba, conditional_tara).
+- **Grammar JLPT classifications** integrated into `data/enrichment/jlpt-classifications.json`: 81 new entries with `kind: grammar`, bringing the total classification count from 10,504 → **10,585**. Each grammar classification includes a `grammar_id` field that joins with `data/grammar/grammar.json`.
+- New schemas: `schemas/expressions.schema.json` and `schemas/conjugations.schema.json` (Draft 2020-12). Expected count: 14 → **14** (confirmed by tests).
+- New transforms: `build/transform/grammar.py`, `build/transform/expressions.py`, `build/transform/conjugations.py`. The grammar transform reads from the committed `grammar-curated/` directory and validates every entry.
+- New committed directory: **`grammar-curated/`** — our original hand-written grammar entries in JSON format, one file per JLPT level (`n5.json`, `n4.json`). These are the authoritative inputs to the grammar transform and are edited directly when adding/correcting grammar points.
+
+### Changed
+
+- `build/transform/jlpt.py` now also reads `grammar-curated/*.json` and emits `kind: grammar` classifications in addition to `kind: vocab` (from stephenmk) and `kind: kanji` (from davidluzgouveia). The JLPT metadata `counts_by_kind_and_level` now tracks grammar counts per level.
+- `build/pipeline.py` adds three new stages (grammar, expressions, conjugations) as Phase 3 transforms, running after the cross-reference stage.
+- `build/validate.py` SCHEMA_MAP extended with grammar.json, expressions.json, and conjugations.json.
+- `build/stats.py` TARGET_FILES extended with the three new grammar files.
+- `tests/test_schemas.py` guardrail test updated to expect 14 schema files (added expressions and conjugations).
+- README status and manifest version/phase updated to Phase 3 / v0.3.0.
+
+### Content provenance statement
+
+**All grammar explanations in `grammar-curated/*.json` are written in our own words based on general, well-known, non-copyrightable facts about Japanese grammar.** We explicitly did NOT consult any of the following during writing, because their licenses are incompatible with our CC-BY-SA 4.0 output:
+
+- **Tae Kim's Guide to Japanese** — CC-BY-NC-SA 3.0 (the NC clause is irreconcilable with our CC-BY-SA 4.0 output; incorporating any derivative would contaminate our license chain)
+- **Dictionary of Basic/Intermediate/Advanced Japanese Grammar** (Seiichi Makino and Michio Tsutsui) — proprietary
+- **Handbook of Japanese Grammar Patterns** — proprietary
+- **Hanabira's grammar content** — license unclear
+
+Sources referenced in grammar entries are cited as "General Japanese grammar knowledge" — this is honest: the factual content (which particles mark what, how verbs conjugate, what patterns mean) is well-known linguistic fact, not a derivative of any specific copyrighted work.
+
+### Example sentence source
+
+**All 200+ example sentences in grammar.json are marked `source: "original"`.** They are written by the project author to illustrate the pattern in its typical use. They are NOT linked to Tatoeba sentence IDs in this release. A future patch (v0.3.x) could add Tatoeba cross-references via text-match lookup against `data/corpus/sentences.json` for exact or near-exact matches.
+
+### Data summary
+
+| File | Phase 2 → Phase 3 |
+|---|---|
+| All Phase 1 and 2 files | unchanged |
+| `data/enrichment/jlpt-classifications.json` | 10,504 → **10,585** (+81 grammar) |
+| `data/grammar/grammar.json` | new — 81 entries |
+| `data/grammar/expressions.json` | new — 13,220 entries |
+| `data/grammar/conjugations.json` | new — 3,492 entries |
+
+**Total committed entries: 495,766** (up from 478,892 in v0.2.0).
+
+### Deliberate scope choices (with 15-minute middle-grounds applied)
+
+- **Coverage limited to ~15% of total JLPT grammar** (N5 essentials + N4 selections, not complete N5+N4). **Middle-ground applied**: entries are tagged with explicit level metadata; `review_coverage` summary in metadata shows 81 draft entries; `docs/gaps.md` already documents the grammar coverage gap and the native-speaker review gap. Future patches can incrementally fill in N3, N2, N1.
+- **All examples are original**, not linked to Tatoeba. **Middle-ground applied**: the schema allows `source: "tatoeba"` with a `sentence_id` field, and a future build step could text-match and populate it. For this release, we ship original examples with honest provenance.
+- **No content from proprietary or NC-licensed sources**. **Middle-ground applied**: source field on each entry honestly says "General Japanese grammar knowledge" — it does not falsely cite sources we did not actually open.
+- **Native-speaker review not available**. **Middle-ground applied**: every entry has `review_status: "draft"`; `docs/contributing.md` has a prominent call for native-speaker reviewers; the schema supports a progressive workflow (draft → community_reviewed → native_speaker_reviewed).
+
+### Known limitations
+
+- **Grammar correctness is the weakest verification point.** The project author (Claude) has broad knowledge of Japanese grammar but is not a native speaker or professional linguist. Subtle errors in nuance, formality, or rare usage are possible. This is why every entry starts as draft.
+- **Conjugation generation covers ~3,500 entries**, which is the conjugable subset of the common-subset words.json (22,580 entries). Entries that are nouns, adverbs, or verbs with unusual conjugation patterns are skipped. The skipped count (34,396) includes multi-POS iterations, not 34k distinct skipped words.
+- **ら-abbreviated ichidan potential forms** (食べれる for 食べられる, widely used in modern colloquial Japanese but grammatically nonstandard) are NOT generated; only the traditional form with ら is emitted. Documented in conjugations.json field notes.
+- **Grammar JLPT classifications are community-consensus level assignments.** The level field on each grammar point was chosen by the project author based on which JLPT level typically tests the pattern, not from a definitive JLPT-official source (which doesn't exist — see the jlpt.schema.json disclaimer).
+- **Expressions dataset includes 13,220 entries, ~30x the grammar point count**, because JMdict's `exp` tag covers everything from functional grammar (e.g., 〜てください) to set phrases (いらっしゃいませ) to idioms. The expressions and grammar datasets overlap in coverage but serve different purposes: grammar is compositional pedagogy; expressions is lexical lookup.
+
+---
+
 ## [0.2.0] — 2026-04-11
 
 Phase 2 — Enrichment and cross-references. All Phase 1 files are re-emitted with enrichment fields populated; six new enrichment and cross-reference files are added. Total committed data entries: 478,892 (up from 280,445 in v0.1.0).

@@ -46,6 +46,8 @@ TARGET_FILES: list[tuple[str, str]] = [
     ("data/enrichment/jlpt-classifications.json", "classifications"),
     ("data/enrichment/stroke-order-index.json", "characters"),
     ("data/grammar/grammar.json", "grammar_points"),
+    ("data/grammar/expressions.json", "expressions"),
+    ("data/grammar/conjugations.json", "entries"),
     ("data/cross-refs/kanji-to-words.json", "mapping"),
     ("data/cross-refs/word-to-kanji.json", "mapping"),
     ("data/cross-refs/word-to-sentences.json", "mapping"),

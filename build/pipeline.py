@@ -56,7 +56,9 @@ def _build_stages() -> list[Stage]:
     import-time errors.
     """
     from build.transform import (
+        conjugations,
         cross_links,
+        expressions,
         frequency,
         grammar,
         jlpt,
@@ -84,8 +86,10 @@ def _build_stages() -> list[Stage]:
         Stage("sentences", "Example sentences from Tatoeba via jmdict-examples.", sentences.build, phase=1),
         # ---- Cross-references (depend on core data being built) ----
         Stage("cross_links", "Generate all cross-reference files.", cross_links.build, phase=2),
-        # ---- Grammar (Phase 3 — original contribution) ----
-        Stage("grammar", "Curated Japanese grammar dataset (original).", grammar.build, phase=3),
+        # ---- Grammar (Phase 3 — original contribution + derivatives) ----
+        Stage("grammar", "Curated Japanese grammar dataset (original, from grammar-curated/).", grammar.build, phase=3),
+        Stage("expressions", "Lexicalized grammar patterns extracted from JMdict 'exp' entries.", expressions.build, phase=3),
+        Stage("conjugations", "Auto-generated verb and adjective conjugation tables.", conjugations.build, phase=3),
         # ---- Names (optional, any phase) ----
         Stage("names", "Proper nouns from JMnedict (optional build target).", names.build, phase=1),
     ]

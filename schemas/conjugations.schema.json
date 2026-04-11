@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/conjugations.schema.json",
+  "title": "Conjugations",
+  "description": "Auto-generated conjugation tables for Japanese verbs and adjectives. Derived from JMdict part-of-speech tags (v1 for ichidan verbs, v5u/v5k/v5g/etc. for godan verbs, adj-i for i-adjectives, adj-na for na-adjectives, plus irregular verbs する/くる) using formal conjugation rules. Because the rules are deterministic and well-documented, these conjugations do not require native-speaker review — any incorrectness indicates a bug in the rule implementation, not in the data.",
+  "schemaVersion": "0.3.0",
+  "type": "object",
+  "required": ["metadata", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/conjugationEntry"
+      }
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": ["source", "license", "generated", "count", "field_notes"],
+      "properties": {
+        "source": {"type": "string"},
+        "license": {"type": "string"},
+        "generated": {"type": "string", "format": "date"},
+        "count": {"type": "integer", "minimum": 0},
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        },
+        "conjugation_rules_reference": {"type": "string"},
+        "attribution": {"type": "string"}
+      }
+    },
+    "conjugationEntry": {
+      "type": "object",
+      "required": ["id", "dictionary_form", "reading", "class", "forms"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "JMdict entry ID the conjugation table is derived from."
+        },
+        "dictionary_form": {
+          "type": "string",
+          "description": "The dictionary (lemma) form, e.g., 食べる, 行く."
+        },
+        "reading": {
+          "type": "string",
+          "description": "Kana reading of the dictionary form."
+        },
+        "class": {
+          "type": "string",
+          "enum": [
+            "v1", "v5u", "v5k", "v5g", "v5s", "v5t", "v5n", "v5b", "v5m", "v5r",
+            "v5aru", "v5k-s", "v5u-s", "v5r-i",
+            "vs-i", "vs-s", "vk", "vz", "vr", "vn",
+            "adj-i", "adj-ix", "adj-na"
+          ],
+          "description": "Word class used for conjugation (JMdict POS tag or close equivalent)."
+        },
+        "forms": {
+          "type": "object",
+          "description": "Map from form name to conjugated form in kana. For word classes with no conjugation logic implemented, the forms map may be empty.",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

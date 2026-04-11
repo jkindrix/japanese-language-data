@@ -1,8 +1,8 @@
 {
   "project": "japanese-language-data",
-  "version": "0.2.0",
-  "phase": 2,
-  "phase_description": "Core + enrichment data built: Phase 1 core files plus stroke order SVGs from KanjiVG, pitch accent from Kanjium, JLPT classifications (kanji+vocab) from Waller via stephenmk and davidluzgouveia, newspaper frequency from KANJIDIC2, and 4 cross-reference indices. Kanji entries now have jlpt_waller and radical_components populated; word entries have jlpt_waller populated. Phase 3 grammar and Phase 4 modern frequency (blocked on JPDB license clarification) still pending.",
+  "version": "0.3.0",
+  "phase": 3,
+  "phase_description": "Grammar foundation added. Phase 1 core + Phase 2 enrichment + Phase 3 grammar dataset: 81 hand-curated grammar points (50 N5 + 31 N4) all marked draft pending native-speaker review; 13,220 lexicalized expressions extracted from JMdict exp entries; 3,492 auto-generated verb and adjective conjugation tables. JLPT classifications now include grammar entries (kanji + vocab + grammar = 10,585 total). Phase 4 remains pending: JPDB modern frequency (license-blocked), radical meanings/Kangxi numbers, classical handwriting, audio corpora, and other candidates in docs/phase4-candidates.md.",
   "generated": "2026-04-11",
   "license": "CC-BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -112,16 +112,20 @@
     "data/enrichment/pitch-accent.json": 124011,
     "data/enrichment/frequency-newspaper.json": 2501,
     "data/enrichment/frequency-modern.json": 0,
-    "data/enrichment/jlpt-classifications.json": 10504,
+    "data/enrichment/jlpt-classifications.json": 10585,
     "data/enrichment/stroke-order-index.json": 13108,
-    "data/grammar/grammar.json": 0,
+    "data/grammar/grammar.json": 81,
+    "data/grammar/expressions.json": 13220,
+    "data/grammar/conjugations.json": 3492,
     "data/cross-refs/kanji-to-words.json": 3533,
     "data/cross-refs/word-to-kanji.json": 18084,
     "data/cross-refs/word-to-sentences.json": 14550,
     "data/cross-refs/kanji-to-radicals.json": 12156
   },
   "next_actions": [
-    "Phase 3: curate grammar dataset with review_status tracking. Grammar JLPT classifications will be added to jlpt-classifications.json alongside the grammar corpus.",
-    "Phase 4: evaluate candidates in docs/phase4-candidates.md — notably JPDB modern frequency (blocked on license clarification) and radical meanings/Kangxi numbers from external sources."
+    "Grammar v0.3.x patches: expand coverage beyond N5+N4 selections. Target N3 grammar points in v0.3.1, N2 in v0.3.2, N1 in v0.3.3.",
+    "Recruit native-speaker reviewers to move grammar entries from draft → native_speaker_reviewed (see docs/contributing.md).",
+    "Text-match Tatoeba sentences against grammar-curated examples to populate Tatoeba sentence IDs where exact matches exist.",
+    "Phase 4: evaluate candidates in docs/phase4-candidates.md — notably JPDB modern frequency (blocked on license clarification), radical meanings/Kangxi numbers, classical handwriting datasets, and audio corpora."
   ]
 }

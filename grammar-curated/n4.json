@@ -1,0 +1,647 @@
+[
+  {
+    "id": "potential-form",
+    "pattern": "Verb → potential form",
+    "level": "N4",
+    "meaning_en": "can do / is able to do",
+    "meaning_detailed": "The potential form expresses ability or possibility — 'can do X'. Ichidan verbs form it by dropping る and adding られる (食べる → 食べられる). Godan verbs change the final u-row kana to the corresponding e-row kana and add る (行く → 行ける, 話す → 話せる). In modern colloquial Japanese, ら is often dropped from ichidan potential forms (食べれる instead of 食べられる) — this is called ら抜き言葉 and is widely used but grammatically nonstandard. The irregular する becomes できる, and くる becomes こられる.",
+    "formation": "Ichidan: drop る, add られる. Godan: u-row → e-row + る. Irregular: する → できる, くる → こられる.",
+    "formation_notes": [
+      "ら-less forms (食べれる, 見れる) are colloquial and widely used but grammatically nonstandard.",
+      "The object of a potential verb takes が (or sometimes を): 日本語が話せる ('can speak Japanese').",
+      "できる is a standalone word meaning 'can do'; it is the potential form of する and also used for general ability."
+    ],
+    "formality": "neutral",
+    "related": ["dekiru-potential"],
+    "examples": [
+      {"japanese": "日本語が話せます。", "english": "I can speak Japanese.", "source": "original"},
+      {"japanese": "この魚は食べられますか。", "english": "Can you eat this fish? / Is this fish edible?", "source": "original"},
+      {"japanese": "早く起きられない。", "english": "I can't get up early. (plain)", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "passive-form",
+    "pattern": "Verb → passive form",
+    "level": "N4",
+    "meaning_en": "is done (passive); also expresses adversity / indirect affect",
+    "meaning_detailed": "The passive form expresses that the subject receives an action. Ichidan verbs form it by dropping る and adding られる. Godan verbs change the u-row kana to the a-row and add れる. Note that ichidan passive and potential forms are homophones (食べられる can mean 'can eat' or 'is eaten'). Japanese also has a distinctive use of passive to express that something bad or unwanted happened to the speaker — the 'suffering passive' (私は雨に降られた — 'I got rained on').",
+    "formation": "Ichidan: drop る, add られる. Godan: u-row → a-row + れる. Irregular: する → される, くる → こられる.",
+    "formation_notes": [
+      "The passive agent (the one who did the action) takes に: 先生に叱られた ('I was scolded by the teacher').",
+      "Suffering passive: even intransitive verbs can be used passively to express adversity (雨に降られる, 友達に来られる)."
+    ],
+    "formality": "neutral",
+    "related": ["causative-form"],
+    "examples": [
+      {"japanese": "先生に褒められました。", "english": "I was praised by the teacher.", "source": "original"},
+      {"japanese": "友達に手紙を読まれました。", "english": "My letter was read by my friend. (often with a suffering nuance)", "source": "original"},
+      {"japanese": "ドアが開けられた。", "english": "The door was opened. (plain)", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "causative-form",
+    "pattern": "Verb → causative form",
+    "level": "N4",
+    "meaning_en": "make / let someone do something",
+    "meaning_detailed": "The causative form expresses that the subject makes or lets someone else do an action. Ichidan verbs form it by dropping る and adding させる. Godan verbs change the u-row kana to the a-row and add せる. The distinction between 'make' (forced) and 'let' (permitted) depends on context and the particle marking the causee: を often implies force, に often implies permission.",
+    "formation": "Ichidan: drop る, add させる. Godan: u-row → a-row + せる. Irregular: する → させる, くる → こさせる.",
+    "formation_notes": [
+      "The causee is marked with に (permission) or を (force/coercion), though the distinction is not always strict.",
+      "The combined causative-passive (食べさせられる — 'be made to eat') is N3."
+    ],
+    "formality": "neutral",
+    "related": ["passive-form"],
+    "examples": [
+      {"japanese": "先生は学生に本を読ませました。", "english": "The teacher made/had the students read the book.", "source": "original"},
+      {"japanese": "子供を遊ばせました。", "english": "I let the children play.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "ta-koto-ga-aru",
+    "pattern": "Verb-た + ことがある",
+    "level": "N4",
+    "meaning_en": "have done ___ (experience)",
+    "meaning_detailed": "Vた + ことがある expresses past experience — 'have (ever) done X'. It refers to whether the speaker has done something at any point in the past, not a specific event. The negative is ことがない ('have never done'). Combined with a question, it asks whether the listener has done something.",
+    "formation": "Verb-た form + ことがある (polite: ことがあります)",
+    "formation_notes": [
+      "ことがない = 'have never done'.",
+      "Used for life experiences, not recent specific events. For recent past, just use the plain past form.",
+      "Time markers like 子供の時 ('when I was a child') or 一度も ('not even once') are common with this construction."
+    ],
+    "formality": "neutral",
+    "related": ["ta-form"],
+    "examples": [
+      {"japanese": "日本に行ったことがあります。", "english": "I have been to Japan.", "source": "original"},
+      {"japanese": "寿司を食べたことがありますか。", "english": "Have you ever eaten sushi?", "source": "original"},
+      {"japanese": "一度も会ったことがない。", "english": "I have never met (them) even once.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "tsumori-intention",
+    "pattern": "Verb (dictionary form) + つもり",
+    "level": "N4",
+    "meaning_en": "intend to / plan to ___",
+    "meaning_detailed": "つもり attached after a dictionary-form verb expresses the speaker's intention or plan to do something. It is stronger than a vague thought — it implies the speaker has already decided. The negative can be either ないつもり ('intend not to') or つもりはない ('don't have any intention'). It is used primarily for first-person intention; for third-person, other constructions (と言っている) are preferred.",
+    "formation": "Verb (dictionary form) + つもり(です)",
+    "formation_notes": [
+      "Negative 1: Vない + つもり — 'intend not to X' (I have decided not to)",
+      "Negative 2: Vる + つもりはない — 'don't have any intention of X' (stronger denial).",
+      "For something already done, use Vた + つもり ('I thought I did X' — implying mistaken belief)."
+    ],
+    "formality": "neutral",
+    "related": ["volitional-form"],
+    "examples": [
+      {"japanese": "来年、日本に行くつもりです。", "english": "I'm planning to go to Japan next year.", "source": "original"},
+      {"japanese": "お酒を飲まないつもりです。", "english": "I intend not to drink alcohol.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "to-omou",
+    "pattern": "Plain form + と思う",
+    "level": "N4",
+    "meaning_en": "I think (that) ___",
+    "meaning_detailed": "と思う attached after a plain-form clause expresses the speaker's opinion or belief — 'I think that…'. The clause before と must be in plain form, not polite (食べると思う, not 食べますと思う). It is the basic way to express opinions in Japanese and is extremely common. For past belief, use と思った.",
+    "formation": "Plain-form clause + と + 思う (polite: 思います)",
+    "formation_notes": [
+      "The embedded clause must be in plain form: 高いと思います, not 高いですと思います.",
+      "と思っている (resultant state) is used for holding an opinion over time, especially for third-person opinions: 彼はそう思っている ('he thinks so').",
+      "For intention, Vよう + と思う ('I'm thinking of doing X') combines with the volitional form."
+    ],
+    "formality": "neutral",
+    "related": ["to-iu", "darou-deshou-conjecture"],
+    "examples": [
+      {"japanese": "明日は雨が降ると思います。", "english": "I think it will rain tomorrow.", "source": "original"},
+      {"japanese": "彼はいい人だと思う。", "english": "I think he's a good person. (plain)", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "to-iu",
+    "pattern": "Quoted phrase + と言う",
+    "level": "N4",
+    "meaning_en": "say that ___; be called ___",
+    "meaning_detailed": "と言う has two related uses: (1) quotation — 'someone says/said that ___' — attached after a plain-form clause, and (2) naming — 'is called ___' — used to give the name of something. In the quotation use, the cited content is in plain form. The past form と言った means 'said that'. と言います is the polite form.",
+    "formation": "Plain-form clause + と + 言う. For naming: 'Xという + noun' (e.g., 田中という人 — 'a person called Tanaka').",
+    "formation_notes": [
+      "Use plain form in the embedded clause.",
+      "The naming pattern X という Y is very productive: 'anime' in Japanese is アニメ and you might say アニメというもの ('the thing called anime')."
+    ],
+    "formality": "neutral",
+    "related": ["to-omou"],
+    "examples": [
+      {"japanese": "彼は明日来ると言いました。", "english": "He said he would come tomorrow.", "source": "original"},
+      {"japanese": "田中という人を知っていますか。", "english": "Do you know a person called Tanaka?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "darou-deshou-conjecture",
+    "pattern": "Plain form + だろう / でしょう",
+    "level": "N4",
+    "meaning_en": "probably / I guess / it will probably be",
+    "meaning_detailed": "だろう (plain) and でしょう (polite) express the speaker's conjecture or guess about something — 'probably', 'I think', 'I guess'. They attach to the plain form of verbs, い-adjectives, and nouns/na-adjectives. でしょう is also used with rising intonation to seek the listener's agreement or confirmation ('right?').",
+    "formation": "Plain-form verb/い-adj/noun + だろう (plain) or でしょう (polite). For nouns and な-adjectives, attach directly without だ: 学生でしょう, not 学生だでしょう.",
+    "formation_notes": [
+      "Do not include だ before でしょう for noun/na-adjective predicates: 学生でしょう, 静かでしょう.",
+      "With rising intonation, でしょう seeks confirmation: いいでしょう？('that's good, right?').",
+      "The past form だったろう / だったでしょう means 'would have been / must have been'."
+    ],
+    "formality": "neutral",
+    "related": ["kamoshirenai-might", "to-omou"],
+    "examples": [
+      {"japanese": "明日は晴れるでしょう。", "english": "It will probably be sunny tomorrow.", "source": "original"},
+      {"japanese": "彼はもう帰ったでしょう。", "english": "He's probably already gone home.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "kamoshirenai-might",
+    "pattern": "Plain form + かもしれない",
+    "level": "N4",
+    "meaning_en": "might / may / perhaps",
+    "meaning_detailed": "かもしれない (polite かもしれません) expresses possibility — 'might', 'may', 'perhaps'. It is weaker than だろう/でしょう, indicating less certainty. It attaches to the plain form of verbs, い-adjectives, and noun/na-adjective predicates (without だ).",
+    "formation": "Plain-form verb/adjective/noun + かもしれない (drop だ for nouns and na-adjectives).",
+    "formation_notes": [
+      "No だ before かもしれない for nouns: 学生かもしれません, not 学生だかもしれません.",
+      "Casual contraction: かも (especially at the end: 行くかも — 'might go')."
+    ],
+    "formality": "neutral",
+    "related": ["darou-deshou-conjecture", "hazu-expected"],
+    "examples": [
+      {"japanese": "明日は雨が降るかもしれません。", "english": "It might rain tomorrow.", "source": "original"},
+      {"japanese": "彼は来ないかもしれない。", "english": "He might not come. (plain)", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "hazu-expected",
+    "pattern": "Plain form + はず",
+    "level": "N4",
+    "meaning_en": "should be / ought to be / is expected to",
+    "meaning_detailed": "はず expresses the speaker's expectation based on reasoning or evidence — 'it should be' or 'it ought to be'. Unlike かもしれない (possibility), はず implies stronger certainty; unlike べき (obligation), はず is about expectation rather than what someone should do morally. The negative はずがない means 'there's no way that' — a strong denial.",
+    "formation": "Plain-form verb/adjective/noun + はず(です). For nouns and na-adjectives, use の before はず: 学生のはず, 静かなはず.",
+    "formation_notes": [
+      "Noun + の + はず; な-adjective + な + はず.",
+      "はずがない = 'no way that' (strong denial of possibility).",
+      "はずだった = 'was supposed to' (but something went wrong)."
+    ],
+    "formality": "neutral",
+    "related": ["kamoshirenai-might"],
+    "examples": [
+      {"japanese": "彼は今日来るはずです。", "english": "He should come today.", "source": "original"},
+      {"japanese": "そんなはずはない。", "english": "There's no way that can be true. (plain)", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "tara-conditional",
+    "pattern": "Verb-た + ら",
+    "level": "N4",
+    "meaning_en": "if / when ___ (general conditional)",
+    "meaning_detailed": "たら is the most versatile Japanese conditional. It attaches to the た-form of a verb (or the かった form of an い-adjective, だった of a noun/na-adjective) and expresses 'if/when X happens'. It can refer to either a single future event ('if X happens' / 'when X happens') or a past event where the speaker discovered something ('when I did X, Y happened'). It's generally the safest conditional to use when learners aren't sure which of たら/ば/と/なら to pick.",
+    "formation": "Verb-た + ら (食べた → 食べたら). い-adj: かった + ら (高かったら). Noun/な-adj: だった + ら (学生だったら).",
+    "formation_notes": [
+      "Often used for past-tense 'when I did X, I discovered/found Y': 家に帰ったら、誰もいなかった ('when I got home, no one was there').",
+      "Can express future 'when/after': 東京に着いたら電話します ('I'll call when I arrive in Tokyo').",
+      "For definite future, the main clause can express will/intention/command/request. For past discovery, the main clause is a past event."
+    ],
+    "formality": "neutral",
+    "related": ["ba-conditional", "to-conditional", "nara-conditional"],
+    "examples": [
+      {"japanese": "時間があったら、映画を見ます。", "english": "If I have time, I'll watch a movie.", "source": "original"},
+      {"japanese": "家に帰ったら、手紙が来ていた。", "english": "When I got home, a letter had come.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "ba-conditional",
+    "pattern": "Verb → ば form",
+    "level": "N4",
+    "meaning_en": "if ___ (general/hypothetical conditional)",
+    "meaning_detailed": "The ば-conditional expresses a hypothetical 'if' — typically generic conditions or natural laws. It tends to emphasize the condition itself and is common in proverbs, mathematical statements, and generic claims. For specific contingent plans, たら is more common.",
+    "formation": "Ichidan: drop る, add れば (食べる → 食べれば). Godan: u-row → e-row + ば (行く → 行けば, 飲む → 飲めば). い-adj: drop い, add ければ (高い → 高ければ). Negative: ～なければ. Irregular: する → すれば, くる → くれば.",
+    "formation_notes": [
+      "ば is preferred for natural or generic conditions ('if you study, you'll understand' — 勉強すればわかる).",
+      "The main clause of a ば-sentence usually does not express commands, requests, or invitations. Use たら for those.",
+      "The exception is when the subjects differ or the condition is stative."
+    ],
+    "formality": "neutral",
+    "related": ["tara-conditional", "to-conditional", "nara-conditional"],
+    "examples": [
+      {"japanese": "毎日勉強すれば、上手になります。", "english": "If you study every day, you'll become skilled.", "source": "original"},
+      {"japanese": "安ければ買います。", "english": "If it's cheap, I'll buy it.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "to-conditional",
+    "pattern": "Verb (dictionary form) + と",
+    "level": "N4",
+    "meaning_en": "whenever / when (natural consequence)",
+    "meaning_detailed": "The と-conditional expresses that one thing naturally or inevitably leads to another. It's used for natural laws, habitual consequences, and definite outcomes — 'when X happens, Y (always) happens'. It cannot be used with commands, requests, invitations, or volition in the main clause.",
+    "formation": "Dictionary form of verb (or plain non-past of adjective/copula) + と",
+    "formation_notes": [
+      "The main clause must be a natural/certain consequence. No commands/requests/invitations in the main clause.",
+      "Good for: natural laws, directions ('turn right and you'll see the bank'), habitual sequences.",
+      "Past tense usage expresses an unexpected discovery, similar to たら but with a nuance of automatic consequence."
+    ],
+    "formality": "neutral",
+    "related": ["tara-conditional", "ba-conditional"],
+    "examples": [
+      {"japanese": "このボタンを押すとドアが開きます。", "english": "If you press this button, the door opens.", "source": "original"},
+      {"japanese": "春になると桜が咲きます。", "english": "When spring comes, the cherry blossoms bloom.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "nara-conditional",
+    "pattern": "X + なら",
+    "level": "N4",
+    "meaning_en": "if (it is the case that) ___; as for ___",
+    "meaning_detailed": "なら is a contextual conditional — 'if it's the case that X' — typically picking up on something already mentioned by the other speaker and responding to it. Unlike たら/ば/と, なら's main clause often comes temporally before the condition (i.e., the action in the main clause happens before the condition in time, when taken at face value). It is often used to give advice or recommendations based on what someone has just said.",
+    "formation": "Plain-form verb/adjective/noun + なら (drop だ for nouns and na-adjectives).",
+    "formation_notes": [
+      "No だ before なら for nouns: 学生なら (not 学生だなら).",
+      "Often used in advice-giving: 日本に行くなら、京都に行ってください ('if you're going to Japan, please visit Kyoto').",
+      "Distinct from のなら (or んなら) which emphasizes 'given that you're really planning to'."
+    ],
+    "formality": "neutral",
+    "related": ["tara-conditional", "ba-conditional"],
+    "examples": [
+      {"japanese": "日本に行くなら、京都がおすすめです。", "english": "If you're going to Japan, I recommend Kyoto.", "source": "original"},
+      {"japanese": "寿司なら、あの店が一番です。", "english": "When it comes to sushi, that shop is the best.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "volitional-form",
+    "pattern": "Verb → volitional form",
+    "level": "N4",
+    "meaning_en": "let's ___; I shall ___ (plain volitional)",
+    "meaning_detailed": "The plain volitional form is the casual counterpart of ましょう. It expresses 'let's do X' or 'I shall do X'. Combined with と思う, it expresses intention ('I'm thinking of doing X'). Combined with とする, it expresses an attempt ('to try to do X' or 'to be about to do X').",
+    "formation": "Ichidan: drop る, add よう (食べる → 食べよう). Godan: u-row → o-row + う (行く → 行こう, 飲む → 飲もう). Irregular: する → しよう, くる → こよう.",
+    "formation_notes": [
+      "Casual use: standalone as a suggestion ('let's eat!' — 食べよう!).",
+      "+ と思う: intention ('I'm thinking of going' — 行こうと思う).",
+      "+ とする: about to / attempt to ('I was about to leave' — 出ようとした)."
+    ],
+    "formality": "casual",
+    "related": ["mashou-volitional", "tsumori-intention"],
+    "examples": [
+      {"japanese": "一緒に行こう。", "english": "Let's go together. (casual)", "source": "original"},
+      {"japanese": "来年、日本へ行こうと思っています。", "english": "I'm thinking of going to Japan next year.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "te-wa-ikenai-prohibition",
+    "pattern": "Verb-て + はいけない / はいけません",
+    "level": "N4",
+    "meaning_en": "must not ___ (prohibition)",
+    "meaning_detailed": "てはいけない attaches the て-form of a verb to はいけない (polite: はいけません) to express prohibition — 'must not do X'. Casual speech often contracts it to ちゃいけない or ちゃだめ. It is used for rules, warnings, and firm prohibitions.",
+    "formation": "Verb-て + はいけない (polite: はいけません). Casual contraction: ちゃいけない, ちゃだめ.",
+    "formation_notes": [
+      "ちゃ is a casual contraction of ては.",
+      "Alternative expressions: てはだめ (casual), てはなりません (very formal).",
+      "Opposite (permission): てもいい."
+    ],
+    "formality": "formal",
+    "related": ["te-mo-ii-permission", "te-form-basic"],
+    "examples": [
+      {"japanese": "ここでタバコを吸ってはいけません。", "english": "You must not smoke here.", "source": "original"},
+      {"japanese": "図書館で話してはいけない。", "english": "You must not talk in the library. (plain)", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "te-mo-ii-permission",
+    "pattern": "Verb-て + もいい / もいいです",
+    "level": "N4",
+    "meaning_en": "may / it's okay to ___ (permission)",
+    "meaning_detailed": "てもいい attaches the て-form of a verb to もいい (polite: もいいです) to express permission or that something is acceptable — 'it's okay to do X', 'you may do X'. As a question, it asks for permission — 'may I do X?'. The more polite version is てもよろしい(ですか).",
+    "formation": "Verb-て + もいい(です). More polite: てもよろしい(ですか).",
+    "formation_notes": [
+      "As a question: ～てもいいですか = 'may I ~?'.",
+      "てもかまいません ('I don't mind if ~') is another common polite form.",
+      "Opposite (prohibition): てはいけない."
+    ],
+    "formality": "neutral",
+    "related": ["te-wa-ikenai-prohibition"],
+    "examples": [
+      {"japanese": "ここに座ってもいいですか。", "english": "May I sit here?", "source": "original"},
+      {"japanese": "写真を撮ってもいいです。", "english": "You may take photos.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "nakereba-naranai",
+    "pattern": "Verb-ない stem + なければならない",
+    "level": "N4",
+    "meaning_en": "must / have to / need to",
+    "meaning_detailed": "なければならない expresses necessity or obligation — 'must', 'have to'. It is formed from the ない-form of a verb by replacing the final い with ければならない. Many casual contractions exist: なきゃ(ならない), なくちゃ(いけない), ないといけない, etc. All of them express essentially the same meaning with varying levels of formality.",
+    "formation": "Verb-ない-stem (drop い from ない-form) + なければならない. Common casual forms: なきゃ, なくちゃ, ないと.",
+    "formation_notes": [
+      "ならない and いけない are interchangeable here; ならない is slightly more formal.",
+      "Casual 'must' forms: なきゃ (from なければ), なくちゃ (from なくては), ないと (trailing off but understood).",
+      "Opposite: なくてもいい ('don't have to')."
+    ],
+    "formality": "neutral",
+    "related": ["nakute-mo-ii"],
+    "examples": [
+      {"japanese": "明日、早く起きなければなりません。", "english": "I have to wake up early tomorrow.", "source": "original"},
+      {"japanese": "薬を飲まなきゃ。", "english": "I gotta take my medicine. (casual)", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "nakute-mo-ii",
+    "pattern": "Verb-なく + てもいい",
+    "level": "N4",
+    "meaning_en": "don't have to / it's okay not to",
+    "meaning_detailed": "なくてもいい expresses that something is unnecessary — 'don't have to', 'it's okay not to'. It is the negative counterpart of てもいい. The formation joins the negative stem of a verb (dropping the final い from ない-form) with the て-form construction.",
+    "formation": "Verb-ない-stem + なくてもいい(です)",
+    "formation_notes": [
+      "Opposite: なければならない ('must').",
+      "Variant: なくてもかまわない ('I don't mind if you don't')."
+    ],
+    "formality": "neutral",
+    "related": ["nakereba-naranai", "te-mo-ii-permission"],
+    "examples": [
+      {"japanese": "明日は学校に来なくてもいいです。", "english": "You don't have to come to school tomorrow.", "source": "original"},
+      {"japanese": "お金を払わなくてもいい。", "english": "You don't have to pay. (plain)", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "kara-cause",
+    "pattern": "Plain or polite form + から",
+    "level": "N4",
+    "meaning_en": "because / since ___",
+    "meaning_detailed": "から following a clause means 'because' — it gives the reason or cause for something. The clause before から can be in either plain or polite form (though plain is more common in casual speech, polite in formal speech). から tends to be used when the speaker is giving a subjective reason or justification. It differs from ので (softer, more objective reason) in feel.",
+    "formation": "Clause (plain or polite) + から. Usually plain is used when the main clause is also plain, and polite for polite.",
+    "formation_notes": [
+      "から is more subjective/assertive than ので.",
+      "Can appear at the end of a sentence as an explanation: だから ('that's why').",
+      "Contrast with から as a particle meaning 'from' (N5) which attaches to nouns."
+    ],
+    "formality": "neutral",
+    "related": ["node-cause", "particle-kara-from"],
+    "examples": [
+      {"japanese": "時間がないから、急ぎます。", "english": "Because I don't have time, I'll hurry.", "source": "original"},
+      {"japanese": "雨が降っているから、傘を持って行きます。", "english": "Since it's raining, I'll take an umbrella.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "node-cause",
+    "pattern": "Plain form + ので",
+    "level": "N4",
+    "meaning_en": "because / since ___ (softer, more objective than から)",
+    "meaning_detailed": "ので expresses reason/cause similar to から, but with a softer, more objective, and often more polite feeling. It is preferred in formal requests and explanations where the speaker wants to avoid sounding pushy. The preceding clause is in plain form, but for noun and na-adjective predicates, なので is used instead of だので.",
+    "formation": "Plain-form verb/い-adj + ので. Noun/な-adj + な + ので (学生なので, 静かなので).",
+    "formation_notes": [
+      "な is required for noun and na-adjective predicates: 学生なので, not 学生だので or 学生ので.",
+      "Often used in polite requests/explanations: 忙しいので、失礼します ('I'm busy so I'll excuse myself').",
+      "Considered softer and more polite than から."
+    ],
+    "formality": "formal",
+    "related": ["kara-cause"],
+    "examples": [
+      {"japanese": "雨が降っているので、中止します。", "english": "Since it's raining, we'll cancel.", "source": "original"},
+      {"japanese": "疲れているので、今日は帰ります。", "english": "Because I'm tired, I'll go home today.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "ga-kedo-although",
+    "pattern": "Clause + が / けど / けれども",
+    "level": "N4",
+    "meaning_en": "but / although / however",
+    "meaning_detailed": "が, けど, and けれども are conjunctions meaning 'but' or 'although'. They connect two clauses with a contrastive relationship. が is slightly more formal and written; けど is casual spoken; けれども is formal. They are also often used as soft sentence openers without a strong contrastive meaning — 'well…' or 'by the way…'.",
+    "formation": "Clause (plain or polite) + が / けど / けれども + clause",
+    "formation_notes": [
+      "Formality ranking: けれども > が > けど (from more formal to less).",
+      "A common soft-opener use: すみませんが、道を教えてください ('excuse me, but could you tell me the way') — not really contrastive.",
+      "These are conjunctions, unlike しかし which is an adverb starting a new sentence."
+    ],
+    "formality": "neutral",
+    "related": [],
+    "examples": [
+      {"japanese": "この本は難しいですが、面白いです。", "english": "This book is difficult, but it's interesting.", "source": "original"},
+      {"japanese": "行きたいけど、時間がない。", "english": "I want to go, but I don't have time. (casual)", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "n-desu-explanation",
+    "pattern": "Plain form + んです / のです",
+    "level": "N4",
+    "meaning_en": "explains, gives reason, or softly asserts: 'it's that ___'",
+    "meaning_detailed": "んです (more formal: のです) attaches to a plain-form clause to give an explanation, soften a statement, or provide context. It frames the statement as information the speaker is sharing in response to implicit or explicit questions or context. A classic use is explaining why something is happening: 頭が痛いんです ('(it's that) my head hurts' — used to explain absence or slow reaction). For nouns and な-adjectives, use なんです (学生なんです, not 学生だんです).",
+    "formation": "Plain-form verb/い-adj + んです. Noun/な-adj + な + んです (学生なんです).",
+    "formation_notes": [
+      "For nouns and な-adjectives, insert な: 学生なんです.",
+      "In questions, んですか asks for explanation or clarification: なぜ来なかったんですか ('why didn't you come?').",
+      "More formal written form: のです."
+    ],
+    "formality": "neutral",
+    "related": [],
+    "examples": [
+      {"japanese": "頭が痛いんです。", "english": "(The thing is,) my head hurts.", "source": "original"},
+      {"japanese": "なぜ来なかったんですか。", "english": "Why didn't you come?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "ni-naru-become",
+    "pattern": "X + になる",
+    "level": "N4",
+    "meaning_en": "become ___",
+    "meaning_detailed": "なる means 'to become', expressing a natural or gradual change. For nouns and な-adjectives, the pattern is X + に + なる. For い-adjectives, drop い and add くなる (高い → 高くなる). The change is framed as happening on its own, as opposed to being caused by someone (for which use する).",
+    "formation": "Noun/な-adj + に + なる. い-adj: drop い, add くなる.",
+    "formation_notes": [
+      "For caused change (making something become something), use に + する (部屋をきれいにする — 'make the room clean').",
+      "Common form ～ように なる: 'come to ___' (change in habit or ability).",
+      "Polite: なります; past: なった/なりました."
+    ],
+    "formality": "neutral",
+    "related": ["ni-suru-decide"],
+    "examples": [
+      {"japanese": "息子は医者になりました。", "english": "My son became a doctor.", "source": "original"},
+      {"japanese": "寒くなってきました。", "english": "It's gotten cold.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "ni-suru-decide",
+    "pattern": "X + にする",
+    "level": "N4",
+    "meaning_en": "decide on / make it ___",
+    "meaning_detailed": "にする expresses a decision or choice — 'I'll have X' in restaurants, 'I've decided on X' in general contexts. Literally it means 'make (it) into X' and is the active-voice counterpart to になる. It is the standard way to order food at a restaurant or make a selection.",
+    "formation": "Noun + に + する",
+    "formation_notes": [
+      "Restaurant ordering: コーヒーにします ('I'll have coffee').",
+      "ことにする: decide to do something (verb + ことにする)."
+    ],
+    "formality": "neutral",
+    "related": ["ni-naru-become"],
+    "examples": [
+      {"japanese": "私はコーヒーにします。", "english": "I'll have coffee.", "source": "original"},
+      {"japanese": "明日行くことにしました。", "english": "I've decided to go tomorrow.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "hajimeru-auxiliary",
+    "pattern": "Verb stem + 始める",
+    "level": "N4",
+    "meaning_en": "begin to ___ / start ___ing",
+    "meaning_detailed": "始める attached to a verb stem forms a compound expressing 'begin to do X'. It is an ichidan verb meaning 'to begin' in its own right, but also functions as an auxiliary when attached to another verb stem. Similar auxiliaries include 終わる ('finish'), 続ける ('continue'), 出す ('suddenly begin'), and others.",
+    "formation": "Verb stem (same as ます stem) + 始める. E.g., 食べ始める ('begin to eat'), 読み始める ('begin to read').",
+    "formation_notes": [
+      "Uses the verb stem (connective form / -i form), which is the same stem as for ます.",
+      "Conjugates as an ichidan verb: 食べ始めた, 食べ始めます.",
+      "Related: 出す also means 'suddenly start' (泣き出す — 'burst into tears')."
+    ],
+    "formality": "neutral",
+    "related": ["owaru-finish", "sugiru-too-much"],
+    "examples": [
+      {"japanese": "去年、日本語を勉強し始めました。", "english": "I began studying Japanese last year.", "source": "original"},
+      {"japanese": "雨が降り始めた。", "english": "It started to rain. (plain)", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "owaru-finish",
+    "pattern": "Verb stem + 終わる",
+    "level": "N4",
+    "meaning_en": "finish ___ing",
+    "meaning_detailed": "終わる attached to a verb stem forms a compound meaning 'finish doing X'. It is the completion counterpart to 始める. The standalone verb 終わる means 'to end' or 'to be over'. Note that 終える (transitive) can also be used: verb-stem + 終える.",
+    "formation": "Verb stem + 終わる (or + 終える for transitive nuance).",
+    "formation_notes": [
+      "Uses the verb stem (same as ます stem).",
+      "終わる is intransitive ('to end'); 終える is transitive ('to finish')."
+    ],
+    "formality": "neutral",
+    "related": ["hajimeru-auxiliary"],
+    "examples": [
+      {"japanese": "本を読み終わりました。", "english": "I finished reading the book.", "source": "original"},
+      {"japanese": "宿題をやり終えた。", "english": "I finished the homework. (plain)", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "sugiru-too-much",
+    "pattern": "Verb stem / adj stem + すぎる",
+    "level": "N4",
+    "meaning_en": "too much / overly ___",
+    "meaning_detailed": "すぎる attaches to verb or adjective stems to mean 'too much' or 'overly'. For verbs, attach to the stem (食べる → 食べすぎる — 'eat too much'). For い-adjectives, drop the final い (高い → 高すぎる — 'too expensive'). For な-adjectives, attach directly to the stem (静かすぎる — 'too quiet'). The resulting verb conjugates as an ichidan verb.",
+    "formation": "Verb stem + すぎる. い-adj: drop い + すぎる. な-adj: + すぎる.",
+    "formation_notes": [
+      "Exception: いい ('good') → よすぎる.",
+      "Conjugates as an ichidan verb: すぎます, すぎた, すぎない, etc."
+    ],
+    "formality": "neutral",
+    "related": ["yasui-easy", "nikui-hard"],
+    "examples": [
+      {"japanese": "食べすぎました。", "english": "I ate too much.", "source": "original"},
+      {"japanese": "この服は高すぎる。", "english": "These clothes are too expensive.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "yasui-easy",
+    "pattern": "Verb stem + やすい",
+    "level": "N4",
+    "meaning_en": "easy to ___",
+    "meaning_detailed": "やすい attached to a verb stem creates an い-adjective meaning 'easy to do X'. It describes the intrinsic ease of doing something, often a property of the object of the action ('this pen is easy to write with').",
+    "formation": "Verb stem + やすい",
+    "formation_notes": [
+      "The resulting compound conjugates as an い-adjective.",
+      "Opposite: にくい ('hard to ~')."
+    ],
+    "formality": "neutral",
+    "related": ["nikui-hard", "sugiru-too-much"],
+    "examples": [
+      {"japanese": "このペンは書きやすいです。", "english": "This pen is easy to write with.", "source": "original"},
+      {"japanese": "先生の説明は分かりやすい。", "english": "The teacher's explanation is easy to understand.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "nikui-hard",
+    "pattern": "Verb stem + にくい",
+    "level": "N4",
+    "meaning_en": "hard to ___ / difficult to ___",
+    "meaning_detailed": "にくい attached to a verb stem creates an い-adjective meaning 'hard to do X'. It is the opposite of やすい. Note that a stronger form づらい exists, sometimes with a nuance of physical or emotional difficulty.",
+    "formation": "Verb stem + にくい",
+    "formation_notes": [
+      "The resulting compound conjugates as an い-adjective.",
+      "Related form: づらい, sometimes emphasizing physical or emotional difficulty.",
+      "Opposite: やすい."
+    ],
+    "formality": "neutral",
+    "related": ["yasui-easy"],
+    "examples": [
+      {"japanese": "この字は読みにくいです。", "english": "This handwriting is hard to read.", "source": "original"},
+      {"japanese": "この肉は食べにくい。", "english": "This meat is hard to eat.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "noun-modifying-clause",
+    "pattern": "Plain-form clause + Noun",
+    "level": "N4",
+    "meaning_en": "noun-modifying (attributive) clauses: 'the ___ that ___'",
+    "meaning_detailed": "In Japanese, a full clause can modify a noun by being placed before it in plain form — there is no relative pronoun like 'which' or 'that'. For example, 昨日食べたケーキ literally 'yesterday-ate-cake' = 'the cake (that) I ate yesterday'. This is one of the most important structural differences from English and is essential for understanding longer sentences.",
+    "formation": "Plain-form clause (including any subject marked with が rather than は) + Noun. For i-adjectives, the plain form directly precedes the noun (高い本 — 'an expensive book'). For na-adjectives, insert な (静かな部屋).",
+    "formation_notes": [
+      "The modifying clause must be in plain form, not polite.",
+      "Within the modifying clause, the subject (if any) is usually marked with が, not は.",
+      "The head noun can be any syntactic role in the outer sentence (subject, object, etc.)."
+    ],
+    "formality": "neutral",
+    "related": [],
+    "examples": [
+      {"japanese": "昨日、田中さんが作ったケーキはおいしかったです。", "english": "The cake that Mr. Tanaka made yesterday was delicious.", "source": "original"},
+      {"japanese": "私が住んでいる町はとても静かです。", "english": "The town where I live is very quiet.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  }
+]

@@ -36,6 +36,7 @@ from datetime import date
 REPO_ROOT = Path(__file__).resolve().parents[2]
 VOCAB_DIR = REPO_ROOT / "sources" / "waller-jlpt"
 KANJI_JSON = REPO_ROOT / "sources" / "waller-jlpt" / "kanji-data.json"
+GRAMMAR_CURATED_DIR = REPO_ROOT / "grammar-curated"
 OUT = REPO_ROOT / "data" / "enrichment" / "jlpt-classifications.json"
 
 VOCAB_FILES = {
@@ -66,6 +67,40 @@ def _parse_vocab_csv(path: Path, level: str, retrieved: str) -> list[dict]:
                 "level": level,
                 "meaning_en": definition,
                 "jmdict_seq": jmdict_seq,  # extra field, useful for word join
+                "source_retrieved": retrieved,
+            })
+    return entries
+
+
+def _parse_curated_grammar(retrieved: str) -> list[dict]:
+    """Read hand-curated grammar points from grammar-curated/*.json and
+    emit JLPT classification entries for each one.
+
+    These entries are project-original (CC-BY-SA 4.0 directly, not
+    derived from Waller or other sources). They share the same schema
+    as vocab and kanji classifications but have kind=grammar.
+    """
+    entries: list[dict] = []
+    if not GRAMMAR_CURATED_DIR.exists():
+        return entries
+    for path in sorted(GRAMMAR_CURATED_DIR.glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, list):
+            continue
+        for gp in data:
+            gid = gp.get("id")
+            pattern = gp.get("pattern", "")
+            level = gp.get("level")
+            meaning = gp.get("meaning_en", "")
+            if not gid or not level:
+                continue
+            entries.append({
+                "text": pattern,
+                "reading": None,
+                "kind": "grammar",
+                "level": level,
+                "meaning_en": meaning,
+                "grammar_id": gid,
                 "source_retrieved": retrieved,
             })
     return entries
@@ -127,6 +162,14 @@ def build() -> None:
         print(f"[jlpt]       {level} kanji: {kanji_level_counts.get(level, 0):,}")
     all_classifications.extend(kanji_entries)
 
+    print("[jlpt]     parsing curated grammar JLPT levels (from grammar-curated/)")
+    grammar_entries = _parse_curated_grammar(retrieved)
+    grammar_level_counts = Counter(e["level"] for e in grammar_entries)
+    for level in ("N5", "N4", "N3", "N2", "N1"):
+        per_level_counts[f"grammar_{level}"] = grammar_level_counts.get(level, 0)
+        print(f"[jlpt]       {level} grammar: {grammar_level_counts.get(level, 0):,}")
+    all_classifications.extend(grammar_entries)
+
     print(f"[jlpt]     total: {len(all_classifications):,}")
 
     output = {
@@ -163,11 +206,12 @@ def build() -> None:
             ),
             "field_notes": {
                 "text": "The kanji character, word (kanji writing), or grammar pattern.",
-                "reading": "For vocabulary, the kana reading. Null for kanji entries.",
-                "kind": "Entry kind: 'vocab' or 'kanji'. Grammar entries (kind='grammar') will be added in Phase 3.",
+                "reading": "For vocabulary, the kana reading. Null for kanji and grammar entries.",
+                "kind": "Entry kind: 'vocab', 'kanji', or 'grammar'.",
                 "level": "JLPT level N5 (beginner) to N1 (advanced). Not JLPT-official.",
-                "meaning_en": "Short English gloss for convenience. Authoritative meanings live in data/core/kanji.json and data/core/words.json.",
+                "meaning_en": "Short English gloss for convenience. Authoritative meanings live in data/core/kanji.json, data/core/words.json, and data/grammar/grammar.json.",
                 "jmdict_seq": "On vocab entries only: the JMdict entry ID. Can be joined with data/core/words.json via the id field.",
+                "grammar_id": "On grammar entries only: the project-assigned grammar point ID. Can be joined with data/grammar/grammar.json via the id field.",
                 "source_retrieved": "Date this entry was retrieved from the upstream distribution.",
             },
         },

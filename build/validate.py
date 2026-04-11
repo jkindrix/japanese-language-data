@@ -43,6 +43,8 @@ SCHEMA_MAP: dict[str, str] = {
     "data/enrichment/jlpt-classifications.json": "jlpt.schema.json",
     "data/enrichment/stroke-order-index.json": "stroke-order.schema.json",
     "data/grammar/grammar.json": "grammar.schema.json",
+    "data/grammar/expressions.json": "expressions.schema.json",
+    "data/grammar/conjugations.json": "conjugations.schema.json",
     "data/cross-refs/kanji-to-words.json": "cross-refs.schema.json",
     "data/cross-refs/word-to-kanji.json": "cross-refs.schema.json",
     "data/cross-refs/word-to-sentences.json": "cross-refs.schema.json",

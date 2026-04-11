@@ -6,7 +6,7 @@
     "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
     "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
     "generated": "2026-04-11",
-    "count": 10504,
+    "count": 10585,
     "counts_by_kind_and_level": {
       "vocab_N5": 684,
       "vocab_N4": 640,
@@ -17,17 +17,23 @@
       "kanji_N2": 367,
       "kanji_N3": 367,
       "kanji_N4": 166,
-      "kanji_N5": 79
+      "kanji_N5": 79,
+      "grammar_N5": 50,
+      "grammar_N4": 31,
+      "grammar_N3": 0,
+      "grammar_N2": 0,
+      "grammar_N1": 0
     },
     "attribution": "JLPT classifications adapted from Jonathan Waller's JLPT Resources at http://www.tanos.co.uk/jlpt/ under CC-BY. Vocabulary data distributed via stephenmk/yomitan-jlpt-vocab (CC-BY-SA 4.0). Kanji classifications extracted from davidluzgouveia/kanji-data (code MIT, Waller data CC-BY). Only the jlpt_new field was used from davidluzgouveia; WaniKani-derived fields were deliberately ignored due to incompatible license.",
     "disclaimer": "These classifications are community-reverse-engineered from past JLPT test questions and are NOT JLPT-official. JLPT stopped publishing official vocabulary lists in 2010. Edge cases between levels are particularly uncertain; some entries are disputed in the community. Treat these as the best available community consensus, not canonical truth.",
     "field_notes": {
       "text": "The kanji character, word (kanji writing), or grammar pattern.",
-      "reading": "For vocabulary, the kana reading. Null for kanji entries.",
-      "kind": "Entry kind: 'vocab' or 'kanji'. Grammar entries (kind='grammar') will be added in Phase 3.",
+      "reading": "For vocabulary, the kana reading. Null for kanji and grammar entries.",
+      "kind": "Entry kind: 'vocab', 'kanji', or 'grammar'.",
       "level": "JLPT level N5 (beginner) to N1 (advanced). Not JLPT-official.",
-      "meaning_en": "Short English gloss for convenience. Authoritative meanings live in data/core/kanji.json and data/core/words.json.",
+      "meaning_en": "Short English gloss for convenience. Authoritative meanings live in data/core/kanji.json, data/core/words.json, and data/grammar/grammar.json.",
       "jmdict_seq": "On vocab entries only: the JMdict entry ID. Can be joined with data/core/words.json via the id field.",
+      "grammar_id": "On grammar entries only: the project-assigned grammar point ID. Can be joined with data/grammar/grammar.json via the id field.",
       "source_retrieved": "Date this entry was retrieved from the upstream distribution."
     }
   },
@@ -92355,6 +92361,735 @@
       "kind": "kanji",
       "level": "N1",
       "meaning_en": "Bright",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb → potential form",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "can do / is able to do",
+      "grammar_id": "potential-form",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb → passive form",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "is done (passive); also expresses adversity / indirect affect",
+      "grammar_id": "passive-form",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb → causative form",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "make / let someone do something",
+      "grammar_id": "causative-form",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-た + ことがある",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "have done ___ (experience)",
+      "grammar_id": "ta-koto-ga-aru",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb (dictionary form) + つもり",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "intend to / plan to ___",
+      "grammar_id": "tsumori-intention",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + と思う",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "I think (that) ___",
+      "grammar_id": "to-omou",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Quoted phrase + と言う",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "say that ___; be called ___",
+      "grammar_id": "to-iu",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + だろう / でしょう",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "probably / I guess / it will probably be",
+      "grammar_id": "darou-deshou-conjecture",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + かもしれない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "might / may / perhaps",
+      "grammar_id": "kamoshirenai-might",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + はず",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "should be / ought to be / is expected to",
+      "grammar_id": "hazu-expected",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-た + ら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "if / when ___ (general conditional)",
+      "grammar_id": "tara-conditional",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb → ば form",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "if ___ (general/hypothetical conditional)",
+      "grammar_id": "ba-conditional",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb (dictionary form) + と",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "whenever / when (natural consequence)",
+      "grammar_id": "to-conditional",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X + なら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "if (it is the case that) ___; as for ___",
+      "grammar_id": "nara-conditional",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb → volitional form",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "let's ___; I shall ___ (plain volitional)",
+      "grammar_id": "volitional-form",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-て + はいけない / はいけません",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "must not ___ (prohibition)",
+      "grammar_id": "te-wa-ikenai-prohibition",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-て + もいい / もいいです",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "may / it's okay to ___ (permission)",
+      "grammar_id": "te-mo-ii-permission",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-ない stem + なければならない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "must / have to / need to",
+      "grammar_id": "nakereba-naranai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-なく + てもいい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "don't have to / it's okay not to",
+      "grammar_id": "nakute-mo-ii",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain or polite form + から",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "because / since ___",
+      "grammar_id": "kara-cause",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + ので",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "because / since ___ (softer, more objective than から)",
+      "grammar_id": "node-cause",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Clause + が / けど / けれども",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "but / although / however",
+      "grammar_id": "ga-kedo-although",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain form + んです / のです",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "explains, gives reason, or softly asserts: 'it's that ___'",
+      "grammar_id": "n-desu-explanation",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X + になる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "become ___",
+      "grammar_id": "ni-naru-become",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X + にする",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "decide on / make it ___",
+      "grammar_id": "ni-suru-decide",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + 始める",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "begin to ___ / start ___ing",
+      "grammar_id": "hajimeru-auxiliary",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + 終わる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "finish ___ing",
+      "grammar_id": "owaru-finish",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem / adj stem + すぎる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "too much / overly ___",
+      "grammar_id": "sugiru-too-much",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + やすい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "easy to ___",
+      "grammar_id": "yasui-easy",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + にくい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "hard to ___ / difficult to ___",
+      "grammar_id": "nikui-hard",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Plain-form clause + Noun",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N4",
+      "meaning_en": "noun-modifying (attributive) clauses: 'the ___ that ___'",
+      "grammar_id": "noun-modifying-clause",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + です",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "is / am / are (polite copula)",
+      "grammar_id": "desu-polite-copula",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + だ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "is / am / are (plain copula)",
+      "grammar_id": "da-plain-copula",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + でした",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "was / were (polite past copula)",
+      "grammar_id": "deshita-past-polite-copula",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + ではありません",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "is not / am not / are not (polite negative copula)",
+      "grammar_id": "dewa-arimasen-negative-polite-copula",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + ます",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "polite non-past verb ending",
+      "grammar_id": "masu-polite-verb",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + ました",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "polite past verb ending",
+      "grammar_id": "mashita-polite-past-verb",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + ません",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "polite non-past negative verb ending",
+      "grammar_id": "masen-polite-negative-verb",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + ませんでした",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "polite past negative verb ending",
+      "grammar_id": "masendeshita-polite-past-negative-verb",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X + は",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "marks the topic of a sentence (pronounced 'wa')",
+      "grammar_id": "particle-wa-topic",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X + が",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "marks the grammatical subject; introduces new information",
+      "grammar_id": "particle-ga-subject",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X + を",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "marks the direct object of a transitive verb",
+      "grammar_id": "particle-o-object",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X + に",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "marks target, destination, location of existence, or time",
+      "grammar_id": "particle-ni-target",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X + で",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "marks the means, tool, or location of an action",
+      "grammar_id": "particle-de-means",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X と Y",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "and (exhaustive listing); with (accompanying person/thing)",
+      "grammar_id": "particle-to-and-with",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X + の + Y",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "marks possession; modifies a noun with another noun",
+      "grammar_id": "particle-no-possession",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X + へ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "marks direction of movement (pronounced 'e')",
+      "grammar_id": "particle-e-direction",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X + から",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "marks the starting point: from (place/time)",
+      "grammar_id": "particle-kara-from",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X + まで",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "marks the endpoint: until / as far as",
+      "grammar_id": "particle-made-until",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X + も",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "also / too / as well",
+      "grammar_id": "particle-mo-also",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Sentence + か",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "marks a sentence as a question",
+      "grammar_id": "particle-ka-question",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Sentence + ね",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "right? / isn't it? (seeking agreement or confirming shared knowledge)",
+      "grammar_id": "particle-ne-seeking-agreement",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Sentence + よ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "I'm telling you / emphasis; informs the listener of new information",
+      "grammar_id": "particle-yo-emphasis",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "これ / それ / あれ / どれ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "this / that / that over there / which (pronominal demonstratives)",
+      "grammar_id": "kore-sore-are-demonstratives",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "この / その / あの / どの + Noun",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "this / that / that ___ over there / which ___ (attributive demonstratives)",
+      "grammar_id": "kono-sono-ano-dono-attributive",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "ここ / そこ / あそこ / どこ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "here / there / over there / where (place demonstratives)",
+      "grammar_id": "koko-soko-asoko-doko",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Place に Noun が あります",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "there is / exists (for inanimate things)",
+      "grammar_id": "arimasu-existence-inanimate",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Place に Animate が います",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "there is / exists (for animate beings: people and animals)",
+      "grammar_id": "imasu-existence-animate",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-て",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "connecting form (basis for many compound constructions)",
+      "grammar_id": "te-form-basic",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-て + ください",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "please do (polite request)",
+      "grammar_id": "te-kudasai-request",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-て + います",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "be doing (progressive); be in the state of having done (resultant state)",
+      "grammar_id": "te-imasu-progressive",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-ない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "plain (casual) negative verb form",
+      "grammar_id": "nai-form",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-た",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "plain (casual) past verb form",
+      "grammar_id": "ta-form",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "い-adjective + (です)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "い-adjective non-past (affirmative)",
+      "grammar_id": "i-adjective-nonpast",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "い-adjective stem + くない / くありません",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "い-adjective negative (is not ___)",
+      "grammar_id": "i-adjective-negative",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "い-adjective stem + かった(です)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "い-adjective past (was ___)",
+      "grammar_id": "i-adjective-past",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "な-adjective + です / だ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "な-adjective non-past",
+      "grammar_id": "na-adjective-nonpast",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "な-adjective + な + Noun",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "な-adjective modifying a noun directly",
+      "grammar_id": "na-adjective-attributive",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "な-adjective + ではありません / じゃない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "な-adjective negative",
+      "grammar_id": "na-adjective-negative",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "な-adjective + でした / だった",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "な-adjective past",
+      "grammar_id": "na-adjective-past",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + ましょう",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "let's ___ (polite volitional)",
+      "grammar_id": "mashou-volitional",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + ましょうか",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "shall we ___? (invitation); shall I ___? (offer)",
+      "grammar_id": "mashou-ka-invitation",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb stem + たい",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "want to ___ (speaker's own desire)",
+      "grammar_id": "tai-desire",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Noun + が + ほしい(です)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "want (a thing) — for the speaker's own desire",
+      "grammar_id": "ga-hoshii-wanting-thing",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "A のほうが B より + adjective",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "A is more ___ than B (comparative)",
+      "grammar_id": "hou-ga-comparative",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "一番 + adjective",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "the most / the best (superlative)",
+      "grammar_id": "ichiban-superlative",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Number + つ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "general-purpose counter for small things (one, two, three…)",
+      "grammar_id": "counter-tsu",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Number + 人 (にん)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "counter for people",
+      "grammar_id": "counter-people-nin",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "何 / 誰 / どこ / いつ / どう / どうして",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "basic interrogatives: what / who / where / when / how / why",
+      "grammar_id": "question-words-basic",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "Verb-ない + でください",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "please do not ___ (polite negative request)",
+      "grammar_id": "nai-de-kudasai",
+      "source_retrieved": "2026-04-11"
+    },
+    {
+      "text": "X や Y (など)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "X and Y (and so on) — non-exhaustive listing",
+      "grammar_id": "particle-ya-non-exhaustive",
       "source_retrieved": "2026-04-11"
     }
   ]
