@@ -147,7 +147,7 @@
             "integer",
             "null"
           ],
-          "description": "Rank in modern media corpus (JPDB). 1 = most common."
+          "description": "Rank in modern media frequency corpus. 1 = most common. Currently null — see data/enrichment/frequency-subtitles.json for spoken-media frequency data (join by word text)."
         }
       },
       "additionalProperties": false

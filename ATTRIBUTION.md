@@ -113,17 +113,61 @@ These contributors have granted permission for inclusion under the broader EDRDG
 
 > Kangxi radical English meanings and Kangxi numbers in this dataset are derived from the Wikipedia article "Kangxi radicals" (https://en.wikipedia.org/wiki/Kangxi_radicals, revision 1346511063), authored by Wikipedia contributors and licensed under CC-BY-SA 4.0. See the article's revision history for per-contribution attribution.
 
-### JPDB frequency list
+### JPDB frequency list (license-blocked — not currently distributed)
 
 **Copyright holder**: MarvNC and contributors; underlying corpus analysis by jpdb.io.
 
-**License**: See per-release metadata in `docs/sources.md` for current pinning.
+**License**: No explicit license declared. Integration deferred pending license clarification. See `docs/phase4-candidates.md`.
 
 **Project page**: https://github.com/MarvNC/jpdb-freq-list
 
+### OpenSubtitles word frequency via FrequencyWords
+
+**Copyright holder**: Hermit Dave (FrequencyWords tool); OpenSubtitles (underlying corpus).
+
+**License**: MIT (FrequencyWords code). Frequency counts are non-copyrightable facts derived from the OpenSubtitles parallel corpus.
+
+**Project page**: https://github.com/hermitdave/FrequencyWords
+
+**What we extract**: Japanese word frequency counts from the OpenSubtitles 2018 corpus, matched against JMdict vocabulary. 8,598 vocabulary-matched entries covering spoken/media Japanese (movies, TV, anime subtitles).
+
+**Target**: `data/enrichment/frequency-subtitles.json`
+
 **Required attribution wording**:
 
-> Modern media frequency rankings from the JPDB frequency list (https://github.com/MarvNC/jpdb-freq-list), derived from jpdb.io's corpus analysis of light novels, visual novels, anime, and drama.
+> Word frequency data from FrequencyWords by Hermit Dave (https://github.com/hermitdave/FrequencyWords, MIT license), derived from the OpenSubtitles parallel corpus (https://www.opensubtitles.org/).
+
+### JmdictFurigana
+
+**Copyright holder**: Doublevil and contributors.
+
+**License**: CC-BY-SA 4.0 (derived from JMdict, EDRDG License).
+
+**Project page**: https://github.com/Doublevil/JmdictFurigana
+
+**What we extract**: Per-character reading alignment (furigana) for 28,920 JMdict entries. Maps kanji within compound words to their individual readings, enabling ruby text rendering.
+
+**Target**: `data/enrichment/furigana.json`
+
+**Required attribution wording**:
+
+> Furigana alignment data from JmdictFurigana by Doublevil (https://github.com/Doublevil/JmdictFurigana), distributed under CC-BY-SA 4.0 (derived from JMdict).
+
+### KFTT (Kyoto Free Translation Task)
+
+**Copyright holder**: Graham Neubig and the NAIST/NICT bilingual corpus team.
+
+**License**: CC-BY-SA 3.0.
+
+**Project page**: https://www.phontron.com/kftt/
+
+**What we extract**: 443,849 Japanese-English parallel sentence pairs from Wikipedia Kyoto articles. Machine-aligned, not editor-curated.
+
+**Target**: `data/corpus/sentences-kftt.json` (gitignored due to size)
+
+**Required attribution wording**:
+
+> Parallel sentences from the Kyoto Free Translation Task (KFTT) (https://www.phontron.com/kftt/), derived from NICT's Japanese-English Bilingual Corpus of Wikipedia's Kyoto Articles, licensed under CC-BY-SA 3.0.
 
 ---
 
@@ -169,8 +213,12 @@ We ingest JMdict, JMnedict, KANJIDIC2, KRADFILE, and RADKFILE via the pre-parsed
 >   see https://github.com/mifunetoshiro/kanjium
 > - JLPT classifications adapted from Jonathan Waller's JLPT Resources, CC-BY;
 >   see http://www.tanos.co.uk/jlpt/
-> - Modern media frequency from the JPDB frequency list, see
->   https://github.com/MarvNC/jpdb-freq-list
+> - Spoken-media word frequency from FrequencyWords/OpenSubtitles, MIT;
+>   see https://github.com/hermitdave/FrequencyWords
+> - Furigana alignment from JmdictFurigana by Doublevil, CC-BY-SA 4.0;
+>   see https://github.com/Doublevil/JmdictFurigana
+> - KFTT parallel corpus by Neubig et al., CC-BY-SA 3.0;
+>   see https://www.phontron.com/kftt/
 > - JSON distribution tooling from scriptin/jmdict-simplified;
 >   see https://github.com/scriptin/jmdict-simplified
 >
