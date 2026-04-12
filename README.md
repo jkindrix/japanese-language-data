@@ -23,7 +23,7 @@ This repository assembles the puzzle once, commits the result, and provides a re
 
 ## Data inventory
 
-As of v0.9.0 (see `manifest.json` for live counts), the `data/` directory contains:
+As of v0.8.0 (see `manifest.json` for live counts), the `data/` directory contains:
 
 ### Core
 
@@ -51,6 +51,8 @@ As of v0.9.0 (see `manifest.json` for live counts), the `data/` directory contai
 | `data/enrichment/frequency-subtitles.json` | OpenSubtitles 2018 via FrequencyWords | 8,598 | ✓ | Spoken-media word frequency from movie/TV/anime subtitles. Matched against JMdict vocabulary. |
 | `data/enrichment/furigana.json` | JmdictFurigana (Doublevil) | 28,920 | ✓ | Per-character reading alignment (ruby text). Maps kanji→reading segments within compound words. |
 | `data/enrichment/jlpt-classifications.json` | Waller JLPT lists (tanos.co.uk) | 11,099 | ✓ | Community-consensus JLPT N5–N1 level for vocabulary, kanji, and grammar |
+| `data/enrichment/counter-words.json` | JMdict `ctr` POS entries via words.json | 125 | ✓ | Counter-word (josushi) index for counter-word study and lookup |
+| `data/enrichment/ateji.json` | JMdict `ateji` kanji tags via words.json | 239 | ✓ | Ateji (phonetic kanji spelling) index — words where kanji are used for sound, not meaning |
 
 ### Corpus
 

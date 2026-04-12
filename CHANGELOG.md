@@ -19,6 +19,8 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 ### Added — new data
 
 - **OpenSubtitles subtitle frequency** (`data/enrichment/frequency-subtitles.json`): 8,598 vocabulary-matched word frequency entries from the OpenSubtitles 2018 Japanese subtitle corpus (movies, TV, anime). Provides spoken-media frequency as an openly-licensed substitute for the license-blocked JPDB data. Source: hermitdave/FrequencyWords (MIT license). New upstream source pinned in `manifest.json` with SHA256 verification.
+- **Counter-word index** (`data/enrichment/counter-words.json`): 125 counter words (josushi) extracted from JMdict entries with `ctr` POS tag. Enables counter-word study tools.
+- **Ateji index** (`data/enrichment/ateji.json`): 239 phonetic kanji spellings extracted from JMdict entries where kanji writings carry the `ateji` tag. Helps learners recognize non-semantic kanji usage.
 
 ### Added — distribution
 
@@ -37,14 +39,17 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ### Fixed — documentation
 
-- **README.md**: Added `frequency-subtitles.json` to Enrichment data inventory table.
-- **docs/downstream.md**: Updated file sizes table with current counts (words: 23,119; added frequency-subtitles and furigana rows; corrected cross-refs total).
-- **manifest.json `next_actions`**: Removed 6 delivered items (SQLite, corpus frequency, kanji-to-sentences, radical-to-kanji, furigana, enhanced Yomitan). Updated coverage numbers. Added specific note about word-to-grammar scaffolding status.
+- **ATTRIBUTION.md**: Added 3 missing source sections (OpenSubtitles/FrequencyWords, JmdictFurigana, KFTT). Marked JPDB as license-blocked. Fixed composite attribution block to list shipped sources.
+- **README.md**: Added `frequency-subtitles.json`, `counter-words.json`, `ateji.json` to Enrichment data inventory. Fixed version reference (v0.9.0 → v0.8.0).
+- **docs/downstream.md**: Updated file sizes table with current counts and new files.
+- **docs/cookbook.md**: Added 4 new example sections — SQLite queries, subtitle frequency, furigana ruby text, counter-word lookup.
+- **schemas/word.schema.json**: Updated `frequency_media` description from stale "JPDB" reference to reflect actual state.
+- **manifest.json `next_actions`**: Removed delivered items (ateji, counter words, SQLite, corpus frequency, enhanced Yomitan). Updated coverage numbers.
 
 ### Verification
 
-- 355 tests, all passing.
-- 26 data files validated against schemas + semantic integrity checks.
+- 363 tests, all passing.
+- 28 data files validated against schemas + semantic integrity checks.
 - Coverage: 51% (fail-under: 50%).
 - Lint clean.
 
