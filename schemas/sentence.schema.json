@@ -3,9 +3,12 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/sentence.schema.json",
   "title": "Sentences",
   "description": "Japanese–English example sentence pairs from the Tatoeba Project, ingested via jmdict-examples-eng (editor-curated) or optionally via the full Tatoeba export (unfiltered).",
-  "schemaVersion": "0.3.0",
+  "schemaVersion": "0.8.0",
   "type": "object",
-  "required": ["metadata", "sentences"],
+  "required": [
+    "metadata",
+    "sentences"
+  ],
   "additionalProperties": false,
   "properties": {
     "metadata": {
@@ -21,24 +24,58 @@
   "$defs": {
     "metadata": {
       "type": "object",
-      "required": ["source", "license", "generated", "count", "field_notes"],
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "count",
+        "field_notes"
+      ],
       "properties": {
-        "source": {"type": "string"},
-        "source_url": {"type": "string", "format": "uri"},
-        "license": {"type": "string"},
-        "source_version": {"type": "string"},
-        "generated": {"type": "string", "format": "date"},
-        "count": {"type": "integer", "minimum": 0},
+        "source": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "source_version": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "field_notes": {
           "type": "object",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          }
         },
-        "attribution": {"type": "string"}
-      }
+        "attribution": {
+          "type": "string"
+        },
+        "upstream_dict_date": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     },
     "sentenceEntry": {
       "type": "object",
-      "required": ["id", "japanese", "english", "curated"],
+      "required": [
+        "id",
+        "japanese",
+        "english",
+        "curated"
+      ],
       "properties": {
         "id": {
           "type": "string",
@@ -53,7 +90,10 @@
           "description": "English translation (if available)."
         },
         "translation_id": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "description": "Tatoeba sentence ID of the English translation."
         },
         "curated": {
@@ -62,7 +102,10 @@
         },
         "license_flag": {
           "type": "string",
-          "enum": ["CC-BY-2.0-FR", "CC0-1.0"],
+          "enum": [
+            "CC-BY-2.0-FR",
+            "CC0-1.0"
+          ],
           "description": "License of this specific sentence. Defaults to CC-BY 2.0 FR; some sentences are CC0."
         },
         "has_audio": {
@@ -70,12 +113,19 @@
           "default": false
         },
         "japanese_contributor": {
-          "type": ["string", "null"]
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "english_contributor": {
-          "type": ["string", "null"]
+          "type": [
+            "string",
+            "null"
+          ]
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }

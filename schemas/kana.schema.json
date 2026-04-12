@@ -3,9 +3,12 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/kana.schema.json",
   "title": "Kana",
   "description": "Hand-curated dataset of hiragana, katakana, and kana variants (dakuten, handakuten, yōon). Each entry describes one kana character with its romanization, type classification, stroke count, and usage notes.",
-  "schemaVersion": "0.3.0",
+  "schemaVersion": "0.8.0",
   "type": "object",
-  "required": ["metadata", "kana"],
+  "required": [
+    "metadata",
+    "kana"
+  ],
   "additionalProperties": false,
   "properties": {
     "metadata": {
@@ -21,23 +24,56 @@
   "$defs": {
     "metadata": {
       "type": "object",
-      "required": ["source", "license", "generated", "count", "field_notes"],
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "count",
+        "field_notes"
+      ],
       "properties": {
-        "source": {"type": "string"},
-        "source_url": {"type": "string", "format": "uri"},
-        "license": {"type": "string"},
-        "source_version": {"type": "string"},
-        "generated": {"type": "string", "format": "date"},
-        "count": {"type": "integer", "minimum": 0},
+        "source": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "source_version": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "field_notes": {
           "type": "object",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "authorship_caveat": {
+          "type": "string",
+          "description": "Caveat about the authorship and quality of hand-curated fields."
         }
-      }
+      },
+      "additionalProperties": false
     },
     "kanaEntry": {
       "type": "object",
-      "required": ["character", "script", "romaji", "type"],
+      "required": [
+        "character",
+        "script",
+        "romaji",
+        "type"
+      ],
       "properties": {
         "character": {
           "type": "string",
@@ -47,7 +83,10 @@
         },
         "script": {
           "type": "string",
-          "enum": ["hiragana", "katakana"],
+          "enum": [
+            "hiragana",
+            "katakana"
+          ],
           "description": "Which kana script this character belongs to."
         },
         "romaji": {
@@ -56,12 +95,23 @@
         },
         "romaji_alt": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "description": "Alternative romanizations (Kunrei, Nihon-shiki, etc.)."
         },
         "type": {
           "type": "string",
-          "enum": ["base", "dakuten", "handakuten", "yoon", "yoon_dakuten", "yoon_handakuten", "sokuon", "other"],
+          "enum": [
+            "base",
+            "dakuten",
+            "handakuten",
+            "yoon",
+            "yoon_dakuten",
+            "yoon_handakuten",
+            "sokuon",
+            "other"
+          ],
           "description": "Classification of the kana: base form, voiced (dakuten), semi-voiced (handakuten), palatalized combination (yōon), etc."
         },
         "base": {
@@ -70,7 +120,10 @@
           "minLength": 1
         },
         "stroke_count": {
-          "type": ["integer", "null"],
+          "type": [
+            "integer",
+            "null"
+          ],
           "minimum": 1,
           "maximum": 10,
           "description": "Stroke count for base/dakuten/handakuten/sokuon forms. Null for yōon compounds, which are composed of two base kana and do not have a single canonical stroke count."

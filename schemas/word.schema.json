@@ -3,9 +3,12 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/word.schema.json",
   "title": "Word",
   "description": "Japanese vocabulary dataset derived from JMdict via scriptin/jmdict-simplified (examples variant). Each entry represents a word with its kanji writings, kana readings (with applies-to relationships), senses (parts of speech, domains, dialects, translations), language-source information for loanwords, and example sentence links.",
-  "schemaVersion": "0.3.0",
+  "schemaVersion": "0.8.0",
   "type": "object",
-  "required": ["metadata", "words"],
+  "required": [
+    "metadata",
+    "words"
+  ],
   "additionalProperties": false,
   "properties": {
     "metadata": {
@@ -21,34 +24,87 @@
   "$defs": {
     "metadata": {
       "type": "object",
-      "required": ["source", "license", "generated", "count", "field_notes"],
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "count",
+        "field_notes"
+      ],
       "properties": {
-        "source": {"type": "string"},
-        "source_url": {"type": "string", "format": "uri"},
-        "license": {"type": "string"},
-        "source_version": {"type": "string"},
-        "generated": {"type": "string", "format": "date"},
-        "count": {"type": "integer", "minimum": 0},
+        "source": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "source_version": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "field_notes": {
           "type": "object",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          }
         },
-        "attribution": {"type": "string"},
+        "attribution": {
+          "type": "string"
+        },
         "tags": {
           "type": "object",
-          "description": "Tag definitions from JMdict source (parts of speech, dialects, fields, etc.).",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "JMdict tag abbreviation to full-name mapping."
         },
         "dictRevisions": {
           "type": "array",
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
-        "dictDate": {"type": "string"}
-      }
+        "dictDate": {
+          "type": "string"
+        },
+        "filter": {
+          "type": "string",
+          "description": "Description of the filtering applied."
+        },
+        "upstream_common_only_variant": {
+          "type": "boolean"
+        },
+        "upstream_dict_date": {
+          "type": "string"
+        },
+        "upstream_languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
     },
     "wordEntry": {
       "type": "object",
-      "required": ["id", "kanji", "kana", "sense"],
+      "required": [
+        "id",
+        "kanji",
+        "kana",
+        "sense"
+      ],
       "properties": {
         "id": {
           "type": "string",
@@ -73,62 +129,108 @@
           }
         },
         "jlpt_waller": {
-          "type": ["string", "null"],
-          "enum": ["N1", "N2", "N3", "N4", "N5", null]
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "N1",
+            "N2",
+            "N3",
+            "N4",
+            "N5",
+            null
+          ]
         },
         "frequency_media": {
-          "type": ["integer", "null"],
+          "type": [
+            "integer",
+            "null"
+          ],
           "description": "Rank in modern media corpus (JPDB). 1 = most common."
         }
-      }
+      },
+      "additionalProperties": false
     },
     "kanjiWriting": {
       "type": "object",
-      "required": ["common", "text", "tags"],
+      "required": [
+        "common",
+        "text",
+        "tags"
+      ],
       "properties": {
         "common": {
           "type": "boolean",
           "description": "True if this writing is considered a common form (derived from JMdict news1/ichi1/spec1 priority markers)."
         },
-        "text": {"type": "string"},
+        "text": {
+          "type": "string"
+        },
         "tags": {
           "type": "array",
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         }
-      }
+      },
+      "additionalProperties": false
     },
     "kanaWriting": {
       "type": "object",
-      "required": ["common", "text", "tags", "appliesToKanji"],
+      "required": [
+        "common",
+        "text",
+        "tags",
+        "appliesToKanji"
+      ],
       "properties": {
-        "common": {"type": "boolean"},
-        "text": {"type": "string"},
+        "common": {
+          "type": "boolean"
+        },
+        "text": {
+          "type": "string"
+        },
         "tags": {
           "type": "array",
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
         "appliesToKanji": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "description": "List of kanji writings this reading applies to. '*' means all; empty array means none (kana-only writing)."
         }
-      }
+      },
+      "additionalProperties": false
     },
     "sense": {
       "type": "object",
-      "required": ["partOfSpeech", "gloss"],
+      "required": [
+        "partOfSpeech",
+        "gloss"
+      ],
       "properties": {
         "partOfSpeech": {
           "type": "array",
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
         "appliesToKanji": {
           "type": "array",
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
         "appliesToKana": {
           "type": "array",
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
         "related": {
           "type": "array",
@@ -139,47 +241,88 @@
         },
         "antonym": {
           "type": "array",
-          "items": {"type": "array"}
+          "items": {
+            "type": "array"
+          }
         },
         "field": {
           "type": "array",
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
         "dialect": {
           "type": "array",
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
         "misc": {
           "type": "array",
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
         "info": {
           "type": "array",
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
         "languageSource": {
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
-              "lang": {"type": "string"},
-              "full": {"type": "boolean"},
-              "wasei": {"type": "boolean"},
-              "text": {"type": ["string", "null"]}
-            }
+              "lang": {
+                "type": "string"
+              },
+              "full": {
+                "type": "boolean"
+              },
+              "wasei": {
+                "type": "boolean"
+              },
+              "text": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
           }
         },
         "gloss": {
           "type": "array",
+          "minItems": 1,
           "items": {
             "type": "object",
-            "required": ["lang", "text"],
+            "required": [
+              "lang",
+              "text"
+            ],
             "properties": {
-              "lang": {"type": "string"},
-              "gender": {"type": ["string", "null"]},
-              "type": {"type": ["string", "null"]},
-              "text": {"type": "string"}
-            }
+              "lang": {
+                "type": "string"
+              },
+              "gender": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "type": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
           }
         },
         "examples": {
@@ -187,11 +330,16 @@
           "description": "Example sentence references from jmdict-examples (Tatoeba-sourced, editor-curated).",
           "items": {
             "type": "object",
-            "required": ["source", "sentence_id"],
+            "required": [
+              "source",
+              "sentence_id"
+            ],
             "properties": {
               "source": {
                 "type": "string",
-                "enum": ["tatoeba"],
+                "enum": [
+                  "tatoeba"
+                ],
                 "description": "Upstream source of the sentence."
               },
               "sentence_id": {
@@ -210,10 +358,12 @@
                 "type": "string",
                 "description": "The English translation text."
               }
-            }
+            },
+            "additionalProperties": false
           }
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }

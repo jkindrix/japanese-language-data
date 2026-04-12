@@ -3,9 +3,12 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/conjugations.schema.json",
   "title": "Conjugations",
   "description": "Auto-generated conjugation tables for Japanese verbs and adjectives. Derived from JMdict part-of-speech tags (v1 for ichidan verbs, v5u/v5k/v5g/etc. for godan verbs, adj-i for i-adjectives, adj-na for na-adjectives, plus irregular verbs する/くる) using formal conjugation rules. Because the rules are deterministic and well-documented, these conjugations do not require native-speaker review — any incorrectness indicates a bug in the rule implementation, not in the data.",
-  "schemaVersion": "0.3.2",
+  "schemaVersion": "0.8.0",
   "type": "object",
-  "required": ["metadata", "entries"],
+  "required": [
+    "metadata",
+    "entries"
+  ],
   "additionalProperties": false,
   "properties": {
     "metadata": {
@@ -21,23 +24,52 @@
   "$defs": {
     "metadata": {
       "type": "object",
-      "required": ["source", "license", "generated", "count", "field_notes"],
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "count",
+        "field_notes"
+      ],
       "properties": {
-        "source": {"type": "string"},
-        "license": {"type": "string"},
-        "generated": {"type": "string", "format": "date"},
-        "count": {"type": "integer", "minimum": 0},
+        "source": {
+          "type": "string"
+        },
+        "license": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "field_notes": {
           "type": "object",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          }
         },
-        "conjugation_rules_reference": {"type": "string"},
-        "attribution": {"type": "string"}
-      }
+        "conjugation_rules_reference": {
+          "type": "string"
+        },
+        "attribution": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     },
     "conjugationEntry": {
       "type": "object",
-      "required": ["id", "dictionary_form", "reading", "class", "forms"],
+      "required": [
+        "id",
+        "dictionary_form",
+        "reading",
+        "class",
+        "forms"
+      ],
       "properties": {
         "id": {
           "type": "string",
@@ -54,10 +86,29 @@
         "class": {
           "type": "string",
           "enum": [
-            "v1", "v5u", "v5k", "v5g", "v5s", "v5t", "v5n", "v5b", "v5m", "v5r",
-            "v5aru", "v5k-s", "v5u-s", "v5r-i",
-            "vs-i", "vs-s", "vk", "vz", "vr", "vn",
-            "adj-i", "adj-ix", "adj-na"
+            "v1",
+            "v5u",
+            "v5k",
+            "v5g",
+            "v5s",
+            "v5t",
+            "v5n",
+            "v5b",
+            "v5m",
+            "v5r",
+            "v5aru",
+            "v5k-s",
+            "v5u-s",
+            "v5r-i",
+            "vs-i",
+            "vs-s",
+            "vk",
+            "vz",
+            "vr",
+            "vn",
+            "adj-i",
+            "adj-ix",
+            "adj-na"
           ],
           "description": "Word class used for conjugation (JMdict POS tag or close equivalent)."
         },
@@ -75,7 +126,8 @@
             "type": "string"
           }
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }

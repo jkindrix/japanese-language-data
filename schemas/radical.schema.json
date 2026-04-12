@@ -3,9 +3,13 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/radical.schema.json",
   "title": "Radicals",
   "description": "Bidirectional radical data combining KRADFILE (kanji → component radicals) and RADKFILE (radical → kanji containing it), both from EDRDG via scriptin/jmdict-simplified.",
-  "schemaVersion": "0.4.0",
+  "schemaVersion": "0.8.0",
   "type": "object",
-  "required": ["metadata", "radicals", "kanji_to_radicals"],
+  "required": [
+    "metadata",
+    "radicals",
+    "kanji_to_radicals"
+  ],
   "additionalProperties": false,
   "properties": {
     "metadata": {
@@ -22,30 +26,86 @@
       "description": "Map of each kanji character to the list of radicals that compose it.",
       "additionalProperties": {
         "type": "array",
-        "items": {"type": "string"}
+        "items": {
+          "type": "string"
+        }
       }
     }
   },
   "$defs": {
     "metadata": {
       "type": "object",
-      "required": ["source", "license", "generated", "field_notes"],
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "field_notes"
+      ],
       "properties": {
-        "source": {"type": "string"},
-        "source_url": {"type": "string", "format": "uri"},
-        "license": {"type": "string"},
-        "source_version": {"type": "string"},
-        "generated": {"type": "string", "format": "date"},
+        "source": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "source_version": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
         "field_notes": {
           "type": "object",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          }
         },
-        "attribution": {"type": "string"}
-      }
+        "attribution": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "radicals_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "radicals_with_meaning": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "radicals_meaning_coverage_pct": {
+          "type": "number"
+        },
+        "source_version_kradfile": {
+          "type": "string"
+        },
+        "source_version_radkfile": {
+          "type": "string"
+        },
+        "source_version_wikipedia": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "warning": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     },
     "radicalEntry": {
       "type": "object",
-      "required": ["radical", "stroke_count", "kanji"],
+      "required": [
+        "radical",
+        "stroke_count",
+        "kanji"
+      ],
       "properties": {
         "radical": {
           "type": "string",
@@ -56,21 +116,29 @@
           "minimum": 1
         },
         "classical_number": {
-          "type": ["integer", "null"],
+          "type": [
+            "integer",
+            "null"
+          ],
           "description": "Classical (Kangxi) radical number, 1-214.",
           "minimum": 1,
           "maximum": 214
         },
         "meanings": {
           "type": "array",
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
         "kanji": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "description": "Kanji characters that contain this radical as a component."
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }

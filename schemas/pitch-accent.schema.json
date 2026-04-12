@@ -3,9 +3,12 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/pitch-accent.schema.json",
   "title": "Pitch accent",
   "description": "Pitch accent data for Japanese words, derived from the Kanjium accents.txt file. Each entry maps a word (in kanji+kana form) to its pitch accent mora positions. Accent positions are 0 for heiban (flat) or N where the accent falls after the Nth mora.",
-  "schemaVersion": "0.3.0",
+  "schemaVersion": "0.8.0",
   "type": "object",
-  "required": ["metadata", "entries"],
+  "required": [
+    "metadata",
+    "entries"
+  ],
   "additionalProperties": false,
   "properties": {
     "metadata": {
@@ -21,28 +24,65 @@
   "$defs": {
     "metadata": {
       "type": "object",
-      "required": ["source", "license", "generated", "count", "field_notes"],
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "count",
+        "field_notes"
+      ],
       "properties": {
-        "source": {"type": "string"},
-        "source_url": {"type": "string", "format": "uri"},
-        "license": {"type": "string"},
-        "source_version": {"type": "string"},
-        "generated": {"type": "string", "format": "date"},
-        "count": {"type": "integer", "minimum": 0},
+        "source": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "source_version": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "field_notes": {
           "type": "object",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          }
         },
-        "attribution": {"type": "string"},
+        "attribution": {
+          "type": "string"
+        },
         "coverage_date": {
           "type": "string",
           "description": "Approximate date through which the upstream source has been maintained. Vocabulary added after this date is unlikely to have pitch accent data."
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Data quality warnings (e.g., null mora_count rate)."
         }
-      }
+      },
+      "additionalProperties": false
     },
     "pitchEntry": {
       "type": "object",
-      "required": ["word", "reading", "pitch_positions"],
+      "required": [
+        "word",
+        "reading",
+        "pitch_positions"
+      ],
       "properties": {
         "word": {
           "type": "string",
@@ -54,6 +94,7 @@
         },
         "pitch_positions": {
           "type": "array",
+          "minItems": 1,
           "items": {
             "type": "integer",
             "minimum": 0
@@ -61,11 +102,15 @@
           "description": "Pitch accent mora positions. 0 = heiban (flat, no drop). N = accent falls after mora N. Multiple values mean multiple accepted accent patterns exist."
         },
         "mora_count": {
-          "type": ["integer", "null"],
+          "type": [
+            "integer",
+            "null"
+          ],
           "minimum": 1,
           "description": "Number of morae in the reading, for convenience."
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }

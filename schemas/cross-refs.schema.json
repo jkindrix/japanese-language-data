@@ -3,9 +3,12 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/cross-refs.schema.json",
   "title": "Cross references",
   "description": "Generic schema for the cross-reference files in data/cross-refs/. Each cross-reference file maps a lookup key (a kanji, a word ID, a sentence ID, etc.) to an array of related identifiers. The specific kind of cross-reference is declared in the metadata.",
-  "schemaVersion": "0.3.0",
+  "schemaVersion": "0.8.0",
   "type": "object",
-  "required": ["metadata", "mapping"],
+  "required": [
+    "metadata",
+    "mapping"
+  ],
   "additionalProperties": false,
   "properties": {
     "metadata": {
@@ -16,16 +19,28 @@
       "description": "Key-to-array-of-IDs lookup.",
       "additionalProperties": {
         "type": "array",
-        "items": {"type": "string"}
+        "items": {
+          "type": "string"
+        }
       }
     }
   },
   "$defs": {
     "metadata": {
       "type": "object",
-      "required": ["generated", "count", "direction", "key_type", "value_type", "field_notes"],
+      "required": [
+        "generated",
+        "count",
+        "direction",
+        "key_type",
+        "value_type",
+        "field_notes"
+      ],
       "properties": {
-        "generated": {"type": "string", "format": "date"},
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
         "count": {
           "type": "integer",
           "minimum": 0,
@@ -37,30 +52,58 @@
         },
         "key_type": {
           "type": "string",
-          "enum": ["kanji_char", "word_id", "sentence_id", "radical_char", "grammar_id", "reading"]
+          "enum": [
+            "kanji_char",
+            "word_id",
+            "sentence_id",
+            "radical_char",
+            "grammar_id",
+            "reading"
+          ]
         },
         "value_type": {
           "type": "string",
-          "enum": ["kanji_char", "word_id", "sentence_id", "radical_char", "grammar_id", "reading"]
+          "enum": [
+            "kanji_char",
+            "word_id",
+            "sentence_id",
+            "radical_char",
+            "grammar_id",
+            "reading"
+          ]
         },
         "field_notes": {
           "type": "object",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          }
         },
         "source_files": {
           "type": "array",
-          "items": {"type": "string"},
-          "description": "Paths of the data files this cross-reference was derived from."
+          "items": {
+            "type": "string"
+          }
         },
         "source": {
-          "type": "string",
-          "description": "Provenance statement per Design Principle 2 — typically 'Derived cross-reference built from <source_files> by build/transform/cross_links.py'. Not required (backward-compatible), but populated going forward for doctrinal consistency with the other data files."
+          "type": "string"
         },
         "license": {
-          "type": "string",
-          "description": "License of the cross-reference file itself. Inherits from the source files (all CC-BY-SA 4.0 via EDRDG) plus the pipeline code license (CC-BY-SA 4.0). Not required (backward-compatible), but populated going forward for doctrinal consistency."
+          "type": "string"
+        },
+        "orphan_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of keys that reference entities not in the primary data file."
+        },
+        "orphan_chars": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Characters that appear in cross-refs but not in the primary data file."
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }

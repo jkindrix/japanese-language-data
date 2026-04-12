@@ -3,9 +3,12 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/expressions.schema.json",
   "title": "Expressions",
   "description": "Lexicalized grammar patterns extracted from JMdict entries that carry the 'exp' (expression) part-of-speech tag. These are fixed phrases, set expressions, idioms, and grammaticalized constructions that function as single lexical units. Unlike the curated grammar dataset in grammar.json (which provides compositional grammar patterns with formation rules), this file is a straightforward extraction of JMdict exp entries, retaining their full sense structure for convenience of use as a grammar/expression reference.",
-  "schemaVersion": "0.3.0",
+  "schemaVersion": "0.8.0",
   "type": "object",
-  "required": ["metadata", "expressions"],
+  "required": [
+    "metadata",
+    "expressions"
+  ],
   "additionalProperties": false,
   "properties": {
     "metadata": {
@@ -21,24 +24,58 @@
   "$defs": {
     "metadata": {
       "type": "object",
-      "required": ["source", "license", "generated", "count", "field_notes"],
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "count",
+        "field_notes"
+      ],
       "properties": {
-        "source": {"type": "string"},
-        "source_url": {"type": "string", "format": "uri"},
-        "license": {"type": "string"},
-        "source_version": {"type": "string"},
-        "generated": {"type": "string", "format": "date"},
-        "count": {"type": "integer", "minimum": 0},
+        "source": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "source_version": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "field_notes": {
           "type": "object",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          }
         },
-        "attribution": {"type": "string"}
-      }
+        "attribution": {
+          "type": "string"
+        },
+        "upstream_dict_date": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     },
     "expressionEntry": {
       "type": "object",
-      "required": ["id", "text", "reading", "meanings"],
+      "required": [
+        "id",
+        "text",
+        "reading",
+        "meanings"
+      ],
       "properties": {
         "id": {
           "type": "string",
@@ -54,28 +91,49 @@
         },
         "all_kanji_writings": {
           "type": "array",
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
         "all_kana_readings": {
           "type": "array",
-          "items": {"type": "string"}
+          "items": {
+            "type": "string"
+          }
         },
         "meanings": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "description": "English glosses from JMdict senses tagged as 'exp'."
         },
-        "common": {"type": "boolean"},
+        "common": {
+          "type": "boolean"
+        },
         "misc": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "description": "Additional misc tags from JMdict (e.g., politeness markers, archaic, slang, etc.)."
         },
         "jlpt_waller": {
-          "type": ["string", "null"],
-          "enum": ["N1", "N2", "N3", "N4", "N5", null]
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "N1",
+            "N2",
+            "N3",
+            "N4",
+            "N5",
+            null
+          ]
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }

@@ -3,9 +3,12 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/stroke-order.schema.json",
   "title": "Stroke order index",
   "description": "Index file mapping each kanji character to its stroke-order SVG filename (from KanjiVG) and total stroke count. The actual SVG files live in data/enrichment/stroke-order/ and are not validated by this schema.",
-  "schemaVersion": "0.3.2",
+  "schemaVersion": "0.8.0",
   "type": "object",
-  "required": ["metadata", "characters"],
+  "required": [
+    "metadata",
+    "characters"
+  ],
   "additionalProperties": false,
   "properties": {
     "metadata": {
@@ -22,60 +25,110 @@
   "$defs": {
     "metadata": {
       "type": "object",
-      "required": ["source", "license", "generated", "count", "field_notes"],
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "count",
+        "field_notes"
+      ],
       "properties": {
-        "source": {"type": "string"},
-        "source_url": {"type": "string", "format": "uri"},
-        "license": {"type": "string"},
-        "source_version": {"type": "string"},
-        "generated": {"type": "string", "format": "date"},
-        "count": {"type": "integer", "minimum": 0},
+        "source": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "source_version": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "field_notes": {
           "type": "object",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          }
         },
-        "attribution": {"type": "string"},
+        "attribution": {
+          "type": "string"
+        },
         "svg_directory": {
           "type": "string",
           "description": "Path relative to the dataset root where SVG files are stored."
         },
         "warnings": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "description": "Human-readable warnings about known quality gaps in this file. Each warning is a self-contained prose statement; consumers may display them verbatim."
         },
         "stroke_count_mismatches": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["character", "kanjidic2_count", "kanjivg_count"],
+            "required": [
+              "character",
+              "kanjidic2_count",
+              "kanjivg_count"
+            ],
             "properties": {
-              "character": {"type": "string"},
-              "kanjidic2_count": {"type": "integer", "minimum": 1},
-              "kanjivg_count": {"type": "integer", "minimum": 1}
-            }
+              "character": {
+                "type": "string"
+              },
+              "kanjidic2_count": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "kanjivg_count": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "additionalProperties": false
           },
           "description": "List of characters where the KanjiVG path-element count differs from the KANJIDIC2 canonical stroke count. See metadata.warnings for the summary statement. KANJIDIC2 is canonical; prefer kanji.json for authoritative stroke counts."
         }
-      }
+      },
+      "additionalProperties": false
     },
     "strokeOrderEntry": {
       "type": "object",
-      "required": ["svg"],
+      "required": [
+        "svg"
+      ],
       "properties": {
         "svg": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "description": "SVG filename relative to the svg_directory, or null if no SVG exists for this character."
         },
         "stroke_count": {
-          "type": ["integer", "null"],
+          "type": [
+            "integer",
+            "null"
+          ],
           "minimum": 1
         },
         "unicode": {
           "type": "string",
           "description": "Unicode codepoint in hex."
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }

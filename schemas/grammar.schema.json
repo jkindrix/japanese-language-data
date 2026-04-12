@@ -3,9 +3,12 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/grammar.schema.json",
   "title": "Grammar",
   "description": "Structured Japanese grammar patterns. This is the project's largest original contribution — there is no authoritative open grammar dataset upstream, so this file is hand-curated from general, non-copyrightable facts about Japanese grammar. Explicitly NOT derived from Tae Kim's Guide (CC-BY-NC-SA, license incompatible with our CC-BY-SA 4.0 output), nor from any other copyrighted grammar reference. See the authorship_statement in data/grammar/grammar.json metadata for full provenance details. Every entry carries a review_status field tracking whether it has been reviewed by the community or by a native speaker.",
-  "schemaVersion": "0.3.0",
+  "schemaVersion": "0.8.0",
   "type": "object",
-  "required": ["metadata", "grammar_points"],
+  "required": [
+    "metadata",
+    "grammar_points"
+  ],
   "additionalProperties": false,
   "properties": {
     "metadata": {
@@ -21,33 +24,99 @@
   "$defs": {
     "metadata": {
       "type": "object",
-      "required": ["source", "license", "generated", "count", "field_notes", "review_coverage"],
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "count",
+        "field_notes",
+        "review_coverage"
+      ],
       "properties": {
-        "source": {"type": "string"},
-        "source_url": {"type": "string", "format": "uri"},
-        "license": {"type": "string"},
-        "source_version": {"type": "string"},
-        "generated": {"type": "string", "format": "date"},
-        "count": {"type": "integer", "minimum": 0},
+        "source": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "source_version": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "field_notes": {
           "type": "object",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          }
         },
-        "attribution": {"type": "string"},
+        "attribution": {
+          "type": "string"
+        },
         "review_coverage": {
           "type": "object",
           "description": "Summary of how many entries are at each review status.",
           "properties": {
-            "draft": {"type": "integer", "minimum": 0},
-            "community_reviewed": {"type": "integer", "minimum": 0},
-            "native_speaker_reviewed": {"type": "integer", "minimum": 0}
-          }
+            "draft": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "community_reviewed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "native_speaker_reviewed": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        "authorship_statement": {
+          "type": "string"
+        },
+        "by_level": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "description": "Count of grammar points per JLPT level."
+        },
+        "curation_outliers": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Statistics on entries with sparse examples, missing related, etc."
+        },
+        "tatoeba_linkage": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Statistics on Tatoeba example sentence linkage rates."
         }
-      }
+      },
+      "additionalProperties": false
     },
     "grammarPoint": {
       "type": "object",
-      "required": ["id", "pattern", "level", "meaning_en", "formation", "examples", "review_status", "sources"],
+      "required": [
+        "id",
+        "pattern",
+        "level",
+        "meaning_en",
+        "formation",
+        "examples",
+        "review_status",
+        "sources"
+      ],
       "properties": {
         "id": {
           "type": "string",
@@ -59,12 +128,20 @@
         },
         "pattern_alt": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "description": "Alternative spellings or notations of the same pattern."
         },
         "level": {
           "type": "string",
-          "enum": ["N5", "N4", "N3", "N2", "N1"],
+          "enum": [
+            "N5",
+            "N4",
+            "N3",
+            "N2",
+            "N1"
+          ],
           "description": "Community-consensus JLPT level, sourced primarily from Waller. Not JLPT-official."
         },
         "meaning_en": {
@@ -81,41 +158,68 @@
         },
         "formation_notes": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "description": "Additional notes on formation, including irregular cases and exceptions."
         },
         "formality": {
           "type": "string",
-          "enum": ["very_formal", "formal", "neutral", "casual", "intimate", "vulgar"],
+          "enum": [
+            "very_formal",
+            "formal",
+            "neutral",
+            "casual",
+            "intimate",
+            "vulgar"
+          ],
           "description": "Register appropriateness for this pattern."
         },
         "related": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "description": "IDs of related grammar points (synonymous, contrasting, or building blocks)."
         },
         "examples": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["japanese", "english"],
+            "required": [
+              "japanese",
+              "english"
+            ],
             "properties": {
-              "japanese": {"type": "string"},
-              "english": {"type": "string"},
+              "japanese": {
+                "type": "string"
+              },
+              "english": {
+                "type": "string"
+              },
               "sentence_id": {
-                "type": ["string", "null"],
+                "type": [
+                  "string",
+                  "null"
+                ],
                 "description": "Tatoeba sentence ID if this example is sourced from Tatoeba."
               },
               "source": {
                 "type": "string",
                 "description": "Where this example came from: 'tatoeba', 'original' (written for this project), 'waller', etc."
               }
-            }
-          }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 1
         },
         "review_status": {
           "type": "string",
-          "enum": ["draft", "community_reviewed", "native_speaker_reviewed"],
+          "enum": [
+            "draft",
+            "community_reviewed",
+            "native_speaker_reviewed"
+          ],
           "description": "Current review state of this entry. New entries start at 'draft'."
         },
         "reviewer_notes": {
@@ -123,18 +227,30 @@
           "items": {
             "type": "object",
             "properties": {
-              "reviewer": {"type": "string"},
-              "date": {"type": "string", "format": "date"},
-              "note": {"type": "string"}
-            }
+              "reviewer": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
           }
         },
         "sources": {
           "type": "array",
-          "items": {"type": "string"},
-          "description": "Explicit list of references consulted when writing this entry (URLs, book citations, etc.)."
+          "items": {
+            "type": "string"
+          },
+          "description": "Explicit list of references consulted when writing this entry (URLs, book citations, etc.).",
+          "minItems": 1
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }

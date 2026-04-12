@@ -3,9 +3,12 @@
   "$id": "https://github.com/jkindrix/japanese-language-data/schemas/name.schema.json",
   "title": "Name",
   "description": "Japanese proper nouns dataset from JMnedict via scriptin/jmdict-simplified. Covers personal names, place names, company names, and other proper nouns. Built on-demand via 'just build-names' and gitignored by default due to size (~150 MB uncompressed).",
-  "schemaVersion": "0.3.0",
+  "schemaVersion": "0.8.0",
   "type": "object",
-  "required": ["metadata", "names"],
+  "required": [
+    "metadata",
+    "names"
+  ],
   "additionalProperties": false,
   "properties": {
     "metadata": {
@@ -21,58 +24,124 @@
   "$defs": {
     "metadata": {
       "type": "object",
-      "required": ["source", "license", "generated", "count", "field_notes"],
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "count",
+        "field_notes"
+      ],
       "properties": {
-        "source": {"type": "string"},
-        "source_url": {"type": "string", "format": "uri"},
-        "license": {"type": "string"},
-        "source_version": {"type": "string"},
-        "generated": {"type": "string", "format": "date"},
-        "count": {"type": "integer", "minimum": 0},
+        "source": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "source_version": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "field_notes": {
           "type": "object",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          }
         },
-        "attribution": {"type": "string"},
+        "attribution": {
+          "type": "string"
+        },
         "tags": {
           "type": "object",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          }
         }
-      }
+      },
+      "additionalProperties": false
     },
     "nameEntry": {
       "type": "object",
-      "required": ["id", "kanji", "kana", "translation"],
+      "required": [
+        "id",
+        "kanji",
+        "kana",
+        "translation"
+      ],
       "properties": {
-        "id": {"type": "string"},
+        "id": {
+          "type": "string"
+        },
         "kanji": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["text", "tags"],
+            "required": [
+              "text",
+              "tags"
+            ],
             "properties": {
-              "text": {"type": "string"},
-              "tags": {"type": "array", "items": {"type": "string"}}
-            }
+              "text": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
           }
         },
         "kana": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["text", "tags", "appliesToKanji"],
+            "required": [
+              "text",
+              "tags",
+              "appliesToKanji"
+            ],
             "properties": {
-              "text": {"type": "string"},
-              "tags": {"type": "array", "items": {"type": "string"}},
-              "appliesToKanji": {"type": "array", "items": {"type": "string"}}
-            }
+              "text": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "appliesToKanji": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
           }
         },
         "translation": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["type", "translation"],
+            "required": [
+              "type",
+              "translation"
+            ],
             "properties": {
               "type": {
                 "type": "array",
@@ -83,22 +152,31 @@
               },
               "related": {
                 "type": "array",
-                "items": {"type": "array"}
+                "items": {
+                  "type": "array"
+                }
               },
               "translation": {
                 "type": "array",
                 "items": {
                   "type": "object",
                   "properties": {
-                    "lang": {"type": "string"},
-                    "text": {"type": "string"}
-                  }
+                    "lang": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
                 }
               }
-            }
+            },
+            "additionalProperties": false
           }
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }
