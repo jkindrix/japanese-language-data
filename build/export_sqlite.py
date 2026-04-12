@@ -89,6 +89,13 @@ def _create_schema(conn: sqlite3.Connection) -> None:
             count INTEGER
         );
 
+        CREATE TABLE IF NOT EXISTS frequency_subtitles (
+            text TEXT,
+            reading TEXT,
+            rank INTEGER,
+            count INTEGER
+        );
+
         CREATE TABLE IF NOT EXISTS furigana (
             text TEXT,
             reading TEXT,
@@ -129,6 +136,8 @@ def _create_schema(conn: sqlite3.Connection) -> None:
         CREATE INDEX IF NOT EXISTS idx_grammar_level ON grammar(level);
         CREATE INDEX IF NOT EXISTS idx_pitch_text ON pitch_accent(text);
         CREATE INDEX IF NOT EXISTS idx_freq_rank ON frequency_corpus(rank);
+        CREATE INDEX IF NOT EXISTS idx_freqsub_rank ON frequency_subtitles(rank);
+        CREATE INDEX IF NOT EXISTS idx_freqsub_text ON frequency_subtitles(text);
         CREATE INDEX IF NOT EXISTS idx_furigana_text ON furigana(text);
         CREATE INDEX IF NOT EXISTS idx_k2w_kanji ON kanji_to_words(kanji);
         CREATE INDEX IF NOT EXISTS idx_w2s_word ON word_to_sentences(word_id);
@@ -281,6 +290,13 @@ def export() -> None:
                 for e in freq_data.get("entries", [])]
         conn.executemany("INSERT INTO frequency_corpus VALUES (?,?,?,?)", rows)
         print(f"[sqlite]   frequency: {len(rows):,}")
+
+    freq_sub_data = _load_json(DATA_DIR / "enrichment" / "frequency-subtitles.json")
+    if freq_sub_data:
+        rows = [(e["text"], e.get("reading"), e["rank"], e.get("count"))
+                for e in freq_sub_data.get("entries", [])]
+        conn.executemany("INSERT INTO frequency_subtitles VALUES (?,?,?,?)", rows)
+        print(f"[sqlite]   frequency (subtitles): {len(rows):,}")
 
     furigana_data = _load_json(DATA_DIR / "enrichment" / "furigana.json")
     if furigana_data:

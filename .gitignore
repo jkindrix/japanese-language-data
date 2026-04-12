@@ -35,6 +35,8 @@ sources/jpdb-freq/
 sources/waller-jlpt/
 sources/wikipedia/
 sources/kftt/
+sources/opensubtitles/
+sources/jmdict-furigana/
 sources/*.tgz
 sources/*.zip
 sources/*.tar.bz2

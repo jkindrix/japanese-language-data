@@ -119,6 +119,13 @@
       "description": "JmdictFurigana — per-character reading alignment (furigana) for JMdict entries.",
       "sha256": "c4016e14be5adad5d9f28e941411c814c2f9234084ccdaf8caa095a7b27ae076",
       "size_bytes": 5166995
+    },
+    "opensubtitles-frequency": {
+      "url": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/ja/ja_full.txt",
+      "license": "MIT (code); data derived from OpenSubtitles",
+      "description": "Japanese word frequency from OpenSubtitles 2018 via hermitdave/FrequencyWords. Spoken/media register (movies, TV, anime).",
+      "sha256": "581dd106a134ff9f2706e23cde9fe95cd24d96ead6357cd3bd3bba9e166a764e",
+      "size_bytes": 404869
     }
   },
   "counts": {
@@ -135,6 +142,8 @@
     "data/enrichment/pitch-accent.json": 124011,
     "data/enrichment/frequency-newspaper.json": 2501,
     "data/enrichment/frequency-modern.json": null,
+    "data/enrichment/frequency-corpus.json": 14647,
+    "data/enrichment/furigana.json": 28920,
     "data/enrichment/jlpt-classifications.json": 11099,
     "data/enrichment/stroke-order-index.json": 13108,
     "data/grammar/grammar.json": 595,
@@ -144,7 +153,10 @@
     "data/cross-refs/word-to-kanji.json": 18574,
     "data/cross-refs/word-to-sentences.json": 14842,
     "data/cross-refs/kanji-to-radicals.json": 12156,
-    "data/cross-refs/reading-to-words.json": 24927
+    "data/cross-refs/reading-to-words.json": 24927,
+    "data/cross-refs/radical-to-kanji.json": 253,
+    "data/cross-refs/kanji-to-sentences.json": 2543,
+    "data/cross-refs/word-to-grammar.json": null
   },
   "grammar_curation_status": {
     "total_entries": 595,

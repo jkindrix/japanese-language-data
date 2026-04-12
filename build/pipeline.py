@@ -52,6 +52,7 @@ STAGE_DEPENDENCIES: dict[str, set[str]] = {
     "stroke_order": {"kanji"},
     "expressions": {"jlpt"},
     "cross_links": {"kanji", "words", "radicals", "sentences"},
+    "frequency_subtitles": {"words"},
     "grammar": {"sentences"},
 }
 
@@ -115,6 +116,7 @@ def _build_stages() -> list[Stage]:
         cross_links,
         expressions,
         frequency,
+        frequency_subtitles,
         grammar,
         jlpt,
         kana,
@@ -150,6 +152,8 @@ def _build_stages() -> list[Stage]:
         Stage("words", "Vocabulary from JMdict-examples, enriched with JLPT level.", words.build, phase=1),
         # ---- stroke_order MUST run after kanji (enforced by STAGE_DEPENDENCIES) ----
         Stage("stroke_order", "Stroke order SVGs from KanjiVG (filtered to characters in kanji.json).", stroke_order.build, phase=2),
+        # ---- Enrichment that depends on core data ----
+        Stage("frequency_subtitles", "Word frequency from OpenSubtitles 2018 media corpus.", frequency_subtitles.build, phase=4),
         # ---- Cross-references (depend on core + enrichment data) ----
         Stage("cross_links", "Generate all cross-reference files.", cross_links.build, phase=2),
         # ---- Grammar (Phase 3 — original contribution + derivatives) ----

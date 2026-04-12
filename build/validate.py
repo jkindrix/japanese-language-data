@@ -51,6 +51,7 @@ SCHEMA_MAP: dict[str, str] = {
     "data/cross-refs/kanji-to-radicals.json": "cross-refs.schema.json",
     "data/cross-refs/reading-to-words.json": "cross-refs.schema.json",
     "data/enrichment/frequency-corpus.json": "frequency.schema.json",
+    "data/enrichment/frequency-subtitles.json": "frequency.schema.json",
     "data/enrichment/furigana.json": "furigana.schema.json",
     "data/cross-refs/radical-to-kanji.json": "cross-refs.schema.json",
     "data/cross-refs/kanji-to-sentences.json": "cross-refs.schema.json",

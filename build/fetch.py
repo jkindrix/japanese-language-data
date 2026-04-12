@@ -177,6 +177,14 @@ SOURCES: tuple[Source, ...] = (
         description="Kyoto Free Translation Task — ~440k JP-EN parallel sentence pairs from Wikipedia Kyoto articles.",
         license="CC-BY-SA 3.0",
     ),
+    # ---- OpenSubtitles frequency (Phase 4) ------------------------------------
+    Source(
+        name="opensubtitles-frequency",
+        url="https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/ja/ja_full.txt",
+        cache_path="opensubtitles/ja_full.txt",
+        description="Japanese word frequency from OpenSubtitles 2018 via hermitdave/FrequencyWords.",
+        license="MIT (code); data derived from OpenSubtitles",
+    ),
     # ---- Phase 4 additions --------------------------------------------------
     # Wikipedia "Kangxi radicals" article, pinned to revision 1346511063 via
     # index.php's action=raw endpoint. This returns the raw wikitext for that
