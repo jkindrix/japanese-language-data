@@ -17,14 +17,25 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import sys
 import time
+import traceback
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeout
 from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 from typing import Callable
 
 from build.constants import REPO_ROOT
+
+log = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# Stage timeout (seconds). Generous for any transform; prevents a hung
+# stage from blocking the pipeline indefinitely.
+# ---------------------------------------------------------------------------
+STAGE_TIMEOUT: int = 300
 
 # ---------------------------------------------------------------------------
 # DAG dependency enforcement
@@ -153,6 +164,7 @@ def run_pipeline(
     include_names: bool = False,
     dry_run: bool = False,
     only: list[str] | None = None,
+    verbose: bool = False,
 ) -> int:
     """Execute the pipeline stages.
 
@@ -160,10 +172,18 @@ def run_pipeline(
         include_names: If False, skip the ``names`` stage.
         dry_run: Print stages without running them.
         only: If non-empty, run only the named stages.
+        verbose: If True, enable DEBUG-level logging.
 
     Returns:
         Exit code: 0 on success, non-zero on failure.
     """
+    # Configure structured logging for pipeline orchestration.
+    logging.basicConfig(
+        format="%(asctime)s %(levelname)-5s %(name)s: %(message)s",
+        datefmt="%H:%M:%S",
+        level=logging.DEBUG if verbose else logging.INFO,
+    )
+
     stages = _build_stages()
     if not include_names:
         stages = [s for s in stages if s.name != "names"]
@@ -180,12 +200,12 @@ def run_pipeline(
     # write different dates into different output files.
     build_date = date.today().isoformat()
 
-    print(f"Pipeline: {len(stages)} stages (build date: {build_date})")
+    log.info("Pipeline: %d stages (build date: %s)", len(stages), build_date)
     for stage in stages:
-        print(f"  [phase {stage.phase}] {stage.name} — {stage.description}")
+        log.info("  [phase %d] %s — %s", stage.phase, stage.name, stage.description)
 
     if dry_run:
-        print("\n(dry run — no stages executed)")
+        log.info("(dry run — no stages executed)")
         return 0
 
     # Make the build date available to transforms via module-level
@@ -200,31 +220,53 @@ def run_pipeline(
     failures: list[tuple[str, Exception]] = []
     total_elapsed = 0.0
     for stage in stages:
-        print(f"Running: {stage.name}")
+        log.info("Running: %s", stage.name)
         t0 = time.monotonic()
         try:
-            stage.runner()
+            # Run the stage with a timeout to prevent indefinite hangs.
+            with ThreadPoolExecutor(max_workers=1) as executor:
+                future = executor.submit(stage.runner)
+                future.result(timeout=STAGE_TIMEOUT)
             elapsed = time.monotonic() - t0
             total_elapsed += elapsed
-            print(f"  ok: {stage.name} ({elapsed:.1f}s)")
+            log.info("  ok: %s (%.1fs)", stage.name, elapsed)
         except NotImplementedError as exc:
             elapsed = time.monotonic() - t0
             total_elapsed += elapsed
-            print(f"  pending: {exc}")
+            log.info("  pending: %s", exc)
+        except FuturesTimeout:
+            elapsed = time.monotonic() - t0
+            total_elapsed += elapsed
+            timeout_exc = TimeoutError(
+                f"Stage '{stage.name}' timed out after {STAGE_TIMEOUT}s"
+            )
+            failures.append((stage.name, timeout_exc))
+            log.error("  TIMEOUT: %s (after %ds)", stage.name, STAGE_TIMEOUT)
         except (RuntimeError, ValueError, FileNotFoundError, OSError,
                 KeyError, TypeError, json.JSONDecodeError) as exc:
             elapsed = time.monotonic() - t0
             total_elapsed += elapsed
             failures.append((stage.name, exc))
-            print(f"  FAILED: {exc} ({elapsed:.1f}s)")
+            log.error("  FAILED: %s (%.1fs)", exc, elapsed)
+        except Exception as exc:
+            elapsed = time.monotonic() - t0
+            total_elapsed += elapsed
+            failures.append((stage.name, exc))
+            log.error(
+                "  FAILED (unexpected %s): %s (%.1fs)",
+                type(exc).__name__, exc, elapsed,
+            )
+            traceback.print_exc()
 
     if failures:
-        print(f"\n{len(failures)} stage(s) failed ({total_elapsed:.1f}s total):")
+        log.error(
+            "%d stage(s) failed (%.1fs total):", len(failures), total_elapsed,
+        )
         for name, exc in failures:
-            print(f"  {name}: {exc}")
+            log.error("  %s: %s", name, exc)
         return 1
 
-    print(f"\nPipeline complete ({total_elapsed:.1f}s total).")
+    log.info("Pipeline complete (%.1fs total).", total_elapsed)
     return 0
 
 
@@ -255,11 +297,17 @@ def main(argv: list[str] | None = None) -> int:
         metavar="STAGE",
         help="Run only the named stages.",
     )
+    parser.add_argument(
+        "--verbose", "-v",
+        action="store_true",
+        help="Enable DEBUG-level logging.",
+    )
     args = parser.parse_args(argv)
     return run_pipeline(
         include_names=args.with_names,
         dry_run=args.dry_run,
         only=args.only,
+        verbose=args.verbose,
     )
 
 
