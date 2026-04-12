@@ -1276,5 +1276,437 @@
     ],
     "review_status": "draft",
     "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "mo-mo-both",
+    "pattern": "Noun + も + Noun + も",
+    "level": "N5",
+    "meaning_en": "both X and Y / neither X nor Y",
+    "meaning_detailed": "〜も〜も pairs two nouns with the particle も to express 'both X and Y' (with affirmative predicate) or 'neither X nor Y' (with negative predicate). The polarity flips depending on the main clause's predicate. Common for inclusive listings.",
+    "formation": "Noun + も + Noun + も + (affirmative for 'both' / negative for 'neither').",
+    "formation_notes": [
+      "Affirmative main clause: 'both X and Y' — コーヒーも紅茶も好きです ('I like both coffee and tea').",
+      "Negative main clause: 'neither X nor Y' — コーヒーも紅茶も飲みません ('I drink neither coffee nor tea').",
+      "The same pattern extends to three or more items.",
+      "Distinct from separate も markers — the two-item pair forms a coordinated construction."
+    ],
+    "formality": "neutral",
+    "related": [
+      "particle-mo-also",
+      "particle-to-and-with",
+      "particle-ya-non-exhaustive"
+    ],
+    "examples": [
+      {"japanese": "コーヒーも紅茶も好きです。", "english": "I like both coffee and tea.", "source": "original"},
+      {"japanese": "魚も肉も食べません。", "english": "I eat neither fish nor meat.", "source": "original"},
+      {"japanese": "彼も私も学生です。", "english": "Both he and I are students.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "to-exhaustive-listing",
+    "pattern": "Noun + と + Noun",
+    "level": "N5",
+    "meaning_en": "X and Y (exhaustive listing of nouns)",
+    "meaning_detailed": "The particle と between nouns forms an exhaustive list — 'X and Y (and nothing else)'. Distinct from や, which is non-exhaustive ('X, Y, and others'). と is the go-to particle for complete enumerations of a set of items. Each pair or triple of items is connected with と between adjacent items.",
+    "formation": "Noun + と + Noun (+ と + Noun ...).",
+    "formation_notes": [
+      "Exhaustive: the listed items are the complete set — no others implied.",
+      "Contrast with や (non-exhaustive): 本と鉛筆 ('a book and a pencil, exactly these two') vs 本や鉛筆 ('books, pencils, and other things').",
+      "Only connects nouns — not verbs or adjectives.",
+      "Can chain: りんごとバナナとみかん ('an apple, a banana, and an orange')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "particle-to-and-with",
+      "particle-ya-non-exhaustive",
+      "mo-mo-both"
+    ],
+    "examples": [
+      {"japanese": "りんごとバナナを買いました。", "english": "I bought an apple and a banana.", "source": "original"},
+      {"japanese": "田中さんと鈴木さんと山田さんが来ました。", "english": "Mr. Tanaka, Mr. Suzuki, and Mr. Yamada came.", "source": "original"},
+      {"japanese": "本と鉛筆が必要です。", "english": "I need a book and a pencil.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "location-nouns-ue-shita",
+    "pattern": "Noun + の + 上/下/中/前/後ろ/横/隣/間 + (に/で/へ)",
+    "level": "N5",
+    "meaning_en": "location relative to a reference (above, below, inside, in front, behind, next to)",
+    "meaning_detailed": "Japanese uses location nouns (位置名詞) to describe spatial relations: 上 (above), 下 (below), 中 (inside), 前 (in front of / before), 後ろ (behind), 横 (beside), 隣 (next to, same type), 間 (between). The pattern is [reference noun] の [location noun] + particle. The に particle marks the location for existence verbs (あります/います); で marks the location for action verbs.",
+    "formation": "Reference noun + の + location noun + に/で/へ + verb.",
+    "formation_notes": [
+      "Common location nouns: 上, 下, 中, 前, 後ろ, 横, 隣, 間, 右, 左, 外, 近く.",
+      "の is required between the reference noun and the location noun.",
+      "に for existence/static location; で for action verbs; へ/に for direction.",
+      "隣 implies the adjacent item is the same type (隣の家 'the next house'); 横 is more general 'beside'."
+    ],
+    "formality": "neutral",
+    "related": [
+      "arimasu-existence-inanimate",
+      "imasu-existence-animate",
+      "particle-no-possession",
+      "particle-ni-target"
+    ],
+    "examples": [
+      {"japanese": "机の上に本があります。", "english": "There is a book on the desk.", "source": "original"},
+      {"japanese": "学校の前で会いましょう。", "english": "Let's meet in front of the school.", "source": "original"},
+      {"japanese": "私の家は駅の近くにあります。", "english": "My house is near the station.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "ikutsu-how-many",
+    "pattern": "いくつ (+ optional counter-specific form)",
+    "level": "N5",
+    "meaning_en": "how many / how old",
+    "meaning_detailed": "いくつ is the general 'how many' interrogative, primarily used with the generic 〜つ counter for small round objects, and also as a polite way to ask someone's age. Distinct from the specific counter-based question words (何本, 何枚, 何人, etc.) which ask about a specific category. Also used for age: おいくつですか ('how old are you?').",
+    "formation": "いくつ (as standalone question word). For polite age: お + いくつ.",
+    "formation_notes": [
+      "General 'how many' — most common with unspecified small objects.",
+      "For asking age politely: おいくつですか.",
+      "For specific counter categories, use 何 + counter (何本, 何枚, 何台, etc.).",
+      "Casual age question: 何歳 (なんさい); polite: おいくつ."
+    ],
+    "formality": "neutral",
+    "related": [
+      "counter-tsu",
+      "question-words-basic",
+      "nanji-what-time"
+    ],
+    "examples": [
+      {"japanese": "りんごはいくつありますか。", "english": "How many apples are there?", "source": "original"},
+      {"japanese": "おいくつですか。", "english": "How old are you? (polite)", "source": "original"},
+      {"japanese": "いくつ食べますか。", "english": "How many will you eat?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "ikura-how-much",
+    "pattern": "いくら",
+    "level": "N5",
+    "meaning_en": "how much (price / quantity)",
+    "meaning_detailed": "いくら is the interrogative 'how much', primarily used for asking prices but also for uncountable amounts (quantity, time). The most common usage is これはいくらですか ('how much is this?'). In compound usages like いくらでも ('any amount') and いくら〜ても ('no matter how much'), it takes on broader senses.",
+    "formation": "いくら (as standalone question); いくら + でも ('any amount'); いくら + 〜ても ('no matter how much').",
+    "formation_notes": [
+      "Most common for prices: いくらですか.",
+      "Also for quantity of uncountables: water, time, effort.",
+      "Compound: いくらでも ('any amount / as much as you want').",
+      "Concessive: いくら〜ても ('no matter how much X')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "ikutsu-how-many",
+      "question-words-basic",
+      "v-temo-even-if"
+    ],
+    "examples": [
+      {"japanese": "これはいくらですか。", "english": "How much is this?", "source": "original"},
+      {"japanese": "このケーキはいくらでしたか。", "english": "How much was this cake?", "source": "original"},
+      {"japanese": "いくら食べても太らない。", "english": "No matter how much I eat, I don't gain weight.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "nanji-what-time",
+    "pattern": "何時 (+ optional 〜分)",
+    "level": "N5",
+    "meaning_en": "what time / when (specific clock time)",
+    "meaning_detailed": "何時 (なんじ) asks for clock time — 'what time?'. Often paired with the particle に for 'at what time'. Can combine with 何分 (なんぷん) for minutes: 何時何分 ('what time exactly'). Related question words 何曜日 (what day of the week) and 何月 (what month) follow similar patterns.",
+    "formation": "何時 (question alone); 何時 + に (at what time); 何時 + 何分.",
+    "formation_notes": [
+      "For asking clock times and meeting times.",
+      "Particle に for 'at what time': 何時に来ますか ('what time will you come?').",
+      "Combine with 何分: 何時何分ですか ('what time exactly is it?').",
+      "Related: 何曜日 (what day), 何月何日 (what month/date)."
+    ],
+    "formality": "neutral",
+    "related": [
+      "counter-ji-oclock",
+      "nanyoubi-day-of-week",
+      "question-words-basic"
+    ],
+    "examples": [
+      {"japanese": "今、何時ですか。", "english": "What time is it now?", "source": "original"},
+      {"japanese": "何時に会いましょうか。", "english": "What time shall we meet?", "source": "original"},
+      {"japanese": "授業は何時からですか。", "english": "What time does class start?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "nanyoubi-day-of-week",
+    "pattern": "何曜日 / 曜日 system",
+    "level": "N5",
+    "meaning_en": "what day of the week / days of the week",
+    "meaning_detailed": "何曜日 (なんようび) asks 'what day of the week'. The days of the week follow the 曜日 pattern: 月曜日 (Monday), 火曜日 (Tuesday), 水曜日 (Wednesday), 木曜日 (Thursday), 金曜日 (Friday), 土曜日 (Saturday), 日曜日 (Sunday). Named after the sun (日), moon (月), and the five classical elements: fire (火), water (水), wood (木), metal (金), earth (土).",
+    "formation": "Question: 何曜日. Each day: [element kanji] + 曜日. Time marker: 〜曜日 + に ('on [day]').",
+    "formation_notes": [
+      "Each day named after a celestial body or classical element.",
+      "Pattern: 月/火/水/木/金/土/日 + 曜日.",
+      "With particle に for 'on [day]': 月曜日に ('on Monday').",
+      "Short form 〜曜 (without the 日) is used in casual schedules."
+    ],
+    "formality": "neutral",
+    "related": [
+      "nanji-what-time",
+      "particle-ni-target",
+      "question-words-basic"
+    ],
+    "examples": [
+      {"japanese": "今日は何曜日ですか。", "english": "What day of the week is it today?", "source": "original"},
+      {"japanese": "月曜日に会議があります。", "english": "There is a meeting on Monday.", "source": "original"},
+      {"japanese": "土曜日と日曜日は休みです。", "english": "Saturday and Sunday are days off.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "counter-ji-oclock",
+    "pattern": "Number + 時",
+    "level": "N5",
+    "meaning_en": "o'clock (hour counter)",
+    "meaning_detailed": "〜時 (じ) is the counter for clock hours — 'X o'clock'. Numbers 1-12 are used, but several have irregular readings: 4時 (よじ), 7時 (しちじ), 9時 (くじ). Combined with 〜分 (minutes) for specific times. Used with particle に for 'at X o'clock'.",
+    "formation": "Number + 時. Irregulars: 4 → よ, 7 → しち, 9 → く.",
+    "formation_notes": [
+      "Irregular readings: 4時 (よじ, NOT しじ), 7時 (しちじ), 9時 (くじ, NOT きゅうじ).",
+      "Paired with 分 for precise times: 3時15分 (さんじじゅうごふん).",
+      "With particle に for scheduled time: 9時に (at 9 o'clock).",
+      "am/pm: 午前 (AM) / 午後 (PM) + time."
+    ],
+    "formality": "neutral",
+    "related": [
+      "nanji-what-time",
+      "counter-fun-minute",
+      "particle-ni-target"
+    ],
+    "examples": [
+      {"japanese": "今、3時です。", "english": "It's 3 o'clock now.", "source": "original"},
+      {"japanese": "9時に学校へ行きます。", "english": "I go to school at 9 o'clock.", "source": "original"},
+      {"japanese": "4時の電車に乗ります。", "english": "I'll take the 4 o'clock train.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "counter-fun-minute",
+    "pattern": "Number + 分",
+    "level": "N5",
+    "meaning_en": "minute (time / duration counter)",
+    "meaning_detailed": "〜分 (ふん / ぷん) is the counter for minutes — both clock-time minutes and duration. Reading changes between ふん (voiceless) and ぷん (voiced / geminated) depending on the preceding number. Several numbers have irregular or combined forms. Common contexts: clock time (3時10分), duration (10分), distance by time (駅から5分).",
+    "formation": "Number + 分. Reading: ぷん after 1/3/4/6/8/10; ふん after 2/5/7/9. Half-hour fixed form: 半 (はん, for 30 minutes).",
+    "formation_notes": [
+      "Reading rules: 1ぷん, 2ふん, 3ぷん, 4ぷん, 5ふん, 6ぷん, 7ふん, 8ぷん, 10ぷん.",
+      "Half-hour 30 minutes is often written as 半: 3時半 ('3:30').",
+      "Used for both clock minutes and duration.",
+      "Same kanji 分 has other readings (ぶん for 'share') and meanings."
+    ],
+    "formality": "neutral",
+    "related": [
+      "counter-ji-oclock",
+      "jikan-time-duration",
+      "nanji-what-time"
+    ],
+    "examples": [
+      {"japanese": "10分待ってください。", "english": "Please wait 10 minutes.", "source": "original"},
+      {"japanese": "今、3時15分です。", "english": "It's 3:15 now.", "source": "original"},
+      {"japanese": "駅まで5分かかります。", "english": "It takes 5 minutes to the station.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "counter-sai-age",
+    "pattern": "Number + 歳 / 才",
+    "level": "N5",
+    "meaning_en": "year of age (age counter)",
+    "meaning_detailed": "〜歳 (さい) is the counter for age — the number of years a person has lived. The alternate kanji 才 is commonly used, especially in casual writing. Several readings are irregular: 1歳 (いっさい), 8歳 (はっさい), 10歳 (じっさい / じゅっさい), and 20歳 (はたち, a fully irregular traditional reading for 20 years old).",
+    "formation": "Number + 歳 (or 才). Irregulars: 1→いっ, 8→はっ, 10→じっ/じゅっ, 20→はたち.",
+    "formation_notes": [
+      "20歳 has the fully irregular traditional reading はたち — especially important because it's the age of legal adulthood in Japan.",
+      "For casual asking: 何歳 (なんさい); polite: おいくつ.",
+      "Kanji variation: 歳 (formal) vs 才 (casual / abbreviated).",
+      "Combined: 2歳半 ('two and a half years old')."
+    ],
+    "formality": "neutral",
+    "related": [
+      "ikutsu-how-many",
+      "question-words-basic"
+    ],
+    "examples": [
+      {"japanese": "私は20歳です。", "english": "I am 20 years old.", "source": "original"},
+      {"japanese": "弟は12歳です。", "english": "My younger brother is 12 years old.", "source": "original"},
+      {"japanese": "彼は何歳ですか。", "english": "How old is he?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "counter-en-money",
+    "pattern": "Number + 円",
+    "level": "N5",
+    "meaning_en": "yen (Japanese currency counter)",
+    "meaning_detailed": "〜円 (えん) is the counter for Japanese yen — the national currency. Numbers attach directly without sound changes. Used for all prices, costs, and monetary amounts. Question form: いくらですか or 何円ですか.",
+    "formation": "Number + 円. No sound changes.",
+    "formation_notes": [
+      "No irregular readings — attaches cleanly to all numbers.",
+      "Questions: いくらですか (more common) or 何円ですか.",
+      "Larger amounts use 万 (10,000) and 億 (100,000,000): 10万円 ('100,000 yen').",
+      "Written in full kanji for formal contexts, numerals for casual."
+    ],
+    "formality": "neutral",
+    "related": [
+      "ikura-how-much",
+      "question-words-basic"
+    ],
+    "examples": [
+      {"japanese": "このケーキは500円です。", "english": "This cake is 500 yen.", "source": "original"},
+      {"japanese": "財布に3000円あります。", "english": "I have 3000 yen in my wallet.", "source": "original"},
+      {"japanese": "これは1万円です。", "english": "This is 10,000 yen.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "counter-hon-long",
+    "pattern": "Number + 本",
+    "level": "N5",
+    "meaning_en": "counter for long, thin objects",
+    "meaning_detailed": "〜本 (ほん / ぼん / ぽん) is the counter for long, thin objects — pencils, bottles, umbrellas, trees, bananas, wire, roads, trains, phone calls, films, etc. The reading changes between ほん (voiceless), ぼん (voiced), and ぽん (geminated) depending on the preceding number. Classic example of a counter with variable readings, a distinctive feature of Japanese.",
+    "formation": "Number + 本. Readings: 1ぽん, 2ほん, 3ぼん, 4ほん, 5ほん, 6ぽん, 7ほん, 8ぽん, 9ほん, 10ぽん.",
+    "formation_notes": [
+      "Classic counter with variable readings by number.",
+      "Mnemonic: 1/6/8/10 take ぽん (geminated); 3 takes ぼん (voiced); others take ほん (voiceless).",
+      "Also used for routes, films, phone calls — anything conceptually 'linear / long'.",
+      "Question form: 何本 (なんぼん)."
+    ],
+    "formality": "neutral",
+    "related": [
+      "counter-tsu",
+      "counter-mai-flat",
+      "ikutsu-how-many"
+    ],
+    "examples": [
+      {"japanese": "鉛筆を3本買いました。", "english": "I bought 3 pencils.", "source": "original"},
+      {"japanese": "水を2本ください。", "english": "Please give me 2 bottles of water.", "source": "original"},
+      {"japanese": "傘を何本持っていますか。", "english": "How many umbrellas do you have?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "counter-mai-flat",
+    "pattern": "Number + 枚",
+    "level": "N5",
+    "meaning_en": "counter for flat, thin objects",
+    "meaning_detailed": "〜枚 (まい) is the counter for flat, thin objects — paper, photos, tickets, plates, T-shirts, slices of bread/cheese, CDs, floor mats. Unlike 本, 枚 has no sound changes — it attaches cleanly to all numbers. One of the easiest counters for learners because of its regularity. Question form: 何枚 (なんまい).",
+    "formation": "Number + 枚. No sound changes — attaches cleanly to all numbers.",
+    "formation_notes": [
+      "No sound changes — a learner-friendly counter.",
+      "Used for any flat object: paper, photos, plates, shirts, tickets, cards.",
+      "Contrasts with 本 (long thin) and generic 〜つ (small round).",
+      "Question form: 何枚."
+    ],
+    "formality": "neutral",
+    "related": [
+      "counter-hon-long",
+      "counter-tsu",
+      "ikutsu-how-many"
+    ],
+    "examples": [
+      {"japanese": "紙を3枚ください。", "english": "Please give me 3 sheets of paper.", "source": "original"},
+      {"japanese": "切符を2枚買いました。", "english": "I bought 2 tickets.", "source": "original"},
+      {"japanese": "写真を何枚撮りましたか。", "english": "How many photos did you take?", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "mai-every-prefix",
+    "pattern": "毎 + time noun",
+    "level": "N5",
+    "meaning_en": "every / each (time period)",
+    "meaning_detailed": "毎 (まい) is a prefix meaning 'every' that attaches to time-period nouns: 毎日 (every day), 毎週 (every week), 毎月 (every month), 毎年 (every year), 毎朝 (every morning), 毎晩 (every evening). Used adverbially to describe recurring actions — more convenient than 'いつも' (always) for specifying frequency by time unit.",
+    "formation": "毎 + time period noun: 毎日, 毎週, 毎月, 毎年, 毎朝, 毎晩, 毎時, 毎回.",
+    "formation_notes": [
+      "Prefix — always attached to a time noun.",
+      "Common members: 毎日, 毎週, 毎月, 毎年, 毎朝, 毎晩, 毎回.",
+      "Used adverbially: 毎日、運動します ('I exercise every day').",
+      "Distinct from 〜ごとに (every X, each X at intervals) — 毎 is more common and general."
+    ],
+    "formality": "neutral",
+    "related": [
+      "toki-ni-when-basic",
+      "nanyoubi-day-of-week",
+      "gotoni-each"
+    ],
+    "examples": [
+      {"japanese": "毎日、コーヒーを飲みます。", "english": "I drink coffee every day.", "source": "original"},
+      {"japanese": "毎朝、6時に起きます。", "english": "I get up at 6 every morning.", "source": "original"},
+      {"japanese": "毎週末、買い物に行きます。", "english": "I go shopping every weekend.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "jikan-time-duration",
+    "pattern": "Number + 時間",
+    "level": "N5",
+    "meaning_en": "hour (duration counter)",
+    "meaning_detailed": "〜時間 (じかん) is the counter for hours of duration — how many hours something lasts, as opposed to 〜時 which is for clock time. 3時間 means 'three hours' (duration); 3時 means '3 o'clock'. Common in durations of study, work, travel, sleep. No sound changes.",
+    "formation": "Number + 時間. No sound changes.",
+    "formation_notes": [
+      "Duration, not clock time — distinct from 〜時 (o'clock).",
+      "No sound changes — regular readings for all numbers.",
+      "Combined with 半 for half-hour durations: 2時間半 ('two and a half hours').",
+      "Question form: 何時間 (なんじかん)."
+    ],
+    "formality": "neutral",
+    "related": [
+      "counter-ji-oclock",
+      "counter-fun-minute",
+      "mai-every-prefix"
+    ],
+    "examples": [
+      {"japanese": "毎日、2時間勉強します。", "english": "I study for 2 hours every day.", "source": "original"},
+      {"japanese": "東京まで3時間かかります。", "english": "It takes 3 hours to Tokyo.", "source": "original"},
+      {"japanese": "昨日は8時間寝ました。", "english": "I slept 8 hours yesterday.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
+  },
+  {
+    "id": "i-adj-desu-politeness",
+    "pattern": "i-adjective + です",
+    "level": "N5",
+    "meaning_en": "polite ending for i-adjective predicates",
+    "meaning_detailed": "When an i-adjective forms the predicate of a sentence, appending です makes the sentence polite without changing the meaning — 高い → 高いです ('it is expensive', polite). Unlike with nouns and na-adjectives, this です does NOT conjugate with tense or negation on i-adjectives: past is 高かったです (NOT 高いでした), negative is 高くないです (NOT 高くありません usually, though that's also grammatical). This is a common learner confusion: the です after an i-adjective is purely a politeness marker, not a copula.",
+    "formation": "i-adjective (dictionary form or conjugated form) + です. Past: 〜かったです. Negative: 〜くないです or 〜くありません.",
+    "formation_notes": [
+      "です after i-adj is a politeness marker, NOT a copula — it does not conjugate for tense or negation.",
+      "Past: 高かったです (NOT 高いでした).",
+      "Negative: 高くないです or 高くありません.",
+      "Compare with noun/na-adj + です which does conjugate: 学生でした (was a student)."
+    ],
+    "formality": "formal",
+    "related": [
+      "i-adjective-nonpast",
+      "i-adjective-past",
+      "i-adjective-negative",
+      "desu-polite-copula"
+    ],
+    "examples": [
+      {"japanese": "この本は高いです。", "english": "This book is expensive.", "source": "original"},
+      {"japanese": "昨日は忙しかったです。", "english": "Yesterday was busy.", "source": "original"},
+      {"japanese": "今日は暑くないです。", "english": "Today is not hot.", "source": "original"}
+    ],
+    "review_status": "draft",
+    "sources": ["General Japanese grammar knowledge."]
   }
 ]

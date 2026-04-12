@@ -16,6 +16,12 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+### Added (Batch B13)
+
+- **N5 fill batch 2** — 16 more N5 entries appended to `grammar-curated/n5.json`, bringing N5 from 60 → 76: 〜も〜も (both X and Y), A と B (exhaustive noun listing), 位置名詞 (location nouns: 上/下/中/前/後ろ etc.), いくつ (how many), いくら (how much), 何時 (what time), 何曜日 (day of week), 〜時 (o'clock counter), 〜分 (minute counter), 〜歳 (age counter with はたち), 〜円 (yen counter), 〜本 (long-thin counter with sound changes), 〜枚 (flat counter), 毎 prefix (every X), 〜時間 (hour duration), い-adj + です politeness.
+- Grammar total: 579 → **595** (+16). N5 is now at 76, close to the typical ~80 community standard.
+- `data/enrichment/jlpt-classifications.json`: 11,083 → **11,099**.
+
 ## [0.7.0] — 2026-04-12
 
 **All five JLPT levels reach community-standard completeness.** After Batches B9 + B10 + B11 + B12 the grammar dataset stands at **579 entries** across all levels:

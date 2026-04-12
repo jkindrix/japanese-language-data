@@ -6,7 +6,7 @@
     "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
     "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
     "generated": "2026-04-12",
-    "count": 11083,
+    "count": 11099,
     "counts_by_kind_and_level": {
       "vocab_N5": 684,
       "vocab_N4": 640,
@@ -18,7 +18,7 @@
       "kanji_N3": 367,
       "kanji_N4": 166,
       "kanji_N5": 79,
-      "grammar_N5": 60,
+      "grammar_N5": 76,
       "grammar_N4": 91,
       "grammar_N3": 139,
       "grammar_N2": 150,
@@ -97572,6 +97572,150 @@
       "level": "N5",
       "meaning_en": "te-form of na-adjectives and nouns (joining / causal)",
       "grammar_id": "na-adj-te-joining-de",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + も + Noun + も",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "both X and Y / neither X nor Y",
+      "grammar_id": "mo-mo-both",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + と + Noun",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "X and Y (exhaustive listing of nouns)",
+      "grammar_id": "to-exhaustive-listing",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + の + 上/下/中/前/後ろ/横/隣/間 + (に/で/へ)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "location relative to a reference (above, below, inside, in front, behind, next to)",
+      "grammar_id": "location-nouns-ue-shita",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "いくつ (+ optional counter-specific form)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "how many / how old",
+      "grammar_id": "ikutsu-how-many",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "いくら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "how much (price / quantity)",
+      "grammar_id": "ikura-how-much",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "何時 (+ optional 〜分)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "what time / when (specific clock time)",
+      "grammar_id": "nanji-what-time",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "何曜日 / 曜日 system",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "what day of the week / days of the week",
+      "grammar_id": "nanyoubi-day-of-week",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Number + 時",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "o'clock (hour counter)",
+      "grammar_id": "counter-ji-oclock",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Number + 分",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "minute (time / duration counter)",
+      "grammar_id": "counter-fun-minute",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Number + 歳 / 才",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "year of age (age counter)",
+      "grammar_id": "counter-sai-age",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Number + 円",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "yen (Japanese currency counter)",
+      "grammar_id": "counter-en-money",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Number + 本",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "counter for long, thin objects",
+      "grammar_id": "counter-hon-long",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Number + 枚",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "counter for flat, thin objects",
+      "grammar_id": "counter-mai-flat",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "毎 + time noun",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "every / each (time period)",
+      "grammar_id": "mai-every-prefix",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Number + 時間",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "hour (duration counter)",
+      "grammar_id": "jikan-time-duration",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "i-adjective + です",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N5",
+      "meaning_en": "polite ending for i-adjective predicates",
+      "grammar_id": "i-adj-desu-politeness",
       "source_retrieved": "2026-04-12"
     }
   ]
