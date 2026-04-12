@@ -10,7 +10,7 @@
     "upstream_languages": [
       "all"
     ],
-    "generated": "2026-04-11",
+    "generated": "2026-04-12",
     "count": 863,
     "filter": "Jinmeiyō kanji only: grades 9 and 10 in KANJIDIC2 (kanji approved for personal-name use in Japan but not included in the Jōyō list). Derived from the same source as kanji.json.",
     "attribution": "This work uses KANJIDIC2 from the Electronic Dictionary Research and Development Group (EDRDG), used in conformance with the Group's license. See https://www.edrdg.org/edrdg/licence.html. Per-field contributors: SKIP codes (Jack Halpern), pinyin (Christian Wittern and Koichi Yasuoka), Four Corner codes and Morohashi (Urs App), Spahn/Hadamitzky descriptors (Mark Spahn and Wolfgang Hadamitzky), Korean readings (Charles Muller), De Roo codes (Joseph De Roo).",
