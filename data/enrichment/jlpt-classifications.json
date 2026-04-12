@@ -6,7 +6,7 @@
     "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
     "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
     "generated": "2026-04-12",
-    "count": 10983,
+    "count": 11023,
     "counts_by_kind_and_level": {
       "vocab_N5": 684,
       "vocab_N4": 640,
@@ -22,7 +22,7 @@
       "grammar_N4": 91,
       "grammar_N3": 139,
       "grammar_N2": 150,
-      "grammar_N1": 39
+      "grammar_N1": 79
     },
     "attribution": "JLPT classifications adapted from Jonathan Waller's JLPT Resources at http://www.tanos.co.uk/jlpt/ under CC-BY. Vocabulary data distributed via stephenmk/yomitan-jlpt-vocab (CC-BY-SA 4.0). Kanji classifications extracted from davidluzgouveia/kanji-data (code MIT, Waller data CC-BY). Only the jlpt_new field was used from davidluzgouveia; WaniKani-derived fields were deliberately ignored due to incompatible license.",
     "disclaimer": "These classifications are community-reverse-engineered from past JLPT test questions and are NOT JLPT-official. JLPT stopped publishing official vocabulary lists in 2010. Edge cases between levels are particularly uncertain; some entries are disputed in the community. Treat these as the best available community consensus, not canonical truth.",
@@ -92712,6 +92712,366 @@
       "level": "N1",
       "meaning_en": "the height of / the ultimate / extreme",
       "grammar_id": "no-kiwami",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V plain / noun + の + 手前",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "in view of / out of consideration for / for the sake of appearance",
+      "grammar_id": "te-mae",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + に則って / に則り",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "in accordance with / according to (rules, customs)",
+      "grammar_id": "ni-nottotte",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + をもって",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "by means of / with / as of (formal)",
+      "grammar_id": "wo-motte",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V plain / adj + ところを",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "(although) at / while / in the middle of (polite apology)",
+      "grammar_id": "tokoro-wo",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V-て form + はばからない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "does not hesitate to / declares openly",
+      "grammar_id": "te-habakaranai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb dict-form + べくもない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "no way to / cannot possibly",
+      "grammar_id": "beku-mo-nai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / plain form + とやら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "some kind of / (I hear) something like",
+      "grammar_id": "to-yara",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V ない-form + でもない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "not that I don't / it's not impossible to",
+      "grammar_id": "nai-de-mo-nai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + を皮切りに(して)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "starting with / beginning with",
+      "grammar_id": "wo-kawakiri-ni",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + を限りに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "with X being the last / as of X (final)",
+      "grammar_id": "wo-kagiri-ni",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V plain / noun + の + 折(に)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "on the occasion of / when",
+      "grammar_id": "ori-ni",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / V stem + ながらに(して)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "while / in (the state of) / from the start",
+      "grammar_id": "nagara-ni",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb ます-stem + おおせる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "succeed in completing / manage to do fully",
+      "grammar_id": "oose-ru",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb ます-stem + こなす",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "handle skillfully / master / do expertly",
+      "grammar_id": "konasu",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + めかす",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "hint at / show a look of",
+      "grammar_id": "mekasu",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + に他ならない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "is nothing but / is exactly / is none other than",
+      "grammar_id": "ni-hoka-naranai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + もさることながら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "not to mention / while X is also (true)",
+      "grammar_id": "mo-saru-koto-nagara",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V dict-form + までもなく",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "without even needing to / not even requiring",
+      "grammar_id": "made-mo-naku",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / plain form + ならまだしも",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "if it were at least X (that would be OK, but)",
+      "grammar_id": "nara-mada-shimo",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / plain form + ならいざ知らず",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "if it were X, I wouldn't know / X might be one thing but",
+      "grammar_id": "nara-iza-shirazu",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "ひとたび + V + (ば / と / たら)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "once (X happens)",
+      "grammar_id": "hitotabi",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Plain form + としたところで",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "even if we assume / even for",
+      "grammar_id": "to-shita-tokoro-de",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / plain form + ほどの + noun",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "of such a degree / to the extent of (a)",
+      "grammar_id": "hodo-no",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V negative stem + ずもがな",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "unnecessary / better left unsaid",
+      "grammar_id": "zu-mogana",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + にまつわる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "related to / concerning / surrounding",
+      "grammar_id": "ni-matsuwaru",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + を兼ねて",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "serving (as both) / combined with",
+      "grammar_id": "wo-kanete",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / na-adj + でありながら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "while being / even though one is",
+      "grammar_id": "de-ari-nagara",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V-て form + みせる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "will definitely do / I'll show you (determination)",
+      "grammar_id": "te-mi-se-ru",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + にして初めて",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "only at / not until one is (X) / for someone of X's level",
+      "grammar_id": "ni-shite-hajimete",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + ながらの + noun",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "in its original state of / traditional / just like",
+      "grammar_id": "nagara-no",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "いかんせん (sentence-initial / mid-sentence)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "unfortunately / regrettably / the trouble is",
+      "grammar_id": "ikan-se-n",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / V plain + にもほどがある",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "there's a limit to / (X) goes too far",
+      "grammar_id": "ni-mo-hodo-ga-aru",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V ば-form / conditional + それまでだ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "if X, that's the end / that's all there is to it",
+      "grammar_id": "ba-sore-made",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "i-adj 〜くもなんともない / na-adj + でもなんでもない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "not even slightly / not at all",
+      "grammar_id": "mo-nan-tomo-nai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + に定評がある",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "is well-known for / has a solid reputation for",
+      "grammar_id": "ni-teihyou-ga-aru",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / V dict-form + に足りない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "not worth / insufficient for / unworthy of",
+      "grammar_id": "ni-tari-nai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + を前にして",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "in front of / facing / on the verge of",
+      "grammar_id": "wo-mae-ni-shite",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V た + り + もしない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "doesn't even do / not even X",
+      "grammar_id": "tari-mo-shinai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + にありがち",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "common to / typical of (often with negative nuance)",
+      "grammar_id": "ni-ari-gachi",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + そのもの",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "(X) itself / the very essence of",
+      "grammar_id": "sono-mono",
       "source_retrieved": "2026-04-12"
     },
     {

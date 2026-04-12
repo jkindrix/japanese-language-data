@@ -120,9 +120,9 @@
     "data/enrichment/pitch-accent.json": 124011,
     "data/enrichment/frequency-newspaper.json": 2501,
     "data/enrichment/frequency-modern.json": 0,
-    "data/enrichment/jlpt-classifications.json": 10983,
+    "data/enrichment/jlpt-classifications.json": 11023,
     "data/enrichment/stroke-order-index.json": 13108,
-    "data/grammar/grammar.json": 479,
+    "data/grammar/grammar.json": 519,
     "data/grammar/expressions.json": 13220,
     "data/grammar/conjugations.json": 3507,
     "data/cross-refs/kanji-to-words.json": 3533,
@@ -131,18 +131,18 @@
     "data/cross-refs/kanji-to-radicals.json": 12156
   },
   "grammar_curation_status": {
-    "total_entries": 479,
+    "total_entries": 519,
     "by_level": {
       "N5": 60,
       "N4": 91,
       "N3": 139,
       "N2": 150,
-      "N1": 39
+      "N1": 79
     },
     "target_entries": "500-700",
-    "coverage_pct": "68-96",
+    "coverage_pct": "74-104",
     "review_status_distribution": {
-      "draft": 479,
+      "draft": 519,
       "community_reviewed": 0,
       "native_speaker_reviewed": 0
     },

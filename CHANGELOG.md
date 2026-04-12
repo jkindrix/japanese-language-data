@@ -16,6 +16,13 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+### Added (Batch B10)
+
+- **N1 batch 2** — 40 more hand-curated N1 entries appended to `grammar-curated/n1.json`: 〜手前, 〜に則って, 〜をもって, 〜ところを, 〜てはばからない, 〜べくもない, 〜とやら, 〜ないでもない, 〜を皮切りに, 〜を限りに, 〜折(に), 〜ながらに, 〜おおせる, 〜こなす, 〜めかす, 〜に他ならない, 〜もさることながら, 〜までもなく, 〜ならまだしも, 〜ならいざ知らず, 〜ひとたび, 〜としたところで, 〜ほどの, 〜ずもがな, 〜にまつわる, 〜を兼ねて, 〜でありながら, 〜てみせる, 〜にして初めて, 〜ながらの, いかんせん, 〜にもほどがある, 〜ばそれまで, 〜もなんともない, 〜に定評がある, 〜に足りない, 〜を前にして, 〜たりもしない, 〜にありがち, 〜そのもの.
+- Grammar total: 479 → **519** (+40, total crossed the lower 500 target). N1: 39 → 79. Coverage: **74–104%** of the 500–700 target (lower bound exceeded).
+- `data/enrichment/jlpt-classifications.json`: 10,983 → **11,023**.
+- Two self-caught broken `related` references during initial builds (`wo-megutte-concerning` in `ni-matsuwaru`, `zannen-regrettable` in `ikan-se-n`), both removed before commit.
+
 ### Added (Batch B9)
 
 - **N1 batch 1** — new `grammar-curated/n1.json` file with **39 hand-curated N1 entries**: 〜に難くない, 〜を余儀なくされる, 〜を禁じ得ない, 〜ずにはおかない, 〜ないではおかない, 〜にもまして, 〜をものともせず, 〜いかんによらず, 〜ともあろう, 〜ならでは(の), 〜にあって, 〜たる者, 〜なり〜なり, 〜といわず〜といわず, 〜であれ〜であれ, 〜までだ / 〜までのことだ, 〜とは, 〜に至っては, 〜をおいて, 〜ことなしに, 〜きっての, 〜ともなれば, 〜の至り, 〜かたわら, 〜がてら, 〜べからず, 〜ずにはすまない, 〜といったところだ, 〜ようにも〜ない, 〜んがため, 〜んばかり, 〜うにも, 〜うものなら, 〜たりとも, 〜なしに(は), 〜なくして(は), 〜や(否や), 〜の極み.
