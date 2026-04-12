@@ -40,6 +40,7 @@ from build.pipeline import BUILD_DATE
 REPO_ROOT = Path(__file__).resolve().parents[2]
 KANJI_JSON = REPO_ROOT / "data" / "core" / "kanji.json"
 WORDS_JSON = REPO_ROOT / "data" / "core" / "words.json"
+WORDS_FULL_JSON = REPO_ROOT / "data" / "core" / "words-full.json"
 SENTENCES_JSON = REPO_ROOT / "data" / "corpus" / "sentences.json"
 RADICALS_JSON = REPO_ROOT / "data" / "core" / "radicals.json"
 OUT_DIR = REPO_ROOT / "data" / "cross-refs"
@@ -259,3 +260,41 @@ def build() -> None:
         ["data/core/words.json"],
         {"mapping": "Each kana reading maps to all word IDs that include it as a kana writing. Use for dictionary-style lookup by pronunciation."},
     )
+
+    # Full-JMdict cross-references (gitignored, built on demand alongside
+    # words-full.json). These cover the entire 216k-entry JMdict, not just
+    # the 23k common subset. Much higher kanji-to-words coverage.
+    if WORDS_FULL_JSON.exists():
+        print("[xref]     building full-JMdict cross-references (from words-full.json)")
+        words_full_data = _load_json(WORDS_FULL_JSON)
+        full_k2w, full_w2k, full_w2s = _build_word_cross_refs(words_full_data)
+        full_r2w = _build_reading_to_words(words_full_data)
+        full_orphans = sorted(ch for ch in full_k2w if ch not in kanji_char_set)
+        print(
+            f"[xref]     full: kanji→words: {len(full_k2w):,}  "
+            f"words→kanji: {len(full_w2k):,}  "
+            f"words→sentences: {len(full_w2s):,}  "
+            f"reading→words: {len(full_r2w):,}"
+        )
+        _write_xref(
+            OUT_DIR / "kanji-to-words-full.json",
+            full_k2w,
+            "Kanji character → list of ALL word IDs (full 216k JMdict, not just common subset).",
+            "kanji_char", "word_id",
+            ["data/core/words-full.json"],
+            extra_metadata={"orphan_count": len(full_orphans), "orphan_chars": full_orphans[:50]},
+        )
+        _write_xref(
+            OUT_DIR / "word-to-kanji-full.json",
+            full_w2k,
+            "Word ID → list of kanji characters (full JMdict).",
+            "word_id", "kanji_char",
+            ["data/core/words-full.json"],
+        )
+        _write_xref(
+            OUT_DIR / "reading-to-words-full.json",
+            full_r2w,
+            "Kana reading → list of word IDs (full JMdict).",
+            "reading", "word_id",
+            ["data/core/words-full.json"],
+        )
