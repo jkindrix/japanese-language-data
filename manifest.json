@@ -1,8 +1,8 @@
 {
   "project": "japanese-language-data",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "phase": 4,
-  "phase_description": "Phase 4 active. All Phase 1-3 content plus: (1) Wikipedia-sourced Kangxi radical meanings and numbers (v0.4.0) expanded by a curated variant-to-Kangxi alias table (v0.7.1), bringing radical coverage to 242/253 (95.7%); (2) hand-curated grammar dataset expanded from 81 to 595 entries across all five JLPT levels (v0.5.0-v0.7.0), every entry review_status=draft awaiting native-speaker review. Remaining Phase 4 candidates — JPDB modern frequency, handwriting, audio, native-speaker grammar review pipeline — pending; see docs/phase4-candidates.md and CHANGELOG.md.",
+  "phase_description": "Phase 4 active (v0.7.2). Grammar: 595 entries across all five JLPT levels (76 N5 + 91 N4 + 139 N3 + 150 N2 + 139 N1), all review_status=draft; native-speaker review pipeline operational (docs/grammar-review.md). Radicals: 242/253 (95.7%) with Kangxi meanings via Wikipedia + curated alias table. 92 tests, byte-reproducible CI, 12 tagged releases. Remaining: native-speaker reviewer recruitment, JPDB modern frequency (license-blocked), post-2022 pitch accent; see docs/phase4-candidates.md.",
   "generated": "2026-04-12",
   "license": "CC-BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",

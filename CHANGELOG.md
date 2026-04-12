@@ -14,7 +14,7 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ---
 
-## [Unreleased]
+## [0.7.2] — 2026-04-12
 
 **Comprehensive review-driven cleanup.** Responds to an end-to-end review that flagged 16 findings ranging from documentation staleness to missing test coverage. No data content changes; all changes are infrastructure, documentation, testing, and internal consistency.
 
