@@ -1,0 +1,8026 @@
+{
+  "metadata": {
+    "generated": "2026-04-12",
+    "count": 1577,
+    "direction": "Word ID → list of grammar point IDs that reference this word in their examples.",
+    "key_type": "word_id",
+    "value_type": "grammar_id",
+    "source_files": [
+      "data/grammar/grammar.json"
+    ],
+    "field_notes": {
+      "mapping": "Links vocabulary to relevant grammar. Enables 'what grammar should I learn to use this word?' queries."
+    },
+    "source": "Derived cross-reference built from data/grammar/grammar.json by build/transform/cross_links.py.",
+    "license": "CC-BY-SA 4.0. Inherits from the source files (EDRDG License / CC-BY-SA 4.0) and the pipeline code license (CC-BY-SA 4.0). See LICENSE and ATTRIBUTION.md for upstream details."
+  },
+  "mapping": {
+    "1000320": [
+      "koko-soko-asoko-doko",
+      "imasu-existence-animate"
+    ],
+    "1000420": [
+      "ni-kataku-nai",
+      "wo-kinjienai",
+      "zu-ni-wa-okanai",
+      "ni-itatte-wa",
+      "koto-nashi-ni",
+      "naku-shite-wa",
+      "beku-mo-nai",
+      "wo-kawakiri-ni",
+      "n-to-suru",
+      "yue-no",
+      "to-atte-wa",
+      "ma-no-atari-ni",
+      "desura",
+      "koto-nagara",
+      "zaru-wo-enai",
+      "wo-keiki-ni",
+      "koto-kara-from-fact",
+      "zu-ni-wa-irarenai",
+      "te-wa-irarenai",
+      "kara-suru-to",
+      "koto-dakara",
+      "ni-taeru",
+      "ni-taenai",
+      "te-yamanai",
+      "to-sureba",
+      "ni-suginai",
+      "kiwamari-nai",
+      "mamire-smeared",
+      "mono-ga-aru",
+      "naku-mo-nai",
+      "ni-kakatte-iru",
+      "okage-sei-de",
+      "to-tan-moment",
+      "ippou-da-keeps",
+      "te-naranai-cant-help",
+      "kke-casual-wondering",
+      "te-shou-ga-nai",
+      "ga-wakaru"
+    ],
+    "1000440": [
+      "wo-keiki-ni",
+      "kara-shite",
+      "kono-sono-ano-dono-attributive"
+    ],
+    "1000590": [
+      "nan-ka-dismissive"
+    ],
+    "1000730": [
+      "you-ni-mo-nai",
+      "nashi-ni-without",
+      "nakucha-nakya",
+      "nai-koto-wa-nai",
+      "ni-taishite-toward",
+      "te-wa-ikenai-prohibition"
+    ],
+    "1000920": [
+      "irassharu-honorific"
+    ],
+    "1000930": [
+      "irassharu-honorific"
+    ],
+    "1001640": [
+      "okage-sei-de"
+    ],
+    "1001710": [
+      "zu-ni-wa-irarenai",
+      "kawari-ni-instead"
+    ],
+    "1001720": [
+      "nuki-de",
+      "yoshi-mi",
+      "ue-de-upon"
+    ],
+    "1001740": [
+      "nasaru-honorific"
+    ],
+    "1001770": [
+      "ni-kotaete-response",
+      "atte-no-thanks-to",
+      "irassharu-honorific",
+      "ossharu-honorific",
+      "nasaru-honorific"
+    ],
+    "1001820": [
+      "ni-matsuwaru",
+      "to-iu-mono-dewa-nai",
+      "to-wa-iu-mono-no",
+      "kara-to-itte",
+      "nai-koto-niwa",
+      "sae-sureba-if-only",
+      "to-iu-no-wa",
+      "sae-even",
+      "to-naru-to-when-comes",
+      "tara-conditional",
+      "nakute-mo-ii",
+      "shi-reason-listing",
+      "te-kureru-favor-received",
+      "shika-nai",
+      "tatoe-temo",
+      "ga-hoshii-wanting-thing"
+    ],
+    "1002290": [
+      "gotoki-like"
+    ],
+    "1002430": [
+      "ni-kawatte-instead",
+      "kawari-ni-instead",
+      "nan-ka-dismissive",
+      "demo-noun-even",
+      "itadaku-humble-verb",
+      "mashou-ka-invitation",
+      "hou-ga-comparative"
+    ],
+    "1002500": [
+      "wo-kanete"
+    ],
+    "1002610": [
+      "ta-bakari",
+      "te-tamaranai-unbearably"
+    ],
+    "1002970": [
+      "to-iu-mono-da",
+      "ni-shite-mireba",
+      "koto-dakara",
+      "shidai-depending",
+      "kamoshirenai-might"
+    ],
+    "1002975": [
+      "kamoshirenai-might"
+    ],
+    "1003430": [
+      "koto-dakara"
+    ],
+    "1003950": [
+      "ni-kurabete-compared"
+    ],
+    "1004320": [
+      "ba-koso-precisely-because",
+      "sou-iu-kou-iu"
+    ],
+    "1004500": [
+      "koso-precisely",
+      "o-v-kudasai-polite-honor",
+      "goran-ni-naru-honorific"
+    ],
+    "1004510": [
+      "koso-precisely"
+    ],
+    "1004540": [
+      "dake-mashi-da",
+      "sobireru-miss-chance",
+      "te-koso-only-by",
+      "sou-iu-kou-iu"
+    ],
+    "1004550": [
+      "ba-koso-precisely-because",
+      "ni-shite-wa",
+      "koto-ga-dekiru"
+    ],
+    "1004570": [
+      "n-ga-tame",
+      "ni-kotaete-response",
+      "wa-tomokaku",
+      "ue-wa-now"
+    ],
+    "1004590": [
+      "u-mono-nara"
+    ],
+    "1004790": [
+      "te-iku"
+    ],
+    "1004880": [
+      "to-wa",
+      "you-dewa-if-its",
+      "wake-ga-nai",
+      "kko-nai"
+    ],
+    "1005180": [
+      "ta-bakari"
+    ],
+    "1005600": [
+      "u-ni-mo",
+      "zu-mogana",
+      "mono-wo-if-only",
+      "koto-mo-arou-ni",
+      "ga-sai-go",
+      "mono-dakara",
+      "ka-nai-ka-no-uchi-ni",
+      "ageku-ni-end-up",
+      "nari-as-soon-as",
+      "sobireru-miss-chance",
+      "to-omoi-kiya",
+      "te-shimau",
+      "noni-although",
+      "mama",
+      "tsutsu-while",
+      "dokoro-ka-far-from",
+      "ni-chigainai-must",
+      "shou-ga-nai",
+      "tsumori-datta-had-intended"
+    ],
+    "1005860": [
+      "nuku-fully-do"
+    ],
+    "1005900": [
+      "ja-arumai-shi",
+      "dewa-arimasen-negative-polite-copula",
+      "na-adjective-negative"
+    ],
+    "1006200": [
+      "ni-kakawaru",
+      "ni-kangamite",
+      "naritomo",
+      "beki-da"
+    ],
+    "1006280": [
+      "nara-mada-shimo",
+      "nara-iza-shirazu",
+      "n-to-suru",
+      "kane-nai-might",
+      "to-iu-mono-dewa-nai",
+      "kara-suru-to",
+      "to-sureba",
+      "to-miru-see-as",
+      "to-wa-kagiranai",
+      "to-nareba-if-comes-to",
+      "toka-listing"
+    ],
+    "1006380": [
+      "aida-ni"
+    ],
+    "1006540": [
+      "zu-ni-wa-okanai",
+      "zu-ni-wa-sumanai",
+      "zu-ni-wa-irarenai",
+      "mono-dakara",
+      "zuni-sumu"
+    ],
+    "1006650": [
+      "manzara-de-mo-nai",
+      "kara-shite",
+      "you-de-seemingly",
+      "sou-da-hearsay"
+    ],
+    "1006980": [
+      "sorekara-after"
+    ],
+    "1007000": [
+      "sorede-and-then",
+      "soredemo-even-so"
+    ],
+    "1007130": [
+      "tomo-arou",
+      "nara-mada-shimo",
+      "nara-iza-shirazu",
+      "mai-not-likely",
+      "kane-nai-might",
+      "made-mo-nai",
+      "ni-shite-mireba",
+      "ja-arumai-shi",
+      "you-dewa-if-its",
+      "yashinai-emphatic",
+      "beki-da",
+      "ba-yokatta",
+      "kurai-nara-rather",
+      "wake-ga-nai",
+      "kko-nai",
+      "ni-kimatte-iru",
+      "hazu-expected"
+    ],
+    "1007230": [
+      "to-sureba"
+    ],
+    "1007270": [
+      "wo-kinjienai",
+      "tabi-ni-every-time"
+    ],
+    "1007310": [
+      "hoka-naranu",
+      "kara-koso-precisely-because",
+      "mono-dakara",
+      "koto-dakara",
+      "nani-se",
+      "datte-casual-because",
+      "ta-bakari",
+      "koso-precisely",
+      "wake-da-meaning",
+      "n-da-kara-emphatic",
+      "nai-wake-ni-ikanai",
+      "wake-ni-wa-ikanai",
+      "dakara-so"
+    ],
+    "1007360": [
+      "dake-de-naku"
+    ],
+    "1007370": [
+      "dake-mashi-da"
+    ],
+    "1007480": [
+      "to-iwazu-to-iwazu",
+      "darake-full-of"
+    ],
+    "1007660": [
+      "te-mae",
+      "koto-dakara",
+      "dashi-suddenly-start"
+    ],
+    "1007720": [
+      "te-mae",
+      "koto-dakara"
+    ],
+    "1008020": [
+      "pponashi-left"
+    ],
+    "1008050": [
+      "tsuide-ni"
+    ],
+    "1008340": [
+      "iyashiku-mo",
+      "yue-ni-because",
+      "ijou-since"
+    ],
+    "1008420": [
+      "ja-arumai-shi",
+      "mon-casual-because",
+      "ni-kakete-through",
+      "nan-te-how",
+      "darou-deshou-conjecture",
+      "dakara-so"
+    ],
+    "1008430": [
+      "mono-dakara"
+    ],
+    "1008510": [
+      "to-iu-mono-da",
+      "to-iu-mono-dewa-nai",
+      "te-kara-to-iu-mono"
+    ],
+    "1008590": [
+      "n-to-suru",
+      "de-atta-to-shitemo",
+      "wo-keiki-ni",
+      "wa-tomokaku",
+      "toshite-mo-even-as",
+      "majiki-unacceptable",
+      "mono-to-shite",
+      "toshite-as"
+    ],
+    "1008600": [
+      "de-atta-to-shitemo",
+      "toshite-mo-even-as"
+    ],
+    "1008610": [
+      "n-to-suru",
+      "to-sureba"
+    ],
+    "1008630": [
+      "to-atte",
+      "nan-ka-dismissive",
+      "noun-modifying-clause",
+      "deshita-past-polite-copula",
+      "na-adjective-past"
+    ],
+    "1008850": [
+      "ka-to-iu-to",
+      "to-ieba-speaking-of"
+    ],
+    "1008920": [
+      "sou-iu-kou-iu"
+    ],
+    "1009050": [
+      "nani-se"
+    ],
+    "1009500": [
+      "nan-ka-dismissive"
+    ],
+    "1009550": [
+      "ni-oite-in-at"
+    ],
+    "1009560": [
+      "ni-oite-in-at"
+    ],
+    "1009600": [
+      "ni-totte"
+    ],
+    "1009640": [
+      "ikan-depending",
+      "ni-yotte"
+    ],
+    "1009660": [
+      "to-iu-koto-da",
+      "sou-da-hearsay"
+    ],
+    "1009670": [
+      "to-iu-koto-da",
+      "sou-da-hearsay"
+    ],
+    "1009740": [
+      "ni-kanshite-regarding"
+    ],
+    "1009780": [
+      "ni-tsuite",
+      "ni-oite-in-at",
+      "au-together"
+    ],
+    "1009800": [
+      "wo-kinjienai",
+      "ni-taishite-toward"
+    ],
+    "1009950": [
+      "tabi-ni-every-time"
+    ],
+    "1010240": [
+      "n-bakari",
+      "n-to-bakari-ni",
+      "bakari-no",
+      "to-bakari-ni",
+      "dano-dano",
+      "ta-bakari",
+      "bakari-only",
+      "bakari-ni-merely",
+      "bakari-ka-not-only",
+      "bakari-de-naku"
+    ],
+    "1010470": [
+      "hiite-wa"
+    ],
+    "1011580": [
+      "dake-atte-as-expected"
+    ],
+    "1011740": [
+      "wo-hikiai-ni",
+      "made-mo-nai",
+      "no-minarazu",
+      "tsutsu-aru",
+      "ni-suginai",
+      "ni-tsuite",
+      "to-ieba-speaking-of",
+      "ippou-da-keeps",
+      "te-hajimete-only-after"
+    ],
+    "1012620": [
+      "ba-yokatta"
+    ],
+    "1012810": [
+      "to-ieba-speaking-of"
+    ],
+    "1013050": [
+      "kawari-ni-instead",
+      "te-kudasai-request"
+    ],
+    "1013110": [
+      "you-ni-mo-nai",
+      "u-ni-mo",
+      "de-ari-nagara",
+      "wo-kikkake-ni",
+      "wo-keiki-ni",
+      "you-ni-purpose",
+      "ka-no-you-ni",
+      "ue-wa-now",
+      "you-ni-suru"
+    ],
+    "1013240": [
+      "to-yara",
+      "mo-saru-koto-nagara",
+      "shikamo-moreover",
+      "to-aimatte",
+      "koto-nagara",
+      "dake-no-koto-wa-aru",
+      "rashii-seems",
+      "dake-ni-precisely"
+    ],
+    "1017070": [
+      "wo-motoni-based-on"
+    ],
+    "1021160": [
+      "wake-da-meaning"
+    ],
+    "1021180": [
+      "te-mo-ii-kurai",
+      "kurai-extent",
+      "v-temo-even-if",
+      "ikura-how-much"
+    ],
+    "1044070": [
+      "muke-targeted-for",
+      "ichiban-superlative"
+    ],
+    "1047700": [
+      "ni-atte"
+    ],
+    "1047860": [
+      "sou-da-appearance",
+      "te-shimau",
+      "kakeru-halfway",
+      "noun-modifying-clause",
+      "morau-receive",
+      "ikura-how-much",
+      "counter-en-money"
+    ],
+    "1048400": [
+      "makuru-extensively",
+      "bakari-only",
+      "te-tamaranai-unbearably"
+    ],
+    "1049000": [
+      "mono-reason-assertion"
+    ],
+    "1049180": [
+      "ni-kawatte-instead",
+      "kawari-ni-instead",
+      "ni-suru-decide",
+      "masu-polite-verb",
+      "particle-mo-also",
+      "te-form-basic",
+      "hou-ga-comparative",
+      "mo-mo-both",
+      "mai-every-prefix"
+    ],
+    "1055000": [
+      "ni-sakigakete"
+    ],
+    "1061520": [
+      "mamire-smeared"
+    ],
+    "1066710": [
+      "particle-ya-non-exhaustive"
+    ],
+    "1069210": [
+      "kara-ni-wa"
+    ],
+    "1073210": [
+      "bakari-de-naku",
+      "toka-listing"
+    ],
+    "1075500": [
+      "konasu"
+    ],
+    "1075940": [
+      "to-iu-ka"
+    ],
+    "1078040": [
+      "wo-oite",
+      "mai-ka-wonder",
+      "ni-shite"
+    ],
+    "1078420": [
+      "wo-kawakiri-ni"
+    ],
+    "1079010": [
+      "te-aru",
+      "counter-people-nin"
+    ],
+    "1079760": [
+      "i-adjective-past"
+    ],
+    "1080510": [
+      "nagara",
+      "arimasu-existence-inanimate"
+    ],
+    "1081190": [
+      "kara-miru-to",
+      "wo-fumaete",
+      "wo-motoni-based-on"
+    ],
+    "1084810": [
+      "koko-soko-asoko-doko",
+      "question-words-basic"
+    ],
+    "1091180": [
+      "no-moto-de"
+    ],
+    "1091340": [
+      "to-iu-koto-da"
+    ],
+    "1091500": [
+      "to-iu-koto-da"
+    ],
+    "1093450": [
+      "komi-into"
+    ],
+    "1099210": [
+      "ba-sore-made"
+    ],
+    "1099420": [
+      "toka-listing",
+      "to-exhaustive-listing"
+    ],
+    "1100760": [
+      "te-aru",
+      "counter-people-nin"
+    ],
+    "1101510": [
+      "ni-sakidatte-prior"
+    ],
+    "1101570": [
+      "you-ka-to-omou",
+      "tara-conditional",
+      "you-to-omou-volitional-intent"
+    ],
+    "1106390": [
+      "kitte-no"
+    ],
+    "1106400": [
+      "no-moto-de"
+    ],
+    "1106430": [
+      "ni-yotte"
+    ],
+    "1106530": [
+      "no-moto-de"
+    ],
+    "1111480": [
+      "bakari-ka-not-only"
+    ],
+    "1111590": [
+      "bakari-ka-not-only"
+    ],
+    "1115150": [
+      "komi-into"
+    ],
+    "1116840": [
+      "wo-komete",
+      "toshite-as",
+      "ageru-give-outward",
+      "morau-receive"
+    ],
+    "1117210": [
+      "nuki-de",
+      "ni-kakatte-iru",
+      "ni-sotte-along"
+    ],
+    "1117850": [
+      "iyashiku-mo"
+    ],
+    "1119530": [
+      "ni-kotaete-response"
+    ],
+    "1119650": [
+      "ya-inaya",
+      "particle-ya-non-exhaustive"
+    ],
+    "1122650": [
+      "no-kiwami"
+    ],
+    "1123880": [
+      "sai-ni",
+      "to-conditional",
+      "ba-ai-in-case"
+    ],
+    "1124300": [
+      "katawara"
+    ],
+    "1124700": [
+      "ni-sakidatte-prior",
+      "darake-full-of",
+      "naoshi-redo",
+      "nakereba-naranai"
+    ],
+    "1127970": [
+      "kara-ni-wa"
+    ],
+    "1132560": [
+      "okini-intervals"
+    ],
+    "1132570": [
+      "okini-intervals"
+    ],
+    "1132620": [
+      "nari-nari"
+    ],
+    "1137120": [
+      "kara-shite"
+    ],
+    "1137720": [
+      "sou-da-hearsay"
+    ],
+    "1140590": [
+      "taru-mono-as-x",
+      "taru-yuen"
+    ],
+    "1142230": [
+      "ni-sakidatte-prior"
+    ],
+    "1143920": [
+      "de-are-de-are",
+      "to-iedomo",
+      "ni-shitagatte"
+    ],
+    "1145290": [
+      "kara-iu-to",
+      "warini-considering",
+      "to-omou",
+      "koko-soko-asoko-doko"
+    ],
+    "1145310": [
+      "kara-iu-to",
+      "warini-considering",
+      "to-omou",
+      "koko-soko-asoko-doko"
+    ],
+    "1145990": [
+      "darake-full-of",
+      "naoshi-redo",
+      "nakereba-naranai"
+    ],
+    "1151120": [
+      "wo-kanete",
+      "katagata-combining",
+      "ni-atatte-occasion",
+      "mono-dakara",
+      "wa-oroka",
+      "naritomo",
+      "ni-kawatte-instead"
+    ],
+    "1151260": [
+      "manzara-de-mo-nai",
+      "tsutsu-while"
+    ],
+    "1151300": [
+      "ashikara-zu"
+    ],
+    "1151470": [
+      "wo-yogi-naku-sareru",
+      "nai-nomi-narazu"
+    ],
+    "1152280": [
+      "ni-mo-kakawarazu-despite"
+    ],
+    "1153430": [
+      "mono-to-shite"
+    ],
+    "1153670": [
+      "shikamo-moreover",
+      "nara-conditional",
+      "yasui-easy",
+      "particle-yo-emphasis"
+    ],
+    "1153930": [
+      "to-sareru",
+      "wo-keiki-ni",
+      "kara-miru-to"
+    ],
+    "1154320": [
+      "ta-hou-ga-ii"
+    ],
+    "1154330": [
+      "te-mo-ii-kurai",
+      "kurai-extent",
+      "ni-shitemo-even",
+      "kurai-nara-rather"
+    ],
+    "1154860": [
+      "humble-o-suru"
+    ],
+    "1155020": [
+      "wo-motte"
+    ],
+    "1155090": [
+      "igai-other-than"
+    ],
+    "1155120": [
+      "iyashiku-mo",
+      "ijou-since"
+    ],
+    "1155150": [
+      "ni-mo-mashite",
+      "ni-kurabete-compared"
+    ],
+    "1155180": [
+      "wo-oite",
+      "tou-no",
+      "nani-se",
+      "to-miru-see-as",
+      "gotoki-like",
+      "you-da-appearance",
+      "bakari-only",
+      "mono-no-although",
+      "irai-since",
+      "ta-kiri-since-last",
+      "ni-chigainai-must",
+      "shika-nai"
+    ],
+    "1155210": [
+      "irai-since"
+    ],
+    "1156160": [
+      "nan-ka-dismissive"
+    ],
+    "1156410": [
+      "to-omoi-kiya"
+    ],
+    "1156530": [
+      "te-habakaranai",
+      "zaru-wo-enai",
+      "kane-ru-hard-to",
+      "naku-mo-nai",
+      "ni-yotte",
+      "ni-kanshite-regarding",
+      "gotoni-each"
+    ],
+    "1156690": [
+      "beku-mo-nai"
+    ],
+    "1156800": [
+      "ge-looking",
+      "te-koso-only-by",
+      "sou-iu-kou-iu"
+    ],
+    "1157150": [
+      "n-ga-tame",
+      "te-oku",
+      "tame-ni",
+      "koto-da-emphatic"
+    ],
+    "1158120": [
+      "you-de-seemingly",
+      "you-nara-if-looks",
+      "you-da-appearance",
+      "you-ni-purpose",
+      "you-ga-nai-no-way",
+      "you-ni-suru"
+    ],
+    "1158140": [
+      "zukume-nothing-but"
+    ],
+    "1158230": [
+      "ikan-ni-yorazu",
+      "ikan-se-n",
+      "ikan-depending"
+    ],
+    "1158350": [
+      "sou-da-hearsay"
+    ],
+    "1158710": [
+      "ippou-de-one-hand"
+    ],
+    "1158870": [
+      "ni-ari-gachi",
+      "mai-ka-wonder",
+      "koso-are",
+      "sobakara",
+      "to-miru-see-as",
+      "darake-full-of",
+      "ni-chigainai-must"
+    ],
+    "1158880": [
+      "ni-yotte",
+      "gotoni-each"
+    ],
+    "1158960": [
+      "ni-terashite",
+      "ta-hou-ga-ii"
+    ],
+    "1159430": [
+      "tara-kiri-ga-nai",
+      "zu-jimai",
+      "tatte-even-casual",
+      "mono-nara-if-possible",
+      "tara-conditional"
+    ],
+    "1159980": [
+      "de-ari-nagara",
+      "ni-shite",
+      "majiki-unacceptable",
+      "noni-although",
+      "ta-hou-ga-ii",
+      "toshite-as",
+      "to-itta-such-as",
+      "ni-naru-become",
+      "te-morau-request-favor",
+      "tai-to-omou-want-to-think"
+    ],
+    "1160820": [
+      "zutsu-each-per",
+      "shika-nai",
+      "counter-tsu"
+    ],
+    "1161130": [
+      "tari-tomo"
+    ],
+    "1162290": [
+      "ikkou-ni-nai"
+    ],
+    "1162410": [
+      "ikkou-ni-nai"
+    ],
+    "1163130": [
+      "kara-to-itte",
+      "to-itte-without-particular",
+      "kara-iu-to"
+    ],
+    "1163340": [
+      "tari-tomo"
+    ],
+    "1163400": [
+      "volitional-form",
+      "mashou-volitional",
+      "masenka-invitation",
+      "issho-ni-together"
+    ],
+    "1163420": [
+      "volitional-form",
+      "mashou-volitional",
+      "masenka-invitation",
+      "issho-ni-together"
+    ],
+    "1163700": [
+      "wo-yoso-ni",
+      "komi-into"
+    ],
+    "1163940": [
+      "dake-nara",
+      "te-kuru"
+    ],
+    "1164010": [
+      "nari-ni-in-own-way",
+      "tame-ni",
+      "noni-although"
+    ],
+    "1165500": [
+      "makuru-extensively",
+      "pponashi-left",
+      "chuu-during"
+    ],
+    "1165650": [
+      "ta-bakari"
+    ],
+    "1165660": [
+      "ta-bakari"
+    ],
+    "1165970": [
+      "te-habakaranai",
+      "zu-mogana",
+      "ni-totte",
+      "ni-kakete-through",
+      "nara-conditional",
+      "ichiban-superlative"
+    ],
+    "1166510": [
+      "ippou-de-one-hand",
+      "ippou-da-keeps"
+    ],
+    "1167410": [
+      "ni-suginai"
+    ],
+    "1169340": [
+      "n-desu-explanation"
+    ],
+    "1169610": [
+      "wo-kagiri-ni"
+    ],
+    "1169870": [
+      "nari-nari"
+    ],
+    "1171450": [
+      "kara-suru-to"
+    ],
+    "1172830": [
+      "to-sareru",
+      "ga-dekiru"
+    ],
+    "1172910": [
+      "beku-in-order-to",
+      "nai-made-mo",
+      "tame-ni",
+      "you-ni-suru",
+      "koto-ni-suru-decide",
+      "nasaru-honorific"
+    ],
+    "1173030": [
+      "ni-kakatte-iru"
+    ],
+    "1173720": [
+      "ni-taenai",
+      "tara-conditional",
+      "owaru-finish",
+      "tari-tari-suru",
+      "goran-ni-naru-honorific",
+      "toka-listing",
+      "deshita-past-polite-copula",
+      "mashita-polite-past-verb",
+      "particle-ne-seeking-agreement",
+      "ta-form",
+      "i-adjective-nonpast",
+      "i-adjective-negative",
+      "i-adjective-past",
+      "masenka-invitation",
+      "issho-ni-together"
+    ],
+    "1174340": [
+      "koto-ga-dekiru"
+    ],
+    "1174420": [
+      "ni-atte",
+      "konasu",
+      "wake-da-meaning",
+      "dake-atte-as-expected",
+      "bakari-ka-not-only",
+      "to-itta-such-as",
+      "dokoro-ka-far-from",
+      "dake-de-naku"
+    ],
+    "1175300": [
+      "n-desu-explanation"
+    ],
+    "1176710": [
+      "ni-sotte-along"
+    ],
+    "1176820": [
+      "ni-teihyou-ga-aru"
+    ],
+    "1177820": [
+      "ga-kikoeru-mieru"
+    ],
+    "1178590": [
+      "to-exhaustive-listing",
+      "counter-hon-long"
+    ],
+    "1180030": [
+      "ikan-ni-yorazu",
+      "wo-towazu-regardless"
+    ],
+    "1180130": [
+      "sai-ni",
+      "ba-ai-in-case"
+    ],
+    "1180470": [
+      "to-conditional"
+    ],
+    "1181700": [
+      "to-iedomo"
+    ],
+    "1183480": [
+      "tsutsu-aru"
+    ],
+    "1183720": [
+      "wo-chuushin-ni-centered",
+      "nagara",
+      "tsutsu-while",
+      "ga-kikoeru-mieru",
+      "toka-listing"
+    ],
+    "1184270": [
+      "nari-nari",
+      "ni-nottotte",
+      "ori-ni",
+      "ni-soku-shite",
+      "ashikara-zu",
+      "ni-kakawarazu-regardless",
+      "ni-shiro-ni-seyo",
+      "sai-ni",
+      "doori-just-as",
+      "koto-tote",
+      "you-nara-if-looks",
+      "mono-to-shite",
+      "te-oku",
+      "you-ni-purpose",
+      "kurai-extent",
+      "ka-dou-ka",
+      "mama",
+      "ni-shitagatte",
+      "ni-sotte-along",
+      "ue-de-upon",
+      "naoshi-redo",
+      "kara-cause",
+      "owaru-finish",
+      "jidoushi-tadoushi",
+      "kata-way-of-doing",
+      "te-kara-after-doing",
+      "mae-ni-before-doing",
+      "o-v-kudasai-polite-honor",
+      "ba-ai-in-case",
+      "zutsu-each-per",
+      "goran-ni-naru-honorific",
+      "kudasaru-honorific-verb",
+      "particle-de-means",
+      "te-kudasai-request",
+      "counter-tsu",
+      "nai-de-kudasai",
+      "i-adj-adverbial-ku",
+      "na-adj-adverbial-ni",
+      "counter-fun-minute",
+      "counter-hon-long",
+      "counter-mai-flat"
+    ],
+    "1184370": [
+      "ka-to-omou-to",
+      "ka-nai-ka-no-uchi-ni",
+      "sou-ni-nai",
+      "sou-da-appearance",
+      "to-tan-moment",
+      "tsuzukeru-continue",
+      "dashi-suddenly-start",
+      "hajimeru-auxiliary"
+    ],
+    "1184450": [
+      "you-to-mai-to",
+      "to-iu-koto-da",
+      "to-sureba",
+      "you-nara-if-looks",
+      "mitai-looks-like",
+      "bakari-ka-not-only",
+      "ni-kakete-through",
+      "to-omou",
+      "kamoshirenai-might",
+      "ki-ga-suru-feel-like",
+      "hazu-datta-was-supposed"
+    ],
+    "1185910": [
+      "ni-naru-become"
+    ],
+    "1187300": [
+      "n-bakari",
+      "to-shita-tokoro-de",
+      "n-to-bakari-ni",
+      "to-bakari-ni",
+      "bakari-ni-merely"
+    ],
+    "1188270": [
+      "bakari-only",
+      "kakeru-halfway",
+      "arimasu-existence-inanimate"
+    ],
+    "1188330": [
+      "nani-shiro"
+    ],
+    "1188350": [
+      "n-da-kara-emphatic"
+    ],
+    "1188370": [
+      "tomo-arou",
+      "nara-iza-shirazu",
+      "no-ue-nai",
+      "nan-te-how"
+    ],
+    "1188410": [
+      "to-yara",
+      "oose-ru",
+      "mo-nan-tomo-nai",
+      "you-to-regardless",
+      "nai-koto-wa-nai",
+      "sonkeigo-reru-rareru",
+      "ossharu-honorific"
+    ],
+    "1188420": [
+      "oose-ru",
+      "nai-koto-wa-nai"
+    ],
+    "1188490": [
+      "koto-nashi-ni",
+      "to-shita-tokoro-de",
+      "ageku-ni-end-up",
+      "zu-ni",
+      "ka-no-you-ni",
+      "nai-de-without-doing"
+    ],
+    "1188690": [
+      "mo-nan-tomo-nai"
+    ],
+    "1188730": [
+      "counter-sai-age"
+    ],
+    "1188760": [
+      "kke-casual-wondering",
+      "sonkeigo-reru-rareru",
+      "nanji-what-time"
+    ],
+    "1188790": [
+      "kke-casual-wondering",
+      "nanji-what-time"
+    ],
+    "1188890": [
+      "koto-nagara",
+      "dano-dano",
+      "zukume-nothing-but",
+      "buru-pretend",
+      "tsumori-intention"
+    ],
+    "1189170": [
+      "nara-mada-shimo",
+      "ikkou-ni-nai"
+    ],
+    "1189360": [
+      "ni-shiro-ni-seyo",
+      "ka-to-iu-to",
+      "ni-shitemo-even"
+    ],
+    "1189600": [
+      "kara-koso-precisely-because",
+      "to-tomoni-together",
+      "soredemo-even-so"
+    ],
+    "1189610": [
+      "to-tomoni-together"
+    ],
+    "1191060": [
+      "naku-shite-wa",
+      "hodo-dewa-nai",
+      "wo-towazu-regardless",
+      "ka-nai-ka-no-uchi-ni"
+    ],
+    "1191420": [
+      "aida-ni"
+    ],
+    "1191870": [
+      "tada-de-sae"
+    ],
+    "1192150": [
+      "hoka-naranu",
+      "iwaba",
+      "gurumi",
+      "hiite-wa",
+      "to-wa-ie",
+      "atte-no-thanks-to",
+      "ni-totte",
+      "to-tomoni-together",
+      "to-iu-yori-rather",
+      "ippou-de-one-hand",
+      "counter-people-nin",
+      "issho-ni-together"
+    ],
+    "1192280": [
+      "wo-kaerimi-zu"
+    ],
+    "1192420": [
+      "zu-ni-wa-okanai",
+      "nai-dewa-okanai",
+      "nai-de-mo-nai",
+      "de-atta-to-shitemo",
+      "ikkou-ni-nai",
+      "ni-kagitte-only",
+      "nai-dewa-irarenai",
+      "ni-shiro-ni-seyo",
+      "ka-nai-ka-no-uchi-ni",
+      "ja-arumai-shi",
+      "hoka-nai-no-choice",
+      "nai-wake-ni-ikanai",
+      "wake-ni-wa-ikanai",
+      "shika-nai",
+      "nai-form"
+    ],
+    "1192860": [
+      "hate-ni-after"
+    ],
+    "1193060": [
+      "to-itta-such-as",
+      "particle-ya-non-exhaustive"
+    ],
+    "1193290": [
+      "to-atte",
+      "na-adjective-attributive"
+    ],
+    "1193950": [
+      "ba-ai-in-case"
+    ],
+    "1194580": [
+      "to-ieba-speaking-of"
+    ],
+    "1195430": [
+      "hazu-expected",
+      "mashou-ka-invitation"
+    ],
+    "1195470": [
+      "ageru-give-outward"
+    ],
+    "1195670": [
+      "kawari-ni-instead"
+    ],
+    "1195960": [
+      "gotoku-as-if"
+    ],
+    "1195970": [
+      "to-minasu",
+      "sugiru-too-much"
+    ],
+    "1196030": [
+      "wo-hikiai-ni",
+      "wo-fumaete",
+      "ni-kangamite"
+    ],
+    "1197610": [
+      "goran-ni-naru-honorific"
+    ],
+    "1198180": [
+      "mai-not-likely",
+      "tabi-ni-every-time",
+      "gotoni-each"
+    ],
+    "1198230": [
+      "nomi-only"
+    ],
+    "1198360": [
+      "wo-yogi-naku-sareru",
+      "wo-motte",
+      "koto-mo-arou-ni",
+      "tada-de-sae",
+      "ni-sakidatte-prior",
+      "you-to-mai-to",
+      "ni-oite-in-at",
+      "chuu-during",
+      "saichu-in-the-middle",
+      "wake-ni-wa-ikanai",
+      "koto-ni-naru-be-decided",
+      "sonkeigo-reru-rareru",
+      "sorede-and-then",
+      "nanyoubi-day-of-week"
+    ],
+    "1198550": [
+      "kitte-no",
+      "katawara",
+      "to-yara",
+      "ni-teihyou-ga-aru",
+      "ni-kakawaru",
+      "you-ka-to-omou",
+      "gurumi",
+      "wo-hete",
+      "ta-bakari",
+      "ni-sotte-along",
+      "to-itte-mo-although"
+    ],
+    "1198560": [
+      "wo-hete"
+    ],
+    "1198660": [
+      "to-atte"
+    ],
+    "1198880": [
+      "wa-oroka",
+      "to-mo-naku"
+    ],
+    "1198960": [
+      "zu-ni-wa-sumanai",
+      "beku-in-order-to",
+      "nai-nomi-narazu",
+      "ni-yotte",
+      "hoka-nai-no-choice"
+    ],
+    "1199720": [
+      "hodo-no"
+    ],
+    "1200220": [
+      "wo-yogi-naku-sareru"
+    ],
+    "1200780": [
+      "te-habakaranai"
+    ],
+    "1200960": [
+      "ikkou-ni-nai",
+      "tsutsu-aru"
+    ],
+    "1200990": [
+      "ni-tsuki-due-to"
+    ],
+    "1201260": [
+      "ni-aki-tarazu",
+      "to-atte",
+      "wa-oroka"
+    ],
+    "1201670": [
+      "wake-da-meaning",
+      "ka-no-you-ni",
+      "kamoshirenai-might",
+      "kara-cause"
+    ],
+    "1202150": [
+      "to-iwazu-to-iwazu",
+      "te-mae",
+      "koso-are",
+      "wo-towazu-regardless",
+      "ni-itaru-made",
+      "wo-hajime-including"
+    ],
+    "1202390": [
+      "kara-shite",
+      "kurai-nara-rather"
+    ],
+    "1202440": [
+      "koto-ni-naru-be-decided"
+    ],
+    "1202450": [
+      "ya-literary",
+      "ya-inaya",
+      "ga-hayai-ka"
+    ],
+    "1202760": [
+      "ni-sakigakete"
+    ],
+    "1202880": [
+      "ni-kotaete-response",
+      "ni-sakigakete"
+    ],
+    "1203280": [
+      "wo-oite",
+      "yara-yara",
+      "to-omoi-kiya",
+      "igai-other-than",
+      "i-adj-te-joining-kute"
+    ],
+    "1203620": [
+      "to-oboshii",
+      "wa-mochiron",
+      "kara-suru-to",
+      "ni-shite-mireba",
+      "kara-miru-to",
+      "hodo-extent"
+    ],
+    "1203650": [
+      "to-oboshii",
+      "wa-mochiron",
+      "kara-suru-to",
+      "ni-shite-mireba",
+      "kara-miru-to",
+      "hodo-extent"
+    ],
+    "1203800": [
+      "mono-dakara"
+    ],
+    "1204500": [
+      "wa-sate-oki"
+    ],
+    "1205350": [
+      "te-wa-irarenai"
+    ],
+    "1205900": [
+      "ni-sakidatte-prior",
+      "wa-tomokaku",
+      "ka-dou-ka"
+    ],
+    "1206040": [
+      "nani-se",
+      "te-oku"
+    ],
+    "1206530": [
+      "to-iu-no-wa",
+      "te-koso-only-by"
+    ],
+    "1206730": [
+      "ni-tomonatte-accompany",
+      "te-iku",
+      "tame-ni",
+      "zu-ni",
+      "nai-de-without-doing",
+      "nakute-mo-ii",
+      "te-kara-after-doing",
+      "ato-de-after-doing",
+      "irassharu-honorific",
+      "sorekara-after",
+      "masen-polite-negative-verb",
+      "particle-de-means",
+      "particle-e-direction",
+      "particle-made-until",
+      "particle-ka-question",
+      "koko-soko-asoko-doko",
+      "te-form-basic",
+      "nai-form",
+      "location-nouns-ue-shita",
+      "counter-ji-oclock"
+    ],
+    "1206800": [
+      "buru-pretend"
+    ],
+    "1206900": [
+      "no-minarazu",
+      "rashii-seems",
+      "ka-dou-ka",
+      "ni-totte",
+      "beki-da",
+      "ijou-since",
+      "causative-form",
+      "da-plain-copula",
+      "particle-wa-topic",
+      "particle-mo-also",
+      "imasu-existence-animate",
+      "na-adj-te-joining-de",
+      "mo-mo-both"
+    ],
+    "1207240": [
+      "te-kara-to-iu-mono",
+      "to-iu-no-wa",
+      "koto-nominalizer",
+      "dokoro-ka-far-from"
+    ],
+    "1207250": [
+      "tsutsu-while"
+    ],
+    "1207270": [
+      "ni-kagirazu-not-only"
+    ],
+    "1207310": [
+      "to-miru-see-as"
+    ],
+    "1207320": [
+      "to-miru-see-as"
+    ],
+    "1207590": [
+      "nai-de-mo-nai"
+    ],
+    "1207610": [
+      "ta-tokoro"
+    ],
+    "1208000": [
+      "tomo-arou",
+      "you-dewa-if-its"
+    ],
+    "1208020": [
+      "made-no-koto-da",
+      "ni-kakawarazu-regardless",
+      "you-to-regardless",
+      "to-iu-mono-da"
+    ],
+    "1208360": [
+      "wo-kiwameru"
+    ],
+    "1208450": [
+      "te-yamanai"
+    ],
+    "1209580": [
+      "ikan-ni-yorazu",
+      "ni-kakawarazu-regardless",
+      "ni-mo-kakawarazu-despite",
+      "ikan-depending"
+    ],
+    "1210360": [
+      "to-wa-ie",
+      "dano-dano",
+      "wake-da-meaning",
+      "mono-reason-assertion"
+    ],
+    "1210900": [
+      "nara-conditional"
+    ],
+    "1211310": [
+      "ni-taeru"
+    ],
+    "1211340": [
+      "te-tamaranai-unbearably"
+    ],
+    "1211510": [
+      "ni-itatte-wa"
+    ],
+    "1212140": [
+      "ikan-se-n"
+    ],
+    "1212250": [
+      "ni-tsurete-as"
+    ],
+    "1212260": [
+      "ni-tsurete-as"
+    ],
+    "1212310": [
+      "wo-mae-ni-shite",
+      "ni-taenai"
+    ],
+    "1212360": [
+      "no-itari"
+    ],
+    "1212380": [
+      "ni-atatte-occasion",
+      "wo-komete",
+      "to-tomoni-together"
+    ],
+    "1212450": [
+      "koto-nagara"
+    ],
+    "1212570": [
+      "hodo-no",
+      "ma-no-atari-ni",
+      "zu-ni-wa-irarenai",
+      "mono-ga-aru",
+      "te-mo-ii-kurai"
+    ],
+    "1212660": [
+      "ja-arumai-shi"
+    ],
+    "1212670": [
+      "to-iu-mono-dewa-nai"
+    ],
+    "1212960": [
+      "wo-towazu-regardless"
+    ],
+    "1213170": [
+      "wa-mochiron",
+      "kara-suru-to",
+      "wa-oroka",
+      "kata-way-of-doing"
+    ],
+    "1213280": [
+      "wo-chuushin-ni-centered",
+      "ni-tsuite",
+      "ni-kanshite-regarding",
+      "ippou-de-one-hand"
+    ],
+    "1213400": [
+      "tagaru-third-person-desire",
+      "you-ni-suru",
+      "koto-ni-suru-decide"
+    ],
+    "1214200": [
+      "ni-atte"
+    ],
+    "1214330": [
+      "mai-not-likely",
+      "kara-suru-to",
+      "you-de-seemingly",
+      "to-omoi-kiya",
+      "to-itte-mo-although",
+      "wake-ga-nai",
+      "hazu-datta-was-supposed"
+    ],
+    "1214810": [
+      "wo-kawakiri-ni",
+      "wo-mae-ni-shite",
+      "ni-kotaete-response"
+    ],
+    "1214840": [
+      "gatera-while",
+      "wo-kanete",
+      "to-oboshii",
+      "wo-tsuujite-through"
+    ],
+    "1214870": [
+      "to-oboshii",
+      "wo-tsuujite-through"
+    ],
+    "1215200": [
+      "ni-taeru"
+    ],
+    "1215260": [
+      "zutomo-even-without"
+    ],
+    "1215290": [
+      "mairu-humble"
+    ],
+    "1215320": [
+      "ni-ari-gachi",
+      "mai-ka-wonder",
+      "sobakara",
+      "to-miru-see-as",
+      "darake-full-of"
+    ],
+    "1215790": [
+      "ni-kanshite-regarding"
+    ],
+    "1215810": [
+      "ka-dou-ka"
+    ],
+    "1215870": [
+      "ni-hoka-naranai"
+    ],
+    "1216010": [
+      "ni-kakete-through"
+    ],
+    "1216280": [
+      "sanagara",
+      "ka-no-you-ni"
+    ],
+    "1217650": [
+      "mono-wo-if-only"
+    ],
+    "1217900": [
+      "nuki-de",
+      "yoshi-mi",
+      "ashikara-zu",
+      "ue-de-upon"
+    ],
+    "1218450": [
+      "ni-atte"
+    ],
+    "1218560": [
+      "mo-kamawa-zu",
+      "te-wa-irarenai",
+      "hanmen-on-other-hand",
+      "wo-kaerimi-zu",
+      "kiwamari-nai"
+    ],
+    "1218960": [
+      "you-to-omou-volitional-intent"
+    ],
+    "1219190": [
+      "de-are-de-are",
+      "de-ari-nagara"
+    ],
+    "1219260": [
+      "de-ari-nagara"
+    ],
+    "1219510": [
+      "no-ue-nai",
+      "yara-yara",
+      "kagiri-da-emotional",
+      "dake-ni-precisely",
+      "koto-ni-surprise"
+    ],
+    "1219910": [
+      "kagiri-as-long-as"
+    ],
+    "1219960": [
+      "ikutsu-how-many"
+    ],
+    "1220470": [
+      "ka-to-omou-to",
+      "nai-made-mo",
+      "to-iu-koto-wa",
+      "kagiri-as-long-as",
+      "kiri-only"
+    ],
+    "1220570": [
+      "to-wa-urahara-ni",
+      "ashikara-zu",
+      "ni-kotaete-response",
+      "te-yamanai",
+      "kurai-extent",
+      "dake-ni-precisely",
+      "mono-nara-if-possible",
+      "ga-kedo-although",
+      "tai-to-omou-want-to-think",
+      "tai-desire",
+      "issho-ni-together"
+    ],
+    "1221120": [
+      "made-da",
+      "tomo-nareba",
+      "tari-tomo",
+      "nashi-ni-without",
+      "naku-shite-wa",
+      "nai-de-mo-nai",
+      "ga-sai-go",
+      "nai-koto-niwa",
+      "wa-oroka",
+      "you-dewa-if-its",
+      "kagiri-as-long-as"
+    ],
+    "1221250": [
+      "uchi-ni",
+      "gimi-tendency",
+      "node-cause",
+      "nasaru-honorific"
+    ],
+    "1221270": [
+      "made-da",
+      "hoka-nai-no-choice",
+      "shou-ga-nai"
+    ],
+    "1221430": [
+      "naku-mo-nai",
+      "tabi-ni-every-time",
+      "nai-koto-wa-nai",
+      "mono-reason-assertion"
+    ],
+    "1222140": [
+      "koto-nagara"
+    ],
+    "1222590": [
+      "te-mo-ii-kurai",
+      "ka-no-you-ni"
+    ],
+    "1222640": [
+      "gimi-tendency"
+    ],
+    "1222840": [
+      "te-iku"
+    ],
+    "1223021": [
+      "ni-nottotte"
+    ],
+    "1223150": [
+      "ni-shitagatte"
+    ],
+    "1223250": [
+      "to-oboshii"
+    ],
+    "1223615": [
+      "hoka-naranu",
+      "you-to-regardless",
+      "you-to-mai-to",
+      "to-areba",
+      "kagiri-da-emotional",
+      "ni-kakatte-iru",
+      "okage-sei-de",
+      "koso-precisely",
+      "ageru-give-outward"
+    ],
+    "1223640": [
+      "koto-nominalizer"
+    ],
+    "1223680": [
+      "to-wa",
+      "beku-shite"
+    ],
+    "1225130": [
+      "ni-tomonatte-accompany",
+      "ni-sakigakete"
+    ],
+    "1225850": [
+      "gotoku-as-if"
+    ],
+    "1226130": [
+      "wa-sate-oki"
+    ],
+    "1226160": [
+      "wo-kawakiri-ni",
+      "sue-ni-after",
+      "no-minarazu",
+      "ageku-ni-end-up",
+      "kekka-result",
+      "ni-itaru",
+      "hate-ni-after"
+    ],
+    "1227170": [
+      "to-omoi-kiya"
+    ],
+    "1227370": [
+      "ni-taenai",
+      "nani-se",
+      "buri-ni-first-time"
+    ],
+    "1227500": [
+      "tokoro-wo",
+      "to-iu-ka",
+      "makuru-extensively",
+      "to-iu-koto-wa",
+      "aida-ni",
+      "tame-ni",
+      "tari-tari-suru",
+      "shi-reason-listing",
+      "da-plain-copula",
+      "mashou-volitional",
+      "nanyoubi-day-of-week"
+    ],
+    "1227560": [
+      "nari-nari",
+      "koto-da-emphatic",
+      "wake-ni-wa-ikanai"
+    ],
+    "1227570": [
+      "to-itta-tokoro-da"
+    ],
+    "1228040": [
+      "ni-tsuki-due-to",
+      "to-atte"
+    ],
+    "1228140": [
+      "ni-wa-oyoba-nai"
+    ],
+    "1228570": [
+      "ni-kagitte-only",
+      "mono-dakara",
+      "bakari-ni-merely",
+      "n-da-kara-emphatic"
+    ],
+    "1228630": [
+      "kara-cause"
+    ],
+    "1229200": [
+      "wo-kiwameru"
+    ],
+    "1229350": [
+      "ja-arumai-shi"
+    ],
+    "1229650": [
+      "mo-kamawa-zu",
+      "amari-too-much",
+      "nari-as-soon-as",
+      "kurai-extent",
+      "tabi-ni-every-time",
+      "dashi-suddenly-start"
+    ],
+    "1229840": [
+      "kuse-ni-despite"
+    ],
+    "1230360": [
+      "dake-mashi-da",
+      "hanmen-on-other-hand"
+    ],
+    "1231590": [
+      "sorekara-after",
+      "particle-to-and-with"
+    ],
+    "1231690": [
+      "ni-mo-mashite",
+      "ni-kurabete-compared",
+      "hajimeru-auxiliary"
+    ],
+    "1231890": [
+      "ga-hayai-ka"
+    ],
+    "1232860": [
+      "gatai-difficult",
+      "ta-tokoro-de",
+      "koto-tote"
+    ],
+    "1232870": [
+      "bekarazu"
+    ],
+    "1232880": [
+      "nashi-ni-without"
+    ],
+    "1234260": [
+      "ni-kagirazu-not-only",
+      "ni-shite-wa",
+      "ni-shite-mireba",
+      "nari-ni-in-own-way",
+      "ni-shitemo-even",
+      "to-tomoni-together"
+    ],
+    "1236070": [
+      "shikamo-moreover",
+      "bakari-de-naku"
+    ],
+    "1236120": [
+      "sae-sureba-if-only"
+    ],
+    "1236200": [
+      "wo-keiki-ni"
+    ],
+    "1236660": [
+      "ni-tari-nai",
+      "osore-ga-aru"
+    ],
+    "1236890": [
+      "sobakara",
+      "kagiri-as-long-as",
+      "kata-way-of-doing",
+      "te-kureru-favor-received",
+      "te-morau-request-favor",
+      "te-itadaku-polite-favor-received"
+    ],
+    "1236950": [
+      "hiite-wa",
+      "ni-oite-in-at"
+    ],
+    "1237130": [
+      "taru-mono-as-x",
+      "taru-yuen",
+      "iyashiku-mo",
+      "majiki-unacceptable"
+    ],
+    "1237150": [
+      "ka-nai-ka-no-uchi-ni",
+      "imasu-existence-animate"
+    ],
+    "1237470": [
+      "ni-mo-mashite"
+    ],
+    "1237680": [
+      "tada-de-sae"
+    ],
+    "1238410": [
+      "to-iu-ka",
+      "to-itta-such-as"
+    ],
+    "1238660": [
+      "amari-too-much"
+    ],
+    "1238680": [
+      "ni-taru"
+    ],
+    "1238840": [
+      "ossharu-honorific"
+    ],
+    "1238990": [
+      "ni-kakawaru",
+      "beku-shite"
+    ],
+    "1239380": [
+      "ni-sakigakete"
+    ],
+    "1239730": [
+      "to-conditional"
+    ],
+    "1240190": [
+      "no-kiwami"
+    ],
+    "1240200": [
+      "wo-kiwameru"
+    ],
+    "1241850": [
+      "to-atte-wa",
+      "to-areba"
+    ],
+    "1241880": [
+      "wo-mae-ni-shite",
+      "to-atte",
+      "to-naru-to-when-comes"
+    ],
+    "1242130": [
+      "te-wa-irarenai",
+      "dokoro-dewa-nai-no-time"
+    ],
+    "1242160": [
+      "ori-ni",
+      "location-nouns-ue-shita"
+    ],
+    "1243310": [
+      "particle-made-until"
+    ],
+    "1243320": [
+      "particle-made-until"
+    ],
+    "1244210": [
+      "ni-kataku-nai",
+      "te-kara-to-iu-mono",
+      "nagara",
+      "hodo-extent",
+      "wake-dewa-nai",
+      "nai-koto-wa-nai",
+      "mono-reason-assertion",
+      "nan-te-how",
+      "nan-ka-dismissive",
+      "i-adjective-negative",
+      "i-adj-te-joining-kute",
+      "i-adj-desu-politeness"
+    ],
+    "1244470": [
+      "dano-dano"
+    ],
+    "1244680": [
+      "ni-kataku-nai",
+      "koto-nashi-ni",
+      "ni-shite-hajimete",
+      "yue-no",
+      "sue-ni-after"
+    ],
+    "1245100": [
+      "wa-oroka"
+    ],
+    "1250180": [
+      "wo-keiki-ni"
+    ],
+    "1250190": [
+      "no-moto-de",
+      "ni-kanshite-regarding"
+    ],
+    "1250870": [
+      "narade-wa-no",
+      "sono-mono",
+      "sanagara",
+      "to-aimatte",
+      "gotoku-as-if",
+      "tsutsu-while"
+    ],
+    "1251100": [
+      "mono-da-general"
+    ],
+    "1251120": [
+      "ni-itaru"
+    ],
+    "1251130": [
+      "wo-yogi-naku-sareru"
+    ],
+    "1251270": [
+      "ni-kakawarazu-regardless",
+      "wo-towazu-regardless",
+      "toshite-mo-even-as",
+      "wo-tsuujite-through",
+      "nani-shiro",
+      "ni-terashite",
+      "ni-kangamite",
+      "kara-iu-to",
+      "uchi-ni",
+      "ni-tsurete-as",
+      "wo-motoni-based-on",
+      "te-koso-only-by",
+      "shikashi-but"
+    ],
+    "1251320": [
+      "ni-tomonatte-accompany"
+    ],
+    "1251880": [
+      "hiite-wa"
+    ],
+    "1252090": [
+      "wo-yogi-naku-sareru",
+      "wo-shirime-ni",
+      "wo-fumaete",
+      "ni-kangamite",
+      "shidai-depending",
+      "ni-sotte-along",
+      "naoshi-redo"
+    ],
+    "1252390": [
+      "oose-ru",
+      "beku-in-order-to",
+      "to-miru-see-as"
+    ],
+    "1253060": [
+      "iwaba"
+    ],
+    "1253070": [
+      "iwaba"
+    ],
+    "1253180": [
+      "ni-kawatte-instead",
+      "to-tomoni-together"
+    ],
+    "1253900": [
+      "bekarazu"
+    ],
+    "1254020": [
+      "to-minasu"
+    ],
+    "1254050": [
+      "tara-kiri-ga-nai"
+    ],
+    "1254130": [
+      "to-omoi-kiya"
+    ],
+    "1254140": [
+      "hoka-nai-no-choice"
+    ],
+    "1254180": [
+      "ikan-depending"
+    ],
+    "1254370": [
+      "hoka-naranu"
+    ],
+    "1254690": [
+      "ni-kataku-nai",
+      "ikan-ni-yorazu",
+      "beku-mo-nai",
+      "ni-hoka-naranai",
+      "ikan-se-n",
+      "nomi-only",
+      "to-wa-urahara-ni",
+      "ni-mo-kakawarazu-despite",
+      "wa-tomokaku",
+      "kekka-result",
+      "shidai-de",
+      "ni-itaru",
+      "doori-just-as",
+      "ikan-depending",
+      "kiwamari-nai",
+      "kara-iu-to",
+      "to-iu-koto-wa",
+      "shidai-depending",
+      "ni-shitemo-even",
+      "te-naranai-cant-help",
+      "te-shikata-ga-nai"
+    ],
+    "1254730": [
+      "zu-jimai",
+      "ageku-ni-end-up"
+    ],
+    "1254790": [
+      "ori-ni",
+      "no-ue-nai",
+      "wo-yoso-ni",
+      "sou-da-hearsay",
+      "nai-wake-ni-ikanai",
+      "to-nareba-if-comes-to",
+      "te-imasu-progressive"
+    ],
+    "1254810": [
+      "ori-ni",
+      "nai-wake-ni-ikanai"
+    ],
+    "1255020": [
+      "zaru-wo-enai",
+      "ni-shiro-ni-seyo",
+      "sue-ni-after",
+      "ageku-ni-end-up",
+      "kekka-result",
+      "ni-itaru",
+      "wo-fumaete"
+    ],
+    "1255880": [
+      "desu-polite-copula",
+      "dewa-arimasen-negative-polite-copula",
+      "particle-made-until",
+      "nanyoubi-day-of-week"
+    ],
+    "1255890": [
+      "desu-polite-copula",
+      "dewa-arimasen-negative-polite-copula",
+      "particle-made-until",
+      "nanyoubi-day-of-week"
+    ],
+    "1256170": [
+      "zu-mogana",
+      "de-ari-nagara",
+      "sono-mono",
+      "hiite-wa",
+      "wo-kikkake-ni",
+      "ba-koso-precisely-because",
+      "beku-in-order-to",
+      "atte-no-thanks-to",
+      "wo-kaerimi-zu",
+      "tame-ni",
+      "noni-although",
+      "koto-da-emphatic",
+      "bakari-de-naku"
+    ],
+    "1256520": [
+      "kane-ru-hard-to"
+    ],
+    "1256910": [
+      "wo-kiwameru"
+    ],
+    "1257040": [
+      "ageku-ni-end-up"
+    ],
+    "1257240": [
+      "dano-dano",
+      "wake-dewa-nai",
+      "ga-suki-kirai"
+    ],
+    "1257730": [
+      "nari-ni-in-own-way",
+      "tame-ni",
+      "noni-although"
+    ],
+    "1257800": [
+      "makuru-extensively"
+    ],
+    "1258000": [
+      "shidai-de",
+      "ue-de-upon"
+    ],
+    "1258520": [
+      "ni-wataru-span",
+      "wo-hete",
+      "ni-oite-in-at"
+    ],
+    "1259140": [
+      "to-mieru",
+      "sou-da-appearance"
+    ],
+    "1259210": [
+      "te-mi-se-ru",
+      "aro-u-tomo"
+    ],
+    "1259290": [
+      "ni-taeru",
+      "ni-taenai",
+      "kara-miru-to",
+      "nari-as-soon-as",
+      "to-mo-naku",
+      "dake-nara",
+      "toka-listing"
+    ],
+    "1259620": [
+      "ni-kotaete-response",
+      "dake-atte-as-expected"
+    ],
+    "1259890": [
+      "wo-fumaete"
+    ],
+    "1259900": [
+      "ni-kangamite"
+    ],
+    "1260430": [
+      "hitotabi",
+      "ga-sai-go"
+    ],
+    "1260720": [
+      "ni-shite",
+      "sou-da-appearance",
+      "te-iku",
+      "furi-wo-suru-pretend",
+      "gotoni-each",
+      "ba-conditional",
+      "mono-da-general",
+      "deshita-past-polite-copula",
+      "na-adjective-nonpast",
+      "na-adjective-negative",
+      "na-adj-adverbial-ni"
+    ],
+    "1261190": [
+      "ni-hoka-naranai",
+      "to-sareru",
+      "ni-itaru",
+      "to-miru-see-as"
+    ],
+    "1262530": [
+      "kara-koso-precisely-because",
+      "koto-dakara",
+      "no-moto-de",
+      "hanmen-on-other-hand",
+      "ippou-de-one-hand"
+    ],
+    "1263120": [
+      "bakari-no",
+      "ippou-da-keeps"
+    ],
+    "1263490": [
+      "beku-in-order-to"
+    ],
+    "1263710": [
+      "ni-soku-shite",
+      "to-iu-mono-da"
+    ],
+    "1263760": [
+      "sanagara",
+      "to-oboshii",
+      "wo-kiwameru"
+    ],
+    "1263770": [
+      "ni-aki-tarazu",
+      "wo-fumaete",
+      "ni-kangamite"
+    ],
+    "1263810": [
+      "ni-ari-gachi",
+      "iwaba",
+      "ni-oite-in-at"
+    ],
+    "1264330": [
+      "mekasu"
+    ],
+    "1264380": [
+      "iwaba"
+    ],
+    "1264420": [
+      "to-itta-such-as"
+    ],
+    "1264540": [
+      "u-ni-mo",
+      "to-wa-urahara-ni",
+      "amari-too-much",
+      "meku-have-look",
+      "gotoki-like"
+    ],
+    "1264610": [
+      "no-itari",
+      "wo-kagiri-ni",
+      "uru-possible",
+      "kagiri-da-emotional",
+      "kagiri-as-long-as"
+    ],
+    "1264650": [
+      "to-bakari-ni"
+    ],
+    "1264770": [
+      "hiite-wa"
+    ],
+    "1267130": [
+      "yue-ni-because",
+      "ni-itaru"
+    ],
+    "1267740": [
+      "mamire-smeared",
+      "darake-full-of"
+    ],
+    "1270210": [
+      "okage-sei-de"
+    ],
+    "1270290": [
+      "naritomo"
+    ],
+    "1270590": [
+      "sobireru-miss-chance",
+      "ta-tokoro",
+      "zu-ni",
+      "nai-de-without-doing",
+      "te-kara-after-doing",
+      "ato-de-after-doing",
+      "tsumori-datta-had-intended",
+      "ga-dekiru",
+      "sorekara-after",
+      "mashita-polite-past-verb",
+      "masen-polite-negative-verb",
+      "mashou-volitional",
+      "mou-ta-already"
+    ],
+    "1270760": [
+      "te-goran-try-casual",
+      "goran-ni-naru-honorific"
+    ],
+    "1270770": [
+      "te-goran-try-casual"
+    ],
+    "1270810": [
+      "made-no-koto-da",
+      "gatera-while",
+      "katagata-combining",
+      "ni-wa-oyoba-nai",
+      "to-tomoni-together",
+      "mousu-humble"
+    ],
+    "1270820": [
+      "ori-ni",
+      "ni-kanshite-regarding"
+    ],
+    "1271310": [
+      "bakari-ni-merely"
+    ],
+    "1272870": [
+      "no-itari",
+      "no-ue-nai"
+    ],
+    "1272950": [
+      "gatai-difficult"
+    ],
+    "1273270": [
+      "to-atte",
+      "tsuide-ni",
+      "particle-o-object",
+      "na-adjective-past",
+      "masenka-invitation",
+      "toki-ni-when-basic"
+    ],
+    "1274810": [
+      "majiki-unacceptable"
+    ],
+    "1274820": [
+      "majiki-unacceptable"
+    ],
+    "1275130": [
+      "nai-koto-niwa"
+    ],
+    "1275370": [
+      "sou-iu-kou-iu"
+    ],
+    "1277040": [
+      "muki-suitable-for"
+    ],
+    "1277090": [
+      "muke-targeted-for"
+    ],
+    "1277450": [
+      "to-iu-ka",
+      "ka-to-iu-to",
+      "no-nominalizer",
+      "to-wa-kagiranai",
+      "mon-casual-because",
+      "sou-iu-kou-iu",
+      "ga-suki-kirai",
+      "toka-listing",
+      "hou-ga-comparative",
+      "ichiban-superlative",
+      "mo-mo-both"
+    ],
+    "1278220": [
+      "nari-ni-in-own-way"
+    ],
+    "1278410": [
+      "ue-ni-in-addition",
+      "shi-reason-listing"
+    ],
+    "1278660": [
+      "ni-wataru-span"
+    ],
+    "1278670": [
+      "ni-wataru-span"
+    ],
+    "1278860": [
+      "n-bakari"
+    ],
+    "1279310": [
+      "ni-aki-tarazu"
+    ],
+    "1280770": [
+      "mo-mo-both"
+    ],
+    "1280820": [
+      "nagara-ni",
+      "ni-kagirazu-not-only",
+      "wa-mochiron",
+      "ni-itaru-made"
+    ],
+    "1281000": [
+      "tari-mo-shinai",
+      "taru-yuen",
+      "tara-kiri-ga-nai",
+      "wo-kikkake-ni",
+      "zu-ni-wa-irarenai",
+      "nuku-fully-do",
+      "te-kara-to-iu-mono",
+      "uru-possible",
+      "te-kara-denai-to",
+      "ni-terashite",
+      "mono-ga-aru",
+      "naku-mo-nai",
+      "ue-de-upon",
+      "naoshi-redo",
+      "komi-into"
+    ],
+    "1281020": [
+      "taru-yuen"
+    ],
+    "1281090": [
+      "wo-kikkake-ni",
+      "te-kara-to-iu-mono",
+      "mono-ga-aru"
+    ],
+    "1281830": [
+      "bekarazu",
+      "gatai-difficult",
+      "ni-terashite",
+      "majiki-unacceptable"
+    ],
+    "1282100": [
+      "tomo-arou",
+      "ni-nottotte",
+      "doori-just-as",
+      "ni-kangamite",
+      "kara-iu-to",
+      "ni-shitagatte",
+      "ni-sotte-along"
+    ],
+    "1283190": [
+      "dake-no-koto-wa-aru",
+      "kara-to-itte",
+      "ba-hodo",
+      "to-wa-kagiranai",
+      "dake-atte-as-expected",
+      "ni-kurabete-compared",
+      "to-omou",
+      "kedomo-formal-but",
+      "particle-wa-topic",
+      "kono-sono-ano-dono-attributive",
+      "i-adjective-nonpast",
+      "ichiban-superlative",
+      "i-adj-desu-politeness"
+    ],
+    "1283400": [
+      "kara-iu-to"
+    ],
+    "1284430": [
+      "to-wa",
+      "zutomo-even-without",
+      "au-together"
+    ],
+    "1284550": [
+      "ni-itaru",
+      "hate-ni-after",
+      "mono-to-shite"
+    ],
+    "1284600": [
+      "te-mi-se-ru",
+      "ikan-depending",
+      "sae-sureba-if-only",
+      "you-dewa-if-its",
+      "okage-sei-de",
+      "koso-precisely",
+      "wake-da-meaning",
+      "dake-ni-precisely",
+      "koto-da-emphatic",
+      "koto-ni-surprise"
+    ],
+    "1286370": [
+      "to-itta-such-as"
+    ],
+    "1286780": [
+      "wo-towazu-regardless"
+    ],
+    "1286930": [
+      "ni-aki-tarazu",
+      "wa-oroka"
+    ],
+    "1288080": [
+      "te-aru"
+    ],
+    "1288940": [
+      "n-to-bakari-ni",
+      "ni-shite"
+    ],
+    "1288950": [
+      "n-to-bakari-ni"
+    ],
+    "1289070": [
+      "ashikara-zu"
+    ],
+    "1289100": [
+      "wo-kagiri-ni"
+    ],
+    "1289140": [
+      "ikan-depending",
+      "to-miru-see-as"
+    ],
+    "1289150": [
+      "ta-tokoro-de"
+    ],
+    "1289220": [
+      "to-itta-tokoro-da",
+      "nakereba-naranai"
+    ],
+    "1289370": [
+      "koso-precisely"
+    ],
+    "1289400": [
+      "ni-ataru-correspond",
+      "sou-ni-nai",
+      "zukume-nothing-but",
+      "rashii-seems",
+      "hodo-extent",
+      "wake-dewa-nai",
+      "te-tamaranai-unbearably",
+      "node-cause",
+      "shi-reason-listing",
+      "dakara-so",
+      "desu-polite-copula",
+      "dewa-arimasen-negative-polite-copula",
+      "masen-polite-negative-verb",
+      "particle-wa-topic",
+      "particle-ne-seeking-agreement",
+      "nai-form",
+      "i-adjective-nonpast",
+      "i-adjective-negative",
+      "nanyoubi-day-of-week",
+      "i-adj-desu-politeness"
+    ],
+    "1289520": [
+      "to-iu-koto-wa"
+    ],
+    "1289590": [
+      "nara-mada-shimo"
+    ],
+    "1289620": [
+      "wo-mono-to-mo-sezu",
+      "ni-atte",
+      "te-mi-se-ru",
+      "koso-are",
+      "aro-u-tomo",
+      "wo-kiwameru",
+      "nuku-fully-do",
+      "wo-hete"
+    ],
+    "1290560": [
+      "wo-kiwameru"
+    ],
+    "1291270": [
+      "te-ageru-favor-given"
+    ],
+    "1291800": [
+      "ga-hayai-ka"
+    ],
+    "1292300": [
+      "mai-not-likely",
+      "nan-ka-dismissive"
+    ],
+    "1292390": [
+      "ni-taenai"
+    ],
+    "1292630": [
+      "shidai-de"
+    ],
+    "1293700": [
+      "tou-no"
+    ],
+    "1293780": [
+      "mono-dakara",
+      "meku-have-look",
+      "to-ieba-speaking-of",
+      "gimi-tendency"
+    ],
+    "1293810": [
+      "ni-itatte-wa",
+      "hitotabi",
+      "mai-ka-wonder",
+      "ga-sai-go",
+      "nuku-fully-do",
+      "ni-shite",
+      "kara-ni-wa",
+      "kiri-only",
+      "ijou-since"
+    ],
+    "1293990": [
+      "kurai-nara-rather"
+    ],
+    "1294160": [
+      "wa-tomokaku"
+    ],
+    "1294630": [
+      "nagara-ni",
+      "nagara-no",
+      "to-aimatte"
+    ],
+    "1294890": [
+      "ikan-depending"
+    ],
+    "1295060": [
+      "tokoro-wo"
+    ],
+    "1295070": [
+      "to-iu-mono-dewa-nai"
+    ],
+    "1295710": [
+      "ni-itaru-made"
+    ],
+    "1296670": [
+      "ato-wa-rest"
+    ],
+    "1296970": [
+      "counter-en-money"
+    ],
+    "1297210": [
+      "ni-kakete-through"
+    ],
+    "1297510": [
+      "ni-shite"
+    ],
+    "1297540": [
+      "ni-shitagatte"
+    ],
+    "1297760": [
+      "ato-wa-rest"
+    ],
+    "1297910": [
+      "ni-taeru",
+      "hodo-no-mono-dewa-nai"
+    ],
+    "1298000": [
+      "osore-ga-aru"
+    ],
+    "1298740": [
+      "ni-kataku-nai"
+    ],
+    "1298790": [
+      "tabi-ni-every-time"
+    ],
+    "1299740": [
+      "counter-tsu"
+    ],
+    "1302090": [
+      "to-itta-tokoro-da",
+      "ashikara-zu",
+      "ni-kakawarazu-regardless",
+      "wo-towazu-regardless"
+    ],
+    "1302110": [
+      "to-itta-tokoro-da"
+    ],
+    "1302710": [
+      "nuki-de"
+    ],
+    "1303420": [
+      "sobakara"
+    ],
+    "1303620": [
+      "gatera-while",
+      "wo-kanete",
+      "katagata-combining",
+      "tsuide-ni",
+      "garu-third-person-emotion",
+      "ato-de-after-doing",
+      "particle-o-object"
+    ],
+    "1304200": [
+      "zaru-wo-enai",
+      "kane-ru-hard-to"
+    ],
+    "1304680": [
+      "kiwamari-nai",
+      "koto-ni-surprise"
+    ],
+    "1304970": [
+      "katawara",
+      "gatera-while",
+      "tada-de-sae",
+      "ba-koso-precisely-because",
+      "ni-oujite-depending",
+      "ni-shite-wa",
+      "dake-mashi-da",
+      "hanmen-on-other-hand",
+      "wo-kaerimi-zu",
+      "muki-suitable-for",
+      "dokoro-dewa-nai-no-time",
+      "ippou-de-one-hand",
+      "kurai-nara-rather",
+      "ni-kurabete-compared",
+      "darou-deshou-conjecture",
+      "ato-de-after-doing",
+      "tai-to-omou-want-to-think"
+    ],
+    "1305140": [
+      "te-ageru-favor-given"
+    ],
+    "1305380": [
+      "sobakara"
+    ],
+    "1305420": [
+      "to-atte-wa",
+      "te-shikata-ga-nai"
+    ],
+    "1305440": [
+      "datte-casual-because",
+      "mon-casual-because"
+    ],
+    "1305500": [
+      "u-ni-mo",
+      "u-mono-nara",
+      "you-ka-to-omou",
+      "you-ga-nai-no-way",
+      "you-to-omou-volitional-intent"
+    ],
+    "1305510": [
+      "you-ga-nai-no-way",
+      "shou-ga-nai",
+      "te-shou-ga-nai"
+    ],
+    "1305720": [
+      "konasu",
+      "koto-nagara"
+    ],
+    "1305990": [
+      "wo-keiki-ni"
+    ],
+    "1307500": [
+      "wo-kawakiri-ni"
+    ],
+    "1307550": [
+      "you-to-mai-to"
+    ],
+    "1307560": [
+      "ya-inaya"
+    ],
+    "1307790": [
+      "katawara"
+    ],
+    "1307850": [
+      "narade-wa-no",
+      "to-iwazu-to-iwazu",
+      "de-are-de-are",
+      "no-kiwami",
+      "te-mae",
+      "nara-mada-shimo",
+      "nara-iza-shirazu",
+      "de-ari-nagara",
+      "to-atte-wa",
+      "mo-kamawa-zu",
+      "nagara-mo",
+      "desura",
+      "ni-kagirazu-not-only",
+      "wa-mochiron",
+      "ni-shite-wa",
+      "mono-dakara",
+      "to-wa-ie",
+      "ni-shite-mireba",
+      "te-kara-to-iu-mono",
+      "sobakara",
+      "ja-arumai-shi",
+      "to-bakari-ni",
+      "ni-taeru",
+      "kara-miru-to",
+      "ni-itaru-made",
+      "tatte-even-casual",
+      "nari-ni-in-own-way",
+      "wo-kaerimi-zu",
+      "mamire-smeared",
+      "gotoki-like",
+      "to-iedomo",
+      "mitai-looks-like",
+      "te-iku",
+      "tagaru-third-person-desire",
+      "sae-even",
+      "darake-full-of",
+      "kuse-ni-despite",
+      "ni-shitemo-even",
+      "muke-targeted-for",
+      "ppoi-seems",
+      "ge-looking",
+      "n-da-kara-emphatic",
+      "te-shikata-ga-nai",
+      "to-naru-to-when-comes",
+      "causative-form",
+      "hajimeru-auxiliary",
+      "garu-third-person-emotion",
+      "demo-noun-even",
+      "mono-da-general",
+      "toki-ni-when-basic"
+    ],
+    "1307870": [
+      "te-iku",
+      "hajimeru-auxiliary"
+    ],
+    "1308000": [
+      "katawara",
+      "n-ga-tame",
+      "konasu",
+      "wo-mae-ni-shite",
+      "n-to-suru",
+      "gurumi",
+      "tou-no",
+      "nagara-mo",
+      "manzara-de-mo-nai",
+      "ba-koso-precisely-because",
+      "beku-in-order-to",
+      "wo-chuushin-ni-centered",
+      "koto-dakara",
+      "to-atte",
+      "nai-nomi-narazu",
+      "te-iku",
+      "aida-ni",
+      "you-ni-purpose",
+      "bakari-only",
+      "ni-tsuite",
+      "furi-wo-suru-pretend",
+      "irai-since",
+      "ni-oite-in-at",
+      "ta-kiri-since-last",
+      "dake-ni-precisely",
+      "to-iu-yori-rather",
+      "to-itte-mo-although",
+      "ge-looking",
+      "ippou-de-one-hand",
+      "you-ni-suru",
+      "koto-ni-suru-decide",
+      "te-itadaku-polite-favor-received",
+      "kedomo-formal-but",
+      "te-imasu-progressive",
+      "mada-not-yet"
+    ],
+    "1308300": [
+      "ni-aki-tarazu"
+    ],
+    "1308640": [
+      "nai-dewa-okanai",
+      "tari-tomo",
+      "de-ari-nagara",
+      "tari-mo-shinai",
+      "ikkou-ni-nai",
+      "yashinai-emphatic",
+      "gotoki-like",
+      "nai-nomi-narazu",
+      "kagiri-as-long-as",
+      "furi-wo-suru-pretend",
+      "nai-de-without-doing",
+      "kurai-nara-rather",
+      "nai-de-kudasai"
+    ],
+    "1309260": [
+      "tabi-ni-every-time"
+    ],
+    "1309560": [
+      "kara-shite",
+      "sou-da-appearance"
+    ],
+    "1309800": [
+      "made-no-koto-da",
+      "doori-just-as",
+      "ni-shitagatte"
+    ],
+    "1309940": [
+      "wo-chuushin-ni-centered"
+    ],
+    "1310460": [
+      "mai-not-likely"
+    ],
+    "1310680": [
+      "wo-kagiri-ni"
+    ],
+    "1310730": [
+      "hodo-extent"
+    ],
+    "1310740": [
+      "mono-reason-assertion"
+    ],
+    "1310920": [
+      "kara-ni-wa",
+      "nai-made-mo",
+      "kiri-only",
+      "to-itta-such-as",
+      "chuu-during",
+      "tai-to-omou-want-to-think"
+    ],
+    "1311200": [
+      "hoka-naranu"
+    ],
+    "1311850": [
+      "ni-itatte-wa"
+    ],
+    "1311870": [
+      "ni-itaru",
+      "ni-itaru-made"
+    ],
+    "1312250": [
+      "nai-koto-niwa",
+      "uchi-ni",
+      "te-koso-only-by"
+    ],
+    "1312330": [
+      "iwaba"
+    ],
+    "1312350": [
+      "ni-itatte-wa",
+      "wo-mae-ni-shite",
+      "te-wa-irarenai",
+      "makuru-extensively",
+      "noni-although",
+      "dokoro-dewa-nai-no-time",
+      "te-naranai-cant-help",
+      "saichu-in-the-middle",
+      "koto-da-emphatic",
+      "koto-ni-surprise",
+      "gotoni-each",
+      "hazu-datta-was-supposed",
+      "shikashi-but"
+    ],
+    "1312420": [
+      "wo-mono-to-mo-sezu",
+      "ni-kakawarazu-regardless",
+      "ni-mo-kakawarazu-despite",
+      "you-to-regardless",
+      "okage-sei-de",
+      "koto-ni-surprise",
+      "shikashi-but",
+      "kedomo-formal-but"
+    ],
+    "1312820": [
+      "ni-sakidatte-prior",
+      "goran-ni-naru-honorific"
+    ],
+    "1313830": [
+      "hodo-no",
+      "ni-kakawaru",
+      "beku-shite",
+      "beku-in-order-to",
+      "irai-since"
+    ],
+    "1313850": [
+      "ma-no-atari-ni",
+      "to-sareru",
+      "wo-keiki-ni",
+      "ni-itaru",
+      "to-miru-see-as"
+    ],
+    "1313910": [
+      "sai-ni"
+    ],
+    "1313960": [
+      "zu-ni-wa-okanai",
+      "ni-soui-nai",
+      "ni-soku-shite",
+      "zaru-wo-enai",
+      "kekka-result",
+      "ni-terashite"
+    ],
+    "1314270": [
+      "you-da-appearance"
+    ],
+    "1314400": [
+      "you-da-appearance"
+    ],
+    "1314540": [
+      "wo-hikiai-ni"
+    ],
+    "1315200": [
+      "toshite-mo-even-as"
+    ],
+    "1315720": [
+      "iyashiku-mo"
+    ],
+    "1315920": [
+      "to-itta-tokoro-da",
+      "nai-de-mo-nai",
+      "konasu",
+      "ikan-se-n",
+      "wo-keiki-ni",
+      "to-wa-ie",
+      "koto-dakara",
+      "te-kara-to-iu-mono",
+      "nani-se",
+      "sae-sureba-if-only",
+      "naku-mo-nai",
+      "gotoku-as-if",
+      "causative-passive",
+      "wake-da-meaning",
+      "ka-no-you-ni",
+      "ni-tsurete-as",
+      "ippou-de-one-hand",
+      "n-da-kara-emphatic",
+      "tara-conditional",
+      "kara-cause",
+      "ga-kedo-although",
+      "shi-reason-listing",
+      "mono-da-general",
+      "jikan-time-duration"
+    ],
+    "1316300": [
+      "ni-atte",
+      "nara-iza-shirazu",
+      "n-to-suru",
+      "ni-kagirazu-not-only",
+      "to-tomoni-together"
+    ],
+    "1316390": [
+      "tsuide-ni"
+    ],
+    "1316680": [
+      "shidai-de",
+      "shidai-depending"
+    ],
+    "1317970": [
+      "ni-tsurete-as"
+    ],
+    "1318000": [
+      "hoka-naranu"
+    ],
+    "1318610": [
+      "wo-mono-to-mo-sezu",
+      "made-da",
+      "te-habakaranai",
+      "de-ari-nagara",
+      "aro-u-tomo",
+      "hiite-wa",
+      "wo-yoso-ni",
+      "wo-kaerimi-zu",
+      "kurai-extent",
+      "hoka-nai-no-choice",
+      "kurai-nara-rather"
+    ],
+    "1318680": [
+      "hodo-no-mono-dewa-nai"
+    ],
+    "1318720": [
+      "you-to-mai-to",
+      "te-kara-to-iu-mono"
+    ],
+    "1318950": [
+      "to-nareba-if-comes-to"
+    ],
+    "1318970": [
+      "zu-ni"
+    ],
+    "1319000": [
+      "wo-yogi-naku-sareru",
+      "te-shikarubeki"
+    ],
+    "1319580": [
+      "te-shikarubeki"
+    ],
+    "1320140": [
+      "ni-itatte-wa",
+      "u-mono-nara",
+      "nara-iza-shirazu",
+      "ba-sore-made",
+      "ni-ari-gachi",
+      "yue-no",
+      "beku-shite",
+      "yue-ni-because",
+      "ni-shiro-ni-seyo",
+      "toshite-mo-even-as",
+      "kane-nai-might",
+      "wo-fumaete",
+      "to-iedomo",
+      "ni-shitemo-even",
+      "te-koso-only-by",
+      "soredemo-even-so"
+    ],
+    "1320170": [
+      "dake-ni-precisely"
+    ],
+    "1320230": [
+      "tokoro-wo",
+      "ni-mo-hodo-ga-aru",
+      "kara-shite",
+      "kiwamari-nai",
+      "ni-taishite-toward"
+    ],
+    "1320760": [
+      "kane-ru-hard-to",
+      "dzurai-hard-emotional",
+      "ni-taishite-toward",
+      "ba-ai-in-case",
+      "counter-tsu"
+    ],
+    "1320830": [
+      "you-de-seemingly",
+      "buru-pretend",
+      "n-desu-explanation"
+    ],
+    "1320970": [
+      "to-iu-koto-wa"
+    ],
+    "1321020": [
+      "n-ga-tame",
+      "beku-in-order-to",
+      "hate-ni-after"
+    ],
+    "1321110": [
+      "nai-koto-niwa"
+    ],
+    "1321530": [
+      "mo-saru-koto-nagara",
+      "ni-wa-oyoba-nai"
+    ],
+    "1321580": [
+      "wo-motoni-based-on"
+    ],
+    "1321900": [
+      "tabi-ni-every-time",
+      "te-mo-ii-permission",
+      "nai-de-kudasai",
+      "counter-mai-flat"
+    ],
+    "1322670": [
+      "wo-hete",
+      "wo-hajime-including"
+    ],
+    "1322700": [
+      "iyashiku-mo",
+      "hiite-wa",
+      "ni-kangamite",
+      "ni-oite-in-at"
+    ],
+    "1322770": [
+      "iyashiku-mo"
+    ],
+    "1322920": [
+      "wo-yogi-naku-sareru",
+      "tomo-arou",
+      "tomo-nareba",
+      "ni-kawatte-instead",
+      "to-itte-mo-although",
+      "saichu-in-the-middle",
+      "wo-hajime-including",
+      "sonkeigo-reru-rareru",
+      "nasaru-honorific",
+      "kudasaru-honorific-verb"
+    ],
+    "1323010": [
+      "hodo-no-mono-dewa-nai",
+      "kurai-nara-rather"
+    ],
+    "1323020": [
+      "irassharu-honorific",
+      "ossharu-honorific"
+    ],
+    "1323030": [
+      "te-shikarubeki"
+    ],
+    "1323540": [
+      "ta-kiri-since-last"
+    ],
+    "1324300": [
+      "kara-to-itte",
+      "koto-tote",
+      "uchi-ni",
+      "warini-considering",
+      "shikashi-but",
+      "kedomo-formal-but"
+    ],
+    "1324310": [
+      "yue-no",
+      "yue-ni-because"
+    ],
+    "1324350": [
+      "ni-ari-gachi",
+      "wo-chuushin-ni-centered",
+      "muke-targeted-for"
+    ],
+    "1325910": [
+      "te-habakaranai"
+    ],
+    "1326940": [
+      "beku-in-order-to"
+    ],
+    "1326980": [
+      "ni-tari-nai",
+      "ni-tsurete-as"
+    ],
+    "1327090": [
+      "kara-ni-wa"
+    ],
+    "1327120": [
+      "de-are-de-are",
+      "hitotabi",
+      "to-iedomo",
+      "beki-da",
+      "ue-wa-now"
+    ],
+    "1327690": [
+      "koto-tote"
+    ],
+    "1327720": [
+      "katagata-combining",
+      "wo-komete",
+      "tsuide-ni",
+      "passive-form",
+      "tara-conditional",
+      "te-ageru-favor-given",
+      "morau-receive",
+      "itadaku-humble-verb",
+      "kudasaru-honorific-verb",
+      "mashita-polite-past-verb",
+      "particle-ni-target",
+      "particle-kara-from"
+    ],
+    "1328030": [
+      "te-mae"
+    ],
+    "1328170": [
+      "oyoba-zu-nagara",
+      "to-areba",
+      "you-nara-if-looks"
+    ],
+    "1328190": [
+      "kawari-ni-instead"
+    ],
+    "1328250": [
+      "ba-koso-precisely-because"
+    ],
+    "1328260": [
+      "nashi-ni-without",
+      "te-wa-irarenai",
+      "ni-taishite-toward",
+      "te-wa-ikenai-prohibition"
+    ],
+    "1328650": [
+      "u-mono-nara",
+      "sue-ni-after",
+      "nai-koto-niwa",
+      "ue-de-upon",
+      "koto-ni-surprise",
+      "ni-suru-decide",
+      "koto-ni-suru-decide",
+      "koto-ni-naru-be-decided"
+    ],
+    "1329000": [
+      "katawara",
+      "wo-keiki-ni",
+      "to-itte-without-particular"
+    ],
+    "1329015": [
+      "koto-kara-from-fact",
+      "tsumori-intention",
+      "sugiru-too-much",
+      "masen-polite-negative-verb"
+    ],
+    "1329340": [
+      "made-mo-nai"
+    ],
+    "1329770": [
+      "mono-to-shite",
+      "to-tomoni-together"
+    ],
+    "1330290": [
+      "te-wa-ikenai-prohibition",
+      "particle-kara-from",
+      "nanji-what-time"
+    ],
+    "1330450": [
+      "ni-oujite-depending"
+    ],
+    "1331030": [
+      "wo-shirime-ni",
+      "wo-yoso-ni"
+    ],
+    "1332960": [
+      "u-ni-mo"
+    ],
+    "1333520": [
+      "to-itta-tokoro-da",
+      "dake-de-naku",
+      "tari-tari-suru",
+      "mai-every-prefix"
+    ],
+    "1333750": [
+      "saichu-in-the-middle"
+    ],
+    "1333810": [
+      "nikui-hard"
+    ],
+    "1335210": [
+      "to-iedomo"
+    ],
+    "1335230": [
+      "ni-shitagatte"
+    ],
+    "1335290": [
+      "tokoro-wo",
+      "ippou-de-one-hand"
+    ],
+    "1335750": [
+      "hanmen-on-other-hand",
+      "i-adj-te-joining-kute"
+    ],
+    "1335940": [
+      "taru-mono-as-x"
+    ],
+    "1336820": [
+      "aro-u-koto-ka",
+      "ni-oite-in-at"
+    ],
+    "1337270": [
+      "yara-yara",
+      "koto-dakara",
+      "te-shimau",
+      "aida-ni",
+      "nakucha-nakya",
+      "causative-passive",
+      "mono-no-although",
+      "nan-te-how",
+      "owaru-finish",
+      "nasai-command",
+      "te-ageru-favor-given",
+      "yaru-casual-giving",
+      "sorekara-after",
+      "masendeshita-polite-past-negative-verb",
+      "ta-form",
+      "mou-ta-already",
+      "mada-not-yet"
+    ],
+    "1338180": [
+      "u-mono-nara",
+      "tabi-ni-every-time"
+    ],
+    "1338240": [
+      "ya-literary",
+      "hodo-no"
+    ],
+    "1339160": [
+      "ya-literary",
+      "ka-to-omou-to",
+      "mo-kamawa-zu",
+      "wo-hikiai-ni",
+      "aro-u-koto-ka",
+      "amari-too-much",
+      "ya-inaya",
+      "ka-nai-ka-no-uchi-ni",
+      "wo-fumaete",
+      "nari-as-soon-as",
+      "ga-hayai-ka",
+      "nai-nomi-narazu",
+      "to-tan-moment",
+      "ni-kawatte-instead",
+      "dashi-suddenly-start",
+      "tsuide-ni"
+    ],
+    "1339460": [
+      "ori-ni",
+      "wo-hajime-including"
+    ],
+    "1339660": [
+      "wo-kanete",
+      "sai-ni"
+    ],
+    "1340000": [
+      "ni-atatte-occasion",
+      "ni-sakidatte-prior",
+      "you-to-mai-to",
+      "doori-just-as",
+      "ato-wa-rest",
+      "zuni-sumu"
+    ],
+    "1340030": [
+      "no-itari"
+    ],
+    "1340420": [
+      "ni-taeru",
+      "zukume-nothing-but",
+      "nan-ka-dismissive"
+    ],
+    "1340450": [
+      "ikan-ni-yorazu",
+      "ni-shite-hajimete",
+      "no-ue-nai",
+      "ba-koso-precisely-because",
+      "ni-shite-wa",
+      "ikan-depending",
+      "sae-sureba-if-only",
+      "dake-nara",
+      "ba-hodo",
+      "te-koso-only-by",
+      "bakari-de-naku",
+      "koto-ga-dekiru",
+      "ga-dekiru"
+    ],
+    "1340570": [
+      "zukume-nothing-but"
+    ],
+    "1341210": [
+      "ma-no-atari-ni"
+    ],
+    "1341670": [
+      "ni-hoka-naranai",
+      "ni-atatte-occasion",
+      "ato-wa-rest",
+      "te-aru",
+      "to-nareba-if-comes-to"
+    ],
+    "1342510": [
+      "ni-nottotte"
+    ],
+    "1342540": [
+      "no-itari",
+      "hodo-no",
+      "ni-shite-hajimete",
+      "ni-aki-tarazu",
+      "ga-sai-go",
+      "wo-kikkake-ni",
+      "you-to-mai-to",
+      "beku-in-order-to",
+      "ni-shite-wa",
+      "ja-arumai-shi",
+      "nani-shiro",
+      "nani-se",
+      "to-atte",
+      "te-kara-denai-to",
+      "koto-tote",
+      "ga-hayai-ka",
+      "to-tan-moment",
+      "mono-no-although",
+      "bakari-ka-not-only",
+      "wo-hajime-including",
+      "te-hajimete-only-after",
+      "hajimeru-auxiliary"
+    ],
+    "1342550": [
+      "no-itari",
+      "hodo-no",
+      "ni-shite-hajimete",
+      "ni-shite-wa",
+      "ja-arumai-shi",
+      "nani-shiro",
+      "nani-se",
+      "to-atte",
+      "koto-tote",
+      "te-hajimete-only-after"
+    ],
+    "1342850": [
+      "nara-iza-shirazu",
+      "ni-ari-gachi",
+      "nari-ni-in-own-way",
+      "muke-targeted-for",
+      "to-itte-mo-although"
+    ],
+    "1342860": [
+      "nara-iza-shirazu",
+      "ni-ari-gachi",
+      "nari-ni-in-own-way",
+      "muke-targeted-for",
+      "to-itte-mo-although"
+    ],
+    "1342980": [
+      "wo-kawakiri-ni"
+    ],
+    "1343100": [
+      "to-itta-tokoro-da",
+      "tokoro-wo",
+      "to-shita-tokoro-de",
+      "n-to-suru",
+      "ta-tokoro-de",
+      "ta-tokoro",
+      "kakeru-halfway",
+      "ippou-de-one-hand"
+    ],
+    "1343110": [
+      "to-itta-tokoro-da",
+      "to-shita-tokoro-de",
+      "ta-tokoro-de",
+      "ta-tokoro",
+      "kakeru-halfway"
+    ],
+    "1343460": [
+      "ni-mo-mashite",
+      "dano-dano",
+      "kara-cause",
+      "i-adjective-nonpast"
+    ],
+    "1343910": [
+      "kata-way-of-doing"
+    ],
+    "1344200": [
+      "aro-u-koto-ka",
+      "mono-to-shite",
+      "ato-wa-rest"
+    ],
+    "1344390": [
+      "to-wa",
+      "koto-nashi-ni",
+      "nashi-ni-without",
+      "mo-kamawa-zu",
+      "to-iu-mono-da",
+      "wo-kaerimi-zu",
+      "au-together"
+    ],
+    "1344410": [
+      "to-iu-mono-da"
+    ],
+    "1344430": [
+      "to-wa",
+      "au-together"
+    ],
+    "1345250": [
+      "ni-kagirazu-not-only"
+    ],
+    "1345430": [
+      "ni-teihyou-ga-aru"
+    ],
+    "1345605": [
+      "volitional-form"
+    ],
+    "1346150": [
+      "beku-shite"
+    ],
+    "1346190": [
+      "made-mo-naku",
+      "tari-mo-shinai",
+      "ni-kakatte-iru"
+    ],
+    "1346240": [
+      "n-ga-tame"
+    ],
+    "1346570": [
+      "wa-tomokaku",
+      "wa-sate-oki",
+      "ja-arumai-shi",
+      "you-nara-if-looks",
+      "mono-to-shite",
+      "uchi-ni",
+      "au-together",
+      "ni-kakete-through",
+      "shou-ga-nai",
+      "te-shou-ga-nai",
+      "nan-te-how",
+      "darou-deshou-conjecture",
+      "ato-de-after-doing",
+      "dakara-so",
+      "toka-listing",
+      "mashou-volitional",
+      "mashou-ka-invitation",
+      "location-nouns-ue-shita",
+      "nanji-what-time"
+    ],
+    "1347200": [
+      "atte-no-thanks-to"
+    ],
+    "1347310": [
+      "shikamo-moreover",
+      "ni-kotaete-response",
+      "kara-miru-to",
+      "ni-sakigakete",
+      "muke-targeted-for"
+    ],
+    "1347500": [
+      "shou-ga-nai",
+      "te-shou-ga-nai",
+      "mashou-ka-invitation",
+      "nanji-what-time"
+    ],
+    "1347710": [
+      "hiite-wa",
+      "tai-to-omou-want-to-think"
+    ],
+    "1347750": [
+      "nagara-mo",
+      "mono-dakara",
+      "ga-kikoeru-mieru"
+    ],
+    "1348430": [
+      "wo-motoni-based-on"
+    ],
+    "1348870": [
+      "to-itta-tokoro-da",
+      "mono-wo-if-only",
+      "dzurai-hard-emotional",
+      "naritomo",
+      "te-morau-request-favor",
+      "zutsu-each-per",
+      "te-itadaku-polite-favor-received"
+    ],
+    "1348880": [
+      "zutsu-each-per"
+    ],
+    "1348910": [
+      "hodo-extent"
+    ],
+    "1349520": [
+      "ato-wa-rest"
+    ],
+    "1350110": [
+      "hitotabi"
+    ],
+    "1351280": [
+      "ka-to-omou-to"
+    ],
+    "1351400": [
+      "no-kiwami"
+    ],
+    "1351430": [
+      "kitte-no",
+      "wo-tsuujite-through"
+    ],
+    "1351760": [
+      "wa-sate-oki"
+    ],
+    "1352290": [
+      "bakari-no",
+      "bakari-only",
+      "ippou-da-keeps"
+    ],
+    "1352300": [
+      "katagata-combining",
+      "n-to-bakari-ni",
+      "ni-atatte-occasion",
+      "mousu-humble"
+    ],
+    "1352320": [
+      "dake-nara",
+      "kagiri-as-long-as",
+      "te-ageru-favor-given",
+      "ageru-give-outward"
+    ],
+    "1353260": [
+      "u-mono-nara",
+      "ato-wa-rest",
+      "nai-wake-ni-ikanai",
+      "to-nareba-if-comes-to"
+    ],
+    "1353320": [
+      "ni-shite-wa",
+      "nai-made-mo",
+      "ka-to-iu-to",
+      "hodo-extent",
+      "wake-da-meaning",
+      "ba-conditional",
+      "ni-naru-become",
+      "na-adj-adverbial-ni"
+    ],
+    "1354230": [
+      "buru-pretend"
+    ],
+    "1354720": [
+      "te-mi-se-ru",
+      "aro-u-tomo",
+      "nuku-fully-do",
+      "kono-sono-ano-dono-attributive",
+      "counter-ji-oclock"
+    ],
+    "1355540": [
+      "mekasu",
+      "ni-mo-hodo-ga-aru",
+      "nuki-de",
+      "wa-tomokaku",
+      "wa-sate-oki"
+    ],
+    "1355810": [
+      "to-minasu",
+      "ba-ai-in-case"
+    ],
+    "1355970": [
+      "taru-mono-as-x"
+    ],
+    "1356220": [
+      "kagiri-da-emotional"
+    ],
+    "1356320": [
+      "ni-kangamite"
+    ],
+    "1356370": [
+      "ni-tari-nai",
+      "ni-oite-in-at"
+    ],
+    "1356510": [
+      "no-moto-de"
+    ],
+    "1356700": [
+      "ni-atte",
+      "you-ni-mo-nai",
+      "bakari-no",
+      "ni-soku-shite",
+      "ikkou-ni-nai",
+      "ni-oujite-depending",
+      "tsutsu-aru",
+      "kiwamari-nai"
+    ],
+    "1357510": [
+      "to-itta-such-as"
+    ],
+    "1358280": [
+      "tsumori-datta-had-intended"
+    ],
+    "1358340": [
+      "to-ieba-speaking-of"
+    ],
+    "1358490": [
+      "tokoro-wo",
+      "te-kara-denai-to",
+      "nagara",
+      "saichu-in-the-middle",
+      "mae-ni-before-doing",
+      "particle-to-and-with",
+      "masenka-invitation",
+      "issho-ni-together"
+    ],
+    "1359620": [
+      "ni-kakawaru"
+    ],
+    "1359730": [
+      "ni-tari-nai",
+      "ni-taru",
+      "you-dewa-if-its"
+    ],
+    "1360010": [
+      "mon-casual-because",
+      "koto-da-emphatic",
+      "you-ni-suru",
+      "mae-ni-before-doing"
+    ],
+    "1360540": [
+      "wo-komete"
+    ],
+    "1360930": [
+      "tomo-nareba",
+      "ni-wa-oyoba-nai",
+      "wo-shirime-ni",
+      "wo-yoso-ni",
+      "hodo-no-mono-dewa-nai",
+      "zutomo-even-without",
+      "te-naranai-cant-help",
+      "te-shikata-ga-nai",
+      "to-naru-to-when-comes",
+      "nai-de-kudasai"
+    ],
+    "1361110": [
+      "ni-kakawaru",
+      "ni-kangamite"
+    ],
+    "1361130": [
+      "n-to-bakari-ni"
+    ],
+    "1361490": [
+      "to-yara",
+      "konasu",
+      "you-ka-to-omou",
+      "ni-aki-tarazu",
+      "kekka-result",
+      "ni-kangamite",
+      "te-miru",
+      "tagaru-third-person-desire",
+      "te-tamaranai-unbearably",
+      "tara-conditional",
+      "you-to-omou-volitional-intent",
+      "tai-to-omou-want-to-think",
+      "tai-desire",
+      "ga-hoshii-wanting-thing"
+    ],
+    "1361510": [
+      "n-to-suru"
+    ],
+    "1361960": [
+      "ni-shite-wa"
+    ],
+    "1362290": [
+      "ni-atatte-occasion",
+      "to-tomoni-together"
+    ],
+    "1362360": [
+      "te-form-basic"
+    ],
+    "1362640": [
+      "wo-mae-ni-shite",
+      "mono-ga-aru"
+    ],
+    "1362730": [
+      "ippou-de-one-hand"
+    ],
+    "1362920": [
+      "manzara-de-mo-nai"
+    ],
+    "1363460": [
+      "mono-dakara",
+      "koto-tote",
+      "te-oku",
+      "te-shimau",
+      "te-kuru",
+      "aida-ni",
+      "okage-sei-de",
+      "ni-sotte-along",
+      "muke-targeted-for",
+      "passive-form",
+      "causative-form",
+      "to-iu",
+      "node-cause",
+      "ni-naru-become",
+      "ni-suru-decide",
+      "hajimeru-auxiliary",
+      "owaru-finish",
+      "sugiru-too-much",
+      "jidoushi-tadoushi",
+      "te-kara-after-doing",
+      "mae-ni-before-doing",
+      "koto-ni-suru-decide",
+      "koto-ni-naru-be-decided",
+      "te-kureru-favor-received",
+      "te-morau-request-favor",
+      "te-ageru-favor-given",
+      "ageru-give-outward",
+      "kureru-give-toward",
+      "morau-receive",
+      "sonkeigo-reru-rareru",
+      "tsumori-datta-had-intended",
+      "hazu-datta-was-supposed",
+      "te-itadaku-polite-favor-received",
+      "ossharu-honorific",
+      "goran-ni-naru-honorific",
+      "mairu-humble",
+      "itadaku-humble-verb",
+      "kudasaru-honorific-verb",
+      "ga-dekiru",
+      "dakara-so",
+      "sorede-and-then",
+      "sorekara-after",
+      "toka-listing",
+      "mashita-polite-past-verb",
+      "particle-ga-subject",
+      "particle-o-object",
+      "particle-to-and-with",
+      "particle-e-direction",
+      "particle-kara-from",
+      "particle-made-until",
+      "particle-yo-emphasis",
+      "na-adjective-attributive",
+      "counter-people-nin",
+      "question-words-basic",
+      "particle-ya-non-exhaustive",
+      "mou-ta-already",
+      "toki-ni-when-basic",
+      "issho-ni-together",
+      "dake-only-basic",
+      "na-adj-adverbial-ni",
+      "to-exhaustive-listing",
+      "counter-hon-long",
+      "counter-mai-flat",
+      "jikan-time-duration"
+    ],
+    "1363650": [
+      "to-naru-to-when-comes"
+    ],
+    "1363780": [
+      "zu-ni-wa-okanai",
+      "n-ga-tame",
+      "beku-mo-nai",
+      "nai-dewa-irarenai"
+    ],
+    "1364110": [
+      "nai-dewa-okanai"
+    ],
+    "1364360": [
+      "wa-sate-oki",
+      "koto-dakara",
+      "rashii-seems"
+    ],
+    "1365250": [
+      "sono-mono",
+      "ue-ni-in-addition",
+      "na-adj-te-joining-de"
+    ],
+    "1365850": [
+      "dake-mashi-da",
+      "kara-iu-to",
+      "to-iu-yori-rather"
+    ],
+    "1365960": [
+      "tsutsu-aru",
+      "mono-to-shite"
+    ],
+    "1366080": [
+      "ni-aki-tarazu"
+    ],
+    "1366190": [
+      "ni-tomonatte-accompany"
+    ],
+    "1366770": [
+      "taru-yuen"
+    ],
+    "1367010": [
+      "wa-mochiron",
+      "kara-miru-to"
+    ],
+    "1367300": [
+      "bakari-no",
+      "tsutsu-aru",
+      "ippou-da-keeps",
+      "wo-hajime-including"
+    ],
+    "1367880": [
+      "gotoni-each"
+    ],
+    "1368370": [
+      "naku-shite-wa",
+      "no-ue-nai",
+      "ni-nazoraete",
+      "wo-keiki-ni",
+      "atte-no-thanks-to"
+    ],
+    "1369070": [
+      "ni-taru"
+    ],
+    "1370090": [
+      "wa-tomokaku",
+      "ue-wa-now"
+    ],
+    "1370410": [
+      "te-wa-ikenai-prohibition",
+      "ato-de-after-doing",
+      "particle-de-means"
+    ],
+    "1370420": [
+      "te-wa-ikenai-prohibition",
+      "ato-de-after-doing",
+      "particle-de-means"
+    ],
+    "1370840": [
+      "hiite-wa"
+    ],
+    "1371200": [
+      "ni-suginai"
+    ],
+    "1372620": [
+      "hitotabi",
+      "ga-sai-go"
+    ],
+    "1372630": [
+      "wo-hete"
+    ],
+    "1373860": [
+      "kitte-no",
+      "ni-kagirazu-not-only",
+      "no-minarazu",
+      "ni-sakigakete"
+    ],
+    "1374880": [
+      "ni-oite-in-at"
+    ],
+    "1375290": [
+      "te-habakaranai",
+      "shikamo-moreover",
+      "no-minarazu",
+      "muki-suitable-for"
+    ],
+    "1375520": [
+      "ikan-ni-yorazu"
+    ],
+    "1375690": [
+      "koto-nashi-ni",
+      "nashi-ni-without",
+      "naku-shite-wa",
+      "wo-motte",
+      "ni-hoka-naranai",
+      "to-shita-tokoro-de",
+      "te-mi-se-ru",
+      "ni-soui-nai",
+      "yue-no",
+      "ni-aki-tarazu",
+      "de-atta-to-shitemo",
+      "to-aimatte",
+      "hiite-wa",
+      "ba-koso-precisely-because",
+      "kara-koso-precisely-because",
+      "sue-ni-after",
+      "to-iu-mono-dewa-nai",
+      "te-yamanai",
+      "kekka-result",
+      "to-miru-see-as",
+      "kara-iu-to",
+      "ni-kakatte-iru",
+      "to-iu-koto-wa",
+      "kagiri-as-long-as",
+      "to-wa-kagiranai",
+      "te-koso-only-by"
+    ],
+    "1375760": [
+      "ikan-depending"
+    ],
+    "1375790": [
+      "hiite-wa",
+      "ni-tomonatte-accompany"
+    ],
+    "1375950": [
+      "ni-kangamite"
+    ],
+    "1375970": [
+      "te-habakaranai"
+    ],
+    "1375980": [
+      "te-habakaranai"
+    ],
+    "1376460": [
+      "ka-to-omou-to",
+      "to-omoi-kiya",
+      "buri-ni-first-time",
+      "darou-deshou-conjecture",
+      "hazu-datta-was-supposed"
+    ],
+    "1376470": [
+      "to-omoi-kiya",
+      "darou-deshou-conjecture"
+    ],
+    "1376600": [
+      "ka-dou-ka"
+    ],
+    "1377290": [
+      "mono-to-shite"
+    ],
+    "1377590": [
+      "yue-ni-because"
+    ],
+    "1378040": [
+      "wa-sate-oki",
+      "koto-dakara",
+      "rashii-seems"
+    ],
+    "1378500": [
+      "nuku-fully-do",
+      "kagiri-as-long-as",
+      "kiri-only"
+    ],
+    "1378860": [
+      "ni-tomonatte-accompany",
+      "nai-koto-niwa"
+    ],
+    "1378990": [
+      "ni-oujite-depending"
+    ],
+    "1379380": [
+      "aro-u-koto-ka",
+      "ya-inaya",
+      "ka-nai-ka-no-uchi-ni",
+      "ga-hayai-ka",
+      "wo-hajime-including"
+    ],
+    "1380460": [
+      "ni-kotaete-response"
+    ],
+    "1381160": [
+      "ni-soui-nai",
+      "ni-soku-shite",
+      "ni-terashite"
+    ],
+    "1381180": [
+      "taru-yuen"
+    ],
+    "1381470": [
+      "no-moto-de"
+    ],
+    "1381820": [
+      "ka-no-you-ni",
+      "ni-taishite-toward",
+      "to-iu",
+      "noun-modifying-clause",
+      "shi-reason-listing",
+      "na-adjective-nonpast",
+      "na-adjective-attributive",
+      "na-adjective-negative",
+      "na-adjective-past",
+      "na-adj-adverbial-ni",
+      "na-adj-te-joining-de"
+    ],
+    "1382970": [
+      "ni-tsurete-as"
+    ],
+    "1382980": [
+      "ga-sai-go",
+      "tsumori-intention",
+      "tsumori-datta-had-intended"
+    ],
+    "1383180": [
+      "tomo-nareba",
+      "zu-ni-wa-sumanai",
+      "taru-yuen",
+      "iyashiku-mo",
+      "to-wa-ie",
+      "hanmen-on-other-hand",
+      "te-shikarubeki"
+    ],
+    "1383190": [
+      "te-shikarubeki"
+    ],
+    "1383240": [
+      "koto-kara-from-fact",
+      "particle-no-possession"
+    ],
+    "1383260": [
+      "dashi-suddenly-start"
+    ],
+    "1383620": [
+      "no-itari"
+    ],
+    "1383800": [
+      "wo-kawakiri-ni"
+    ],
+    "1383810": [
+      "tara-kiri-ga-nai"
+    ],
+    "1384840": [
+      "ba-sore-made"
+    ],
+    "1385070": [
+      "kitte-no"
+    ],
+    "1385170": [
+      "counter-mai-flat"
+    ],
+    "1386460": [
+      "u-ni-mo",
+      "wo-hikiai-ni",
+      "wa-sate-oki",
+      "ni-itaru",
+      "te-kara-denai-to",
+      "yasui-easy",
+      "te-itadaku-polite-favor-received"
+    ],
+    "1386840": [
+      "te-mi-se-ru",
+      "kara-miru-to"
+    ],
+    "1387440": [
+      "ni-sakigakete"
+    ],
+    "1387870": [
+      "masendeshita-polite-past-negative-verb"
+    ],
+    "1387990": [
+      "tomo-arou",
+      "nari-nari",
+      "aro-u-koto-ka",
+      "tou-no",
+      "ni-atatte-occasion",
+      "no-moto-de",
+      "doori-just-as",
+      "causative-passive",
+      "muki-suitable-for",
+      "wo-hajime-including",
+      "passive-form",
+      "causative-form",
+      "to-iu",
+      "yasui-easy",
+      "te-kureru-favor-received",
+      "te-ageru-favor-given",
+      "kureru-give-toward",
+      "morau-receive",
+      "sonkeigo-reru-rareru",
+      "humble-o-suru",
+      "te-itadaku-polite-favor-received",
+      "irassharu-honorific",
+      "ossharu-honorific",
+      "goran-ni-naru-honorific",
+      "kudasaru-honorific-verb",
+      "desu-polite-copula",
+      "deshita-past-polite-copula",
+      "particle-no-possession"
+    ],
+    "1388170": [
+      "mousu-humble"
+    ],
+    "1389880": [
+      "kitte-no",
+      "desura",
+      "kara-suru-to",
+      "to-miru-see-as"
+    ],
+    "1389890": [
+      "kitte-no",
+      "desura",
+      "kara-suru-to",
+      "to-miru-see-as"
+    ],
+    "1390150": [
+      "masenka-invitation",
+      "issho-ni-together"
+    ],
+    "1390320": [
+      "sanagara"
+    ],
+    "1390980": [
+      "tari-tari-suru"
+    ],
+    "1391930": [
+      "koto-nagara"
+    ],
+    "1392250": [
+      "ni-kotaete-response"
+    ],
+    "1394600": [
+      "meku-have-look",
+      "hate-ni-after"
+    ],
+    "1394680": [
+      "sou-iu-kou-iu"
+    ],
+    "1394800": [
+      "tou-no",
+      "te-kara-to-iu-mono"
+    ],
+    "1394840": [
+      "ikan-depending",
+      "to-wa-kagiranai"
+    ],
+    "1395330": [
+      "wo-hajime-including"
+    ],
+    "1395620": [
+      "ga-wakaru"
+    ],
+    "1396130": [
+      "ato-wa-rest",
+      "te-shimau",
+      "nakute-mo-ii"
+    ],
+    "1396390": [
+      "n-ga-tame",
+      "ue-wa-now"
+    ],
+    "1397300": [
+      "mo-saru-koto-nagara",
+      "shikamo-moreover",
+      "to-aimatte",
+      "koto-nagara",
+      "dake-no-koto-wa-aru",
+      "dake-ni-precisely"
+    ],
+    "1397340": [
+      "mono-wo-if-only"
+    ],
+    "1398290": [
+      "sou-iu-kou-iu"
+    ],
+    "1399610": [
+      "ni-kataku-nai",
+      "gatai-difficult"
+    ],
+    "1399790": [
+      "yara-yara",
+      "tari-tari-suru"
+    ],
+    "1400150": [
+      "mono-wo-if-only",
+      "te-wa-irarenai",
+      "ni-shiro-ni-seyo",
+      "to-bakari-ni",
+      "koto-nominalizer",
+      "ta-hou-ga-ii",
+      "nakucha-nakya",
+      "ni-tsurete-as",
+      "gimi-tendency",
+      "koto-da-emphatic",
+      "n-da-kara-emphatic",
+      "potential-form",
+      "ba-conditional",
+      "nakereba-naranai",
+      "you-ni-suru",
+      "nasai-command",
+      "te-hoshii-want-someone",
+      "you-to-omou-volitional-intent",
+      "ba-ii-should",
+      "dakara-so",
+      "sorede-and-then",
+      "i-adj-adverbial-ku"
+    ],
+    "1400820": [
+      "ni-soui-nai"
+    ],
+    "1401000": [
+      "ni-tari-nai"
+    ],
+    "1401210": [
+      "nari-nari",
+      "ue-de-upon",
+      "to-nareba-if-comes-to"
+    ],
+    "1402420": [
+      "ya-literary",
+      "mo-kamawa-zu",
+      "nuku-fully-do",
+      "ga-hayai-ka",
+      "tsuzukeru-continue",
+      "dashi-suddenly-start"
+    ],
+    "1402540": [
+      "no-nominalizer"
+    ],
+    "1403390": [
+      "nikui-hard"
+    ],
+    "1403550": [
+      "wo-komete"
+    ],
+    "1404390": [
+      "bakari-only",
+      "ni-naru-become"
+    ],
+    "1404750": [
+      "ni-taru"
+    ],
+    "1404975": [
+      "ga-hayai-ka",
+      "mono-da-general",
+      "hou-ga-comparative"
+    ],
+    "1405890": [
+      "wo-mae-ni-shite",
+      "ni-atatte-occasion",
+      "irai-since",
+      "ta-kiri-since-last",
+      "tsumori-intention"
+    ],
+    "1406030": [
+      "mama"
+    ],
+    "1406060": [
+      "soredemo-even-so"
+    ],
+    "1406090": [
+      "koto-mo-arou-ni"
+    ],
+    "1406150": [
+      "bekarazu",
+      "kara-miru-to",
+      "ni-totte"
+    ],
+    "1407050": [
+      "wo-hikiai-ni"
+    ],
+    "1407130": [
+      "ni-sakigakete"
+    ],
+    "1407370": [
+      "nari-nari",
+      "ta-hou-ga-ii"
+    ],
+    "1407460": [
+      "ni-matsuwaru",
+      "yue-ni-because",
+      "koto-kara-from-fact",
+      "wo-tsuujite-through"
+    ],
+    "1407810": [
+      "naritomo"
+    ],
+    "1407900": [
+      "morau-receive",
+      "te-itadaku-polite-favor-received"
+    ],
+    "1408260": [
+      "tara-kiri-ga-nai",
+      "zu-jimai"
+    ],
+    "1408370": [
+      "n-to-suru"
+    ],
+    "1408510": [
+      "iyashiku-mo"
+    ],
+    "1409140": [
+      "to-iu-no-wa",
+      "kke-casual-wondering"
+    ],
+    "1409200": [
+      "kurai-extent"
+    ],
+    "1409420": [
+      "to-aimatte"
+    ],
+    "1409640": [
+      "gotoki-like"
+    ],
+    "1409820": [
+      "wo-kinjienai",
+      "ni-taishite-toward"
+    ],
+    "1409840": [
+      "ni-kakawaru",
+      "ni-oujite-depending"
+    ],
+    "1410050": [
+      "ni-soku-shite",
+      "wo-keiki-ni",
+      "wo-fumaete",
+      "uru-possible"
+    ],
+    "1410590": [
+      "nomi-only",
+      "to-mo-naku",
+      "ato-wa-rest"
+    ],
+    "1410660": [
+      "you-dewa-if-its"
+    ],
+    "1410730": [
+      "mitai-looks-like"
+    ],
+    "1410760": [
+      "to-atte-wa"
+    ],
+    "1410780": [
+      "wo-kinjienai",
+      "kiwamari-nai",
+      "ni-taishite-toward"
+    ],
+    "1410800": [
+      "oyoba-zu-nagara",
+      "itadaku-humble-verb"
+    ],
+    "1411110": [
+      "dake-nara",
+      "te-kureru-favor-received",
+      "te-ageru-favor-given",
+      "humble-o-suru"
+    ],
+    "1411340": [
+      "to-minasu"
+    ],
+    "1411420": [
+      "wo-motte",
+      "wo-keiki-ni"
+    ],
+    "1411990": [
+      "ni-ari-gachi"
+    ],
+    "1412890": [
+      "kane-nai-might"
+    ],
+    "1412960": [
+      "mo-nan-tomo-nai",
+      "ni-shite-mireba",
+      "hodo-no-mono-dewa-nai"
+    ],
+    "1413070": [
+      "wo-mono-to-mo-sezu",
+      "osore-ga-aru"
+    ],
+    "1413180": [
+      "to-ieba-speaking-of",
+      "kko-nai"
+    ],
+    "1413240": [
+      "katawara",
+      "wo-hete",
+      "tame-ni",
+      "tsumori-intention"
+    ],
+    "1413660": [
+      "ga-suki-kirai"
+    ],
+    "1413720": [
+      "iwaba"
+    ],
+    "1413940": [
+      "hodo-no",
+      "koto-mo-arou-ni",
+      "wa-tomokaku",
+      "to-wa-iu-mono-no",
+      "wake-ni-wa-ikanai"
+    ],
+    "1414150": [
+      "zutomo-even-without"
+    ],
+    "1414170": [
+      "tomo-arou",
+      "to-iwazu-to-iwazu",
+      "de-are-de-are",
+      "tomo-nareba",
+      "nara-mada-shimo",
+      "nara-iza-shirazu",
+      "de-ari-nagara",
+      "ni-kagirazu-not-only",
+      "wa-mochiron",
+      "no-minarazu",
+      "to-iu-ka",
+      "kuse-ni-despite"
+    ],
+    "1414190": [
+      "to-iu-ka"
+    ],
+    "1414220": [
+      "wo-mae-ni-shite",
+      "to-atte"
+    ],
+    "1414240": [
+      "kara-iu-to"
+    ],
+    "1414300": [
+      "wo-shirime-ni"
+    ],
+    "1414340": [
+      "de-are-de-are",
+      "zu-mogana",
+      "kara-koso-precisely-because",
+      "to-wa-ie",
+      "koto-nominalizer",
+      "ni-totte",
+      "bakari-ni-merely",
+      "ippou-de-one-hand",
+      "au-together",
+      "komi-into",
+      "te-hajimete-only-after"
+    ],
+    "1414610": [
+      "wo-hajime-including"
+    ],
+    "1415000": [
+      "u-mono-nara",
+      "hitotabi",
+      "to-sureba",
+      "darou-deshou-conjecture"
+    ],
+    "1415400": [
+      "ni-totte"
+    ],
+    "1415870": [
+      "to-itta-such-as"
+    ],
+    "1416260": [
+      "wo-mono-to-mo-sezu",
+      "naku-shite-wa"
+    ],
+    "1416840": [
+      "aida-ni",
+      "ki-ga-suru-feel-like"
+    ],
+    "1416850": [
+      "ikan-ni-yorazu",
+      "ni-kakawarazu-regardless"
+    ],
+    "1416860": [
+      "de-are-de-are",
+      "yashinai-emphatic",
+      "you-da-appearance",
+      "igai-other-than"
+    ],
+    "1417020": [
+      "ni-suginai"
+    ],
+    "1417030": [
+      "mai-not-likely",
+      "to-tan-moment"
+    ],
+    "1419080": [
+      "ni-ataru-correspond",
+      "koto-mo-arou-ni",
+      "morau-receive"
+    ],
+    "1419110": [
+      "ni-ataru-correspond",
+      "koto-mo-arou-ni",
+      "morau-receive"
+    ],
+    "1419570": [
+      "hodo-dewa-nai"
+    ],
+    "1420110": [
+      "wo-towazu-regardless"
+    ],
+    "1420160": [
+      "ni-kagirazu-not-only"
+    ],
+    "1420470": [
+      "beku-mo-nai"
+    ],
+    "1420800": [
+      "gurumi",
+      "wo-chuushin-ni-centered"
+    ],
+    "1420970": [
+      "tsutsu-aru"
+    ],
+    "1420980": [
+      "tsutsu-aru"
+    ],
+    "1421210": [
+      "osore-ga-aru"
+    ],
+    "1421360": [
+      "naritomo"
+    ],
+    "1421630": [
+      "no-itari",
+      "yara-yara",
+      "toshite-as"
+    ],
+    "1421970": [
+      "shou-ga-nai"
+    ],
+    "1422020": [
+      "ni-kagitte-only",
+      "to-iu-no-wa",
+      "okage-sei-de",
+      "node-cause",
+      "ba-ai-in-case",
+      "sorede-and-then"
+    ],
+    "1422050": [
+      "ikan-ni-yorazu",
+      "ni-itatte-wa",
+      "u-mono-nara",
+      "nara-mada-shimo",
+      "ni-mo-hodo-ga-aru",
+      "koto-mo-arou-ni",
+      "koto-nagara",
+      "zuni-sumu",
+      "node-cause",
+      "sorede-and-then"
+    ],
+    "1422970": [
+      "ya-inaya",
+      "ka-nai-ka-no-uchi-ni",
+      "nari-as-soon-as"
+    ],
+    "1423000": [
+      "mono-reason-assertion"
+    ],
+    "1423240": [
+      "konasu"
+    ],
+    "1424270": [
+      "to-itta-such-as"
+    ],
+    "1424290": [
+      "to-itta-such-as"
+    ],
+    "1424410": [
+      "wo-yogi-naku-sareru",
+      "you-nara-if-looks",
+      "shidai-depending",
+      "koto-ni-surprise",
+      "node-cause"
+    ],
+    "1424550": [
+      "wo-chuushin-ni-centered"
+    ],
+    "1426530": [
+      "sobakara",
+      "sai-ni",
+      "to-miru-see-as",
+      "o-v-kudasai-polite-honor"
+    ],
+    "1426880": [
+      "mono-wo-if-only",
+      "mono-dakara",
+      "mono-ga-aru",
+      "to-iu-no-wa",
+      "tagaru-third-person-desire",
+      "to-wa-kagiranai",
+      "you-ni-suru",
+      "koto-ni-suru-decide",
+      "mono-da-general"
+    ],
+    "1427340": [
+      "ta-tokoro"
+    ],
+    "1427360": [
+      "ni-itaru-made",
+      "ni-taishite-toward"
+    ],
+    "1427430": [
+      "ta-tokoro"
+    ],
+    "1428240": [
+      "ikan-ni-yorazu",
+      "ni-aki-tarazu",
+      "kara-koso-precisely-because",
+      "ni-kakawarazu-regardless",
+      "ni-shiro-ni-seyo",
+      "ni-shitemo-even"
+    ],
+    "1429050": [
+      "made-mo-naku"
+    ],
+    "1429060": [
+      "made-mo-naku"
+    ],
+    "1429120": [
+      "n-ga-tame",
+      "beku-in-order-to",
+      "kekka-result",
+      "ni-itaru"
+    ],
+    "1429200": [
+      "ni-oujite-depending"
+    ],
+    "1429750": [
+      "tada-de-sae",
+      "sue-ni-after",
+      "ageku-ni-end-up",
+      "mamire-smeared"
+    ],
+    "1429760": [
+      "sue-ni-after",
+      "mamire-smeared"
+    ],
+    "1430100": [
+      "ni-wataru-span",
+      "dake-no-koto-wa-aru",
+      "wo-hete",
+      "hate-ni-after"
+    ],
+    "1430200": [
+      "no-itari",
+      "oyoba-zu-nagara",
+      "te-itadaku-polite-favor-received",
+      "itadaku-humble-verb"
+    ],
+    "1430650": [
+      "wo-fumaete",
+      "you-ga-nai-no-way",
+      "naoshi-redo"
+    ],
+    "1430690": [
+      "mono-wo-if-only"
+    ],
+    "1432460": [
+      "tada-de-sae"
+    ],
+    "1432680": [
+      "hodo-dewa-nai",
+      "to-iu-yori-rather",
+      "ue-ni-in-addition",
+      "n-desu-explanation",
+      "shi-reason-listing"
+    ],
+    "1432920": [
+      "koto-dakara",
+      "doori-just-as",
+      "ossharu-honorific",
+      "mousu-humble"
+    ],
+    "1432930": [
+      "doori-just-as"
+    ],
+    "1433600": [
+      "ni-tsuki-due-to"
+    ],
+    "1433680": [
+      "wo-kikkake-ni"
+    ],
+    "1434180": [
+      "dake-mashi-da"
+    ],
+    "1435490": [
+      "te-iku",
+      "dakara-so"
+    ],
+    "1435540": [
+      "ni-tsuki-due-to"
+    ],
+    "1435760": [
+      "ni-teihyou-ga-aru"
+    ],
+    "1436540": [
+      "koso-are",
+      "te-shikarubeki"
+    ],
+    "1436720": [
+      "made-da",
+      "ba-sore-made",
+      "koso-are",
+      "aro-u-tomo",
+      "you-to-regardless",
+      "tsuzukeru-continue",
+      "hoka-nai-no-choice",
+      "wake-ni-wa-ikanai",
+      "tatoe-temo",
+      "soredemo-even-so"
+    ],
+    "1436730": [
+      "made-da",
+      "hoka-nai-no-choice",
+      "wake-ni-wa-ikanai"
+    ],
+    "1436830": [
+      "tou-no",
+      "nani-se",
+      "mono-no-although",
+      "irai-since",
+      "ta-kiri-since-last",
+      "shika-nai"
+    ],
+    "1437700": [
+      "zuni-sumu"
+    ],
+    "1438690": [
+      "ni-kakawarazu-regardless",
+      "shidai-de",
+      "ni-kakatte-iru",
+      "sou-da-hearsay",
+      "rashii-seems",
+      "shidai-depending",
+      "particle-wa-topic",
+      "particle-ne-seeking-agreement"
+    ],
+    "1438770": [
+      "sou-da-hearsay"
+    ],
+    "1438970": [
+      "to-aimatte",
+      "ni-mo-kakawarazu-despite"
+    ],
+    "1439090": [
+      "made-mo-naku",
+      "to-sareru"
+    ],
+    "1441120": [
+      "koto-ni-naru-be-decided"
+    ],
+    "1441660": [
+      "warini-considering"
+    ],
+    "1441850": [
+      "kawari-ni-instead"
+    ],
+    "1441870": [
+      "sae-sureba-if-only"
+    ],
+    "1442100": [
+      "ni-matsuwaru"
+    ],
+    "1442260": [
+      "ni-nottotte"
+    ],
+    "1442750": [
+      "mamire-smeared"
+    ],
+    "1443000": [
+      "mama",
+      "pponashi-left",
+      "jidoushi-tadoushi"
+    ],
+    "1443530": [
+      "ni-kagitte-only",
+      "to-iu-no-wa",
+      "te-shimau",
+      "pponashi-left",
+      "hoka-nai-no-choice",
+      "okini-intervals",
+      "node-cause",
+      "mairu-humble",
+      "sorede-and-then",
+      "particle-yo-emphasis",
+      "kono-sono-ano-dono-attributive",
+      "hou-ga-comparative",
+      "counter-ji-oclock"
+    ],
+    "1443840": [
+      "nari-nari",
+      "kakeru-halfway",
+      "shidai-depending",
+      "you-ga-nai-no-way",
+      "saichu-in-the-middle",
+      "owaru-finish",
+      "humble-o-suru",
+      "particle-to-and-with"
+    ],
+    "1443940": [
+      "you-ga-nai-no-way"
+    ],
+    "1443990": [
+      "to-iu-ka"
+    ],
+    "1444010": [
+      "wa-tomokaku"
+    ],
+    "1444620": [
+      "ni-wataru-span"
+    ],
+    "1444680": [
+      "ni-wataru-span"
+    ],
+    "1444910": [
+      "to-tan-moment"
+    ],
+    "1444980": [
+      "tsumori-datta-had-intended"
+    ],
+    "1444990": [
+      "ni-tomonatte-accompany",
+      "ippou-de-one-hand",
+      "wo-hajime-including"
+    ],
+    "1445130": [
+      "koto-nashi-ni",
+      "n-ga-tame",
+      "nashi-ni-without",
+      "naku-shite-wa",
+      "wo-motte",
+      "ni-hoka-naranai",
+      "mo-saru-koto-nagara",
+      "ikan-se-n",
+      "yue-no",
+      "nomi-only",
+      "ma-no-atari-ni",
+      "oyoba-zu-nagara",
+      "to-aimatte",
+      "hiite-wa",
+      "ba-koso-precisely-because",
+      "kara-koso-precisely-because",
+      "ni-mo-kakawarazu-despite",
+      "beku-in-order-to",
+      "ni-wataru-span",
+      "to-iu-mono-da",
+      "kekka-result",
+      "shidai-de",
+      "ni-kakatte-iru",
+      "hate-ni-after",
+      "kagiri-as-long-as",
+      "dake-ni-precisely",
+      "te-koso-only-by"
+    ],
+    "1445360": [
+      "gatera-while",
+      "wo-kanete"
+    ],
+    "1445580": [
+      "nanyoubi-day-of-week"
+    ],
+    "1445590": [
+      "nanyoubi-day-of-week"
+    ],
+    "1445670": [
+      "wo-kinjienai",
+      "u-mono-nara",
+      "nai-nomi-narazu"
+    ],
+    "1445780": [
+      "ya-inaya"
+    ],
+    "1447690": [
+      "wo-kawakiri-ni",
+      "made-mo-nai",
+      "hodo-extent",
+      "tsuide-ni",
+      "wo-hajime-including",
+      "koto-ni-naru-be-decided",
+      "mairu-humble",
+      "masu-polite-verb",
+      "particle-ni-target",
+      "te-imasu-progressive",
+      "jikan-time-duration"
+    ],
+    "1448160": [
+      "ni-kakete-through"
+    ],
+    "1448780": [
+      "ma-no-atari-ni",
+      "ni-atatte-occasion"
+    ],
+    "1448810": [
+      "ni-ataru-correspond"
+    ],
+    "1448940": [
+      "made-no-koto-da",
+      "tou-no",
+      "datte-casual-because",
+      "te-koso-only-by"
+    ],
+    "1449190": [
+      "made-no-koto-da",
+      "ni-shite-mireba"
+    ],
+    "1449530": [
+      "made-mo-naku",
+      "ashikara-zu",
+      "ni-kotaete-response",
+      "kane-ru-hard-to",
+      "ka-dou-ka",
+      "ni-taishite-toward"
+    ],
+    "1451040": [
+      "to-iwazu-to-iwazu",
+      "amari-too-much",
+      "wo-kaerimi-zu",
+      "gotoku-as-if",
+      "particle-made-until"
+    ],
+    "1451150": [
+      "katawara"
+    ],
+    "1451380": [
+      "to-sureba",
+      "sorede-and-then"
+    ],
+    "1451440": [
+      "mono-ga-aru"
+    ],
+    "1451750": [
+      "koso-are",
+      "sobakara",
+      "ni-shitemo-even"
+    ],
+    "1451850": [
+      "to-minasu",
+      "sou-iu-kou-iu"
+    ],
+    "1451960": [
+      "ka-dou-ka"
+    ],
+    "1452720": [
+      "wo-kinjienai"
+    ],
+    "1452990": [
+      "yoshi-mi"
+    ],
+    "1453790": [
+      "ni-kangamite"
+    ],
+    "1454500": [
+      "uru-possible"
+    ],
+    "1454510": [
+      "bakari-de-naku"
+    ],
+    "1455990": [
+      "wo-shirime-ni"
+    ],
+    "1456010": [
+      "mono-ga-aru"
+    ],
+    "1456130": [
+      "sai-ni",
+      "kakeru-halfway",
+      "owaru-finish",
+      "nikui-hard",
+      "particle-o-object",
+      "te-form-basic",
+      "tai-desire",
+      "mou-ta-already",
+      "toki-ni-when-basic"
+    ],
+    "1456360": [
+      "zu-ni-wa-irarenai",
+      "ba-hodo"
+    ],
+    "1457040": [
+      "dashi-suddenly-start"
+    ],
+    "1457200": [
+      "hazu-expected"
+    ],
+    "1457830": [
+      "yoshi-mi",
+      "to-iu-mono-da",
+      "ka-nai-ka-no-uchi-ni",
+      "you-ga-nai-no-way",
+      "ka-no-you-ni",
+      "shou-ga-nai",
+      "kamoshirenai-might",
+      "kara-cause"
+    ],
+    "1459170": [
+      "ta-hou-ga-ii"
+    ],
+    "1459400": [
+      "you-nara-if-looks",
+      "you-da-appearance",
+      "you-ni-purpose",
+      "you-ni-suru"
+    ],
+    "1459640": [
+      "nagara-ni",
+      "mo-saru-koto-nagara",
+      "de-ari-nagara",
+      "nagara-no",
+      "sanagara",
+      "oyoba-zu-nagara",
+      "nagara-mo",
+      "koto-nagara",
+      "nagara",
+      "goran-ni-naru-honorific"
+    ],
+    "1460850": [
+      "oose-ru",
+      "hodo-dewa-nai",
+      "kara-koso-precisely-because",
+      "kara-suru-to",
+      "ni-shite-mireba",
+      "you-de-seemingly",
+      "you-nara-if-looks",
+      "ni-chigainai-must",
+      "kko-nai",
+      "ni-kimatte-iru",
+      "ga-kedo-although",
+      "tte-quotation",
+      "soredemo-even-so"
+    ],
+    "1461160": [
+      "counter-tsu"
+    ],
+    "1463480": [
+      "ni-taishite-toward",
+      "na-adjective-nonpast",
+      "na-adjective-negative"
+    ],
+    "1464250": [
+      "makuru-extensively",
+      "pponashi-left",
+      "chuu-during"
+    ],
+    "1464530": [
+      "wo-kikkake-ni",
+      "kara-suru-to",
+      "kara-ni-wa",
+      "te-iku",
+      "you-ni-purpose",
+      "hodo-extent",
+      "koto-nominalizer",
+      "ba-hodo",
+      "wake-dewa-nai",
+      "irai-since",
+      "muke-targeted-for",
+      "to-itte-mo-although",
+      "dokoro-ka-far-from",
+      "tsuzukeru-continue",
+      "igai-other-than",
+      "ue-wa-now",
+      "dake-de-naku",
+      "potential-form",
+      "ni-naru-become",
+      "hajimeru-auxiliary",
+      "kata-way-of-doing",
+      "mae-ni-before-doing",
+      "koto-ga-dekiru",
+      "you-to-omou-volitional-intent",
+      "te-kureru-favor-received",
+      "te-morau-request-favor",
+      "shika-nai",
+      "ga-suki-kirai",
+      "ga-wakaru",
+      "ga-dekiru",
+      "tte-quotation",
+      "masu-polite-verb",
+      "particle-ga-subject",
+      "particle-de-means",
+      "particle-no-possession",
+      "particle-ka-question",
+      "na-adj-adverbial-ni"
+    ],
+    "1464700": [
+      "wa-mochiron",
+      "mitai-looks-like",
+      "to-wa-kagiranai",
+      "toshite-as",
+      "dewa-arimasen-negative-polite-copula"
+    ],
+    "1464760": [
+      "chuu-during"
+    ],
+    "1464880": [
+      "igai-other-than",
+      "deshita-past-polite-copula",
+      "nanyoubi-day-of-week"
+    ],
+    "1464900": [
+      "igai-other-than",
+      "deshita-past-polite-copula",
+      "nanyoubi-day-of-week"
+    ],
+    "1465410": [
+      "ori-ni"
+    ],
+    "1465580": [
+      "bekarazu",
+      "nari-as-soon-as",
+      "tame-ni",
+      "koto-ni-naru-be-decided"
+    ],
+    "1466360": [
+      "nomi-only"
+    ],
+    "1468190": [
+      "ni-shitagatte",
+      "ni-tsurete-as"
+    ],
+    "1468380": [
+      "tsuzukeru-continue"
+    ],
+    "1469810": [
+      "shi-reason-listing"
+    ],
+    "1469850": [
+      "ni-ari-gachi",
+      "nari-ni-in-own-way"
+    ],
+    "1470070": [
+      "ga-suki-kirai"
+    ],
+    "1470080": [
+      "to-mieru"
+    ],
+    "1470370": [
+      "ni-oujite-depending"
+    ],
+    "1470660": [
+      "wo-chuushin-ni-centered"
+    ],
+    "1470740": [
+      "ka-nai-ka-no-uchi-ni"
+    ],
+    "1471090": [
+      "zu-ni-wa-okanai"
+    ],
+    "1471900": [
+      "ikutsu-how-many",
+      "ikura-how-much"
+    ],
+    "1472660": [
+      "ni-kurabete-compared",
+      "ichiban-superlative"
+    ],
+    "1473190": [
+      "ni-sakidatte-prior"
+    ],
+    "1473210": [
+      "te-shikarubeki"
+    ],
+    "1473740": [
+      "v-temo-even-if"
+    ],
+    "1474910": [
+      "narade-wa-no",
+      "dake-de-naku",
+      "ga-kedo-although",
+      "te-goran-try-casual",
+      "particle-mo-also",
+      "particle-yo-emphasis",
+      "i-adjective-nonpast"
+    ],
+    "1476920": [
+      "you-ka-to-omou"
+    ],
+    "1477130": [
+      "you-to-mai-to",
+      "ato-wa-rest"
+    ],
+    "1477310": [
+      "nai-dewa-okanai",
+      "wo-hete"
+    ],
+    "1477350": [
+      "zu-ni-wa-okanai",
+      "wo-kawakiri-ni",
+      "majiki-unacceptable"
+    ],
+    "1477620": [
+      "osore-ga-aru"
+    ],
+    "1477660": [
+      "narade-wa-no"
+    ],
+    "1477720": [
+      "hiite-wa",
+      "wo-chuushin-ni-centered",
+      "ippou-de-one-hand"
+    ],
+    "1477810": [
+      "ni-sakigakete"
+    ],
+    "1477840": [
+      "ni-sakidatte-prior"
+    ],
+    "1478620": [
+      "tomo-nareba",
+      "ni-soku-shite",
+      "ni-terashite",
+      "ni-kakatte-iru"
+    ],
+    "1480210": [
+      "ni-shite-mireba"
+    ],
+    "1480670": [
+      "wo-mono-to-mo-sezu",
+      "wo-shirime-ni",
+      "wo-yoso-ni"
+    ],
+    "1481000": [
+      "hanmen-on-other-hand"
+    ],
+    "1481130": [
+      "wo-hikiai-ni"
+    ],
+    "1481630": [
+      "oose-ru",
+      "ni-soui-nai",
+      "to-minasu",
+      "de-atta-to-shitemo",
+      "to-oboshii",
+      "tou-no",
+      "koto-kara-from-fact",
+      "ni-chigainai-must"
+    ],
+    "1481890": [
+      "ni-wataru-span"
+    ],
+    "1482290": [
+      "you-ga-nai-no-way"
+    ],
+    "1483090": [
+      "wo-yoso-ni",
+      "to-mo-naku"
+    ],
+    "1483150": [
+      "ni-mo-mashite",
+      "wo-oite",
+      "kitte-no",
+      "n-bakari",
+      "nashi-ni-without",
+      "te-habakaranai",
+      "nagara-ni",
+      "konasu",
+      "mekasu",
+      "nagara-no",
+      "ni-teihyou-ga-aru",
+      "sono-mono",
+      "sanagara",
+      "mo-kamawa-zu",
+      "nai-dewa-irarenai",
+      "to-bakari-ni",
+      "nari-as-soon-as",
+      "zukume-nothing-but",
+      "buru-pretend",
+      "rashii-seems",
+      "ni-totte",
+      "wake-da-meaning",
+      "muki-suitable-for",
+      "bakari-ka-not-only",
+      "to-iu-yori-rather",
+      "ge-looking",
+      "te-naranai-cant-help",
+      "ni-kakete-through",
+      "dake-de-naku",
+      "to-naru-to-when-comes",
+      "garu-third-person-emotion",
+      "na-adjective-nonpast",
+      "i-adj-te-joining-kute",
+      "na-adj-te-joining-de"
+    ],
+    "1483420": [
+      "wo-yoso-ni"
+    ],
+    "1483730": [
+      "dano-dano",
+      "to-iu-ka",
+      "you-da-appearance",
+      "hodo-extent",
+      "pponashi-left",
+      "gimi-tendency",
+      "mono-reason-assertion",
+      "mon-casual-because",
+      "koto-da-emphatic",
+      "n-da-kara-emphatic",
+      "node-cause",
+      "tsumori-datta-had-intended",
+      "dakara-so",
+      "sorede-and-then",
+      "soredemo-even-so"
+    ],
+    "1483780": [
+      "no-kiwami"
+    ],
+    "1483880": [
+      "wo-kawakiri-ni"
+    ],
+    "1483900": [
+      "mekasu",
+      "meku-have-look"
+    ],
+    "1484150": [
+      "mekasu"
+    ],
+    "1484260": [
+      "you-ni-purpose",
+      "no-nominalizer",
+      "ga-kikoeru-mieru"
+    ],
+    "1484350": [
+      "wo-kinjienai"
+    ],
+    "1484370": [
+      "wo-kinjienai"
+    ],
+    "1484920": [
+      "sai-ni"
+    ],
+    "1485990": [
+      "mekasu",
+      "ge-looking"
+    ],
+    "1486360": [
+      "narade-wa-no",
+      "to-aimatte",
+      "gotoku-as-if"
+    ],
+    "1486530": [
+      "bakari-ka-not-only"
+    ],
+    "1486650": [
+      "dake-no-koto-wa-aru",
+      "sou-da-hearsay",
+      "warini-considering",
+      "bakari-de-naku",
+      "te-goran-try-casual",
+      "particle-ne-seeking-agreement"
+    ],
+    "1487400": [
+      "te-mi-se-ru",
+      "to-iu-mono-dewa-nai",
+      "kara-ni-wa",
+      "kara-to-itte",
+      "to-wa-kagiranai",
+      "ue-wa-now",
+      "ba-ai-in-case"
+    ],
+    "1487410": [
+      "kara-to-itte"
+    ],
+    "1487540": [
+      "ni-atte"
+    ],
+    "1487660": [
+      "ni-atte",
+      "ni-soku-shite",
+      "ni-oujite-depending",
+      "to-areba",
+      "shidai-de",
+      "ni-kangamite",
+      "ni-totte",
+      "naoshi-redo",
+      "to-nareba-if-comes-to",
+      "to-exhaustive-listing"
+    ],
+    "1489510": [
+      "ni-nazoraete"
+    ],
+    "1489700": [
+      "n-bakari",
+      "n-to-bakari-ni"
+    ],
+    "1490220": [
+      "hodo-dewa-nai",
+      "made-mo-nai"
+    ],
+    "1490230": [
+      "to-yara",
+      "wo-kikkake-ni",
+      "kane-nai-might",
+      "ippou-da-keeps"
+    ],
+    "1490580": [
+      "mo-saru-koto-nagara",
+      "ni-teihyou-ga-aru",
+      "shikamo-moreover",
+      "wa-tomokaku",
+      "ba-hodo",
+      "dake-atte-as-expected",
+      "kedomo-formal-but"
+    ],
+    "1490740": [
+      "nagara-mo"
+    ],
+    "1491150": [
+      "nani-shiro"
+    ],
+    "1491370": [
+      "naku-shite-wa",
+      "hodo-dewa-nai"
+    ],
+    "1491520": [
+      "naku-shite-wa",
+      "hodo-dewa-nai"
+    ],
+    "1492570": [
+      "te-naranai-cant-help"
+    ],
+    "1493370": [
+      "gurumi"
+    ],
+    "1493700": [
+      "kagiri-da-emotional"
+    ],
+    "1493830": [
+      "to-miru-see-as"
+    ],
+    "1494970": [
+      "dano-dano"
+    ],
+    "1495750": [
+      "sobakara"
+    ],
+    "1496800": [
+      "ga-kikoeru-mieru",
+      "kore-sore-are-demonstratives",
+      "ichiban-superlative"
+    ],
+    "1497960": [
+      "mai-not-likely",
+      "gotoki-like",
+      "to-omoi-kiya",
+      "okage-sei-de"
+    ],
+    "1497980": [
+      "mai-not-likely"
+    ],
+    "1499320": [
+      "tada-de-sae",
+      "nari-as-soon-as",
+      "you-da-appearance",
+      "darake-full-of",
+      "muki-suitable-for",
+      "ue-ni-in-addition",
+      "shi-reason-listing",
+      "arimasu-existence-inanimate",
+      "na-adjective-nonpast",
+      "na-adjective-attributive",
+      "na-adjective-negative",
+      "na-adjective-past",
+      "counter-tsu",
+      "particle-ya-non-exhaustive",
+      "na-adj-te-joining-de"
+    ],
+    "1499350": [
+      "taru-mono-as-x"
+    ],
+    "1499830": [
+      "nagara-no"
+    ],
+    "1500400": [
+      "osore-ga-aru"
+    ],
+    "1500970": [
+      "ni-itaru-made"
+    ],
+    "1501350": [
+      "yara-yara"
+    ],
+    "1502430": [
+      "bakari-no",
+      "bakari-only",
+      "ippou-da-keeps"
+    ],
+    "1502940": [
+      "yashinai-emphatic",
+      "kko-nai",
+      "yasui-easy",
+      "ga-wakaru",
+      "particle-ga-subject",
+      "particle-ka-question"
+    ],
+    "1503870": [
+      "wo-motoni-based-on"
+    ],
+    "1505070": [
+      "mo-saru-koto-nagara"
+    ],
+    "1505120": [
+      "ni-tsuite",
+      "te-hajimete-only-after"
+    ],
+    "1505260": [
+      "u-mono-nara",
+      "dano-dano"
+    ],
+    "1505470": [
+      "zu-ni"
+    ],
+    "1505990": [
+      "shikashi-but"
+    ],
+    "1506050": [
+      "shikamo-moreover"
+    ],
+    "1507090": [
+      "wa-mochiron",
+      "wa-oroka"
+    ],
+    "1507670": [
+      "de-are-de-are"
+    ],
+    "1507720": [
+      "dake-de-naku"
+    ],
+    "1508070": [
+      "ni-atte"
+    ],
+    "1508550": [
+      "ka-nai-ka-no-uchi-ni"
+    ],
+    "1508720": [
+      "wo-kagiri-ni",
+      "ni-tsuki-due-to"
+    ],
+    "1509490": [
+      "ageku-ni-end-up"
+    ],
+    "1510650": [
+      "ni-oujite-depending",
+      "shidai-depending"
+    ],
+    "1510690": [
+      "wo-kikkake-ni",
+      "wo-keiki-ni",
+      "te-kara-to-iu-mono"
+    ],
+    "1510700": [
+      "to-shita-tokoro-de",
+      "ikkou-ni-nai",
+      "ni-shiro-ni-seyo"
+    ],
+    "1510720": [
+      "ni-kawatte-instead"
+    ],
+    "1510790": [
+      "shidai-de",
+      "to-tomoni-together"
+    ],
+    "1511040": [
+      "wo-yogi-naku-sareru",
+      "shidai-de"
+    ],
+    "1511780": [
+      "sobakara"
+    ],
+    "1512220": [
+      "to-minasu",
+      "nai-nomi-narazu",
+      "ue-de-upon"
+    ],
+    "1512610": [
+      "ni-tomonatte-accompany",
+      "to-wa-iu-mono-no",
+      "hanmen-on-other-hand"
+    ],
+    "1512670": [
+      "to-itta-tokoro-da",
+      "wo-kikkake-ni",
+      "to-iu-mono-dewa-nai",
+      "sae-sureba-if-only",
+      "makuru-extensively",
+      "te-iku",
+      "nagara",
+      "tame-ni",
+      "noni-although",
+      "koto-nominalizer",
+      "ni-tsuite",
+      "beki-da",
+      "ba-yokatta",
+      "ba-hodo",
+      "wake-da-meaning",
+      "to-wa-kagiranai",
+      "irai-since",
+      "to-iu-yori-rather",
+      "to-itte-mo-although",
+      "to-itta-such-as",
+      "dokoro-dewa-nai-no-time",
+      "warini-considering",
+      "tsuzukeru-continue",
+      "nai-de-without-doing",
+      "koto-da-emphatic",
+      "ijou-since",
+      "bakari-de-naku",
+      "dake-de-naku",
+      "ba-conditional",
+      "hajimeru-auxiliary",
+      "kata-way-of-doing",
+      "mae-ni-before-doing",
+      "you-to-omou-volitional-intent",
+      "tsumori-datta-had-intended",
+      "ga-suki-kirai",
+      "shikashi-but",
+      "masu-polite-verb",
+      "particle-de-means",
+      "te-form-basic",
+      "i-adj-adverbial-ku",
+      "jikan-time-duration"
+    ],
+    "1512830": [
+      "to-itta-such-as"
+    ],
+    "1512850": [
+      "to-itta-such-as"
+    ],
+    "1513060": [
+      "te-kureru-favor-received"
+    ],
+    "1514360": [
+      "aro-u-tomo"
+    ],
+    "1514930": [
+      "nagara-mo"
+    ],
+    "1514950": [
+      "ni-tsurete-as"
+    ],
+    "1514960": [
+      "ni-tsurete-as"
+    ],
+    "1515670": [
+      "katagata-combining"
+    ],
+    "1516160": [
+      "kara-koso-precisely-because",
+      "kara-ni-wa",
+      "nani-shiro",
+      "to-iu-no-wa",
+      "nai-wake-ni-ikanai",
+      "wake-ni-wa-ikanai",
+      "zuni-sumu"
+    ],
+    "1516170": [
+      "to-sureba"
+    ],
+    "1516300": [
+      "koso-are"
+    ],
+    "1516900": [
+      "hate-ni-after"
+    ],
+    "1517040": [
+      "ikan-depending",
+      "ni-sotte-along"
+    ],
+    "1517220": [
+      "nari-nari",
+      "ta-hou-ga-ii"
+    ],
+    "1517480": [
+      "ni-nottotte",
+      "ni-terashite"
+    ],
+    "1518180": [
+      "nani-shiro",
+      "shikashi-but"
+    ],
+    "1518220": [
+      "nari-nari",
+      "ta-hou-ga-ii",
+      "hou-ga-comparative"
+    ],
+    "1519210": [
+      "koto-dakara",
+      "wake-ni-wa-ikanai"
+    ],
+    "1519290": [
+      "tokoro-wo",
+      "hodo-dewa-nai",
+      "tada-de-sae",
+      "ni-mo-kakawarazu-despite",
+      "mono-dakara",
+      "yara-yara",
+      "to-wa-ie",
+      "nani-se",
+      "to-mieru",
+      "dano-dano",
+      "you-de-seemingly",
+      "to-iu-koto-wa",
+      "wake-dewa-nai",
+      "ippou-de-one-hand",
+      "mono-reason-assertion",
+      "dake-de-naku",
+      "tari-tari-suru"
+    ],
+    "1522010": [
+      "wo-kaerimi-zu"
+    ],
+    "1522750": [
+      "tou-no",
+      "wa-mochiron",
+      "mitai-looks-like",
+      "to-wa-kagiranai",
+      "toshite-as",
+      "dewa-arimasen-negative-polite-copula"
+    ],
+    "1523060": [
+      "made-no-koto-da",
+      "de-atta-to-shitemo",
+      "nuki-de",
+      "dake-no-koto-wa-aru",
+      "to-sureba",
+      "datte-casual-because",
+      "te-koso-only-by"
+    ],
+    "1523110": [
+      "wo-motte",
+      "ni-tsuki-due-to"
+    ],
+    "1524660": [
+      "gotoni-each"
+    ],
+    "1524670": [
+      "koto-nagara"
+    ],
+    "1524690": [
+      "mai-every-prefix"
+    ],
+    "1524700": [
+      "yaru-casual-giving",
+      "nasaru-honorific",
+      "masu-polite-verb",
+      "te-form-basic",
+      "mai-every-prefix"
+    ],
+    "1524710": [
+      "koto-nagara"
+    ],
+    "1524720": [
+      "beku-in-order-to",
+      "te-kara-to-iu-mono",
+      "nai-made-mo",
+      "tame-ni",
+      "you-ni-purpose",
+      "causative-passive",
+      "wake-dewa-nai",
+      "irai-since",
+      "koto-da-emphatic",
+      "igai-other-than",
+      "ba-conditional",
+      "you-ni-suru",
+      "koto-ni-suru-decide",
+      "mai-every-prefix",
+      "jikan-time-duration"
+    ],
+    "1526720": [
+      "to-atte"
+    ],
+    "1527070": [
+      "you-to-regardless"
+    ],
+    "1527150": [
+      "ka-to-iu-to"
+    ],
+    "1527830": [
+      "to-miru-see-as"
+    ],
+    "1528060": [
+      "shidai-de"
+    ],
+    "1528410": [
+      "to-itta-such-as"
+    ],
+    "1529330": [
+      "tada-de-sae",
+      "to-iu-ka"
+    ],
+    "1529370": [
+      "ga-hayai-ka"
+    ],
+    "1529760": [
+      "ni-hoka-naranai"
+    ],
+    "1530510": [
+      "tari-tomo"
+    ],
+    "1530600": [
+      "to-minasu"
+    ],
+    "1530970": [
+      "mono-wo-if-only",
+      "kane-nai-might"
+    ],
+    "1531040": [
+      "nara-mada-shimo"
+    ],
+    "1531060": [
+      "koto-tote"
+    ],
+    "1531710": [
+      "kara-shite",
+      "te-oku",
+      "te-aru",
+      "sae-even",
+      "kke-casual-wondering",
+      "te-kudasai-request"
+    ],
+    "1531870": [
+      "taru-mono-as-x",
+      "ni-kakawaru"
+    ],
+    "1532310": [
+      "zu-ni-wa-okanai",
+      "nai-dewa-okanai",
+      "made-mo-naku"
+    ],
+    "1532350": [
+      "muki-suitable-for",
+      "ue-ni-in-addition",
+      "na-adj-te-joining-de"
+    ],
+    "1532800": [
+      "koto-tote"
+    ],
+    "1532910": [
+      "ya-inaya",
+      "ka-nai-ka-no-uchi-ni",
+      "ga-hayai-ka"
+    ],
+    "1533570": [
+      "narade-wa-no",
+      "mo-nan-tomo-nai",
+      "nai-dewa-irarenai",
+      "ba-hodo",
+      "dake-de-naku",
+      "ga-kedo-although",
+      "te-goran-try-casual",
+      "particle-mo-also",
+      "particle-ne-seeking-agreement",
+      "particle-yo-emphasis",
+      "i-adjective-nonpast",
+      "i-adjective-negative"
+    ],
+    "1533580": [
+      "narade-wa-no",
+      "dake-de-naku",
+      "ga-kedo-although",
+      "te-goran-try-casual",
+      "particle-mo-also",
+      "particle-yo-emphasis",
+      "i-adjective-nonpast"
+    ],
+    "1533590": [
+      "wa-sate-oki",
+      "koto-dakara",
+      "rashii-seems"
+    ],
+    "1533690": [
+      "taru-mono-as-x",
+      "iyashiku-mo"
+    ],
+    "1535300": [
+      "wo-mono-to-mo-sezu",
+      "naku-shite-wa"
+    ],
+    "1535560": [
+      "koso-are"
+    ],
+    "1535780": [
+      "wa-mochiron"
+    ],
+    "1535850": [
+      "beku-in-order-to"
+    ],
+    "1535860": [
+      "mono-nara-if-possible"
+    ],
+    "1536010": [
+      "zu-ni-wa-sumanai",
+      "ni-hoka-naranai",
+      "ni-matsuwaru",
+      "ni-kakawaru",
+      "wo-hikiai-ni",
+      "koso-are",
+      "gurumi",
+      "desura",
+      "ni-kagirazu-not-only",
+      "wo-chuushin-ni-centered",
+      "kara-suru-to",
+      "no-minarazu",
+      "to-wa-iu-mono-no",
+      "ni-shite-mireba",
+      "to-itte-without-particular",
+      "nai-nomi-narazu",
+      "ni-tsuite",
+      "ni-yotte",
+      "ni-kanshite-regarding",
+      "ni-oite-in-at",
+      "ippou-de-one-hand",
+      "au-together",
+      "ni-chigainai-must",
+      "wake-ga-nai",
+      "kko-nai",
+      "ni-kimatte-iru",
+      "ga-wakaru"
+    ],
+    "1537370": [
+      "causative-passive",
+      "causative-form",
+      "nasai-command",
+      "particle-ya-non-exhaustive"
+    ],
+    "1538090": [
+      "no-minarazu"
+    ],
+    "1538130": [
+      "tomo-arou",
+      "te-mae",
+      "hitotabi",
+      "aro-u-koto-ka",
+      "kara-ni-wa",
+      "you-dewa-if-its",
+      "to-iedomo",
+      "beki-da",
+      "mono-no-although",
+      "ijou-since",
+      "ue-wa-now",
+      "nai-wake-ni-ikanai",
+      "wake-ni-wa-ikanai"
+    ],
+    "1538690": [
+      "tari-tomo",
+      "kane-nai-might"
+    ],
+    "1539040": [
+      "to-wa-urahara-ni",
+      "hanmen-on-other-hand",
+      "you-de-seemingly",
+      "to-iu-ka",
+      "ippou-de-one-hand"
+    ],
+    "1539280": [
+      "ni-kotaete-response"
+    ],
+    "1540130": [
+      "to-wa",
+      "to-iu-mono-da",
+      "to-iu-no-wa"
+    ],
+    "1540150": [
+      "yoshi-mi"
+    ],
+    "1540170": [
+      "kara-koso-precisely-because",
+      "wo-tsuujite-through",
+      "to-iu-yori-rather",
+      "koto-ni-surprise",
+      "buri-ni-first-time",
+      "nai-wake-ni-ikanai",
+      "tsuide-ni",
+      "passive-form",
+      "noun-modifying-clause",
+      "te-kara-after-doing",
+      "te-kureru-favor-received",
+      "te-morau-request-favor",
+      "te-ageru-favor-given",
+      "ageru-give-outward",
+      "kureru-give-toward",
+      "morau-receive",
+      "mashita-polite-past-verb",
+      "particle-ni-target",
+      "particle-to-and-with",
+      "particle-e-direction",
+      "particle-kara-from",
+      "toki-ni-when-basic",
+      "issho-ni-together"
+    ],
+    "1541040": [
+      "tokoro-wo",
+      "koso-precisely",
+      "kudasaru-honorific-verb"
+    ],
+    "1541610": [
+      "wo-towazu-regardless"
+    ],
+    "1541620": [
+      "no-moto-de",
+      "to-atte",
+      "deshita-past-polite-copula",
+      "na-adjective-attributive",
+      "na-adjective-past"
+    ],
+    "1541690": [
+      "nara-mada-shimo"
+    ],
+    "1541900": [
+      "manzara-de-mo-nai"
+    ],
+    "1542070": [
+      "te-kara-after-doing",
+      "particle-e-direction",
+      "toki-ni-when-basic"
+    ],
+    "1542160": [
+      "dokoro-dewa-nai-no-time"
+    ],
+    "1542430": [
+      "katagata-combining"
+    ],
+    "1542850": [
+      "wo-kanete"
+    ],
+    "1543000": [
+      "ikan-se-n"
+    ],
+    "1543130": [
+      "ni-kataku-nai"
+    ],
+    "1543200": [
+      "beku-mo-nai"
+    ],
+    "1543240": [
+      "shidai-de",
+      "doori-just-as"
+    ],
+    "1543630": [
+      "sou-da-hearsay"
+    ],
+    "1543890": [
+      "zu-ni-wa-irarenai"
+    ],
+    "1545770": [
+      "igai-other-than",
+      "desu-polite-copula",
+      "deshita-past-polite-copula",
+      "dewa-arimasen-negative-polite-copula",
+      "particle-made-until",
+      "nanyoubi-day-of-week"
+    ],
+    "1545880": [
+      "you-ga-nai-no-way"
+    ],
+    "1546380": [
+      "you-to-mai-to",
+      "you-to-omou-volitional-intent"
+    ],
+    "1546830": [
+      "ashikara-zu",
+      "ni-kotaete-response",
+      "kane-ru-hard-to"
+    ],
+    "1547330": [
+      "mekasu",
+      "te-hoshii-want-someone",
+      "na-adjective-attributive",
+      "ga-hoshii-wanting-thing"
+    ],
+    "1547720": [
+      "to-wa",
+      "koto-dakara",
+      "to-atte",
+      "ka-dou-ka",
+      "okini-intervals",
+      "ni-kimatte-iru",
+      "to-iu",
+      "hazu-expected",
+      "mae-ni-before-doing",
+      "tsumori-datta-had-intended",
+      "hazu-datta-was-supposed",
+      "tte-quotation"
+    ],
+    "1547900": [
+      "sou-da-hearsay",
+      "n-desu-explanation",
+      "ni-suru-decide",
+      "koto-ni-naru-be-decided"
+    ],
+    "1548010": [
+      "koto-ni-naru-be-decided"
+    ],
+    "1548220": [
+      "tsumori-intention",
+      "volitional-form"
+    ],
+    "1548420": [
+      "to-yara",
+      "kara-iu-to"
+    ],
+    "1548530": [
+      "noni-although",
+      "warini-considering",
+      "shikashi-but"
+    ],
+    "1549660": [
+      "sai-ni"
+    ],
+    "1549910": [
+      "n-to-suru",
+      "ba-hodo",
+      "te-hajimete-only-after"
+    ],
+    "1550020": [
+      "sou-ni-nai",
+      "sou-da-appearance"
+    ],
+    "1550140": [
+      "ikan-ni-yorazu",
+      "made-mo-naku",
+      "to-itte-without-particular"
+    ],
+    "1550610": [
+      "to-wa-urahara-ni"
+    ],
+    "1551240": [
+      "bekarazu",
+      "ya-literary",
+      "ni-sakidatte-prior",
+      "naritomo",
+      "pponashi-left"
+    ],
+    "1551790": [
+      "nagara-mo"
+    ],
+    "1552130": [
+      "ni-nazoraete",
+      "ni-tsurete-as"
+    ],
+    "1552740": [
+      "you-ka-to-omou",
+      "wo-keiki-ni",
+      "sue-ni-after",
+      "dake-atte-as-expected",
+      "ue-de-upon",
+      "to-nareba-if-comes-to",
+      "to-naru-to-when-comes",
+      "tsumori-intention",
+      "koto-ni-suru-decide"
+    ],
+    "1552760": [
+      "aida-ni"
+    ],
+    "1553170": [
+      "wo-kikkake-ni",
+      "to-atte",
+      "wa-oroka",
+      "aida-ni",
+      "tabi-ni-every-time",
+      "dokoro-dewa-nai-no-time",
+      "chuu-during",
+      "kawari-ni-instead",
+      "ni-suru-decide",
+      "particle-e-direction"
+    ],
+    "1554310": [
+      "ni-kagirazu-not-only",
+      "ato-wa-rest",
+      "te-miru",
+      "aida-ni",
+      "to-iu-yori-rather",
+      "to-itte-mo-although",
+      "ni-kakete-through",
+      "bakari-de-naku",
+      "koto-ga-dekiru",
+      "particle-ne-seeking-agreement"
+    ],
+    "1554820": [
+      "particle-kara-from"
+    ],
+    "1555130": [
+      "oyoba-zu-nagara"
+    ],
+    "1555480": [
+      "to-itta-such-as",
+      "toka-listing",
+      "counter-tsu",
+      "to-exhaustive-listing",
+      "ikutsu-how-many"
+    ],
+    "1555930": [
+      "naku-te-nan-de-arou",
+      "datte-casual-because",
+      "mon-casual-because",
+      "n-da-kara-emphatic"
+    ],
+    "1556730": [
+      "ga-hoshii-wanting-thing"
+    ],
+    "1557050": [
+      "ni-atte"
+    ],
+    "1558050": [
+      "nai-dewa-okanai",
+      "ma-no-atari-ni",
+      "wo-hikiai-ni"
+    ],
+    "1558160": [
+      "ma-no-atari-ni"
+    ],
+    "1559160": [
+      "dake-no-koto-wa-aru",
+      "you-ni-purpose",
+      "dake-atte-as-expected"
+    ],
+    "1559900": [
+      "nari-nari",
+      "ori-ni",
+      "tari-mo-shinai",
+      "mono-dakara",
+      "nani-shiro",
+      "you-nara-if-looks",
+      "nai-nomi-narazu",
+      "you-ga-nai-no-way",
+      "ni-kanshite-regarding",
+      "ba-ai-in-case"
+    ],
+    "1560670": [
+      "naku-te-nan-de-arou"
+    ],
+    "1562340": [
+      "kara-shite",
+      "kara-suru-to",
+      "ni-itaru-made"
+    ],
+    "1562350": [
+      "nari-nari",
+      "de-ari-nagara",
+      "to-naru-to-when-comes",
+      "koto-ga-dekiru"
+    ],
+    "1565520": [
+      "you-to-regardless",
+      "you-to-omou-volitional-intent"
+    ],
+    "1569790": [
+      "ya-literary"
+    ],
+    "1571280": [
+      "tokoro-wo",
+      "to-wa-ie",
+      "to-mieru",
+      "to-iu-ka",
+      "ippou-de-one-hand"
+    ],
+    "1573150": [
+      "no-kiwami"
+    ],
+    "1573190": [
+      "hiite-wa"
+    ],
+    "1575990": [
+      "nai-dewa-okanai",
+      "naritomo",
+      "bakari-ni-merely"
+    ],
+    "1576150": [
+      "ni-tsuki-due-to",
+      "wo-yoso-ni",
+      "kiri-only",
+      "komi-into",
+      "dake-only-basic"
+    ],
+    "1576200": [
+      "nari-ni-in-own-way",
+      "tame-ni",
+      "noni-although"
+    ],
+    "1576250": [
+      "ni-itatte-wa",
+      "tari-tomo",
+      "nara-mada-shimo",
+      "hitotabi",
+      "nai-made-mo",
+      "te-miru",
+      "mono-no-although",
+      "naoshi-redo",
+      "mono-nara-if-possible",
+      "ta-koto-ga-aru",
+      "masendeshita-polite-past-negative-verb"
+    ],
+    "1576260": [
+      "zukume-nothing-but",
+      "makuru-extensively",
+      "pponashi-left",
+      "chuu-during",
+      "tari-tari-suru"
+    ],
+    "1576280": [
+      "wo-tsuujite-through"
+    ],
+    "1577140": [
+      "dokoro-ka-far-from"
+    ],
+    "1577660": [
+      "nari-nari",
+      "ta-hou-ga-ii"
+    ],
+    "1578350": [
+      "sou-da-appearance",
+      "to-conditional",
+      "ga-kikoeru-mieru"
+    ],
+    "1578760": [
+      "yoshi-mi",
+      "tatte-even-casual",
+      "nai-nomi-narazu"
+    ],
+    "1578790": [
+      "naku-mo-nai",
+      "tagaru-third-person-desire",
+      "nai-koto-wa-nai",
+      "mono-reason-assertion",
+      "okini-intervals",
+      "mono-nara-if-possible",
+      "kara-cause",
+      "ga-kedo-although",
+      "garu-third-person-emotion",
+      "ato-de-after-doing",
+      "tai-to-omou-want-to-think",
+      "demo-noun-even",
+      "v-temo-even-if",
+      "tatoe-temo",
+      "sorekara-after",
+      "masu-polite-verb",
+      "masen-polite-negative-verb",
+      "particle-ni-target",
+      "particle-de-means",
+      "particle-e-direction",
+      "mashou-volitional",
+      "tai-desire",
+      "counter-people-nin",
+      "masenka-invitation",
+      "issho-ni-together",
+      "counter-ji-oclock",
+      "mai-every-prefix"
+    ],
+    "1578850": [
+      "hodo-dewa-nai",
+      "ni-shiro-ni-seyo",
+      "toshite-mo-even-as",
+      "you-to-mai-to",
+      "made-mo-nai",
+      "kurai-nara-rather",
+      "kawari-ni-instead",
+      "tsumori-intention",
+      "nara-conditional",
+      "ni-suru-decide"
+    ],
+    "1579100": [
+      "to-wa-iu-mono-no"
+    ],
+    "1579110": [
+      "wo-kagiri-ni",
+      "ni-ataru-correspond",
+      "ni-kagitte-only",
+      "sou-ni-nai",
+      "zukume-nothing-but",
+      "rashii-seems",
+      "hodo-extent",
+      "wake-dewa-nai",
+      "te-tamaranai-unbearably",
+      "hazu-expected",
+      "node-cause",
+      "shi-reason-listing",
+      "hazu-datta-was-supposed",
+      "dakara-so",
+      "desu-polite-copula",
+      "dewa-arimasen-negative-polite-copula",
+      "masen-polite-negative-verb",
+      "particle-wa-topic",
+      "particle-ne-seeking-agreement",
+      "nai-form",
+      "i-adjective-nonpast",
+      "i-adjective-negative",
+      "nanyoubi-day-of-week",
+      "i-adj-desu-politeness"
+    ],
+    "1579130": [
+      "ni-mo-mashite",
+      "wo-kagiri-ni",
+      "ni-kurabete-compared"
+    ],
+    "1579210": [
+      "saichu-in-the-middle"
+    ],
+    "1579260": [
+      "ta-kiri-since-last",
+      "kke-casual-wondering",
+      "sugiru-too-much",
+      "noun-modifying-clause",
+      "tsumori-datta-had-intended",
+      "hazu-datta-was-supposed",
+      "sorede-and-then",
+      "deshita-past-polite-copula",
+      "mashita-polite-past-verb",
+      "masendeshita-polite-past-negative-verb",
+      "ta-form",
+      "i-adjective-past",
+      "jikan-time-duration",
+      "i-adj-desu-politeness"
+    ],
+    "1579290": [
+      "you-ka-to-omou"
+    ],
+    "1579490": [
+      "te-shimau"
+    ],
+    "1579530": [
+      "gotoki-like"
+    ],
+    "1579540": [
+      "kara-koso-precisely-because",
+      "ni-shite-mireba",
+      "ka-dou-ka",
+      "te-goran-try-casual"
+    ],
+    "1579720": [
+      "kagiri-da-emotional"
+    ],
+    "1580480": [
+      "zutomo-even-without"
+    ],
+    "1580650": [
+      "to-oboshii",
+      "wo-yoso-ni"
+    ],
+    "1580760": [
+      "mo-kamawa-zu",
+      "wo-shirime-ni"
+    ],
+    "1581180": [
+      "wo-kawakiri-ni"
+    ],
+    "1581330": [
+      "koto-kara-from-fact"
+    ],
+    "1581490": [
+      "ikan-se-n"
+    ],
+    "1581870": [
+      "counter-tsu"
+    ],
+    "1582670": [
+      "ageku-ni-end-up",
+      "kiri-only",
+      "au-together",
+      "zutsu-each-per",
+      "counter-people-nin"
+    ],
+    "1582710": [
+      "narade-wa-no",
+      "wo-hikiai-ni",
+      "wo-kikkake-ni",
+      "ni-kagirazu-not-only",
+      "wa-mochiron",
+      "made-mo-nai",
+      "kara-suru-to",
+      "kara-ni-wa",
+      "no-minarazu",
+      "te-kara-to-iu-mono",
+      "tsutsu-aru",
+      "kara-miru-to",
+      "to-iu-koto-da",
+      "mitai-looks-like",
+      "te-miru",
+      "te-iku",
+      "ta-bakari",
+      "you-ni-purpose",
+      "hodo-extent",
+      "koto-nominalizer",
+      "ni-tsuite",
+      "ni-totte",
+      "ba-hodo",
+      "wake-dewa-nai",
+      "to-wa-kagiranai",
+      "irai-since",
+      "toshite-as",
+      "ni-oite-in-at",
+      "muke-targeted-for",
+      "to-ieba-speaking-of",
+      "to-itte-mo-although",
+      "to-itta-such-as",
+      "dokoro-ka-far-from",
+      "ippou-da-keeps",
+      "chuu-during",
+      "tsuzukeru-continue",
+      "koto-ni-surprise",
+      "igai-other-than",
+      "ue-wa-now",
+      "mono-nara-if-possible",
+      "dake-de-naku",
+      "te-hajimete-only-after",
+      "potential-form",
+      "ta-koto-ga-aru",
+      "tsumori-intention",
+      "nara-conditional",
+      "volitional-form",
+      "ni-naru-become",
+      "hajimeru-auxiliary",
+      "kata-way-of-doing",
+      "mae-ni-before-doing",
+      "koto-ga-dekiru",
+      "koto-ni-naru-be-decided",
+      "you-to-omou-volitional-intent",
+      "te-kureru-favor-received",
+      "te-morau-request-favor",
+      "tai-to-omou-want-to-think",
+      "shika-nai",
+      "ga-suki-kirai",
+      "ga-wakaru",
+      "ga-dekiru",
+      "tte-quotation",
+      "dewa-arimasen-negative-polite-copula",
+      "masu-polite-verb",
+      "particle-ga-subject",
+      "particle-de-means",
+      "particle-no-possession",
+      "particle-e-direction",
+      "particle-kara-from",
+      "particle-ka-question",
+      "tai-desire",
+      "ichiban-superlative",
+      "question-words-basic",
+      "toki-ni-when-basic",
+      "issho-ni-together",
+      "na-adj-adverbial-ni"
+    ],
+    "1583390": [
+      "katawara"
+    ],
+    "1583460": [
+      "no-nominalizer"
+    ],
+    "1583630": [
+      "gurumi"
+    ],
+    "1583680": [
+      "taru-mono-as-x"
+    ],
+    "1583720": [
+      "dake-mashi-da",
+      "gimi-tendency"
+    ],
+    "1584100": [
+      "katagata-combining"
+    ],
+    "1584660": [
+      "osore-ga-aru",
+      "toshite-mo-even-as",
+      "to-iu-koto-da",
+      "ni-kakatte-iru",
+      "to-iu-koto-wa",
+      "sou-da-hearsay",
+      "te-oku",
+      "te-aru",
+      "nakucha-nakya",
+      "kke-casual-wondering",
+      "to-omou",
+      "to-iu",
+      "darou-deshou-conjecture",
+      "kamoshirenai-might",
+      "hazu-expected",
+      "nakereba-naranai",
+      "nakute-mo-ii",
+      "ni-suru-decide",
+      "koto-ni-suru-decide",
+      "you-to-omou-volitional-intent",
+      "irassharu-honorific",
+      "tte-quotation",
+      "da-plain-copula",
+      "masu-polite-verb",
+      "particle-ka-question",
+      "nai-form",
+      "masenka-invitation"
+    ],
+    "1584930": [
+      "amari-too-much",
+      "zu-ni-wa-irarenai",
+      "ta-hou-ga-ii",
+      "nai-koto-wa-nai"
+    ],
+    "1585110": [
+      "wo-chuushin-ni-centered"
+    ],
+    "1586290": [
+      "ageku-ni-end-up"
+    ],
+    "1586330": [
+      "zu-ni",
+      "nai-de-without-doing",
+      "tsumori-datta-had-intended",
+      "sorekara-after",
+      "mashita-polite-past-verb",
+      "masen-polite-negative-verb"
+    ],
+    "1586420": [
+      "ni-kurabete-compared"
+    ],
+    "1586820": [
+      "tokoro-wo",
+      "koso-precisely",
+      "te-itadaku-polite-favor-received",
+      "kudasaru-honorific-verb"
+    ],
+    "1587030": [
+      "ni-suginai",
+      "dano-dano"
+    ],
+    "1587040": [
+      "made-mo-naku",
+      "ni-wa-oyoba-nai",
+      "ba-koso-precisely-because",
+      "kara-koso-precisely-because",
+      "made-mo-nai",
+      "dano-dano",
+      "beki-da",
+      "wake-ga-nai",
+      "to-nareba-if-comes-to"
+    ],
+    "1587820": [
+      "ba-koso-precisely-because"
+    ],
+    "1587850": [
+      "uchi-ni"
+    ],
+    "1588500": [
+      "to-aimatte"
+    ],
+    "1588800": [
+      "wo-oite",
+      "te-oku",
+      "mama",
+      "ni-oite-in-at"
+    ],
+    "1588880": [
+      "you-ni-purpose",
+      "dake-ni-precisely",
+      "hou-ga-comparative"
+    ],
+    "1589040": [
+      "ni-kagitte-only",
+      "ba-ai-in-case"
+    ],
+    "1589200": [
+      "ni-tari-nai"
+    ],
+    "1589320": [
+      "to-omoi-kiya",
+      "tabi-ni-every-time",
+      "to-tan-moment",
+      "to-omou",
+      "you-to-omou-volitional-intent",
+      "tai-to-omou-want-to-think"
+    ],
+    "1589340": [
+      "tabi-ni-every-time",
+      "to-tan-moment"
+    ],
+    "1589350": [
+      "you-ka-to-omou",
+      "ka-to-omou-to",
+      "yue-ni-because",
+      "te-wa-irarenai",
+      "to-omou",
+      "you-to-omou-volitional-intent",
+      "tai-to-omou-want-to-think",
+      "da-plain-copula"
+    ],
+    "1589590": [
+      "wo-motte",
+      "sou-ni-nai",
+      "owaru-finish"
+    ],
+    "1589730": [
+      "gatera-while",
+      "wo-kanete",
+      "tsuide-ni",
+      "tari-tari-suru",
+      "toka-listing",
+      "mai-every-prefix"
+    ],
+    "1589840": [
+      "kurai-extent",
+      "counter-fun-minute",
+      "jikan-time-duration"
+    ],
+    "1589860": [
+      "ikan-ni-yorazu",
+      "ni-kakawarazu-regardless",
+      "ni-mo-kakawarazu-despite",
+      "ikan-depending"
+    ],
+    "1589880": [
+      "ni-kakawaru"
+    ],
+    "1590440": [
+      "katawara"
+    ],
+    "1590510": [
+      "ka-dou-ka"
+    ],
+    "1590550": [
+      "amari-too-much"
+    ],
+    "1590560": [
+      "nai-made-mo"
+    ],
+    "1590770": [
+      "kawari-ni-instead"
+    ],
+    "1590970": [
+      "ja-arumai-shi",
+      "nai-made-mo",
+      "ni-itaru-made"
+    ],
+    "1591110": [
+      "nari-nari",
+      "ya-literary",
+      "made-mo-naku",
+      "ni-taeru",
+      "ni-taenai",
+      "to-mo-naku",
+      "tabi-ni-every-time"
+    ],
+    "1591150": [
+      "you-ni-purpose",
+      "no-nominalizer",
+      "ga-kikoeru-mieru"
+    ],
+    "1591250": [
+      "hodo-no",
+      "naku-te-nan-de-arou"
+    ],
+    "1591290": [
+      "wo-kikkake-ni"
+    ],
+    "1591420": [
+      "ikan-depending"
+    ],
+    "1591430": [
+      "ni-kataku-nai",
+      "yara-yara",
+      "you-ga-nai-no-way",
+      "te-hajimete-only-after",
+      "ga-wakaru"
+    ],
+    "1591720": [
+      "naku-shite-wa",
+      "naritomo"
+    ],
+    "1591900": [
+      "nan-te-how",
+      "na-adjective-attributive",
+      "na-adjective-past",
+      "i-adj-te-joining-kute",
+      "na-adj-te-joining-de"
+    ],
+    "1591960": [
+      "kiwamari-nai"
+    ],
+    "1591990": [
+      "wo-kikkake-ni"
+    ],
+    "1592350": [
+      "gotoki-like"
+    ],
+    "1593680": [
+      "ni-sakigakete"
+    ],
+    "1593980": [
+      "to-wa-urahara-ni",
+      "ageku-ni-end-up"
+    ],
+    "1594040": [
+      "te-ageru-favor-given"
+    ],
+    "1594060": [
+      "no-kiwami",
+      "naku-te-nan-de-arou",
+      "no-ue-nai",
+      "hiite-wa",
+      "nagara-mo",
+      "to-iu-mono-dewa-nai",
+      "kara-to-itte",
+      "atte-no-thanks-to",
+      "tatoe-temo"
+    ],
+    "1594110": [
+      "to-atte-wa",
+      "datte-casual-because",
+      "mon-casual-because",
+      "te-shikata-ga-nai",
+      "kata-way-of-doing"
+    ],
+    "1594400": [
+      "nagara-mo",
+      "kedomo-formal-but"
+    ],
+    "1595240": [
+      "to-atte-wa"
+    ],
+    "1595650": [
+      "to-wa-kagiranai",
+      "to-ieba-speaking-of",
+      "ta-koto-ga-aru",
+      "nara-conditional",
+      "kata-way-of-doing",
+      "ichiban-superlative"
+    ],
+    "1595730": [
+      "to-wa-iu-mono-no",
+      "ni-kakatte-iru"
+    ],
+    "1596690": [
+      "kata-way-of-doing"
+    ],
+    "1596780": [
+      "wo-yogi-naku-sareru",
+      "tame-ni"
+    ],
+    "1597040": [
+      "no-minarazu"
+    ],
+    "1597120": [
+      "tatoe-temo"
+    ],
+    "1597125": [
+      "to-iu-koto-da",
+      "to-iu-ka",
+      "to-iu-no-wa",
+      "to-iu-koto-wa"
+    ],
+    "1597150": [
+      "wo-kagiri-ni",
+      "te-wa-ikenai-prohibition"
+    ],
+    "1597190": [
+      "to-bakari-ni"
+    ],
+    "1597350": [
+      "te-kuru"
+    ],
+    "1598550": [
+      "ta-tokoro"
+    ],
+    "1598750": [
+      "ni-itaru-made"
+    ],
+    "1598780": [
+      "ni-totte"
+    ],
+    "1599040": [
+      "gurumi"
+    ],
+    "1599260": [
+      "wo-mae-ni-shite"
+    ],
+    "1599390": [
+      "ni-kangamite",
+      "naoshi-redo"
+    ],
+    "1599420": [
+      "mono-no-although"
+    ],
+    "1599480": [
+      "kagiri-da-emotional"
+    ],
+    "1599760": [
+      "ni-oite-in-at",
+      "warini-considering"
+    ],
+    "1600160": [
+      "mo-saru-koto-nagara",
+      "wa-tomokaku",
+      "kara-iu-to",
+      "ba-hodo",
+      "warini-considering"
+    ],
+    "1600240": [
+      "ni-kakawarazu-regardless"
+    ],
+    "1600300": [
+      "to-aimatte"
+    ],
+    "1600610": [
+      "ni-taeru"
+    ],
+    "1600720": [
+      "hate-ni-after"
+    ],
+    "1600850": [
+      "ni-kagitte-only"
+    ],
+    "1600900": [
+      "mekasu",
+      "wo-mae-ni-shite",
+      "ni-soku-shite",
+      "wo-chuushin-ni-centered",
+      "kara-shite",
+      "kara-suru-to",
+      "ni-itaru-made",
+      "nagara",
+      "you-ni-purpose",
+      "ni-tsuite",
+      "ni-yotte",
+      "shidai-depending",
+      "pponashi-left",
+      "ka-no-you-ni",
+      "ni-oite-in-at",
+      "kiri-only",
+      "au-together",
+      "te-wa-ikenai-prohibition",
+      "owaru-finish",
+      "humble-o-suru",
+      "particle-de-means",
+      "particle-to-and-with",
+      "te-kudasai-request",
+      "na-adj-adverbial-ni"
+    ],
+    "1600910": [
+      "ni-yotte",
+      "au-together"
+    ],
+    "1601030": [
+      "sanagara",
+      "ka-no-you-ni"
+    ],
+    "1601470": [
+      "wo-hikiai-ni"
+    ],
+    "1602060": [
+      "nara-mada-shimo",
+      "bakari-ni-merely"
+    ],
+    "1602120": [
+      "irai-since"
+    ],
+    "1602130": [
+      "meku-have-look"
+    ],
+    "1602340": [
+      "sobireru-miss-chance",
+      "mashou-volitional"
+    ],
+    "1602710": [
+      "kara-miru-to",
+      "ue-de-upon",
+      "to-nareba-if-comes-to"
+    ],
+    "1603050": [
+      "te-yamanai",
+      "ni-totte",
+      "buri-ni-first-time"
+    ],
+    "1603550": [
+      "nai-made-mo"
+    ],
+    "1604420": [
+      "kakeru-halfway",
+      "to-ieba-speaking-of"
+    ],
+    "1604610": [
+      "to-miru-see-as"
+    ],
+    "1604630": [
+      "to-minasu"
+    ],
+    "1605250": [
+      "gotoki-like"
+    ],
+    "1605510": [
+      "dokoro-ka-far-from"
+    ],
+    "1605680": [
+      "katagata-combining"
+    ],
+    "1605870": [
+      "nagara"
+    ],
+    "1605970": [
+      "ikan-depending",
+      "ni-yotte"
+    ],
+    "1606280": [
+      "ashikara-zu"
+    ],
+    "1606560": [
+      "ni-shite-hajimete",
+      "koto-kara-from-fact",
+      "tatte-even-casual",
+      "zutomo-even-without",
+      "ni-shitemo-even",
+      "te-koso-only-by",
+      "te-hajimete-only-after",
+      "demo-noun-even"
+    ],
+    "1606710": [
+      "made-mo-nai"
+    ],
+    "1606930": [
+      "warini-considering",
+      "kawari-ni-instead"
+    ],
+    "1607070": [
+      "ni-ataru-correspond"
+    ],
+    "1607520": [
+      "sanagara",
+      "koto-nagara",
+      "dake-no-koto-wa-aru",
+      "ni-taeru",
+      "mono-ga-aru",
+      "dake-ni-precisely",
+      "dake-atte-as-expected"
+    ],
+    "1609020": [
+      "ni-aki-tarazu"
+    ],
+    "1609230": [
+      "ikkou-ni-nai"
+    ],
+    "1609350": [
+      "nagara-ni",
+      "nagara-no",
+      "te-kara-to-iu-mono"
+    ],
+    "1609530": [
+      "toka-listing"
+    ],
+    "1609560": [
+      "wo-motte"
+    ],
+    "1609660": [
+      "kiwamari-nai"
+    ],
+    "1610020": [
+      "zu-ni-wa-sumanai"
+    ],
+    "1610070": [
+      "te-mi-se-ru"
+    ],
+    "1610270": [
+      "to-atte-wa",
+      "hoka-naranu"
+    ],
+    "1610430": [
+      "to-iu-koto-da"
+    ],
+    "1610550": [
+      "to-mo-naku"
+    ],
+    "1610720": [
+      "naoshi-redo"
+    ],
+    "1610740": [
+      "to-miru-see-as",
+      "ni-chigainai-must"
+    ],
+    "1610870": [
+      "to-tan-moment"
+    ],
+    "1610960": [
+      "to-mo-naku"
+    ],
+    "1611020": [
+      "mo-nan-tomo-nai",
+      "naku-te-nan-de-arou",
+      "kara-to-itte",
+      "to-areba",
+      "sae-sureba-if-only",
+      "particle-ka-question",
+      "kore-sore-are-demonstratives",
+      "question-words-basic"
+    ],
+    "1611030": [
+      "mo-nan-tomo-nai",
+      "kara-to-itte",
+      "to-areba",
+      "sae-sureba-if-only"
+    ],
+    "1611200": [
+      "particle-kara-from"
+    ],
+    "1611580": [
+      "nuki-de",
+      "dake-no-koto-wa-aru"
+    ],
+    "1611660": [
+      "manzara-de-mo-nai"
+    ],
+    "1611750": [
+      "to-wa-urahara-ni",
+      "kara-shite"
+    ],
+    "1611790": [
+      "zaru-wo-enai"
+    ],
+    "1612060": [
+      "ni-kataku-nai",
+      "yara-yara",
+      "you-ga-nai-no-way",
+      "te-hajimete-only-after",
+      "ga-wakaru",
+      "mashou-ka-invitation"
+    ],
+    "1612680": [
+      "tokoro-wo"
+    ],
+    "1612690": [
+      "tokoro-wo",
+      "koso-precisely",
+      "kudasaru-honorific-verb"
+    ],
+    "1612700": [
+      "sono-mono"
+    ],
+    "1612750": [
+      "te-wa-ikenai-prohibition"
+    ],
+    "1612780": [
+      "nasaru-honorific"
+    ],
+    "1612810": [
+      "oyoba-zu-nagara",
+      "to-areba"
+    ],
+    "1612840": [
+      "n-bakari"
+    ],
+    "1612850": [
+      "konasu"
+    ],
+    "1612900": [
+      "ni-mo-kakawarazu-despite"
+    ],
+    "1613400": [
+      "hoka-naranu",
+      "ijou-since",
+      "ue-wa-now"
+    ],
+    "1613570": [
+      "masendeshita-polite-past-negative-verb"
+    ],
+    "1614350": [
+      "ikan-depending"
+    ],
+    "1630350": [
+      "iwaba"
+    ],
+    "1630630": [
+      "hitotabi",
+      "wo-kiwameru",
+      "wo-shirime-ni",
+      "ni-shiro-ni-seyo",
+      "nuku-fully-do",
+      "ageku-ni-end-up",
+      "ikan-depending",
+      "te-kara-denai-to",
+      "ue-de-upon"
+    ],
+    "1631830": [
+      "kuse-ni-despite"
+    ],
+    "1632160": [
+      "to-naru-to-when-comes"
+    ],
+    "1632350": [
+      "taru-mono-as-x",
+      "tomo-nareba",
+      "te-mae",
+      "to-atte-wa",
+      "ijou-since",
+      "to-nareba-if-comes-to",
+      "nakereba-naranai",
+      "soredemo-even-so"
+    ],
+    "1632880": [
+      "ori-ni"
+    ],
+    "1633800": [
+      "oose-ru",
+      "to-oboshii",
+      "nari-as-soon-as"
+    ],
+    "1636070": [
+      "gatera-while",
+      "wo-kanete",
+      "to-sureba",
+      "tatte-even-casual",
+      "tagaru-third-person-desire",
+      "muke-targeted-for",
+      "tsuide-ni",
+      "tara-conditional",
+      "ba-conditional",
+      "nara-conditional",
+      "tari-tari-suru",
+      "sorekara-after",
+      "toka-listing",
+      "particle-to-and-with",
+      "na-adjective-attributive",
+      "particle-ya-non-exhaustive",
+      "to-exhaustive-listing",
+      "counter-hon-long",
+      "counter-mai-flat",
+      "mai-every-prefix"
+    ],
+    "1640770": [
+      "o-v-kudasai-polite-honor"
+    ],
+    "1641550": [
+      "mae-ni-before-doing"
+    ],
+    "1641890": [
+      "wa-tomokaku"
+    ],
+    "1645890": [
+      "taru-yuen",
+      "to-wa-ie"
+    ],
+    "1649310": [
+      "bakari-ka-not-only"
+    ],
+    "1652350": [
+      "narade-wa-no",
+      "sai-ni",
+      "nara-conditional"
+    ],
+    "1652680": [
+      "bakari-ka-not-only"
+    ],
+    "1657410": [
+      "to-oboshii",
+      "wa-mochiron",
+      "kara-suru-to",
+      "ni-shite-mireba",
+      "kara-miru-to",
+      "hodo-extent"
+    ],
+    "1657640": [
+      "o-v-kudasai-polite-honor"
+    ],
+    "1658080": [
+      "ni-oujite-depending"
+    ],
+    "1659120": [
+      "hoka-naranu",
+      "mono-to-shite",
+      "to-tomoni-together",
+      "ijou-since",
+      "ue-wa-now"
+    ],
+    "1688500": [
+      "nikui-hard"
+    ],
+    "1721650": [
+      "kara-miru-to"
+    ],
+    "1735060": [
+      "nan-te-how"
+    ],
+    "1745660": [
+      "ni-ari-gachi"
+    ],
+    "1749070": [
+      "to-aimatte"
+    ],
+    "1753350": [
+      "to-naru-to-when-comes",
+      "to-conditional"
+    ],
+    "1753790": [
+      "ni-kagirazu-not-only",
+      "no-minarazu"
+    ],
+    "1772620": [
+      "to-atte",
+      "wa-oroka"
+    ],
+    "1785700": [
+      "kara-iu-to"
+    ],
+    "1822710": [
+      "mono-to-shite"
+    ],
+    "1852830": [
+      "ni-shitagatte"
+    ],
+    "1852840": [
+      "wo-kawakiri-ni"
+    ],
+    "1854460": [
+      "ni-tsuki-due-to"
+    ],
+    "1854750": [
+      "ni-tsuite",
+      "ni-oite-in-at",
+      "ni-tsurete-as",
+      "au-together"
+    ],
+    "1854760": [
+      "wo-tsuujite-through"
+    ],
+    "1861770": [
+      "tomo-nareba",
+      "wo-kawakiri-ni",
+      "wo-tsuujite-through",
+      "wo-hete"
+    ],
+    "1866230": [
+      "nai-koto-niwa"
+    ],
+    "1885500": [
+      "te-wa-ikenai-prohibition"
+    ],
+    "1896920": [
+      "wo-tsuujite-through",
+      "to-miru-see-as"
+    ],
+    "1899440": [
+      "bakari-ka-not-only"
+    ],
+    "1922760": [
+      "to-iu-mono-da",
+      "to-iu-mono-dewa-nai",
+      "te-kara-to-iu-mono",
+      "to-iu-koto-da",
+      "to-iu-ka",
+      "to-iu-no-wa",
+      "to-iu-koto-wa",
+      "ka-to-iu-to",
+      "to-iu-yori-rather",
+      "to-iu"
+    ],
+    "1928670": [
+      "zu-ni-wa-sumanai",
+      "de-atta-to-shitemo",
+      "naku-te-nan-de-arou",
+      "koto-dakara",
+      "zutomo-even-without",
+      "to-iu-koto-wa",
+      "to-ieba-speaking-of",
+      "darou-deshou-conjecture"
+    ],
+    "1931280": [
+      "to-ieba-speaking-of"
+    ],
+    "1932330": [
+      "wo-chuushin-ni-centered",
+      "ni-tsuite",
+      "ni-kanshite-regarding",
+      "ippou-de-one-hand"
+    ],
+    "1949660": [
+      "ni-mo-mashite"
+    ],
+    "1951150": [
+      "ni-kimatte-iru"
+    ],
+    "1952740": [
+      "majiki-unacceptable"
+    ],
+    "1954830": [
+      "nara-mada-shimo"
+    ],
+    "1957300": [
+      "wo-yogi-naku-sareru"
+    ],
+    "1983280": [
+      "ikan-depending"
+    ],
+    "1985310": [
+      "counter-people-nin"
+    ],
+    "1989500": [
+      "to-conditional",
+      "jidoushi-tadoushi"
+    ],
+    "2005420": [
+      "ya-inaya",
+      "ga-hayai-ka",
+      "to-tan-moment"
+    ],
+    "2005860": [
+      "naoshi-redo",
+      "mono-nara-if-possible"
+    ],
+    "2006640": [
+      "to-miru-see-as"
+    ],
+    "2008040": [
+      "te-wa-irarenai"
+    ],
+    "2008670": [
+      "sou-da-appearance"
+    ],
+    "2008740": [
+      "kane-nai-might",
+      "ja-arumai-shi",
+      "you-dewa-if-its"
+    ],
+    "2009070": [
+      "te-kara-denai-to"
+    ],
+    "2009330": [
+      "nuki-de"
+    ],
+    "2013910": [
+      "ni-wataru-span"
+    ],
+    "2016410": [
+      "to-iu-ka",
+      "mitai-looks-like",
+      "te-miru",
+      "tai-desire"
+    ],
+    "2016840": [
+      "yaru-casual-giving"
+    ],
+    "2017560": [
+      "gotoki-like"
+    ],
+    "2026640": [
+      "ni-shitemo-even"
+    ],
+    "2026790": [
+      "shika-nai"
+    ],
+    "2026850": [
+      "mono-nara-if-possible"
+    ],
+    "2027020": [
+      "to-iu-mono-da"
+    ],
+    "2027080": [
+      "tomo-arou",
+      "beki-da"
+    ],
+    "2029030": [
+      "to-wa-iu-mono-no",
+      "mono-no-although"
+    ],
+    "2029050": [
+      "to-yara",
+      "ka-to-omou-to",
+      "tara-kiri-ga-nai",
+      "ga-sai-go",
+      "tara-conditional",
+      "owaru-finish",
+      "ba-ii-should"
+    ],
+    "2034300": [
+      "ni-kakete-through"
+    ],
+    "2034520": [
+      "tada-de-sae"
+    ],
+    "2036870": [
+      "nuki-de",
+      "yoshi-mi",
+      "ue-de-upon"
+    ],
+    "2037230": [
+      "wake-ga-nai"
+    ],
+    "2038160": [
+      "ni-mo-mashite"
+    ],
+    "2038230": [
+      "nari-ni-in-own-way"
+    ],
+    "2056560": [
+      "sae-sureba-if-only",
+      "sae-even"
+    ],
+    "2057560": [
+      "kara-to-itte",
+      "wake-dewa-nai"
+    ],
+    "2069620": [
+      "dake-no-koto-wa-aru",
+      "te-shikarubeki"
+    ],
+    "2070730": [
+      "kara-to-itte",
+      "to-wa-kagiranai",
+      "tatoe-temo"
+    ],
+    "2078800": [
+      "hodo-extent"
+    ],
+    "2083720": [
+      "koto-dakara",
+      "ppoi-seems"
+    ],
+    "2083990": [
+      "taru-mono-as-x",
+      "tomo-nareba",
+      "te-mae",
+      "ni-hoka-naranai",
+      "to-atte-wa",
+      "hoka-naranu",
+      "iyashiku-mo",
+      "ta-tokoro-de",
+      "te-naranai-cant-help",
+      "ijou-since",
+      "to-nareba-if-comes-to",
+      "nakereba-naranai",
+      "soredemo-even-so"
+    ],
+    "2084000": [
+      "to-conditional"
+    ],
+    "2084040": [
+      "ba-sore-made",
+      "ba-koso-precisely-because",
+      "to-iu-mono-da",
+      "to-iu-mono-dewa-nai",
+      "kara-suru-to",
+      "to-sureba",
+      "sae-sureba-if-only",
+      "ba-yokatta",
+      "ba-hodo",
+      "to-wa-kagiranai",
+      "ba-conditional",
+      "ba-ii-should"
+    ],
+    "2087300": [
+      "ka-dou-ka"
+    ],
+    "2087820": [
+      "mono-dakara",
+      "n-desu-explanation",
+      "particle-no-possession"
+    ],
+    "2089620": [
+      "wa-sate-oki"
+    ],
+    "2097940": [
+      "nai-de-mo-nai",
+      "mo-nan-tomo-nai",
+      "manzara-de-mo-nai",
+      "made-mo-nai",
+      "nai-made-mo",
+      "ka-to-iu-to"
+    ],
+    "2098080": [
+      "made-mo-nai",
+      "nai-made-mo"
+    ],
+    "2098230": [
+      "yue-no",
+      "hiite-wa",
+      "ni-shite"
+    ],
+    "2098260": [
+      "yue-no"
+    ],
+    "2100500": [
+      "to-itta-tokoro-da"
+    ],
+    "2100740": [
+      "to-sureba"
+    ],
+    "2100760": [
+      "to-nareba-if-comes-to"
+    ],
+    "2100900": [
+      "taru-mono-as-x",
+      "iyashiku-mo",
+      "to-naru-to-when-comes"
+    ],
+    "2104360": [
+      "iyashiku-mo"
+    ],
+    "2109610": [
+      "koto-nashi-ni",
+      "uru-possible"
+    ],
+    "2110850": [
+      "mai-not-likely",
+      "nan-ka-dismissive"
+    ],
+    "2122940": [
+      "tagaru-third-person-desire",
+      "garu-third-person-emotion"
+    ],
+    "2127150": [
+      "ni-oite-in-at"
+    ],
+    "2128060": [
+      "to-wa-iu-mono-no"
+    ],
+    "2131200": [
+      "kke-casual-wondering"
+    ],
+    "2134700": [
+      "nashi-ni-without"
+    ],
+    "2134860": [
+      "ta-tokoro-de"
+    ],
+    "2134910": [
+      "hodo-no"
+    ],
+    "2135520": [
+      "nagara-mo"
+    ],
+    "2136180": [
+      "ni-aki-tarazu",
+      "to-itte-mo-although"
+    ],
+    "2136190": [
+      "to-itte-mo-although"
+    ],
+    "2136300": [
+      "to-iu-koto-wa"
+    ],
+    "2136630": [
+      "atte-no-thanks-to"
+    ],
+    "2136660": [
+      "tokoro-wo",
+      "n-to-suru"
+    ],
+    "2136690": [
+      "ni-atte"
+    ],
+    "2136890": [
+      "n-to-suru",
+      "to-sureba",
+      "wo-hajime-including"
+    ],
+    "2146540": [
+      "wa-oroka"
+    ],
+    "2153930": [
+      "ni-kagitte-only"
+    ],
+    "2160680": [
+      "nari-nari",
+      "kara-iu-to",
+      "ta-hou-ga-ii",
+      "kurai-nara-rather"
+    ],
+    "2177120": [
+      "bakari-ka-not-only"
+    ],
+    "2192950": [
+      "nari-nari",
+      "buru-pretend",
+      "uchi-ni",
+      "bakari-only",
+      "n-da-kara-emphatic",
+      "to-iu",
+      "nasai-command",
+      "te-goran-try-casual",
+      "nasaru-honorific"
+    ],
+    "2210270": [
+      "masenka-invitation",
+      "issho-ni-together"
+    ],
+    "2210710": [
+      "mashou-ka-invitation",
+      "nanji-what-time"
+    ],
+    "2214880": [
+      "you-ga-nai-no-way"
+    ],
+    "2234750": [
+      "wake-dewa-nai"
+    ],
+    "2246510": [
+      "manzara-de-mo-nai"
+    ],
+    "2249810": [
+      "no-nominalizer"
+    ],
+    "2261300": [
+      "ni-shiro-ni-seyo",
+      "ni-shitemo-even"
+    ],
+    "2269050": [
+      "dashi-suddenly-start"
+    ],
+    "2269820": [
+      "to-minasu",
+      "kara-to-itte",
+      "kurai-nara-rather"
+    ],
+    "2276200": [
+      "tokoro-wo"
+    ],
+    "2457920": [
+      "to-yara",
+      "mono-dakara",
+      "te-miru",
+      "nan-ka-dismissive",
+      "te-mo-ii-permission",
+      "n-desu-explanation",
+      "sou-iu-kou-iu",
+      "demo-noun-even",
+      "ba-ii-should",
+      "particle-ka-question",
+      "kore-sore-are-demonstratives",
+      "kono-sono-ano-dono-attributive",
+      "koko-soko-asoko-doko",
+      "question-words-basic",
+      "ikutsu-how-many",
+      "ikura-how-much",
+      "nanji-what-time",
+      "nanyoubi-day-of-week",
+      "counter-sai-age"
+    ],
+    "2585220": [
+      "ni-itatte-wa",
+      "to-minasu",
+      "wa-oroka",
+      "ta-koto-ga-aru"
+    ],
+    "2630530": [
+      "ni-shitagatte"
+    ],
+    "2643970": [
+      "tatte-even-casual",
+      "datte-casual-because",
+      "mono-reason-assertion",
+      "mon-casual-because"
+    ],
+    "2643980": [
+      "ni-atatte-occasion",
+      "ni-wataru-span",
+      "tatte-even-casual"
+    ],
+    "2659310": [
+      "mama"
+    ],
+    "2710920": [
+      "made-mo-naku",
+      "made-mo-nai",
+      "nai-made-mo"
+    ],
+    "2755350": [
+      "ni-shite-mireba",
+      "dake-mashi-da",
+      "wake-dewa-nai",
+      "na-adjective-negative"
+    ],
+    "2796520": [
+      "te-oku"
+    ],
+    "2819970": [
+      "to-iwazu-to-iwazu",
+      "n-bakari",
+      "naku-shite-wa",
+      "hodo-no",
+      "wo-kanete",
+      "sono-mono",
+      "yue-no",
+      "n-to-bakari-ni",
+      "sanagara",
+      "bakari-no",
+      "to-aimatte",
+      "to-wa-urahara-ni",
+      "koto-nagara",
+      "gatai-difficult",
+      "ni-shite",
+      "yara-yara",
+      "zu-jimai",
+      "doori-just-as",
+      "to-atte",
+      "kiwamari-nai",
+      "majiki-unacceptable",
+      "zukume-nothing-but",
+      "mamire-smeared",
+      "kara-iu-to",
+      "naritomo",
+      "you-da-appearance",
+      "darake-full-of",
+      "pponashi-left",
+      "ippou-da-keeps",
+      "tari-tari-suru",
+      "tsumori-datta-had-intended",
+      "hazu-datta-was-supposed",
+      "na-adjective-past"
+    ],
+    "2823770": [
+      "tomo-arou",
+      "made-no-koto-da",
+      "hodo-dewa-nai",
+      "to-iu-mono-da",
+      "to-iu-mono-dewa-nai",
+      "to-wa-iu-mono-no",
+      "kara-to-itte",
+      "ni-taru",
+      "hodo-no-mono-dewa-nai",
+      "beki-da",
+      "wake-dewa-nai",
+      "dokoro-dewa-nai-no-time"
+    ],
+    "2830519": [
+      "made-da",
+      "kurai-extent",
+      "hoka-nai-no-choice",
+      "kurai-nara-rather"
+    ],
+    "2831357": [
+      "nakucha-nakya"
+    ],
+    "2833992": [
+      "to-iu-mono-da"
+    ],
+    "2837492": [
+      "sou-da-appearance",
+      "sou-da-hearsay"
+    ],
+    "2840724": [
+      "ni-kotaete-response",
+      "ni-sakigakete"
+    ],
+    "2845363": [
+      "particle-ni-target"
+    ],
+    "2845468": [
+      "te-itadaku-polite-favor-received"
+    ],
+    "2845662": [
+      "ni-sakidatte-prior"
+    ],
+    "2850805": [
+      "ga-kedo-although"
+    ],
+    "2851949": [
+      "to-iu-koto-da",
+      "to-sureba",
+      "you-nara-if-looks",
+      "mitai-looks-like",
+      "bakari-ka-not-only",
+      "ni-kakete-through",
+      "to-omou",
+      "kamoshirenai-might",
+      "ki-ga-suru-feel-like",
+      "hazu-datta-was-supposed"
+    ],
+    "2853889": [
+      "buru-pretend",
+      "kedomo-formal-but"
+    ],
+    "2854985": [
+      "muke-targeted-for"
+    ],
+    "2859199": [
+      "ni-itaru-made"
+    ],
+    "2860737": [
+      "ashikara-zu"
+    ]
+  }
+}

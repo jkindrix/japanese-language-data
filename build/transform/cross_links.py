@@ -146,24 +146,51 @@ def _build_radical_to_kanji(kanji_to_radicals: dict[str, list[str]]) -> dict[str
     return radical_to_kanji
 
 
-def _build_word_to_grammar(grammar_data: dict) -> dict[str, list[str]]:
-    """Build word-ID → grammar-ID cross-reference.
+def _build_word_text_lookup(words_data: dict) -> dict[str, str]:
+    """Build surface-form → word_id lookup for text matching.
 
-    Scans grammar point examples for JMdict word IDs referenced in the
-    example sentences. This lets consumers ask "what grammar points are
-    relevant to this word?"
+    Includes kanji writings (≥2 chars) and kana readings (≥3 chars)
+    to avoid false positives from short particles/characters.
+    """
+    lookup: dict[str, str] = {}
+    for w in words_data.get("words", []):
+        wid = w.get("id", "")
+        if not wid:
+            continue
+        for k in w.get("kanji", []) or []:
+            text = k.get("text", "")
+            if text and len(text) >= 2 and text not in lookup:
+                lookup[text] = wid
+        for k in w.get("kana", []) or []:
+            text = k.get("text", "")
+            if text and len(text) >= 3 and text not in lookup:
+                lookup[text] = wid
+    return lookup
+
+
+def _build_word_to_grammar(
+    grammar_data: dict,
+    word_text_lookup: dict[str, str],
+) -> dict[str, list[str]]:
+    """Build word-ID → grammar-ID cross-reference via text matching.
+
+    Scans grammar point example sentences for known vocabulary words
+    (by surface-form substring match). This lets consumers ask "what
+    grammar points are relevant to this word?"
     """
     word_to_grammar: dict[str, list[str]] = {}
     for gp in grammar_data.get("grammar_points", []):
         gid = gp.get("id", "")
         if not gid:
             continue
-        # Collect word IDs from example sentence cross-refs
-        seen: set[str] = set()
+        matched_wids: set[str] = set()
         for ex in gp.get("examples", []) or []:
-            for wid in ex.get("word_ids", []) or []:
-                if wid and wid not in seen:
-                    seen.add(wid)
+            ja = ex.get("japanese", "")
+            if not ja:
+                continue
+            for text, wid in word_text_lookup.items():
+                if wid not in matched_wids and text in ja:
+                    matched_wids.add(wid)
                     word_to_grammar.setdefault(wid, []).append(gid)
     return word_to_grammar
 
@@ -353,10 +380,11 @@ def build() -> None:
             {"mapping": "Enables 'show me example sentences with 食' queries. Scope is the Tatoeba curated corpus."},
         )
 
-    # word-to-grammar: which grammar points reference a word
+    # word-to-grammar: which grammar points reference a word (text matching)
     if GRAMMAR_JSON.exists():
         grammar_data = _load_json(GRAMMAR_JSON)
-        word_to_grammar = _build_word_to_grammar(grammar_data)
+        word_text_lookup = _build_word_text_lookup(words_data)
+        word_to_grammar = _build_word_to_grammar(grammar_data, word_text_lookup)
         if word_to_grammar:
             print(f"[xref]     word→grammar: {len(word_to_grammar):,}")
             _write_xref(
