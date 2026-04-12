@@ -16,6 +16,41 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+## [0.7.1] — 2026-04-12
+
+**Variant-to-Kangxi radical alias table — closes the v0.4.0 radicals gap.**
+
+The v0.4.0 Wikipedia ingestion brought radical meaning coverage to 77.9% (197/253), explicitly documenting the remaining 22.1% as deferred pending a curated alias table. This release ships that table.
+
+### Added
+
+- **`KANGXI_ALIASES` dictionary in `build/transform/radicals.py`** (45 entries): a curated variant-to-Kangxi parent map covering:
+  - **Positional / shape markers**: ｜→丨(2), ノ→丿(4), ハ→八(12), ヨ→彐(58).
+  - **Radical-in-compound variants** (Nelson-style representative kanji): 忙→心(61) via 忄; 扎→手(64) via 扌; 汁→水(85) and 滴→水(85) via 氵; 犯→犬(94) via 犭; 艾→艸(140) via 艹; 邦→邑(163) via right-side 阝; 阡→阜(170) via left-side 阝; 礼→示(113) via 礻; 疔→疒(104); 込→辵(162) via 辶; 攵→攴(66).
+  - **Shinjitai simplified forms** of kyūjitai Kangxi radicals: 麦→麥(199 wheat), 亀→龜(213 turtle), 黄→黃(201 yellow), 黒→黑(203 black), 竜→龍(212 dragon), 歯→齒(211 tooth).
+  - **Kanji-as-component indicators** with unambiguous Kangxi parents: 冊→冂(13), 買→貝(154), 品→口(30), 岡→山(46), 元→儿(10), 亡→亠(8), 勿→勹(20), 尤→尢(43), 屯→屮(45), 已→己(49), 乞→乙(5), 也→乙(5), 化→人(9), 个→人(9), 免→儿(10), 及→又(29), 九→乙(5), 乃→丿(4), 久→丿(4), 巨→匚(22), 并→八(12), 刈→刀(18), 初→刀(18).
+  - Ambiguous Nelson-style variants (**マ, ユ, 尚, 杰, 井, 五, 巴, 禹, 世, 奄, 無** — 11 total) are **deliberately omitted** rather than assigned arbitrary Kangxi parents. The project continues to prefer honest unmatched state over invented attribution.
+
+### Changed
+
+- **`data/core/radicals.json`** — coverage goes from **197/253 (77.9%)** → **242/253 (95.7%)**. 45 previously-empty entries now carry their Kangxi `classical_number` and `meanings` populated from the primary Wikipedia entry via the alias table.
+- **`manifest.json.counts`** unchanged (253 radicals as before); metadata counters in `radicals.json` updated (`radicals_with_meaning`, `radicals_meaning_coverage_pct`).
+- **`radicals.json.metadata.warning`** rewritten to reflect the new coverage floor and explicitly reference the `KANGXI_ALIASES` table.
+- **`tests/test_data_integrity.py::test_radicals_wikipedia_coverage_above_threshold`** — coverage floor raised from **77%** to **95%** so a regression below the new state triggers a test failure.
+
+### Verification
+
+- **62/62 tests pass** (including the raised coverage threshold).
+- **19/19 data files validate** against their schemas (no schema changes).
+- Schema versioning unchanged: `radical.schema.json` stays at `0.4.0` — populated-by-default semantics are unchanged; only the actual populated count moves.
+- Spot checks (from `test_radicals_wikipedia_coverage_above_threshold`): 一→1 "one", 人→9 "man", 水→85 "water" — all still resolve correctly.
+
+### Deliberate scope
+
+Not included: a full Unicode-equivalence mapping between every simplified Japanese form and its traditional counterpart. Only the radicals in RADKFILE that were previously unmatched. The 11 remaining ambiguous characters stay empty; closing them would require either a source-specific Nelson-radical table or a native-speaker judgment call that we don't have.
+
+---
+
 ### Added (Batch B13)
 
 - **N5 fill batch 2** — 16 more N5 entries appended to `grammar-curated/n5.json`, bringing N5 from 60 → 76: 〜も〜も (both X and Y), A と B (exhaustive noun listing), 位置名詞 (location nouns: 上/下/中/前/後ろ etc.), いくつ (how many), いくら (how much), 何時 (what time), 何曜日 (day of week), 〜時 (o'clock counter), 〜分 (minute counter), 〜歳 (age counter with はたち), 〜円 (yen counter), 〜本 (long-thin counter with sound changes), 〜枚 (flat counter), 毎 prefix (every X), 〜時間 (hour duration), い-adj + です politeness.

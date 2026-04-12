@@ -315,10 +315,14 @@ def test_invariant_grammar_jlpt_ids_resolve() -> None:
 
 
 def test_radicals_wikipedia_coverage_above_threshold() -> None:
-    """v0.4.0 regression: radicals.json must have at least 77% of its 253
-    entries populated with Kangxi numbers and English meanings from
-    Wikipedia. If the parser regresses or the Wikipedia pin drifts, this
-    test fails before the build ships."""
+    """v0.4.0 regression (raised at v0.7.x): radicals.json must have at
+    least 95% of its 253 entries populated with Kangxi numbers and
+    English meanings. v0.4.0 shipped 77.9% (197/253) from Wikipedia
+    alone; v0.7.x added a curated variant-to-Kangxi alias table
+    (KANGXI_ALIASES in build/transform/radicals.py) that lifted this to
+    95.7% (242/253). If coverage drops below 95%, either Wikipedia's
+    pinned revision is missing data, the parser has regressed, or the
+    alias table has been truncated."""
     data = _load_if_exists(REPO_ROOT / "data" / "core" / "radicals.json")
     if data is None:
         pytest.skip("radicals.json not built yet")
@@ -327,11 +331,12 @@ def test_radicals_wikipedia_coverage_above_threshold() -> None:
     with_meaning = sum(1 for r in radicals if r.get("meanings"))
     with_classical = sum(1 for r in radicals if r.get("classical_number") is not None)
     total = len(radicals)
-    # Coverage floor is 77% — actual ingestion at v0.4.0 is 77.9% (197/253).
-    # If this drops, either Wikipedia's pinned revision is missing data
-    # or the parser has regressed.
-    assert with_meaning >= int(total * 0.77), \
-        f"radicals meaning coverage {with_meaning}/{total} below 77% threshold"
+    # Coverage floor is 95% — actual ingestion at v0.7.x is 95.7% (242/253).
+    # The remaining 11 unmatched entries (マ, ユ, 尚, 杰, 井, 五, 巴, 禹, 世,
+    # 奄, 無) are Nelson-style variants whose Kangxi attribution is
+    # ambiguous and are deliberately left unmatched.
+    assert with_meaning >= int(total * 0.95), \
+        f"radicals meaning coverage {with_meaning}/{total} below 95% threshold"
     assert with_classical == with_meaning, \
         f"classical_number coverage ({with_classical}) should equal meaning " \
         f"coverage ({with_meaning}) — they are populated together"

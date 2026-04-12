@@ -59,6 +59,91 @@ WIKIPEDIA_URL = (
 )
 
 
+# ---------------------------------------------------------------------------
+# Variant-to-Kangxi alias table (v0.7.x Phase 4 expansion)
+# ---------------------------------------------------------------------------
+#
+# RADKFILE's radical set includes 56 characters that are NOT found in the
+# Wikipedia Kangxi radicals table (neither primary form nor documented
+# alternate). These are Japanese-dictionary-specific variants:
+#
+#   * Simplified shinjitai forms whose traditional kyūjitai is in Kangxi
+#     (e.g., 亀 for 龜, 麦 for 麥, 歯 for 齒).
+#   * Radical-in-compound variants like 氵 (water), 忄 (heart), 扌 (hand),
+#     艹 (grass), 阝 (city/mound), 犭 (dog), 礻 (spirit), 疒 (sickness),
+#     辶 (walk). RADKFILE sometimes represents these using a representative
+#     kanji containing the variant (e.g., 忙 standing for 忄/心; 汁 for
+#     氵/水; 邦 for right-side 阝/邑; 阡 for left-side 阝/阜).
+#   * Katakana-shaped positional markers (｜, ノ, ハ, ヨ) and Nelson-style
+#     component indicators (个 for 人, etc.).
+#
+# This table maps each such variant to its Kangxi radical number. When a
+# radical's character is missing from the Wikipedia primary/alternate
+# mapping but appears in this table, the build copies the meaning and
+# classical_number from the Kangxi primary entry.
+#
+# Not all 56 unmatched radicals are included. Entries below are
+# high-confidence mappings where the connection to a specific Kangxi
+# radical is unambiguous. Ambiguous Nelson-style variants (e.g., マ, ユ,
+# 尚, 杰, 奄, 無) are omitted and remain unmatched — better to be honest
+# about what we don't know than to assign an arbitrary parent.
+KANGXI_ALIASES: dict[str, int] = {
+    # Positional / shape markers → Kangxi primary
+    "｜": 2,    # fullwidth pipe → 丨 (line)
+    "ノ": 4,    # katakana-shaped → 丿 (slash)
+    "ハ": 12,   # katakana-shaped → 八 (eight)
+    "ヨ": 58,   # katakana-shaped → 彐 (snout)
+
+    # Nelson-style representatives — kanji that contain a specific radical
+    # component, treated as the "radical" in RADKFILE's list
+    "忙": 61,   # ← 忄 variant → 心 (heart)
+    "扎": 64,   # ← 扌 variant → 手 (hand)
+    "汁": 85,   # ← 氵 variant → 水 (water)
+    "滴": 85,   # ← 氵 variant → 水 (water)
+    "犯": 94,   # ← 犭 variant → 犬 (dog)
+    "艾": 140,  # ← 艹 variant → 艸 (grass)
+    "邦": 163,  # ← 阝 right variant → 邑 (city)
+    "阡": 170,  # ← 阝 left variant → 阜 (mound)
+    "礼": 113,  # ← 礻 variant → 示 (spirit/altar)
+    "疔": 104,  # ← 疒 representative → 疒 (sickness)
+    "込": 162,  # ← 辶 variant → 辵 (walk)
+    "攵": 66,   # ← attribution variant → 攴 (rap)
+
+    # Shinjitai simplified forms → kyūjitai Kangxi radicals
+    "麦": 199,  # simplified of 麥 (wheat)
+    "亀": 213,  # simplified of 龜 (turtle)
+    "黄": 201,  # simplified of 黃 (yellow)
+    "黒": 203,  # simplified of 黑 (black)
+    "竜": 212,  # simplified of 龍 (dragon)
+    "歯": 211,  # simplified of 齒 (tooth)
+
+    # Kanji-as-component indicators where the contained Kangxi radical is clear
+    "冊": 13,   # contains 冂 (down box)
+    "買": 154,  # contains 貝 (shell)
+    "品": 30,   # contains 口 (mouth, three-fold)
+    "岡": 46,   # contains 山 (mountain)
+    "元": 10,   # contains 儿 (legs)
+    "亡": 8,    # starts with 亠 (lid)
+    "勿": 20,   # visual shape of 勹 (wrap)
+    "尤": 43,   # variant of 尢 (lame)
+    "屯": 45,   # variant of 屮 (sprout)
+    "已": 49,   # variant of 己 (self)
+    "乞": 5,    # contains 乙 (second)
+    "也": 5,    # 乙-family variant
+    "化": 9,    # contains 亻 → 人 (man)
+    "个": 9,    # Nelson-style variant of 人 (man)
+    "免": 10,   # contains 儿 (legs)
+    "及": 29,   # contains 又 (again)
+    "九": 5,    # 乙-family curve variant
+    "乃": 4,    # 丿-family shape
+    "久": 4,    # 丿-family shape
+    "巨": 22,   # 匚-family shape (right-open box)
+    "并": 12,   # simplification related to 八 / 幷
+    "刈": 18,   # contains 刂 variant → 刀 (knife)
+    "初": 18,   # contains 刀 (knife)
+}
+
+
 def _load_source(tgz_path: Path) -> dict:
     with tarfile.open(tgz_path, "r:gz") as tf:
         for member in tf.getmembers():
@@ -248,6 +333,14 @@ def build() -> None:
     else:
         print("[radicals] Wikipedia Kangxi mapping unavailable — meanings will stay empty")
 
+    # Build an auxiliary index from Kangxi number → primary entry so the
+    # alias table can resolve variant → number → meanings in one hop.
+    kangxi_by_number: dict[int, dict] = {}
+    for entry in kangxi_map.values():
+        number = entry["number"]
+        if number not in kangxi_by_number:
+            kangxi_by_number[number] = entry
+
     kanji_to_radicals_raw = krad.get("kanji", {})
     kanji_to_radicals: dict[str, list[str]] = {
         k: list(v) for k, v in kanji_to_radicals_raw.items()
@@ -256,13 +349,22 @@ def build() -> None:
     radicals_dict = radk.get("radicals", {})
     radicals_list: list[dict] = []
     matched = 0
+    matched_via_alias = 0
     unmatched: list[str] = []
     for rad_char, rad_info in radicals_dict.items():
         kangxi_entry = kangxi_map.get(rad_char)
+        aliased_via_alias_table = False
+        if kangxi_entry is None and rad_char in KANGXI_ALIASES:
+            alias_number = KANGXI_ALIASES[rad_char]
+            kangxi_entry = kangxi_by_number.get(alias_number)
+            if kangxi_entry is not None:
+                aliased_via_alias_table = True
         classical_number = kangxi_entry["number"] if kangxi_entry else None
         meanings = list(kangxi_entry["meanings"]) if kangxi_entry else []
         if kangxi_entry:
             matched += 1
+            if aliased_via_alias_table:
+                matched_via_alias += 1
         else:
             unmatched.append(rad_char)
         radicals_list.append(
@@ -280,7 +382,8 @@ def build() -> None:
     print(
         f"[radicals] kanji_to_radicals: {len(kanji_to_radicals):,}  "
         f"radicals: {total:,}  "
-        f"with Kangxi mapping: {matched:,} ({coverage_pct:.1f}%)"
+        f"with Kangxi mapping: {matched:,} ({coverage_pct:.1f}%, "
+        f"of which {matched_via_alias} via the curated alias table)"
     )
     if unmatched:
         preview = "".join(unmatched[:20]) + ("..." if len(unmatched) > 20 else "")
@@ -289,15 +392,20 @@ def build() -> None:
     if kangxi_map:
         warning = (
             f"{matched} of {total} radicals ({coverage_pct:.1f}%) have English "
-            f"meanings and Kangxi numbers populated from the Wikipedia 'Kangxi "
-            f"radicals' article (CC-BY-SA 4.0, pinned to revision "
-            f"{WIKIPEDIA_REVID}). The remaining {total - matched} radicals are "
-            f"Japanese-dictionary-specific forms — simplified variants (e.g., "
-            f"亀 for 龜), katakana-shaped markers (ノ, ハ, マ, ユ, ヨ), "
-            f"fullwidth pipe (｜ for 丨), and other Nelson-style forms — which "
-            f"have no direct match in the Wikipedia Kangxi table. Filling these "
-            f"requires a curated variant-to-Kangxi alias table, deferred as a "
-            f"future patch. See docs/phase4-candidates.md."
+            f"meanings and Kangxi numbers populated. The Wikipedia 'Kangxi "
+            f"radicals' article (CC-BY-SA 4.0, revision {WIKIPEDIA_REVID}) "
+            f"supplies the primary 214 Kangxi radicals and their documented "
+            f"alternate forms. A curated variant-to-Kangxi alias table in "
+            f"build/transform/radicals.py (KANGXI_ALIASES, {len(KANGXI_ALIASES)} "
+            f"entries) bridges Japanese-dictionary-specific variants — "
+            f"simplified shinjitai (亀→龜, 麦→麥, 歯→齒), radical-in-compound "
+            f"variants (汁→水 via 氵, 忙→心 via 忄, 邦→邑 via right-side 阝), "
+            f"and positional markers (｜→丨, ノ→丿, ハ→八, ヨ→彐) — to their "
+            f"Kangxi parents. The remaining {total - matched} radicals are "
+            f"Nelson-style variants whose Kangxi attribution is ambiguous "
+            f"(e.g., マ, ユ, 尚, 奄, 杰, 無) and are left unmatched honestly "
+            f"rather than assigned arbitrary parents. See "
+            f"docs/phase4-candidates.md."
         )
     else:
         warning = (
