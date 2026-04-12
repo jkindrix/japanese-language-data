@@ -6,7 +6,7 @@
     "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
     "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
     "generated": "2026-04-12",
-    "count": 11023,
+    "count": 11053,
     "counts_by_kind_and_level": {
       "vocab_N5": 684,
       "vocab_N4": 640,
@@ -22,7 +22,7 @@
       "grammar_N4": 91,
       "grammar_N3": 139,
       "grammar_N2": 150,
-      "grammar_N1": 79
+      "grammar_N1": 109
     },
     "attribution": "JLPT classifications adapted from Jonathan Waller's JLPT Resources at http://www.tanos.co.uk/jlpt/ under CC-BY. Vocabulary data distributed via stephenmk/yomitan-jlpt-vocab (CC-BY-SA 4.0). Kanji classifications extracted from davidluzgouveia/kanji-data (code MIT, Waller data CC-BY). Only the jlpt_new field was used from davidluzgouveia; WaniKani-derived fields were deliberately ignored due to incompatible license.",
     "disclaimer": "These classifications are community-reverse-engineered from past JLPT test questions and are NOT JLPT-official. JLPT stopped publishing official vocabulary lists in 2010. Edge cases between levels are particularly uncertain; some entries are disputed in the community. Treat these as the best available community consensus, not canonical truth.",
@@ -93072,6 +93072,276 @@
       "level": "N1",
       "meaning_en": "(X) itself / the very essence of",
       "grammar_id": "sono-mono",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V ます-stem / noun + かたがた",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "combining / at the same time / also as",
+      "grammar_id": "katagata-combining",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb volitional + んとする",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "about to / trying to / on the verge of (literary)",
+      "grammar_id": "n-to-suru",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Plain form + に相違ない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "no doubt / certainly / I'm sure",
+      "grammar_id": "ni-soui-nai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + (が)ゆえの / ゆえの + noun",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "stemming from / due to (attributive)",
+      "grammar_id": "yue-no",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Plain form / noun + とあっては",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "if it's (a case of) / given that it is",
+      "grammar_id": "to-atte-wa",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + に関わる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "involves / affects / concerns (seriously)",
+      "grammar_id": "ni-kakawaru",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Plain form + ものを",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "if only / you should have (regret)",
+      "grammar_id": "mono-wo-if-only",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / plain form + とみなす",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "regard as / consider as / deem to be",
+      "grammar_id": "to-minasu",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V plain / noun + ではまいか / ではあるまいか",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "I wonder if / isn't it possibly",
+      "grammar_id": "mai-ka-wonder",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb volitional + かと思う",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "thinking of doing / half-considering",
+      "grammar_id": "you-ka-to-omou",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V plain / noun + の + 恐れがある",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "risk of / fear that (may happen)",
+      "grammar_id": "osore-ga-aru",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + ほかならぬ + noun",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "none other than / this very (special case)",
+      "grammar_id": "hoka-naranu",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Plain form + ほどではない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "not to the extent of / not as much as",
+      "grammar_id": "hodo-dewa-nai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / plain form + に飽き足らず",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "not content with / not satisfied with (and seeking more)",
+      "grammar_id": "ni-aki-tarazu",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb dict-form + べくして",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "inevitably / as one would expect / destined to",
+      "grammar_id": "beku-shite",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + たるゆえん",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "the reason for being / what makes (X) an X",
+      "grammar_id": "taru-yuen",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "いやしくも (sentence-initial)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "if at least / if one is truly / given that one is",
+      "grammar_id": "iyashiku-mo",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb volitional + ん + とばかりに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "as if to say / as if about to",
+      "grammar_id": "n-to-bakari-ni",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V-た form + かと思うと / かと思ったら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "no sooner had / just when (unexpected change)",
+      "grammar_id": "ka-to-omou-to",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / plain form + さながら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "just like / as if / veritable",
+      "grammar_id": "sanagara",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Plain form + であったとしても",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "even if it were / even assuming that (past hypothetical)",
+      "grammar_id": "de-atta-to-shitemo",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / V plain + のみ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "only / just (literary)",
+      "grammar_id": "nomi-only",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "いわば (sentence-initial / mid-sentence)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "so to speak / as it were",
+      "grammar_id": "iwaba",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / plain form + も構わず",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "without caring about / regardless of (formal)",
+      "grammar_id": "mo-kamawa-zu",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "しかも (sentence-initial)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "moreover / what's more / on top of that",
+      "grammar_id": "shikamo-moreover",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb ます-stem / plain form + ばかりの / ばかりだ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "nothing but / only one way (to decline / increase)",
+      "grammar_id": "bakari-no",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + を + 目の当たりにする",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "witness / see with one's own eyes",
+      "grammar_id": "ma-no-atari-ni",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "及ばずながら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "although my humble effort may fall short / to the best of my ability",
+      "grammar_id": "oyoba-zu-nagara",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "i-adj 〜くて / na-adj + で + なんであろう",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "if not X, what else / what else could it be but X",
+      "grammar_id": "naku-te-nan-de-arou",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + に当たる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "correspond to / be equivalent to / fall on (a day)",
+      "grammar_id": "ni-ataru-correspond",
       "source_retrieved": "2026-04-12"
     },
     {

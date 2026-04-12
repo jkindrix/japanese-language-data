@@ -16,6 +16,13 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+### Added (Batch B11)
+
+- **N1 batch 3** — 30 more hand-curated N1 entries appended to `grammar-curated/n1.json`: 〜かたがた, 〜んとする, 〜に相違ない, 〜(が)ゆえの, 〜とあっては, 〜に関わる, 〜ものを, 〜と見なす, 〜ではあるまいか, 〜ようかと思う, 〜恐れがある, 〜ほかならぬ, 〜ほどではない, 〜に飽き足らず, 〜べくして, 〜たるゆえん, いやしくも, 〜んとばかりに, 〜かと思うと, 〜さながら, 〜であったとしても, 〜のみ, いわば, 〜も構わず, しかも, 〜ばかりの, 〜を目の当たりにする, 及ばずながら, 〜なくてなんであろう, 〜に当たる.
+- Grammar total: 519 → **549** (+30). N1: 79 → 109. Coverage: **78–110%** of the 500–700 target.
+- `data/enrichment/jlpt-classifications.json`: 11,023 → **11,053**.
+- One self-caught broken `related` reference during initial build (`sore-demo` → `soredemo-even-so`), fixed before commit.
+
 ### Added (Batch B10)
 
 - **N1 batch 2** — 40 more hand-curated N1 entries appended to `grammar-curated/n1.json`: 〜手前, 〜に則って, 〜をもって, 〜ところを, 〜てはばからない, 〜べくもない, 〜とやら, 〜ないでもない, 〜を皮切りに, 〜を限りに, 〜折(に), 〜ながらに, 〜おおせる, 〜こなす, 〜めかす, 〜に他ならない, 〜もさることながら, 〜までもなく, 〜ならまだしも, 〜ならいざ知らず, 〜ひとたび, 〜としたところで, 〜ほどの, 〜ずもがな, 〜にまつわる, 〜を兼ねて, 〜でありながら, 〜てみせる, 〜にして初めて, 〜ながらの, いかんせん, 〜にもほどがある, 〜ばそれまで, 〜もなんともない, 〜に定評がある, 〜に足りない, 〜を前にして, 〜たりもしない, 〜にありがち, 〜そのもの.
