@@ -6,7 +6,7 @@
     "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
     "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
     "generated": "2026-04-12",
-    "count": 10944,
+    "count": 10983,
     "counts_by_kind_and_level": {
       "vocab_N5": 684,
       "vocab_N4": 640,
@@ -22,7 +22,7 @@
       "grammar_N4": 91,
       "grammar_N3": 139,
       "grammar_N2": 150,
-      "grammar_N1": 0
+      "grammar_N1": 39
     },
     "attribution": "JLPT classifications adapted from Jonathan Waller's JLPT Resources at http://www.tanos.co.uk/jlpt/ under CC-BY. Vocabulary data distributed via stephenmk/yomitan-jlpt-vocab (CC-BY-SA 4.0). Kanji classifications extracted from davidluzgouveia/kanji-data (code MIT, Waller data CC-BY). Only the jlpt_new field was used from davidluzgouveia; WaniKani-derived fields were deliberately ignored due to incompatible license.",
     "disclaimer": "These classifications are community-reverse-engineered from past JLPT test questions and are NOT JLPT-official. JLPT stopped publishing official vocabulary lists in 2010. Edge cases between levels are particularly uncertain; some entries are disputed in the community. Treat these as the best available community consensus, not canonical truth.",
@@ -92361,6 +92361,357 @@
       "kind": "kanji",
       "level": "N1",
       "meaning_en": "Bright",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / V dict + に難くない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "easy to imagine / not hard to",
+      "grammar_id": "ni-kataku-nai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + を余儀なくされる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "be forced to / have no choice but to",
+      "grammar_id": "wo-yogi-naku-sareru",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun (emotion) + を禁じ得ない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "cannot suppress (an emotion) / can't help feeling",
+      "grammar_id": "wo-kinjienai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V negative stem + ずにはおかない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "will not leave without doing / inevitably will",
+      "grammar_id": "zu-ni-wa-okanai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V ない-form + ではおかない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "will not fail to / will inevitably",
+      "grammar_id": "nai-dewa-okanai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + にもまして",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "more than / even more than (emphatic)",
+      "grammar_id": "ni-mo-mashite",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + をものともせず(に)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "braving / undaunted by / in defiance of",
+      "grammar_id": "wo-mono-to-mo-sezu",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + (の) + いかんによらず / いかんを問わず",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "regardless of / irrespective of (formal)",
+      "grammar_id": "ikan-ni-yorazu",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + ともあろう + noun",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "of all people / someone as prominent as",
+      "grammar_id": "tomo-arou",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + ならでは(の)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "unique to / distinctive of / only X has",
+      "grammar_id": "narade-wa-no",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + にあって",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "in / at / during (formal literary)",
+      "grammar_id": "ni-atte",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + たる者",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "as a (proper) X, one should / one who is X",
+      "grammar_id": "taru-mono-as-x",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun/V + なり + noun/V + なり",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "either X or Y / whether X or Y",
+      "grammar_id": "nari-nari",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + といわず + noun + といわず",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "whether X or Y / all over / throughout",
+      "grammar_id": "to-iwazu-to-iwazu",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + であれ + noun + であれ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "whether X or Y / no matter if X or Y",
+      "grammar_id": "de-are-de-are",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V dict-form + までだ / までのことだ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "(I'll) just / I'll simply X (if needed)",
+      "grammar_id": "made-da",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V-た form + までのことだ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "all I did was / it was simply because",
+      "grammar_id": "made-no-koto-da",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Plain form + とは",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "to think that / I didn't expect that / the fact that",
+      "grammar_id": "to-wa",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + に至っては",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "when it comes to / as for (extreme case)",
+      "grammar_id": "ni-itatte-wa",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + をおいて (+ negative)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "other than / except for (no one else but)",
+      "grammar_id": "wo-oite",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V dict-form + ことなしに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "without doing / without even",
+      "grammar_id": "koto-nashi-ni",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun (group / category) + きっての",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "foremost / best in / most distinguished of",
+      "grammar_id": "kitte-no",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / V plain + ともなれば",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "when one becomes / when it comes to being",
+      "grammar_id": "tomo-nareba",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun (emotion) + の至り",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "the height of (an emotion) / extremely",
+      "grammar_id": "no-itari",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V plain / noun + の + かたわら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "while also / alongside (doing)",
+      "grammar_id": "katawara",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb ます-stem / noun + がてら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "while (also) / taking the opportunity to",
+      "grammar_id": "gatera-while",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V dict-form + べからず / べからざる",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "must not / should not (archaic prohibition)",
+      "grammar_id": "bekarazu",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V negative stem + ずにはすまない / ないではすまない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "can't get by without / must inevitably do",
+      "grammar_id": "zu-ni-wa-sumanai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Number / noun + といったところだ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "about / approximately / around",
+      "grammar_id": "to-itta-tokoro-da",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V volitional + にも + V potential negative",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "can't (do X) even if one wanted to",
+      "grammar_id": "you-ni-mo-nai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb dict-form + んがため(に)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "in order to / for the purpose of (literary)",
+      "grammar_id": "n-ga-tame",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb dict / V-た + んばかり(に)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "as if about to / looking as if",
+      "grammar_id": "n-bakari",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb volitional + にも",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "even if one tried to / even attempting to",
+      "grammar_id": "u-ni-mo",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb volitional + ものなら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "if one were to X / if you dare to X",
+      "grammar_id": "u-mono-nara",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Number + counter + たりとも + negative",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "not even one / not even a single",
+      "grammar_id": "tari-tomo",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + なしに(は)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "without / unless",
+      "grammar_id": "nashi-ni-without",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + なくして(は)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "without / unable to X without",
+      "grammar_id": "naku-shite-wa",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Verb dict-form + や / や否や",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "at the moment of / as soon as (literary)",
+      "grammar_id": "ya-literary",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + の極み",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "the height of / the ultimate / extreme",
+      "grammar_id": "no-kiwami",
       "source_retrieved": "2026-04-12"
     },
     {

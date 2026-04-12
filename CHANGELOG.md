@@ -16,6 +16,13 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+### Added (Batch B9)
+
+- **N1 batch 1** — new `grammar-curated/n1.json` file with **39 hand-curated N1 entries**: 〜に難くない, 〜を余儀なくされる, 〜を禁じ得ない, 〜ずにはおかない, 〜ないではおかない, 〜にもまして, 〜をものともせず, 〜いかんによらず, 〜ともあろう, 〜ならでは(の), 〜にあって, 〜たる者, 〜なり〜なり, 〜といわず〜といわず, 〜であれ〜であれ, 〜までだ / 〜までのことだ, 〜とは, 〜に至っては, 〜をおいて, 〜ことなしに, 〜きっての, 〜ともなれば, 〜の至り, 〜かたわら, 〜がてら, 〜べからず, 〜ずにはすまない, 〜といったところだ, 〜ようにも〜ない, 〜んがため, 〜んばかり, 〜うにも, 〜うものなら, 〜たりとも, 〜なしに(は), 〜なくして(は), 〜や(否や), 〜の極み.
+- Grammar total: 440 → **479** (+39: first N1 batch). Total level breakdown: N5:60, N4:91, N3:139, N2:150, **N1:39**. Coverage 63–88 → **68–96%**.
+- `data/enrichment/jlpt-classifications.json`: 10,944 → **10,983**.
+- One self-caught broken `related` reference during the initial build (`yori-than-comparison` typo in `ni-mo-mashite`), fixed before commit.
+
 ## [0.6.0] — 2026-04-12
 
 **N2 grammar coverage reaches community-standard completeness.** After Batches B5 + B6 + B7 + B8 the grammar dataset stands at **440 entries** (60 N5 + 91 N4 + 139 N3 + **150 N2**), **63–88%** of the 500–700 community-standard target. N2 is now at 150 entries — within the ~150–180 community-consensus "complete N2" range. All new entries `review_status: "draft"`; authorship statement unchanged.
