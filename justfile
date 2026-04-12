@@ -194,6 +194,12 @@ export-yomitan:
     @printf '{{cyan}}==> Exporting Yomitan dictionary{{reset}}\n'
     {{python}} -m build.export_yomitan
 
+# Export as a single SQLite database (all tables + cross-reference indices)
+[group('export')]
+export-sqlite:
+    @printf '{{cyan}}==> Exporting SQLite database{{reset}}\n'
+    {{python}} -m build.export_sqlite
+
 # ============================================================================
 # RELEASE
 # ============================================================================
