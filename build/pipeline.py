@@ -72,24 +72,43 @@ def _build_stages() -> list[Stage]:
         words,
     )
 
+    # Stage ordering is dependency-driven. A later stage may read the
+    # OUTPUT of an earlier stage (as an optional enrichment input). A
+    # clean-build run must put every stage after everything it depends
+    # on, otherwise the first build produces different output than
+    # subsequent builds (caught by the CI byte-reproducibility check).
+    #
+    # Known dependencies:
+    #   * kanji → radicals (optional: radical_components enrichment)
+    #   * kanji → jlpt       (optional: jlpt_waller enrichment)
+    #   * words → jlpt       (optional: jlpt_waller enrichment)
+    #   * stroke_order → kanji  (FILTER: only SVGs for characters in
+    #     kanji.json are written; without kanji.json the stage emits
+    #     every SVG in the archive, producing a 6,702-entry index
+    #     instead of the 13,108-entry index and leaving ~280 non-kanji
+    #     SVGs in data/enrichment/stroke-order/)
+    #   * expressions → jlpt (optional: jlpt_waller enrichment)
+    #   * cross_links → kanji, words, radicals, sentences
+    #   * grammar → sentences (for Tatoeba linkage)
     return [
-        # ---- Independent transforms (no dependencies on other data files) ----
+        # ---- Independent transforms (no reads from data/) ----
         Stage("kana", "Hand-curated hiragana/katakana dataset.", kana.build, phase=1),
         Stage("radicals", "Radical data from KRADFILE/RADKFILE.", radicals.build, phase=1),
-        Stage("stroke_order", "Stroke order SVGs from KanjiVG.", stroke_order.build, phase=2),
         Stage("pitch", "Pitch accent data from Kanjium.", pitch.build, phase=2),
         Stage("jlpt", "JLPT level classifications from Waller.", jlpt.build, phase=2),
         Stage("frequency", "Frequency rankings (newspaper corpus from KANJIDIC2).", frequency.build, phase=2),
-        # ---- Main transforms (depend on enrichment for augmentation fields) ----
+        Stage("sentences", "Example sentences from Tatoeba via jmdict-examples.", sentences.build, phase=1),
+        Stage("conjugations", "Auto-generated verb and adjective conjugation tables.", conjugations.build, phase=3),
+        # ---- Core transforms that read enrichment outputs ----
         Stage("kanji", "Kanji entries from KANJIDIC2, enriched with radical components and JLPT level.", kanji.build, phase=1),
         Stage("words", "Vocabulary from JMdict-examples, enriched with JLPT level.", words.build, phase=1),
-        Stage("sentences", "Example sentences from Tatoeba via jmdict-examples.", sentences.build, phase=1),
-        # ---- Cross-references (depend on core data being built) ----
+        # ---- stroke_order MUST run after kanji (filters on kanji.json) ----
+        Stage("stroke_order", "Stroke order SVGs from KanjiVG (filtered to characters in kanji.json).", stroke_order.build, phase=2),
+        # ---- Cross-references (depend on core + enrichment data) ----
         Stage("cross_links", "Generate all cross-reference files.", cross_links.build, phase=2),
         # ---- Grammar (Phase 3 — original contribution + derivatives) ----
         Stage("grammar", "Curated Japanese grammar dataset (original, from grammar-curated/).", grammar.build, phase=3),
         Stage("expressions", "Lexicalized grammar patterns extracted from JMdict 'exp' entries.", expressions.build, phase=3),
-        Stage("conjugations", "Auto-generated verb and adjective conjugation tables.", conjugations.build, phase=3),
         # ---- Names (optional, any phase) ----
         Stage("names", "Proper nouns from JMnedict (optional build target).", names.build, phase=1),
     ]
