@@ -128,7 +128,8 @@
     "data/cross-refs/kanji-to-words.json": 3533,
     "data/cross-refs/word-to-kanji.json": 18084,
     "data/cross-refs/word-to-sentences.json": 14550,
-    "data/cross-refs/kanji-to-radicals.json": 12156
+    "data/cross-refs/kanji-to-radicals.json": 12156,
+    "data/cross-refs/reading-to-words.json": 24430
   },
   "grammar_curation_status": {
     "total_entries": 595,

@@ -101,6 +101,29 @@ def _build_word_cross_refs(words_data: dict) -> tuple[dict, dict, dict]:
     return kanji_to_words, word_to_kanji, word_to_sentences
 
 
+def _build_reading_to_words(words_data: dict) -> dict[str, list[str]]:
+    """Build a kana-reading → word ID reverse lookup.
+
+    For each word, every kana reading is mapped to that word's ID. This
+    enables IME-style lookup: given a reading (e.g., "はし"), retrieve
+    all word IDs that have that reading (橋, 箸, 端, etc.).
+
+    Duplicate IDs under the same reading are suppressed.
+    """
+    reading_to_words: dict[str, list[str]] = {}
+    for w in words_data.get("words", []):
+        wid = w.get("id", "")
+        if not wid:
+            continue
+        seen: set[str] = set()
+        for kana in w.get("kana", []) or []:
+            text = kana.get("text", "")
+            if text and text not in seen:
+                seen.add(text)
+                reading_to_words.setdefault(text, []).append(wid)
+    return reading_to_words
+
+
 def _write_xref(out_path: Path, mapping: dict, direction: str, key_type: str, value_type: str, source_files: list[str], notes: dict | None = None, extra_metadata: dict | None = None) -> None:
     """Write a single cross-reference file per schemas/cross-refs.schema.json.
 
@@ -162,10 +185,12 @@ def build() -> None:
     kanji_char_set = {k["character"] for k in kanji_data.get("kanji", [])}
 
     kanji_to_words, word_to_kanji, word_to_sentences = _build_word_cross_refs(words_data)
+    reading_to_words = _build_reading_to_words(words_data)
     print(
         f"[xref]     kanji→words: {len(kanji_to_words):,}  "
         f"words→kanji: {len(word_to_kanji):,}  "
-        f"words→sentences: {len(word_to_sentences):,}"
+        f"words→sentences: {len(word_to_sentences):,}  "
+        f"reading→words: {len(reading_to_words):,}"
     )
 
     # D5 fix: characters that appear in word kanji writings but are not in
@@ -224,4 +249,13 @@ def build() -> None:
         "kanji_char",
         "radical_char",
         ["data/core/radicals.json"],
+    )
+    _write_xref(
+        OUT_DIR / "reading-to-words.json",
+        reading_to_words,
+        "Kana reading → list of word IDs with that reading (IME-style reverse lookup).",
+        "reading",
+        "word_id",
+        ["data/core/words.json"],
+        {"mapping": "Each kana reading maps to all word IDs that include it as a kana writing. Use for dictionary-style lookup by pronunciation."},
     )

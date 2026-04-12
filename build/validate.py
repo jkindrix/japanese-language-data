@@ -48,6 +48,7 @@ SCHEMA_MAP: dict[str, str] = {
     "data/cross-refs/word-to-kanji.json": "cross-refs.schema.json",
     "data/cross-refs/word-to-sentences.json": "cross-refs.schema.json",
     "data/cross-refs/kanji-to-radicals.json": "cross-refs.schema.json",
+    "data/cross-refs/reading-to-words.json": "cross-refs.schema.json",
 }
 
 
