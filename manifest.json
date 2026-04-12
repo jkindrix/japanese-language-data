@@ -112,7 +112,7 @@
     "data/core/kanji.json": 13108,
     "data/core/kanji-joyo.json": 2136,
     "data/core/kanji-jinmeiyo.json": 863,
-    "data/core/words.json": 22580,
+    "data/core/words.json": 23119,
     "data/core/words-full.json": 216173,
     "data/core/radicals.json": 253,
     "data/optional/names.json": null,
@@ -125,11 +125,11 @@
     "data/grammar/grammar.json": 595,
     "data/grammar/expressions.json": 13220,
     "data/grammar/conjugations.json": 3507,
-    "data/cross-refs/kanji-to-words.json": 3533,
-    "data/cross-refs/word-to-kanji.json": 18084,
-    "data/cross-refs/word-to-sentences.json": 14550,
+    "data/cross-refs/kanji-to-words.json": 3589,
+    "data/cross-refs/word-to-kanji.json": 18574,
+    "data/cross-refs/word-to-sentences.json": 14842,
     "data/cross-refs/kanji-to-radicals.json": 12156,
-    "data/cross-refs/reading-to-words.json": 24430
+    "data/cross-refs/reading-to-words.json": 24927
   },
   "grammar_curation_status": {
     "total_entries": 595,

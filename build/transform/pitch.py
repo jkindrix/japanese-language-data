@@ -87,11 +87,15 @@ def build() -> None:
             if not positions:
                 malformed_lines += 1
                 continue
+            # When reading is empty, the word itself is already kana
+            # (Kanjium leaves column 2 blank for kana-only words).
+            # Fall back to the word text for mora counting.
+            effective_reading = reading if reading else word
             entries.append({
                 "word": word,
                 "reading": reading,
                 "pitch_positions": positions,
-                "mora_count": _count_morae(reading) or None,
+                "mora_count": _count_morae(effective_reading) or None,
             })
 
     print(f"[pitch]    parsed {len(entries):,} entries  (malformed skipped: {malformed_lines:,})")

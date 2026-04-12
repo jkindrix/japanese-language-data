@@ -165,6 +165,21 @@ def build() -> None:
     print(f"[words]    transforming {len(upstream_words):,} entries")
     all_entries = [_transform_word(w, jlpt_map) for w in upstream_words]
     common_entries = [w for w in all_entries if _is_common(w)]
+
+    # Force-include JLPT-listed words that JMdict doesn't flag as common.
+    # A learner studying for JLPT needs these words regardless of JMdict's
+    # priority markers (news1/ichi1/spec1/etc.). Without this, ~562 JLPT
+    # words would be missing from the committed common subset.
+    if jlpt_map:
+        common_ids = {w["id"] for w in common_entries}
+        jlpt_additions = [
+            w for w in all_entries
+            if w["id"] not in common_ids and w.get("jlpt_waller")
+        ]
+        if jlpt_additions:
+            common_entries.extend(jlpt_additions)
+            print(f"[words]    force-included {len(jlpt_additions):,} JLPT-listed words not flagged common by JMdict")
+
     print(f"[words]    common: {len(common_entries):,}  full: {len(all_entries):,}")
 
     enriched_jlpt_common = sum(1 for w in common_entries if w.get("jlpt_waller"))
