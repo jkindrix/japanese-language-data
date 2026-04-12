@@ -22,6 +22,17 @@ Generated files:
         Each kanji → its component radicals, from KRADFILE (via
         data/core/radicals.json).
 
+    * ``data/cross-refs/radical-to-kanji.json``
+        Inverse: each radical → list of kanji containing it.
+
+    * ``data/cross-refs/kanji-to-sentences.json``
+        Each kanji → list of sentence IDs whose Japanese text contains
+        that character.
+
+    * ``data/cross-refs/word-to-grammar.json``
+        Each word ID → list of grammar point IDs that reference it
+        in their examples.
+
 All cross-reference files conform to ``schemas/cross-refs.schema.json``.
 
 The transform reads ``data/core/words.json`` (the common subset) for
@@ -43,6 +54,7 @@ WORDS_JSON = REPO_ROOT / "data" / "core" / "words.json"
 WORDS_FULL_JSON = REPO_ROOT / "data" / "core" / "words-full.json"
 SENTENCES_JSON = REPO_ROOT / "data" / "corpus" / "sentences.json"
 RADICALS_JSON = REPO_ROOT / "data" / "core" / "radicals.json"
+GRAMMAR_JSON = REPO_ROOT / "data" / "grammar" / "grammar.json"
 OUT_DIR = REPO_ROOT / "data" / "cross-refs"
 
 
@@ -123,6 +135,58 @@ def _build_reading_to_words(words_data: dict) -> dict[str, list[str]]:
                 seen.add(text)
                 reading_to_words.setdefault(text, []).append(wid)
     return reading_to_words
+
+
+def _build_radical_to_kanji(kanji_to_radicals: dict[str, list[str]]) -> dict[str, list[str]]:
+    """Invert kanji-to-radicals into radical-to-kanji reverse lookup."""
+    radical_to_kanji: dict[str, list[str]] = {}
+    for kanji, radicals in kanji_to_radicals.items():
+        for rad in radicals:
+            radical_to_kanji.setdefault(rad, []).append(kanji)
+    return radical_to_kanji
+
+
+def _build_word_to_grammar(grammar_data: dict) -> dict[str, list[str]]:
+    """Build word-ID → grammar-ID cross-reference.
+
+    Scans grammar point examples for JMdict word IDs referenced in the
+    example sentences. This lets consumers ask "what grammar points are
+    relevant to this word?"
+    """
+    word_to_grammar: dict[str, list[str]] = {}
+    for gp in grammar_data.get("grammar_points", []):
+        gid = gp.get("id", "")
+        if not gid:
+            continue
+        # Collect word IDs from example sentence cross-refs
+        seen: set[str] = set()
+        for ex in gp.get("examples", []) or []:
+            for wid in ex.get("word_ids", []) or []:
+                if wid and wid not in seen:
+                    seen.add(wid)
+                    word_to_grammar.setdefault(wid, []).append(gid)
+    return word_to_grammar
+
+
+def _build_kanji_to_sentences(sentences_data: dict) -> dict[str, list[str]]:
+    """Build kanji-character → sentence-ID cross-reference.
+
+    For each sentence, extracts every kanji character from the Japanese
+    text and maps it to that sentence's ID. This enables "show me example
+    sentences containing 食" queries.
+    """
+    kanji_to_sentences: dict[str, list[str]] = {}
+    for s in sentences_data.get("sentences", []):
+        sid = str(s.get("id", ""))
+        if not sid:
+            continue
+        ja_text = s.get("japanese", "") or ""
+        seen: set[str] = set()
+        for ch in ja_text:
+            if _is_kanji_char(ch) and ch not in seen:
+                seen.add(ch)
+                kanji_to_sentences.setdefault(ch, []).append(sid)
+    return kanji_to_sentences
 
 
 def _write_xref(out_path: Path, mapping: dict, direction: str, key_type: str, value_type: str, source_files: list[str], notes: dict | None = None, extra_metadata: dict | None = None) -> None:
@@ -260,6 +324,50 @@ def build() -> None:
         ["data/core/words.json"],
         {"mapping": "Each kana reading maps to all word IDs that include it as a kana writing. Use for dictionary-style lookup by pronunciation."},
     )
+
+    # radical-to-kanji: reverse of kanji-to-radicals
+    radical_to_kanji = _build_radical_to_kanji(kanji_to_radicals)
+    print(f"[xref]     radical→kanji: {len(radical_to_kanji):,}")
+    _write_xref(
+        OUT_DIR / "radical-to-kanji.json",
+        radical_to_kanji,
+        "Radical character → list of kanji that contain this radical as a component.",
+        "radical_char",
+        "kanji_char",
+        ["data/core/radicals.json"],
+        {"mapping": "Inverse of kanji-to-radicals.json. Enables 'which kanji use this radical?' queries."},
+    )
+
+    # kanji-to-sentences: sentences containing each kanji character
+    if SENTENCES_JSON.exists():
+        sentences_data = _load_json(SENTENCES_JSON)
+        kanji_to_sentences = _build_kanji_to_sentences(sentences_data)
+        print(f"[xref]     kanji→sentences: {len(kanji_to_sentences):,}")
+        _write_xref(
+            OUT_DIR / "kanji-to-sentences.json",
+            kanji_to_sentences,
+            "Kanji character → list of Tatoeba sentence IDs whose Japanese text contains that kanji.",
+            "kanji_char",
+            "sentence_id",
+            ["data/corpus/sentences.json"],
+            {"mapping": "Enables 'show me example sentences with 食' queries. Scope is the Tatoeba curated corpus."},
+        )
+
+    # word-to-grammar: which grammar points reference a word
+    if GRAMMAR_JSON.exists():
+        grammar_data = _load_json(GRAMMAR_JSON)
+        word_to_grammar = _build_word_to_grammar(grammar_data)
+        if word_to_grammar:
+            print(f"[xref]     word→grammar: {len(word_to_grammar):,}")
+            _write_xref(
+                OUT_DIR / "word-to-grammar.json",
+                word_to_grammar,
+                "Word ID → list of grammar point IDs that reference this word in their examples.",
+                "word_id",
+                "grammar_id",
+                ["data/grammar/grammar.json"],
+                {"mapping": "Links vocabulary to relevant grammar. Enables 'what grammar should I learn to use this word?' queries."},
+            )
 
     # Full-JMdict cross-references (gitignored, built on demand alongside
     # words-full.json). These cover the entire 216k-entry JMdict, not just
