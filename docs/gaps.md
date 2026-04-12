@@ -16,17 +16,21 @@ Gaps are organized by category. Within each category, items are marked:
 
 ## Grammar
 
-### Comprehensive grammar coverage (IN PROGRESS — Phase 3)
+### Comprehensive grammar coverage (ADDRESSED — community-standard coverage achieved)
 
-The grammar dataset targets 500–700 points across JLPT levels N5–N1 as a progressive, phase-spanning goal filled in over successive patch releases. v0.3.0 shipped 81 foundational hand-curated entries (50 N5+ 31 N4) explicitly framed in CHANGELOG [0.3.0] § "Deliberate scope choices" as "N5 essentials + N4 selections, not complete N5+N4" — not as completion of N5 and N4. Coverage at each level expands as new entries are curated; the current count per level is tracked in `manifest.json.counts["data/grammar/grammar.json"]` and `manifest.json.grammar_curation_status`. The dataset will always be transparent about what is covered and what is not, and entries at every level will carry `review_status` reflecting their curation state.
+As of v0.7.0, the grammar dataset has **595 hand-curated entries** spanning all five JLPT levels (76 N5 + 91 N4 + 139 N3 + 150 N2 + 139 N1), reaching **85–119% of the 500–700 community-standard target**. All five levels are at or near community-standard completeness. This gap is addressed at the content level.
 
-### Native-speaker reviewed grammar (UNCERTAIN)
+The remaining open concern is **review quality**, not coverage volume: every entry carries `review_status: "draft"` and awaits native-speaker review. See the "Native-speaker reviewed grammar" entry below for that gap. The current per-level count is tracked in `manifest.json.grammar_curation_status`; the target remains 500–700 total entries with progressive review status upgrades as the review pipeline operates.
 
-Our grammar curation is hand-written from general, non-copyrightable facts about Japanese grammar. We explicitly do NOT draw on Tae Kim's Guide to Japanese (CC-BY-NC-SA, license incompatible with our CC-BY-SA 4.0 output), nor on proprietary references (Dictionary of Basic Japanese Grammar, Handbook of Japanese Grammar Patterns), nor on Hanabira (license unclear). See the authorship_statement in data/grammar/grammar.json metadata and the Phase 3 entry in CHANGELOG.md for full provenance details. The dataset is not reviewed by professional Japanese linguists or native-speaker reviewers at the time of v1.0.
+### Native-speaker reviewed grammar (EFFORT — pipeline exists, reviewers needed)
 
-Every grammar entry carries a `review_status` field. Community-reviewed entries are the baseline; native-speaker-reviewed entries are the aspiration. The gap here is that we do not currently have a native-speaker reviewer pipeline, and we have no timeline for establishing one. See `docs/contributing.md` for how native-speaker reviewers can get involved.
+All 595 grammar entries carry `review_status: "draft"` — they were written from general, non-copyrightable facts about Japanese grammar in the project's own words. No content is drawn from Tae Kim's Guide (CC-BY-NC-SA, license incompatible), Dictionary of Basic Japanese Grammar (proprietary), Handbook of Japanese Grammar Patterns (proprietary), or Hanabira (license unclear). See `data/grammar/grammar.json.metadata.authorship_statement` for the full provenance details.
 
-This gap is *explicit* in the schema: no consumer can mistake a draft entry for a reviewed one.
+**The review pipeline now exists** (added in v0.7.2): `docs/grammar-review.md` documents the full workflow from "I want to help" to "my review is merged," `docs/grammar-review-checklist.md` provides a per-entry checklist, and issue templates for reviewer availability and slice-claiming are in `.github/ISSUE_TEMPLATE/`. The review status state machine (`draft` → `community_reviewed` / `native_speaker_reviewed`) is enforced by `test_grammar_review_status_state_machine`.
+
+**Zero native-speaker reviewers are engaged as of v0.7.2.** This is the single weakest dimension of the project — the content exists, the infrastructure exists, but the humans are missing. See `docs/contributing.md § Urgent needs` for how to get involved.
+
+The gap is *explicit* in the schema: no consumer can mistake a draft entry for a reviewed one. The `curation_outliers` metadata in `data/grammar/grammar.json` surfaces the entries most in need of review attention (sparse examples, missing related links, missing formation notes).
 
 ### Classical Japanese grammar (INTENTIONAL)
 

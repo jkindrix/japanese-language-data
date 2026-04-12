@@ -53,7 +53,7 @@ Filing with us is fine — we'll triage and file upstream. Include:
 
 ### Data contributions
 
-- **Original grammar curation** for Phase 3 (N3, N2, N1 levels, which are not prioritized for v1.0)
+- **Additional grammar entries** at any JLPT level — all five levels now have community-standard coverage (595 total entries as of v0.7.0) but there is always room for patterns we missed, more nuanced explanations, or additional example sentences
 - **Example sentences** for grammar points, if you can provide natural Japanese sentences with attribution (Tatoeba contribution is preferred — we'll pull from upstream — but curated examples specific to grammar teaching are welcome)
 - **Kana chart extensions** (e.g., obsolete kana, historical forms if relevant)
 - **Cross-reference additions** — new kinds of cross-references that would be useful
