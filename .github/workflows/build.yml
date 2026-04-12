@@ -81,8 +81,11 @@ jobs:
       - name: Validate every output against its schema
         run: just validate
 
-      - name: Run the test suite
-        run: just test
+      - name: Lint Python code
+        run: just lint
+
+      - name: Run the test suite with coverage
+        run: just test-cov
 
       - name: Print stats report
         run: just stats
