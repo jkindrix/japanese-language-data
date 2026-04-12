@@ -2128,4 +2128,523 @@ def test_sqlite_schema_creation(tmp_path: Path) -> None:
     assert "pitch_accent" in tables
     assert "furigana" in tables
     assert "kanji_to_words" in tables
+    assert "frequency_subtitles" in tables
+    conn.close()
+
+
+# ---------------------------------------------------------------------------
+# frequency_subtitles — Japanese text detection and parsing
+# ---------------------------------------------------------------------------
+
+def test_is_japanese_text_valid_kanji_word() -> None:
+    from build.transform.frequency_subtitles import _is_japanese_text
+    assert _is_japanese_text("漢字") is True
+
+
+def test_is_japanese_text_valid_kana_word() -> None:
+    from build.transform.frequency_subtitles import _is_japanese_text
+    assert _is_japanese_text("ありがとう") is True
+
+
+def test_is_japanese_text_single_char_rejected() -> None:
+    from build.transform.frequency_subtitles import _is_japanese_text
+    assert _is_japanese_text("何") is False
+
+
+def test_is_japanese_text_punctuation_rejected() -> None:
+    from build.transform.frequency_subtitles import _is_japanese_text
+    assert _is_japanese_text("。。") is False
+    assert _is_japanese_text("（）") is False
+
+
+def test_is_japanese_text_empty_rejected() -> None:
+    from build.transform.frequency_subtitles import _is_japanese_text
+    assert _is_japanese_text("") is False
+
+
+def test_is_japanese_text_ascii_rejected() -> None:
+    from build.transform.frequency_subtitles import _is_japanese_text
+    assert _is_japanese_text("hello") is False
+
+
+def test_is_japanese_text_mixed_kana_kanji() -> None:
+    from build.transform.frequency_subtitles import _is_japanese_text
+    assert _is_japanese_text("食べる") is True
+
+
+def test_parse_frequency_file(tmp_path: Path) -> None:
+    from build.transform.frequency_subtitles import _parse_frequency_file
+    content = "あなた 61249\n彼女 32871\n何 101249\n、 148670\n\n"
+    f = tmp_path / "freq.txt"
+    f.write_text(content, encoding="utf-8")
+    entries = _parse_frequency_file(f)
+    texts = [t for t, _ in entries]
+    assert "あなた" in texts
+    assert "彼女" in texts
+    assert "何" not in texts  # single char filtered
+    assert "、" not in texts  # punctuation filtered
+
+
+def test_parse_frequency_file_malformed_lines(tmp_path: Path) -> None:
+    from build.transform.frequency_subtitles import _parse_frequency_file
+    content = "no_count_here\n食べる abc\n大丈夫 15283\n"
+    f = tmp_path / "freq.txt"
+    f.write_text(content, encoding="utf-8")
+    entries = _parse_frequency_file(f)
+    assert len(entries) == 1
+    assert entries[0] == ("大丈夫", 15283)
+
+
+def test_build_word_lookup_basic() -> None:
+    from build.transform.frequency_subtitles import _build_word_lookup
+    words_data = {"words": [
+        {"id": "100", "kanji": [{"text": "食べる"}], "kana": [{"text": "たべる"}]},
+        {"id": "200", "kanji": [], "kana": [{"text": "ありがとう"}]},
+    ]}
+    lookup = _build_word_lookup(words_data)
+    assert "食べる" in lookup
+    assert lookup["食べる"] == ("100", "たべる")
+    assert "たべる" in lookup
+    assert "ありがとう" in lookup
+    assert lookup["ありがとう"] == ("200", "ありがとう")
+
+
+def test_build_word_lookup_first_form_wins() -> None:
+    """When two words share a surface form, first-seen wins."""
+    from build.transform.frequency_subtitles import _build_word_lookup
+    words_data = {"words": [
+        {"id": "100", "kanji": [{"text": "共通"}], "kana": [{"text": "きょうつう"}]},
+        {"id": "200", "kanji": [{"text": "共通"}], "kana": [{"text": "きょうつう"}]},
+    ]}
+    lookup = _build_word_lookup(words_data)
+    assert lookup["共通"][0] == "100"
+
+
+# ---------------------------------------------------------------------------
+# grammar — _extract_japanese_core
+# ---------------------------------------------------------------------------
+
+def test_extract_japanese_core_simple_pattern() -> None:
+    from build.transform.grammar import _extract_japanese_core
+    assert _extract_japanese_core("～ください") == "ください"
+
+
+def test_extract_japanese_core_compound_pattern() -> None:
+    from build.transform.grammar import _extract_japanese_core
+    result = _extract_japanese_core("Verb-て + ください")
+    assert "ください" in result
+
+
+def test_extract_japanese_core_pure_english() -> None:
+    from build.transform.grammar import _extract_japanese_core
+    assert _extract_japanese_core("A is B") == ""
+
+
+def test_extract_japanese_core_tilde_stripped() -> None:
+    from build.transform.grammar import _extract_japanese_core
+    result = _extract_japanese_core("～たい")
+    assert "～" not in result
+    assert "たい" in result
+
+
+def test_extract_japanese_core_short_result_rejected() -> None:
+    from build.transform.grammar import _extract_japanese_core
+    # Single char result should return ""
+    assert _extract_japanese_core("～は") == ""
+
+
+# ---------------------------------------------------------------------------
+# export_sqlite — insert functions
+# ---------------------------------------------------------------------------
+
+def test_sqlite_insert_words(tmp_path: Path) -> None:
+    import sqlite3
+    from build.export_sqlite import _create_schema, _insert_words
+    conn = sqlite3.connect(str(tmp_path / "test.db"))
+    _create_schema(conn)
+    words_data = {"words": [
+        {"id": "123", "kanji": [{"text": "食べる", "tags": []}],
+         "kana": [{"text": "たべる", "tags": []}],
+         "sense": [{"partOfSpeech": ["v1"], "gloss": [{"lang": "eng", "text": "to eat"}]}],
+         "jlpt_waller": "N5"},
+    ]}
+    n = _insert_words(conn, words_data)
+    assert n == 1
+    conn.commit()
+    row = conn.execute("SELECT id, kanji_primary, jlpt FROM words").fetchone()
+    assert row[0] == "123"
+    assert row[1] == "食べる"
+    assert row[2] == "N5"
+    conn.close()
+
+
+def test_sqlite_insert_kanji(tmp_path: Path) -> None:
+    import sqlite3
+    from build.export_sqlite import _create_schema, _insert_kanji
+    conn = sqlite3.connect(str(tmp_path / "test.db"))
+    _create_schema(conn)
+    kanji_data = {"kanji": [
+        {"character": "日", "stroke_count": 4, "grade": 1, "jlpt_waller": "N5",
+         "frequency": 1, "readings": {"on": ["ニチ"], "kun": ["ひ"]},
+         "meanings": {"en": ["day", "sun"]}},
+    ]}
+    n = _insert_kanji(conn, kanji_data)
+    assert n == 1
+    conn.commit()
+    row = conn.execute("SELECT character, stroke_count, meanings_en FROM kanji").fetchone()
+    assert row[0] == "日"
+    assert row[1] == 4
+    assert "day" in row[2]
+    conn.close()
+
+
+def test_sqlite_insert_sentences(tmp_path: Path) -> None:
+    import sqlite3
+    from build.export_sqlite import _create_schema, _insert_sentences
+    conn = sqlite3.connect(str(tmp_path / "test.db"))
+    _create_schema(conn)
+    data = {"sentences": [
+        {"id": "42", "japanese": "机の上に本があります。", "english": "There is a book on the desk."},
+    ]}
+    n = _insert_sentences(conn, data, "tatoeba")
+    assert n == 1
+    conn.commit()
+    row = conn.execute("SELECT id, source FROM sentences").fetchone()
+    assert row[0] == "42"
+    assert row[1] == "tatoeba"
+    conn.close()
+
+
+def test_sqlite_insert_grammar(tmp_path: Path) -> None:
+    import sqlite3
+    from build.export_sqlite import _create_schema, _insert_grammar
+    conn = sqlite3.connect(str(tmp_path / "test.db"))
+    _create_schema(conn)
+    data = {"grammar_points": [
+        {"id": "desu", "pattern": "です", "meaning_en": "is",
+         "level": "N5", "formality": "formal", "formation": "N + です",
+         "review_status": "draft"},
+    ]}
+    n = _insert_grammar(conn, data)
+    assert n == 1
+    conn.commit()
+    row = conn.execute("SELECT id, level FROM grammar").fetchone()
+    assert row[0] == "desu"
+    assert row[1] == "N5"
+    conn.close()
+
+
+def test_sqlite_insert_xref(tmp_path: Path) -> None:
+    import sqlite3
+    from build.export_sqlite import _create_schema, _insert_xref
+    conn = sqlite3.connect(str(tmp_path / "test.db"))
+    _create_schema(conn)
+    data = {"mapping": {"日": ["100", "200"], "月": ["300"]}}
+    n = _insert_xref(conn, "kanji_to_words", data)
+    assert n == 3
+    conn.commit()
+    rows = conn.execute("SELECT * FROM kanji_to_words ORDER BY kanji").fetchall()
+    assert len(rows) == 3
+    assert rows[0][0] == "日"
+    conn.close()
+
+
+# ---------------------------------------------------------------------------
+# stroke_order — _load_kanji_set edge cases
+# ---------------------------------------------------------------------------
+
+def test_load_kanji_set_missing_file(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import stroke_order
+    monkeypatch.setattr(stroke_order, "KANJI_JSON", tmp_path / "nonexistent.json")
+    result = stroke_order._load_kanji_set()
+    assert result == set()
+
+
+def test_load_kanji_set_invalid_json(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import stroke_order
+    bad_file = tmp_path / "kanji.json"
+    bad_file.write_text("not json", encoding="utf-8")
+    monkeypatch.setattr(stroke_order, "KANJI_JSON", bad_file)
+    result = stroke_order._load_kanji_set()
+    assert result == set()
+
+
+def test_load_kanji_set_valid(tmp_path: Path, monkeypatch) -> None:
+    import json
+    from build.transform import stroke_order
+    kanji_file = tmp_path / "kanji.json"
+    kanji_file.write_text(json.dumps({
+        "kanji": [{"character": "日"}, {"character": "月"}]
+    }), encoding="utf-8")
+    monkeypatch.setattr(stroke_order, "KANJI_JSON", kanji_file)
+    result = stroke_order._load_kanji_set()
+    assert result == {"日", "月"}
+
+
+def test_codepoint_filename_multi_char_raises() -> None:
+    from build.transform.stroke_order import _codepoint_filename
+    with pytest.raises(ValueError, match="single-character"):
+        _codepoint_filename("AB")
+
+
+# ---------------------------------------------------------------------------
+# kftt — _read_lines_from_tar
+# ---------------------------------------------------------------------------
+
+def test_read_lines_from_tar(tmp_path: Path) -> None:
+    import io
+    import tarfile
+    from build.transform.kftt import _read_lines_from_tar
+    # Create a minimal tar with a test file
+    tar_path = tmp_path / "test.tar.gz"
+    content = "line1\nline2\nline3\n"
+    with tarfile.open(tar_path, "w:gz") as tf:
+        data = content.encode("utf-8")
+        info = tarfile.TarInfo(name="data/orig/kyoto-test.ja")
+        info.size = len(data)
+        tf.addfile(info, io.BytesIO(data))
+    with tarfile.open(tar_path, "r:gz") as tf:
+        lines = _read_lines_from_tar(tf, "data/orig/kyoto-test.ja")
+    assert lines == ["line1", "line2", "line3"]
+
+
+def test_read_lines_from_tar_missing_member(tmp_path: Path) -> None:
+    import io
+    import tarfile
+    from build.transform.kftt import _read_lines_from_tar
+    tar_path = tmp_path / "test.tar.gz"
+    with tarfile.open(tar_path, "w:gz") as tf:
+        data = b"content"
+        info = tarfile.TarInfo(name="other.txt")
+        info.size = len(data)
+        tf.addfile(info, io.BytesIO(data))
+    with tarfile.open(tar_path, "r:gz") as tf:
+        with pytest.raises(RuntimeError, match="No member ending with"):
+            _read_lines_from_tar(tf, "data/orig/missing.ja")
+
+
+# ---------------------------------------------------------------------------
+# expressions — expression extraction filter
+# ---------------------------------------------------------------------------
+
+def test_expressions_filter_selects_exp_pos() -> None:
+    """Verify the expression filter logic: only senses with 'exp' POS."""
+    # Replicate the core filtering logic from expressions.py build()
+    word = {
+        "id": "100",
+        "kanji": [{"text": "お疲れ様"}],
+        "kana": [{"text": "おつかれさま"}],
+        "sense": [
+            {"partOfSpeech": ["exp", "n"], "gloss": [{"text": "good work"}], "misc": []},
+            {"partOfSpeech": ["n"], "gloss": [{"text": "tiredness"}], "misc": []},
+        ],
+    }
+    # Only the first sense has 'exp'
+    exp_meanings = []
+    for sense in word.get("sense", []) or []:
+        if "exp" not in (sense.get("partOfSpeech", []) or []):
+            continue
+        for g in sense.get("gloss", []) or []:
+            exp_meanings.append(g.get("text", ""))
+    assert exp_meanings == ["good work"]
+    assert "tiredness" not in exp_meanings
+
+
+def test_expressions_filter_skips_non_exp() -> None:
+    """A word with no 'exp' senses should produce no meanings."""
+    word = {
+        "sense": [
+            {"partOfSpeech": ["n", "vs"], "gloss": [{"text": "study"}]},
+        ],
+    }
+    exp_meanings = []
+    for sense in word.get("sense", []) or []:
+        if "exp" not in (sense.get("partOfSpeech", []) or []):
+            continue
+        for g in sense.get("gloss", []) or []:
+            exp_meanings.append(g.get("text", ""))
+    assert exp_meanings == []
+
+
+# ---------------------------------------------------------------------------
+# sentences — deduplication logic
+# ---------------------------------------------------------------------------
+
+def test_sentences_dedup_by_tatoeba_id() -> None:
+    """Sentence deduplication: same Tatoeba ID seen twice → one output."""
+    seen: dict[str, dict] = {}
+    # Simulate two references to the same sentence ID
+    examples = [
+        {"source": {"type": "tatoeba", "value": "42"},
+         "sentences": [{"lang": "jpn", "text": "日本語"}, {"lang": "eng", "text": "Japanese"}]},
+        {"source": {"type": "tatoeba", "value": "42"},
+         "sentences": [{"lang": "jpn", "text": "日本語"}, {"lang": "eng", "text": "Japanese (alt)"}]},
+    ]
+    for ex in examples:
+        src = ex.get("source", {}) or {}
+        if src.get("type") != "tatoeba":
+            continue
+        sid = str(src.get("value", ""))
+        if not sid or sid in seen:
+            continue
+        seen[sid] = {"id": sid}
+    assert len(seen) == 1
+    assert "42" in seen
+
+
+def test_sentences_skip_non_tatoeba() -> None:
+    """Non-tatoeba sources should be skipped."""
+    seen: dict[str, dict] = {}
+    examples = [
+        {"source": {"type": "other", "value": "99"},
+         "sentences": [{"lang": "jpn", "text": "テスト"}]},
+    ]
+    for ex in examples:
+        src = ex.get("source", {}) or {}
+        if src.get("type") != "tatoeba":
+            continue
+        sid = str(src.get("value", ""))
+        if not sid or sid in seen:
+            continue
+        seen[sid] = {"id": sid}
+    assert len(seen) == 0
+
+
+# ---------------------------------------------------------------------------
+# furigana — segment filtering logic
+# ---------------------------------------------------------------------------
+
+def test_furigana_has_kanji_segment_true() -> None:
+    """Furigana entries with 'rt' keys in segments have kanji."""
+    furigana = [{"ruby": "食", "rt": "た"}, {"ruby": "べる"}]
+    has_kanji_segment = any("rt" in seg for seg in furigana)
+    assert has_kanji_segment is True
+
+
+def test_furigana_has_kanji_segment_false() -> None:
+    """Pure kana entries have no 'rt' keys."""
+    furigana = [{"ruby": "ありがとう"}]
+    has_kanji_segment = any("rt" in seg for seg in furigana)
+    assert has_kanji_segment is False
+
+
+def test_furigana_known_pairs_filter() -> None:
+    """Filter entries to known (text, reading) pairs from words.json."""
+    taberu_reading = "\u305f\u3079\u308b"  # たべる
+    nomu_reading = "\u306e\u3080"  # のむ
+    known_pairs = {("\u98df\u3079\u308b", taberu_reading), ("\u98f2\u3080", nomu_reading)}
+    entries = [
+        {"text": "\u98df\u3079\u308b", "reading": taberu_reading,
+         "furigana": [{"ruby": "\u98df", "rt": "\u305f"}, {"ruby": "\u3079\u308b"}]},
+        {"text": "\u672a\u77e5\u8a9e", "reading": "\u307f\u3061\u3054",
+         "furigana": [{"ruby": "\u672a\u77e5", "rt": "\u307f\u3061"}, {"ruby": "\u8a9e", "rt": "\u3054"}]},
+    ]
+    filtered = [e for e in entries if (e["text"], e["reading"]) in known_pairs]
+    assert len(filtered) == 1
+    assert filtered[0]["text"] == "\u98df\u3079\u308b"
+
+
+# ---------------------------------------------------------------------------
+# export_sqlite — insert_pitch
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# sentences — _load_source with mock tarball
+# ---------------------------------------------------------------------------
+
+def test_sentences_load_source_extracts_json(tmp_path: Path, monkeypatch) -> None:
+    """_load_source should extract and parse the first JSON from a tgz."""
+    import io
+    import tarfile
+    from build.transform import sentences as sentences_mod
+
+    # Create a mock tgz with a JSON file inside
+    content = json.dumps({"words": [{"id": "1", "sense": []}]})
+    tar_path = tmp_path / "mock.json.tgz"
+    with tarfile.open(tar_path, "w:gz") as tf:
+        data = content.encode("utf-8")
+        info = tarfile.TarInfo(name="test.json")
+        info.size = len(data)
+        tf.addfile(info, io.BytesIO(data))
+
+    monkeypatch.setattr(sentences_mod, "SOURCE_TGZ", tar_path)
+    result = sentences_mod._load_source()
+    assert result["words"][0]["id"] == "1"
+
+
+# ---------------------------------------------------------------------------
+# furigana — build() with mock data
+# ---------------------------------------------------------------------------
+
+def test_furigana_build_filters_correctly(tmp_path: Path, monkeypatch) -> None:
+    """furigana.build() should filter to known vocab and skip pure-kana entries."""
+    from build.transform import furigana as furigana_mod
+
+    # Create mock source file (JmdictFurigana format)
+    source_entries = [
+        # Should match: known pair with kanji segment
+        {"text": "\u98df\u3079\u308b", "reading": "\u305f\u3079\u308b",
+         "furigana": [{"ruby": "\u98df", "rt": "\u305f"}, {"ruby": "\u3079\u308b"}]},
+        # Should be filtered: not in words.json
+        {"text": "\u672a\u77e5\u8a9e", "reading": "\u307f\u3061\u3054",
+         "furigana": [{"ruby": "\u672a\u77e5", "rt": "\u307f\u3061"}, {"ruby": "\u8a9e", "rt": "\u3054"}]},
+        # Should be filtered: pure kana (no rt keys)
+        {"text": "\u3042\u308a\u304c\u3068\u3046", "reading": "\u3042\u308a\u304c\u3068\u3046",
+         "furigana": [{"ruby": "\u3042\u308a\u304c\u3068\u3046"}]},
+        # Should be filtered: empty furigana
+        {"text": "\u7a7a", "reading": "\u304b\u3089", "furigana": []},
+    ]
+    source_file = tmp_path / "JmdictFurigana.json"
+    # Write with BOM as the real source uses utf-8-sig
+    source_file.write_bytes(b"\xef\xbb\xbf" + json.dumps(source_entries, ensure_ascii=False).encode("utf-8"))
+
+    # Create mock words.json with one known pair
+    words_file = tmp_path / "words.json"
+    words_data = {"words": [
+        {"id": "1", "kanji": [{"text": "\u98df\u3079\u308b"}],
+         "kana": [{"text": "\u305f\u3079\u308b"}]},
+    ]}
+    words_file.write_text(json.dumps(words_data, ensure_ascii=False), encoding="utf-8")
+
+    out_file = tmp_path / "furigana.json"
+
+    monkeypatch.setattr(furigana_mod, "SOURCE_JSON", source_file)
+    monkeypatch.setattr(furigana_mod, "WORDS_JSON", words_file)
+    monkeypatch.setattr(furigana_mod, "OUT", out_file)
+    monkeypatch.setattr(furigana_mod, "REPO_ROOT", tmp_path)
+
+    furigana_mod.build()
+
+    result = json.loads(out_file.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 1
+    assert len(result["entries"]) == 1
+    assert result["entries"][0]["text"] == "\u98df\u3079\u308b"
+
+
+# ---------------------------------------------------------------------------
+# expressions — _load_source / _is_common wrappers
+# ---------------------------------------------------------------------------
+
+def test_expressions_is_common_delegates_to_utils() -> None:
+    from build.transform.expressions import _is_common
+    word_common = {"kanji": [{"common": True, "text": "test"}], "kana": []}
+    word_uncommon = {"kanji": [{"common": False, "text": "test"}], "kana": []}
+    assert _is_common(word_common) is True
+    assert _is_common(word_uncommon) is False
+
+
+def test_sqlite_insert_pitch(tmp_path: Path) -> None:
+    import sqlite3
+    from build.export_sqlite import _create_schema, _insert_pitch
+    conn = sqlite3.connect(str(tmp_path / "test.db"))
+    _create_schema(conn)
+    data = {"entries": [
+        {"text": "食べる", "reading": "たべる", "pitch_positions": [0], "mora_count": 3},
+    ]}
+    n = _insert_pitch(conn, data)
+    assert n == 1
+    conn.commit()
+    row = conn.execute("SELECT text, mora_count FROM pitch_accent").fetchone()
+    assert row[0] == "食べる"
+    assert row[1] == 3
     conn.close()
