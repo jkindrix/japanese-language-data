@@ -2,7 +2,16 @@
 
 Produces a build report showing entry counts per file, cross-reference
 coverage, and enrichment completeness. Updates ``manifest.json`` with
-the counts from the current build.
+the counts and build date from the current build.
+
+This module also keeps ``manifest.json.generated`` in sync with the
+current build date. Other fields (``version``, ``phase_description``,
+source pins, etc.) are preserved; they are updated by the ``just bump-
+release`` recipe or manually at release time.
+
+Missing files (e.g., the gitignored ``data/optional/names.json`` when
+not built) are reported as ``null`` rather than ``0`` so consumers can
+distinguish "not built" from "built but empty".
 
 Run via ``just stats`` or ``python -m build.stats``.
 """
@@ -11,6 +20,7 @@ from __future__ import annotations
 
 import json
 import sys
+from datetime import date
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -56,12 +66,25 @@ TARGET_FILES: list[tuple[str, str]] = [
 ]
 
 
-def compute_counts() -> dict[str, int]:
-    counts: dict[str, int] = {}
+def compute_counts() -> dict[str, int | None]:
+    """Compute entry counts for every target data file.
+
+    Returns a mapping from relative file path to entry count:
+
+        * ``int`` ≥ 0 — the file exists and has that many entries
+        * ``None`` — the file does not exist (e.g., gitignored and not built)
+        * ``-1`` — the file exists but is unparseable (sentinel for errors)
+
+    The ``None`` / ``0`` distinction matters for files that are
+    conditionally built (``data/optional/names.json``) so that consumers
+    and the ``just stats`` report can tell "not yet built" apart from
+    "built with zero entries".
+    """
+    counts: dict[str, int | None] = {}
     for rel_path, payload_key in TARGET_FILES:
         full_path = REPO_ROOT / rel_path
         if not full_path.exists():
-            counts[rel_path] = 0
+            counts[rel_path] = None
             continue
         try:
             data = json.loads(full_path.read_text(encoding="utf-8"))
@@ -85,28 +108,42 @@ GITIGNORED_PATHS = {
 }
 
 
-def print_report(counts: dict[str, int]) -> None:
+def print_report(counts: dict[str, int | None]) -> None:
     print(f"{'File':<48} {'Entries':>12}")
     print(f"{'-' * 48} {'-' * 12}")
     for path, count in counts.items():
-        label = "—" if count == 0 else (f"(error)" if count == -1 else f"{count:,}")
+        if count is None:
+            label = "(not built)"
+        elif count == -1:
+            label = "(error)"
+        elif count == 0:
+            label = "—"
+        else:
+            label = f"{count:,}"
         print(f"{path:<48} {label:>12}")
-    total = sum(c for c in counts.values() if c > 0)
+    total = sum(c for c in counts.values() if isinstance(c, int) and c > 0)
     unique_total = sum(
         c for p, c in counts.items()
-        if c > 0 and p not in DERIVED_PATHS and p not in GITIGNORED_PATHS
+        if isinstance(c, int) and c > 0 and p not in DERIVED_PATHS and p not in GITIGNORED_PATHS
     )
     print(f"{'-' * 48} {'-' * 12}")
     print(f"{'TOTAL (all rows)':<48} {total:>12,}")
     print(f"{'UNIQUE COMMITTED (excludes derivatives + gitignored)':<48} {unique_total:>12,}")
 
 
-def update_manifest(counts: dict[str, int]) -> None:
+def update_manifest(counts: dict[str, int | None]) -> None:
+    """Merge the computed counts and today's build date into manifest.json.
+
+    All other fields — version, phase_description, sources, source hashes,
+    grammar_curation_status, next_actions — are preserved. Those are
+    edited by ``just bump-release`` or by hand at release time.
+    """
     if MANIFEST_PATH.exists():
         manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     else:
         manifest = {}
     manifest["counts"] = counts
+    manifest["generated"] = date.today().isoformat()
     MANIFEST_PATH.write_text(
         json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
@@ -117,7 +154,7 @@ def main() -> int:
     counts = compute_counts()
     print_report(counts)
     update_manifest(counts)
-    if all(c == 0 for c in counts.values()):
+    if all(c is None or c == 0 for c in counts.values()):
         print(
             "\n(No data files built yet. Phase 0 is scaffolding only. "
             "Phase 1 will produce the first data files.)"

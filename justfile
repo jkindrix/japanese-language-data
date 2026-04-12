@@ -150,3 +150,22 @@ versions:
     @printf '{{cyan}}Just:{{reset}}     '; just --version
     @printf '{{cyan}}Git:{{reset}}      '; git --version
     @printf '{{cyan}}Pytest:{{reset}}   '; {{python}} -m pytest --version 2>/dev/null || echo '(not installed)'
+
+# ============================================================================
+# RELEASE
+# ============================================================================
+
+# Bump manifest.json.version to match the most-recent CHANGELOG [N.N.N] header.
+# The phase_description must be updated by hand — this recipe refuses to run if
+# it detects staleness so the human operator confirms the release narrative.
+# See docs/release.md for the full release workflow.
+[group('release')]
+bump-release:
+    @printf '{{cyan}}==> Reconciling manifest.json.version with CHANGELOG.md{{reset}}\n'
+    {{python}} -m build.bump_release
+    @printf '{{green}}Done. Now review manifest.json.phase_description and CHANGELOG.md, then tag the release.{{reset}}\n'
+
+# Show what the release bump would do without writing files
+[group('release')]
+bump-release-dry-run:
+    {{python}} -m build.bump_release --dry-run
