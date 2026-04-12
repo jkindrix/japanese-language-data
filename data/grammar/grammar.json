@@ -31,9 +31,9 @@
       "linked_via_normalization": 0,
       "link_rate_pct": 0.22,
       "method": "Two-pass text match against data/corpus/sentences.json: first exact, then conservatively normalized (trailing sentence-final punctuation and whitespace stripped). Normalization never collapses kanji/kana variants or changes width/case.",
-      "pattern_match_points": 450,
-      "pattern_match_total": 1796,
-      "pattern_match_pct": 75.63,
+      "pattern_match_points": 524,
+      "pattern_match_total": 2069,
+      "pattern_match_pct": 88.07,
       "pattern_match_method": "Separate from example-text linkage. Extracts the Japanese core of each grammar pattern and searches sentences.json for sentences containing it. Up to 5 matches per grammar point. Stored in tatoeba_pattern_matches[] on each entry."
     },
     "authorship_statement": "All grammar explanations are written in our own words based on general, well-known, non-copyrightable facts about Japanese grammar. We do not copy from Tae Kim's Guide to Japanese (CC-BY-NC-SA, license incompatible with our CC-BY-SA 4.0 output), Dictionary of Basic Japanese Grammar, Handbook of Japanese Grammar Patterns, or any other copyrighted source. Every entry is marked review_status=draft and awaits native-speaker review. See docs/contributing.md for the call to native-speaker reviewers.",
@@ -94,7 +94,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-15361",
+        "kftt:kftt-24836",
+        "kftt:kftt-112209",
+        "kftt:kftt-115622",
+        "kftt:kftt-174987"
+      ]
     },
     {
       "id": "wo-yogi-naku-sareru",
@@ -136,7 +142,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-6392",
+        "kftt:kftt-24794",
+        "kftt:kftt-49337",
+        "kftt:kftt-108405",
+        "kftt:kftt-113132"
+      ]
     },
     {
       "id": "wo-kinjienai",
@@ -178,7 +190,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-85536"
+      ]
     },
     {
       "id": "zu-ni-wa-okanai",
@@ -220,7 +234,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-268937"
+      ]
     },
     {
       "id": "nai-dewa-okanai",
@@ -479,7 +495,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-37856",
+        "kftt:kftt-42160",
+        "kftt:kftt-46586",
+        "kftt:kftt-54684",
+        "kftt:kftt-56991"
+      ]
     },
     {
       "id": "ni-atte",
@@ -882,7 +904,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-14379",
+        "kftt:kftt-36229",
+        "kftt:kftt-41933",
+        "kftt:kftt-46677",
+        "kftt:kftt-58579"
+      ]
     },
     {
       "id": "wo-oite",
@@ -969,7 +997,12 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-93519",
+        "kftt:kftt-110640",
+        "kftt:kftt-112875",
+        "kftt:kftt-262203"
+      ]
     },
     {
       "id": "kitte-no",
@@ -1098,7 +1131,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-9470",
+        "kftt:kftt-76682",
+        "kftt:kftt-220590",
+        "kftt:kftt-261285",
+        "kftt:kftt-358787"
+      ]
     },
     {
       "id": "katawara",
@@ -1407,7 +1446,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-13689",
+        "kftt:kftt-14110",
+        "kftt:kftt-17973",
+        "kftt:kftt-18547",
+        "kftt:kftt-19396"
+      ]
     },
     {
       "id": "n-bakari",
@@ -1776,7 +1821,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-1449",
+        "kftt:kftt-6376",
+        "kftt:kftt-45092",
+        "kftt:kftt-91835",
+        "kftt:kftt-134837"
+      ]
     },
     {
       "id": "te-mae",
@@ -2046,7 +2097,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-113199",
+        "kftt:kftt-181583",
+        "kftt:kftt-216389",
+        "kftt:kftt-242542",
+        "kftt:kftt-258047"
+      ]
     },
     {
       "id": "to-yara",
@@ -2182,7 +2239,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-258",
+        "kftt:kftt-6429",
+        "kftt:kftt-17284",
+        "kftt:kftt-22033",
+        "kftt:kftt-44210"
+      ]
     },
     {
       "id": "wo-kagiri-ni",
@@ -2355,7 +2418,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-352870"
+      ]
     },
     {
       "id": "konasu",
@@ -2487,7 +2552,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-17041",
+        "kftt:kftt-72454",
+        "kftt:kftt-95111",
+        "kftt:kftt-103859",
+        "kftt:kftt-110896"
+      ]
     },
     {
       "id": "mo-saru-koto-nagara",
@@ -2752,7 +2823,12 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-171123",
+        "kftt:kftt-223341",
+        "kftt:kftt-363585",
+        "kftt:kftt-415238"
+      ]
     },
     {
       "id": "hodo-no",
@@ -2885,7 +2961,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-10505",
+        "kftt:kftt-15560",
+        "kftt:kftt-23870",
+        "kftt:kftt-29074",
+        "kftt:kftt-40003"
+      ]
     },
     {
       "id": "wo-kanete",
@@ -2973,7 +3055,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-3350",
+        "kftt:kftt-6464",
+        "kftt:kftt-7316",
+        "kftt:kftt-7430",
+        "kftt:kftt-7483"
+      ]
     },
     {
       "id": "te-mi-se-ru",
@@ -3061,7 +3149,11 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-56204",
+        "kftt:kftt-140295",
+        "kftt:kftt-280813"
+      ]
     },
     {
       "id": "nagara-no",
@@ -3148,7 +3240,10 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-85536",
+        "kftt:kftt-201161"
+      ]
     },
     {
       "id": "ni-mo-hodo-ga-aru",
@@ -3317,7 +3412,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-98016",
+        "kftt:kftt-99401",
+        "kftt:kftt-155320",
+        "kftt:kftt-251309",
+        "kftt:kftt-292333"
+      ]
     },
     {
       "id": "ni-tari-nai",
@@ -3495,7 +3596,12 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-114660",
+        "kftt:kftt-122860",
+        "kftt:kftt-135170",
+        "kftt:kftt-187423"
+      ]
     },
     {
       "id": "sono-mono",
@@ -3585,7 +3691,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-14572"
+      ]
     },
     {
       "id": "n-to-suru",
@@ -3671,7 +3779,12 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-121449",
+        "kftt:kftt-181838",
+        "kftt:kftt-234237",
+        "kftt:kftt-413262"
+      ]
     },
     {
       "id": "yue-no",
@@ -3713,7 +3826,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-50217",
+        "kftt:kftt-65082",
+        "kftt:kftt-80698",
+        "kftt:kftt-83527",
+        "kftt:kftt-107215"
+      ]
     },
     {
       "id": "to-atte-wa",
@@ -3755,7 +3874,10 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-289844",
+        "kftt:kftt-346645"
+      ]
     },
     {
       "id": "ni-kakawaru",
@@ -3888,7 +4010,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-593",
+        "kftt:kftt-2548",
+        "kftt:kftt-15193",
+        "kftt:kftt-40477",
+        "kftt:kftt-41447"
+      ]
     },
     {
       "id": "mai-ka-wonder",
@@ -3930,7 +4058,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-290539"
+      ]
     },
     {
       "id": "you-ka-to-omou",
@@ -4018,7 +4148,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-6802",
+        "kftt:kftt-18155",
+        "kftt:kftt-25345",
+        "kftt:kftt-44648",
+        "kftt:kftt-62902"
+      ]
     },
     {
       "id": "hoka-naranu",
@@ -4103,7 +4239,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-55616",
+        "kftt:kftt-71227",
+        "kftt:kftt-73231",
+        "kftt:kftt-74285",
+        "kftt:kftt-75790"
+      ]
     },
     {
       "id": "ni-aki-tarazu",
@@ -4145,7 +4287,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-7309",
+        "kftt:kftt-15356",
+        "kftt:kftt-203656",
+        "kftt:kftt-289179",
+        "kftt:kftt-315751"
+      ]
     },
     {
       "id": "beku-shite",
@@ -4316,7 +4464,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-22146",
+        "kftt:kftt-52095",
+        "kftt:kftt-78418",
+        "kftt:kftt-109590",
+        "kftt:kftt-113247"
+      ]
     },
     {
       "id": "ka-to-omou-to",
@@ -4444,7 +4598,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-5180",
+        "kftt:kftt-20343",
+        "kftt:kftt-23476",
+        "kftt:kftt-24805",
+        "kftt:kftt-33115"
+      ]
     },
     {
       "id": "nomi-only",
@@ -4582,7 +4742,11 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-44994",
+        "kftt:kftt-70857",
+        "kftt:kftt-341614"
+      ]
     },
     {
       "id": "shikamo-moreover",
@@ -5024,7 +5188,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-19097",
+        "kftt:kftt-36256",
+        "kftt:kftt-63493",
+        "kftt:kftt-74744",
+        "kftt:kftt-83817"
+      ]
     },
     {
       "id": "tara-kiri-ga-nai",
@@ -5332,7 +5502,12 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-112188",
+        "kftt:kftt-129275",
+        "kftt:kftt-337264",
+        "kftt:kftt-341605"
+      ]
     },
     {
       "id": "koso-are",
@@ -5374,7 +5549,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-100506",
+        "kftt:kftt-105634",
+        "kftt:kftt-121890",
+        "kftt:kftt-124981",
+        "kftt:kftt-323568"
+      ]
     },
     {
       "id": "aro-u-tomo",
@@ -5549,7 +5730,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-15149",
+        "kftt:kftt-61826",
+        "kftt:kftt-64922",
+        "kftt:kftt-72642",
+        "kftt:kftt-80738"
+      ]
     },
     {
       "id": "nuki-de",
@@ -5591,7 +5778,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-90791"
+      ]
     },
     {
       "id": "tou-no",
@@ -5768,7 +5957,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-380",
+        "kftt:kftt-46483",
+        "kftt:kftt-54539",
+        "kftt:kftt-56840",
+        "kftt:kftt-56930"
+      ]
     },
     {
       "id": "yoshi-mi",
@@ -6076,7 +6271,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-91801",
+        "kftt:kftt-114744",
+        "kftt:kftt-121630",
+        "kftt:kftt-150092",
+        "kftt:kftt-209613"
+      ]
     },
     {
       "id": "koto-nagara",
@@ -6300,7 +6501,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-4008",
+        "kftt:kftt-21815",
+        "kftt:kftt-22112",
+        "kftt:kftt-24548",
+        "kftt:kftt-30403"
+      ]
     },
     {
       "id": "wo-keiki-ni",
@@ -6341,7 +6548,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-9494",
+        "kftt:kftt-16153",
+        "kftt:kftt-23782",
+        "kftt:kftt-25869",
+        "kftt:kftt-31159"
+      ]
     },
     {
       "id": "ni-tsuki-due-to",
@@ -6664,7 +6877,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-965",
+        "kftt:kftt-9385",
+        "kftt:kftt-11248",
+        "kftt:kftt-11823",
+        "kftt:kftt-18054"
+      ]
     },
     {
       "id": "ni-oujite-depending",
@@ -6753,7 +6972,12 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-17249",
+        "kftt:kftt-190021",
+        "kftt:kftt-235306",
+        "kftt:kftt-260764"
+      ]
     },
     {
       "id": "ni-kakawarazu-regardless",
@@ -8271,7 +8495,12 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-69258",
+        "kftt:kftt-82534",
+        "kftt:kftt-333792",
+        "kftt:kftt-422127"
+      ]
     },
     {
       "id": "mono-dakara",
@@ -8677,7 +8906,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-132496",
+        "kftt:kftt-168742",
+        "kftt:kftt-190094",
+        "kftt:kftt-190097",
+        "kftt:kftt-264559"
+      ]
     },
     {
       "id": "kara-to-itte",
@@ -9028,7 +9263,12 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-86304",
+        "kftt:kftt-131745",
+        "kftt:kftt-136423",
+        "kftt:kftt-293170"
+      ]
     },
     {
       "id": "ja-arumai-shi",
@@ -9116,7 +9356,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-22146",
+        "kftt:kftt-52095",
+        "kftt:kftt-78418",
+        "kftt:kftt-109590",
+        "kftt:kftt-113247"
+      ]
     },
     {
       "id": "to-areba",
@@ -9339,7 +9585,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-246678"
+      ]
     },
     {
       "id": "ni-taenai",
@@ -9380,7 +9628,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-194571"
+      ]
     },
     {
       "id": "te-yamanai",
@@ -9421,7 +9671,10 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-22120",
+        "kftt:kftt-77679"
+      ]
     },
     {
       "id": "sou-ni-nai",
@@ -9509,7 +9762,11 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-239807",
+        "kftt:kftt-334151",
+        "kftt:kftt-409555"
+      ]
     },
     {
       "id": "ta-tokoro-de",
@@ -9599,7 +9856,10 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-41210",
+        "kftt:kftt-112207"
+      ]
     },
     {
       "id": "nani-se",
@@ -9640,7 +9900,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-257231"
+      ]
     },
     {
       "id": "ageku-ni-end-up",
@@ -10092,7 +10354,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-33651",
+        "kftt:kftt-38507",
+        "kftt:kftt-45736",
+        "kftt:kftt-45778",
+        "kftt:kftt-56308"
+      ]
     },
     {
       "id": "wo-hete",
@@ -10177,7 +10445,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-9200",
+        "kftt:kftt-10417",
+        "kftt:kftt-18279",
+        "kftt:kftt-20589",
+        "kftt:kftt-28285"
+      ]
     },
     {
       "id": "wo-yoso-ni",
@@ -10218,7 +10492,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-113230",
+        "kftt:kftt-124646",
+        "kftt:kftt-246574",
+        "kftt:kftt-247792",
+        "kftt:kftt-270372"
+      ]
     },
     {
       "id": "doori-just-as",
@@ -10307,7 +10587,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-77186"
+      ]
     },
     {
       "id": "uru-possible",
@@ -10531,7 +10813,12 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-15617",
+        "kftt:kftt-204519",
+        "kftt:kftt-326698",
+        "kftt:kftt-397961"
+      ]
     },
     {
       "id": "to-sureba",
@@ -10760,7 +11047,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-215383"
+      ]
     },
     {
       "id": "nari-as-soon-as",
@@ -11029,7 +11318,12 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-175628",
+        "kftt:kftt-236430",
+        "kftt:kftt-237408",
+        "kftt:kftt-390133"
+      ]
     },
     {
       "id": "wo-kaerimi-zu",
@@ -11114,7 +11408,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-361364"
+      ]
     },
     {
       "id": "kiwamari-nai",
@@ -11333,7 +11629,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-6200",
+        "kftt:kftt-13769",
+        "kftt:kftt-13771",
+        "kftt:kftt-14180",
+        "kftt:kftt-17148"
+      ]
     },
     {
       "id": "you-de-seemingly",
@@ -11644,7 +11946,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-76586",
+        "kftt:kftt-211273",
+        "kftt:kftt-220785",
+        "kftt:kftt-249088",
+        "kftt:kftt-253298"
+      ]
     },
     {
       "id": "zukume-nothing-but",
@@ -12498,7 +12806,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-14101",
+        "kftt:kftt-16094",
+        "kftt:kftt-76032",
+        "kftt:kftt-107820",
+        "kftt:kftt-110119"
+      ]
     },
     {
       "id": "ka-to-iu-to",
@@ -12808,7 +13122,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-10416",
+        "kftt:kftt-11907",
+        "kftt:kftt-73278",
+        "kftt:kftt-101898",
+        "kftt:kftt-118858"
+      ]
     },
     {
       "id": "dake-nara",
@@ -12850,7 +13170,10 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-77873",
+        "kftt:kftt-320600"
+      ]
     },
     {
       "id": "nai-nomi-narazu",
@@ -15215,7 +15538,11 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-242930",
+        "kftt:kftt-267127",
+        "kftt:kftt-341456"
+      ]
     },
     {
       "id": "kuse-ni-despite",
@@ -16845,7 +17172,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-91932"
+      ]
     },
     {
       "id": "ippou-de-one-hand",
@@ -16934,7 +17263,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-129050"
+      ]
     },
     {
       "id": "ue-ni-in-addition",
@@ -18523,7 +18854,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-118555"
+      ]
     },
     {
       "id": "kko-nai",
@@ -22628,7 +22961,9 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-116750"
+      ]
     },
     {
       "id": "nasaru-honorific",
@@ -22712,7 +23047,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-13195",
+        "kftt:kftt-76994",
+        "kftt:kftt-99730",
+        "kftt:kftt-116585",
+        "kftt:kftt-182108"
+      ]
     },
     {
       "id": "mousu-humble",
@@ -22754,7 +23095,13 @@
       "sources": [
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
-      "tatoeba_pattern_matches": []
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-6240",
+        "kftt:kftt-13731",
+        "kftt:kftt-13732",
+        "kftt:kftt-19187",
+        "kftt:kftt-22143"
+      ]
     },
     {
       "id": "itadaku-humble-verb",

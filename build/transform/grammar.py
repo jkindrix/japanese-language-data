@@ -44,6 +44,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 CURATED_DIR = REPO_ROOT / "grammar-curated"
 OUT = REPO_ROOT / "data" / "grammar" / "grammar.json"
 SENTENCES_JSON = REPO_ROOT / "data" / "corpus" / "sentences.json"
+KFTT_JSON = REPO_ROOT / "data" / "corpus" / "sentences-kftt.json"
 
 REQUIRED_FIELDS = {"id", "pattern", "level", "meaning_en", "formation", "examples", "review_status", "sources"}
 
@@ -329,21 +330,45 @@ def build() -> None:
         if not exact_index:
             print("[grammar]  Tatoeba linkage: skipped (sentences.json not built)")
 
-    # Pattern-based Tatoeba matching: search sentence corpus for sentences
+    # Pattern-based sentence matching: search sentence corpora for sentences
     # that contain the grammar pattern's Japanese core. This is a separate,
     # higher-coverage linkage mechanism — grammar examples are constructed
     # for pedagogy and rarely match corpus text, but pattern-string search
     # finds natural usage of the grammar in real sentences.
+    #
+    # First pass: Tatoeba (higher quality, curated).
+    # Second pass: KFTT (Wikipedia, more formal — catches N1 literary patterns
+    # that don't appear in Tatoeba's conversational corpus).
     pattern_match_count = 0
     pattern_total_matches = 0
     if SENTENCES_JSON.exists() and entries:
         sentences_data = json.loads(SENTENCES_JSON.read_text(encoding="utf-8"))
         sentence_tuples = [
-            (s["id"], s["japanese"])
+            (str(s["id"]), s["japanese"])
             for s in sentences_data.get("sentences", [])
         ]
         pattern_matches, pattern_match_count, pattern_total_matches = \
             _find_pattern_matches(entries, sentence_tuples)
+
+        # Second pass: KFTT for grammar points still unmatched
+        kftt_match_count = 0
+        if KFTT_JSON.exists():
+            kftt_data = json.loads(KFTT_JSON.read_text(encoding="utf-8"))
+            kftt_tuples = [
+                (str(s["id"]), s["japanese"])
+                for s in kftt_data.get("sentences", [])
+            ]
+            # Only match entries not already matched by Tatoeba
+            unmatched_entries = [e for e in entries if e["id"] not in pattern_matches]
+            if unmatched_entries:
+                kftt_matches, kftt_match_count, kftt_total = \
+                    _find_pattern_matches(unmatched_entries, kftt_tuples)
+                # Merge KFTT matches (prefix IDs with "kftt:" to distinguish source)
+                for gid, sids in kftt_matches.items():
+                    pattern_matches[gid] = [f"kftt:{sid}" for sid in sids]
+                pattern_match_count += kftt_match_count
+                pattern_total_matches += kftt_total
+
         # Store matches on each entry
         for entry in entries:
             entry["tatoeba_pattern_matches"] = pattern_matches.get(entry["id"], [])
@@ -351,6 +376,7 @@ def build() -> None:
             f"[grammar]  pattern matching: {pattern_match_count}/{len(entries)} "
             f"points matched ({100*pattern_match_count/len(entries):.1f}%), "
             f"{pattern_total_matches} total sentence matches"
+            + (f" (incl. {kftt_match_count} from KFTT)" if kftt_match_count else "")
         )
     else:
         for entry in entries:
