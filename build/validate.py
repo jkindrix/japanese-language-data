@@ -212,7 +212,7 @@ def _semantic_checks() -> list[tuple[str, str]]:
         k2w_mapping = k2w.get("mapping", {})
         w2k_mapping = w2k.get("mapping", {})
 
-        # Every word in k2w values should have that kanji in w2k
+        # Forward: every word in k2w values should have that kanji in w2k
         for kanji_char, word_ids in k2w_mapping.items():
             for wid in word_ids:
                 if wid in w2k_mapping:
@@ -224,6 +224,30 @@ def _semantic_checks() -> list[tuple[str, str]]:
                         ))
                         break  # one example is enough
 
+        # Reverse: every kanji in w2k values should have that word in k2w
+        for wid, kanji_chars in w2k_mapping.items():
+            for kanji_char in kanji_chars:
+                if kanji_char in k2w_mapping:
+                    if wid not in k2w_mapping[kanji_char]:
+                        failures.append((
+                            "w2k-k2w-asymmetry",
+                            f"word-to-kanji maps {wid}→{kanji_char} but "
+                            f"kanji-to-words does not map {kanji_char}→{wid}"
+                        ))
+                        break  # one example is enough
+
+    # --- Check 3b: w2k keys should be valid word IDs ---
+    if words_data and w2k:
+        word_ids = {w["id"] for w in words_data.get("words", [])}
+        w2k_keys = set(w2k.get("mapping", {}).keys())
+        orphan_words = w2k_keys - word_ids
+        if orphan_words:
+            failures.append((
+                "w2k-orphan-words",
+                f"word-to-kanji has {len(orphan_words)} keys not in words.json: "
+                f"{sorted(orphan_words)[:5]}..."
+            ))
+
     # --- Check 4: Determinism — sorted keys in index files ---
     if stroke_idx:
         chars = list(stroke_idx.get("characters", {}).keys())
@@ -234,13 +258,20 @@ def _semantic_checks() -> list[tuple[str, str]]:
                 "(non-deterministic build output)"
             ))
 
-    if k2w:
-        keys = list(k2w.get("mapping", {}).keys())
-        if keys != sorted(keys):
-            failures.append((
-                "k2w-sort",
-                "kanji-to-words.json mapping keys are not in sorted order"
-            ))
+    for name, data_obj, payload_key in [
+        ("k2w", k2w, "mapping"),
+        ("w2k", w2k, "mapping"),
+        ("w2s", w2s, "mapping"),
+        ("k2r", k2r, "mapping"),
+    ]:
+        if data_obj:
+            keys = list(data_obj.get(payload_key, {}).keys())
+            if keys != sorted(keys):
+                failures.append((
+                    f"{name}-sort",
+                    f"{name} mapping keys are not in sorted order "
+                    f"(non-deterministic build output)"
+                ))
 
     return failures
 
