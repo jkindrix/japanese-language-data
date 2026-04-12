@@ -147,6 +147,7 @@
     "data/enrichment/furigana.json": 28920,
     "data/enrichment/counter-words.json": 125,
     "data/enrichment/ateji.json": 239,
+    "data/enrichment/jukugo-compounds.json": 14350,
     "data/enrichment/jlpt-classifications.json": 11099,
     "data/enrichment/stroke-order-index.json": 13108,
     "data/grammar/grammar.json": 595,
@@ -187,7 +188,7 @@
     "Phase 4 candidates: post-2022 Wiktionary pitch accent fill, Aozora Bunko literary corpus, Mozilla Common Voice transcripts (CC0). See docs/phase4-candidates.md.",
     "Increase direct unit test coverage toward 65%+ (currently 51%; fail-under at 50%).",
     "Implement word-to-grammar cross-reference (code scaffolded in cross_links.py but grammar examples lack word_ids — needs text-matching approach).",
-    "Add new derived data: jukugo compound index.",
+    "Evaluate remaining Phase 4 candidates: Wiktionary pitch accent, Aozora Bunko, Wikipedia frequency derivation.",
     "Add export format: Anki .apkg."
   ]
 }

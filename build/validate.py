@@ -57,6 +57,7 @@ SCHEMA_MAP: dict[str, str] = {
     "data/cross-refs/kanji-to-sentences.json": "cross-refs.schema.json",
     "data/enrichment/counter-words.json": "counter-words.schema.json",
     "data/enrichment/ateji.json": "ateji.schema.json",
+    "data/enrichment/jukugo-compounds.json": "jukugo.schema.json",
     "data/cross-refs/word-to-grammar.json": "cross-refs.schema.json",
 }
 

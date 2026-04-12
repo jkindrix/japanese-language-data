@@ -225,6 +225,7 @@ EXPECTED_SCHEMAS = {
     "furigana.schema.json",
     "grammar.schema.json",
     "jlpt.schema.json",
+    "jukugo.schema.json",
     "kana.schema.json",
     "kanji.schema.json",
     "manifest.schema.json",

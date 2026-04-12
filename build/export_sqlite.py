@@ -157,6 +157,17 @@ def _create_schema(conn: sqlite3.Connection) -> None:
             jlpt TEXT
         );
 
+        CREATE TABLE IF NOT EXISTS jukugo_compounds (
+            word_id TEXT,
+            text TEXT,
+            reading TEXT,
+            meaning TEXT,
+            kanji_count INTEGER,
+            kanji_sequence_json TEXT,
+            components_json TEXT,
+            jlpt TEXT
+        );
+
         CREATE TABLE IF NOT EXISTS ateji (
             word_id TEXT,
             text TEXT,
@@ -200,6 +211,8 @@ def _create_schema(conn: sqlite3.Connection) -> None:
         CREATE INDEX IF NOT EXISTS idx_jlpt_kind ON jlpt_classifications(kind);
         CREATE INDEX IF NOT EXISTS idx_ctr_text ON counter_words(text);
         CREATE INDEX IF NOT EXISTS idx_ateji_text ON ateji(text);
+        CREATE INDEX IF NOT EXISTS idx_jukugo_text ON jukugo_compounds(text);
+        CREATE INDEX IF NOT EXISTS idx_jukugo_jlpt ON jukugo_compounds(jlpt);
     """)
 
 
@@ -395,6 +408,20 @@ def export() -> None:
         ]
         conn.executemany("INSERT INTO jlpt_classifications VALUES (?,?,?,?,?,?)", rows)
         print(f"[sqlite]   jlpt classifications: {len(rows):,}")
+
+    # Jukugo compounds
+    jukugo_data = _load_json(DATA_DIR / "enrichment" / "jukugo-compounds.json")
+    if jukugo_data:
+        rows = [
+            (e.get("word_id", ""), e.get("text", ""), e.get("reading", ""),
+             e.get("meaning", ""), e.get("kanji_count", 0),
+             json.dumps(e.get("kanji_sequence", []), ensure_ascii=False),
+             json.dumps(e.get("components", []), ensure_ascii=False),
+             e.get("jlpt_waller"))
+            for e in jukugo_data.get("compounds", [])
+        ]
+        conn.executemany("INSERT INTO jukugo_compounds VALUES (?,?,?,?,?,?,?,?)", rows)
+        print(f"[sqlite]   jukugo compounds: {len(rows):,}")
 
     # Counter words
     ctr_data = _load_json(DATA_DIR / "enrichment" / "counter-words.json")

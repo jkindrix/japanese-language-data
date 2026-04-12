@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/jukugo.schema.json",
+  "title": "Jukugo Compounds",
+  "description": "Multi-kanji compound words (jukugo) extracted from the common JMdict vocabulary with per-character meaning decomposition from KANJIDIC2. Enables compound-based kanji study: given a kanji, find all compounds that use it.",
+  "schemaVersion": "0.9.0",
+  "type": "object",
+  "required": ["metadata", "compounds"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["source", "license", "generated", "count", "field_notes"],
+      "properties": {
+        "source": { "type": "string" },
+        "source_url": { "type": "string", "format": "uri" },
+        "license": { "type": "string" },
+        "generated": { "type": "string", "format": "date" },
+        "count": { "type": "integer", "minimum": 0 },
+        "field_notes": { "type": "object", "additionalProperties": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "compounds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["word_id", "text", "reading", "meaning", "kanji_count", "kanji_sequence", "components"],
+        "properties": {
+          "word_id": { "type": "string" },
+          "text": { "type": "string" },
+          "reading": { "type": "string" },
+          "meaning": { "type": "string" },
+          "kanji_count": { "type": "integer", "minimum": 2 },
+          "kanji_sequence": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 2
+          },
+          "components": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["kanji", "meanings"],
+              "properties": {
+                "kanji": { "type": "string" },
+                "meanings": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              },
+              "additionalProperties": false
+            },
+            "minItems": 2
+          },
+          "jlpt_waller": { "type": ["string", "null"], "enum": ["N1", "N2", "N3", "N4", "N5", null] }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

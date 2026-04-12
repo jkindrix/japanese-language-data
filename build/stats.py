@@ -60,6 +60,7 @@ TARGET_FILES: list[tuple[str, str]] = [
     ("data/enrichment/furigana.json", "entries"),
     ("data/enrichment/counter-words.json", "counter_words"),
     ("data/enrichment/ateji.json", "entries"),
+    ("data/enrichment/jukugo-compounds.json", "compounds"),
     ("data/enrichment/jlpt-classifications.json", "classifications"),
     ("data/enrichment/stroke-order-index.json", "characters"),
     ("data/grammar/grammar.json", "grammar_points"),

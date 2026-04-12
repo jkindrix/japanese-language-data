@@ -55,6 +55,7 @@ STAGE_DEPENDENCIES: dict[str, set[str]] = {
     "frequency_subtitles": {"words"},
     "counters": {"words"},
     "ateji": {"words"},
+    "jukugo": {"words", "kanji"},
     "grammar": {"sentences"},
 }
 
@@ -122,6 +123,7 @@ def _build_stages() -> list[Stage]:
         frequency,
         frequency_subtitles,
         grammar,
+        jukugo,
         jlpt,
         kana,
         kanji,
@@ -160,6 +162,7 @@ def _build_stages() -> list[Stage]:
         Stage("frequency_subtitles", "Word frequency from OpenSubtitles 2018 media corpus.", frequency_subtitles.build, phase=4),
         Stage("counters", "Counter-word (josushi) index extracted from JMdict 'ctr' POS tag.", counters.build, phase=4),
         Stage("ateji", "Ateji (phonetic kanji spelling) index from JMdict kanji tags.", ateji.build, phase=4),
+        Stage("jukugo", "Multi-kanji compound (jukugo) index with per-character decomposition.", jukugo.build, phase=4),
         # ---- Grammar (Phase 3 — must run before cross_links for word-to-grammar index) ----
         Stage("grammar", "Curated Japanese grammar dataset (original, from grammar-curated/).", grammar.build, phase=3),
         Stage("expressions", "Lexicalized grammar patterns extracted from JMdict 'exp' entries.", expressions.build, phase=3),

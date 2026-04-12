@@ -544,6 +544,7 @@ _DATA_FILES = [
     "data/enrichment/furigana.json",
     "data/enrichment/counter-words.json",
     "data/enrichment/ateji.json",
+    "data/enrichment/jukugo-compounds.json",
     "data/enrichment/jlpt-classifications.json",
     "data/enrichment/stroke-order-index.json",
     "data/grammar/grammar.json",

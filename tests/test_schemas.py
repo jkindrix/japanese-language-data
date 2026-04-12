@@ -65,6 +65,7 @@ def test_all_schemas_are_present() -> None:
         "furigana.schema.json",
         "grammar.schema.json",
         "jlpt.schema.json",
+        "jukugo.schema.json",
         "kana.schema.json",
         "kanji.schema.json",
         "manifest.schema.json",
