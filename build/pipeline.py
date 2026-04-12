@@ -54,6 +54,7 @@ STAGE_DEPENDENCIES: dict[str, set[str]] = {
     "cross_links": {"kanji", "words", "radicals", "sentences", "grammar"},
     "frequency_subtitles": {"words"},
     "frequency_web": {"words"},
+    "frequency_wikipedia": {"words", "kftt"},
     "counters": {"words"},
     "ateji": {"words"},
     "jukugo": {"words", "kanji"},
@@ -124,6 +125,7 @@ def _build_stages() -> list[Stage]:
         frequency,
         frequency_subtitles,
         frequency_web,
+        frequency_wikipedia,
         grammar,
         jukugo,
         jlpt,
@@ -163,6 +165,7 @@ def _build_stages() -> list[Stage]:
         # ---- Enrichment that depends on core data ----
         Stage("frequency_subtitles", "Word frequency from OpenSubtitles 2018 media corpus.", frequency_subtitles.build, phase=4),
         Stage("frequency_web", "Word frequency from Leeds University web corpus (~15K lemmas).", frequency_web.build, phase=4),
+        Stage("frequency_wikipedia", "Word frequency from MeCab tokenization of KFTT Wikipedia corpus.", frequency_wikipedia.build, phase=4),
         Stage("counters", "Counter-word (josushi) index extracted from JMdict 'ctr' POS tag.", counters.build, phase=4),
         Stage("ateji", "Ateji (phonetic kanji spelling) index from JMdict kanji tags.", ateji.build, phase=4),
         Stage("jukugo", "Multi-kanji compound (jukugo) index with per-character decomposition.", jukugo.build, phase=4),

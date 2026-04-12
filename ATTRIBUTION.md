@@ -169,6 +169,36 @@ These contributors have granted permission for inclusion under the broader EDRDG
 
 > Parallel sentences from the Kyoto Free Translation Task (KFTT) (https://www.phontron.com/kftt/), derived from NICT's Japanese-English Bilingual Corpus of Wikipedia's Kyoto Articles, licensed under CC-BY-SA 3.0.
 
+### Leeds University Internet Japanese Word Frequency List
+
+Web-corpus word frequency data from the Leeds University Centre for Translation Studies.
+
+**Author**: Serge Sharoff.
+
+**License**: Creative Commons Attribution (CC-BY).
+
+**Citation**: Sharoff, S. (2006) "Creating general-purpose corpora using automated search engine queries." In M. Baroni and S. Bernardini (eds.) *WaCky! Working papers on the Web as Corpus*, Gedit, Bologna.
+
+**Original URL**: http://corpus.leeds.ac.uk/frqc/internet-jp.num (server offline; pinned via Wayback Machine).
+
+**Required attribution wording**:
+
+> Web-corpus word frequency data from the Leeds University Internet Japanese Word Frequency List, compiled by Serge Sharoff, CC-BY. See http://corpus.leeds.ac.uk/
+
+### Japanese Wiktionary pitch accent data
+
+Pitch accent data extracted from the Japanese-edition Wiktionary (ja.wiktionary.org) via the kaikki.org/wiktextract pre-processed JSONL.
+
+**Source**: Wikimedia Foundation contributors to ja.wiktionary.org, extracted by wiktextract (Tatu Ylonen).
+
+**License**: Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA 4.0).
+
+**URLs**: https://kaikki.org/dictionary/downloads/ja/ (extraction), https://ja.wiktionary.org/ (source)
+
+**Required attribution wording**:
+
+> Pitch accent data from Japanese Wiktionary (ja.wiktionary.org), extracted via wiktextract (https://github.com/tatuylonen/wiktextract). Content is CC-BY-SA 4.0 per Wikimedia Foundation terms.
+
 ---
 
 ## Tooling and intermediate transformations
@@ -219,6 +249,10 @@ We ingest JMdict, JMnedict, KANJIDIC2, KRADFILE, and RADKFILE via the pre-parsed
 >   see https://github.com/Doublevil/JmdictFurigana
 > - KFTT parallel corpus by Neubig et al., CC-BY-SA 3.0;
 >   see https://www.phontron.com/kftt/
+> - Web-corpus word frequency from Leeds University, CC-BY;
+>   see http://corpus.leeds.ac.uk/
+> - Pitch accent supplement from Japanese Wiktionary via wiktextract, CC-BY-SA 4.0;
+>   see https://ja.wiktionary.org/
 > - JSON distribution tooling from scriptin/jmdict-simplified;
 >   see https://github.com/scriptin/jmdict-simplified
 >

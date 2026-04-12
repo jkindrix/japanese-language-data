@@ -46,11 +46,11 @@ Japanese has substantial dialect variation (Kansai, Tohoku, Kyushu, Okinawan, et
 
 ## Phonology and pronunciation
 
-### Pitch accent for post-2022 vocabulary (DEFERRED)
+### Pitch accent for post-2022 vocabulary (PARTIALLY ADDRESSED)
 
-Kanjium's pitch data was last substantially updated around 2022. Vocabulary added to Japanese after that — new loanwords, media-generated slang, technical terms — will not have pitch accent entries in our dataset.
+Kanjium's pitch data was last substantially updated around 2022. A supplementary extraction from Japanese Wiktionary (`data/enrichment/pitch-accent-wiktionary.json`, 7,378 entries) fills part of the gap — these are words with pitch accent data on ja.wiktionary.org that are not in Kanjium. Combined coverage: 131,389 entries (124,011 Kanjium + 7,378 Wiktionary).
 
-A Phase 4 candidate is scraping Wiktionary or OJAD for newer-word pitch accents to fill the gap. Until then, consumers of this dataset should assume that very recent vocabulary has no pitch marking available.
+The remaining gap: vocabulary that has no pitch accent entry in either Kanjium or Wiktionary. This primarily affects very recent loanwords and niche technical terms. Consumers should still handle the "no pitch data" case gracefully.
 
 ### Pitch accent for conjugated verb forms (EFFORT)
 

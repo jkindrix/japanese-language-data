@@ -300,6 +300,38 @@ The `freq` field in KANJIDIC2 entries (ingested via jmdict-simplified) provides 
 
 ---
 
+## Leeds University Internet Japanese Word Frequency List
+
+- **What it is**: A frequency-ranked list of ~15,000 Japanese lemmas derived from a 253-million-token web-crawled corpus, tokenized with ChaSen.
+- **Where we use it**: `data/enrichment/frequency-web.json` — web-text register word frequency.
+- **License**: Creative Commons Attribution (CC-BY). Citation: Sharoff, S. (2006) "Creating general-purpose corpora using automated search engine queries."
+- **Pinned URL**: The original server (corpus.leeds.ac.uk) is down. Pinned via Wayback Machine: `https://web.archive.org/web/2023/http://corpus.leeds.ac.uk/frqc/internet-jp.num`
+- **SHA256**: `d2911d7a3297b0a57893cb796cd15f3d8a2cea5208ed222b9f9fa6f14fed055b`
+- **Transform**: `build/transform/frequency_web.py` parses the rank/ipm/lemma format, matches against words.json vocabulary, and emits matched entries ranked by frequency.
+
+---
+
+## Japanese Wiktionary pitch accent (via kaikki.org/wiktextract)
+
+- **What it is**: Pitch accent data extracted from the Japanese-edition Wiktionary (ja.wiktionary.org), pre-processed by the wiktextract project into structured JSONL.
+- **Where we use it**: `data/enrichment/pitch-accent-wiktionary.json` — supplementary pitch accent for 7,378 words not in Kanjium.
+- **License**: CC-BY-SA 4.0 (Wikimedia Foundation).
+- **Pinning**: The kaikki.org JSONL is updated weekly and not version-pinnable. The committed JSON file IS the version pin — regeneration requires re-downloading and re-extracting. Extraction script: `.tmp/extract_wikt_pitch.py` (ephemeral). Extraction date recorded in metadata.
+- **Methodology**: Accent type tags (Heiban, Atamadaka, Nakadaka, Odaka) from Tokyo standard pronunciation are converted to numeric mora positions. Entries already in Kanjium are excluded.
+
+---
+
+## Wikipedia-derived word frequency (via KFTT + MeCab)
+
+- **What it is**: Word frequency derived from MeCab tokenization of the KFTT corpus (443,849 Wikipedia Kyoto article sentences).
+- **Where we use it**: `data/enrichment/frequency-wikipedia.json` — formal/encyclopedic written Japanese frequency.
+- **License**: CC-BY-SA 3.0 (KFTT) / CC-BY-SA 4.0 (Wikipedia source).
+- **Dependencies**: Requires `mecab-python3` and `unidic-lite` (in requirements.txt).
+- **Methodology**: Each sentence is tokenized with MeCab/UniDic. Lemmas are counted. Particles and auxiliaries are excluded. Proper nouns with katakana UniDic lemmas fall back to kanji surface form for matching. Only entries matching words.json vocabulary are emitted.
+- **Transform**: `build/transform/frequency_wikipedia.py`.
+
+---
+
 ## Pinning strategy
 
 Every upstream source has two pinning components:

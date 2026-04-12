@@ -280,7 +280,7 @@ Every release is tagged in git (`v0.1.0`, etc.) and each tag has a corresponding
 - **Phase 1**: Core foundation — kanji, words, names (optional), radicals, sentences, kana, and their cross-links. First build that produces usable data. Target version 0.1.0.
 - **Phase 2**: Enrichment — stroke order, pitch accent, frequency, JLPT. Cross-link expansion. Target version 0.2.0.
 - **Phase 3**: Grammar dataset — original curation, JMdict expression extraction, conjugation generation. This is the original-work phase. Target version 0.3.0 for initial release, with incremental patch versions as coverage fills in.
-- **Phase 4**: Evaluated after Phase 3. See `docs/phase4-candidates.md`.
+- **Phase 4** (active): Supplementary data sources and extended coverage. Delivered: KFTT corpus (443,849 sentences), JmdictFurigana (28,920 entries), OpenSubtitles frequency (8,598 words), Leeds web frequency (11,038 words), Wikipedia frequency (14,553 words), Wiktionary pitch accent (7,378 entries), counter-words (125), ateji (239), jukugo compounds (14,350), Anki .apkg export (36,822 cards). Pipelines ready: Common Voice JA transcripts, Aozora Bunko curated corpus. See `docs/phase4-candidates.md`.
 - **1.0.0**: Tagged when Phases 1–3 have stable schemas, complete core coverage, and the grammar dataset has reached its first stable milestone (N5 and N4 fully covered with native-speaker review, at minimum).
 
 ---
@@ -305,13 +305,15 @@ Maps every word ID to the list of Tatoeba sentence IDs that are confirmed exampl
 
 Maps every kanji to its component radicals using KRADFILE. Used for radical-based lookup and for teaching kanji composition.
 
-Future cross-references (Phase 3+) may include:
+Delivered cross-references beyond the core set:
+
+- `word-to-grammar.json`: word → grammar patterns that reference it in examples (1,577 words, delivered in Phase 3)
+- `reading-to-words.json`: kana reading → word IDs (IME-style reverse lookup, 24,927 readings)
+
+Future cross-references may include:
 
 - `grammar-to-sentences.json`: grammar pattern → example sentence IDs
-- `word-to-grammar.json`: word → grammar patterns that govern or affect it
 - `kanji-to-compounds.json`: kanji → list of multi-kanji compounds containing it
-
-Each new cross-reference triggers a minor version bump.
 
 ---
 

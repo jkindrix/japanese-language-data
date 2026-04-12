@@ -49,6 +49,9 @@ As of v0.8.0 (see `manifest.json` for live counts), the `data/` directory contai
 | `data/enrichment/frequency-modern.json` | JPDB (license-blocked) | — | not built | Modern media frequency. Blocked on license clarification — see `docs/phase4-candidates.md`. |
 | `data/enrichment/frequency-corpus.json` | Derived from sentences.json | 14,647 | ✓ | Corpus-derived word frequency from Tatoeba. Surface-form matching; suitable for relative ranking. |
 | `data/enrichment/frequency-subtitles.json` | OpenSubtitles 2018 via FrequencyWords | 8,598 | ✓ | Spoken-media word frequency from movie/TV/anime subtitles. Matched against JMdict vocabulary. |
+| `data/enrichment/frequency-web.json` | Leeds University web corpus | 11,038 | ✓ | Web-text word frequency from a 253M-token crawl. Matched against JMdict vocabulary. CC-BY. |
+| `data/enrichment/frequency-wikipedia.json` | KFTT corpus + MeCab | 14,553 | ✓ | Formal/encyclopedic word frequency from Wikipedia Kyoto articles. MeCab/UniDic tokenized. |
+| `data/enrichment/pitch-accent-wiktionary.json` | Japanese Wiktionary via kaikki.org | 7,378 | ✓ | Supplementary pitch accent data for words not in Kanjium (post-2022 gap fill). CC-BY-SA 4.0. |
 | `data/enrichment/furigana.json` | JmdictFurigana (Doublevil) | 28,920 | ✓ | Per-character reading alignment (ruby text). Maps kanji→reading segments within compound words. |
 | `data/enrichment/jlpt-classifications.json` | Waller JLPT lists (tanos.co.uk) | 11,099 | ✓ | Community-consensus JLPT N5–N1 level for vocabulary, kanji, and grammar |
 | `data/enrichment/counter-words.json` | JMdict `ctr` POS entries via words.json | 125 | ✓ | Counter-word (josushi) index for counter-word study and lookup |

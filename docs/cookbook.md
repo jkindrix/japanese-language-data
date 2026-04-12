@@ -338,3 +338,64 @@ print(html)  # <ruby>食<rt>た</rt></ruby>べる
 ```bash
 jq '.entries[] | select(.text == "食べる")' data/enrichment/furigana.json
 ```
+
+---
+
+## Multi-source frequency comparison
+
+### SQLite: compare word rank across 4 frequency sources
+
+```sql
+-- Compare ranks for a word across all frequency sources
+SELECT 'newspaper' AS source, rank, count FROM frequency_corpus WHERE text = '食べる'
+UNION ALL
+SELECT 'subtitles', rank, count FROM frequency_subtitles WHERE text = '食べる'
+UNION ALL
+SELECT 'web', rank, count FROM frequency_web WHERE text = '食べる'
+UNION ALL
+SELECT 'wikipedia', rank, count FROM frequency_wikipedia WHERE text = '食べる';
+```
+
+### SQLite: words in all 4 frequency sources
+
+```sql
+-- Words that appear in all four frequency rankings (high-confidence common words)
+SELECT fw.text, fw.reading,
+       fw.rank AS web_rank,
+       fs.rank AS sub_rank,
+       fc.rank AS corpus_rank,
+       fp.rank AS wiki_rank
+FROM frequency_web fw
+JOIN frequency_subtitles fs ON fw.text = fs.text
+JOIN frequency_corpus fc ON fw.text = fc.text
+JOIN frequency_wikipedia fp ON fw.text = fp.text
+ORDER BY fw.rank
+LIMIT 20;
+```
+
+---
+
+## Wiktionary pitch accent supplement
+
+### Python: combined pitch accent lookup
+
+```python
+import json
+
+# Load both pitch sources
+with open("data/enrichment/pitch-accent.json") as f:
+    kanjium = {e["word"]: e for e in json.load(f)["entries"]}
+
+with open("data/enrichment/pitch-accent-wiktionary.json") as f:
+    wiktionary = {e["word"]: e for e in json.load(f)["entries"]}
+
+def get_pitch(word):
+    """Look up pitch accent, checking Kanjium first, then Wiktionary."""
+    entry = kanjium.get(word) or wiktionary.get(word)
+    if entry:
+        return entry["pitch_positions"]
+    return None
+
+print(get_pitch("食べる"))  # [2] — from Kanjium
+print(get_pitch("AIDS"))   # [1] — from Wiktionary (not in Kanjium)
+```
