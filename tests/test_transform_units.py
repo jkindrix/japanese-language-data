@@ -4414,3 +4414,35 @@ def test_common_voice_missing_source(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(mod, "SOURCE_TSV", tmp_path / "nope.tsv")
     with pytest.raises(FileNotFoundError, match="Common Voice"):
         mod.build()
+
+
+# ---------------------------------------------------------------------------
+# aozora — text extraction helpers
+# ---------------------------------------------------------------------------
+
+def test_aozora_text_extractor() -> None:
+    from build.transform.aozora import _TextExtractor
+    html = (
+        '<body>'
+        '<p>吾輩は<ruby><rb>猫</rb><rp>(</rp><rt>ねこ</rt><rp>)</rp></ruby>である。</p>'
+        '<p>名前はまだ無い。</p>'
+        '［＃注記テスト］'
+        '</body>'
+    )
+    ext = _TextExtractor()
+    ext.feed(html)
+    text = ext.get_text()
+    assert "\u543e\u8f29\u306f\u732b\u3067\u3042\u308b\u3002" in text
+    assert "ねこ" not in text  # ruby reading stripped
+    assert "注記テスト" not in text  # editorial notes stripped
+    assert "名前はまだ無い。" in text
+
+
+def test_aozora_ruby_extractor() -> None:
+    from build.transform.aozora import _RubyExtractor
+    html = '<ruby><rb>食</rb><rt>た</rt></ruby>べる'
+    ext = _RubyExtractor()
+    ext.feed(html)
+    pairs = ext.get_pairs()
+    assert len(pairs) == 1
+    assert pairs[0] == ("食", "た")

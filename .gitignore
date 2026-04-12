@@ -38,6 +38,7 @@ sources/kftt/
 sources/opensubtitles/
 sources/leeds/
 sources/common-voice/
+sources/aozora/
 sources/jmdict-furigana/
 sources/*.tgz
 sources/*.zip
