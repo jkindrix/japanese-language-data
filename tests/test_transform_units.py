@@ -4667,3 +4667,122 @@ def test_validate_missing_data_file_skipped(tmp_path: Path, monkeypatch) -> None
     errors = mod.validate_all()
     # Should return 0 errors (files don't exist, so they're skipped)
     assert errors == 0
+
+
+# ---------------------------------------------------------------------------
+# pipeline — _validate_stage_ordering, _build_stages
+# ---------------------------------------------------------------------------
+
+def test_pipeline_validate_stage_ordering_good() -> None:
+    """Current stage list passes ordering validation."""
+    from build.pipeline import _build_stages, _validate_stage_ordering
+    stages = _build_stages()
+    # Should not raise
+    _validate_stage_ordering(stages)
+
+
+def test_pipeline_validate_stage_ordering_bad() -> None:
+    """Out-of-order stages are rejected."""
+    from build.pipeline import _validate_stage_ordering, Stage
+    stages = [
+        Stage("cross_links", "xrefs", lambda: None, phase=2),
+        Stage("words", "vocab", lambda: None, phase=1),  # cross_links depends on words
+    ]
+    with pytest.raises(ValueError, match="ordering violation"):
+        _validate_stage_ordering(stages)
+
+
+def test_pipeline_build_stages_returns_all() -> None:
+    """_build_stages returns a non-empty list with expected stages."""
+    from build.pipeline import _build_stages
+    stages = _build_stages()
+    names = [s.name for s in stages]
+    assert len(stages) >= 15
+    assert "words" in names
+    assert "kanji" in names
+    assert "grammar" in names
+    assert "frequency_wikipedia" in names
+    assert "frequency_web" in names
+
+
+# ---------------------------------------------------------------------------
+# check_upstream — main() with mock network
+# ---------------------------------------------------------------------------
+
+def test_check_upstream_main_with_mock_source(tmp_path: Path, monkeypatch) -> None:
+    """main() processes sources and prints status."""
+    from build import check_upstream as mod
+
+    manifest = {"sources": {
+        "jmdict-examples-eng": {"url": "https://github.com/scriptin/jmdict-simplified/releases/download/3.6.2/file.tgz"},
+    }}
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    monkeypatch.setattr(mod, "MANIFEST_PATH", manifest_path)
+
+    # Mock the network call to avoid actual API hits
+    monkeypatch.setattr(mod, "_get_latest_release", lambda owner_repo: "3.6.2")
+
+    result = mod.main()
+    assert result == 0
+
+
+def test_check_upstream_main_detects_update(tmp_path: Path, monkeypatch, capsys) -> None:
+    """main() reports when a newer version is available."""
+    from build import check_upstream as mod
+
+    manifest = {"sources": {
+        "jmdict-examples-eng": {"url": "https://github.com/scriptin/jmdict-simplified/releases/download/3.6.1/file.tgz"},
+    }}
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    monkeypatch.setattr(mod, "MANIFEST_PATH", manifest_path)
+    monkeypatch.setattr(mod, "_get_latest_release", lambda owner_repo: "3.6.2")
+
+    mod.main()
+    captured = capsys.readouterr()
+    assert "[!!]" in captured.out
+    assert "3.6.2" in captured.out
+
+
+# ---------------------------------------------------------------------------
+# kana — variant builder functions
+# ---------------------------------------------------------------------------
+
+def test_kana_build_basic_count() -> None:
+    from build.transform.kana import _build_basic
+    entries = _build_basic()
+    assert len(entries) == 92  # 46 hiragana + 46 katakana
+
+
+def test_kana_build_dakuten_count() -> None:
+    from build.transform.kana import _build_dakuten
+    entries = _build_dakuten()
+    assert len(entries) == 40  # 20 dakuten + 20 handakuten pairs across hi/ka
+
+
+def test_kana_build_handakuten_count() -> None:
+    from build.transform.kana import _build_handakuten
+    entries = _build_handakuten()
+    assert len(entries) >= 5  # p-row in hiragana + katakana
+
+
+def test_kana_build_sokuon_count() -> None:
+    from build.transform.kana import _build_sokuon
+    entries = _build_sokuon()
+    assert len(entries) == 2  # っ and ッ
+
+
+def test_kana_build_archaic() -> None:
+    from build.transform.kana import _build_archaic
+    entries = _build_archaic()
+    chars = [e["character"] for e in entries]
+    assert "ゐ" in chars
+    assert "ゑ" in chars
+
+
+def test_kana_build_long_vowel() -> None:
+    from build.transform.kana import _build_long_vowel
+    entries = _build_long_vowel()
+    assert len(entries) == 1
+    assert entries[0]["character"] == "ー"
