@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Project documentation
+    url: https://github.com/jkindrix/japanese-language-data/tree/main/docs
+    about: Read the architecture, gaps, contributing, and build docs before opening an issue.
+  - name: Grammar review pipeline (docs/contributing.md)
+    url: https://github.com/jkindrix/japanese-language-data/blob/main/docs/contributing.md
+    about: If you're a native speaker interested in reviewing grammar entries, start here.
