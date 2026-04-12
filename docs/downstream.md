@@ -9,11 +9,12 @@ This guide is for application developers who want to use the Japanese Language D
 | Use case | Recommended files |
 |---|---|
 | **SRS / flashcard app** | `words.json` + `kanji.json` + `jlpt-classifications.json` + `pitch-accent.json` + `sentences.json` + cross-refs |
-| **Dictionary lookup** | `words.json` (or `words-full.json` for rare words) + `kanji.json` + `pitch-accent.json` |
+| **Dictionary lookup** | `words.json` (or `words-full.json` for rare words) + `kanji.json` + `pitch-accent.json` + `furigana.json` |
 | **Grammar study** | `grammar.json` + `jlpt-classifications.json` |
-| **Kanji study** | `kanji.json` + `kanji-joyo.json` + `radicals.json` + `stroke-order/` SVGs + cross-refs |
+| **Kanji study** | `kanji.json` + `kanji-joyo.json` + `radicals.json` + `stroke-order/` SVGs + `radical-to-kanji.json` |
 | **Text analysis / parsing** | `words-full.json` + `conjugations.json` + `expressions.json` |
-| **Reading aid** | `words.json` + `pitch-accent.json` + `kanji-to-words.json` + `word-to-sentences.json` |
+| **Reading aid** | `words.json` + `pitch-accent.json` + `furigana.json` + `kanji-to-words.json` + `word-to-sentences.json` |
+| **SQL queries** | `dist/japanese-language-data.sqlite` — single file with all tables, build via `just export-sqlite` |
 
 All files are in `data/`. See the [data inventory in README.md](../README.md#data-inventory) for complete descriptions.
 

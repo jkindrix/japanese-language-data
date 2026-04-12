@@ -2,7 +2,7 @@
 
 **A unified, cross-linked, reproducible, openly-licensed dataset for learning Japanese.**
 
-Status: **Phase 4 — Active, two candidates delivered.** All files from Phases 1–3 plus: (1) Wikipedia-sourced Kangxi radical meanings and numbers (v0.4.0), expanded in v0.7.1 by a curated variant-to-Kangxi alias table that bridges Japanese-dictionary-specific variants (shinjitai, radical-in-compound forms, katakana-shaped markers) to their Kangxi parents — radical coverage is now **242 of 253 (95.7%)**. (2) A hand-curated grammar dataset that grew from 81 entries to **595 entries** across all five JLPT levels (v0.5.0–v0.7.0), with community-standard completeness on N3/N2/N1/N4 and near-complete N5. Every grammar entry remains `review_status: draft` — native-speaker review is the most important remaining work. Other Phase 4 candidates (JPDB modern frequency, classical handwriting, audio corpora) remain pending — see `docs/phase4-candidates.md`.
+Status: **Phase 4 — Active.** Core data stable across Phases 1–3. Phase 4 deliverables: Kangxi radicals (242/253, 95.7%), 595 hand-curated grammar points (all JLPT levels, 88.1% with sentence matches), KFTT parallel corpus (443,849 sentences), JmdictFurigana integration (28,920 entries), corpus-derived word frequency (14,647 ranked), 3 new cross-reference indices. Every grammar entry remains `review_status: draft` — native-speaker review is the most important remaining work. See `docs/phase4-candidates.md` for pending candidates.
 
 ---
 
@@ -23,7 +23,7 @@ This repository assembles the puzzle once, commits the result, and provides a re
 
 ## Data inventory
 
-As of v0.7.1 (see `manifest.json` for live counts), the `data/` directory contains:
+As of v0.9.0 (see `manifest.json` for live counts), the `data/` directory contains:
 
 ### Core
 
@@ -33,7 +33,7 @@ As of v0.7.1 (see `manifest.json` for live counts), the `data/` directory contai
 | `data/core/kanji.json` | KANJIDIC2 (via jmdict-simplified) | 13,108 | ✓ | Full KANJIDIC2 set: readings, meanings, stroke count, grade, JLPT, frequency, radicals |
 | `data/core/kanji-joyo.json` | Derived view of `kanji.json` | 2,136 | ✓ | Jōyō subset (grades 1–6 + 8, 2010 MEXT revision) |
 | `data/core/kanji-jinmeiyo.json` | Derived view of `kanji.json` | 863 | ✓ | Jinmeiyō kanji (grades 9–10, personal-name use) |
-| `data/core/words.json` | JMdict-examples (via jmdict-simplified) | 22,580 | ✓ | **Common-only subset** — entries whose kanji or kana writings carry JMdict priority markers (`news1`/`ichi1`/`spec1`/`spec2`/`gai1`). This is the primary committed file. |
+| `data/core/words.json` | JMdict-examples (via jmdict-simplified) | 23,119 | ✓ | **Common-only subset** — entries whose kanji or kana writings carry JMdict priority markers (`news1`/`ichi1`/`spec1`/`spec2`/`gai1`) plus JLPT-listed words. This is the primary committed file. |
 | `data/core/words-full.json` | JMdict-examples (via jmdict-simplified) | 216,173 | gitignored | Full JMdict (no `common` filter) including archaic, rare, specialized, and dialectal vocabulary. ~150 MB uncompressed; rebuilt on demand by `just build`. |
 | `data/core/radicals.json` | KRADFILE + RADKFILE + Wikipedia (Kangxi) | 253 | ✓ | Radical → kanji and kanji → radicals. 242/253 (95.7%) have English meanings and Kangxi numbers from Wikipedia + curated alias table. |
 | `data/optional/names.json` | JMnedict (via jmdict-simplified) | ~720,000 | gitignored | Proper nouns. Built on demand with `just build-names`; not committed due to size. |
@@ -47,6 +47,8 @@ As of v0.7.1 (see `manifest.json` for live counts), the `data/` directory contai
 | `data/enrichment/pitch-accent.json` | Kanjium `accents.txt` | 124,011 | ✓ | Word → pitch accent mora positions |
 | `data/enrichment/frequency-newspaper.json` | KANJIDIC2 | 2,501 | ✓ | Newspaper frequency rank (kanji) |
 | `data/enrichment/frequency-modern.json` | JPDB (license-blocked) | — | not built | Modern media frequency. Blocked on license clarification — see `docs/phase4-candidates.md`. |
+| `data/enrichment/frequency-corpus.json` | Derived from sentences.json | 14,647 | ✓ | Corpus-derived word frequency from Tatoeba. Surface-form matching; suitable for relative ranking. |
+| `data/enrichment/furigana.json` | JmdictFurigana (Doublevil) | 28,920 | ✓ | Per-character reading alignment (ruby text). Maps kanji→reading segments within compound words. |
 | `data/enrichment/jlpt-classifications.json` | Waller JLPT lists (tanos.co.uk) | 11,099 | ✓ | Community-consensus JLPT N5–N1 level for vocabulary, kanji, and grammar |
 
 ### Corpus
@@ -54,6 +56,7 @@ As of v0.7.1 (see `manifest.json` for live counts), the `data/` directory contai
 | File | Source(s) | Count | Committed? | Description |
 |---|---|---:|---|---|
 | `data/corpus/sentences.json` | Tatoeba (via jmdict-examples) | 25,980 | ✓ | Editor-curated JA–EN example sentence pairs (dedup'd by Tatoeba ID) |
+| `data/corpus/sentences-kftt.json` | KFTT (Wikipedia Kyoto) | 443,849 | gitignored | Machine-aligned JP-EN pairs from Wikipedia Kyoto articles. ~220 MB; built on demand. |
 
 ### Grammar
 
@@ -67,10 +70,13 @@ As of v0.7.1 (see `manifest.json` for live counts), the `data/` directory contai
 
 | File | Source(s) | Count | Committed? | Description |
 |---|---|---:|---|---|
-| `data/cross-refs/kanji-to-words.json` | Generated from `words.json` + `kanji.json` | 3,533 | ✓ | Every kanji → list of word IDs using it (common subset) |
-| `data/cross-refs/word-to-kanji.json` | Generated from `words.json` | 18,084 | ✓ | Every word → list of kanji characters it contains |
-| `data/cross-refs/word-to-sentences.json` | Generated from `words.json` + `sentences.json` | 14,550 | ✓ | Every word → list of Tatoeba sentence IDs |
+| `data/cross-refs/kanji-to-words.json` | Generated from `words.json` + `kanji.json` | 3,589 | ✓ | Every kanji → list of word IDs using it (common subset) |
+| `data/cross-refs/word-to-kanji.json` | Generated from `words.json` | 18,574 | ✓ | Every word → list of kanji characters it contains |
+| `data/cross-refs/word-to-sentences.json` | Generated from `words.json` + `sentences.json` | 14,842 | ✓ | Every word → list of Tatoeba sentence IDs |
 | `data/cross-refs/kanji-to-radicals.json` | Generated from `radicals.json` | 12,156 | ✓ | Every kanji → component radicals (from KRADFILE) |
+| `data/cross-refs/reading-to-words.json` | Generated from `words.json` | 24,927 | ✓ | IME-style reverse lookup: kana reading → word IDs |
+| `data/cross-refs/radical-to-kanji.json` | Generated from `radicals.json` | 253 | ✓ | Reverse lookup: radical → kanji containing it |
+| `data/cross-refs/kanji-to-sentences.json` | Generated from `sentences.json` | 2,543 | ✓ | Every kanji → list of sentence IDs containing it |
 
 All files are schema-validated JSON with metadata headers crediting upstream sources. **Live counts are maintained in `manifest.json.counts` and refreshed by `just stats` on every build**; this table is a snapshot for discoverability.
 
