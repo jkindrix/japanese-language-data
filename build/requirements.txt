@@ -2,6 +2,7 @@
 # Pinned versions for reproducibility.
 requests==2.32.3
 jsonschema==4.23.0
+genanki==0.13.1
 
 # Development / test dependencies.
 pytest==8.3.3

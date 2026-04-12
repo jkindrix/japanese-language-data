@@ -206,6 +206,12 @@ export-sqlite:
     @printf '{{cyan}}==> Exporting SQLite database{{reset}}\n'
     {{python}} -m build.export_sqlite
 
+# Export as Anki .apkg flashcard deck (vocabulary + kanji + grammar)
+[group('export')]
+export-anki:
+    @printf '{{cyan}}==> Exporting Anki flashcard deck{{reset}}\n'
+    {{python}} -m build.export_anki
+
 # ============================================================================
 # RELEASE
 # ============================================================================
