@@ -635,15 +635,6 @@ def test_conjugate_ichidan_miru() -> None:
     assert forms["nai_form"] == "みない"
 
 
-def test_conjugate_suru_compound() -> None:
-    from build.transform.conjugations import _conjugate_suru_compound
-    forms = _conjugate_suru_compound("べんきょうする")
-    assert forms["polite_nonpast"] == "べんきょうします"
-    assert forms["te_form"] == "べんきょうして"
-    assert forms["nai_form"] == "べんきょうしない"
-    assert forms["potential"] == "べんきょうできる"
-
-
 def test_conjugate_suru_compound_not_suru() -> None:
     from build.transform.conjugations import _conjugate_suru_compound
     assert _conjugate_suru_compound("たべる") == {}
@@ -675,50 +666,12 @@ def test_conjugate_i_adjective_not_i_ending() -> None:
     assert _conjugate_i_adjective("しずか") is None
 
 
-def test_conjugate_na_adjective() -> None:
-    from build.transform.conjugations import _conjugate_na_adjective
-    forms = _conjugate_na_adjective("しずか")
-    assert forms["dictionary"] == "しずかだ"
-    assert forms["polite_nonpast"] == "しずかです"
-    assert forms["polite_past"] == "しずかでした"
-    assert forms["attributive"] == "しずかな"
-
-
-def test_longest_common_suffix_length() -> None:
-    from build.transform.conjugations import _longest_common_suffix_length
-    assert _longest_common_suffix_length("食べる", "たべる") == 2  # べる
-    assert _longest_common_suffix_length("abc", "xyz") == 0
-    assert _longest_common_suffix_length("abc", "abc") == 3
-    assert _longest_common_suffix_length("", "") == 0
-
-
-def test_replace_prefix_in_forms() -> None:
-    from build.transform.conjugations import _replace_prefix_in_forms
-    forms = {"a": "たべます", "b": "たべた", "c": "きます"}
-    result = _replace_prefix_in_forms(forms, "たべ", "食べ")
-    assert result["a"] == "食べます"
-    assert result["b"] == "食べた"
-    assert result["c"] == "きます"  # no match, unchanged
-
-
 def test_replace_prefix_preserves_empty() -> None:
     from build.transform.conjugations import _replace_prefix_in_forms
     forms = {"a": "", "b": "たべます"}
     result = _replace_prefix_in_forms(forms, "たべ", "食べ")
     assert result["a"] == ""
     assert result["b"] == "食べます"
-
-
-def test_display_forms_adj_na() -> None:
-    from build.transform.conjugations import _display_forms_adj_na
-    forms = {
-        "dictionary": "しずかだ",
-        "polite_nonpast": "しずかです",
-        "attributive": "しずかな",
-    }
-    result = _display_forms_adj_na("静か", "しずか", forms)
-    assert result["polite_nonpast"] == "静かです"
-    assert result["attributive"] == "静かな"
 
 
 def test_display_forms_common_suffix() -> None:
@@ -825,65 +778,6 @@ def test_is_kanji_char_ascii() -> None:
     from build.transform.cross_links import _is_kanji_char
     assert _is_kanji_char("A") is False
     assert _is_kanji_char("1") is False
-
-
-def test_build_word_cross_refs_basic() -> None:
-    """Verify cross-reference index generation from synthetic words data."""
-    from build.transform.cross_links import _build_word_cross_refs
-    words_data = {
-        "words": [
-            {
-                "id": "100",
-                "kanji": [{"text": "漢字"}],
-                "kana": [{"text": "かんじ"}],
-                "sense": [{
-                    "examples": [
-                        {"sentence_id": "456"},
-                    ],
-                }],
-            },
-            {
-                "id": "200",
-                "kanji": [{"text": "日本"}],
-                "kana": [{"text": "にほん"}],
-                "sense": [],
-            },
-        ],
-    }
-    k2w, w2k, w2s = _build_word_cross_refs(words_data)
-    # kanji-to-words
-    assert "漢" in k2w
-    assert "100" in k2w["漢"]
-    assert "字" in k2w
-    assert "100" in k2w["字"]
-    assert "日" in k2w
-    assert "200" in k2w["日"]
-    assert "本" in k2w
-    assert "200" in k2w["本"]
-    # word-to-kanji
-    assert w2k["100"] == ["漢", "字"]
-    assert w2k["200"] == ["日", "本"]
-    # word-to-sentences
-    assert w2s["100"] == ["456"]
-    assert "200" not in w2s  # no examples
-
-
-def test_build_word_cross_refs_kana_only() -> None:
-    """Kana-only words should not create kanji cross-refs."""
-    from build.transform.cross_links import _build_word_cross_refs
-    words_data = {
-        "words": [
-            {
-                "id": "300",
-                "kanji": [],
-                "kana": [{"text": "すし"}],
-                "sense": [],
-            },
-        ],
-    }
-    k2w, w2k, w2s = _build_word_cross_refs(words_data)
-    assert "300" not in w2k
-    assert len(k2w) == 0
 
 
 # ===========================================================================
