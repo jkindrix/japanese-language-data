@@ -163,6 +163,12 @@ check-sources:
     @printf '{{cyan}}==> Verifying source cache integrity{{reset}}\n'
     {{python}} -c "from build.fetch import _load_manifest, _sha256, SOURCES, SOURCES_DIR; import sys; m = _load_manifest(); errs = 0; [print(f'[ok]   {s.name}') if (SOURCES_DIR / s.cache_path).exists() and _sha256(SOURCES_DIR / s.cache_path) == m.get('sources', {}).get(s.name, {}).get('sha256') else (print(f'[FAIL] {s.name}: missing or hash mismatch'), setattr(sys, '_err', True)) for s in SOURCES]; sys.exit(1 if getattr(sys, '_err', False) else 0)"
 
+# Check if pinned upstream sources have newer versions available
+[group('quality')]
+check-upstream:
+    @printf '{{cyan}}==> Checking for upstream updates{{reset}}\n'
+    {{python}} -m build.check_upstream
+
 # ============================================================================
 # DEVELOPMENT
 # ============================================================================
