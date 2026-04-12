@@ -146,7 +146,7 @@ Structure for `data/enrichment/pitch-accent.json`. Each entry maps a word (in ka
 
 ### `frequency.schema.json`
 
-Generic structure for frequency-ranking files. Used by both `frequency-newspaper.json` (KANJIDIC2) and `frequency-modern.json` (JPDB). Each entry has the lookup key (word or kanji), the rank (1 = most common), and the corpus identifier.
+Generic structure for frequency-ranking files. Used by `frequency-newspaper.json` (KANJIDIC2 kanji), `frequency-subtitles.json` (OpenSubtitles spoken media), and `frequency-corpus.json` (Tatoeba-derived). Each entry has the lookup key (word or kanji), the rank (1 = most common), and the corpus identifier.
 
 ### `jlpt.schema.json`
 
