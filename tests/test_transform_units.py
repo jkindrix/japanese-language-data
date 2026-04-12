@@ -2920,3 +2920,124 @@ def test_sqlite_insert_pitch(tmp_path: Path) -> None:
     assert row[0] == "食べる"
     assert row[1] == 3
     conn.close()
+
+
+# ---------------------------------------------------------------------------
+# cross_links — builder functions
+# ---------------------------------------------------------------------------
+
+def test_build_word_cross_refs() -> None:
+    from build.transform.cross_links import _build_word_cross_refs
+    words_data = {"words": [
+        {"id": "100",
+         "kanji": [{"text": "\u98df\u3079\u308b"}],
+         "kana": [{"text": "\u305f\u3079\u308b"}],
+         "sense": [{"examples": [
+             {"source": "tatoeba", "sentence_id": "42"}
+         ]}]},
+    ]}
+    k2w, w2k, w2s = _build_word_cross_refs(words_data)
+    # word contains kanji 食
+    assert "\u98df" in k2w
+    assert "100" in k2w["\u98df"]
+    # word-to-kanji inverse
+    assert "100" in w2k
+    assert "\u98df" in w2k["100"]
+    # word-to-sentences
+    assert "100" in w2s
+    assert "42" in w2s["100"]
+
+
+def test_build_reading_to_words() -> None:
+    from build.transform.cross_links import _build_reading_to_words
+    words_data = {"words": [
+        {"id": "100", "kana": [{"text": "\u305f\u3079\u308b"}]},
+        {"id": "200", "kana": [{"text": "\u306e\u3080"}]},
+    ]}
+    r2w = _build_reading_to_words(words_data)
+    assert "\u305f\u3079\u308b" in r2w
+    assert r2w["\u305f\u3079\u308b"] == ["100"]
+    assert "\u306e\u3080" in r2w
+
+
+def test_build_word_text_lookup() -> None:
+    from build.transform.cross_links import _build_word_text_lookup
+    words_data = {"words": [
+        {"id": "100", "kanji": [{"text": "\u98df\u3079\u308b"}],
+         "kana": [{"text": "\u305f\u3079\u308b"}]},
+        {"id": "200", "kanji": [], "kana": [{"text": "\u3042\u3042"}]},  # 2-char kana: excluded (< 3)
+    ]}
+    lookup = _build_word_text_lookup(words_data)
+    assert "\u98df\u3079\u308b" in lookup  # 3-char kanji: included (>= 2)
+    assert "\u305f\u3079\u308b" in lookup  # 3-char kana: included (>= 3)
+    assert "\u3042\u3042" not in lookup    # 2-char kana: excluded
+
+
+def test_build_radical_to_kanji() -> None:
+    from build.transform.cross_links import _build_radical_to_kanji
+    k2r = {"\u98df": ["\u4eba", "\u826f"], "\u98f2": ["\u4eba", "\u6b20"]}
+    r2k = _build_radical_to_kanji(k2r)
+    assert "\u4eba" in r2k
+    assert set(r2k["\u4eba"]) == {"\u98df", "\u98f2"}
+
+
+# ---------------------------------------------------------------------------
+# grammar — _find_pattern_matches with mock data
+# ---------------------------------------------------------------------------
+
+def test_find_pattern_matches_basic() -> None:
+    from build.transform.grammar import _find_pattern_matches
+    entries = [
+        {"id": "test-pattern", "pattern": "\u304f\u3060\u3055\u3044"},  # ください
+    ]
+    sentences = [
+        ("1", "\u3053\u308c\u3092\u304f\u3060\u3055\u3044\u3002"),  # これをください。
+        ("2", "\u4eca\u65e5\u306f\u6691\u3044\u3067\u3059\u3002"),  # 今日は暑いです。 (no match)
+    ]
+    matches, count, total = _find_pattern_matches(entries, sentences)
+    assert count == 1
+    assert "test-pattern" in matches
+    assert "1" in matches["test-pattern"]
+
+
+def test_find_pattern_matches_no_match() -> None:
+    from build.transform.grammar import _find_pattern_matches
+    entries = [{"id": "rare", "pattern": "\u3068\u304a\u307c\u3057\u3044"}]  # とおぼしい
+    sentences = [("1", "\u3053\u3093\u306b\u3061\u306f")]
+    matches, count, total = _find_pattern_matches(entries, sentences)
+    assert count == 0
+    assert not matches
+
+
+# ---------------------------------------------------------------------------
+# grammar — _extract_japanese_candidates (multi-candidate)
+# ---------------------------------------------------------------------------
+
+def test_extract_candidates_slash_alternatives() -> None:
+    from build.transform.grammar import _extract_japanese_candidates
+    cands = _extract_japanese_candidates("\u307e\u3067\u3060 / \u307e\u3067\u306e\u3053\u3068\u3060")
+    assert "\u307e\u3067\u306e\u3053\u3068\u3060" in cands
+    assert "\u307e\u3067\u3060" in cands
+
+
+def test_extract_candidates_parenthesized() -> None:
+    from build.transform.grammar import _extract_japanese_candidates
+    cands = _extract_japanese_candidates("\u672b(\u306b)")  # 末(に)
+    assert "\u672b\u306b" in cands
+
+
+def test_extract_candidates_has_kanji() -> None:
+    from build.transform.grammar import _has_kanji
+    assert _has_kanji("\u98df") is True
+    assert _has_kanji("\u305f\u3079") is False
+
+
+# ---------------------------------------------------------------------------
+# export_anki — model construction
+# ---------------------------------------------------------------------------
+
+def test_anki_models_have_stable_ids() -> None:
+    from build.export_anki import _build_vocab_model, _build_kanji_model, _build_grammar_model
+    assert _build_vocab_model().model_id == 1607392319
+    assert _build_kanji_model().model_id == 1607392320
+    assert _build_grammar_model().model_id == 1607392321
