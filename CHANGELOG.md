@@ -16,6 +16,26 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+## [0.6.0] — 2026-04-12
+
+**N2 grammar coverage reaches community-standard completeness.** After Batches B5 + B6 + B7 + B8 the grammar dataset stands at **440 entries** (60 N5 + 91 N4 + 139 N3 + **150 N2**), **63–88%** of the 500–700 community-standard target. N2 is now at 150 entries — within the ~150–180 community-consensus "complete N2" range. All new entries `review_status: "draft"`; authorship statement unchanged.
+
+### Added (Batch B8)
+
+- **N2 batch 4** — 30 more hand-curated N2 entries appended to `grammar-curated/n2.json`: 〜ようなら, 〜ようでは, 〜ずくめ, 〜まみれ, 〜ぶる, 〜めく, 〜ものがある, 〜というか, 〜ともなく, 〜からいうと, 〜なくもない, 〜にかかっている, 〜というのは, 〜果てに, 〜そびれる, 〜てしかるべき, 〜やしない, 〜まくる, 〜ということは, 〜ごとく, 〜ごとき, 〜かというと, 〜ものとして, 〜てもいいくらい, 〜あとは, 〜といえども, 〜と思いきや, 〜なりとも, 〜だけなら, 〜ないのみならず.
+- Grammar total: 410 → **440**. N2: 120 → 150 (community-complete).
+
+### Milestone
+
+N2 grammar coverage reaches community-standard completeness — 150 entries, within the typical ~150–180 "complete N2" range. Tagged as **v0.6.0**. N5 and N4 remain at pre-v0.6.0 levels (60 and 91); N3 at 139 (already community-complete from v0.5.0); N1 is the remaining large gap (0 entries) to be filled in Batches B9–B12.
+
+Honest limitations (unchanged from v0.5.0):
+- Zero native-speaker reviewers engaged; everything is `draft`.
+- Level assignments are community-consensus judgments; N2 has more borderline patterns than N3 or lower levels.
+- N1 patterns overlap with classical / literary Japanese and have higher nuance uncertainty — flagged in advance for review.
+
+---
+
 ### Added (Batch B7)
 
 - **N2 batch 3** — 38 more hand-curated N2 entries appended to `grammar-curated/n2.json`: 〜次第で, 〜に至る, 〜に至るまで, 〜際(に), 〜に先駆けて, 〜を経て, 〜を踏まえて, 〜をよそに, 〜通り/〜どおり, 〜いかん, 〜得る, 〜とあって, 〜てからでないと, 〜ないことには, 〜とみえる, 〜とすれば/〜とすると, 〜はおろか, 〜にすぎない, 〜たって(casual), 〜こととて, 〜なり(as soon as), 〜なりに, 〜あっての, 〜が早いか, 〜に照らして, 〜に鑑みて, 〜を顧みず, 〜限りだ, 〜極まりない, 〜ほどのことではない, 〜ずとも, 〜だの〜だの, 〜とみる, 〜ようで, 〜さえ〜ば, だって (casual because), これといって, 〜まじき.
