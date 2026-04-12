@@ -37,6 +37,7 @@ sources/wikipedia/
 sources/kftt/
 sources/opensubtitles/
 sources/leeds/
+sources/common-voice/
 sources/jmdict-furigana/
 sources/*.tgz
 sources/*.zip
@@ -59,6 +60,9 @@ data/corpus/sentences-kftt.json
 data/cross-refs/kanji-to-words-full.json
 data/cross-refs/word-to-kanji-full.json
 data/cross-refs/reading-to-words-full.json
+
+# Phase 4 data outputs (large, built on demand)
+data/phase4/
 
 # Export outputs (Yomitan ZIP, Parquet, etc.)
 dist/

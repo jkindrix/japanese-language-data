@@ -4375,3 +4375,42 @@ def test_frequency_web_build(tmp_path: Path, monkeypatch) -> None:
     assert result["metadata"]["count"] == 2
     assert result["entries"][0]["text"] == "食べる"
     assert result["entries"][0]["rank"] == 1
+
+
+# ---------------------------------------------------------------------------
+# common_voice — build()
+# ---------------------------------------------------------------------------
+
+def test_common_voice_build(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import common_voice as mod
+
+    tsv_path = tmp_path / "validated.tsv"
+    tsv_path.write_text(
+        "client_id\tpath\tsentence\tup_votes\tdown_votes\tage\tgender\n"
+        "abc\tabc.mp3\t食べてください\t3\t0\ttwenties\tmale\n"
+        "def\tdef.mp3\t食べてください\t2\t1\t\t\n"  # duplicate sentence
+        "ghi\tghi.mp3\t飲みましょう\t1\t0\t\tfemale\n",
+        encoding="utf-8",
+    )
+
+    out_path = tmp_path / "transcripts.json"
+    monkeypatch.setattr(mod, "SOURCE_TSV", tsv_path)
+    monkeypatch.setattr(mod, "OUT", out_path)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    result = json.loads(out_path.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 2
+    # Deduplicated: 食べてください appears once with aggregated votes
+    top = result["transcripts"][0]
+    assert top["text"] == "食べてください"
+    assert top["vote_count"] == 2
+    assert top["up_votes"] == 5  # 3 + 2
+
+
+def test_common_voice_missing_source(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import common_voice as mod
+    monkeypatch.setattr(mod, "SOURCE_TSV", tmp_path / "nope.tsv")
+    with pytest.raises(FileNotFoundError, match="Common Voice"):
+        mod.build()
