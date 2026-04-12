@@ -160,7 +160,7 @@
     "data/cross-refs/reading-to-words.json": 24927,
     "data/cross-refs/radical-to-kanji.json": 253,
     "data/cross-refs/kanji-to-sentences.json": 2543,
-    "data/cross-refs/word-to-grammar.json": null
+    "data/cross-refs/word-to-grammar.json": 1577
   },
   "grammar_curation_status": {
     "total_entries": 595,
@@ -186,9 +186,7 @@
     "Recruit native-speaker reviewers to move grammar entries from draft → native_speaker_reviewed (see docs/grammar-review.md for the operational review workflow).",
     "Expand grammar-to-sentence linking — current 88.1% pattern match rate (Tatoeba + KFTT) may improve with broader corpus matching or relaxed normalization.",
     "Phase 4 candidates: post-2022 Wiktionary pitch accent fill, Aozora Bunko literary corpus, Mozilla Common Voice transcripts (CC0). See docs/phase4-candidates.md.",
-    "Increase direct unit test coverage toward 65%+ (currently 51%; fail-under at 50%).",
-    "Implement word-to-grammar cross-reference (code scaffolded in cross_links.py but grammar examples lack word_ids — needs text-matching approach).",
-    "Evaluate remaining Phase 4 candidates: Wiktionary pitch accent, Aozora Bunko, Wikipedia frequency derivation.",
+    "Increase direct unit test coverage toward 65%+ (currently 54%; fail-under at 50%).",
     "Add export format: Anki .apkg."
   ]
 }

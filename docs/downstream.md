@@ -45,6 +45,7 @@ Cross-reference files (`data/cross-refs/`) are already keyed by ID — load them
 | `frequency-subtitles.json` | 8,598 | 1.6 MB | 5 MB |
 | `counter-words.json` | 125 | 24 KB | <1 MB |
 | `ateji.json` | 239 | 52 KB | <1 MB |
+| `jukugo-compounds.json` | 14,350 | 14 MB | 40 MB |
 | `furigana.json` | 28,920 | 6.8 MB | 20 MB |
 | `grammar.json` | 595 | 1.1 MB | 3 MB |
 | `sentences.json` | 25,980 | 9.3 MB | 30 MB |

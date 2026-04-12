@@ -21,6 +21,7 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 - **OpenSubtitles subtitle frequency** (`data/enrichment/frequency-subtitles.json`): 8,598 vocabulary-matched word frequency entries from the OpenSubtitles 2018 Japanese subtitle corpus (movies, TV, anime). Provides spoken-media frequency as an openly-licensed substitute for the license-blocked JPDB data. Source: hermitdave/FrequencyWords (MIT license). New upstream source pinned in `manifest.json` with SHA256 verification.
 - **Counter-word index** (`data/enrichment/counter-words.json`): 125 counter words (josushi) extracted from JMdict entries with `ctr` POS tag. Enables counter-word study tools.
 - **Ateji index** (`data/enrichment/ateji.json`): 239 phonetic kanji spellings extracted from JMdict entries where kanji writings carry the `ateji` tag. Helps learners recognize non-semantic kanji usage.
+- **Jukugo compound index** (`data/enrichment/jukugo-compounds.json`): 14,350 multi-kanji compounds with per-character meaning decomposition from KANJIDIC2. Enables "what compounds use this kanji?" lookups.
 
 ### Added — distribution
 

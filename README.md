@@ -53,6 +53,7 @@ As of v0.8.0 (see `manifest.json` for live counts), the `data/` directory contai
 | `data/enrichment/jlpt-classifications.json` | Waller JLPT lists (tanos.co.uk) | 11,099 | ✓ | Community-consensus JLPT N5–N1 level for vocabulary, kanji, and grammar |
 | `data/enrichment/counter-words.json` | JMdict `ctr` POS entries via words.json | 125 | ✓ | Counter-word (josushi) index for counter-word study and lookup |
 | `data/enrichment/ateji.json` | JMdict `ateji` kanji tags via words.json | 239 | ✓ | Ateji (phonetic kanji spelling) index — words where kanji are used for sound, not meaning |
+| `data/enrichment/jukugo-compounds.json` | Derived from words.json + kanji.json | 14,350 | ✓ | Multi-kanji compound index with per-character meaning decomposition from KANJIDIC2 |
 
 ### Corpus
 
