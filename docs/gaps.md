@@ -124,9 +124,11 @@ JMdict has tags for `hum` (humble), `pol` (polite), `hon` (honorific), `fam` (fa
 
 ## Corpus data
 
-### Parallel corpora beyond Tatoeba (DEFERRED)
+### Parallel corpora beyond Tatoeba (PARTIALLY ADDRESSED)
 
-Tatoeba is our only sentence corpus. Other options (JParaCrawl, KFTT for Kyoto Free Translation Task, WMT Japanese-English pairs) exist but have varying licenses and quality. Deferred to Phase 4 if parallel corpus coverage is needed.
+As of v0.8.0, the dataset includes both Tatoeba (25,980 curated JP-EN pairs) and KFTT (443,849 Wikipedia-sourced JP-EN pairs, CC-BY-SA 3.0), totaling 469,829 sentences. KFTT sentences are machine-aligned from Wikipedia Kyoto articles — quality is variable compared to Tatoeba's editor-curated pairs.
+
+Remaining options (JParaCrawl, WMT Japanese-English pairs) have varying licenses and would add scale but not necessarily quality. Deferred unless a concrete need for additional parallel text arises.
 
 ### Balanced written corpus (NINJAL BCCWJ) (LICENSE)
 
@@ -182,9 +184,9 @@ KanjiVG provides static SVGs. Animated stroke order (showing the strokes being d
 
 ## Implementation decisions
 
-### Yomi-lookup (IME-style) tables (EFFORT)
+### Yomi-lookup (IME-style) tables (ADDRESSED)
 
-A reverse lookup from kana reading to all words with that reading is easy to generate from `data/core/words.json`. We do not currently emit it as a distinct file; Phase 2 cross-reference expansion will include `reading-to-words.json`.
+As of v0.8.0, `data/cross-refs/reading-to-words.json` maps 24,927 kana readings to word IDs, enabling IME-style reverse lookup by pronunciation.
 
 ### Handwritten stroke-order recognition (INTENTIONAL)
 

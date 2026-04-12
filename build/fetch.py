@@ -25,13 +25,13 @@ import json
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
 import requests
 
-from build.constants import MANIFEST_PATH, REPO_ROOT, SOURCES_DIR
+from build.constants import MANIFEST_PATH, SOURCES_DIR
 
 
 @dataclass(frozen=True)

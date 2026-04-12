@@ -22,12 +22,10 @@ import sys
 import time
 import traceback
 from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeout
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import date
-from pathlib import Path
 from typing import Callable
 
-from build.constants import REPO_ROOT
 
 log = logging.getLogger(__name__)
 

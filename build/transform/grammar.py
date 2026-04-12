@@ -268,7 +268,7 @@ def build() -> None:
             f"that the repository is complete.",
             stacklevel=2,
         )
-        print(f"[grammar]  WARNING: no curated directory found; emitting empty grammar.json")
+        print("[grammar]  WARNING: no curated directory found; emitting empty grammar.json")
         entries: list[dict] = []
     else:
         entries = []

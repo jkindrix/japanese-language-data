@@ -172,11 +172,15 @@ def _semantic_checks() -> list[tuple[str, str]]:
         orphan_kanji = set(k2w_mapping.keys()) - kanji_set
         # Filter out non-kanji characters (full-width numerals, etc.)
         # that are expected in word kanji fields but not in kanji.json.
-        if len(orphan_kanji) > 200:  # sanity threshold
+        # Non-kanji characters (fullwidth numerals, Latin, etc.) appear as
+        # word kanji-field keys but not in kanji.json.  A small count of
+        # these is expected; a large count indicates a data pipeline bug.
+        ORPHAN_SANITY_THRESHOLD = 200
+        if len(orphan_kanji) > ORPHAN_SANITY_THRESHOLD:
             failures.append((
                 "k2w-orphans",
                 f"kanji-to-words has {len(orphan_kanji)} keys not in kanji.json "
-                f"(expected ≤200 non-kanji chars)"
+                f"(expected ≤{ORPHAN_SANITY_THRESHOLD} non-kanji chars)"
             ))
 
     if words_data and w2s and sentences_data:

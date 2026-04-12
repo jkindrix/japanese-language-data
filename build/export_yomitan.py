@@ -14,7 +14,6 @@ from __future__ import annotations
 import json
 import sys
 import zipfile
-from pathlib import Path
 
 from build.constants import DATA_DIR, MANIFEST_PATH, REPO_ROOT
 
@@ -158,7 +157,7 @@ def export() -> None:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     version = manifest.get("version", "dev")
 
-    print(f"[yomitan]  loading words and kanji data")
+    print("[yomitan]  loading words and kanji data")
     words_data = json.loads(WORDS_JSON.read_text(encoding="utf-8"))
     kanji_data = json.loads(KANJI_JSON.read_text(encoding="utf-8"))
 

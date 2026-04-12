@@ -14,7 +14,6 @@ from pathlib import Path
 import pytest
 
 try:
-    import jsonschema
     from jsonschema import Draft202012Validator
 except ImportError:  # pragma: no cover
     pytest.skip("jsonschema not installed", allow_module_level=True)

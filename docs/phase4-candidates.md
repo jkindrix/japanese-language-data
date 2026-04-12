@@ -137,7 +137,7 @@ Status values:
 - **License**: CC-BY-SA 3.0.
 - **Effort**: Low. Already in TSV.
 - **Value**: Supplementary parallel corpus; larger than Tatoeba's subset for Japanese.
-- **Status**: NOT EVALUATED. Compatible license, low integration effort, clear value for consumers wanting more parallel text.
+- **Status**: **DELIVERED (v0.8.0)**. Integrated as `data/corpus/sentences-kftt.json` (443,849 JP-EN pairs). Upstream pinned in `manifest.json` with SHA256 verification. Gitignored due to size (~220 MB); built on demand.
 
 ### JParaCrawl
 
@@ -225,7 +225,7 @@ Status values:
 - **Source**: Derived from our own data.
 - **Effort**: Low-medium. Write a converter from our JSON schema to Yomitan's format.
 - **Value**: Makes this dataset directly usable by Yomitan users (the dominant Japanese reading extension). Natural adoption path.
-- **Status**: NOT EVALUATED. Could be a Phase 4 "distribution target" rather than a data add.
+- **Status**: **DELIVERED (v0.8.0)**. `just export-yomitan` produces a ~1.3 MB ZIP in Yomitan v3 format with 30,765 terms and 13,108 kanji entries. See `build/export_yomitan.py`.
 
 ### Anki deck packages
 

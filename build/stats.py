@@ -25,7 +25,7 @@ import tempfile
 from build.pipeline import BUILD_DATE
 from pathlib import Path
 
-from build.constants import DATA_DIR, MANIFEST_PATH, REPO_ROOT
+from build.constants import MANIFEST_PATH, REPO_ROOT
 
 
 def _count_entries(data: dict, payload_key: str) -> int:
