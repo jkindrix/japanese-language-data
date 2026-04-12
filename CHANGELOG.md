@@ -16,6 +16,74 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+**Comprehensive review-driven cleanup.** Responds to an end-to-end review that flagged 16 findings ranging from documentation staleness to missing test coverage. No data content changes; all changes are infrastructure, documentation, testing, and internal consistency.
+
+### Added — release infrastructure
+
+- **`just bump-release`** and **`just bump-release-dry-run`** recipes backed by `build/bump_release.py`. Reconcile `manifest.json.version` with the most recent `## [N.N.N]` header in `CHANGELOG.md` and refresh `manifest.json.generated`. Prints warnings if `phase_description` still mentions the previous version or exceeds the 600-char soft cap.
+- **`docs/release.md`** — the full release workflow end to end: from drafting a CHANGELOG entry through tagging and pushing. Points at the drift-prevention tests and explains the "what to update and in what order" dance that previously left `manifest.version` at v0.4.1 for five release cycles.
+
+### Added — review infrastructure
+
+- **`docs/grammar-review.md`** — reviewer workflow from "I want to help" to "my review is merged." Covers eligibility, the two parallel review tracks (`community_reviewed` and `native_speaker_reviewed`), slice claiming, the `reviewer_notes` format, disagreement handling, and attribution.
+- **`docs/grammar-review-checklist.md`** — per-entry checklist ordered from fastest (mechanical structure) to slowest (judgment-heavy naturalness checks).
+- **`.github/ISSUE_TEMPLATE/grammar-review-availability.md`** — reviewer availability signal template.
+- **`.github/ISSUE_TEMPLATE/grammar-review-batch.md`** — reviewer slice-claim template.
+- **`.github/PULL_REQUEST_TEMPLATE.md`** — added a "For grammar review PRs" section with reviewer credit preference options.
+- **`README.md` § Grammar reviewers** — an aggregate credit section (empty for now, populated as reviews land).
+- **`data/grammar/grammar.json` → `metadata.curation_outliers`** — structural-heuristic lists of entries reviewers may prioritize: `sparse_examples` (65 entries with <3 examples), `no_related` (8 entries), `no_formation_notes` (1 entry). These are surfacing aids, not quality judgments.
+
+### Added — tests (total 62 → 92, +30)
+
+- **`tests/test_docs.py`** (8 tests): drift-prevention for release metadata. Guards `manifest.version` against CHANGELOG, `manifest.phase_description` length cap, `manifest.counts` against file reality, every git tag → CHANGELOG entry, every `## [N.N.N]` header has a date, phase_description mentions current version, status files reflect current radical coverage (242/253, 95.7%), status files never present the old 77.9% coverage as current.
+- **`tests/test_transform_units.py`** (+18 tests): unit tests for `_parse_kangxi_wikitext` (wikitable fragment), `_count_morae` (9 parametrized cases covering small kana / sokuon / long-vowel), `_count_strokes` (3 SVG path cases), `_load_vocab_jlpt_map` (D4 easier-level-wins tie-break in both orders, non-vocab-kind filtering, missing file).
+- **`tests/test_data_integrity.py`** (+4 tests):
+  - `test_grammar_review_status_state_machine` — non-draft entries must carry non-empty `reviewer_notes` with `reviewer`/`date`/`note`.
+  - `test_grammar_curated_sources_are_canonical` — prevents the short `"General Japanese grammar knowledge."` source string from re-appearing.
+  - `test_grammar_tatoeba_linkage_floor` — absolute-count floor (≥3 linked examples) so a silent linkage regression fails CI.
+  - `test_stroke_order_index_is_filtered_to_kanji_json_characters` — regression guard for the pipeline-ordering bug (see "Fixed" section).
+  - `test_invariant_word_to_kanji_inverse_of_kanji_to_words` is now bidirectional (reverse iteration added).
+
+### Added — CI
+
+- **Build-twice byte-reproducibility check** in `.github/workflows/build.yml`. Hashes `data/*.json` and `data/**/*.svg` after the first build, runs the pipeline a second time, and asserts the hashes are identical. Catches any non-determinism (iteration order, time-dependent output, silent mutation) that the existing tests don't cover. Verified locally: 6,435 files hash-identical across back-to-back runs.
+
+### Fixed — pipeline ordering bug uncovered by the new determinism check
+
+- **`build/pipeline.py`**: `stroke_order` stage reordered to run **after** `kanji` rather than before it. Previously, `stroke_order.build()` would read `data/core/kanji.json` to filter its SVG set to characters in our kanji dataset — but on a clean build (no prior `data/`), `kanji.json` did not exist yet at the time `stroke_order` ran, so the filter was bypassed. The first clean build would write **6,702** SVGs (including non-kanji: digits, Latin letters, iteration marks like 々ゝヽ, the long-vowel mark ー, etc.) and a `stroke-order-index.json` with only **6,702** characters. The second build would correctly filter and produce **6,416** SVGs and a **13,108**-entry index (with nulls for missing kanji). This non-determinism was masked by the old `determinism check` being run against an already-populated `data/` directory, but the new clean-build CI check (see above) caught it immediately. Fix: move `stroke_order` after `kanji` in `_build_stages()`, document the dependency explicitly, and add `tests/test_data_integrity.py::test_stroke_order_index_is_filtered_to_kanji_json_characters` to prevent regression.
+- **`tests/test_data_integrity.py::test_stroke_order_index_is_filtered_to_kanji_json_characters`** — regression guard: every character in `stroke-order-index.json` must be present in `kanji.json`. If a future pipeline reorder or refactor breaks the ordering, this test fires with the offending non-kanji characters listed.
+
+### Changed — build
+
+- **`build/stats.py`**: now refreshes `manifest.json.generated` to today's date on every run. Gitignored/missing files are now reported as `null` in `manifest.counts` instead of `0`, letting consumers distinguish "not yet built" from "built but empty". `print_report` has matching output ("(not built)" vs "—").
+- **`build/transform/grammar.py`**: Tatoeba linkage is now two-pass (exact match then conservatively normalized — trailing `。`/`、`/`.`/whitespace stripped only). Link rate unchanged (4/1722) in practice because grammar examples and Tatoeba sentences share the same trailing-period conventions, but the mechanism is in place for future entries. `linked_via_normalization` is now tracked in the metadata. Also adds `metadata.curation_outliers` (sparse_examples, no_related, no_formation_notes lists).
+
+### Changed — documentation
+
+- **`manifest.json`**: `version` bumped `0.4.1` → `0.7.1` (drift of 5 releases, fixed). `phase_description` rewritten from a v0.4.0-state prose blob (975 chars, claiming 197/253 radical coverage) to a current-state 564-char summary mentioning both Phase 4 deliverables. `generated` refreshed to 2026-04-12. `counts` entries for `data/optional/names.json` and `data/enrichment/frequency-modern.json` now `null` instead of `0`.
+- **`README.md`**: Status line rewritten to describe v0.7.1 state (242/253 radical coverage + 595 grammar entries across all five JLPT levels). Data inventory table restructured into Core/Enrichment/Corpus/Grammar/Cross-refs sections with live counts, per-row "Committed?" column, and explicit split between `data/core/words.json` (common subset, 22,580 committed) and `data/core/words-full.json` (full 216,173, gitignored). New "Grammar reviewers" section with empty placeholder.
+- **`docs/phase4-candidates.md`**: "ADDRESSED" section for radical meanings rewritten to cover both v0.4.0 (197/253) and v0.7.1 (242/253) increments and explain the 11 remaining ambiguous Nelson-style variants.
+- **`docs/sources.md`**: Wikipedia Kangxi paragraph updated with current coverage and explicit mention of the `KANGXI_ALIASES` table.
+- **`ATTRIBUTION.md`**: Wikipedia target paragraph updated with current coverage.
+- **`docs/contributing.md`**: grammar reviewer section now points at `docs/grammar-review.md` and `docs/grammar-review-checklist.md` and explains the parallel-track model.
+- **`docs/upstream-issues.md`**: added drafted-but-not-filed GitHub issue bodies for the two internal schema gaps (Draft A: `skipMisclassification` documentation; Draft B: Morohashi volume/page exposure). Principle 6 operationalization — the drafts are copy-paste-ready for whenever the project owner decides to file them on `scriptin/jmdict-simplified`.
+- **`grammar-curated/n4.json` and `grammar-curated/n5.json`**: 166 entries had their `sources` entry unified from the short form `"General Japanese grammar knowledge."` to the canonical long form `"General Japanese grammar knowledge (non-copyrightable facts)."` (N1/N2/N3 already used the canonical form).
+
+### Verification
+
+- **92/92 tests pass** (62 pre-cleanup + 30 new).
+- **19/19 data files validate** against their schemas.
+- **Byte-reproducibility verified from a fully clean build**: `just clean && just build` twice produces 6,435 hash-identical files. The older "local determinism check" I ran during the review was against an already-populated `data/` and therefore missed the pipeline-ordering issue — the clean-build check is the one that actually exercises Principle 1.
+- **`just bump-release --dry-run`** reports "manifest.json is already up to date (version=0.7.1, generated=2026-04-12)".
+- **`manifest.json.phase_description`** length: 564 chars (under 600-char soft cap).
+
+### Deliberate non-changes
+
+- **Grammar entry content was not edited.** The review pipeline infrastructure is now in place, but no entry has been upgraded from `draft`. Reviewing 595 entries requires native-speaker time, not infrastructure time.
+- **`curation_depth` schema field was considered and rejected.** Structural analysis showed the curated grammar has nearly uniform depth (594/595 entries have formation_notes, 507/595 have exactly 4 notes, 528/595 have exactly 3 examples). A derived depth field would classify almost every entry as "standard" and provide no triage signal. Instead, the much smaller `curation_outliers` lists (sparse_examples, no_related, no_formation_notes) are surfaced in `grammar.json.metadata` for reviewers.
+- **Upstream issues were not filed.** The two drafted issue bodies in `docs/upstream-issues.md` are queued for the project owner's decision. The project operates a single-maintainer upstream courtesy policy: we draft carefully and file when the timing and volume are right, not as a reflex.
+- **No release tagged.** This Unreleased section will be promoted to the next patch-level version (`v0.7.2`) at the project owner's discretion via `just bump-release`.
+
 ## [0.7.1] — 2026-04-12
 
 **Variant-to-Kangxi radical alias table — closes the v0.4.0 radicals gap.**
