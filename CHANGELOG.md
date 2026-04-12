@@ -16,6 +16,12 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+### Added (Batch B7)
+
+- **N2 batch 3** — 38 more hand-curated N2 entries appended to `grammar-curated/n2.json`: 〜次第で, 〜に至る, 〜に至るまで, 〜際(に), 〜に先駆けて, 〜を経て, 〜を踏まえて, 〜をよそに, 〜通り/〜どおり, 〜いかん, 〜得る, 〜とあって, 〜てからでないと, 〜ないことには, 〜とみえる, 〜とすれば/〜とすると, 〜はおろか, 〜にすぎない, 〜たって(casual), 〜こととて, 〜なり(as soon as), 〜なりに, 〜あっての, 〜が早いか, 〜に照らして, 〜に鑑みて, 〜を顧みず, 〜限りだ, 〜極まりない, 〜ほどのことではない, 〜ずとも, 〜だの〜だの, 〜とみる, 〜ようで, 〜さえ〜ば, だって (casual because), これといって, 〜まじき.
+- Grammar total: 372 → **410** (+38). N2: 82 → 120. Coverage 53–74 → **59–82%**.
+- `data/enrichment/jlpt-classifications.json`: 10,876 → **10,914**.
+
 ### Added (Batch B6)
 
 - **N2 batch 2** — 41 more hand-curated N2 entries appended to `grammar-curated/n2.json`: 〜末に, 〜だけのことはある, 〜までもない, 〜というものだ / 〜というものではない, 〜ものだから, 〜やら〜やら, 〜からして, 〜からすると/〜からすれば, 〜からには, 〜のみならず, 〜とはいえ, 〜とはいうものの, 〜にしてみれば, 〜からといって, 〜のことだから, 〜てからというもの, 〜つつある, 〜だけましだ, 〜や否や, 〜か〜ないかのうちに, 〜そばから, 〜じゃあるまいし, 〜とばかりに, 〜とあれば, 〜ないまでも, 〜のもとで, 〜に足る, 〜に堪える, 〜に堪えない, 〜てやまない, 〜そうにない, 〜ずじまい, 〜たところで, なにしろ, なにせ, 〜あげく, 〜反面, 〜から見ると, 〜ということだ, 〜結果.
