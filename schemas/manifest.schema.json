@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/manifest.schema.json",
+  "title": "Manifest",
+  "description": "Build manifest for the Japanese Language Data project. Tracks version, upstream source pins (with SHA256 hashes), entry counts, grammar curation status, and next actions. Updated by `just stats` (counts, generated date) and `just bump-release` (version, phase_description).",
+  "schemaVersion": "0.7.2",
+  "type": "object",
+  "required": ["project", "version", "phase", "generated", "license", "sources", "counts"],
+  "additionalProperties": false,
+  "properties": {
+    "project": {
+      "type": "string",
+      "const": "japanese-language-data"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Semantic version matching the latest CHANGELOG [N.N.N] header."
+    },
+    "phase": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "description": "Current project phase (0 = scaffold, 1-3 = data build, 4+ = enrichment/community)."
+    },
+    "phase_description": {
+      "type": "string",
+      "maxLength": 600,
+      "description": "Human-readable summary of the current phase and project state."
+    },
+    "generated": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date of the most recent build."
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX-style license identifier for the built dataset."
+    },
+    "license_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the full license text."
+    },
+    "upstream_update_obligation": {
+      "type": "string",
+      "description": "How often upstream sources must be refreshed (per EDRDG License §4)."
+    },
+    "sources": {
+      "type": "object",
+      "description": "Pinned upstream sources with URL, SHA256, license, and description.",
+      "additionalProperties": {
+        "$ref": "#/$defs/sourceEntry"
+      }
+    },
+    "counts": {
+      "type": "object",
+      "description": "Entry counts per output data file. null = not built; -1 = error.",
+      "additionalProperties": {
+        "type": ["integer", "null"]
+      }
+    },
+    "grammar_curation_status": {
+      "$ref": "#/$defs/grammarCurationStatus"
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Prioritized list of next actions for the project."
+    }
+  },
+  "$defs": {
+    "sourceEntry": {
+      "type": "object",
+      "required": ["url", "license", "description", "sha256"],
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "Exact download URL (pinned version)."
+        },
+        "license": {
+          "type": "string",
+          "description": "SPDX identifier or canonical license name."
+        },
+        "description": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA256 hex digest of the downloaded file."
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "File size in bytes (recorded on fetch)."
+        }
+      },
+      "additionalProperties": false
+    },
+    "grammarCurationStatus": {
+      "type": "object",
+      "required": ["total_entries", "by_level", "review_status_distribution"],
+      "properties": {
+        "total_entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "by_level": {
+          "type": "object",
+          "additionalProperties": {"type": "integer"}
+        },
+        "target_entries": {
+          "type": "string"
+        },
+        "coverage_pct": {
+          "type": "string"
+        },
+        "review_status_distribution": {
+          "type": "object",
+          "properties": {
+            "draft": {"type": "integer", "minimum": 0},
+            "community_reviewed": {"type": "integer", "minimum": 0},
+            "native_speaker_reviewed": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": false
+        },
+        "operational_reviewers_engaged": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

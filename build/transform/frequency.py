@@ -20,7 +20,7 @@ from __future__ import annotations
 import json
 import tarfile
 from pathlib import Path
-from datetime import date
+from build.pipeline import BUILD_DATE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "kanjidic2-all.json.tgz"
@@ -65,7 +65,7 @@ def build() -> None:
             "source_url": "https://www.edrdg.org/wiki/index.php/KANJIDIC_Project",
             "license": "CC-BY-SA 4.0 (EDRDG License)",
             "source_version": source.get("version", ""),
-            "generated": date.today().isoformat(),
+            "generated": BUILD_DATE,
             "count": len(entries),
             "corpus": (
                 "Newspaper corpus analysis. Represents the most frequently "

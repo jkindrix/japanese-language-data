@@ -20,12 +20,10 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import date
+from build.pipeline import BUILD_DATE
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = REPO_ROOT / "data"
-MANIFEST_PATH = REPO_ROOT / "manifest.json"
+from build.constants import DATA_DIR, MANIFEST_PATH, REPO_ROOT
 
 
 def _count_entries(data: dict, payload_key: str) -> int:
@@ -143,7 +141,7 @@ def update_manifest(counts: dict[str, int | None]) -> None:
     else:
         manifest = {}
     manifest["counts"] = counts
-    manifest["generated"] = date.today().isoformat()
+    manifest["generated"] = BUILD_DATE
     MANIFEST_PATH.write_text(
         json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",

@@ -40,7 +40,7 @@ from __future__ import annotations
 import json
 import tarfile
 from pathlib import Path
-from datetime import date
+from build.pipeline import BUILD_DATE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "jmdict-examples-eng.json.tgz"
@@ -161,7 +161,7 @@ def _metadata(source: dict, count: int, filter_note: str, tags: dict) -> dict:
         "upstream_languages": source.get("languages", []),
         "upstream_common_only_variant": source.get("commonOnly", False),
         "dictRevisions": source.get("dictRevisions", []),
-        "generated": date.today().isoformat(),
+        "generated": BUILD_DATE,
         "count": count,
         "filter": filter_note,
         "tags": tags,

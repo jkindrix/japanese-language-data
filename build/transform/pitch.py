@@ -26,7 +26,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from datetime import date
+from build.pipeline import BUILD_DATE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE = REPO_ROOT / "sources" / "kanjium" / "accents.txt"
@@ -102,7 +102,7 @@ def build() -> None:
             "source_url": "https://github.com/mifunetoshiro/kanjium",
             "license": "CC-BY-SA 4.0",
             "source_version": "master branch (commit pinned via fetch.py SHA256)",
-            "generated": date.today().isoformat(),
+            "generated": BUILD_DATE,
             "count": len(entries),
             "coverage_date": "approximately 2022 (upstream last substantive update)",
             "attribution": (

@@ -16,12 +16,58 @@ without executing them.
 from __future__ import annotations
 
 import argparse
+import json
 import sys
+import time
 from dataclasses import dataclass, field
+from datetime import date
 from pathlib import Path
 from typing import Callable
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+from build.constants import REPO_ROOT
+
+# ---------------------------------------------------------------------------
+# DAG dependency enforcement
+# ---------------------------------------------------------------------------
+# Each key is a stage name; its value is the set of stages that MUST
+# appear before it in the stage list. This is enforced at pipeline
+# startup — a mis-ordered stage list raises immediately rather than
+# producing a subtly incorrect build.
+#
+# Rationale: git log shows that implicit ordering already caused a real
+# bug (stroke_order vs kanji). Comments-as-documentation is not enough.
+
+STAGE_DEPENDENCIES: dict[str, set[str]] = {
+    "kanji": {"radicals", "jlpt"},
+    "words": {"jlpt"},
+    "stroke_order": {"kanji"},
+    "expressions": {"jlpt"},
+    "cross_links": {"kanji", "words", "radicals", "sentences"},
+    "grammar": {"sentences"},
+}
+
+
+def _validate_stage_ordering(stages: list[Stage]) -> None:
+    """Verify that the stage list respects STAGE_DEPENDENCIES.
+
+    Raises ValueError with a clear message if any stage appears before
+    a dependency it requires.
+    """
+    stage_positions = {s.name: i for i, s in enumerate(stages)}
+    for stage_name, deps in STAGE_DEPENDENCIES.items():
+        if stage_name not in stage_positions:
+            continue  # stage filtered out (e.g., --only)
+        pos = stage_positions[stage_name]
+        for dep in sorted(deps):
+            if dep not in stage_positions:
+                continue  # dependency filtered out — OK for --only runs
+            if stage_positions[dep] >= pos:
+                raise ValueError(
+                    f"Stage ordering violation: '{stage_name}' (position {pos}) "
+                    f"depends on '{dep}' (position {stage_positions[dep]}), "
+                    f"but '{dep}' appears later. Reorder the stage list in "
+                    f"_build_stages()."
+                )
 
 
 @dataclass
@@ -72,24 +118,13 @@ def _build_stages() -> list[Stage]:
         words,
     )
 
-    # Stage ordering is dependency-driven. A later stage may read the
-    # OUTPUT of an earlier stage (as an optional enrichment input). A
-    # clean-build run must put every stage after everything it depends
-    # on, otherwise the first build produces different output than
-    # subsequent builds (caught by the CI byte-reproducibility check).
-    #
-    # Known dependencies:
-    #   * kanji → radicals (optional: radical_components enrichment)
-    #   * kanji → jlpt       (optional: jlpt_waller enrichment)
-    #   * words → jlpt       (optional: jlpt_waller enrichment)
-    #   * stroke_order → kanji  (FILTER: only SVGs for characters in
-    #     kanji.json are written; without kanji.json the stage emits
-    #     every SVG in the archive, producing a 6,702-entry index
-    #     instead of the 13,108-entry index and leaving ~280 non-kanji
-    #     SVGs in data/enrichment/stroke-order/)
-    #   * expressions → jlpt (optional: jlpt_waller enrichment)
-    #   * cross_links → kanji, words, radicals, sentences
-    #   * grammar → sentences (for Tatoeba linkage)
+    # Stage ordering is dependency-driven and enforced by
+    # _validate_stage_ordering() against STAGE_DEPENDENCIES above.
+    # A later stage may read the OUTPUT of an earlier stage (as an
+    # optional enrichment input). A clean-build run must put every
+    # stage after everything it depends on, otherwise the first build
+    # produces different output than subsequent builds (caught by the
+    # CI byte-reproducibility check).
     return [
         # ---- Independent transforms (no reads from data/) ----
         Stage("kana", "Hand-curated hiragana/katakana dataset.", kana.build, phase=1),
@@ -102,7 +137,7 @@ def _build_stages() -> list[Stage]:
         # ---- Core transforms that read enrichment outputs ----
         Stage("kanji", "Kanji entries from KANJIDIC2, enriched with radical components and JLPT level.", kanji.build, phase=1),
         Stage("words", "Vocabulary from JMdict-examples, enriched with JLPT level.", words.build, phase=1),
-        # ---- stroke_order MUST run after kanji (filters on kanji.json) ----
+        # ---- stroke_order MUST run after kanji (enforced by STAGE_DEPENDENCIES) ----
         Stage("stroke_order", "Stroke order SVGs from KanjiVG (filtered to characters in kanji.json).", stroke_order.build, phase=2),
         # ---- Cross-references (depend on core + enrichment data) ----
         Stage("cross_links", "Generate all cross-reference files.", cross_links.build, phase=2),
@@ -135,7 +170,17 @@ def run_pipeline(
     if only:
         stages = [s for s in stages if s.name in only]
 
-    print(f"Pipeline: {len(stages)} stages")
+    # Enforce the dependency DAG before running anything. This catches
+    # mis-ordered stages at startup rather than producing subtly wrong
+    # output that only appears as a byte-diff failure in CI.
+    _validate_stage_ordering(stages)
+
+    # Capture the build date once at pipeline start. This eliminates the
+    # cross-midnight race condition where a long-running build could
+    # write different dates into different output files.
+    build_date = date.today().isoformat()
+
+    print(f"Pipeline: {len(stages)} stages (build date: {build_date})")
     for stage in stages:
         print(f"  [phase {stage.phase}] {stage.name} — {stage.description}")
 
@@ -143,27 +188,50 @@ def run_pipeline(
         print("\n(dry run — no stages executed)")
         return 0
 
+    # Make the build date available to transforms via module-level
+    # import. Transforms that write metadata.generated should use
+    # ``from build.pipeline import BUILD_DATE`` instead of calling
+    # date.today() independently. This is set once here and never
+    # changes during a pipeline run.
+    global BUILD_DATE  # noqa: PLW0603
+    BUILD_DATE = build_date
+
     print()
     failures: list[tuple[str, Exception]] = []
+    total_elapsed = 0.0
     for stage in stages:
         print(f"Running: {stage.name}")
+        t0 = time.monotonic()
         try:
             stage.runner()
-            print(f"  ok: {stage.name}")
+            elapsed = time.monotonic() - t0
+            total_elapsed += elapsed
+            print(f"  ok: {stage.name} ({elapsed:.1f}s)")
         except NotImplementedError as exc:
+            elapsed = time.monotonic() - t0
+            total_elapsed += elapsed
             print(f"  pending: {exc}")
-        except Exception as exc:  # noqa: BLE001 — we want to collect all failures
+        except (RuntimeError, ValueError, FileNotFoundError, OSError,
+                KeyError, TypeError, json.JSONDecodeError) as exc:
+            elapsed = time.monotonic() - t0
+            total_elapsed += elapsed
             failures.append((stage.name, exc))
-            print(f"  FAILED: {exc}")
+            print(f"  FAILED: {exc} ({elapsed:.1f}s)")
 
     if failures:
-        print(f"\n{len(failures)} stage(s) failed:")
+        print(f"\n{len(failures)} stage(s) failed ({total_elapsed:.1f}s total):")
         for name, exc in failures:
             print(f"  {name}: {exc}")
         return 1
 
-    print("\nPipeline complete.")
+    print(f"\nPipeline complete ({total_elapsed:.1f}s total).")
     return 0
+
+
+# Build date for the current pipeline run. Set by run_pipeline() at
+# startup. Transforms should import this instead of calling
+# date.today() independently to avoid cross-midnight inconsistency.
+BUILD_DATE: str = date.today().isoformat()
 
 
 def main(argv: list[str] | None = None) -> int:

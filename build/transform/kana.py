@@ -34,7 +34,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from datetime import date
+from build.pipeline import BUILD_DATE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 OUT = REPO_ROOT / "data" / "core" / "kana.json"
@@ -432,7 +432,7 @@ def build() -> None:
         "metadata": {
             "source": "Hand-curated (project original)",
             "license": "CC-BY-SA 4.0",
-            "generated": date.today().isoformat(),
+            "generated": BUILD_DATE,
             "count": len(entries),
             "field_notes": {
                 "character": "The kana character itself. Yōon entries (e.g., きゃ) are two-codepoint strings.",

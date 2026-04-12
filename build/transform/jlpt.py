@@ -31,7 +31,7 @@ from __future__ import annotations
 import csv
 import json
 from pathlib import Path
-from datetime import date
+from build.pipeline import BUILD_DATE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 VOCAB_DIR = REPO_ROOT / "sources" / "waller-jlpt"
@@ -137,7 +137,7 @@ def _parse_kanji_jlpt(path: Path, retrieved: str) -> list[dict]:
 
 
 def build() -> None:
-    retrieved = date.today().isoformat()
+    retrieved = BUILD_DATE
 
     print("[jlpt]     parsing Waller vocab CSVs (via stephenmk/yomitan-jlpt-vocab)")
     all_classifications: list[dict] = []

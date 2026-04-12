@@ -45,7 +45,7 @@ import json
 import re
 import tarfile
 from pathlib import Path
-from datetime import date
+from build.pipeline import BUILD_DATE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 KRADFILE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "kradfile.json.tgz"
@@ -308,6 +308,13 @@ def _load_kangxi_mapping() -> dict[str, dict]:
     the project's progressive-enrichment pattern used in kanji.py).
     """
     if not WIKIPEDIA_WIKITEXT.exists():
+        import warnings
+        warnings.warn(
+            f"Wikipedia Kangxi source not found at {WIKIPEDIA_WIKITEXT}. "
+            f"Radical meanings and Kangxi numbers will be empty. "
+            f"Run `just fetch` to download upstream sources.",
+            stacklevel=2,
+        )
         return {}
     wikitext = WIKIPEDIA_WIKITEXT.read_text(encoding="utf-8")
     return _parse_kangxi_wikitext(wikitext)
@@ -429,7 +436,7 @@ def build() -> None:
                 "revision": WIKIPEDIA_REVID,
                 "url": WIKIPEDIA_URL,
             },
-            "generated": date.today().isoformat(),
+            "generated": BUILD_DATE,
             "radicals_total": total,
             "radicals_with_meaning": matched,
             "radicals_meaning_coverage_pct": round(coverage_pct, 2),

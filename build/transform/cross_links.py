@@ -35,7 +35,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from datetime import date
+from build.pipeline import BUILD_DATE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 KANJI_JSON = REPO_ROOT / "data" / "core" / "kanji.json"
@@ -102,9 +102,15 @@ def _build_word_cross_refs(words_data: dict) -> tuple[dict, dict, dict]:
 
 
 def _write_xref(out_path: Path, mapping: dict, direction: str, key_type: str, value_type: str, source_files: list[str], notes: dict | None = None, extra_metadata: dict | None = None) -> None:
-    """Write a single cross-reference file per schemas/cross-refs.schema.json."""
+    """Write a single cross-reference file per schemas/cross-refs.schema.json.
+
+    Keys in *mapping* are sorted for deterministic output — the built
+    JSON is byte-identical across runs regardless of dict insertion order.
+    """
+    # Sort mapping keys for deterministic output.
+    mapping = dict(sorted(mapping.items()))
     output_metadata = {
-        "generated": date.today().isoformat(),
+        "generated": BUILD_DATE,
         "count": len(mapping),
         "direction": direction,
         "key_type": key_type,

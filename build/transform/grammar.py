@@ -38,7 +38,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from datetime import date
+from build.pipeline import BUILD_DATE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CURATED_DIR = REPO_ROOT / "grammar-curated"
@@ -176,7 +176,14 @@ def _link_examples_to_tatoeba(
 def build() -> None:
     print(f"[grammar]  loading curated files from {CURATED_DIR.relative_to(REPO_ROOT)}/")
     if not CURATED_DIR.exists():
-        print(f"[grammar]  no curated directory found; emitting empty grammar.json")
+        import warnings
+        warnings.warn(
+            f"grammar-curated/ directory not found at {CURATED_DIR}. "
+            f"grammar.json will be empty. If this is unexpected, check "
+            f"that the repository is complete.",
+            stacklevel=2,
+        )
+        print(f"[grammar]  WARNING: no curated directory found; emitting empty grammar.json")
         entries: list[dict] = []
     else:
         entries = []
@@ -279,7 +286,7 @@ def build() -> None:
         "metadata": {
             "source": "Hand-curated (project original) — see grammar-curated/ for input files",
             "license": "CC-BY-SA 4.0",
-            "generated": date.today().isoformat(),
+            "generated": BUILD_DATE,
             "count": len(entries),
             "by_level": by_level,
             "review_coverage": by_status,

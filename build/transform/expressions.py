@@ -21,7 +21,7 @@ from __future__ import annotations
 import json
 import tarfile
 from pathlib import Path
-from datetime import date
+from build.pipeline import BUILD_DATE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "jmdict-examples-eng.json.tgz"
@@ -127,7 +127,7 @@ def build() -> None:
             "license": "CC-BY-SA 4.0 (EDRDG License)",
             "source_version": source.get("version", ""),
             "upstream_dict_date": source.get("dictDate", ""),
-            "generated": date.today().isoformat(),
+            "generated": BUILD_DATE,
             "count": total,
             "attribution": (
                 "Expressions extracted from JMdict (Electronic Dictionary "

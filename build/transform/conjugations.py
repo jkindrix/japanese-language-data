@@ -51,7 +51,7 @@ from __future__ import annotations
 import json
 import tarfile
 from pathlib import Path
-from datetime import date
+from build.pipeline import BUILD_DATE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "jmdict-examples-eng.json.tgz"
@@ -493,7 +493,7 @@ def build() -> None:
         "metadata": {
             "source": "Auto-generated from JMdict verb and adjective entries",
             "license": "CC-BY-SA 4.0",
-            "generated": date.today().isoformat(),
+            "generated": BUILD_DATE,
             "count": len(entries),
             "conjugation_rules_reference": (
                 "Conjugation rules encoded directly in build/transform/conjugations.py. "

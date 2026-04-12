@@ -23,9 +23,7 @@ except ImportError:  # pragma: no cover
     print("ERROR: jsonschema not installed. Run: pip install -r build/requirements.txt")
     raise
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-SCHEMAS_DIR = REPO_ROOT / "schemas"
-DATA_DIR = REPO_ROOT / "data"
+from build.constants import DATA_DIR, MANIFEST_PATH, REPO_ROOT, SCHEMAS_DIR
 
 # Mapping: relative data path → schema file name (without path).
 SCHEMA_MAP: dict[str, str] = {
@@ -70,8 +68,185 @@ def _iter_targets() -> Iterator[tuple[Path, dict]]:
         yield data_path, schema
 
 
+def _validate_manifest() -> list[tuple[Path, str]]:
+    """Validate manifest.json against its schema.
+
+    Returns a list of failures (empty on success). Skips silently if
+    manifest.json or its schema does not exist yet.
+    """
+    failures: list[tuple[Path, str]] = []
+    schema_path = SCHEMAS_DIR / "manifest.schema.json"
+    if not MANIFEST_PATH.exists() or not schema_path.exists():
+        return failures
+
+    try:
+        data = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        failures.append((MANIFEST_PATH, f"invalid JSON: {exc}"))
+        print(f"[fail] manifest.json: invalid JSON ({exc})")
+        return failures
+
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    try:
+        jsonschema.validate(instance=data, schema=schema)
+        print("[ok]   manifest.json")
+    except jsonschema.ValidationError as exc:
+        location = "/".join(str(p) for p in exc.absolute_path) or "<root>"
+        failures.append((MANIFEST_PATH, f"schema error at {location}: {exc.message}"))
+        print(f"[fail] manifest.json: {location}: {exc.message}")
+
+    return failures
+
+
+def _load_json_safe(path: Path) -> dict | None:
+    """Load a JSON file, returning None if it doesn't exist or is invalid."""
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+
+
+def _semantic_checks() -> list[tuple[str, str]]:
+    """Run semantic integrity checks that go beyond schema validation.
+
+    These check referential integrity across files, detect duplicates,
+    and verify determinism invariants. Returns a list of (check_name,
+    error_message) tuples for failures.
+    """
+    failures: list[tuple[str, str]] = []
+
+    # --- Load data files (skip checks if files aren't built yet) ---
+    kanji_data = _load_json_safe(DATA_DIR / "core" / "kanji.json")
+    words_data = _load_json_safe(DATA_DIR / "core" / "words.json")
+    sentences_data = _load_json_safe(DATA_DIR / "corpus" / "sentences.json")
+    radicals_data = _load_json_safe(DATA_DIR / "core" / "radicals.json")
+    grammar_data = _load_json_safe(DATA_DIR / "grammar" / "grammar.json")
+    k2w = _load_json_safe(DATA_DIR / "cross-refs" / "kanji-to-words.json")
+    w2k = _load_json_safe(DATA_DIR / "cross-refs" / "word-to-kanji.json")
+    w2s = _load_json_safe(DATA_DIR / "cross-refs" / "word-to-sentences.json")
+    k2r = _load_json_safe(DATA_DIR / "cross-refs" / "kanji-to-radicals.json")
+    stroke_idx = _load_json_safe(DATA_DIR / "enrichment" / "stroke-order-index.json")
+
+    # --- Check 1: Duplicate detection in primary datasets ---
+    if kanji_data:
+        kanji_chars = [k["character"] for k in kanji_data.get("kanji", [])]
+        if len(kanji_chars) != len(set(kanji_chars)):
+            seen: set[str] = set()
+            dupes: list[str] = []
+            for c in kanji_chars:
+                if c in seen:
+                    dupes.append(c)
+                seen.add(c)
+            failures.append(("duplicate-kanji", f"Duplicate kanji entries: {dupes}"))
+
+    if radicals_data:
+        rad_chars = [r["radical"] for r in radicals_data.get("radicals", [])]
+        if len(rad_chars) != len(set(rad_chars)):
+            seen_r: set[str] = set()
+            dupes_r: list[str] = []
+            for c in rad_chars:
+                if c in seen_r:
+                    dupes_r.append(c)
+                seen_r.add(c)
+            failures.append(("duplicate-radicals", f"Duplicate radical entries: {dupes_r}"))
+
+    if grammar_data:
+        grammar_ids = [g["id"] for g in grammar_data.get("grammar_points", [])]
+        if len(grammar_ids) != len(set(grammar_ids)):
+            seen_g: set[str] = set()
+            dupes_g: list[str] = []
+            for i in grammar_ids:
+                if i in seen_g:
+                    dupes_g.append(i)
+                seen_g.add(i)
+            failures.append(("duplicate-grammar", f"Duplicate grammar IDs: {dupes_g}"))
+
+    # --- Check 2: Cross-reference referential integrity ---
+    if kanji_data and k2w:
+        kanji_set = {k["character"] for k in kanji_data.get("kanji", [])}
+        k2w_mapping = k2w.get("mapping", {})
+        orphan_kanji = set(k2w_mapping.keys()) - kanji_set
+        # Filter out non-kanji characters (full-width numerals, etc.)
+        # that are expected in word kanji fields but not in kanji.json.
+        if len(orphan_kanji) > 200:  # sanity threshold
+            failures.append((
+                "k2w-orphans",
+                f"kanji-to-words has {len(orphan_kanji)} keys not in kanji.json "
+                f"(expected ≤200 non-kanji chars)"
+            ))
+
+    if words_data and w2s and sentences_data:
+        sentence_ids = {s["id"] for s in sentences_data.get("sentences", [])}
+        w2s_mapping = w2s.get("mapping", {})
+        dangling = set()
+        for word_id, sent_ids in w2s_mapping.items():
+            for sid in sent_ids:
+                if sid not in sentence_ids:
+                    dangling.add(sid)
+        if dangling:
+            failures.append((
+                "w2s-dangling",
+                f"word-to-sentences references {len(dangling)} sentence IDs "
+                f"not in sentences.json: {list(dangling)[:5]}..."
+            ))
+
+    if kanji_data and k2r and radicals_data:
+        rad_set = {r["radical"] for r in radicals_data.get("radicals", [])}
+        k2r_mapping = k2r.get("mapping", {})
+        missing_rads = set()
+        for kanji_char, rad_list in k2r_mapping.items():
+            for rad in rad_list:
+                if rad not in rad_set:
+                    missing_rads.add(rad)
+        if missing_rads:
+            failures.append((
+                "k2r-missing-radicals",
+                f"kanji-to-radicals references {len(missing_rads)} radicals "
+                f"not in radicals.json: {sorted(missing_rads)[:10]}"
+            ))
+
+    # --- Check 3: Bidirectional consistency (kanji↔words) ---
+    if k2w and w2k:
+        k2w_mapping = k2w.get("mapping", {})
+        w2k_mapping = w2k.get("mapping", {})
+
+        # Every word in k2w values should have that kanji in w2k
+        for kanji_char, word_ids in k2w_mapping.items():
+            for wid in word_ids:
+                if wid in w2k_mapping:
+                    if kanji_char not in w2k_mapping[wid]:
+                        failures.append((
+                            "k2w-w2k-asymmetry",
+                            f"kanji-to-words maps {kanji_char}→{wid} but "
+                            f"word-to-kanji does not map {wid}→{kanji_char}"
+                        ))
+                        break  # one example is enough
+
+    # --- Check 4: Determinism — sorted keys in index files ---
+    if stroke_idx:
+        chars = list(stroke_idx.get("characters", {}).keys())
+        if chars != sorted(chars):
+            failures.append((
+                "stroke-order-sort",
+                "stroke-order-index.json keys are not in sorted order "
+                "(non-deterministic build output)"
+            ))
+
+    if k2w:
+        keys = list(k2w.get("mapping", {}).keys())
+        if keys != sorted(keys):
+            failures.append((
+                "k2w-sort",
+                "kanji-to-words.json mapping keys are not in sorted order"
+            ))
+
+    return failures
+
+
 def validate_all() -> int:
-    """Validate every data file against its schema.
+    """Validate every data file against its schema, then run semantic checks.
 
     Returns:
         0 if every file passes (or if no files exist yet — Phase 0), 1 if
@@ -83,6 +258,12 @@ def validate_all() -> int:
         return 0
 
     failures: list[tuple[Path, str]] = []
+
+    # Validate manifest.json first (not a data file, but the build's
+    # single source of truth — if it's malformed, everything downstream
+    # is suspect).
+    failures.extend(_validate_manifest())
+
     for data_path, schema in targets:
         rel = data_path.relative_to(REPO_ROOT)
         try:
@@ -100,11 +281,20 @@ def validate_all() -> int:
             failures.append((data_path, f"schema error at {location}: {exc.message}"))
             print(f"[fail] {rel}: {location}: {exc.message}")
 
+    # Semantic integrity checks (beyond JSON Schema).
+    print("\nSemantic integrity checks:")
+    semantic_failures = _semantic_checks()
+    for check_name, msg in semantic_failures:
+        failures.append((Path(check_name), msg))
+        print(f"[fail] {check_name}: {msg}")
+    if not semantic_failures:
+        print("[ok]   all semantic checks passed")
+
     if failures:
-        print(f"\n{len(failures)} file(s) failed validation.")
+        print(f"\n{len(failures)} check(s) failed validation.")
         return 1
 
-    print(f"\n{len(targets)} file(s) validated.")
+    print(f"\n{len(targets)} file(s) + semantic checks validated.")
     return 0
 
 

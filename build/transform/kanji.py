@@ -38,7 +38,7 @@ from __future__ import annotations
 import json
 import tarfile
 from pathlib import Path
-from datetime import date
+from build.pipeline import BUILD_DATE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "kanjidic2-all.json.tgz"
@@ -269,7 +269,7 @@ def _metadata(source_meta: dict, count: int, filter_note: str = "") -> dict:
         "upstream_database_version": source_meta.get("databaseVersion", ""),
         "upstream_file_version": source_meta.get("fileVersion"),
         "upstream_languages": source_meta.get("languages", []),
-        "generated": date.today().isoformat(),
+        "generated": BUILD_DATE,
         "count": count,
         "filter": filter_note,
         "attribution": (

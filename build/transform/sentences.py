@@ -24,7 +24,7 @@ from __future__ import annotations
 import json
 import tarfile
 from pathlib import Path
-from datetime import date
+from build.pipeline import BUILD_DATE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "jmdict-examples-eng.json.tgz"
@@ -97,7 +97,7 @@ def build() -> None:
             "license": "CC-BY 2.0 FR (sentence text); subset under CC0 1.0",
             "source_version": source.get("version", ""),
             "upstream_dict_date": source.get("dictDate", ""),
-            "generated": date.today().isoformat(),
+            "generated": BUILD_DATE,
             "count": len(sentences),
             "attribution": (
                 "Example sentences from the Tatoeba Project (https://tatoeba.org/) "

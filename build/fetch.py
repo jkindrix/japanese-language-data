@@ -23,16 +23,14 @@ from __future__ import annotations
 import hashlib
 import json
 import sys
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Iterable
 
 import requests
 
-# Paths relative to the repository root.
-REPO_ROOT = Path(__file__).resolve().parent.parent
-SOURCES_DIR = REPO_ROOT / "sources"
-MANIFEST_PATH = REPO_ROOT / "manifest.json"
+from build.constants import MANIFEST_PATH, REPO_ROOT, SOURCES_DIR
 
 
 @dataclass(frozen=True)
@@ -186,27 +184,123 @@ SOURCES: tuple[Source, ...] = (
 )
 
 
-def _download(url: str, destination: Path) -> None:
-    """Stream a download to *destination*, creating parent directories.
+# Maximum file size we'll accept (100 MB). Protects against corrupted
+# upstream URLs pointing to unexpectedly large files.
+MAX_DOWNLOAD_BYTES = 100 * 1024 * 1024
 
-    Sends a descriptive User-Agent per Wikipedia's UA policy (required for
+# Retry policy for transient network failures.
+MAX_RETRIES = 3
+RETRY_BACKOFF_BASE = 2  # seconds: 2, 4, 8
+
+
+def _get_version() -> str:
+    """Read the project version from manifest.json for the User-Agent header."""
+    try:
+        manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+        return manifest.get("version", "dev")
+    except (FileNotFoundError, json.JSONDecodeError):
+        return "dev"
+
+
+def _build_session() -> requests.Session:
+    """Create a reusable requests.Session with a descriptive User-Agent.
+
+    Connection pooling across multiple fetches is more efficient and
+    reduces the chance of transient failures from opening fresh
+    connections.
+
+    User-Agent follows Wikipedia's UA policy (required for
     api.wikipedia.org) and polite practice on other hosts.
     See https://meta.wikimedia.org/wiki/User-Agent_policy
     """
+    session = requests.Session()
+    version = _get_version()
+    session.headers["User-Agent"] = (
+        f"japanese-language-data/{version} "
+        f"(https://github.com/jkindrix/japanese-language-data; "
+        f"reproducible-build fetcher)"
+    )
+    return session
+
+
+def _download(url: str, destination: Path, session: requests.Session) -> None:
+    """Stream a download to *destination* atomically.
+
+    Downloads to a ``.tmp`` file first and renames on success so that a
+    partial download (from a dropped connection) never leaves a corrupt
+    file in the cache.
+    """
     destination.parent.mkdir(parents=True, exist_ok=True)
-    headers = {
-        "User-Agent": (
-            "japanese-language-data/0.4.0 "
-            "(https://github.com/jkindrix/japanese-language-data; "
-            "reproducible-build fetcher)"
-        )
-    }
-    with requests.get(url, stream=True, timeout=60, headers=headers) as response:
-        response.raise_for_status()
-        with destination.open("wb") as handle:
-            for chunk in response.iter_content(chunk_size=65536):
-                if chunk:
-                    handle.write(chunk)
+    tmp_path = destination.with_suffix(destination.suffix + ".tmp")
+
+    try:
+        with session.get(url, stream=True, timeout=60) as response:
+            response.raise_for_status()
+
+            # Check Content-Length if the server provides it.
+            content_length = response.headers.get("Content-Length")
+            if content_length and int(content_length) > MAX_DOWNLOAD_BYTES:
+                raise RuntimeError(
+                    f"Upstream file too large: {int(content_length):,} bytes "
+                    f"(limit {MAX_DOWNLOAD_BYTES:,}). Check the URL."
+                )
+
+            written = 0
+            with tmp_path.open("wb") as handle:
+                for chunk in response.iter_content(chunk_size=65536):
+                    if chunk:
+                        written += len(chunk)
+                        if written > MAX_DOWNLOAD_BYTES:
+                            raise RuntimeError(
+                                f"Download exceeded {MAX_DOWNLOAD_BYTES:,} byte "
+                                f"limit during streaming. Aborting."
+                            )
+                        handle.write(chunk)
+
+        # Atomic rename: only replaces the destination once the full
+        # download succeeds. On POSIX this is atomic; on Windows it
+        # replaces but is not atomic (acceptable for this use case).
+        tmp_path.rename(destination)
+
+    except BaseException:
+        # Clean up the partial .tmp file on any failure.
+        tmp_path.unlink(missing_ok=True)
+        raise
+
+
+def _download_with_retries(
+    url: str,
+    destination: Path,
+    session: requests.Session,
+) -> None:
+    """Download with exponential backoff on transient failures.
+
+    Retries on connection errors and server errors (5xx). Hash
+    mismatches and client errors (4xx) are NOT retried — they indicate
+    a real problem, not a transient one.
+    """
+    for attempt in range(MAX_RETRIES):
+        try:
+            _download(url, destination, session)
+            return
+        except (requests.ConnectionError, requests.Timeout, OSError) as exc:
+            if attempt == MAX_RETRIES - 1:
+                raise
+            delay = RETRY_BACKOFF_BASE ** (attempt + 1)
+            print(f"[retry]      attempt {attempt + 1}/{MAX_RETRIES} "
+                  f"failed ({type(exc).__name__}), retrying in {delay}s")
+            time.sleep(delay)
+        except requests.HTTPError as exc:
+            # Only retry on server errors (5xx); client errors (4xx) are permanent.
+            if exc.response is not None and 500 <= exc.response.status_code < 600:
+                if attempt == MAX_RETRIES - 1:
+                    raise
+                delay = RETRY_BACKOFF_BASE ** (attempt + 1)
+                print(f"[retry]      attempt {attempt + 1}/{MAX_RETRIES} "
+                      f"failed (HTTP {exc.response.status_code}), retrying in {delay}s")
+                time.sleep(delay)
+            else:
+                raise
 
 
 def _sha256(path: Path) -> str:
@@ -247,6 +341,7 @@ def fetch_all(sources: Iterable[Source] = SOURCES) -> dict:
     manifest = _load_manifest()
     manifest.setdefault("sources", {})
     sources_meta = manifest["sources"]
+    session = _build_session()
 
     for source in sources:
         cache_full = SOURCES_DIR / source.cache_path
@@ -276,7 +371,7 @@ def fetch_all(sources: Iterable[Source] = SOURCES) -> dict:
 
         if need_download:
             print(f"[fetching]   {source.name} <- {source.url}")
-            _download(source.url, cache_full)
+            _download_with_retries(source.url, cache_full, session)
             observed = _sha256(cache_full)
             if expected and observed != expected:
                 raise SystemExit(
@@ -291,6 +386,7 @@ def fetch_all(sources: Iterable[Source] = SOURCES) -> dict:
             entry["size_bytes"] = cache_full.stat().st_size
             print(f"[fetched]    {source.name} sha256={observed[:16]}… size={entry['size_bytes']:,}B")
 
+    session.close()
     _save_manifest(manifest)
     return manifest
 

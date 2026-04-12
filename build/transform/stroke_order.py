@@ -32,7 +32,7 @@ import re
 import shutil
 import zipfile
 from pathlib import Path
-from datetime import date
+from build.pipeline import BUILD_DATE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_ZIP = REPO_ROOT / "sources" / "kanjivg" / "kanjivg-main.zip"
@@ -214,7 +214,7 @@ def build() -> None:
             "source_url": "https://kanjivg.tagaini.net/",
             "license": "CC-BY-SA 3.0 Unported",
             "source_version": "r20250816",
-            "generated": date.today().isoformat(),
+            "generated": BUILD_DATE,
             "count": len(index_entries),
             "svg_directory": "data/enrichment/stroke-order/",
             "attribution": (
