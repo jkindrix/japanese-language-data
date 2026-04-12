@@ -14,6 +14,40 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ---
 
+## [Unreleased]
+
+### Added — new data
+
+- **OpenSubtitles subtitle frequency** (`data/enrichment/frequency-subtitles.json`): 8,598 vocabulary-matched word frequency entries from the OpenSubtitles 2018 Japanese subtitle corpus (movies, TV, anime). Provides spoken-media frequency as an openly-licensed substitute for the license-blocked JPDB data. Source: hermitdave/FrequencyWords (MIT license). New upstream source pinned in `manifest.json` with SHA256 verification.
+
+### Added — distribution
+
+- **GitHub Release automation**: New `release` job in CI workflow triggers on `v*` tags, builds the full pipeline, runs both exports (SQLite + Yomitan), extracts release notes from CHANGELOG, and publishes a GitHub Release with `dist/japanese-language-data.sqlite` and `dist/japanese-language-data.zip` attached. Uses `softprops/action-gh-release@v2`.
+- **Yomitan pitch accent enrichment**: Yomitan export now includes pitch accent data for 80.1% of terms (25,392 entries with `[pitch: N]` notation). Subtitle frequency data provides a small score boost for high-frequency words.
+- **SQLite export completeness**: 4 new tables added: `expressions` (13,220 rows), `conjugations` (3,507 rows), `jlpt_classifications` (11,099 rows), `frequency_subtitles` (8,598 rows). Word-to-grammar cross-ref table scaffolded (awaiting grammar example word-ID extraction).
+
+### Added — infrastructure
+
+- **38 new tests** (317 → 355): Unit tests for frequency_subtitles, export_sqlite insert functions, furigana mock-build, kftt tarball extraction, grammar pattern extraction, stroke_order edge cases, sentences dedup, expressions filter. Coverage: 47% → 51%.
+- **Coverage floor bumped** from 45% to 50% (`pyproject.toml`).
+
+### Fixed — pipeline
+
+- **Pipeline stage reorder**: Grammar and expressions now run before cross_links (was reversed). Enables word-to-grammar cross-reference generation once grammar examples carry word IDs.
+
+### Fixed — documentation
+
+- **README.md**: Added `frequency-subtitles.json` to Enrichment data inventory table.
+- **docs/downstream.md**: Updated file sizes table with current counts (words: 23,119; added frequency-subtitles and furigana rows; corrected cross-refs total).
+- **manifest.json `next_actions`**: Removed 6 delivered items (SQLite, corpus frequency, kanji-to-sentences, radical-to-kanji, furigana, enhanced Yomitan). Updated coverage numbers. Added specific note about word-to-grammar scaffolding status.
+
+### Verification
+
+- 355 tests, all passing.
+- 26 data files validated against schemas + semantic integrity checks.
+- Coverage: 51% (fail-under: 50%).
+- Lint clean.
+
 ## [0.8.0] — 2026-04-12
 
 **Data completeness push.** Closes 6 data gaps, adds 2 new data sources, hardens all schemas, and ships a Yomitan export. Sentence corpus grows 17x. Grammar-to-Tatoeba linkage goes from 0.5% to 75.6%. Test suite grows from 200 to 249 tests.
