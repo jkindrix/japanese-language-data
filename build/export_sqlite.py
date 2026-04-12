@@ -96,6 +96,13 @@ def _create_schema(conn: sqlite3.Connection) -> None:
             count INTEGER
         );
 
+        CREATE TABLE IF NOT EXISTS frequency_wikipedia (
+            text TEXT,
+            reading TEXT,
+            rank INTEGER,
+            count INTEGER
+        );
+
         CREATE TABLE IF NOT EXISTS frequency_web (
             text TEXT,
             reading TEXT,
@@ -203,6 +210,8 @@ def _create_schema(conn: sqlite3.Connection) -> None:
         CREATE INDEX IF NOT EXISTS idx_freq_rank ON frequency_corpus(rank);
         CREATE INDEX IF NOT EXISTS idx_freqsub_rank ON frequency_subtitles(rank);
         CREATE INDEX IF NOT EXISTS idx_freqsub_text ON frequency_subtitles(text);
+        CREATE INDEX IF NOT EXISTS idx_freqwp_rank ON frequency_wikipedia(rank);
+        CREATE INDEX IF NOT EXISTS idx_freqwp_text ON frequency_wikipedia(text);
         CREATE INDEX IF NOT EXISTS idx_freqweb_rank ON frequency_web(rank);
         CREATE INDEX IF NOT EXISTS idx_freqweb_text ON frequency_web(text);
         CREATE INDEX IF NOT EXISTS idx_furigana_text ON furigana(text);
@@ -380,6 +389,13 @@ def export() -> None:
                 for e in freq_sub_data.get("entries", [])]
         conn.executemany("INSERT INTO frequency_subtitles VALUES (?,?,?,?)", rows)
         print(f"[sqlite]   frequency (subtitles): {len(rows):,}")
+
+    freq_wp_data = _load_json(DATA_DIR / "enrichment" / "frequency-wikipedia.json")
+    if freq_wp_data:
+        rows = [(e["text"], e.get("reading"), e["rank"], e.get("count"))
+                for e in freq_wp_data.get("entries", [])]
+        conn.executemany("INSERT INTO frequency_wikipedia VALUES (?,?,?,?)", rows)
+        print(f"[sqlite]   frequency (wikipedia): {len(rows):,}")
 
     freq_web_data = _load_json(DATA_DIR / "enrichment" / "frequency-web.json")
     if freq_web_data:

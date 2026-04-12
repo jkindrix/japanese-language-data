@@ -3,6 +3,8 @@
 requests==2.32.3
 jsonschema==4.23.0
 genanki==0.13.1
+mecab-python3==1.0.12
+unidic-lite==1.0.8
 
 # Development / test dependencies.
 pytest==8.3.3

@@ -4446,3 +4446,48 @@ def test_aozora_ruby_extractor() -> None:
     pairs = ext.get_pairs()
     assert len(pairs) == 1
     assert pairs[0] == ("食", "た")
+
+
+# ---------------------------------------------------------------------------
+# frequency_wikipedia — tokenization and build
+# ---------------------------------------------------------------------------
+
+def test_frequency_wikipedia_tokenize() -> None:
+    from build.transform.frequency_wikipedia import _tokenize_sentences
+    counts = _tokenize_sentences(["食べるのが好きです", "食べる"])
+    # "食べる" should appear as a lemma at least twice
+    assert counts.get("食べる", 0) >= 2
+    # Particles should be excluded
+    assert counts.get("の", 0) == 0
+    assert counts.get("が", 0) == 0
+
+
+def test_frequency_wikipedia_build(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import frequency_wikipedia as mod
+
+    kftt = {"sentences": [
+        {"id": "kftt-1", "japanese": "京都は美しい都市です"},
+        {"id": "kftt-2", "japanese": "京都の寺院は有名です"},
+    ]}
+    kftt_path = tmp_path / "sentences-kftt.json"
+    kftt_path.write_text(json.dumps(kftt), encoding="utf-8")
+
+    words = {"words": [
+        {"id": "1", "kanji": [{"text": "京都"}], "kana": [{"text": "きょうと"}]},
+        {"id": "2", "kanji": [{"text": "美しい"}], "kana": [{"text": "うつくしい"}]},
+    ]}
+    words_path = tmp_path / "words.json"
+    words_path.write_text(json.dumps(words), encoding="utf-8")
+
+    out = tmp_path / "frequency-wikipedia.json"
+    monkeypatch.setattr(mod, "KFTT_JSON", kftt_path)
+    monkeypatch.setattr(mod, "WORDS_JSON", words_path)
+    monkeypatch.setattr(mod, "OUT", out)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    result = json.loads(out.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] >= 1
+    texts = [e["text"] for e in result["entries"]]
+    assert "京都" in texts

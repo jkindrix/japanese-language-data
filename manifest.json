@@ -153,6 +153,7 @@
     "data/enrichment/frequency-corpus.json": 14647,
     "data/enrichment/frequency-subtitles.json": 8598,
     "data/enrichment/frequency-web.json": 11038,
+    "data/enrichment/frequency-wikipedia.json": 14553,
     "data/enrichment/furigana.json": 28920,
     "data/enrichment/counter-words.json": 125,
     "data/enrichment/ateji.json": 239,
