@@ -131,23 +131,23 @@
     "data/cross-refs/kanji-to-radicals.json": 12156
   },
   "grammar_curation_status": {
-    "total_entries": 579,
+    "total_entries": 595,
     "by_level": {
-      "N5": 60,
+      "N5": 76,
       "N4": 91,
       "N3": 139,
       "N2": 150,
       "N1": 139
     },
     "target_entries": "500-700",
-    "coverage_pct": "83-116",
+    "coverage_pct": "85-119",
     "review_status_distribution": {
-      "draft": 579,
+      "draft": 595,
       "community_reviewed": 0,
       "native_speaker_reviewed": 0
     },
     "operational_reviewers_engaged": 0,
-    "as_of": "2026-04-11",
+    "as_of": "2026-04-12",
     "note": "Zero native-speaker reviewers engaged as of this release. docs/contributing.md has the aspirational call for reviewers but no operational pipeline exists yet. The grammar dataset is usable-but-not-authoritative until this changes. This is the single weakest dimension of the project by the maintainer's own admission in README.md and docs/gaps.md."
   },
   "next_actions": [
