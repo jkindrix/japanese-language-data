@@ -18,95 +18,18 @@
     },
     "curation_outliers": {
       "description": "Structural-heuristic lists of entries reviewers may wish to prioritize. These are NOT quality judgements — they are pure counts of schema fields. A 'sparse_examples' entry has fewer than 3 examples; 'no_related' has an empty related array; 'no_formation_notes' has no formation_notes entries. Most entries are structurally uniform so these lists are short, and reviewing them first gives a cheap reviewer signal about where the curation is thinnest.",
-      "sparse_examples_count": 65,
-      "sparse_examples": [
-        "ba-conditional",
-        "causative-form",
-        "counter-people-nin",
-        "counter-tsu",
-        "da-plain-copula",
-        "darou-deshou-conjecture",
-        "deshita-past-polite-copula",
-        "dewa-arimasen-negative-polite-copula",
-        "ga-hoshii-wanting-thing",
-        "ga-kedo-although",
-        "hajimeru-auxiliary",
-        "hazu-expected",
-        "hou-ga-comparative",
-        "i-adjective-negative",
-        "i-adjective-nonpast",
-        "i-adjective-past",
-        "ichiban-superlative",
-        "imasu-existence-animate",
-        "kamoshirenai-might",
-        "kara-cause",
-        "kono-sono-ano-dono-attributive",
-        "masen-polite-negative-verb",
-        "masendeshita-polite-past-negative-verb",
-        "mashita-polite-past-verb",
-        "mashou-ka-invitation",
-        "mashou-volitional",
-        "n-desu-explanation",
-        "na-adjective-attributive",
-        "na-adjective-negative",
-        "na-adjective-nonpast",
-        "na-adjective-past",
-        "nai-de-kudasai",
-        "nai-form",
-        "nakereba-naranai",
-        "nakute-mo-ii",
-        "nara-conditional",
-        "ni-naru-become",
-        "ni-suru-decide",
-        "nikui-hard",
-        "node-cause",
-        "noun-modifying-clause",
-        "owaru-finish",
-        "particle-e-direction",
-        "particle-ka-question",
-        "particle-kara-from",
-        "particle-made-until",
-        "particle-mo-also",
-        "particle-ne-seeking-agreement",
-        "particle-to-and-with",
-        "particle-ya-non-exhaustive",
-        "particle-yo-emphasis",
-        "sugiru-too-much",
-        "ta-form",
-        "tai-desire",
-        "tara-conditional",
-        "te-form-basic",
-        "te-kudasai-request",
-        "te-mo-ii-permission",
-        "te-wa-ikenai-prohibition",
-        "to-conditional",
-        "to-iu",
-        "to-omou",
-        "tsumori-intention",
-        "volitional-form",
-        "yasui-easy"
-      ],
-      "no_related_count": 8,
-      "no_related": [
-        "ga-kedo-although",
-        "koko-soko-asoko-doko",
-        "n-desu-explanation",
-        "noun-modifying-clause",
-        "particle-ka-question",
-        "particle-mo-also",
-        "particle-no-possession",
-        "potential-form"
-      ],
-      "no_formation_notes_count": 1,
-      "no_formation_notes": [
-        "masendeshita-polite-past-negative-verb"
-      ]
+      "sparse_examples_count": 0,
+      "sparse_examples": [],
+      "no_related_count": 0,
+      "no_related": [],
+      "no_formation_notes_count": 0,
+      "no_formation_notes": []
     },
     "tatoeba_linkage": {
-      "total_examples": 1722,
+      "total_examples": 1787,
       "linked_examples": 4,
       "linked_via_normalization": 0,
-      "link_rate_pct": 0.23,
+      "link_rate_pct": 0.22,
       "method": "Two-pass text match against data/corpus/sentences.json: first exact, then conservatively normalized (trailing sentence-final punctuation and whitespace stripped). Normalization never collapses kanji/kana variants or changes width/case."
     },
     "authorship_statement": "All grammar explanations are written in our own words based on general, well-known, non-copyrightable facts about Japanese grammar. We do not copy from Tae Kim's Guide to Japanese (CC-BY-NC-SA, license incompatible with our CC-BY-SA 4.0 output), Dictionary of Basic Japanese Grammar, Handbook of Japanese Grammar Patterns, or any other copyrighted source. Every entry is marked review_status=draft and awaits native-speaker review. See docs/contributing.md for the call to native-speaker reviewers.",
@@ -17527,7 +17450,10 @@
         "できる is a standalone word meaning 'can do'; it is the potential form of する and also used for general ability."
       ],
       "formality": "neutral",
-      "related": [],
+      "related": [
+        "causative-form",
+        "passive-form"
+      ],
       "examples": [
         {
           "japanese": "日本語が話せます。",
@@ -17612,6 +17538,11 @@
           "japanese": "子供を遊ばせました。",
           "english": "I let the children play.",
           "source": "original"
+        },
+        {
+          "japanese": "母は弟に野菜を食べさせました。",
+          "english": "My mother made my little brother eat vegetables.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -17683,6 +17614,11 @@
           "japanese": "お酒を飲まないつもりです。",
           "english": "I intend not to drink alcohol.",
           "source": "original"
+        },
+        {
+          "japanese": "大学を卒業したら、留学するつもりです。",
+          "english": "I plan to study abroad after I graduate from university.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -17717,6 +17653,11 @@
           "japanese": "彼はいい人だと思う。",
           "english": "I think he's a good person. (plain)",
           "source": "original"
+        },
+        {
+          "japanese": "このレストランは高いと思います。",
+          "english": "I think this restaurant is expensive.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -17748,6 +17689,11 @@
         {
           "japanese": "田中という人を知っていますか。",
           "english": "Do you know a person called Tanaka?",
+          "source": "original"
+        },
+        {
+          "japanese": "先生は「静かにしなさい」と言いました。",
+          "english": "The teacher said, 'Be quiet.'",
           "source": "original"
         }
       ],
@@ -17783,6 +17729,11 @@
           "japanese": "彼はもう帰ったでしょう。",
           "english": "He's probably already gone home.",
           "source": "original"
+        },
+        {
+          "japanese": "この仕事は大変だろう。",
+          "english": "This job is probably tough. (plain)",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -17816,6 +17767,11 @@
           "japanese": "彼は来ないかもしれない。",
           "english": "He might not come. (plain)",
           "source": "original"
+        },
+        {
+          "japanese": "あの店はもう閉まっているかもしれません。",
+          "english": "That shop might already be closed.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -17848,6 +17804,11 @@
         {
           "japanese": "そんなはずはない。",
           "english": "There's no way that can be true. (plain)",
+          "source": "original"
+        },
+        {
+          "japanese": "荷物は明日届くはずです。",
+          "english": "The package should arrive tomorrow.",
           "source": "original"
         }
       ],
@@ -17884,6 +17845,11 @@
           "japanese": "家に帰ったら、手紙が来ていた。",
           "english": "When I got home, a letter had come.",
           "source": "original"
+        },
+        {
+          "japanese": "お金があったら、新しいパソコンを買いたいです。",
+          "english": "If I had money, I'd want to buy a new computer.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -17919,6 +17885,11 @@
           "japanese": "安ければ買います。",
           "english": "If it's cheap, I'll buy it.",
           "source": "original"
+        },
+        {
+          "japanese": "早く寝れば、朝元気になります。",
+          "english": "If you go to bed early, you'll feel good in the morning.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -17952,6 +17923,11 @@
         {
           "japanese": "春になると桜が咲きます。",
           "english": "When spring comes, the cherry blossoms bloom.",
+          "source": "original"
+        },
+        {
+          "japanese": "右に曲がると、駅が見えます。",
+          "english": "If you turn right, you'll see the station.",
           "source": "original"
         }
       ],
@@ -17987,6 +17963,11 @@
           "japanese": "寿司なら、あの店が一番です。",
           "english": "When it comes to sushi, that shop is the best.",
           "source": "original"
+        },
+        {
+          "japanese": "安いなら、買います。",
+          "english": "If it's cheap, I'll buy it.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -18020,6 +18001,11 @@
         {
           "japanese": "来年、日本へ行こうと思っています。",
           "english": "I'm thinking of going to Japan next year.",
+          "source": "original"
+        },
+        {
+          "japanese": "そろそろ帰ろう。",
+          "english": "Let's head home soon. (casual)",
           "source": "original"
         }
       ],
@@ -18055,6 +18041,11 @@
           "japanese": "図書館で話してはいけない。",
           "english": "You must not talk in the library. (plain)",
           "source": "original"
+        },
+        {
+          "japanese": "授業中に寝てはいけません。",
+          "english": "You must not sleep during class.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -18087,6 +18078,11 @@
         {
           "japanese": "写真を撮ってもいいです。",
           "english": "You may take photos.",
+          "source": "original"
+        },
+        {
+          "japanese": "窓を開けてもいいですか。",
+          "english": "May I open the window?",
           "source": "original"
         }
       ],
@@ -18121,6 +18117,11 @@
           "japanese": "薬を飲まなきゃ。",
           "english": "I gotta take my medicine. (casual)",
           "source": "original"
+        },
+        {
+          "japanese": "レポートを今週中に出さなければなりません。",
+          "english": "I have to submit the report by the end of this week.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -18153,6 +18154,11 @@
         {
           "japanese": "お金を払わなくてもいい。",
           "english": "You don't have to pay. (plain)",
+          "source": "original"
+        },
+        {
+          "japanese": "全部食べなくてもいいですよ。",
+          "english": "You don't have to eat it all.",
           "source": "original"
         }
       ],
@@ -18188,6 +18194,11 @@
           "japanese": "雨が降っているから、傘を持って行きます。",
           "english": "Since it's raining, I'll take an umbrella.",
           "source": "original"
+        },
+        {
+          "japanese": "暑いから、窓を開けてください。",
+          "english": "Because it's hot, please open the window.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -18221,6 +18232,11 @@
           "japanese": "疲れているので、今日は帰ります。",
           "english": "Because I'm tired, I'll go home today.",
           "source": "original"
+        },
+        {
+          "japanese": "電車が遅れたので、遅刻しました。",
+          "english": "Because the train was delayed, I was late.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -18241,7 +18257,12 @@
         "These are conjunctions, unlike しかし which is an adverb starting a new sentence."
       ],
       "formality": "neutral",
-      "related": [],
+      "related": [
+        "node-cause",
+        "kara-cause",
+        "shikashi-but",
+        "kedomo-formal-but"
+      ],
       "examples": [
         {
           "japanese": "この本は難しいですが、面白いです。",
@@ -18251,6 +18272,11 @@
         {
           "japanese": "行きたいけど、時間がない。",
           "english": "I want to go, but I don't have time. (casual)",
+          "source": "original"
+        },
+        {
+          "japanese": "高かったけど、買ってよかったです。",
+          "english": "It was expensive, but I'm glad I bought it.",
           "source": "original"
         }
       ],
@@ -18272,7 +18298,10 @@
         "More formal written form: のです."
       ],
       "formality": "neutral",
-      "related": [],
+      "related": [
+        "kara-cause",
+        "node-cause"
+      ],
       "examples": [
         {
           "japanese": "頭が痛いんです。",
@@ -18282,6 +18311,11 @@
         {
           "japanese": "なぜ来なかったんですか。",
           "english": "Why didn't you come?",
+          "source": "original"
+        },
+        {
+          "japanese": "実は、来月引っ越すんです。",
+          "english": "Actually, I'm moving next month.",
           "source": "original"
         }
       ],
@@ -18316,6 +18350,11 @@
           "japanese": "寒くなってきました。",
           "english": "It's gotten cold.",
           "source": "original"
+        },
+        {
+          "japanese": "日本語が上手になりましたね。",
+          "english": "Your Japanese has gotten good, hasn't it?",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -18347,6 +18386,11 @@
         {
           "japanese": "明日行くことにしました。",
           "english": "I've decided to go tomorrow.",
+          "source": "original"
+        },
+        {
+          "japanese": "旅行は来月にすることにしました。",
+          "english": "I've decided to make the trip next month.",
           "source": "original"
         }
       ],
@@ -18382,6 +18426,11 @@
           "japanese": "雨が降り始めた。",
           "english": "It started to rain. (plain)",
           "source": "original"
+        },
+        {
+          "japanese": "子供たちが歌い始めました。",
+          "english": "The children started singing.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -18413,6 +18462,11 @@
         {
           "japanese": "宿題をやり終えた。",
           "english": "I finished the homework. (plain)",
+          "source": "original"
+        },
+        {
+          "japanese": "映画を見終わったら、電話してください。",
+          "english": "Please call me when you finish watching the movie.",
           "source": "original"
         }
       ],
@@ -18447,6 +18501,11 @@
           "japanese": "この服は高すぎる。",
           "english": "These clothes are too expensive.",
           "source": "original"
+        },
+        {
+          "japanese": "昨日、お酒を飲みすぎました。",
+          "english": "I drank too much alcohol yesterday.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -18479,6 +18538,11 @@
         {
           "japanese": "先生の説明は分かりやすい。",
           "english": "The teacher's explanation is easy to understand.",
+          "source": "original"
+        },
+        {
+          "japanese": "この靴は歩きやすいです。",
+          "english": "These shoes are easy to walk in.",
           "source": "original"
         }
       ],
@@ -18513,6 +18577,11 @@
           "japanese": "この肉は食べにくい。",
           "english": "This meat is hard to eat.",
           "source": "original"
+        },
+        {
+          "japanese": "この薬は飲みにくいです。",
+          "english": "This medicine is hard to take.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -18533,7 +18602,9 @@
         "The head noun can be any syntactic role in the outer sentence (subject, object, etc.)."
       ],
       "formality": "neutral",
-      "related": [],
+      "related": [
+        "to-iu"
+      ],
       "examples": [
         {
           "japanese": "昨日、田中さんが作ったケーキはおいしかったです。",
@@ -18543,6 +18614,11 @@
         {
           "japanese": "私が住んでいる町はとても静かです。",
           "english": "The town where I live is very quiet.",
+          "source": "original"
+        },
+        {
+          "japanese": "友達がくれた本を読んでいます。",
+          "english": "I'm reading the book that my friend gave me.",
           "source": "original"
         }
       ],
@@ -21061,6 +21137,11 @@
           "japanese": "彼は学生だと思う。",
           "english": "I think he's a student.",
           "source": "original"
+        },
+        {
+          "japanese": "明日は休みだ。",
+          "english": "Tomorrow is a day off. (plain)",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -21092,6 +21173,11 @@
         {
           "japanese": "先生は元気でした。",
           "english": "The teacher was well.",
+          "source": "original"
+        },
+        {
+          "japanese": "あの映画はとても有名でした。",
+          "english": "That movie was very famous.",
           "source": "original"
         }
       ],
@@ -21125,6 +21211,11 @@
         {
           "japanese": "彼は日本人じゃありません。",
           "english": "He is not Japanese.",
+          "source": "original"
+        },
+        {
+          "japanese": "今日は月曜日ではありません。",
+          "english": "Today is not Monday.",
           "source": "original"
         }
       ],
@@ -21197,6 +21288,11 @@
           "japanese": "朝ごはんを食べました。",
           "english": "I ate breakfast.",
           "source": "original"
+        },
+        {
+          "japanese": "友だちに手紙を書きました。",
+          "english": "I wrote a letter to my friend.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -21229,6 +21325,11 @@
           "japanese": "今日は学校へ行きません。",
           "english": "I'm not going to school today.",
           "source": "original"
+        },
+        {
+          "japanese": "朝ごはんを食べません。",
+          "english": "I don't eat breakfast.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -21243,7 +21344,10 @@
       "meaning_en": "polite past negative verb ending",
       "meaning_detailed": "ませんでした is the polite past negative form of a verb. It expresses that an action did not happen.",
       "formation": "Same verb stem as ます, then + ませんでした instead of ます",
-      "formation_notes": [],
+      "formation_notes": [
+        "Form by replacing ます with ませんでした: 食べます → 食べませんでした, 行きます → 行きませんでした.",
+        "For い-adjective past negative, use くなかったです (e.g., 高くなかったです), not ませんでした. The ませんでした form is only for verbs."
+      ],
       "formality": "formal",
       "related": [
         "masen-polite-negative-verb",
@@ -21258,6 +21362,11 @@
         {
           "japanese": "彼は来ませんでした。",
           "english": "He didn't come.",
+          "source": "original"
+        },
+        {
+          "japanese": "先週、一度も泳ぎませんでした。",
+          "english": "I didn't swim even once last week.",
           "source": "original"
         }
       ],
@@ -21485,6 +21594,11 @@
           "japanese": "友だちと食事をしました。",
           "english": "I had a meal with a friend.",
           "source": "original"
+        },
+        {
+          "japanese": "母と電話で話しました。",
+          "english": "I talked with my mother on the phone.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -21504,7 +21618,10 @@
         "The nominalizing use (e.g., 食べるのが好き) appears later at higher levels."
       ],
       "formality": "neutral",
-      "related": [],
+      "related": [
+        "particle-ga-subject",
+        "particle-wa-topic"
+      ],
       "examples": [
         {
           "japanese": "これは私の本です。",
@@ -21552,6 +21669,11 @@
           "japanese": "日本へ旅行しました。",
           "english": "I traveled to Japan.",
           "source": "original"
+        },
+        {
+          "japanese": "友だちの家へ遊びに行きます。",
+          "english": "I'm going to my friend's house to hang out.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -21586,6 +21708,11 @@
           "japanese": "九時から授業が始まります。",
           "english": "Class starts at nine.",
           "source": "original"
+        },
+        {
+          "japanese": "この手紙は友だちからです。",
+          "english": "This letter is from a friend.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -21618,6 +21745,11 @@
           "japanese": "夜十時まで働きました。",
           "english": "I worked until ten at night.",
           "source": "original"
+        },
+        {
+          "japanese": "月曜日から金曜日まで学校があります。",
+          "english": "I have school from Monday to Friday.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -21637,7 +21769,10 @@
         "With quantity, 何もない ('nothing'), 誰もいない ('no one is here')."
       ],
       "formality": "neutral",
-      "related": [],
+      "related": [
+        "particle-wa-topic",
+        "particle-to-and-with"
+      ],
       "examples": [
         {
           "japanese": "私も学生です。",
@@ -21647,6 +21782,11 @@
         {
           "japanese": "彼もコーヒーを飲みます。",
           "english": "He also drinks coffee.",
+          "source": "original"
+        },
+        {
+          "japanese": "この本も面白いです。",
+          "english": "This book is also interesting.",
           "source": "original"
         }
       ],
@@ -21667,7 +21807,10 @@
         "Embedded questions use か at the end of the embedded clause."
       ],
       "formality": "formal",
-      "related": [],
+      "related": [
+        "particle-ne-seeking-agreement",
+        "particle-yo-emphasis"
+      ],
       "examples": [
         {
           "japanese": "これは何ですか。",
@@ -21677,6 +21820,11 @@
         {
           "japanese": "日本語が分かりますか。",
           "english": "Do you understand Japanese?",
+          "source": "original"
+        },
+        {
+          "japanese": "明日、学校に来ますか。",
+          "english": "Are you coming to school tomorrow?",
           "source": "original"
         }
       ],
@@ -21710,6 +21858,11 @@
           "japanese": "あの映画は面白かったですね。",
           "english": "That movie was interesting, wasn't it.",
           "source": "original"
+        },
+        {
+          "japanese": "この料理はおいしいですね。",
+          "english": "This food is delicious, isn't it.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -21741,6 +21894,11 @@
         {
           "japanese": "電車が来ましたよ。",
           "english": "The train has come (I'm telling you).",
+          "source": "original"
+        },
+        {
+          "japanese": "この本は面白いですよ。",
+          "english": "This book is interesting, you know.",
           "source": "original"
         }
       ],
@@ -21811,6 +21969,11 @@
           "japanese": "あの人は誰ですか。",
           "english": "Who is that person (over there)?",
           "source": "original"
+        },
+        {
+          "japanese": "どの電車に乗りますか。",
+          "english": "Which train will you take?",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -21830,7 +21993,9 @@
         "The more polite and abstract directional forms こちら/そちら/あちら/どちら are taught as a separate point."
       ],
       "formality": "neutral",
-      "related": [],
+      "related": [
+        "kono-sono-ano-dono-attributive"
+      ],
       "examples": [
         {
           "japanese": "ここは学校です。",
@@ -21918,6 +22083,11 @@
           "japanese": "教室に学生がいます。",
           "english": "There are students in the classroom.",
           "source": "original"
+        },
+        {
+          "japanese": "あそこに猫がいます。",
+          "english": "There is a cat over there.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -21951,6 +22121,11 @@
           "japanese": "学校に行って勉強します。",
           "english": "I go to school and study.",
           "source": "original"
+        },
+        {
+          "japanese": "手を洗って食べます。",
+          "english": "I wash my hands and then eat.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -21983,6 +22158,11 @@
         {
           "japanese": "ここに名前を書いてください。",
           "english": "Please write your name here.",
+          "source": "original"
+        },
+        {
+          "japanese": "窓を開けてください。",
+          "english": "Please open the window.",
           "source": "original"
         }
       ],
@@ -22054,6 +22234,11 @@
           "japanese": "彼は分からない。",
           "english": "He doesn't understand. (plain)",
           "source": "original"
+        },
+        {
+          "japanese": "明日は雨が降らない。",
+          "english": "It won't rain tomorrow. (plain)",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -22086,6 +22271,11 @@
         {
           "japanese": "もう食べた。",
           "english": "I already ate. (plain)",
+          "source": "original"
+        },
+        {
+          "japanese": "宿題を忘れた。",
+          "english": "I forgot my homework. (plain)",
           "source": "original"
         }
       ],
@@ -22120,6 +22310,11 @@
           "japanese": "その映画は面白い。",
           "english": "That movie is interesting. (plain)",
           "source": "original"
+        },
+        {
+          "japanese": "今日は暑いです。",
+          "english": "It is hot today.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -22153,6 +22348,11 @@
           "japanese": "今日は寒くない。",
           "english": "It's not cold today. (plain)",
           "source": "original"
+        },
+        {
+          "japanese": "この映画は面白くありません。",
+          "english": "This movie is not interesting.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -22185,6 +22385,11 @@
         {
           "japanese": "その映画はよかった。",
           "english": "That movie was good. (plain)",
+          "source": "original"
+        },
+        {
+          "japanese": "テストは難しかったです。",
+          "english": "The test was difficult.",
           "source": "original"
         }
       ],
@@ -22220,6 +22425,11 @@
           "japanese": "彼女は元気だ。",
           "english": "She is in good spirits. (plain)",
           "source": "original"
+        },
+        {
+          "japanese": "この町はにぎやかです。",
+          "english": "This town is lively.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -22250,6 +22460,11 @@
         {
           "japanese": "有名な歌手が来ました。",
           "english": "A famous singer came.",
+          "source": "original"
+        },
+        {
+          "japanese": "きれいな花を買いました。",
+          "english": "I bought beautiful flowers.",
           "source": "original"
         }
       ],
@@ -22284,6 +22499,11 @@
           "japanese": "彼は元気じゃない。",
           "english": "He's not in good spirits. (plain)",
           "source": "original"
+        },
+        {
+          "japanese": "あの店はにぎやかじゃありません。",
+          "english": "That store is not lively.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -22315,6 +22535,11 @@
         {
           "japanese": "部屋はきれいだった。",
           "english": "The room was clean. (plain)",
+          "source": "original"
+        },
+        {
+          "japanese": "この公園は昔、有名でした。",
+          "english": "This park was famous long ago.",
           "source": "original"
         }
       ],
@@ -22348,6 +22573,11 @@
           "japanese": "休みましょう。",
           "english": "Let's take a break.",
           "source": "original"
+        },
+        {
+          "japanese": "昼ごはんを食べましょう。",
+          "english": "Let's eat lunch.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -22378,6 +22608,11 @@
         {
           "japanese": "荷物を持ちましょうか。",
           "english": "Shall I carry your bag?",
+          "source": "original"
+        },
+        {
+          "japanese": "窓を開けましょうか。",
+          "english": "Shall I open the window?",
           "source": "original"
         }
       ],
@@ -22412,6 +22647,11 @@
           "japanese": "水が飲みたい。",
           "english": "I want to drink water. (plain)",
           "source": "original"
+        },
+        {
+          "japanese": "新しい本を読みたいです。",
+          "english": "I want to read a new book.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -22445,6 +22685,11 @@
           "japanese": "お金がほしい。",
           "english": "I want money. (plain)",
           "source": "original"
+        },
+        {
+          "japanese": "冷たい水がほしいです。",
+          "english": "I want cold water.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -22476,6 +22721,11 @@
         {
           "japanese": "コーヒーよりお茶のほうが好きです。",
           "english": "I like tea more than coffee.",
+          "source": "original"
+        },
+        {
+          "japanese": "電車のほうがバスより速いです。",
+          "english": "Trains are faster than buses.",
           "source": "original"
         }
       ],
@@ -22510,6 +22760,11 @@
           "japanese": "寿司が一番好きです。",
           "english": "I like sushi the most.",
           "source": "original"
+        },
+        {
+          "japanese": "このクラスで田中さんが一番背が高いです。",
+          "english": "Tanaka is the tallest in this class.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -22543,6 +22798,11 @@
           "japanese": "質問が一つあります。",
           "english": "I have one question.",
           "source": "original"
+        },
+        {
+          "japanese": "部屋に窓が二つあります。",
+          "english": "There are two windows in the room.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -22575,6 +22835,11 @@
         {
           "japanese": "二人で行きます。",
           "english": "We'll go as a pair.",
+          "source": "original"
+        },
+        {
+          "japanese": "パーティーに十人来ました。",
+          "english": "Ten people came to the party.",
           "source": "original"
         }
       ],
@@ -22651,6 +22916,11 @@
           "japanese": "心配しないでください。",
           "english": "Please don't worry.",
           "source": "original"
+        },
+        {
+          "japanese": "ここで食べないでください。",
+          "english": "Please do not eat here.",
+          "source": "original"
         }
       ],
       "review_status": "draft",
@@ -22682,6 +22952,11 @@
         {
           "japanese": "部屋に机やベッドがあります。",
           "english": "There are a desk, a bed, and other things in the room.",
+          "source": "original"
+        },
+        {
+          "japanese": "犬や猫がいます。",
+          "english": "There are dogs, cats, and so on.",
           "source": "original"
         }
       ],

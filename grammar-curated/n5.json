@@ -11,14 +11,32 @@
       "The plain-form equivalent is だ. In feminine plain speech だ is often dropped entirely."
     ],
     "formality": "formal",
-    "related": ["da-plain-copula", "deshita-past-polite-copula", "dewa-arimasen-negative-polite-copula"],
+    "related": [
+      "da-plain-copula",
+      "deshita-past-polite-copula",
+      "dewa-arimasen-negative-polite-copula"
+    ],
     "examples": [
-      {"japanese": "これは本です。", "english": "This is a book.", "source": "original"},
-      {"japanese": "田中さんは先生です。", "english": "Mr. Tanaka is a teacher.", "source": "original"},
-      {"japanese": "今日は月曜日です。", "english": "Today is Monday.", "source": "original"}
+      {
+        "japanese": "これは本です。",
+        "english": "This is a book.",
+        "source": "original"
+      },
+      {
+        "japanese": "田中さんは先生です。",
+        "english": "Mr. Tanaka is a teacher.",
+        "source": "original"
+      },
+      {
+        "japanese": "今日は月曜日です。",
+        "english": "Today is Monday.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "da-plain-copula",
@@ -32,13 +50,30 @@
       "Before certain particles and grammatical markers, だ is required even where it would otherwise be dropped."
     ],
     "formality": "casual",
-    "related": ["desu-polite-copula"],
+    "related": [
+      "desu-polite-copula"
+    ],
     "examples": [
-      {"japanese": "これは本だ。", "english": "This is a book. (plain)", "source": "original"},
-      {"japanese": "彼は学生だと思う。", "english": "I think he's a student.", "source": "original"}
+      {
+        "japanese": "これは本だ。",
+        "english": "This is a book. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は学生だと思う。",
+        "english": "I think he's a student.",
+        "source": "original"
+      },
+      {
+        "japanese": "明日は休みだ。",
+        "english": "Tomorrow is a day off. (plain)",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "deshita-past-polite-copula",
@@ -51,13 +86,31 @@
       "For い-adjectives, do not use でした — use かったです instead (e.g., 高かったです, not 高いでした)."
     ],
     "formality": "formal",
-    "related": ["desu-polite-copula", "i-adjective-past"],
+    "related": [
+      "desu-polite-copula",
+      "i-adjective-past"
+    ],
     "examples": [
-      {"japanese": "昨日は日曜日でした。", "english": "Yesterday was Sunday.", "source": "original"},
-      {"japanese": "先生は元気でした。", "english": "The teacher was well.", "source": "original"}
+      {
+        "japanese": "昨日は日曜日でした。",
+        "english": "Yesterday was Sunday.",
+        "source": "original"
+      },
+      {
+        "japanese": "先生は元気でした。",
+        "english": "The teacher was well.",
+        "source": "original"
+      },
+      {
+        "japanese": "あの映画はとても有名でした。",
+        "english": "That movie was very famous.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "dewa-arimasen-negative-polite-copula",
@@ -71,13 +124,31 @@
       "The past negative form is ではありませんでした (or じゃありませんでした)."
     ],
     "formality": "formal",
-    "related": ["desu-polite-copula", "deshita-past-polite-copula"],
+    "related": [
+      "desu-polite-copula",
+      "deshita-past-polite-copula"
+    ],
     "examples": [
-      {"japanese": "これはペンではありません。", "english": "This is not a pen.", "source": "original"},
-      {"japanese": "彼は日本人じゃありません。", "english": "He is not Japanese.", "source": "original"}
+      {
+        "japanese": "これはペンではありません。",
+        "english": "This is not a pen.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は日本人じゃありません。",
+        "english": "He is not Japanese.",
+        "source": "original"
+      },
+      {
+        "japanese": "今日は月曜日ではありません。",
+        "english": "Today is not Monday.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "masu-polite-verb",
@@ -92,14 +163,32 @@
       "The plain-form equivalent is the dictionary form (食べる, 行く)."
     ],
     "formality": "formal",
-    "related": ["mashita-polite-past-verb", "masen-polite-negative-verb", "masendeshita-polite-past-negative-verb"],
+    "related": [
+      "mashita-polite-past-verb",
+      "masen-polite-negative-verb",
+      "masendeshita-polite-past-negative-verb"
+    ],
     "examples": [
-      {"japanese": "毎朝、コーヒーを飲みます。", "english": "I drink coffee every morning.", "source": "original"},
-      {"japanese": "明日、東京へ行きます。", "english": "I will go to Tokyo tomorrow.", "source": "original"},
-      {"japanese": "日本語を勉強します。", "english": "I study Japanese.", "source": "original"}
+      {
+        "japanese": "毎朝、コーヒーを飲みます。",
+        "english": "I drink coffee every morning.",
+        "source": "original"
+      },
+      {
+        "japanese": "明日、東京へ行きます。",
+        "english": "I will go to Tokyo tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "日本語を勉強します。",
+        "english": "I study Japanese.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mashita-polite-past-verb",
@@ -112,13 +201,30 @@
       "Used for both single past events and completed actions."
     ],
     "formality": "formal",
-    "related": ["masu-polite-verb"],
+    "related": [
+      "masu-polite-verb"
+    ],
     "examples": [
-      {"japanese": "昨日、映画を見ました。", "english": "I watched a movie yesterday.", "source": "original"},
-      {"japanese": "朝ごはんを食べました。", "english": "I ate breakfast.", "source": "original"}
+      {
+        "japanese": "昨日、映画を見ました。",
+        "english": "I watched a movie yesterday.",
+        "source": "original"
+      },
+      {
+        "japanese": "朝ごはんを食べました。",
+        "english": "I ate breakfast.",
+        "source": "original"
+      },
+      {
+        "japanese": "友だちに手紙を書きました。",
+        "english": "I wrote a letter to my friend.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "masen-polite-negative-verb",
@@ -131,13 +237,31 @@
       "Covers both 'do not' and 'will not'."
     ],
     "formality": "formal",
-    "related": ["masu-polite-verb", "masendeshita-polite-past-negative-verb"],
+    "related": [
+      "masu-polite-verb",
+      "masendeshita-polite-past-negative-verb"
+    ],
     "examples": [
-      {"japanese": "お酒を飲みません。", "english": "I don't drink alcohol.", "source": "original"},
-      {"japanese": "今日は学校へ行きません。", "english": "I'm not going to school today.", "source": "original"}
+      {
+        "japanese": "お酒を飲みません。",
+        "english": "I don't drink alcohol.",
+        "source": "original"
+      },
+      {
+        "japanese": "今日は学校へ行きません。",
+        "english": "I'm not going to school today.",
+        "source": "original"
+      },
+      {
+        "japanese": "朝ごはんを食べません。",
+        "english": "I don't eat breakfast.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "masendeshita-polite-past-negative-verb",
@@ -146,15 +270,36 @@
     "meaning_en": "polite past negative verb ending",
     "meaning_detailed": "ませんでした is the polite past negative form of a verb. It expresses that an action did not happen.",
     "formation": "Same verb stem as ます, then + ませんでした instead of ます",
-    "formation_notes": [],
+    "formation_notes": [
+      "Form by replacing ます with ませんでした: 食べます → 食べませんでした, 行きます → 行きませんでした.",
+      "For い-adjective past negative, use くなかったです (e.g., 高くなかったです), not ませんでした. The ませんでした form is only for verbs."
+    ],
     "formality": "formal",
-    "related": ["masen-polite-negative-verb", "mashita-polite-past-verb"],
+    "related": [
+      "masen-polite-negative-verb",
+      "mashita-polite-past-verb"
+    ],
     "examples": [
-      {"japanese": "昨日、宿題をしませんでした。", "english": "I didn't do my homework yesterday.", "source": "original"},
-      {"japanese": "彼は来ませんでした。", "english": "He didn't come.", "source": "original"}
+      {
+        "japanese": "昨日、宿題をしませんでした。",
+        "english": "I didn't do my homework yesterday.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は来ませんでした。",
+        "english": "He didn't come.",
+        "source": "original"
+      },
+      {
+        "japanese": "先週、一度も泳ぎませんでした。",
+        "english": "I didn't swim even once last week.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-wa-topic",
@@ -169,14 +314,30 @@
       "Multiple topics can be marked in a single sentence for contrastive emphasis (私は日本語は分かります — 'as for me, Japanese I understand')."
     ],
     "formality": "neutral",
-    "related": ["particle-ga-subject"],
+    "related": [
+      "particle-ga-subject"
+    ],
     "examples": [
-      {"japanese": "私は学生です。", "english": "I am a student.", "source": "original"},
-      {"japanese": "今日は天気がいいですね。", "english": "The weather is nice today, isn't it.", "source": "original"},
-      {"japanese": "この本は高いです。", "english": "This book is expensive.", "source": "original"}
+      {
+        "japanese": "私は学生です。",
+        "english": "I am a student.",
+        "source": "original"
+      },
+      {
+        "japanese": "今日は天気がいいですね。",
+        "english": "The weather is nice today, isn't it.",
+        "source": "original"
+      },
+      {
+        "japanese": "この本は高いです。",
+        "english": "This book is expensive.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-ga-subject",
@@ -191,14 +352,30 @@
       "が can also mean 'but' as a conjunction in mid-sentence — that is a different usage."
     ],
     "formality": "neutral",
-    "related": ["particle-wa-topic"],
+    "related": [
+      "particle-wa-topic"
+    ],
     "examples": [
-      {"japanese": "誰が来ましたか。", "english": "Who came?", "source": "original"},
-      {"japanese": "田中さんが来ました。", "english": "Mr. Tanaka came.", "source": "original"},
-      {"japanese": "日本語が分かります。", "english": "I understand Japanese.", "source": "original"}
+      {
+        "japanese": "誰が来ましたか。",
+        "english": "Who came?",
+        "source": "original"
+      },
+      {
+        "japanese": "田中さんが来ました。",
+        "english": "Mr. Tanaka came.",
+        "source": "original"
+      },
+      {
+        "japanese": "日本語が分かります。",
+        "english": "I understand Japanese.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-o-object",
@@ -212,14 +389,30 @@
       "Also marks the path of motion verbs: 公園を散歩する ('walk through the park'), 道を渡る ('cross the road')."
     ],
     "formality": "neutral",
-    "related": ["particle-ga-subject"],
+    "related": [
+      "particle-ga-subject"
+    ],
     "examples": [
-      {"japanese": "本を読みます。", "english": "I read a book.", "source": "original"},
-      {"japanese": "水を飲みます。", "english": "I drink water.", "source": "original"},
-      {"japanese": "公園を散歩しました。", "english": "I walked through the park.", "source": "original"}
+      {
+        "japanese": "本を読みます。",
+        "english": "I read a book.",
+        "source": "original"
+      },
+      {
+        "japanese": "水を飲みます。",
+        "english": "I drink water.",
+        "source": "original"
+      },
+      {
+        "japanese": "公園を散歩しました。",
+        "english": "I walked through the park.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-ni-target",
@@ -233,15 +426,36 @@
       "For location of action (where the action takes place), use で, not に. に marks where something IS (with ある/いる); で marks where something HAPPENS."
     ],
     "formality": "neutral",
-    "related": ["particle-de-means", "particle-e-direction"],
+    "related": [
+      "particle-de-means",
+      "particle-e-direction"
+    ],
     "examples": [
-      {"japanese": "友だちに手紙を書きます。", "english": "I write a letter to my friend.", "source": "original"},
-      {"japanese": "東京に行きます。", "english": "I go to Tokyo.", "source": "original"},
-      {"japanese": "机の上に本があります。", "english": "There is a book on the desk.", "source": "original"},
-      {"japanese": "七時に起きます。", "english": "I wake up at seven o'clock.", "source": "original"}
+      {
+        "japanese": "友だちに手紙を書きます。",
+        "english": "I write a letter to my friend.",
+        "source": "original"
+      },
+      {
+        "japanese": "東京に行きます。",
+        "english": "I go to Tokyo.",
+        "source": "original"
+      },
+      {
+        "japanese": "机の上に本があります。",
+        "english": "There is a book on the desk.",
+        "source": "original"
+      },
+      {
+        "japanese": "七時に起きます。",
+        "english": "I wake up at seven o'clock.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-de-means",
@@ -255,14 +469,30 @@
       "Also used to mark quantity/limit (五千円で買う — 'buy for 5,000 yen')."
     ],
     "formality": "neutral",
-    "related": ["particle-ni-target"],
+    "related": [
+      "particle-ni-target"
+    ],
     "examples": [
-      {"japanese": "バスで学校に行きます。", "english": "I go to school by bus.", "source": "original"},
-      {"japanese": "図書館で勉強します。", "english": "I study at the library.", "source": "original"},
-      {"japanese": "日本語で話してください。", "english": "Please speak in Japanese.", "source": "original"}
+      {
+        "japanese": "バスで学校に行きます。",
+        "english": "I go to school by bus.",
+        "source": "original"
+      },
+      {
+        "japanese": "図書館で勉強します。",
+        "english": "I study at the library.",
+        "source": "original"
+      },
+      {
+        "japanese": "日本語で話してください。",
+        "english": "Please speak in Japanese.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-to-and-with",
@@ -276,13 +506,30 @@
       "For the quotation use (saying/thinking/calling), see to-iu."
     ],
     "formality": "neutral",
-    "related": ["particle-ya-non-exhaustive"],
+    "related": [
+      "particle-ya-non-exhaustive"
+    ],
     "examples": [
-      {"japanese": "パンと牛乳を買いました。", "english": "I bought bread and milk.", "source": "original"},
-      {"japanese": "友だちと食事をしました。", "english": "I had a meal with a friend.", "source": "original"}
+      {
+        "japanese": "パンと牛乳を買いました。",
+        "english": "I bought bread and milk.",
+        "source": "original"
+      },
+      {
+        "japanese": "友だちと食事をしました。",
+        "english": "I had a meal with a friend.",
+        "source": "original"
+      },
+      {
+        "japanese": "母と電話で話しました。",
+        "english": "I talked with my mother on the phone.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-no-possession",
@@ -296,14 +543,31 @@
       "The nominalizing use (e.g., 食べるのが好き) appears later at higher levels."
     ],
     "formality": "neutral",
-    "related": [],
+    "related": [
+      "particle-ga-subject",
+      "particle-wa-topic"
+    ],
     "examples": [
-      {"japanese": "これは私の本です。", "english": "This is my book.", "source": "original"},
-      {"japanese": "彼は日本語の先生です。", "english": "He is a Japanese language teacher.", "source": "original"},
-      {"japanese": "あの赤い車は田中さんのです。", "english": "That red car is Mr. Tanaka's.", "source": "original"}
+      {
+        "japanese": "これは私の本です。",
+        "english": "This is my book.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は日本語の先生です。",
+        "english": "He is a Japanese language teacher.",
+        "source": "original"
+      },
+      {
+        "japanese": "あの赤い車は田中さんのです。",
+        "english": "That red car is Mr. Tanaka's.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-e-direction",
@@ -317,13 +581,30 @@
       "Overlapping meaning with に for motion destination; に is more common in casual usage."
     ],
     "formality": "neutral",
-    "related": ["particle-ni-target"],
+    "related": [
+      "particle-ni-target"
+    ],
     "examples": [
-      {"japanese": "学校へ行きます。", "english": "I'm going to school.", "source": "original"},
-      {"japanese": "日本へ旅行しました。", "english": "I traveled to Japan.", "source": "original"}
+      {
+        "japanese": "学校へ行きます。",
+        "english": "I'm going to school.",
+        "source": "original"
+      },
+      {
+        "japanese": "日本へ旅行しました。",
+        "english": "I traveled to Japan.",
+        "source": "original"
+      },
+      {
+        "japanese": "友だちの家へ遊びに行きます。",
+        "english": "I'm going to my friend's house to hang out.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-kara-from",
@@ -338,13 +619,31 @@
       "The 'because' meaning attaches to verbs/adjectives/sentences, not nouns, and is covered at N4."
     ],
     "formality": "neutral",
-    "related": ["particle-made-until", "kara-cause"],
+    "related": [
+      "particle-made-until",
+      "kara-cause"
+    ],
     "examples": [
-      {"japanese": "日本から来ました。", "english": "I came from Japan.", "source": "original"},
-      {"japanese": "九時から授業が始まります。", "english": "Class starts at nine.", "source": "original"}
+      {
+        "japanese": "日本から来ました。",
+        "english": "I came from Japan.",
+        "source": "original"
+      },
+      {
+        "japanese": "九時から授業が始まります。",
+        "english": "Class starts at nine.",
+        "source": "original"
+      },
+      {
+        "japanese": "この手紙は友だちからです。",
+        "english": "This letter is from a friend.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-made-until",
@@ -358,13 +657,30 @@
       "Contrast with までに ('by [deadline]') — see N4."
     ],
     "formality": "neutral",
-    "related": ["particle-kara-from"],
+    "related": [
+      "particle-kara-from"
+    ],
     "examples": [
-      {"japanese": "駅まで歩きます。", "english": "I walk to the station.", "source": "original"},
-      {"japanese": "夜十時まで働きました。", "english": "I worked until ten at night.", "source": "original"}
+      {
+        "japanese": "駅まで歩きます。",
+        "english": "I walk to the station.",
+        "source": "original"
+      },
+      {
+        "japanese": "夜十時まで働きました。",
+        "english": "I worked until ten at night.",
+        "source": "original"
+      },
+      {
+        "japanese": "月曜日から金曜日まで学校があります。",
+        "english": "I have school from Monday to Friday.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-mo-also",
@@ -378,13 +694,31 @@
       "With quantity, 何もない ('nothing'), 誰もいない ('no one is here')."
     ],
     "formality": "neutral",
-    "related": [],
+    "related": [
+      "particle-wa-topic",
+      "particle-to-and-with"
+    ],
     "examples": [
-      {"japanese": "私も学生です。", "english": "I am a student too.", "source": "original"},
-      {"japanese": "彼もコーヒーを飲みます。", "english": "He also drinks coffee.", "source": "original"}
+      {
+        "japanese": "私も学生です。",
+        "english": "I am a student too.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼もコーヒーを飲みます。",
+        "english": "He also drinks coffee.",
+        "source": "original"
+      },
+      {
+        "japanese": "この本も面白いです。",
+        "english": "This book is also interesting.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-ka-question",
@@ -398,13 +732,31 @@
       "Embedded questions use か at the end of the embedded clause."
     ],
     "formality": "formal",
-    "related": [],
+    "related": [
+      "particle-ne-seeking-agreement",
+      "particle-yo-emphasis"
+    ],
     "examples": [
-      {"japanese": "これは何ですか。", "english": "What is this?", "source": "original"},
-      {"japanese": "日本語が分かりますか。", "english": "Do you understand Japanese?", "source": "original"}
+      {
+        "japanese": "これは何ですか。",
+        "english": "What is this?",
+        "source": "original"
+      },
+      {
+        "japanese": "日本語が分かりますか。",
+        "english": "Do you understand Japanese?",
+        "source": "original"
+      },
+      {
+        "japanese": "明日、学校に来ますか。",
+        "english": "Are you coming to school tomorrow?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-ne-seeking-agreement",
@@ -418,13 +770,30 @@
       "ね differs from よ: ね seeks shared agreement; よ asserts or informs."
     ],
     "formality": "neutral",
-    "related": ["particle-yo-emphasis"],
+    "related": [
+      "particle-yo-emphasis"
+    ],
     "examples": [
-      {"japanese": "今日はいい天気ですね。", "english": "The weather is nice today, isn't it.", "source": "original"},
-      {"japanese": "あの映画は面白かったですね。", "english": "That movie was interesting, wasn't it.", "source": "original"}
+      {
+        "japanese": "今日はいい天気ですね。",
+        "english": "The weather is nice today, isn't it.",
+        "source": "original"
+      },
+      {
+        "japanese": "あの映画は面白かったですね。",
+        "english": "That movie was interesting, wasn't it.",
+        "source": "original"
+      },
+      {
+        "japanese": "この料理はおいしいですね。",
+        "english": "This food is delicious, isn't it.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-yo-emphasis",
@@ -438,13 +807,30 @@
       "よね combines the two: asserting while seeking confirmation ('that's right, isn't it?')."
     ],
     "formality": "neutral",
-    "related": ["particle-ne-seeking-agreement"],
+    "related": [
+      "particle-ne-seeking-agreement"
+    ],
     "examples": [
-      {"japanese": "あの店は安いですよ。", "english": "That store is cheap, you know.", "source": "original"},
-      {"japanese": "電車が来ましたよ。", "english": "The train has come (I'm telling you).", "source": "original"}
+      {
+        "japanese": "あの店は安いですよ。",
+        "english": "That store is cheap, you know.",
+        "source": "original"
+      },
+      {
+        "japanese": "電車が来ましたよ。",
+        "english": "The train has come (I'm telling you).",
+        "source": "original"
+      },
+      {
+        "japanese": "この本は面白いですよ。",
+        "english": "This book is interesting, you know.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "kore-sore-are-demonstratives",
@@ -458,14 +844,30 @@
       "どれ is used when choosing from 3+ options; for 2 options, どちら is more appropriate."
     ],
     "formality": "neutral",
-    "related": ["kono-sono-ano-dono-attributive"],
+    "related": [
+      "kono-sono-ano-dono-attributive"
+    ],
     "examples": [
-      {"japanese": "これは本です。", "english": "This is a book.", "source": "original"},
-      {"japanese": "それは何ですか。", "english": "What is that (near you)?", "source": "original"},
-      {"japanese": "あれは富士山です。", "english": "That (over there) is Mt. Fuji.", "source": "original"}
+      {
+        "japanese": "これは本です。",
+        "english": "This is a book.",
+        "source": "original"
+      },
+      {
+        "japanese": "それは何ですか。",
+        "english": "What is that (near you)?",
+        "source": "original"
+      },
+      {
+        "japanese": "あれは富士山です。",
+        "english": "That (over there) is Mt. Fuji.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "kono-sono-ano-dono-attributive",
@@ -479,13 +881,30 @@
       "Same ko-so-a-do distance distinction as these pronouns."
     ],
     "formality": "neutral",
-    "related": ["kore-sore-are-demonstratives"],
+    "related": [
+      "kore-sore-are-demonstratives"
+    ],
     "examples": [
-      {"japanese": "この本は高いです。", "english": "This book is expensive.", "source": "original"},
-      {"japanese": "あの人は誰ですか。", "english": "Who is that person (over there)?", "source": "original"}
+      {
+        "japanese": "この本は高いです。",
+        "english": "This book is expensive.",
+        "source": "original"
+      },
+      {
+        "japanese": "あの人は誰ですか。",
+        "english": "Who is that person (over there)?",
+        "source": "original"
+      },
+      {
+        "japanese": "どの電車に乗りますか。",
+        "english": "Which train will you take?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "koko-soko-asoko-doko",
@@ -499,14 +918,30 @@
       "The more polite and abstract directional forms こちら/そちら/あちら/どちら are taught as a separate point."
     ],
     "formality": "neutral",
-    "related": [],
+    "related": [
+      "kono-sono-ano-dono-attributive"
+    ],
     "examples": [
-      {"japanese": "ここは学校です。", "english": "This is a school. (here is a school)", "source": "original"},
-      {"japanese": "トイレはどこですか。", "english": "Where is the restroom?", "source": "original"},
-      {"japanese": "あそこにレストランがあります。", "english": "There's a restaurant over there.", "source": "original"}
+      {
+        "japanese": "ここは学校です。",
+        "english": "This is a school. (here is a school)",
+        "source": "original"
+      },
+      {
+        "japanese": "トイレはどこですか。",
+        "english": "Where is the restroom?",
+        "source": "original"
+      },
+      {
+        "japanese": "あそこにレストランがあります。",
+        "english": "There's a restaurant over there.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "arimasu-existence-inanimate",
@@ -521,14 +956,30 @@
       "ない is the plain negative (ありません in polite form); あった is the plain past; なかった is plain past negative."
     ],
     "formality": "formal",
-    "related": ["imasu-existence-animate"],
+    "related": [
+      "imasu-existence-animate"
+    ],
     "examples": [
-      {"japanese": "机の上に本があります。", "english": "There is a book on the desk.", "source": "original"},
-      {"japanese": "部屋にテレビがあります。", "english": "There's a TV in the room.", "source": "original"},
-      {"japanese": "何かありますか。", "english": "Is there something?", "source": "original"}
+      {
+        "japanese": "机の上に本があります。",
+        "english": "There is a book on the desk.",
+        "source": "original"
+      },
+      {
+        "japanese": "部屋にテレビがあります。",
+        "english": "There's a TV in the room.",
+        "source": "original"
+      },
+      {
+        "japanese": "何かありますか。",
+        "english": "Is there something?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "imasu-existence-animate",
@@ -543,13 +994,30 @@
       "Vehicles do not take います even when a person is inside them (with some colloquial exceptions)."
     ],
     "formality": "formal",
-    "related": ["arimasu-existence-inanimate"],
+    "related": [
+      "arimasu-existence-inanimate"
+    ],
     "examples": [
-      {"japanese": "庭に犬がいます。", "english": "There is a dog in the garden.", "source": "original"},
-      {"japanese": "教室に学生がいます。", "english": "There are students in the classroom.", "source": "original"}
+      {
+        "japanese": "庭に犬がいます。",
+        "english": "There is a dog in the garden.",
+        "source": "original"
+      },
+      {
+        "japanese": "教室に学生がいます。",
+        "english": "There are students in the classroom.",
+        "source": "original"
+      },
+      {
+        "japanese": "あそこに猫がいます。",
+        "english": "There is a cat over there.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-form-basic",
@@ -563,13 +1031,31 @@
       "The て-form alone can also express a sequence: 朝起きて顔を洗う — 'get up in the morning and wash my face'."
     ],
     "formality": "neutral",
-    "related": ["te-kudasai-request", "te-imasu-progressive"],
+    "related": [
+      "te-kudasai-request",
+      "te-imasu-progressive"
+    ],
     "examples": [
-      {"japanese": "毎朝コーヒーを飲んで新聞を読みます。", "english": "I drink coffee and read the newspaper every morning.", "source": "original"},
-      {"japanese": "学校に行って勉強します。", "english": "I go to school and study.", "source": "original"}
+      {
+        "japanese": "毎朝コーヒーを飲んで新聞を読みます。",
+        "english": "I drink coffee and read the newspaper every morning.",
+        "source": "original"
+      },
+      {
+        "japanese": "学校に行って勉強します。",
+        "english": "I go to school and study.",
+        "source": "original"
+      },
+      {
+        "japanese": "手を洗って食べます。",
+        "english": "I wash my hands and then eat.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-kudasai-request",
@@ -583,13 +1069,31 @@
       "Softer request forms (-ていただけませんか, -ていただけますか) are N4+ and more appropriate in very formal contexts."
     ],
     "formality": "formal",
-    "related": ["te-form-basic", "nai-de-kudasai"],
+    "related": [
+      "te-form-basic",
+      "nai-de-kudasai"
+    ],
     "examples": [
-      {"japanese": "ゆっくり話してください。", "english": "Please speak slowly.", "source": "original"},
-      {"japanese": "ここに名前を書いてください。", "english": "Please write your name here.", "source": "original"}
+      {
+        "japanese": "ゆっくり話してください。",
+        "english": "Please speak slowly.",
+        "source": "original"
+      },
+      {
+        "japanese": "ここに名前を書いてください。",
+        "english": "Please write your name here.",
+        "source": "original"
+      },
+      {
+        "japanese": "窓を開けてください。",
+        "english": "Please open the window.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-imasu-progressive",
@@ -604,14 +1108,30 @@
       "Plain form: -ている. Casual: often contracted to -てる."
     ],
     "formality": "formal",
-    "related": ["te-form-basic"],
+    "related": [
+      "te-form-basic"
+    ],
     "examples": [
-      {"japanese": "今、本を読んでいます。", "english": "I'm reading a book right now.", "source": "original"},
-      {"japanese": "東京に住んでいます。", "english": "I live in Tokyo. (resultant state)", "source": "original"},
-      {"japanese": "田中さんは結婚しています。", "english": "Mr. Tanaka is married.", "source": "original"}
+      {
+        "japanese": "今、本を読んでいます。",
+        "english": "I'm reading a book right now.",
+        "source": "original"
+      },
+      {
+        "japanese": "東京に住んでいます。",
+        "english": "I live in Tokyo. (resultant state)",
+        "source": "original"
+      },
+      {
+        "japanese": "田中さんは結婚しています。",
+        "english": "Mr. Tanaka is married.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nai-form",
@@ -625,13 +1145,30 @@
       "Past negative: -なかった (食べなかった, 行かなかった)."
     ],
     "formality": "casual",
-    "related": ["masen-polite-negative-verb"],
+    "related": [
+      "masen-polite-negative-verb"
+    ],
     "examples": [
-      {"japanese": "今日は学校に行かない。", "english": "I'm not going to school today. (plain)", "source": "original"},
-      {"japanese": "彼は分からない。", "english": "He doesn't understand. (plain)", "source": "original"}
+      {
+        "japanese": "今日は学校に行かない。",
+        "english": "I'm not going to school today. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は分からない。",
+        "english": "He doesn't understand. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "明日は雨が降らない。",
+        "english": "It won't rain tomorrow. (plain)",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ta-form",
@@ -645,13 +1182,31 @@
       "Past negative plain: -なかった."
     ],
     "formality": "casual",
-    "related": ["mashita-polite-past-verb", "te-form-basic"],
+    "related": [
+      "mashita-polite-past-verb",
+      "te-form-basic"
+    ],
     "examples": [
-      {"japanese": "昨日、映画を見た。", "english": "I watched a movie yesterday. (plain)", "source": "original"},
-      {"japanese": "もう食べた。", "english": "I already ate. (plain)", "source": "original"}
+      {
+        "japanese": "昨日、映画を見た。",
+        "english": "I watched a movie yesterday. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "もう食べた。",
+        "english": "I already ate. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "宿題を忘れた。",
+        "english": "I forgot my homework. (plain)",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "i-adjective-nonpast",
@@ -665,13 +1220,31 @@
       "いい ('good') is irregular in past and negative forms — see i-adjective-negative and i-adjective-past."
     ],
     "formality": "neutral",
-    "related": ["i-adjective-negative", "i-adjective-past"],
+    "related": [
+      "i-adjective-negative",
+      "i-adjective-past"
+    ],
     "examples": [
-      {"japanese": "この本は高いです。", "english": "This book is expensive.", "source": "original"},
-      {"japanese": "その映画は面白い。", "english": "That movie is interesting. (plain)", "source": "original"}
+      {
+        "japanese": "この本は高いです。",
+        "english": "This book is expensive.",
+        "source": "original"
+      },
+      {
+        "japanese": "その映画は面白い。",
+        "english": "That movie is interesting. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "今日は暑いです。",
+        "english": "It is hot today.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "i-adjective-negative",
@@ -685,13 +1258,31 @@
       "The politeness form くないです is more colloquial than くありません; both are polite."
     ],
     "formality": "neutral",
-    "related": ["i-adjective-nonpast", "i-adjective-past"],
+    "related": [
+      "i-adjective-nonpast",
+      "i-adjective-past"
+    ],
     "examples": [
-      {"japanese": "この本は高くないです。", "english": "This book is not expensive.", "source": "original"},
-      {"japanese": "今日は寒くない。", "english": "It's not cold today. (plain)", "source": "original"}
+      {
+        "japanese": "この本は高くないです。",
+        "english": "This book is not expensive.",
+        "source": "original"
+      },
+      {
+        "japanese": "今日は寒くない。",
+        "english": "It's not cold today. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "この映画は面白くありません。",
+        "english": "This movie is not interesting.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "i-adjective-past",
@@ -705,13 +1296,31 @@
       "Past negative: drop い, add くなかった (plain) or くなかったです / くありませんでした (polite)."
     ],
     "formality": "neutral",
-    "related": ["i-adjective-nonpast", "i-adjective-negative"],
+    "related": [
+      "i-adjective-nonpast",
+      "i-adjective-negative"
+    ],
     "examples": [
-      {"japanese": "昨日は寒かったです。", "english": "It was cold yesterday.", "source": "original"},
-      {"japanese": "その映画はよかった。", "english": "That movie was good. (plain)", "source": "original"}
+      {
+        "japanese": "昨日は寒かったです。",
+        "english": "It was cold yesterday.",
+        "source": "original"
+      },
+      {
+        "japanese": "その映画はよかった。",
+        "english": "That movie was good. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "テストは難しかったです。",
+        "english": "The test was difficult.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "na-adjective-nonpast",
@@ -725,13 +1334,32 @@
       "Past, negative, and other forms use copula forms (see deshita, dewa-arimasen)."
     ],
     "formality": "neutral",
-    "related": ["na-adjective-attributive", "na-adjective-negative", "na-adjective-past"],
+    "related": [
+      "na-adjective-attributive",
+      "na-adjective-negative",
+      "na-adjective-past"
+    ],
     "examples": [
-      {"japanese": "この部屋は静かです。", "english": "This room is quiet.", "source": "original"},
-      {"japanese": "彼女は元気だ。", "english": "She is in good spirits. (plain)", "source": "original"}
+      {
+        "japanese": "この部屋は静かです。",
+        "english": "This room is quiet.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女は元気だ。",
+        "english": "She is in good spirits. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "この町はにぎやかです。",
+        "english": "This town is lively.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "na-adjective-attributive",
@@ -744,13 +1372,30 @@
       "Only the attributive position requires な; as a predicate, use だ or です (not な)."
     ],
     "formality": "neutral",
-    "related": ["na-adjective-nonpast"],
+    "related": [
+      "na-adjective-nonpast"
+    ],
     "examples": [
-      {"japanese": "静かな部屋がほしいです。", "english": "I want a quiet room.", "source": "original"},
-      {"japanese": "有名な歌手が来ました。", "english": "A famous singer came.", "source": "original"}
+      {
+        "japanese": "静かな部屋がほしいです。",
+        "english": "I want a quiet room.",
+        "source": "original"
+      },
+      {
+        "japanese": "有名な歌手が来ました。",
+        "english": "A famous singer came.",
+        "source": "original"
+      },
+      {
+        "japanese": "きれいな花を買いました。",
+        "english": "I bought beautiful flowers.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "na-adjective-negative",
@@ -764,13 +1409,31 @@
       "Past negative: ではありませんでした / じゃなかった."
     ],
     "formality": "neutral",
-    "related": ["na-adjective-nonpast", "dewa-arimasen-negative-polite-copula"],
+    "related": [
+      "na-adjective-nonpast",
+      "dewa-arimasen-negative-polite-copula"
+    ],
     "examples": [
-      {"japanese": "この部屋は静かではありません。", "english": "This room is not quiet.", "source": "original"},
-      {"japanese": "彼は元気じゃない。", "english": "He's not in good spirits. (plain)", "source": "original"}
+      {
+        "japanese": "この部屋は静かではありません。",
+        "english": "This room is not quiet.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は元気じゃない。",
+        "english": "He's not in good spirits. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "あの店はにぎやかじゃありません。",
+        "english": "That store is not lively.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "na-adjective-past",
@@ -783,13 +1446,31 @@
       "Past negative: ではありませんでした (polite) or じゃなかった (plain)."
     ],
     "formality": "neutral",
-    "related": ["na-adjective-nonpast", "deshita-past-polite-copula"],
+    "related": [
+      "na-adjective-nonpast",
+      "deshita-past-polite-copula"
+    ],
     "examples": [
-      {"japanese": "その町はとても静かでした。", "english": "That town was very quiet.", "source": "original"},
-      {"japanese": "部屋はきれいだった。", "english": "The room was clean. (plain)", "source": "original"}
+      {
+        "japanese": "その町はとても静かでした。",
+        "english": "That town was very quiet.",
+        "source": "original"
+      },
+      {
+        "japanese": "部屋はきれいだった。",
+        "english": "The room was clean. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "この公園は昔、有名でした。",
+        "english": "This park was famous long ago.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mashou-volitional",
@@ -803,13 +1484,30 @@
       "Plain-form equivalent is -よう (食べよう, 行こう) — see volitional-form (N4)."
     ],
     "formality": "formal",
-    "related": ["mashou-ka-invitation"],
+    "related": [
+      "mashou-ka-invitation"
+    ],
     "examples": [
-      {"japanese": "一緒に行きましょう。", "english": "Let's go together.", "source": "original"},
-      {"japanese": "休みましょう。", "english": "Let's take a break.", "source": "original"}
+      {
+        "japanese": "一緒に行きましょう。",
+        "english": "Let's go together.",
+        "source": "original"
+      },
+      {
+        "japanese": "休みましょう。",
+        "english": "Let's take a break.",
+        "source": "original"
+      },
+      {
+        "japanese": "昼ごはんを食べましょう。",
+        "english": "Let's eat lunch.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mashou-ka-invitation",
@@ -822,13 +1520,30 @@
       "Context disambiguates 'shall we' from 'shall I'."
     ],
     "formality": "formal",
-    "related": ["mashou-volitional"],
+    "related": [
+      "mashou-volitional"
+    ],
     "examples": [
-      {"japanese": "お茶を飲みましょうか。", "english": "Shall we have some tea?", "source": "original"},
-      {"japanese": "荷物を持ちましょうか。", "english": "Shall I carry your bag?", "source": "original"}
+      {
+        "japanese": "お茶を飲みましょうか。",
+        "english": "Shall we have some tea?",
+        "source": "original"
+      },
+      {
+        "japanese": "荷物を持ちましょうか。",
+        "english": "Shall I carry your bag?",
+        "source": "original"
+      },
+      {
+        "japanese": "窓を開けましょうか。",
+        "english": "Shall I open the window?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tai-desire",
@@ -843,13 +1558,30 @@
       "For wanting a thing rather than an action, see ga-hoshii."
     ],
     "formality": "neutral",
-    "related": ["ga-hoshii-wanting-thing"],
+    "related": [
+      "ga-hoshii-wanting-thing"
+    ],
     "examples": [
-      {"japanese": "日本に行きたいです。", "english": "I want to go to Japan.", "source": "original"},
-      {"japanese": "水が飲みたい。", "english": "I want to drink water. (plain)", "source": "original"}
+      {
+        "japanese": "日本に行きたいです。",
+        "english": "I want to go to Japan.",
+        "source": "original"
+      },
+      {
+        "japanese": "水が飲みたい。",
+        "english": "I want to drink water. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "新しい本を読みたいです。",
+        "english": "I want to read a new book.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ga-hoshii-wanting-thing",
@@ -864,13 +1596,30 @@
       "ほしくない (don't want), ほしかった (wanted), ほしくなかった (didn't want) — all regular い-adjective conjugations."
     ],
     "formality": "neutral",
-    "related": ["tai-desire"],
+    "related": [
+      "tai-desire"
+    ],
     "examples": [
-      {"japanese": "新しい車がほしいです。", "english": "I want a new car.", "source": "original"},
-      {"japanese": "お金がほしい。", "english": "I want money. (plain)", "source": "original"}
+      {
+        "japanese": "新しい車がほしいです。",
+        "english": "I want a new car.",
+        "source": "original"
+      },
+      {
+        "japanese": "お金がほしい。",
+        "english": "I want money. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "冷たい水がほしいです。",
+        "english": "I want cold water.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "hou-ga-comparative",
@@ -884,13 +1633,30 @@
       "The construction is about direct comparison; for 'more X' without a specific comparison, use もっと."
     ],
     "formality": "neutral",
-    "related": ["ichiban-superlative"],
+    "related": [
+      "ichiban-superlative"
+    ],
     "examples": [
-      {"japanese": "犬のほうが猫より大きいです。", "english": "Dogs are bigger than cats.", "source": "original"},
-      {"japanese": "コーヒーよりお茶のほうが好きです。", "english": "I like tea more than coffee.", "source": "original"}
+      {
+        "japanese": "犬のほうが猫より大きいです。",
+        "english": "Dogs are bigger than cats.",
+        "source": "original"
+      },
+      {
+        "japanese": "コーヒーよりお茶のほうが好きです。",
+        "english": "I like tea more than coffee.",
+        "source": "original"
+      },
+      {
+        "japanese": "電車のほうがバスより速いです。",
+        "english": "Trains are faster than buses.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ichiban-superlative",
@@ -904,13 +1670,30 @@
       "More formal alternative: 最も (もっとも)."
     ],
     "formality": "neutral",
-    "related": ["hou-ga-comparative"],
+    "related": [
+      "hou-ga-comparative"
+    ],
     "examples": [
-      {"japanese": "富士山は日本で一番高い山です。", "english": "Mt. Fuji is the tallest mountain in Japan.", "source": "original"},
-      {"japanese": "寿司が一番好きです。", "english": "I like sushi the most.", "source": "original"}
+      {
+        "japanese": "富士山は日本で一番高い山です。",
+        "english": "Mt. Fuji is the tallest mountain in Japan.",
+        "source": "original"
+      },
+      {
+        "japanese": "寿司が一番好きです。",
+        "english": "I like sushi the most.",
+        "source": "original"
+      },
+      {
+        "japanese": "このクラスで田中さんが一番背が高いです。",
+        "english": "Tanaka is the tallest in this class.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "counter-tsu",
@@ -925,13 +1708,30 @@
       "Cannot be used for people or animals — those have their own counters."
     ],
     "formality": "neutral",
-    "related": ["counter-people-nin"],
+    "related": [
+      "counter-people-nin"
+    ],
     "examples": [
-      {"japanese": "りんごを三つください。", "english": "Three apples, please.", "source": "original"},
-      {"japanese": "質問が一つあります。", "english": "I have one question.", "source": "original"}
+      {
+        "japanese": "りんごを三つください。",
+        "english": "Three apples, please.",
+        "source": "original"
+      },
+      {
+        "japanese": "質問が一つあります。",
+        "english": "I have one question.",
+        "source": "original"
+      },
+      {
+        "japanese": "部屋に窓が二つあります。",
+        "english": "There are two windows in the room.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "counter-people-nin",
@@ -946,13 +1746,30 @@
       "七人 can be しちにん or ななにん, both acceptable."
     ],
     "formality": "neutral",
-    "related": ["counter-tsu"],
+    "related": [
+      "counter-tsu"
+    ],
     "examples": [
-      {"japanese": "家族は四人です。", "english": "There are four people in my family.", "source": "original"},
-      {"japanese": "二人で行きます。", "english": "We'll go as a pair.", "source": "original"}
+      {
+        "japanese": "家族は四人です。",
+        "english": "There are four people in my family.",
+        "source": "original"
+      },
+      {
+        "japanese": "二人で行きます。",
+        "english": "We'll go as a pair.",
+        "source": "original"
+      },
+      {
+        "japanese": "パーティーに十人来ました。",
+        "english": "Ten people came to the party.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "question-words-basic",
@@ -966,15 +1783,35 @@
       "In casual speech, drop the か and use rising intonation."
     ],
     "formality": "neutral",
-    "related": ["particle-ka-question"],
+    "related": [
+      "particle-ka-question"
+    ],
     "examples": [
-      {"japanese": "これは何ですか。", "english": "What is this?", "source": "original"},
-      {"japanese": "誰が来ましたか。", "english": "Who came?", "source": "original"},
-      {"japanese": "トイレはどこですか。", "english": "Where is the restroom?", "source": "original"},
-      {"japanese": "いつ日本に来ましたか。", "english": "When did you come to Japan?", "source": "original"}
+      {
+        "japanese": "これは何ですか。",
+        "english": "What is this?",
+        "source": "original"
+      },
+      {
+        "japanese": "誰が来ましたか。",
+        "english": "Who came?",
+        "source": "original"
+      },
+      {
+        "japanese": "トイレはどこですか。",
+        "english": "Where is the restroom?",
+        "source": "original"
+      },
+      {
+        "japanese": "いつ日本に来ましたか。",
+        "english": "When did you come to Japan?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nai-de-kudasai",
@@ -988,13 +1825,31 @@
       "The particle で here comes from the て-form of the auxiliary ない (via ないで), not from the particle で."
     ],
     "formality": "formal",
-    "related": ["te-kudasai-request", "nai-form"],
+    "related": [
+      "te-kudasai-request",
+      "nai-form"
+    ],
     "examples": [
-      {"japanese": "ここで写真を撮らないでください。", "english": "Please do not take photos here.", "source": "original"},
-      {"japanese": "心配しないでください。", "english": "Please don't worry.", "source": "original"}
+      {
+        "japanese": "ここで写真を撮らないでください。",
+        "english": "Please do not take photos here.",
+        "source": "original"
+      },
+      {
+        "japanese": "心配しないでください。",
+        "english": "Please don't worry.",
+        "source": "original"
+      },
+      {
+        "japanese": "ここで食べないでください。",
+        "english": "Please do not eat here.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "particle-ya-non-exhaustive",
@@ -1008,13 +1863,30 @@
       "Use や for representative listing ('X, Y, and other things')."
     ],
     "formality": "neutral",
-    "related": ["particle-to-and-with"],
+    "related": [
+      "particle-to-and-with"
+    ],
     "examples": [
-      {"japanese": "スーパーで野菜や果物などを買いました。", "english": "I bought vegetables, fruit, and so on at the supermarket.", "source": "original"},
-      {"japanese": "部屋に机やベッドがあります。", "english": "There are a desk, a bed, and other things in the room.", "source": "original"}
+      {
+        "japanese": "スーパーで野菜や果物などを買いました。",
+        "english": "I bought vegetables, fruit, and so on at the supermarket.",
+        "source": "original"
+      },
+      {
+        "japanese": "部屋に机やベッドがあります。",
+        "english": "There are a desk, a bed, and other things in the room.",
+        "source": "original"
+      },
+      {
+        "japanese": "犬や猫がいます。",
+        "english": "There are dogs, cats, and so on.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "masenka-invitation",
@@ -1035,12 +1907,26 @@
       "masu-polite-verb"
     ],
     "examples": [
-      {"japanese": "一緒に映画を見ませんか。", "english": "Would you like to watch a movie together?", "source": "original"},
-      {"japanese": "明日、一緒に食事しませんか。", "english": "Would you like to have a meal together tomorrow?", "source": "original"},
-      {"japanese": "公園に行きませんか。", "english": "Shall we go to the park?", "source": "original"}
+      {
+        "japanese": "一緒に映画を見ませんか。",
+        "english": "Would you like to watch a movie together?",
+        "source": "original"
+      },
+      {
+        "japanese": "明日、一緒に食事しませんか。",
+        "english": "Would you like to have a meal together tomorrow?",
+        "source": "original"
+      },
+      {
+        "japanese": "公園に行きませんか。",
+        "english": "Shall we go to the park?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mou-ta-already",
@@ -1061,12 +1947,26 @@
       "mashita-polite-past-verb"
     ],
     "examples": [
-      {"japanese": "もう宿題をしました。", "english": "I already did my homework.", "source": "original"},
-      {"japanese": "もうご飯を食べました。", "english": "I've already eaten.", "source": "original"},
-      {"japanese": "もう読みましたか。", "english": "Have you already read it?", "source": "original"}
+      {
+        "japanese": "もう宿題をしました。",
+        "english": "I already did my homework.",
+        "source": "original"
+      },
+      {
+        "japanese": "もうご飯を食べました。",
+        "english": "I've already eaten.",
+        "source": "original"
+      },
+      {
+        "japanese": "もう読みましたか。",
+        "english": "Have you already read it?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mada-not-yet",
@@ -1086,12 +1986,26 @@
       "te-imasu-progressive"
     ],
     "examples": [
-      {"japanese": "まだ宿題をしていません。", "english": "I haven't done my homework yet.", "source": "original"},
-      {"japanese": "まだ食べていません。", "english": "I haven't eaten yet.", "source": "original"},
-      {"japanese": "弟はまだ寝ています。", "english": "My little brother is still sleeping.", "source": "original"}
+      {
+        "japanese": "まだ宿題をしていません。",
+        "english": "I haven't done my homework yet.",
+        "source": "original"
+      },
+      {
+        "japanese": "まだ食べていません。",
+        "english": "I haven't eaten yet.",
+        "source": "original"
+      },
+      {
+        "japanese": "弟はまだ寝ています。",
+        "english": "My little brother is still sleeping.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "toki-ni-when-basic",
@@ -1113,12 +2027,26 @@
       "aida-ni"
     ],
     "examples": [
-      {"japanese": "子供のとき、よく公園で遊びました。", "english": "When I was a child, I often played in the park.", "source": "original"},
-      {"japanese": "日本へ行ったとき、友達に会いました。", "english": "When I went to Japan, I met a friend.", "source": "original"},
-      {"japanese": "暇なとき、本を読みます。", "english": "When I'm free, I read books.", "source": "original"}
+      {
+        "japanese": "子供のとき、よく公園で遊びました。",
+        "english": "When I was a child, I often played in the park.",
+        "source": "original"
+      },
+      {
+        "japanese": "日本へ行ったとき、友達に会いました。",
+        "english": "When I went to Japan, I met a friend.",
+        "source": "original"
+      },
+      {
+        "japanese": "暇なとき、本を読みます。",
+        "english": "When I'm free, I read books.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "issho-ni-together",
@@ -1138,12 +2066,26 @@
       "masenka-invitation"
     ],
     "examples": [
-      {"japanese": "友達と一緒に映画を見ました。", "english": "I watched a movie together with a friend.", "source": "original"},
-      {"japanese": "家族と一緒に日本へ行きたい。", "english": "I want to go to Japan together with my family.", "source": "original"},
-      {"japanese": "一緒に食事しませんか。", "english": "Shall we eat together?", "source": "original"}
+      {
+        "japanese": "友達と一緒に映画を見ました。",
+        "english": "I watched a movie together with a friend.",
+        "source": "original"
+      },
+      {
+        "japanese": "家族と一緒に日本へ行きたい。",
+        "english": "I want to go to Japan together with my family.",
+        "source": "original"
+      },
+      {
+        "japanese": "一緒に食事しませんか。",
+        "english": "Shall we eat together?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "dake-only-basic",
@@ -1163,12 +2105,26 @@
       "counter-tsu"
     ],
     "examples": [
-      {"japanese": "水だけ飲みました。", "english": "I drank only water.", "source": "original"},
-      {"japanese": "一人だけ来ました。", "english": "Only one person came.", "source": "original"},
-      {"japanese": "これだけでいいです。", "english": "Just this is fine.", "source": "original"}
+      {
+        "japanese": "水だけ飲みました。",
+        "english": "I drank only water.",
+        "source": "original"
+      },
+      {
+        "japanese": "一人だけ来ました。",
+        "english": "Only one person came.",
+        "source": "original"
+      },
+      {
+        "japanese": "これだけでいいです。",
+        "english": "Just this is fine.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "i-adj-adverbial-ku",
@@ -1190,12 +2146,26 @@
       "na-adj-adverbial-ni"
     ],
     "examples": [
-      {"japanese": "早く起きてください。", "english": "Please wake up early.", "source": "original"},
-      {"japanese": "大きく書いてください。", "english": "Please write it large.", "source": "original"},
-      {"japanese": "よく勉強します。", "english": "I study a lot / often.", "source": "original"}
+      {
+        "japanese": "早く起きてください。",
+        "english": "Please wake up early.",
+        "source": "original"
+      },
+      {
+        "japanese": "大きく書いてください。",
+        "english": "Please write it large.",
+        "source": "original"
+      },
+      {
+        "japanese": "よく勉強します。",
+        "english": "I study a lot / often.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "na-adj-adverbial-ni",
@@ -1216,12 +2186,26 @@
       "i-adj-adverbial-ku"
     ],
     "examples": [
-      {"japanese": "静かにしてください。", "english": "Please be quiet.", "source": "original"},
-      {"japanese": "日本語を上手に話します。", "english": "(He) speaks Japanese skillfully.", "source": "original"},
-      {"japanese": "元気に歌いました。", "english": "(They) sang energetically.", "source": "original"}
+      {
+        "japanese": "静かにしてください。",
+        "english": "Please be quiet.",
+        "source": "original"
+      },
+      {
+        "japanese": "日本語を上手に話します。",
+        "english": "(He) speaks Japanese skillfully.",
+        "source": "original"
+      },
+      {
+        "japanese": "元気に歌いました。",
+        "english": "(They) sang energetically.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "i-adj-te-joining-kute",
@@ -1243,12 +2227,26 @@
       "te-form-basic"
     ],
     "examples": [
-      {"japanese": "この本は高くて、重い。", "english": "This book is expensive and heavy.", "source": "original"},
-      {"japanese": "彼女は優しくて、きれいです。", "english": "She is kind and pretty.", "source": "original"},
-      {"japanese": "寒くて、外に出たくない。", "english": "It's cold, so I don't want to go outside.", "source": "original"}
+      {
+        "japanese": "この本は高くて、重い。",
+        "english": "This book is expensive and heavy.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女は優しくて、きれいです。",
+        "english": "She is kind and pretty.",
+        "source": "original"
+      },
+      {
+        "japanese": "寒くて、外に出たくない。",
+        "english": "It's cold, so I don't want to go outside.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "na-adj-te-joining-de",
@@ -1270,12 +2268,26 @@
       "te-form-basic"
     ],
     "examples": [
-      {"japanese": "この部屋は静かで、きれいです。", "english": "This room is quiet and clean.", "source": "original"},
-      {"japanese": "彼は学生で、20歳です。", "english": "He is a student and 20 years old.", "source": "original"},
-      {"japanese": "彼女は親切で、明るい。", "english": "She is kind and cheerful.", "source": "original"}
+      {
+        "japanese": "この部屋は静かで、きれいです。",
+        "english": "This room is quiet and clean.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は学生で、20歳です。",
+        "english": "He is a student and 20 years old.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女は親切で、明るい。",
+        "english": "She is kind and cheerful.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mo-mo-both",
@@ -1297,12 +2309,26 @@
       "particle-ya-non-exhaustive"
     ],
     "examples": [
-      {"japanese": "コーヒーも紅茶も好きです。", "english": "I like both coffee and tea.", "source": "original"},
-      {"japanese": "魚も肉も食べません。", "english": "I eat neither fish nor meat.", "source": "original"},
-      {"japanese": "彼も私も学生です。", "english": "Both he and I are students.", "source": "original"}
+      {
+        "japanese": "コーヒーも紅茶も好きです。",
+        "english": "I like both coffee and tea.",
+        "source": "original"
+      },
+      {
+        "japanese": "魚も肉も食べません。",
+        "english": "I eat neither fish nor meat.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼も私も学生です。",
+        "english": "Both he and I are students.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-exhaustive-listing",
@@ -1324,12 +2350,26 @@
       "mo-mo-both"
     ],
     "examples": [
-      {"japanese": "りんごとバナナを買いました。", "english": "I bought an apple and a banana.", "source": "original"},
-      {"japanese": "田中さんと鈴木さんと山田さんが来ました。", "english": "Mr. Tanaka, Mr. Suzuki, and Mr. Yamada came.", "source": "original"},
-      {"japanese": "本と鉛筆が必要です。", "english": "I need a book and a pencil.", "source": "original"}
+      {
+        "japanese": "りんごとバナナを買いました。",
+        "english": "I bought an apple and a banana.",
+        "source": "original"
+      },
+      {
+        "japanese": "田中さんと鈴木さんと山田さんが来ました。",
+        "english": "Mr. Tanaka, Mr. Suzuki, and Mr. Yamada came.",
+        "source": "original"
+      },
+      {
+        "japanese": "本と鉛筆が必要です。",
+        "english": "I need a book and a pencil.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "location-nouns-ue-shita",
@@ -1352,12 +2392,26 @@
       "particle-ni-target"
     ],
     "examples": [
-      {"japanese": "机の上に本があります。", "english": "There is a book on the desk.", "source": "original"},
-      {"japanese": "学校の前で会いましょう。", "english": "Let's meet in front of the school.", "source": "original"},
-      {"japanese": "私の家は駅の近くにあります。", "english": "My house is near the station.", "source": "original"}
+      {
+        "japanese": "机の上に本があります。",
+        "english": "There is a book on the desk.",
+        "source": "original"
+      },
+      {
+        "japanese": "学校の前で会いましょう。",
+        "english": "Let's meet in front of the school.",
+        "source": "original"
+      },
+      {
+        "japanese": "私の家は駅の近くにあります。",
+        "english": "My house is near the station.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ikutsu-how-many",
@@ -1379,12 +2433,26 @@
       "nanji-what-time"
     ],
     "examples": [
-      {"japanese": "りんごはいくつありますか。", "english": "How many apples are there?", "source": "original"},
-      {"japanese": "おいくつですか。", "english": "How old are you? (polite)", "source": "original"},
-      {"japanese": "いくつ食べますか。", "english": "How many will you eat?", "source": "original"}
+      {
+        "japanese": "りんごはいくつありますか。",
+        "english": "How many apples are there?",
+        "source": "original"
+      },
+      {
+        "japanese": "おいくつですか。",
+        "english": "How old are you? (polite)",
+        "source": "original"
+      },
+      {
+        "japanese": "いくつ食べますか。",
+        "english": "How many will you eat?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ikura-how-much",
@@ -1406,12 +2474,26 @@
       "v-temo-even-if"
     ],
     "examples": [
-      {"japanese": "これはいくらですか。", "english": "How much is this?", "source": "original"},
-      {"japanese": "このケーキはいくらでしたか。", "english": "How much was this cake?", "source": "original"},
-      {"japanese": "いくら食べても太らない。", "english": "No matter how much I eat, I don't gain weight.", "source": "original"}
+      {
+        "japanese": "これはいくらですか。",
+        "english": "How much is this?",
+        "source": "original"
+      },
+      {
+        "japanese": "このケーキはいくらでしたか。",
+        "english": "How much was this cake?",
+        "source": "original"
+      },
+      {
+        "japanese": "いくら食べても太らない。",
+        "english": "No matter how much I eat, I don't gain weight.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nanji-what-time",
@@ -1433,12 +2515,26 @@
       "question-words-basic"
     ],
     "examples": [
-      {"japanese": "今、何時ですか。", "english": "What time is it now?", "source": "original"},
-      {"japanese": "何時に会いましょうか。", "english": "What time shall we meet?", "source": "original"},
-      {"japanese": "授業は何時からですか。", "english": "What time does class start?", "source": "original"}
+      {
+        "japanese": "今、何時ですか。",
+        "english": "What time is it now?",
+        "source": "original"
+      },
+      {
+        "japanese": "何時に会いましょうか。",
+        "english": "What time shall we meet?",
+        "source": "original"
+      },
+      {
+        "japanese": "授業は何時からですか。",
+        "english": "What time does class start?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nanyoubi-day-of-week",
@@ -1460,12 +2556,26 @@
       "question-words-basic"
     ],
     "examples": [
-      {"japanese": "今日は何曜日ですか。", "english": "What day of the week is it today?", "source": "original"},
-      {"japanese": "月曜日に会議があります。", "english": "There is a meeting on Monday.", "source": "original"},
-      {"japanese": "土曜日と日曜日は休みです。", "english": "Saturday and Sunday are days off.", "source": "original"}
+      {
+        "japanese": "今日は何曜日ですか。",
+        "english": "What day of the week is it today?",
+        "source": "original"
+      },
+      {
+        "japanese": "月曜日に会議があります。",
+        "english": "There is a meeting on Monday.",
+        "source": "original"
+      },
+      {
+        "japanese": "土曜日と日曜日は休みです。",
+        "english": "Saturday and Sunday are days off.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "counter-ji-oclock",
@@ -1487,12 +2597,26 @@
       "particle-ni-target"
     ],
     "examples": [
-      {"japanese": "今、3時です。", "english": "It's 3 o'clock now.", "source": "original"},
-      {"japanese": "9時に学校へ行きます。", "english": "I go to school at 9 o'clock.", "source": "original"},
-      {"japanese": "4時の電車に乗ります。", "english": "I'll take the 4 o'clock train.", "source": "original"}
+      {
+        "japanese": "今、3時です。",
+        "english": "It's 3 o'clock now.",
+        "source": "original"
+      },
+      {
+        "japanese": "9時に学校へ行きます。",
+        "english": "I go to school at 9 o'clock.",
+        "source": "original"
+      },
+      {
+        "japanese": "4時の電車に乗ります。",
+        "english": "I'll take the 4 o'clock train.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "counter-fun-minute",
@@ -1514,12 +2638,26 @@
       "nanji-what-time"
     ],
     "examples": [
-      {"japanese": "10分待ってください。", "english": "Please wait 10 minutes.", "source": "original"},
-      {"japanese": "今、3時15分です。", "english": "It's 3:15 now.", "source": "original"},
-      {"japanese": "駅まで5分かかります。", "english": "It takes 5 minutes to the station.", "source": "original"}
+      {
+        "japanese": "10分待ってください。",
+        "english": "Please wait 10 minutes.",
+        "source": "original"
+      },
+      {
+        "japanese": "今、3時15分です。",
+        "english": "It's 3:15 now.",
+        "source": "original"
+      },
+      {
+        "japanese": "駅まで5分かかります。",
+        "english": "It takes 5 minutes to the station.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "counter-sai-age",
@@ -1540,12 +2678,26 @@
       "question-words-basic"
     ],
     "examples": [
-      {"japanese": "私は20歳です。", "english": "I am 20 years old.", "source": "original"},
-      {"japanese": "弟は12歳です。", "english": "My younger brother is 12 years old.", "source": "original"},
-      {"japanese": "彼は何歳ですか。", "english": "How old is he?", "source": "original"}
+      {
+        "japanese": "私は20歳です。",
+        "english": "I am 20 years old.",
+        "source": "original"
+      },
+      {
+        "japanese": "弟は12歳です。",
+        "english": "My younger brother is 12 years old.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は何歳ですか。",
+        "english": "How old is he?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "counter-en-money",
@@ -1566,12 +2718,26 @@
       "question-words-basic"
     ],
     "examples": [
-      {"japanese": "このケーキは500円です。", "english": "This cake is 500 yen.", "source": "original"},
-      {"japanese": "財布に3000円あります。", "english": "I have 3000 yen in my wallet.", "source": "original"},
-      {"japanese": "これは1万円です。", "english": "This is 10,000 yen.", "source": "original"}
+      {
+        "japanese": "このケーキは500円です。",
+        "english": "This cake is 500 yen.",
+        "source": "original"
+      },
+      {
+        "japanese": "財布に3000円あります。",
+        "english": "I have 3000 yen in my wallet.",
+        "source": "original"
+      },
+      {
+        "japanese": "これは1万円です。",
+        "english": "This is 10,000 yen.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "counter-hon-long",
@@ -1593,12 +2759,26 @@
       "ikutsu-how-many"
     ],
     "examples": [
-      {"japanese": "鉛筆を3本買いました。", "english": "I bought 3 pencils.", "source": "original"},
-      {"japanese": "水を2本ください。", "english": "Please give me 2 bottles of water.", "source": "original"},
-      {"japanese": "傘を何本持っていますか。", "english": "How many umbrellas do you have?", "source": "original"}
+      {
+        "japanese": "鉛筆を3本買いました。",
+        "english": "I bought 3 pencils.",
+        "source": "original"
+      },
+      {
+        "japanese": "水を2本ください。",
+        "english": "Please give me 2 bottles of water.",
+        "source": "original"
+      },
+      {
+        "japanese": "傘を何本持っていますか。",
+        "english": "How many umbrellas do you have?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "counter-mai-flat",
@@ -1620,12 +2800,26 @@
       "ikutsu-how-many"
     ],
     "examples": [
-      {"japanese": "紙を3枚ください。", "english": "Please give me 3 sheets of paper.", "source": "original"},
-      {"japanese": "切符を2枚買いました。", "english": "I bought 2 tickets.", "source": "original"},
-      {"japanese": "写真を何枚撮りましたか。", "english": "How many photos did you take?", "source": "original"}
+      {
+        "japanese": "紙を3枚ください。",
+        "english": "Please give me 3 sheets of paper.",
+        "source": "original"
+      },
+      {
+        "japanese": "切符を2枚買いました。",
+        "english": "I bought 2 tickets.",
+        "source": "original"
+      },
+      {
+        "japanese": "写真を何枚撮りましたか。",
+        "english": "How many photos did you take?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mai-every-prefix",
@@ -1647,12 +2841,26 @@
       "gotoni-each"
     ],
     "examples": [
-      {"japanese": "毎日、コーヒーを飲みます。", "english": "I drink coffee every day.", "source": "original"},
-      {"japanese": "毎朝、6時に起きます。", "english": "I get up at 6 every morning.", "source": "original"},
-      {"japanese": "毎週末、買い物に行きます。", "english": "I go shopping every weekend.", "source": "original"}
+      {
+        "japanese": "毎日、コーヒーを飲みます。",
+        "english": "I drink coffee every day.",
+        "source": "original"
+      },
+      {
+        "japanese": "毎朝、6時に起きます。",
+        "english": "I get up at 6 every morning.",
+        "source": "original"
+      },
+      {
+        "japanese": "毎週末、買い物に行きます。",
+        "english": "I go shopping every weekend.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "jikan-time-duration",
@@ -1674,12 +2882,26 @@
       "mai-every-prefix"
     ],
     "examples": [
-      {"japanese": "毎日、2時間勉強します。", "english": "I study for 2 hours every day.", "source": "original"},
-      {"japanese": "東京まで3時間かかります。", "english": "It takes 3 hours to Tokyo.", "source": "original"},
-      {"japanese": "昨日は8時間寝ました。", "english": "I slept 8 hours yesterday.", "source": "original"}
+      {
+        "japanese": "毎日、2時間勉強します。",
+        "english": "I study for 2 hours every day.",
+        "source": "original"
+      },
+      {
+        "japanese": "東京まで3時間かかります。",
+        "english": "It takes 3 hours to Tokyo.",
+        "source": "original"
+      },
+      {
+        "japanese": "昨日は8時間寝ました。",
+        "english": "I slept 8 hours yesterday.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "i-adj-desu-politeness",
@@ -1702,11 +2924,25 @@
       "desu-polite-copula"
     ],
     "examples": [
-      {"japanese": "この本は高いです。", "english": "This book is expensive.", "source": "original"},
-      {"japanese": "昨日は忙しかったです。", "english": "Yesterday was busy.", "source": "original"},
-      {"japanese": "今日は暑くないです。", "english": "Today is not hot.", "source": "original"}
+      {
+        "japanese": "この本は高いです。",
+        "english": "This book is expensive.",
+        "source": "original"
+      },
+      {
+        "japanese": "昨日は忙しかったです。",
+        "english": "Yesterday was busy.",
+        "source": "original"
+      },
+      {
+        "japanese": "今日は暑くないです。",
+        "english": "Today is not hot.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   }
 ]

@@ -12,14 +12,31 @@
       "できる is a standalone word meaning 'can do'; it is the potential form of する and also used for general ability."
     ],
     "formality": "neutral",
-    "related": [],
+    "related": [
+      "causative-form",
+      "passive-form"
+    ],
     "examples": [
-      {"japanese": "日本語が話せます。", "english": "I can speak Japanese.", "source": "original"},
-      {"japanese": "この魚は食べられますか。", "english": "Can you eat this fish? / Is this fish edible?", "source": "original"},
-      {"japanese": "早く起きられない。", "english": "I can't get up early. (plain)", "source": "original"}
+      {
+        "japanese": "日本語が話せます。",
+        "english": "I can speak Japanese.",
+        "source": "original"
+      },
+      {
+        "japanese": "この魚は食べられますか。",
+        "english": "Can you eat this fish? / Is this fish edible?",
+        "source": "original"
+      },
+      {
+        "japanese": "早く起きられない。",
+        "english": "I can't get up early. (plain)",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "passive-form",
@@ -33,14 +50,30 @@
       "Suffering passive: even intransitive verbs can be used passively to express adversity (雨に降られる, 友達に来られる)."
     ],
     "formality": "neutral",
-    "related": ["causative-form"],
+    "related": [
+      "causative-form"
+    ],
     "examples": [
-      {"japanese": "先生に褒められました。", "english": "I was praised by the teacher.", "source": "original"},
-      {"japanese": "友達に手紙を読まれました。", "english": "My letter was read by my friend. (often with a suffering nuance)", "source": "original"},
-      {"japanese": "ドアが開けられた。", "english": "The door was opened. (plain)", "source": "original"}
+      {
+        "japanese": "先生に褒められました。",
+        "english": "I was praised by the teacher.",
+        "source": "original"
+      },
+      {
+        "japanese": "友達に手紙を読まれました。",
+        "english": "My letter was read by my friend. (often with a suffering nuance)",
+        "source": "original"
+      },
+      {
+        "japanese": "ドアが開けられた。",
+        "english": "The door was opened. (plain)",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "causative-form",
@@ -54,13 +87,30 @@
       "The combined causative-passive (食べさせられる — 'be made to eat') is N3."
     ],
     "formality": "neutral",
-    "related": ["passive-form"],
+    "related": [
+      "passive-form"
+    ],
     "examples": [
-      {"japanese": "先生は学生に本を読ませました。", "english": "The teacher made/had the students read the book.", "source": "original"},
-      {"japanese": "子供を遊ばせました。", "english": "I let the children play.", "source": "original"}
+      {
+        "japanese": "先生は学生に本を読ませました。",
+        "english": "The teacher made/had the students read the book.",
+        "source": "original"
+      },
+      {
+        "japanese": "子供を遊ばせました。",
+        "english": "I let the children play.",
+        "source": "original"
+      },
+      {
+        "japanese": "母は弟に野菜を食べさせました。",
+        "english": "My mother made my little brother eat vegetables.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ta-koto-ga-aru",
@@ -75,14 +125,30 @@
       "Time markers like 子供の時 ('when I was a child') or 一度も ('not even once') are common with this construction."
     ],
     "formality": "neutral",
-    "related": ["ta-form"],
+    "related": [
+      "ta-form"
+    ],
     "examples": [
-      {"japanese": "日本に行ったことがあります。", "english": "I have been to Japan.", "source": "original"},
-      {"japanese": "寿司を食べたことがありますか。", "english": "Have you ever eaten sushi?", "source": "original"},
-      {"japanese": "一度も会ったことがない。", "english": "I have never met (them) even once.", "source": "original"}
+      {
+        "japanese": "日本に行ったことがあります。",
+        "english": "I have been to Japan.",
+        "source": "original"
+      },
+      {
+        "japanese": "寿司を食べたことがありますか。",
+        "english": "Have you ever eaten sushi?",
+        "source": "original"
+      },
+      {
+        "japanese": "一度も会ったことがない。",
+        "english": "I have never met (them) even once.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tsumori-intention",
@@ -97,13 +163,30 @@
       "For something already done, use Vた + つもり ('I thought I did X' — implying mistaken belief)."
     ],
     "formality": "neutral",
-    "related": ["volitional-form"],
+    "related": [
+      "volitional-form"
+    ],
     "examples": [
-      {"japanese": "来年、日本に行くつもりです。", "english": "I'm planning to go to Japan next year.", "source": "original"},
-      {"japanese": "お酒を飲まないつもりです。", "english": "I intend not to drink alcohol.", "source": "original"}
+      {
+        "japanese": "来年、日本に行くつもりです。",
+        "english": "I'm planning to go to Japan next year.",
+        "source": "original"
+      },
+      {
+        "japanese": "お酒を飲まないつもりです。",
+        "english": "I intend not to drink alcohol.",
+        "source": "original"
+      },
+      {
+        "japanese": "大学を卒業したら、留学するつもりです。",
+        "english": "I plan to study abroad after I graduate from university.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-omou",
@@ -118,13 +201,31 @@
       "For intention, Vよう + と思う ('I'm thinking of doing X') combines with the volitional form."
     ],
     "formality": "neutral",
-    "related": ["to-iu", "darou-deshou-conjecture"],
+    "related": [
+      "to-iu",
+      "darou-deshou-conjecture"
+    ],
     "examples": [
-      {"japanese": "明日は雨が降ると思います。", "english": "I think it will rain tomorrow.", "source": "original"},
-      {"japanese": "彼はいい人だと思う。", "english": "I think he's a good person. (plain)", "source": "original"}
+      {
+        "japanese": "明日は雨が降ると思います。",
+        "english": "I think it will rain tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼はいい人だと思う。",
+        "english": "I think he's a good person. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "このレストランは高いと思います。",
+        "english": "I think this restaurant is expensive.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-iu",
@@ -138,13 +239,30 @@
       "The naming pattern X という Y is very productive: 'anime' in Japanese is アニメ and you might say アニメというもの ('the thing called anime')."
     ],
     "formality": "neutral",
-    "related": ["to-omou"],
+    "related": [
+      "to-omou"
+    ],
     "examples": [
-      {"japanese": "彼は明日来ると言いました。", "english": "He said he would come tomorrow.", "source": "original"},
-      {"japanese": "田中という人を知っていますか。", "english": "Do you know a person called Tanaka?", "source": "original"}
+      {
+        "japanese": "彼は明日来ると言いました。",
+        "english": "He said he would come tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "田中という人を知っていますか。",
+        "english": "Do you know a person called Tanaka?",
+        "source": "original"
+      },
+      {
+        "japanese": "先生は「静かにしなさい」と言いました。",
+        "english": "The teacher said, 'Be quiet.'",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "darou-deshou-conjecture",
@@ -159,13 +277,31 @@
       "The past form だったろう / だったでしょう means 'would have been / must have been'."
     ],
     "formality": "neutral",
-    "related": ["kamoshirenai-might", "to-omou"],
+    "related": [
+      "kamoshirenai-might",
+      "to-omou"
+    ],
     "examples": [
-      {"japanese": "明日は晴れるでしょう。", "english": "It will probably be sunny tomorrow.", "source": "original"},
-      {"japanese": "彼はもう帰ったでしょう。", "english": "He's probably already gone home.", "source": "original"}
+      {
+        "japanese": "明日は晴れるでしょう。",
+        "english": "It will probably be sunny tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼はもう帰ったでしょう。",
+        "english": "He's probably already gone home.",
+        "source": "original"
+      },
+      {
+        "japanese": "この仕事は大変だろう。",
+        "english": "This job is probably tough. (plain)",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "kamoshirenai-might",
@@ -179,13 +315,31 @@
       "Casual contraction: かも (especially at the end: 行くかも — 'might go')."
     ],
     "formality": "neutral",
-    "related": ["darou-deshou-conjecture", "hazu-expected"],
+    "related": [
+      "darou-deshou-conjecture",
+      "hazu-expected"
+    ],
     "examples": [
-      {"japanese": "明日は雨が降るかもしれません。", "english": "It might rain tomorrow.", "source": "original"},
-      {"japanese": "彼は来ないかもしれない。", "english": "He might not come. (plain)", "source": "original"}
+      {
+        "japanese": "明日は雨が降るかもしれません。",
+        "english": "It might rain tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は来ないかもしれない。",
+        "english": "He might not come. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "あの店はもう閉まっているかもしれません。",
+        "english": "That shop might already be closed.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "hazu-expected",
@@ -200,13 +354,30 @@
       "はずだった = 'was supposed to' (but something went wrong)."
     ],
     "formality": "neutral",
-    "related": ["kamoshirenai-might"],
+    "related": [
+      "kamoshirenai-might"
+    ],
     "examples": [
-      {"japanese": "彼は今日来るはずです。", "english": "He should come today.", "source": "original"},
-      {"japanese": "そんなはずはない。", "english": "There's no way that can be true. (plain)", "source": "original"}
+      {
+        "japanese": "彼は今日来るはずです。",
+        "english": "He should come today.",
+        "source": "original"
+      },
+      {
+        "japanese": "そんなはずはない。",
+        "english": "There's no way that can be true. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "荷物は明日届くはずです。",
+        "english": "The package should arrive tomorrow.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tara-conditional",
@@ -221,13 +392,32 @@
       "For definite future, the main clause can express will/intention/command/request. For past discovery, the main clause is a past event."
     ],
     "formality": "neutral",
-    "related": ["ba-conditional", "to-conditional", "nara-conditional"],
+    "related": [
+      "ba-conditional",
+      "to-conditional",
+      "nara-conditional"
+    ],
     "examples": [
-      {"japanese": "時間があったら、映画を見ます。", "english": "If I have time, I'll watch a movie.", "source": "original"},
-      {"japanese": "家に帰ったら、手紙が来ていた。", "english": "When I got home, a letter had come.", "source": "original"}
+      {
+        "japanese": "時間があったら、映画を見ます。",
+        "english": "If I have time, I'll watch a movie.",
+        "source": "original"
+      },
+      {
+        "japanese": "家に帰ったら、手紙が来ていた。",
+        "english": "When I got home, a letter had come.",
+        "source": "original"
+      },
+      {
+        "japanese": "お金があったら、新しいパソコンを買いたいです。",
+        "english": "If I had money, I'd want to buy a new computer.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ba-conditional",
@@ -242,13 +432,32 @@
       "The exception is when the subjects differ or the condition is stative."
     ],
     "formality": "neutral",
-    "related": ["tara-conditional", "to-conditional", "nara-conditional"],
+    "related": [
+      "tara-conditional",
+      "to-conditional",
+      "nara-conditional"
+    ],
     "examples": [
-      {"japanese": "毎日勉強すれば、上手になります。", "english": "If you study every day, you'll become skilled.", "source": "original"},
-      {"japanese": "安ければ買います。", "english": "If it's cheap, I'll buy it.", "source": "original"}
+      {
+        "japanese": "毎日勉強すれば、上手になります。",
+        "english": "If you study every day, you'll become skilled.",
+        "source": "original"
+      },
+      {
+        "japanese": "安ければ買います。",
+        "english": "If it's cheap, I'll buy it.",
+        "source": "original"
+      },
+      {
+        "japanese": "早く寝れば、朝元気になります。",
+        "english": "If you go to bed early, you'll feel good in the morning.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-conditional",
@@ -263,13 +472,31 @@
       "Past tense usage expresses an unexpected discovery, similar to たら but with a nuance of automatic consequence."
     ],
     "formality": "neutral",
-    "related": ["tara-conditional", "ba-conditional"],
+    "related": [
+      "tara-conditional",
+      "ba-conditional"
+    ],
     "examples": [
-      {"japanese": "このボタンを押すとドアが開きます。", "english": "If you press this button, the door opens.", "source": "original"},
-      {"japanese": "春になると桜が咲きます。", "english": "When spring comes, the cherry blossoms bloom.", "source": "original"}
+      {
+        "japanese": "このボタンを押すとドアが開きます。",
+        "english": "If you press this button, the door opens.",
+        "source": "original"
+      },
+      {
+        "japanese": "春になると桜が咲きます。",
+        "english": "When spring comes, the cherry blossoms bloom.",
+        "source": "original"
+      },
+      {
+        "japanese": "右に曲がると、駅が見えます。",
+        "english": "If you turn right, you'll see the station.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nara-conditional",
@@ -284,13 +511,31 @@
       "Distinct from のなら (or んなら) which emphasizes 'given that you're really planning to'."
     ],
     "formality": "neutral",
-    "related": ["tara-conditional", "ba-conditional"],
+    "related": [
+      "tara-conditional",
+      "ba-conditional"
+    ],
     "examples": [
-      {"japanese": "日本に行くなら、京都がおすすめです。", "english": "If you're going to Japan, I recommend Kyoto.", "source": "original"},
-      {"japanese": "寿司なら、あの店が一番です。", "english": "When it comes to sushi, that shop is the best.", "source": "original"}
+      {
+        "japanese": "日本に行くなら、京都がおすすめです。",
+        "english": "If you're going to Japan, I recommend Kyoto.",
+        "source": "original"
+      },
+      {
+        "japanese": "寿司なら、あの店が一番です。",
+        "english": "When it comes to sushi, that shop is the best.",
+        "source": "original"
+      },
+      {
+        "japanese": "安いなら、買います。",
+        "english": "If it's cheap, I'll buy it.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "volitional-form",
@@ -305,13 +550,31 @@
       "+ とする: about to / attempt to ('I was about to leave' — 出ようとした)."
     ],
     "formality": "casual",
-    "related": ["mashou-volitional", "tsumori-intention"],
+    "related": [
+      "mashou-volitional",
+      "tsumori-intention"
+    ],
     "examples": [
-      {"japanese": "一緒に行こう。", "english": "Let's go together. (casual)", "source": "original"},
-      {"japanese": "来年、日本へ行こうと思っています。", "english": "I'm thinking of going to Japan next year.", "source": "original"}
+      {
+        "japanese": "一緒に行こう。",
+        "english": "Let's go together. (casual)",
+        "source": "original"
+      },
+      {
+        "japanese": "来年、日本へ行こうと思っています。",
+        "english": "I'm thinking of going to Japan next year.",
+        "source": "original"
+      },
+      {
+        "japanese": "そろそろ帰ろう。",
+        "english": "Let's head home soon. (casual)",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-wa-ikenai-prohibition",
@@ -326,13 +589,31 @@
       "Opposite (permission): てもいい."
     ],
     "formality": "formal",
-    "related": ["te-mo-ii-permission", "te-form-basic"],
+    "related": [
+      "te-mo-ii-permission",
+      "te-form-basic"
+    ],
     "examples": [
-      {"japanese": "ここでタバコを吸ってはいけません。", "english": "You must not smoke here.", "source": "original"},
-      {"japanese": "図書館で話してはいけない。", "english": "You must not talk in the library. (plain)", "source": "original"}
+      {
+        "japanese": "ここでタバコを吸ってはいけません。",
+        "english": "You must not smoke here.",
+        "source": "original"
+      },
+      {
+        "japanese": "図書館で話してはいけない。",
+        "english": "You must not talk in the library. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "授業中に寝てはいけません。",
+        "english": "You must not sleep during class.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-mo-ii-permission",
@@ -347,13 +628,30 @@
       "Opposite (prohibition): てはいけない."
     ],
     "formality": "neutral",
-    "related": ["te-wa-ikenai-prohibition"],
+    "related": [
+      "te-wa-ikenai-prohibition"
+    ],
     "examples": [
-      {"japanese": "ここに座ってもいいですか。", "english": "May I sit here?", "source": "original"},
-      {"japanese": "写真を撮ってもいいです。", "english": "You may take photos.", "source": "original"}
+      {
+        "japanese": "ここに座ってもいいですか。",
+        "english": "May I sit here?",
+        "source": "original"
+      },
+      {
+        "japanese": "写真を撮ってもいいです。",
+        "english": "You may take photos.",
+        "source": "original"
+      },
+      {
+        "japanese": "窓を開けてもいいですか。",
+        "english": "May I open the window?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nakereba-naranai",
@@ -368,13 +666,30 @@
       "Opposite: なくてもいい ('don't have to')."
     ],
     "formality": "neutral",
-    "related": ["nakute-mo-ii"],
+    "related": [
+      "nakute-mo-ii"
+    ],
     "examples": [
-      {"japanese": "明日、早く起きなければなりません。", "english": "I have to wake up early tomorrow.", "source": "original"},
-      {"japanese": "薬を飲まなきゃ。", "english": "I gotta take my medicine. (casual)", "source": "original"}
+      {
+        "japanese": "明日、早く起きなければなりません。",
+        "english": "I have to wake up early tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "薬を飲まなきゃ。",
+        "english": "I gotta take my medicine. (casual)",
+        "source": "original"
+      },
+      {
+        "japanese": "レポートを今週中に出さなければなりません。",
+        "english": "I have to submit the report by the end of this week.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nakute-mo-ii",
@@ -388,13 +703,31 @@
       "Variant: なくてもかまわない ('I don't mind if you don't')."
     ],
     "formality": "neutral",
-    "related": ["nakereba-naranai", "te-mo-ii-permission"],
+    "related": [
+      "nakereba-naranai",
+      "te-mo-ii-permission"
+    ],
     "examples": [
-      {"japanese": "明日は学校に来なくてもいいです。", "english": "You don't have to come to school tomorrow.", "source": "original"},
-      {"japanese": "お金を払わなくてもいい。", "english": "You don't have to pay. (plain)", "source": "original"}
+      {
+        "japanese": "明日は学校に来なくてもいいです。",
+        "english": "You don't have to come to school tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "お金を払わなくてもいい。",
+        "english": "You don't have to pay. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "全部食べなくてもいいですよ。",
+        "english": "You don't have to eat it all.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "kara-cause",
@@ -409,13 +742,31 @@
       "Contrast with から as a particle meaning 'from' (N5) which attaches to nouns."
     ],
     "formality": "neutral",
-    "related": ["node-cause", "particle-kara-from"],
+    "related": [
+      "node-cause",
+      "particle-kara-from"
+    ],
     "examples": [
-      {"japanese": "時間がないから、急ぎます。", "english": "Because I don't have time, I'll hurry.", "source": "original"},
-      {"japanese": "雨が降っているから、傘を持って行きます。", "english": "Since it's raining, I'll take an umbrella.", "source": "original"}
+      {
+        "japanese": "時間がないから、急ぎます。",
+        "english": "Because I don't have time, I'll hurry.",
+        "source": "original"
+      },
+      {
+        "japanese": "雨が降っているから、傘を持って行きます。",
+        "english": "Since it's raining, I'll take an umbrella.",
+        "source": "original"
+      },
+      {
+        "japanese": "暑いから、窓を開けてください。",
+        "english": "Because it's hot, please open the window.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "node-cause",
@@ -430,13 +781,30 @@
       "Considered softer and more polite than から."
     ],
     "formality": "formal",
-    "related": ["kara-cause"],
+    "related": [
+      "kara-cause"
+    ],
     "examples": [
-      {"japanese": "雨が降っているので、中止します。", "english": "Since it's raining, we'll cancel.", "source": "original"},
-      {"japanese": "疲れているので、今日は帰ります。", "english": "Because I'm tired, I'll go home today.", "source": "original"}
+      {
+        "japanese": "雨が降っているので、中止します。",
+        "english": "Since it's raining, we'll cancel.",
+        "source": "original"
+      },
+      {
+        "japanese": "疲れているので、今日は帰ります。",
+        "english": "Because I'm tired, I'll go home today.",
+        "source": "original"
+      },
+      {
+        "japanese": "電車が遅れたので、遅刻しました。",
+        "english": "Because the train was delayed, I was late.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ga-kedo-although",
@@ -451,13 +819,33 @@
       "These are conjunctions, unlike しかし which is an adverb starting a new sentence."
     ],
     "formality": "neutral",
-    "related": [],
+    "related": [
+      "node-cause",
+      "kara-cause",
+      "shikashi-but",
+      "kedomo-formal-but"
+    ],
     "examples": [
-      {"japanese": "この本は難しいですが、面白いです。", "english": "This book is difficult, but it's interesting.", "source": "original"},
-      {"japanese": "行きたいけど、時間がない。", "english": "I want to go, but I don't have time. (casual)", "source": "original"}
+      {
+        "japanese": "この本は難しいですが、面白いです。",
+        "english": "This book is difficult, but it's interesting.",
+        "source": "original"
+      },
+      {
+        "japanese": "行きたいけど、時間がない。",
+        "english": "I want to go, but I don't have time. (casual)",
+        "source": "original"
+      },
+      {
+        "japanese": "高かったけど、買ってよかったです。",
+        "english": "It was expensive, but I'm glad I bought it.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "n-desu-explanation",
@@ -472,13 +860,31 @@
       "More formal written form: のです."
     ],
     "formality": "neutral",
-    "related": [],
+    "related": [
+      "kara-cause",
+      "node-cause"
+    ],
     "examples": [
-      {"japanese": "頭が痛いんです。", "english": "(The thing is,) my head hurts.", "source": "original"},
-      {"japanese": "なぜ来なかったんですか。", "english": "Why didn't you come?", "source": "original"}
+      {
+        "japanese": "頭が痛いんです。",
+        "english": "(The thing is,) my head hurts.",
+        "source": "original"
+      },
+      {
+        "japanese": "なぜ来なかったんですか。",
+        "english": "Why didn't you come?",
+        "source": "original"
+      },
+      {
+        "japanese": "実は、来月引っ越すんです。",
+        "english": "Actually, I'm moving next month.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-naru-become",
@@ -493,13 +899,30 @@
       "Polite: なります; past: なった/なりました."
     ],
     "formality": "neutral",
-    "related": ["ni-suru-decide"],
+    "related": [
+      "ni-suru-decide"
+    ],
     "examples": [
-      {"japanese": "息子は医者になりました。", "english": "My son became a doctor.", "source": "original"},
-      {"japanese": "寒くなってきました。", "english": "It's gotten cold.", "source": "original"}
+      {
+        "japanese": "息子は医者になりました。",
+        "english": "My son became a doctor.",
+        "source": "original"
+      },
+      {
+        "japanese": "寒くなってきました。",
+        "english": "It's gotten cold.",
+        "source": "original"
+      },
+      {
+        "japanese": "日本語が上手になりましたね。",
+        "english": "Your Japanese has gotten good, hasn't it?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-suru-decide",
@@ -513,13 +936,30 @@
       "ことにする: decide to do something (verb + ことにする)."
     ],
     "formality": "neutral",
-    "related": ["ni-naru-become"],
+    "related": [
+      "ni-naru-become"
+    ],
     "examples": [
-      {"japanese": "私はコーヒーにします。", "english": "I'll have coffee.", "source": "original"},
-      {"japanese": "明日行くことにしました。", "english": "I've decided to go tomorrow.", "source": "original"}
+      {
+        "japanese": "私はコーヒーにします。",
+        "english": "I'll have coffee.",
+        "source": "original"
+      },
+      {
+        "japanese": "明日行くことにしました。",
+        "english": "I've decided to go tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "旅行は来月にすることにしました。",
+        "english": "I've decided to make the trip next month.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "hajimeru-auxiliary",
@@ -534,13 +974,31 @@
       "Related: 出す also means 'suddenly start' (泣き出す — 'burst into tears')."
     ],
     "formality": "neutral",
-    "related": ["owaru-finish", "sugiru-too-much"],
+    "related": [
+      "owaru-finish",
+      "sugiru-too-much"
+    ],
     "examples": [
-      {"japanese": "去年、日本語を勉強し始めました。", "english": "I began studying Japanese last year.", "source": "original"},
-      {"japanese": "雨が降り始めた。", "english": "It started to rain. (plain)", "source": "original"}
+      {
+        "japanese": "去年、日本語を勉強し始めました。",
+        "english": "I began studying Japanese last year.",
+        "source": "original"
+      },
+      {
+        "japanese": "雨が降り始めた。",
+        "english": "It started to rain. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "子供たちが歌い始めました。",
+        "english": "The children started singing.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "owaru-finish",
@@ -554,13 +1012,30 @@
       "終わる is intransitive ('to end'); 終える is transitive ('to finish')."
     ],
     "formality": "neutral",
-    "related": ["hajimeru-auxiliary"],
+    "related": [
+      "hajimeru-auxiliary"
+    ],
     "examples": [
-      {"japanese": "本を読み終わりました。", "english": "I finished reading the book.", "source": "original"},
-      {"japanese": "宿題をやり終えた。", "english": "I finished the homework. (plain)", "source": "original"}
+      {
+        "japanese": "本を読み終わりました。",
+        "english": "I finished reading the book.",
+        "source": "original"
+      },
+      {
+        "japanese": "宿題をやり終えた。",
+        "english": "I finished the homework. (plain)",
+        "source": "original"
+      },
+      {
+        "japanese": "映画を見終わったら、電話してください。",
+        "english": "Please call me when you finish watching the movie.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "sugiru-too-much",
@@ -574,13 +1049,31 @@
       "Conjugates as an ichidan verb: すぎます, すぎた, すぎない, etc."
     ],
     "formality": "neutral",
-    "related": ["yasui-easy", "nikui-hard"],
+    "related": [
+      "yasui-easy",
+      "nikui-hard"
+    ],
     "examples": [
-      {"japanese": "食べすぎました。", "english": "I ate too much.", "source": "original"},
-      {"japanese": "この服は高すぎる。", "english": "These clothes are too expensive.", "source": "original"}
+      {
+        "japanese": "食べすぎました。",
+        "english": "I ate too much.",
+        "source": "original"
+      },
+      {
+        "japanese": "この服は高すぎる。",
+        "english": "These clothes are too expensive.",
+        "source": "original"
+      },
+      {
+        "japanese": "昨日、お酒を飲みすぎました。",
+        "english": "I drank too much alcohol yesterday.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "yasui-easy",
@@ -594,13 +1087,31 @@
       "Opposite: にくい ('hard to ~')."
     ],
     "formality": "neutral",
-    "related": ["nikui-hard", "sugiru-too-much"],
+    "related": [
+      "nikui-hard",
+      "sugiru-too-much"
+    ],
     "examples": [
-      {"japanese": "このペンは書きやすいです。", "english": "This pen is easy to write with.", "source": "original"},
-      {"japanese": "先生の説明は分かりやすい。", "english": "The teacher's explanation is easy to understand.", "source": "original"}
+      {
+        "japanese": "このペンは書きやすいです。",
+        "english": "This pen is easy to write with.",
+        "source": "original"
+      },
+      {
+        "japanese": "先生の説明は分かりやすい。",
+        "english": "The teacher's explanation is easy to understand.",
+        "source": "original"
+      },
+      {
+        "japanese": "この靴は歩きやすいです。",
+        "english": "These shoes are easy to walk in.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nikui-hard",
@@ -615,13 +1126,30 @@
       "Opposite: やすい."
     ],
     "formality": "neutral",
-    "related": ["yasui-easy"],
+    "related": [
+      "yasui-easy"
+    ],
     "examples": [
-      {"japanese": "この字は読みにくいです。", "english": "This handwriting is hard to read.", "source": "original"},
-      {"japanese": "この肉は食べにくい。", "english": "This meat is hard to eat.", "source": "original"}
+      {
+        "japanese": "この字は読みにくいです。",
+        "english": "This handwriting is hard to read.",
+        "source": "original"
+      },
+      {
+        "japanese": "この肉は食べにくい。",
+        "english": "This meat is hard to eat.",
+        "source": "original"
+      },
+      {
+        "japanese": "この薬は飲みにくいです。",
+        "english": "This medicine is hard to take.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "noun-modifying-clause",
@@ -636,13 +1164,30 @@
       "The head noun can be any syntactic role in the outer sentence (subject, object, etc.)."
     ],
     "formality": "neutral",
-    "related": [],
+    "related": [
+      "to-iu"
+    ],
     "examples": [
-      {"japanese": "昨日、田中さんが作ったケーキはおいしかったです。", "english": "The cake that Mr. Tanaka made yesterday was delicious.", "source": "original"},
-      {"japanese": "私が住んでいる町はとても静かです。", "english": "The town where I live is very quiet.", "source": "original"}
+      {
+        "japanese": "昨日、田中さんが作ったケーキはおいしかったです。",
+        "english": "The cake that Mr. Tanaka made yesterday was delicious.",
+        "source": "original"
+      },
+      {
+        "japanese": "私が住んでいる町はとても静かです。",
+        "english": "The town where I live is very quiet.",
+        "source": "original"
+      },
+      {
+        "japanese": "友達がくれた本を読んでいます。",
+        "english": "I'm reading the book that my friend gave me.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tari-tari-suru",
@@ -663,12 +1208,26 @@
       "particle-ya-non-exhaustive"
     ],
     "examples": [
-      {"japanese": "週末は映画を見たり、買い物をしたりします。", "english": "On weekends, I do things like watch movies and go shopping.", "source": "original"},
-      {"japanese": "泣いたり笑ったりして、忙しい一日だった。", "english": "It was a busy day with crying and laughing.", "source": "original"},
-      {"japanese": "休みの日は掃除したり洗濯したりする。", "english": "On days off I do things like cleaning and laundry.", "source": "original"}
+      {
+        "japanese": "週末は映画を見たり、買い物をしたりします。",
+        "english": "On weekends, I do things like watch movies and go shopping.",
+        "source": "original"
+      },
+      {
+        "japanese": "泣いたり笑ったりして、忙しい一日だった。",
+        "english": "It was a busy day with crying and laughing.",
+        "source": "original"
+      },
+      {
+        "japanese": "休みの日は掃除したり洗濯したりする。",
+        "english": "On days off I do things like cleaning and laundry.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "jidoushi-tadoushi",
@@ -691,12 +1250,26 @@
       "te-aru"
     ],
     "examples": [
-      {"japanese": "ドアを開けました。", "english": "I opened the door. (transitive)", "source": "original"},
-      {"japanese": "ドアが開きました。", "english": "The door opened. (intransitive)", "source": "original"},
-      {"japanese": "電気を消してください。", "english": "Please turn off the light.", "source": "original"}
+      {
+        "japanese": "ドアを開けました。",
+        "english": "I opened the door. (transitive)",
+        "source": "original"
+      },
+      {
+        "japanese": "ドアが開きました。",
+        "english": "The door opened. (intransitive)",
+        "source": "original"
+      },
+      {
+        "japanese": "電気を消してください。",
+        "english": "Please turn off the light.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "garu-third-person-emotion",
@@ -718,12 +1291,26 @@
       "ga-hoshii-wanting-thing"
     ],
     "examples": [
-      {"japanese": "弟は夏でも寒がる。", "english": "My little brother gets cold even in summer.", "source": "original"},
-      {"japanese": "彼女は子供を欲しがっている。", "english": "She wants a child. (showing signs of wanting)", "source": "original"},
-      {"japanese": "犬は散歩に行きたがる。", "english": "The dog wants to go for a walk.", "source": "original"}
+      {
+        "japanese": "弟は夏でも寒がる。",
+        "english": "My little brother gets cold even in summer.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女は子供を欲しがっている。",
+        "english": "She wants a child. (showing signs of wanting)",
+        "source": "original"
+      },
+      {
+        "japanese": "犬は散歩に行きたがる。",
+        "english": "The dog wants to go for a walk.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "kata-way-of-doing",
@@ -744,12 +1331,26 @@
       "noun-modifying-clause"
     ],
     "examples": [
-      {"japanese": "この漢字の書き方を教えてください。", "english": "Please teach me how to write this kanji.", "source": "original"},
-      {"japanese": "寿司の食べ方を知っていますか。", "english": "Do you know how to eat sushi?", "source": "original"},
-      {"japanese": "日本語の勉強の仕方は人それぞれだ。", "english": "Everyone has their own way of studying Japanese.", "source": "original"}
+      {
+        "japanese": "この漢字の書き方を教えてください。",
+        "english": "Please teach me how to write this kanji.",
+        "source": "original"
+      },
+      {
+        "japanese": "寿司の食べ方を知っていますか。",
+        "english": "Do you know how to eat sushi?",
+        "source": "original"
+      },
+      {
+        "japanese": "日本語の勉強の仕方は人それぞれだ。",
+        "english": "Everyone has their own way of studying Japanese.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "you-ni-suru",
@@ -770,12 +1371,26 @@
       "ni-suru-decide"
     ],
     "examples": [
-      {"japanese": "毎日運動するようにしています。", "english": "I make it a point to exercise every day.", "source": "original"},
-      {"japanese": "甘いものを食べないようにしている。", "english": "I'm trying not to eat sweets.", "source": "original"},
-      {"japanese": "早く寝るようにします。", "english": "I'll try to go to bed early.", "source": "original"}
+      {
+        "japanese": "毎日運動するようにしています。",
+        "english": "I make it a point to exercise every day.",
+        "source": "original"
+      },
+      {
+        "japanese": "甘いものを食べないようにしている。",
+        "english": "I'm trying not to eat sweets.",
+        "source": "original"
+      },
+      {
+        "japanese": "早く寝るようにします。",
+        "english": "I'll try to go to bed early.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-kara-after-doing",
@@ -797,12 +1412,26 @@
       "mae-ni-before-doing"
     ],
     "examples": [
-      {"japanese": "ご飯を食べてから、出かけます。", "english": "I'll go out after eating.", "source": "original"},
-      {"japanese": "手を洗ってから、食べてください。", "english": "Please eat after washing your hands.", "source": "original"},
-      {"japanese": "学校が終わってから、友達と遊びました。", "english": "After school ended, I played with friends.", "source": "original"}
+      {
+        "japanese": "ご飯を食べてから、出かけます。",
+        "english": "I'll go out after eating.",
+        "source": "original"
+      },
+      {
+        "japanese": "手を洗ってから、食べてください。",
+        "english": "Please eat after washing your hands.",
+        "source": "original"
+      },
+      {
+        "japanese": "学校が終わってから、友達と遊びました。",
+        "english": "After school ended, I played with friends.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mae-ni-before-doing",
@@ -823,12 +1452,26 @@
       "te-kara-after-doing"
     ],
     "examples": [
-      {"japanese": "寝る前に、歯を磨きます。", "english": "Before going to bed, I brush my teeth.", "source": "original"},
-      {"japanese": "食事の前に、手を洗ってください。", "english": "Please wash your hands before the meal.", "source": "original"},
-      {"japanese": "日本に来る前に、日本語を勉強しました。", "english": "Before coming to Japan, I studied Japanese.", "source": "original"}
+      {
+        "japanese": "寝る前に、歯を磨きます。",
+        "english": "Before going to bed, I brush my teeth.",
+        "source": "original"
+      },
+      {
+        "japanese": "食事の前に、手を洗ってください。",
+        "english": "Please wash your hands before the meal.",
+        "source": "original"
+      },
+      {
+        "japanese": "日本に来る前に、日本語を勉強しました。",
+        "english": "Before coming to Japan, I studied Japanese.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ato-de-after-doing",
@@ -849,12 +1492,26 @@
       "mae-ni-before-doing"
     ],
     "examples": [
-      {"japanese": "ご飯を食べた後で、散歩します。", "english": "After eating, I'll take a walk.", "source": "original"},
-      {"japanese": "学校の後で、図書館へ行きます。", "english": "After school, I'll go to the library.", "source": "original"},
-      {"japanese": "仕事が終わった後で、飲みに行きましょう。", "english": "After work is over, let's go drinking.", "source": "original"}
+      {
+        "japanese": "ご飯を食べた後で、散歩します。",
+        "english": "After eating, I'll take a walk.",
+        "source": "original"
+      },
+      {
+        "japanese": "学校の後で、図書館へ行きます。",
+        "english": "After school, I'll go to the library.",
+        "source": "original"
+      },
+      {
+        "japanese": "仕事が終わった後で、飲みに行きましょう。",
+        "english": "After work is over, let's go drinking.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "koto-ga-dekiru",
@@ -875,12 +1532,26 @@
       "koto-nominalizer"
     ],
     "examples": [
-      {"japanese": "私は日本語を話すことができます。", "english": "I can speak Japanese.", "source": "original"},
-      {"japanese": "ここで泳ぐことができません。", "english": "You cannot swim here.", "source": "original"},
-      {"japanese": "彼は料理することができる。", "english": "He can cook.", "source": "original"}
+      {
+        "japanese": "私は日本語を話すことができます。",
+        "english": "I can speak Japanese.",
+        "source": "original"
+      },
+      {
+        "japanese": "ここで泳ぐことができません。",
+        "english": "You cannot swim here.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は料理することができる。",
+        "english": "He can cook.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "koto-ni-suru-decide",
@@ -902,12 +1573,26 @@
       "koto-nominalizer"
     ],
     "examples": [
-      {"japanese": "明日から毎日運動することにしました。", "english": "I decided to exercise every day from tomorrow.", "source": "original"},
-      {"japanese": "甘いものを食べないことにしている。", "english": "I've decided not to eat sweets (habitually).", "source": "original"},
-      {"japanese": "留学することにした。", "english": "I decided to study abroad.", "source": "original"}
+      {
+        "japanese": "明日から毎日運動することにしました。",
+        "english": "I decided to exercise every day from tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "甘いものを食べないことにしている。",
+        "english": "I've decided not to eat sweets (habitually).",
+        "source": "original"
+      },
+      {
+        "japanese": "留学することにした。",
+        "english": "I decided to study abroad.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "koto-ni-naru-be-decided",
@@ -929,12 +1614,26 @@
       "koto-nominalizer"
     ],
     "examples": [
-      {"japanese": "来月、東京に転勤することになりました。", "english": "It's been decided that I'll transfer to Tokyo next month.", "source": "original"},
-      {"japanese": "日本では靴を脱いで家に入ることになっている。", "english": "In Japan, it's the rule to take off your shoes before entering a house.", "source": "original"},
-      {"japanese": "会議は来週開くことになった。", "english": "It's been decided that the meeting will be held next week.", "source": "original"}
+      {
+        "japanese": "来月、東京に転勤することになりました。",
+        "english": "It's been decided that I'll transfer to Tokyo next month.",
+        "source": "original"
+      },
+      {
+        "japanese": "日本では靴を脱いで家に入ることになっている。",
+        "english": "In Japan, it's the rule to take off your shoes before entering a house.",
+        "source": "original"
+      },
+      {
+        "japanese": "会議は来週開くことになった。",
+        "english": "It's been decided that the meeting will be held next week.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nasai-command",
@@ -955,12 +1654,26 @@
       "masu-polite-verb"
     ],
     "examples": [
-      {"japanese": "早く起きなさい。", "english": "Wake up quickly!", "source": "original"},
-      {"japanese": "宿題をしなさい。", "english": "Do your homework.", "source": "original"},
-      {"japanese": "野菜を食べなさい。", "english": "Eat your vegetables.", "source": "original"}
+      {
+        "japanese": "早く起きなさい。",
+        "english": "Wake up quickly!",
+        "source": "original"
+      },
+      {
+        "japanese": "宿題をしなさい。",
+        "english": "Do your homework.",
+        "source": "original"
+      },
+      {
+        "japanese": "野菜を食べなさい。",
+        "english": "Eat your vegetables.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-hoshii-want-someone",
@@ -982,12 +1695,26 @@
       "te-kudasai-request"
     ],
     "examples": [
-      {"japanese": "私の話を聞いてほしい。", "english": "I want you to listen to me.", "source": "original"},
-      {"japanese": "手伝ってほしいです。", "english": "I want (someone) to help me.", "source": "original"},
-      {"japanese": "早く帰ってきてほしい。", "english": "I want you to come home early.", "source": "original"}
+      {
+        "japanese": "私の話を聞いてほしい。",
+        "english": "I want you to listen to me.",
+        "source": "original"
+      },
+      {
+        "japanese": "手伝ってほしいです。",
+        "english": "I want (someone) to help me.",
+        "source": "original"
+      },
+      {
+        "japanese": "早く帰ってきてほしい。",
+        "english": "I want you to come home early.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "shi-reason-listing",
@@ -1009,12 +1736,26 @@
       "node-cause"
     ],
     "examples": [
-      {"japanese": "この部屋は広いし、静かだ。", "english": "This room is spacious, and (also) quiet.", "source": "original"},
-      {"japanese": "時間もないし、お金もない。", "english": "I have no time and no money.", "source": "original"},
-      {"japanese": "頭も痛いし、熱もあるし、今日は休みます。", "english": "I have a headache, I have a fever, so I'll take the day off.", "source": "original"}
+      {
+        "japanese": "この部屋は広いし、静かだ。",
+        "english": "This room is spacious, and (also) quiet.",
+        "source": "original"
+      },
+      {
+        "japanese": "時間もないし、お金もない。",
+        "english": "I have no time and no money.",
+        "source": "original"
+      },
+      {
+        "japanese": "頭も痛いし、熱もあるし、今日は休みます。",
+        "english": "I have a headache, I have a fever, so I'll take the day off.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "you-to-omou-volitional-intent",
@@ -1036,12 +1777,26 @@
       "tsumori-intention"
     ],
     "examples": [
-      {"japanese": "明日、早く起きようと思います。", "english": "I think I'll wake up early tomorrow.", "source": "original"},
-      {"japanese": "日本語を勉強しようと思っています。", "english": "I'm thinking of studying Japanese.", "source": "original"},
-      {"japanese": "新しいパソコンを買おうと思う。", "english": "I think I'll buy a new computer.", "source": "original"}
+      {
+        "japanese": "明日、早く起きようと思います。",
+        "english": "I think I'll wake up early tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "日本語を勉強しようと思っています。",
+        "english": "I'm thinking of studying Japanese.",
+        "source": "original"
+      },
+      {
+        "japanese": "新しいパソコンを買おうと思う。",
+        "english": "I think I'll buy a new computer.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-kureru-favor-received",
@@ -1063,12 +1818,26 @@
       "kureru-give-toward"
     ],
     "examples": [
-      {"japanese": "友達がお金を貸してくれた。", "english": "My friend lent me money.", "source": "original"},
-      {"japanese": "母が弁当を作ってくれました。", "english": "My mother made me a bento.", "source": "original"},
-      {"japanese": "先生が日本語を教えてくださった。", "english": "The teacher kindly taught me Japanese.", "source": "original"}
+      {
+        "japanese": "友達がお金を貸してくれた。",
+        "english": "My friend lent me money.",
+        "source": "original"
+      },
+      {
+        "japanese": "母が弁当を作ってくれました。",
+        "english": "My mother made me a bento.",
+        "source": "original"
+      },
+      {
+        "japanese": "先生が日本語を教えてくださった。",
+        "english": "The teacher kindly taught me Japanese.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-morau-request-favor",
@@ -1091,12 +1860,26 @@
       "te-itadaku-polite-favor-received"
     ],
     "examples": [
-      {"japanese": "友達に日本語を教えてもらった。", "english": "I had my friend teach me Japanese.", "source": "original"},
-      {"japanese": "医者に診てもらいました。", "english": "I had the doctor examine me.", "source": "original"},
-      {"japanese": "少し待ってもらえますか。", "english": "Could you wait a moment?", "source": "original"}
+      {
+        "japanese": "友達に日本語を教えてもらった。",
+        "english": "I had my friend teach me Japanese.",
+        "source": "original"
+      },
+      {
+        "japanese": "医者に診てもらいました。",
+        "english": "I had the doctor examine me.",
+        "source": "original"
+      },
+      {
+        "japanese": "少し待ってもらえますか。",
+        "english": "Could you wait a moment?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-ageru-favor-given",
@@ -1118,12 +1901,26 @@
       "ageru-give-outward"
     ],
     "examples": [
-      {"japanese": "友達に本を貸してあげました。", "english": "I lent a book to my friend.", "source": "original"},
-      {"japanese": "妹の宿題を手伝ってあげた。", "english": "I helped my younger sister with her homework.", "source": "original"},
-      {"japanese": "先生に手紙を書いてさしあげる。", "english": "I'll write a letter for my teacher.", "source": "original"}
+      {
+        "japanese": "友達に本を貸してあげました。",
+        "english": "I lent a book to my friend.",
+        "source": "original"
+      },
+      {
+        "japanese": "妹の宿題を手伝ってあげた。",
+        "english": "I helped my younger sister with her homework.",
+        "source": "original"
+      },
+      {
+        "japanese": "先生に手紙を書いてさしあげる。",
+        "english": "I'll write a letter for my teacher.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ageru-give-outward",
@@ -1145,12 +1942,26 @@
       "te-ageru-favor-given"
     ],
     "examples": [
-      {"japanese": "友達にプレゼントをあげました。", "english": "I gave a present to my friend.", "source": "original"},
-      {"japanese": "犬にえさをあげる。", "english": "I give food to the dog.", "source": "original"},
-      {"japanese": "これをあなたにあげる。", "english": "I'll give this to you.", "source": "original"}
+      {
+        "japanese": "友達にプレゼントをあげました。",
+        "english": "I gave a present to my friend.",
+        "source": "original"
+      },
+      {
+        "japanese": "犬にえさをあげる。",
+        "english": "I give food to the dog.",
+        "source": "original"
+      },
+      {
+        "japanese": "これをあなたにあげる。",
+        "english": "I'll give this to you.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "kureru-give-toward",
@@ -1172,12 +1983,26 @@
       "te-kureru-favor-received"
     ],
     "examples": [
-      {"japanese": "友達が本をくれた。", "english": "My friend gave me a book.", "source": "original"},
-      {"japanese": "先生がくださった本を読んでいます。", "english": "I'm reading the book my teacher kindly gave me.", "source": "original"},
-      {"japanese": "妹がこのペンをくれました。", "english": "My younger sister gave me this pen.", "source": "original"}
+      {
+        "japanese": "友達が本をくれた。",
+        "english": "My friend gave me a book.",
+        "source": "original"
+      },
+      {
+        "japanese": "先生がくださった本を読んでいます。",
+        "english": "I'm reading the book my teacher kindly gave me.",
+        "source": "original"
+      },
+      {
+        "japanese": "妹がこのペンをくれました。",
+        "english": "My younger sister gave me this pen.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "morau-receive",
@@ -1200,12 +2025,26 @@
       "te-itadaku-polite-favor-received"
     ],
     "examples": [
-      {"japanese": "友達にプレゼントをもらいました。", "english": "I received a present from my friend.", "source": "original"},
-      {"japanese": "先生から手紙をいただいた。", "english": "I received a letter from the teacher.", "source": "original"},
-      {"japanese": "誕生日にケーキをもらった。", "english": "I received a cake for my birthday.", "source": "original"}
+      {
+        "japanese": "友達にプレゼントをもらいました。",
+        "english": "I received a present from my friend.",
+        "source": "original"
+      },
+      {
+        "japanese": "先生から手紙をいただいた。",
+        "english": "I received a letter from the teacher.",
+        "source": "original"
+      },
+      {
+        "japanese": "誕生日にケーキをもらった。",
+        "english": "I received a cake for my birthday.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "o-v-kudasai-polite-honor",
@@ -1227,12 +2066,26 @@
       "humble-o-suru"
     ],
     "examples": [
-      {"japanese": "お待ちください。", "english": "Please wait.", "source": "original"},
-      {"japanese": "こちらにお座りください。", "english": "Please sit here.", "source": "original"},
-      {"japanese": "ご注意ください。", "english": "Please be careful.", "source": "original"}
+      {
+        "japanese": "お待ちください。",
+        "english": "Please wait.",
+        "source": "original"
+      },
+      {
+        "japanese": "こちらにお座りください。",
+        "english": "Please sit here.",
+        "source": "original"
+      },
+      {
+        "japanese": "ご注意ください。",
+        "english": "Please be careful.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "sonkeigo-reru-rareru",
@@ -1254,12 +2107,26 @@
       "humble-o-suru"
     ],
     "examples": [
-      {"japanese": "社長が会議に来られました。", "english": "The president came to the meeting.", "source": "original"},
-      {"japanese": "先生は何と言われましたか。", "english": "What did the teacher say?", "source": "original"},
-      {"japanese": "何時に帰られますか。", "english": "What time will you go home?", "source": "original"}
+      {
+        "japanese": "社長が会議に来られました。",
+        "english": "The president came to the meeting.",
+        "source": "original"
+      },
+      {
+        "japanese": "先生は何と言われましたか。",
+        "english": "What did the teacher say?",
+        "source": "original"
+      },
+      {
+        "japanese": "何時に帰られますか。",
+        "english": "What time will you go home?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "humble-o-suru",
@@ -1280,12 +2147,26 @@
       "sonkeigo-reru-rareru"
     ],
     "examples": [
-      {"japanese": "先生に本をお貸しします。", "english": "I will lend the book to my teacher.", "source": "original"},
-      {"japanese": "後で、お電話します。", "english": "I will call you later.", "source": "original"},
-      {"japanese": "ご案内します。", "english": "I will show you around.", "source": "original"}
+      {
+        "japanese": "先生に本をお貸しします。",
+        "english": "I will lend the book to my teacher.",
+        "source": "original"
+      },
+      {
+        "japanese": "後で、お電話します。",
+        "english": "I will call you later.",
+        "source": "original"
+      },
+      {
+        "japanese": "ご案内します。",
+        "english": "I will show you around.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-goran-try-casual",
@@ -1307,12 +2188,26 @@
       "nasai-command"
     ],
     "examples": [
-      {"japanese": "この本を読んでごらん。面白いよ。", "english": "Try reading this book. It's interesting.", "source": "original"},
-      {"japanese": "やってごらんなさい。", "english": "Go on, try it.", "source": "original"},
-      {"japanese": "食べてごらん、おいしいから。", "english": "Try eating it, it's delicious.", "source": "original"}
+      {
+        "japanese": "この本を読んでごらん。面白いよ。",
+        "english": "Try reading this book. It's interesting.",
+        "source": "original"
+      },
+      {
+        "japanese": "やってごらんなさい。",
+        "english": "Go on, try it.",
+        "source": "original"
+      },
+      {
+        "japanese": "食べてごらん、おいしいから。",
+        "english": "Try eating it, it's delicious.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "sou-iu-kou-iu",
@@ -1333,12 +2228,26 @@
       "kono-sono-ano-dono-attributive"
     ],
     "examples": [
-      {"japanese": "こういう本が好きです。", "english": "I like this kind of book.", "source": "original"},
-      {"japanese": "そういう人に会ったことがある。", "english": "I've met that kind of person.", "source": "original"},
-      {"japanese": "どういう意味ですか。", "english": "What do you mean?", "source": "original"}
+      {
+        "japanese": "こういう本が好きです。",
+        "english": "I like this kind of book.",
+        "source": "original"
+      },
+      {
+        "japanese": "そういう人に会ったことがある。",
+        "english": "I've met that kind of person.",
+        "source": "original"
+      },
+      {
+        "japanese": "どういう意味ですか。",
+        "english": "What do you mean?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ki-ga-suru-feel-like",
@@ -1360,12 +2269,26 @@
       "sou-da-appearance"
     ],
     "examples": [
-      {"japanese": "雨が降る気がする。", "english": "I have a feeling it's going to rain.", "source": "original"},
-      {"japanese": "誰かに見られている気がする。", "english": "I feel like someone's watching me.", "source": "original"},
-      {"japanese": "彼は来ない気がする。", "english": "I have a feeling he's not coming.", "source": "original"}
+      {
+        "japanese": "雨が降る気がする。",
+        "english": "I have a feeling it's going to rain.",
+        "source": "original"
+      },
+      {
+        "japanese": "誰かに見られている気がする。",
+        "english": "I feel like someone's watching me.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は来ない気がする。",
+        "english": "I have a feeling he's not coming.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tai-to-omou-want-to-think",
@@ -1387,12 +2310,26 @@
       "you-to-omou-volitional-intent"
     ],
     "examples": [
-      {"japanese": "日本へ行きたいと思います。", "english": "I think I'd like to go to Japan.", "source": "original"},
-      {"japanese": "新しい仕事を探したいと思っている。", "english": "I've been thinking of looking for a new job.", "source": "original"},
-      {"japanese": "将来、医者になりたいと思う。", "english": "I think I want to become a doctor in the future.", "source": "original"}
+      {
+        "japanese": "日本へ行きたいと思います。",
+        "english": "I think I'd like to go to Japan.",
+        "source": "original"
+      },
+      {
+        "japanese": "新しい仕事を探したいと思っている。",
+        "english": "I've been thinking of looking for a new job.",
+        "source": "original"
+      },
+      {
+        "japanese": "将来、医者になりたいと思う。",
+        "english": "I think I want to become a doctor in the future.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ba-ai-in-case",
@@ -1413,12 +2350,26 @@
       "ba-conditional"
     ],
     "examples": [
-      {"japanese": "火事の場合、このボタンを押してください。", "english": "In case of fire, press this button.", "source": "original"},
-      {"japanese": "質問がある場合、手を挙げてください。", "english": "If you have questions, please raise your hand.", "source": "original"},
-      {"japanese": "遅れる場合は、必ず連絡してください。", "english": "If you're going to be late, please contact (us).", "source": "original"}
+      {
+        "japanese": "火事の場合、このボタンを押してください。",
+        "english": "In case of fire, press this button.",
+        "source": "original"
+      },
+      {
+        "japanese": "質問がある場合、手を挙げてください。",
+        "english": "If you have questions, please raise your hand.",
+        "source": "original"
+      },
+      {
+        "japanese": "遅れる場合は、必ず連絡してください。",
+        "english": "If you're going to be late, please contact (us).",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "zutsu-each-per",
@@ -1439,12 +2390,26 @@
       "counter-people-nin"
     ],
     "examples": [
-      {"japanese": "一つずつ取ってください。", "english": "Please take one each.", "source": "original"},
-      {"japanese": "少しずつ食べます。", "english": "I eat (it) little by little.", "source": "original"},
-      {"japanese": "二人ずつ並んでください。", "english": "Please line up in pairs (two each).", "source": "original"}
+      {
+        "japanese": "一つずつ取ってください。",
+        "english": "Please take one each.",
+        "source": "original"
+      },
+      {
+        "japanese": "少しずつ食べます。",
+        "english": "I eat (it) little by little.",
+        "source": "original"
+      },
+      {
+        "japanese": "二人ずつ並んでください。",
+        "english": "Please line up in pairs (two each).",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tsumori-datta-had-intended",
@@ -1465,12 +2430,26 @@
       "you-to-omou-volitional-intent"
     ],
     "examples": [
-      {"japanese": "昨日、勉強するつもりだったけど、疲れて寝てしまった。", "english": "I was going to study yesterday, but I was tired and fell asleep.", "source": "original"},
-      {"japanese": "来るつもりでしたが、都合が悪くなりました。", "english": "I was planning to come, but something came up.", "source": "original"},
-      {"japanese": "朝ごはんを食べるつもりだった。", "english": "I had intended to eat breakfast.", "source": "original"}
+      {
+        "japanese": "昨日、勉強するつもりだったけど、疲れて寝てしまった。",
+        "english": "I was going to study yesterday, but I was tired and fell asleep.",
+        "source": "original"
+      },
+      {
+        "japanese": "来るつもりでしたが、都合が悪くなりました。",
+        "english": "I was planning to come, but something came up.",
+        "source": "original"
+      },
+      {
+        "japanese": "朝ごはんを食べるつもりだった。",
+        "english": "I had intended to eat breakfast.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "hazu-datta-was-supposed",
@@ -1491,12 +2470,26 @@
       "noni-although"
     ],
     "examples": [
-      {"japanese": "彼は今日来るはずだった。", "english": "He was supposed to come today.", "source": "original"},
-      {"japanese": "試験は簡単なはずだった。", "english": "The exam was supposed to be easy.", "source": "original"},
-      {"japanese": "昨日、雨が降るはずでしたが、晴れました。", "english": "It was supposed to rain yesterday, but it was sunny.", "source": "original"}
+      {
+        "japanese": "彼は今日来るはずだった。",
+        "english": "He was supposed to come today.",
+        "source": "original"
+      },
+      {
+        "japanese": "試験は簡単なはずだった。",
+        "english": "The exam was supposed to be easy.",
+        "source": "original"
+      },
+      {
+        "japanese": "昨日、雨が降るはずでしたが、晴れました。",
+        "english": "It was supposed to rain yesterday, but it was sunny.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "demo-noun-even",
@@ -1517,12 +2510,26 @@
       "masenka-invitation"
     ],
     "examples": [
-      {"japanese": "子供でもわかる。", "english": "Even a child can understand.", "source": "original"},
-      {"japanese": "雨でも行きます。", "english": "I'll go even if it rains.", "source": "original"},
-      {"japanese": "お茶でもどうですか。", "english": "How about some tea (or something)?", "source": "original"}
+      {
+        "japanese": "子供でもわかる。",
+        "english": "Even a child can understand.",
+        "source": "original"
+      },
+      {
+        "japanese": "雨でも行きます。",
+        "english": "I'll go even if it rains.",
+        "source": "original"
+      },
+      {
+        "japanese": "お茶でもどうですか。",
+        "english": "How about some tea (or something)?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-itadaku-polite-favor-received",
@@ -1544,12 +2551,26 @@
       "o-v-kudasai-polite-honor"
     ],
     "examples": [
-      {"japanese": "先生に説明していただきました。", "english": "I had my teacher explain it (to me).", "source": "original"},
-      {"japanese": "少し待っていただけますか。", "english": "Could you kindly wait a moment?", "source": "original"},
-      {"japanese": "教えていただいて、ありがとうございました。", "english": "Thank you for kindly teaching me.", "source": "original"}
+      {
+        "japanese": "先生に説明していただきました。",
+        "english": "I had my teacher explain it (to me).",
+        "source": "original"
+      },
+      {
+        "japanese": "少し待っていただけますか。",
+        "english": "Could you kindly wait a moment?",
+        "source": "original"
+      },
+      {
+        "japanese": "教えていただいて、ありがとうございました。",
+        "english": "Thank you for kindly teaching me.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ba-ii-should",
@@ -1572,12 +2593,26 @@
       "ta-hou-ga-ii"
     ],
     "examples": [
-      {"japanese": "分からなかったら、聞けばいいです。", "english": "If you don't understand, you can just ask.", "source": "original"},
-      {"japanese": "どうすればいいですか。", "english": "What should I do?", "source": "original"},
-      {"japanese": "早く寝ればいい。", "english": "You just need to go to bed early.", "source": "original"}
+      {
+        "japanese": "分からなかったら、聞けばいいです。",
+        "english": "If you don't understand, you can just ask.",
+        "source": "original"
+      },
+      {
+        "japanese": "どうすればいいですか。",
+        "english": "What should I do?",
+        "source": "original"
+      },
+      {
+        "japanese": "早く寝ればいい。",
+        "english": "You just need to go to bed early.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "yaru-casual-giving",
@@ -1599,12 +2634,26 @@
       "kureru-give-toward"
     ],
     "examples": [
-      {"japanese": "毎朝、花に水をやります。", "english": "Every morning I water the flowers.", "source": "original"},
-      {"japanese": "犬にえさをやった。", "english": "I fed the dog.", "source": "original"},
-      {"japanese": "弟に宿題を手伝ってやった。", "english": "I helped my little brother with his homework.", "source": "original"}
+      {
+        "japanese": "毎朝、花に水をやります。",
+        "english": "Every morning I water the flowers.",
+        "source": "original"
+      },
+      {
+        "japanese": "犬にえさをやった。",
+        "english": "I fed the dog.",
+        "source": "original"
+      },
+      {
+        "japanese": "弟に宿題を手伝ってやった。",
+        "english": "I helped my little brother with his homework.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "v-temo-even-if",
@@ -1627,12 +2676,26 @@
       "noni-although"
     ],
     "examples": [
-      {"japanese": "雨が降っても、行きます。", "english": "I'll go even if it rains.", "source": "original"},
-      {"japanese": "高くても買う。", "english": "Even if it's expensive, I'll buy it.", "source": "original"},
-      {"japanese": "いくら食べても太らない。", "english": "No matter how much I eat, I don't gain weight.", "source": "original"}
+      {
+        "japanese": "雨が降っても、行きます。",
+        "english": "I'll go even if it rains.",
+        "source": "original"
+      },
+      {
+        "japanese": "高くても買う。",
+        "english": "Even if it's expensive, I'll buy it.",
+        "source": "original"
+      },
+      {
+        "japanese": "いくら食べても太らない。",
+        "english": "No matter how much I eat, I don't gain weight.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "irassharu-honorific",
@@ -1654,12 +2717,26 @@
       "imasu-existence-animate"
     ],
     "examples": [
-      {"japanese": "先生は今、学校にいらっしゃいます。", "english": "The teacher is at the school now.", "source": "original"},
-      {"japanese": "明日、お客様がいらっしゃいます。", "english": "A guest will come tomorrow.", "source": "original"},
-      {"japanese": "いらっしゃいませ。", "english": "Welcome. (shop greeting)", "source": "original"}
+      {
+        "japanese": "先生は今、学校にいらっしゃいます。",
+        "english": "The teacher is at the school now.",
+        "source": "original"
+      },
+      {
+        "japanese": "明日、お客様がいらっしゃいます。",
+        "english": "A guest will come tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "いらっしゃいませ。",
+        "english": "Welcome. (shop greeting)",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ossharu-honorific",
@@ -1681,12 +2758,26 @@
       "to-iu"
     ],
     "examples": [
-      {"japanese": "先生は何とおっしゃいましたか。", "english": "What did the teacher say?", "source": "original"},
-      {"japanese": "お客様がそうおっしゃいました。", "english": "The customer said so.", "source": "original"},
-      {"japanese": "おっしゃる通りです。", "english": "It's just as you say.", "source": "original"}
+      {
+        "japanese": "先生は何とおっしゃいましたか。",
+        "english": "What did the teacher say?",
+        "source": "original"
+      },
+      {
+        "japanese": "お客様がそうおっしゃいました。",
+        "english": "The customer said so.",
+        "source": "original"
+      },
+      {
+        "japanese": "おっしゃる通りです。",
+        "english": "It's just as you say.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "goran-ni-naru-honorific",
@@ -1707,12 +2798,26 @@
       "o-v-kudasai-polite-honor"
     ],
     "examples": [
-      {"japanese": "こちらの資料をご覧ください。", "english": "Please look at this document.", "source": "original"},
-      {"japanese": "先生はもうその映画をご覧になりましたか。", "english": "Has the teacher already seen that movie?", "source": "original"},
-      {"japanese": "画面をご覧になりながらお聞きください。", "english": "Please listen while looking at the screen.", "source": "original"}
+      {
+        "japanese": "こちらの資料をご覧ください。",
+        "english": "Please look at this document.",
+        "source": "original"
+      },
+      {
+        "japanese": "先生はもうその映画をご覧になりましたか。",
+        "english": "Has the teacher already seen that movie?",
+        "source": "original"
+      },
+      {
+        "japanese": "画面をご覧になりながらお聞きください。",
+        "english": "Please listen while looking at the screen.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nasaru-honorific",
@@ -1733,12 +2838,26 @@
       "nasai-command"
     ],
     "examples": [
-      {"japanese": "社長は毎朝運動をなさいます。", "english": "The company president exercises every morning.", "source": "original"},
-      {"japanese": "お客様は何をなさいますか。", "english": "What would you like to do, sir/madam?", "source": "original"},
-      {"japanese": "お気をつけてお帰りなさい。", "english": "Please take care on your way home.", "source": "original"}
+      {
+        "japanese": "社長は毎朝運動をなさいます。",
+        "english": "The company president exercises every morning.",
+        "source": "original"
+      },
+      {
+        "japanese": "お客様は何をなさいますか。",
+        "english": "What would you like to do, sir/madam?",
+        "source": "original"
+      },
+      {
+        "japanese": "お気をつけてお帰りなさい。",
+        "english": "Please take care on your way home.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mairu-humble",
@@ -1759,12 +2878,26 @@
       "irassharu-honorific"
     ],
     "examples": [
-      {"japanese": "すぐ参ります。", "english": "I'll come right away.", "source": "original"},
-      {"japanese": "東京から参りました。", "english": "I came from Tokyo.", "source": "original"},
-      {"japanese": "まもなく電車が参ります。", "english": "The train is arriving shortly.", "source": "original"}
+      {
+        "japanese": "すぐ参ります。",
+        "english": "I'll come right away.",
+        "source": "original"
+      },
+      {
+        "japanese": "東京から参りました。",
+        "english": "I came from Tokyo.",
+        "source": "original"
+      },
+      {
+        "japanese": "まもなく電車が参ります。",
+        "english": "The train is arriving shortly.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mousu-humble",
@@ -1786,12 +2919,26 @@
       "to-iu"
     ],
     "examples": [
-      {"japanese": "田中と申します。", "english": "My name is Tanaka. (humble self-introduction)", "source": "original"},
-      {"japanese": "心よりお礼を申し上げます。", "english": "I express my gratitude from the heart.", "source": "original"},
-      {"japanese": "先ほど申した通りです。", "english": "It's just as I said earlier.", "source": "original"}
+      {
+        "japanese": "田中と申します。",
+        "english": "My name is Tanaka. (humble self-introduction)",
+        "source": "original"
+      },
+      {
+        "japanese": "心よりお礼を申し上げます。",
+        "english": "I express my gratitude from the heart.",
+        "source": "original"
+      },
+      {
+        "japanese": "先ほど申した通りです。",
+        "english": "It's just as I said earlier.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "itadaku-humble-verb",
@@ -1812,12 +2959,26 @@
       "te-itadaku-polite-favor-received"
     ],
     "examples": [
-      {"japanese": "いただきます。", "english": "I humbly receive (this meal). (pre-meal greeting)", "source": "original"},
-      {"japanese": "お手紙をいただきました。", "english": "I received your letter. (humble)", "source": "original"},
-      {"japanese": "お茶をいただけますか。", "english": "May I have some tea?", "source": "original"}
+      {
+        "japanese": "いただきます。",
+        "english": "I humbly receive (this meal). (pre-meal greeting)",
+        "source": "original"
+      },
+      {
+        "japanese": "お手紙をいただきました。",
+        "english": "I received your letter. (humble)",
+        "source": "original"
+      },
+      {
+        "japanese": "お茶をいただけますか。",
+        "english": "May I have some tea?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "kudasaru-honorific-verb",
@@ -1839,12 +3000,26 @@
       "te-kudasai-request"
     ],
     "examples": [
-      {"japanese": "先生が本をくださいました。", "english": "The teacher kindly gave me a book.", "source": "original"},
-      {"japanese": "社長がお花をくださった。", "english": "The president (kindly) gave me flowers.", "source": "original"},
-      {"japanese": "お手紙をくださってありがとうございます。", "english": "Thank you for kindly sending me a letter.", "source": "original"}
+      {
+        "japanese": "先生が本をくださいました。",
+        "english": "The teacher kindly gave me a book.",
+        "source": "original"
+      },
+      {
+        "japanese": "社長がお花をくださった。",
+        "english": "The president (kindly) gave me flowers.",
+        "source": "original"
+      },
+      {
+        "japanese": "お手紙をくださってありがとうございます。",
+        "english": "Thank you for kindly sending me a letter.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "shika-nai",
@@ -1865,12 +3040,26 @@
       "bakari-only"
     ],
     "examples": [
-      {"japanese": "お金が100円しかない。", "english": "I only have 100 yen.", "source": "original"},
-      {"japanese": "日本語しか話せません。", "english": "I can only speak Japanese.", "source": "original"},
-      {"japanese": "一つしか残っていない。", "english": "There's only one left.", "source": "original"}
+      {
+        "japanese": "お金が100円しかない。",
+        "english": "I only have 100 yen.",
+        "source": "original"
+      },
+      {
+        "japanese": "日本語しか話せません。",
+        "english": "I can only speak Japanese.",
+        "source": "original"
+      },
+      {
+        "japanese": "一つしか残っていない。",
+        "english": "There's only one left.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ga-suki-kirai",
@@ -1893,12 +3082,26 @@
       "na-adjective-nonpast"
     ],
     "examples": [
-      {"japanese": "私は猫が好きです。", "english": "I like cats.", "source": "original"},
-      {"japanese": "彼は納豆が嫌いだ。", "english": "He dislikes natto.", "source": "original"},
-      {"japanese": "日本語の勉強が大好きです。", "english": "I love studying Japanese.", "source": "original"}
+      {
+        "japanese": "私は猫が好きです。",
+        "english": "I like cats.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は納豆が嫌いだ。",
+        "english": "He dislikes natto.",
+        "source": "original"
+      },
+      {
+        "japanese": "日本語の勉強が大好きです。",
+        "english": "I love studying Japanese.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ga-wakaru",
@@ -1920,12 +3123,26 @@
       "particle-ga-subject"
     ],
     "examples": [
-      {"japanese": "日本語がわかります。", "english": "I understand Japanese.", "source": "original"},
-      {"japanese": "彼の気持ちがわからない。", "english": "I don't understand his feelings.", "source": "original"},
-      {"japanese": "この問題が全然わかりません。", "english": "I don't understand this problem at all.", "source": "original"}
+      {
+        "japanese": "日本語がわかります。",
+        "english": "I understand Japanese.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼の気持ちがわからない。",
+        "english": "I don't understand his feelings.",
+        "source": "original"
+      },
+      {
+        "japanese": "この問題が全然わかりません。",
+        "english": "I don't understand this problem at all.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ga-dekiru",
@@ -1948,12 +3165,26 @@
       "ga-suki-kirai"
     ],
     "examples": [
-      {"japanese": "日本語ができますか。", "english": "Can you speak Japanese?", "source": "original"},
-      {"japanese": "ご飯ができました。", "english": "The meal is ready.", "source": "original"},
-      {"japanese": "運転ができる。", "english": "I can drive.", "source": "original"}
+      {
+        "japanese": "日本語ができますか。",
+        "english": "Can you speak Japanese?",
+        "source": "original"
+      },
+      {
+        "japanese": "ご飯ができました。",
+        "english": "The meal is ready.",
+        "source": "original"
+      },
+      {
+        "japanese": "運転ができる。",
+        "english": "I can drive.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ga-kikoeru-mieru",
@@ -1975,12 +3206,26 @@
       "potential-form"
     ],
     "examples": [
-      {"japanese": "遠くから音楽が聞こえる。", "english": "I can hear music from far away.", "source": "original"},
-      {"japanese": "ここから富士山が見えます。", "english": "You can see Mount Fuji from here.", "source": "original"},
-      {"japanese": "小さい声が聞こえない。", "english": "I can't hear the quiet voice.", "source": "original"}
+      {
+        "japanese": "遠くから音楽が聞こえる。",
+        "english": "I can hear music from far away.",
+        "source": "original"
+      },
+      {
+        "japanese": "ここから富士山が見えます。",
+        "english": "You can see Mount Fuji from here.",
+        "source": "original"
+      },
+      {
+        "japanese": "小さい声が聞こえない。",
+        "english": "I can't hear the quiet voice.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tatoe-temo",
@@ -2001,12 +3246,26 @@
       "te-mo-ii-permission"
     ],
     "examples": [
-      {"japanese": "たとえ雨が降っても、行きます。", "english": "Even if it rains, I'll go.", "source": "original"},
-      {"japanese": "たとえ難しくても、諦めません。", "english": "Even if it's difficult, I won't give up.", "source": "original"},
-      {"japanese": "たとえお金があっても、幸せとは限らない。", "english": "Even if you have money, you're not necessarily happy.", "source": "original"}
+      {
+        "japanese": "たとえ雨が降っても、行きます。",
+        "english": "Even if it rains, I'll go.",
+        "source": "original"
+      },
+      {
+        "japanese": "たとえ難しくても、諦めません。",
+        "english": "Even if it's difficult, I won't give up.",
+        "source": "original"
+      },
+      {
+        "japanese": "たとえお金があっても、幸せとは限らない。",
+        "english": "Even if you have money, you're not necessarily happy.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "dakara-so",
@@ -2028,12 +3287,26 @@
       "sorede-and-then"
     ],
     "examples": [
-      {"japanese": "雨が降っています。だから、傘を持っていきます。", "english": "It's raining. So I'll take an umbrella.", "source": "original"},
-      {"japanese": "疲れました。だから、今日は早く寝ます。", "english": "I'm tired. So I'll go to bed early today.", "source": "original"},
-      {"japanese": "だから言ったでしょう。", "english": "That's what I told you, isn't it?", "source": "original"}
+      {
+        "japanese": "雨が降っています。だから、傘を持っていきます。",
+        "english": "It's raining. So I'll take an umbrella.",
+        "source": "original"
+      },
+      {
+        "japanese": "疲れました。だから、今日は早く寝ます。",
+        "english": "I'm tired. So I'll go to bed early today.",
+        "source": "original"
+      },
+      {
+        "japanese": "だから言ったでしょう。",
+        "english": "That's what I told you, isn't it?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "sorede-and-then",
@@ -2055,12 +3328,26 @@
       "kara-cause"
     ],
     "examples": [
-      {"japanese": "電車が遅れました。それで、会議に遅刻しました。", "english": "The train was delayed. As a result, I was late to the meeting.", "source": "original"},
-      {"japanese": "昨日は疲れていました。それで、早く寝ました。", "english": "I was tired yesterday. So I went to bed early.", "source": "original"},
-      {"japanese": "それで、どうしましたか。", "english": "And then, what happened?", "source": "original"}
+      {
+        "japanese": "電車が遅れました。それで、会議に遅刻しました。",
+        "english": "The train was delayed. As a result, I was late to the meeting.",
+        "source": "original"
+      },
+      {
+        "japanese": "昨日は疲れていました。それで、早く寝ました。",
+        "english": "I was tired yesterday. So I went to bed early.",
+        "source": "original"
+      },
+      {
+        "japanese": "それで、どうしましたか。",
+        "english": "And then, what happened?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "sorekara-after",
@@ -2082,12 +3369,26 @@
       "te-kara-after-doing"
     ],
     "examples": [
-      {"japanese": "朝ごはんを食べました。それから、学校へ行きました。", "english": "I ate breakfast. After that, I went to school.", "source": "original"},
-      {"japanese": "パンを買いました。それから、牛乳も買いました。", "english": "I bought bread. And also, I bought milk.", "source": "original"},
-      {"japanese": "宿題をして、それから、寝ます。", "english": "I'll do my homework, and after that, sleep.", "source": "original"}
+      {
+        "japanese": "朝ごはんを食べました。それから、学校へ行きました。",
+        "english": "I ate breakfast. After that, I went to school.",
+        "source": "original"
+      },
+      {
+        "japanese": "パンを買いました。それから、牛乳も買いました。",
+        "english": "I bought bread. And also, I bought milk.",
+        "source": "original"
+      },
+      {
+        "japanese": "宿題をして、それから、寝ます。",
+        "english": "I'll do my homework, and after that, sleep.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "shikashi-but",
@@ -2109,12 +3410,26 @@
       "noni-although"
     ],
     "examples": [
-      {"japanese": "雨が降っていた。しかし、試合は行われた。", "english": "It was raining. However, the match was held.", "source": "original"},
-      {"japanese": "彼は若い。しかし、経験が豊富だ。", "english": "He is young. However, he has abundant experience.", "source": "original"},
-      {"japanese": "勉強した。しかし、試験に落ちた。", "english": "I studied. But I failed the exam.", "source": "original"}
+      {
+        "japanese": "雨が降っていた。しかし、試合は行われた。",
+        "english": "It was raining. However, the match was held.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は若い。しかし、経験が豊富だ。",
+        "english": "He is young. However, he has abundant experience.",
+        "source": "original"
+      },
+      {
+        "japanese": "勉強した。しかし、試験に落ちた。",
+        "english": "I studied. But I failed the exam.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "kedomo-formal-but",
@@ -2136,12 +3451,26 @@
       "noni-although"
     ],
     "examples": [
-      {"japanese": "雨が降っていたけれども、試合は行われた。", "english": "Although it was raining, the match was held.", "source": "original"},
-      {"japanese": "高いけれども、品質はいい。", "english": "It's expensive, but the quality is good.", "source": "original"},
-      {"japanese": "彼は若いけれども、しっかりしている。", "english": "He is young, but he's very solid/reliable.", "source": "original"}
+      {
+        "japanese": "雨が降っていたけれども、試合は行われた。",
+        "english": "Although it was raining, the match was held.",
+        "source": "original"
+      },
+      {
+        "japanese": "高いけれども、品質はいい。",
+        "english": "It's expensive, but the quality is good.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は若いけれども、しっかりしている。",
+        "english": "He is young, but he's very solid/reliable.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "toka-listing",
@@ -2163,12 +3492,26 @@
       "shi-reason-listing"
     ],
     "examples": [
-      {"japanese": "スポーツとか音楽とかが好きです。", "english": "I like things like sports and music.", "source": "original"},
-      {"japanese": "映画を見るとか、買い物するとかしましょう。", "english": "Let's do things like watch a movie or go shopping.", "source": "original"},
-      {"japanese": "りんごとかバナナとかを買いました。", "english": "I bought things like apples and bananas.", "source": "original"}
+      {
+        "japanese": "スポーツとか音楽とかが好きです。",
+        "english": "I like things like sports and music.",
+        "source": "original"
+      },
+      {
+        "japanese": "映画を見るとか、買い物するとかしましょう。",
+        "english": "Let's do things like watch a movie or go shopping.",
+        "source": "original"
+      },
+      {
+        "japanese": "りんごとかバナナとかを買いました。",
+        "english": "I bought things like apples and bananas.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tte-quotation",
@@ -2190,12 +3533,26 @@
       "sou-da-hearsay"
     ],
     "examples": [
-      {"japanese": "彼は明日来るって言ってた。", "english": "He said he'll come tomorrow.", "source": "original"},
-      {"japanese": "日本語って難しいね。", "english": "Japanese is hard, isn't it?", "source": "original"},
-      {"japanese": "佐藤って人を知ってる？", "english": "Do you know someone called Sato?", "source": "original"}
+      {
+        "japanese": "彼は明日来るって言ってた。",
+        "english": "He said he'll come tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "日本語って難しいね。",
+        "english": "Japanese is hard, isn't it?",
+        "source": "original"
+      },
+      {
+        "japanese": "佐藤って人を知ってる？",
+        "english": "Do you know someone called Sato?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mono-da-general",
@@ -2216,12 +3573,26 @@
       "noun-modifying-clause"
     ],
     "examples": [
-      {"japanese": "子供は元気なものだ。", "english": "Children are naturally energetic.", "source": "original"},
-      {"japanese": "時間が経つのは早いものだ。", "english": "Time passes quickly. (general truth)", "source": "original"},
-      {"japanese": "昔はよくここで遊んだものだ。", "english": "I used to play here a lot long ago. (nostalgic)", "source": "original"}
+      {
+        "japanese": "子供は元気なものだ。",
+        "english": "Children are naturally energetic.",
+        "source": "original"
+      },
+      {
+        "japanese": "時間が経つのは早いものだ。",
+        "english": "Time passes quickly. (general truth)",
+        "source": "original"
+      },
+      {
+        "japanese": "昔はよくここで遊んだものだ。",
+        "english": "I used to play here a lot long ago. (nostalgic)",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "soredemo-even-so",
@@ -2243,11 +3614,25 @@
       "v-temo-even-if"
     ],
     "examples": [
-      {"japanese": "疲れている。それでも、続けなければならない。", "english": "I'm tired. Even so, I have to continue.", "source": "original"},
-      {"japanese": "失敗した。それでも、諦めない。", "english": "I failed. Still, I won't give up.", "source": "original"},
-      {"japanese": "難しい。それでも、やってみる価値がある。", "english": "It's difficult. Nonetheless, it's worth trying.", "source": "original"}
+      {
+        "japanese": "疲れている。それでも、続けなければならない。",
+        "english": "I'm tired. Even so, I have to continue.",
+        "source": "original"
+      },
+      {
+        "japanese": "失敗した。それでも、諦めない。",
+        "english": "I failed. Still, I won't give up.",
+        "source": "original"
+      },
+      {
+        "japanese": "難しい。それでも、やってみる価値がある。",
+        "english": "It's difficult. Nonetheless, it's worth trying.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   }
 ]
