@@ -22,17 +22,20 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 - **Counter-word index** (`data/enrichment/counter-words.json`): 125 counter words (josushi) extracted from JMdict entries with `ctr` POS tag. Enables counter-word study tools.
 - **Ateji index** (`data/enrichment/ateji.json`): 239 phonetic kanji spellings extracted from JMdict entries where kanji writings carry the `ateji` tag. Helps learners recognize non-semantic kanji usage.
 - **Jukugo compound index** (`data/enrichment/jukugo-compounds.json`): 14,350 multi-kanji compounds with per-character meaning decomposition from KANJIDIC2. Enables "what compounds use this kanji?" lookups.
+- **Word-to-grammar cross-reference** (`data/cross-refs/word-to-grammar.json`): 1,577 words mapped to grammar points via text matching against grammar examples and pattern strings.
+- **Grammar pattern matching improvement**: Multi-candidate extraction raises grammar-to-sentence linking from 75.6% to 90.3% (537 of 595 grammar points matched). Extracts multiple pattern candidates per grammar point and tries each against the corpus.
 
 ### Added — distribution
 
 - **GitHub Release automation**: New `release` job in CI workflow triggers on `v*` tags, builds the full pipeline, runs both exports (SQLite + Yomitan), extracts release notes from CHANGELOG, and publishes a GitHub Release with `dist/japanese-language-data.sqlite` and `dist/japanese-language-data.zip` attached. Uses `softprops/action-gh-release@v2`.
 - **Yomitan pitch accent enrichment**: Yomitan export now includes pitch accent data for 80.1% of terms (25,392 entries with `[pitch: N]` notation). Subtitle frequency data provides a small score boost for high-frequency words.
 - **SQLite export completeness**: 4 new tables added: `expressions` (13,220 rows), `conjugations` (3,507 rows), `jlpt_classifications` (11,099 rows), `frequency_subtitles` (8,598 rows). Word-to-grammar cross-ref table scaffolded (awaiting grammar example word-ID extraction).
+- **Anki .apkg flashcard deck export** (`just export-anki`): 36,822 cards across 3 note types — 23,119 vocabulary (with pitch accent, JLPT tags, example sentences), 13,108 kanji (with readings, meanings, stroke count), 595 grammar (with structure, examples, JLPT level). Produces a ~9.2 MB `.apkg` file ready for Anki import.
 
 ### Added — infrastructure
 
-- **38 new tests** (317 → 355): Unit tests for frequency_subtitles, export_sqlite insert functions, furigana mock-build, kftt tarball extraction, grammar pattern extraction, stroke_order edge cases, sentences dedup, expressions filter. Coverage: 47% → 51%.
-- **Coverage floor bumped** from 45% to 50% (`pyproject.toml`).
+- **125 new tests** (317 → 442): Unit tests for frequency_subtitles, export_sqlite insert functions, furigana mock-build, kftt tarball extraction, grammar pattern extraction, stroke_order edge cases, sentences dedup, expressions filter, cross_links build, grammar multi-candidate matching, Anki note model builders. Full build() integration tests for export_anki, export_sqlite, grammar, cross_links, stroke_order, kanji, sentences, expressions, kftt, frequency, pitch, and names modules. Coverage: 47% → 77%.
+- **Coverage floor bumped** from 45% to 77% (`pyproject.toml`).
 
 ### Fixed — pipeline
 
@@ -45,13 +48,14 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 - **docs/downstream.md**: Updated file sizes table with current counts and new files.
 - **docs/cookbook.md**: Added 4 new example sections — SQLite queries, subtitle frequency, furigana ruby text, counter-word lookup.
 - **schemas/word.schema.json**: Updated `frequency_media` description from stale "JPDB" reference to reflect actual state.
-- **manifest.json `next_actions`**: Removed delivered items (ateji, counter words, SQLite, corpus frequency, enhanced Yomitan). Updated coverage numbers.
+- **manifest.json `next_actions`**: Removed delivered items (ateji, counter words, SQLite, corpus frequency, enhanced Yomitan, Anki .apkg). Updated coverage and grammar matching numbers.
+- **docs/phase4-candidates.md**: Evaluated Common Voice (CC0 transcripts), Wiktionary (pitch accent), and Aozora Bunko (literary corpus) as Phase 4 candidates with license analysis and effort estimates.
 
 ### Verification
 
-- 363 tests, all passing.
+- 442 tests, all passing.
 - 28 data files validated against schemas + semantic integrity checks.
-- Coverage: 51% (fail-under: 50%).
+- Coverage: 77% (fail-under: 77%).
 - Lint clean.
 
 ## [0.8.0] — 2026-04-12

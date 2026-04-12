@@ -182,6 +182,7 @@ jobs:
         run: |
           just export-sqlite
           just export-yomitan
+          just export-anki
 
       - name: Extract release notes from CHANGELOG
         id: notes
@@ -198,3 +199,4 @@ jobs:
           files: |
             dist/japanese-language-data.sqlite
             dist/japanese-language-data.zip
+            dist/japanese-language-data.apkg

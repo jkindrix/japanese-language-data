@@ -3041,3 +3041,1281 @@ def test_anki_models_have_stable_ids() -> None:
     assert _build_vocab_model().model_id == 1607392319
     assert _build_kanji_model().model_id == 1607392320
     assert _build_grammar_model().model_id == 1607392321
+
+
+# ---------------------------------------------------------------------------
+# export_anki — _load_json
+# ---------------------------------------------------------------------------
+
+def test_anki_load_json_existing_file(tmp_path: Path) -> None:
+    from build.export_anki import _load_json
+    p = tmp_path / "test.json"
+    p.write_text('{"key": "value"}', encoding="utf-8")
+    assert _load_json(p) == {"key": "value"}
+
+
+def test_anki_load_json_missing_file(tmp_path: Path) -> None:
+    from build.export_anki import _load_json
+    assert _load_json(tmp_path / "nope.json") is None
+
+
+# ---------------------------------------------------------------------------
+# export_anki — full export() integration
+# ---------------------------------------------------------------------------
+
+def test_anki_export_generates_apkg(tmp_path: Path, monkeypatch) -> None:
+    """Full integration: mock data → export() → .apkg exists with correct card counts."""
+    import build.export_anki as mod
+
+    data_dir = tmp_path / "data"
+    (data_dir / "core").mkdir(parents=True)
+    (data_dir / "enrichment").mkdir(parents=True)
+    (data_dir / "grammar").mkdir(parents=True)
+
+    # Minimal words.json
+    words = {"words": [{
+        "id": "1000010", "kanji": [{"text": "食べる", "tags": ["ichi1"]}],
+        "kana": [{"text": "たべる", "tags": []}],
+        "sense": [{"gloss": [{"text": "to eat"}]}],
+    }]}
+    (data_dir / "core" / "words.json").write_text(json.dumps(words), encoding="utf-8")
+
+    # Minimal kanji.json
+    kanji = {"kanji": [{
+        "character": "食", "readings": {"on": ["ショク"], "kun": ["た.べる"]},
+        "meanings": {"en": ["eat"]}, "stroke_count": 9, "grade": 2,
+    }]}
+    (data_dir / "core" / "kanji.json").write_text(json.dumps(kanji), encoding="utf-8")
+
+    # Minimal grammar.json
+    grammar = {"grammar_points": [{
+        "id": "n5-te-form", "pattern": "～て", "meaning_en": "and then",
+        "formation": "V-te", "level": "N5",
+        "examples": [{"japanese": "食べて", "english": "eat and..."}],
+    }]}
+    (data_dir / "grammar" / "grammar.json").write_text(json.dumps(grammar), encoding="utf-8")
+
+    # Pitch accent data
+    pitch = {"entries": [{"word": "食べる", "pitch_positions": [2], "mora_count": 3}]}
+    (data_dir / "enrichment" / "pitch-accent.json").write_text(json.dumps(pitch), encoding="utf-8")
+
+    # Manifest
+    manifest = {"version": "0.8.0-test"}
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    dist_dir = tmp_path / "dist"
+    out_apkg = dist_dir / "japanese-language-data.apkg"
+
+    monkeypatch.setattr(mod, "DIST_DIR", dist_dir)
+    monkeypatch.setattr(mod, "OUT_APKG", out_apkg)
+    monkeypatch.setattr(mod, "MANIFEST_PATH", manifest_path)
+    monkeypatch.setattr("build.export_anki.DATA_DIR", data_dir)
+    monkeypatch.setattr("build.export_anki.REPO_ROOT", tmp_path)
+
+    mod.export()
+
+    assert out_apkg.exists()
+    assert out_apkg.stat().st_size > 0
+
+
+def test_anki_export_empty_data(tmp_path: Path, monkeypatch) -> None:
+    """Export with no data files produces a valid (empty) .apkg."""
+    import build.export_anki as mod
+
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+
+    manifest = {"version": "test"}
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    dist_dir = tmp_path / "dist"
+    out_apkg = dist_dir / "japanese-language-data.apkg"
+
+    monkeypatch.setattr(mod, "DIST_DIR", dist_dir)
+    monkeypatch.setattr(mod, "OUT_APKG", out_apkg)
+    monkeypatch.setattr(mod, "MANIFEST_PATH", manifest_path)
+    monkeypatch.setattr("build.export_anki.DATA_DIR", data_dir)
+    monkeypatch.setattr("build.export_anki.REPO_ROOT", tmp_path)
+
+    mod.export()
+
+    assert out_apkg.exists()
+
+
+def test_anki_export_vocab_pitch_enrichment(tmp_path: Path, monkeypatch) -> None:
+    """Pitch accent lookup is wired into vocab cards."""
+    import build.export_anki as mod
+
+    data_dir = tmp_path / "data"
+    (data_dir / "core").mkdir(parents=True)
+    (data_dir / "enrichment").mkdir(parents=True)
+    (data_dir / "grammar").mkdir(parents=True)
+
+    words = {"words": [{
+        "id": "1", "kanji": [{"text": "飲む", "tags": []}],
+        "kana": [{"text": "のむ", "tags": []}],
+        "sense": [{"gloss": [{"text": "to drink"}]}],
+    }]}
+    (data_dir / "core" / "words.json").write_text(json.dumps(words), encoding="utf-8")
+
+    pitch = {"entries": [{"word": "飲む", "pitch_positions": [1, 0], "mora_count": 2}]}
+    (data_dir / "enrichment" / "pitch-accent.json").write_text(json.dumps(pitch), encoding="utf-8")
+
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text('{"version": "test"}', encoding="utf-8")
+    dist_dir = tmp_path / "dist"
+    out_apkg = dist_dir / "japanese-language-data.apkg"
+
+    monkeypatch.setattr(mod, "DIST_DIR", dist_dir)
+    monkeypatch.setattr(mod, "OUT_APKG", out_apkg)
+    monkeypatch.setattr(mod, "MANIFEST_PATH", manifest_path)
+    monkeypatch.setattr("build.export_anki.DATA_DIR", data_dir)
+    monkeypatch.setattr("build.export_anki.REPO_ROOT", tmp_path)
+
+    mod.export()
+    assert out_apkg.exists()
+
+
+def test_anki_export_skips_words_without_text(tmp_path: Path, monkeypatch) -> None:
+    """Words with no kanji or kana text are skipped."""
+    import build.export_anki as mod
+
+    data_dir = tmp_path / "data"
+    (data_dir / "core").mkdir(parents=True)
+    (data_dir / "grammar").mkdir(parents=True)
+
+    words = {"words": [
+        {"id": "1", "kanji": [], "kana": [], "sense": [{"gloss": [{"text": "orphan"}]}]},
+        {"id": "2", "kanji": [], "kana": [{"text": "はい", "tags": []}], "sense": []},
+    ]}
+    (data_dir / "core" / "words.json").write_text(json.dumps(words), encoding="utf-8")
+
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text('{"version": "test"}', encoding="utf-8")
+    dist_dir = tmp_path / "dist"
+    out_apkg = dist_dir / "japanese-language-data.apkg"
+
+    monkeypatch.setattr(mod, "DIST_DIR", dist_dir)
+    monkeypatch.setattr(mod, "OUT_APKG", out_apkg)
+    monkeypatch.setattr(mod, "MANIFEST_PATH", manifest_path)
+    monkeypatch.setattr("build.export_anki.DATA_DIR", data_dir)
+    monkeypatch.setattr("build.export_anki.REPO_ROOT", tmp_path)
+
+    mod.export()
+    assert out_apkg.exists()
+
+
+def test_anki_main_returns_zero(tmp_path: Path, monkeypatch) -> None:
+    """main() calls export() and returns 0."""
+    import build.export_anki as mod
+
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text('{"version": "test"}', encoding="utf-8")
+    dist_dir = tmp_path / "dist"
+    out_apkg = dist_dir / "japanese-language-data.apkg"
+
+    monkeypatch.setattr(mod, "DIST_DIR", dist_dir)
+    monkeypatch.setattr(mod, "OUT_APKG", out_apkg)
+    monkeypatch.setattr(mod, "MANIFEST_PATH", manifest_path)
+    monkeypatch.setattr("build.export_anki.DATA_DIR", data_dir)
+    monkeypatch.setattr("build.export_anki.REPO_ROOT", tmp_path)
+
+    assert mod.main() == 0
+
+
+# ---------------------------------------------------------------------------
+# export_sqlite — inline insert blocks in export()
+# ---------------------------------------------------------------------------
+
+def _setup_sqlite_export(tmp_path, monkeypatch):
+    """Shared helper: create mock data files and monkeypatch the sqlite module."""
+    import build.export_sqlite as mod
+
+    data_dir = tmp_path / "data"
+    for sub in ("core", "enrichment", "grammar", "corpus", "cross-refs"):
+        (data_dir / sub).mkdir(parents=True)
+
+    # Core
+    words = {"words": [{
+        "id": "1000010", "kanji": [{"text": "食べる", "tags": ["ichi1"]}],
+        "kana": [{"text": "たべる", "tags": []}],
+        "sense": [{"gloss": [{"text": "to eat"}]}], "jlpt_waller": "N5",
+    }]}
+    (data_dir / "core" / "words.json").write_text(json.dumps(words), encoding="utf-8")
+
+    kanji = {"kanji": [{
+        "character": "食", "stroke_count": 9, "grade": 2, "jlpt_waller": "N5",
+        "frequency": 328, "readings": {"on": ["ショク"], "kun": ["た.べる"]},
+        "meanings": {"en": ["eat"]},
+    }]}
+    (data_dir / "core" / "kanji.json").write_text(json.dumps(kanji), encoding="utf-8")
+
+    radicals = {"radicals": [{"character": "一", "kangxi_number": 1, "stroke_count": 1, "meaning_en": "one"}]}
+    (data_dir / "core" / "radicals.json").write_text(json.dumps(radicals), encoding="utf-8")
+
+    # Corpus
+    sentences = {"sentences": [{"id": "100", "japanese": "食べます", "english": "I eat"}]}
+    (data_dir / "corpus" / "sentences.json").write_text(json.dumps(sentences), encoding="utf-8")
+
+    kftt = {"sentences": [{"id": "kftt-1", "japanese": "京都", "english": "Kyoto"}]}
+    (data_dir / "corpus" / "sentences-kftt.json").write_text(json.dumps(kftt), encoding="utf-8")
+
+    # Grammar
+    grammar = {"grammar_points": [{
+        "id": "n5-te", "pattern": "～て", "meaning_en": "and then",
+        "level": "N5", "formality": "neutral", "formation": "V-te", "review_status": "draft",
+    }]}
+    (data_dir / "grammar" / "grammar.json").write_text(json.dumps(grammar), encoding="utf-8")
+
+    # Enrichment
+    pitch = {"entries": [{"text": "食べる", "reading": "たべる", "pitch_positions": [2], "mora_count": 3}]}
+    (data_dir / "enrichment" / "pitch-accent.json").write_text(json.dumps(pitch), encoding="utf-8")
+
+    freq = {"entries": [{"text": "食べる", "reading": "たべる", "rank": 100, "count": 5000}]}
+    (data_dir / "enrichment" / "frequency-corpus.json").write_text(json.dumps(freq), encoding="utf-8")
+
+    freq_sub = {"entries": [{"text": "食べる", "reading": "たべる", "rank": 50, "count": 8000}]}
+    (data_dir / "enrichment" / "frequency-subtitles.json").write_text(json.dumps(freq_sub), encoding="utf-8")
+
+    furigana = {"entries": [{"text": "食べる", "reading": "たべる", "segments": [{"text": "食", "reading": "た"}, {"text": "べる"}]}]}
+    (data_dir / "enrichment" / "furigana.json").write_text(json.dumps(furigana), encoding="utf-8")
+
+    # Expressions
+    expr = {"expressions": [{"id": "2000", "text": "お疲れ様", "reading": "おつかれさま", "meanings": ["good work"], "common": True, "jlpt_waller": "N3"}]}
+    (data_dir / "grammar" / "expressions.json").write_text(json.dumps(expr), encoding="utf-8")
+
+    # Conjugations
+    conj = {"entries": [{"dictionary_form": "食べる", "reading": "たべる", "class": "ichidan", "forms": {"te_form": "食べて"}, "display_forms": {}}]}
+    (data_dir / "grammar" / "conjugations.json").write_text(json.dumps(conj), encoding="utf-8")
+
+    # JLPT
+    jlpt = {"classifications": [{"kind": "vocab", "level": "N5", "jmdict_seq": "1000010", "grammar_id": "", "text": "食べる", "reading": "たべる"}]}
+    (data_dir / "enrichment" / "jlpt-classifications.json").write_text(json.dumps(jlpt), encoding="utf-8")
+
+    # Jukugo
+    jukugo = {"compounds": [{"word_id": "1000020", "text": "食事", "reading": "しょくじ", "meaning": "meal", "kanji_count": 2, "kanji_sequence": ["食", "事"], "components": [], "jlpt_waller": "N4"}]}
+    (data_dir / "enrichment" / "jukugo-compounds.json").write_text(json.dumps(jukugo), encoding="utf-8")
+
+    # Counter words
+    ctr = {"counter_words": [{"word_id": "3000", "text": "個", "reading": "こ", "meanings": ["counter for small items"], "jlpt_waller": "N5"}]}
+    (data_dir / "enrichment" / "counter-words.json").write_text(json.dumps(ctr), encoding="utf-8")
+
+    # Ateji
+    ateji = {"entries": [{"word_id": "4000", "text": "素敵", "reading": "すてき", "meanings": ["lovely"], "jlpt_waller": "N3"}]}
+    (data_dir / "enrichment" / "ateji.json").write_text(json.dumps(ateji), encoding="utf-8")
+
+    # Cross-refs
+    for fname, mapping in [
+        ("kanji-to-words.json", {"食": ["1000010"]}),
+        ("word-to-sentences.json", {"1000010": ["100"]}),
+        ("kanji-to-sentences.json", {"食": ["100"]}),
+        ("radical-to-kanji.json", {"一": ["食"]}),
+        ("reading-to-words.json", {"たべる": ["1000010"]}),
+        ("word-to-grammar.json", {"1000010": ["n5-te"]}),
+    ]:
+        (data_dir / "cross-refs" / fname).write_text(
+            json.dumps({"mapping": mapping}), encoding="utf-8"
+        )
+
+    manifest = {"version": "0.8.0-test", "generated": "2026-04-12"}
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    dist_dir = tmp_path / "dist"
+    out_db = dist_dir / "japanese-language-data.sqlite"
+
+    monkeypatch.setattr(mod, "DIST_DIR", dist_dir)
+    monkeypatch.setattr(mod, "OUT_DB", out_db)
+    monkeypatch.setattr(mod, "MANIFEST_PATH", manifest_path)
+    monkeypatch.setattr("build.export_sqlite.DATA_DIR", data_dir)
+    monkeypatch.setattr("build.export_sqlite.REPO_ROOT", tmp_path)
+
+    return mod, out_db
+
+
+def test_sqlite_export_full_integration(tmp_path: Path, monkeypatch) -> None:
+    """Full export() produces a database with all tables populated."""
+    import sqlite3
+    mod, out_db = _setup_sqlite_export(tmp_path, monkeypatch)
+    mod.export()
+
+    assert out_db.exists()
+    conn = sqlite3.connect(str(out_db))
+
+    # Spot-check key tables
+    assert conn.execute("SELECT COUNT(*) FROM words").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM kanji").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM radicals").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM sentences").fetchone()[0] == 2  # tatoeba + kftt
+    assert conn.execute("SELECT COUNT(*) FROM grammar").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM pitch_accent").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM frequency_corpus").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM frequency_subtitles").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM furigana").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM expressions").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM conjugations").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM jlpt_classifications").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM jukugo_compounds").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM counter_words").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM ateji").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM kanji_to_words").fetchone()[0] == 1
+    assert conn.execute("SELECT COUNT(*) FROM word_to_grammar").fetchone()[0] == 1
+
+    # Metadata
+    version = conn.execute("SELECT value FROM _metadata WHERE key='version'").fetchone()[0]
+    assert version == "0.8.0-test"
+
+    conn.close()
+
+
+def test_sqlite_export_overwrites_existing(tmp_path: Path, monkeypatch) -> None:
+    """export() deletes the old database before creating a new one."""
+    import sqlite3
+    mod, out_db = _setup_sqlite_export(tmp_path, monkeypatch)
+
+    # Pre-create a dummy file
+    out_db.parent.mkdir(parents=True, exist_ok=True)
+    out_db.write_text("old data")
+
+    mod.export()
+    conn = sqlite3.connect(str(out_db))
+    assert conn.execute("SELECT COUNT(*) FROM words").fetchone()[0] == 1
+    conn.close()
+
+
+def test_sqlite_main_returns_zero(tmp_path: Path, monkeypatch) -> None:
+    mod, _ = _setup_sqlite_export(tmp_path, monkeypatch)
+    assert mod.main() == 0
+
+
+# ---------------------------------------------------------------------------
+# grammar — _load_tatoeba_text_index, _link_examples_to_tatoeba, build()
+# ---------------------------------------------------------------------------
+
+def test_grammar_load_tatoeba_text_index(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import grammar as mod
+    sentences = {"sentences": [
+        {"id": "100", "japanese": "食べます。", "english": "I eat."},
+        {"id": "200", "japanese": "飲みます", "english": "I drink."},
+    ]}
+    sentences_path = tmp_path / "sentences.json"
+    sentences_path.write_text(json.dumps(sentences), encoding="utf-8")
+    monkeypatch.setattr(mod, "SENTENCES_JSON", sentences_path)
+
+    exact, normalized = mod._load_tatoeba_text_index()
+    assert "食べます。" in exact
+    assert exact["食べます。"] == "100"
+    # Normalized strips trailing punct
+    assert "食べます" in normalized
+
+
+def test_grammar_load_tatoeba_text_index_no_file(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import grammar as mod
+    monkeypatch.setattr(mod, "SENTENCES_JSON", tmp_path / "nope.json")
+    exact, normalized = mod._load_tatoeba_text_index()
+    assert exact == {}
+    assert normalized == {}
+
+
+def test_grammar_link_examples_exact(tmp_path: Path) -> None:
+    from build.transform.grammar import _link_examples_to_tatoeba
+
+    text_index = {"食べます": "100"}
+    normalized_index = {}
+    entries = [{"id": "g1", "examples": [
+        {"japanese": "食べます", "source": "original"},
+    ]}]
+
+    total, linked, via_norm = _link_examples_to_tatoeba(entries, text_index, normalized_index)
+    assert total == 1
+    assert linked == 1
+    assert via_norm == 0
+    assert entries[0]["examples"][0]["sentence_id"] == "100"
+    assert entries[0]["examples"][0]["source"] == "tatoeba"
+
+
+def test_grammar_link_examples_normalized(tmp_path: Path) -> None:
+    from build.transform.grammar import _link_examples_to_tatoeba
+
+    text_index = {}
+    normalized_index = {"食べます": "200"}
+    entries = [{"id": "g1", "examples": [
+        {"japanese": "食べます。", "source": "original"},
+    ]}]
+
+    total, linked, via_norm = _link_examples_to_tatoeba(entries, text_index, normalized_index)
+    assert total == 1
+    assert linked == 1
+    assert via_norm == 1
+
+
+def test_grammar_link_examples_already_linked() -> None:
+    from build.transform.grammar import _link_examples_to_tatoeba
+
+    entries = [{"id": "g1", "examples": [
+        {"japanese": "食べます", "source": "tatoeba", "sentence_id": "999"},
+    ]}]
+    total, linked, _ = _link_examples_to_tatoeba(entries, {}, {})
+    assert total == 1
+    assert linked == 1  # counted as already linked
+
+
+def test_grammar_build_with_mock_curated(tmp_path: Path, monkeypatch) -> None:
+    """Full build() with mock curated files and mock sentence corpus."""
+    from build.transform import grammar as mod
+
+    curated_dir = tmp_path / "grammar-curated"
+    curated_dir.mkdir()
+    out_path = tmp_path / "grammar.json"
+    sentences_path = tmp_path / "sentences.json"
+    kftt_path = tmp_path / "kftt.json"
+
+    entries = [{
+        "id": "n5-te-form", "pattern": "～て", "level": "N5",
+        "meaning_en": "and then", "formation": "V-te form",
+        "examples": [{"japanese": "食べて待ってください", "english": "Please eat and wait", "source": "original"}],
+        "review_status": "draft",
+        "sources": ["general knowledge"],
+    }]
+    (curated_dir / "n5.json").write_text(json.dumps(entries), encoding="utf-8")
+
+    sentences = {"sentences": [
+        {"id": "100", "japanese": "食べて待ってください", "english": "Please eat and wait"},
+        {"id": "200", "japanese": "泳いでください", "english": "Please swim"},
+    ]}
+    sentences_path.write_text(json.dumps(sentences), encoding="utf-8")
+
+    kftt = {"sentences": [{"id": "kftt-1", "japanese": "てから始めた", "english": "started after"}]}
+    kftt_path.write_text(json.dumps(kftt), encoding="utf-8")
+
+    monkeypatch.setattr(mod, "CURATED_DIR", curated_dir)
+    monkeypatch.setattr(mod, "OUT", out_path)
+    monkeypatch.setattr(mod, "SENTENCES_JSON", sentences_path)
+    monkeypatch.setattr(mod, "KFTT_JSON", kftt_path)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    assert out_path.exists()
+    result = json.loads(out_path.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 1
+    assert result["grammar_points"][0]["id"] == "n5-te-form"
+    # Example should have been linked via exact match
+    ex = result["grammar_points"][0]["examples"][0]
+    assert ex["source"] == "tatoeba"
+    assert ex["sentence_id"] == "100"
+
+
+def test_grammar_build_empty_curated_dir(tmp_path: Path, monkeypatch) -> None:
+    """build() with missing curated dir emits empty grammar.json with warning."""
+    from build.transform import grammar as mod
+
+    out_path = tmp_path / "grammar.json"
+    monkeypatch.setattr(mod, "CURATED_DIR", tmp_path / "nonexistent")
+    monkeypatch.setattr(mod, "OUT", out_path)
+    monkeypatch.setattr(mod, "SENTENCES_JSON", tmp_path / "nope.json")
+    monkeypatch.setattr(mod, "KFTT_JSON", tmp_path / "nope2.json")
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    with pytest.warns(UserWarning, match="grammar-curated"):
+        mod.build()
+
+    result = json.loads(out_path.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 0
+    assert result["grammar_points"] == []
+
+
+def test_grammar_build_duplicate_id_raises(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import grammar as mod
+
+    curated_dir = tmp_path / "grammar-curated"
+    curated_dir.mkdir()
+    entries = [
+        {"id": "dup", "pattern": "～て", "level": "N5", "meaning_en": "x",
+         "formation": "y", "examples": [{"japanese": "a", "english": "b"}],
+         "review_status": "draft", "sources": ["x"]},
+        {"id": "dup", "pattern": "～た", "level": "N5", "meaning_en": "x",
+         "formation": "y", "examples": [{"japanese": "a", "english": "b"}],
+         "review_status": "draft", "sources": ["x"]},
+    ]
+    (curated_dir / "n5.json").write_text(json.dumps(entries), encoding="utf-8")
+
+    monkeypatch.setattr(mod, "CURATED_DIR", curated_dir)
+    monkeypatch.setattr(mod, "OUT", tmp_path / "out.json")
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    with pytest.raises(ValueError, match="Duplicate grammar id"):
+        mod.build()
+
+
+def test_grammar_build_broken_related_raises(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import grammar as mod
+
+    curated_dir = tmp_path / "grammar-curated"
+    curated_dir.mkdir()
+    entries = [{
+        "id": "n5-te", "pattern": "～て", "level": "N5", "meaning_en": "x",
+        "formation": "y", "examples": [{"japanese": "a", "english": "b"}],
+        "review_status": "draft", "sources": ["x"], "related": ["nonexistent-id"],
+    }]
+    (curated_dir / "n5.json").write_text(json.dumps(entries), encoding="utf-8")
+
+    monkeypatch.setattr(mod, "CURATED_DIR", curated_dir)
+    monkeypatch.setattr(mod, "OUT", tmp_path / "out.json")
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    with pytest.raises(ValueError, match="unknown related"):
+        mod.build()
+
+
+# ---------------------------------------------------------------------------
+# cross_links — _build_kanji_to_sentences, _build_word_to_grammar, _write_xref, build()
+# ---------------------------------------------------------------------------
+
+def test_cross_links_build_kanji_to_sentences() -> None:
+    from build.transform.cross_links import _build_kanji_to_sentences
+    sentences = {"sentences": [
+        {"id": "100", "japanese": "食べます"},
+        {"id": "200", "japanese": "水を飲む"},
+    ]}
+    result = _build_kanji_to_sentences(sentences)
+    assert "食" in result
+    assert "100" in result["食"]
+    assert "水" in result
+    assert "200" in result["水"]
+    assert "飲" in result
+    assert "200" in result["飲"]
+
+
+def test_cross_links_build_kanji_to_sentences_skips_kana() -> None:
+    from build.transform.cross_links import _build_kanji_to_sentences
+    sentences = {"sentences": [{"id": "1", "japanese": "たべます"}]}
+    result = _build_kanji_to_sentences(sentences)
+    assert len(result) == 0
+
+
+def test_cross_links_build_word_to_grammar() -> None:
+    from build.transform.cross_links import _build_word_to_grammar
+    grammar_data = {"grammar_points": [{
+        "id": "n5-te", "examples": [{"japanese": "食べてください"}],
+    }]}
+    word_text_lookup = {"食べ": "1000010", "ください": "2000020"}
+    result = _build_word_to_grammar(grammar_data, word_text_lookup)
+    assert "1000010" in result
+    assert "n5-te" in result["1000010"]
+    assert "2000020" in result
+    assert "n5-te" in result["2000020"]
+
+
+def test_cross_links_build_word_text_lookup() -> None:
+    from build.transform.cross_links import _build_word_text_lookup
+    words = {"words": [
+        {"id": "1", "kanji": [{"text": "食べる"}], "kana": [{"text": "たべる"}]},
+        {"id": "2", "kanji": [], "kana": [{"text": "い"}]},   # too short kana
+        {"id": "3", "kanji": [{"text": "水"}], "kana": []},   # single-char kanji — too short
+    ]}
+    result = _build_word_text_lookup(words)
+    assert "食べる" in result
+    assert "たべる" in result
+    assert "い" not in result   # kana < 3 chars excluded
+    assert "水" not in result   # kanji < 2 chars excluded
+
+
+def test_cross_links_write_xref_format(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import cross_links as mod
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    out = tmp_path / "test-xref.json"
+    mod._write_xref(
+        out, {"b": ["2"], "a": ["1"]},
+        "test direction", "key_type", "value_type",
+        ["source.json"],
+    )
+    data = json.loads(out.read_text(encoding="utf-8"))
+    assert data["metadata"]["count"] == 2
+    assert data["metadata"]["direction"] == "test direction"
+    # Keys should be sorted
+    keys = list(data["mapping"].keys())
+    assert keys == ["a", "b"]
+
+
+def test_cross_links_build_full(tmp_path: Path, monkeypatch) -> None:
+    """Full build() with mock data files."""
+    from build.transform import cross_links as mod
+
+    data_dir = tmp_path / "data"
+    (data_dir / "core").mkdir(parents=True)
+    (data_dir / "corpus").mkdir(parents=True)
+    (data_dir / "grammar").mkdir(parents=True)
+    (data_dir / "cross-refs").mkdir(parents=True)
+
+    words = {"words": [{
+        "id": "1", "kanji": [{"text": "食べる"}], "kana": [{"text": "たべる"}],
+        "sense": [{"examples": [{"sentence_id": "100"}]}],
+    }]}
+    (data_dir / "core" / "words.json").write_text(json.dumps(words), encoding="utf-8")
+
+    kanji = {"kanji": [{"character": "食"}]}
+    (data_dir / "core" / "kanji.json").write_text(json.dumps(kanji), encoding="utf-8")
+
+    radicals = {"radicals": [], "kanji_to_radicals": {"食": ["人", "良"]}}
+    (data_dir / "core" / "radicals.json").write_text(json.dumps(radicals), encoding="utf-8")
+
+    sentences = {"sentences": [{"id": "100", "japanese": "食べます"}]}
+    (data_dir / "corpus" / "sentences.json").write_text(json.dumps(sentences), encoding="utf-8")
+
+    grammar = {"grammar_points": [{
+        "id": "n5-te", "examples": [{"japanese": "食べるのが好きです"}],
+    }]}
+    (data_dir / "grammar" / "grammar.json").write_text(json.dumps(grammar), encoding="utf-8")
+
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+    monkeypatch.setattr(mod, "KANJI_JSON", data_dir / "core" / "kanji.json")
+    monkeypatch.setattr(mod, "WORDS_JSON", data_dir / "core" / "words.json")
+    monkeypatch.setattr(mod, "WORDS_FULL_JSON", data_dir / "core" / "words-full.json")
+    monkeypatch.setattr(mod, "RADICALS_JSON", data_dir / "core" / "radicals.json")
+    monkeypatch.setattr(mod, "SENTENCES_JSON", data_dir / "corpus" / "sentences.json")
+    monkeypatch.setattr(mod, "GRAMMAR_JSON", data_dir / "grammar" / "grammar.json")
+    monkeypatch.setattr(mod, "OUT_DIR", data_dir / "cross-refs")
+
+    mod.build()
+
+    # Verify key output files
+    assert (data_dir / "cross-refs" / "kanji-to-words.json").exists()
+    assert (data_dir / "cross-refs" / "word-to-kanji.json").exists()
+    assert (data_dir / "cross-refs" / "kanji-to-sentences.json").exists()
+    assert (data_dir / "cross-refs" / "word-to-grammar.json").exists()
+    assert (data_dir / "cross-refs" / "radical-to-kanji.json").exists()
+    assert (data_dir / "cross-refs" / "reading-to-words.json").exists()
+
+    k2s = json.loads((data_dir / "cross-refs" / "kanji-to-sentences.json").read_text(encoding="utf-8"))
+    assert "食" in k2s["mapping"]
+
+
+def test_cross_links_build_missing_prerequisite(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import cross_links as mod
+    monkeypatch.setattr(mod, "KANJI_JSON", tmp_path / "nope.json")
+    monkeypatch.setattr(mod, "WORDS_JSON", tmp_path / "nope2.json")
+    monkeypatch.setattr(mod, "RADICALS_JSON", tmp_path / "nope3.json")
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    with pytest.raises(FileNotFoundError, match="Cross-links stage requires"):
+        mod.build()
+
+
+# ---------------------------------------------------------------------------
+# stroke_order — build() with mock ZIP
+# ---------------------------------------------------------------------------
+
+def _make_kanjivg_zip(tmp_path: Path, entries: dict[str, str]) -> Path:
+    """Create a mock KanjiVG ZIP with the given char→svg_content mapping."""
+    import zipfile
+    zip_path = tmp_path / "kanjivg-main.zip"
+    with zipfile.ZipFile(zip_path, "w") as zf:
+        for char, svg_content in entries.items():
+            codepoint = f"{ord(char):05x}"
+            zf.writestr(f"kanji/{codepoint}.svg", svg_content)
+    return zip_path
+
+
+def test_stroke_order_build_with_mock_zip(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import stroke_order as mod
+
+    # Minimal SVG with 3 strokes (3 <path> elements with id)
+    svg = (
+        '<svg><g id="kvg:098df">'
+        '<path id="kvg:098df-s1" d="M1"/>'
+        '<path id="kvg:098df-s2" d="M2"/>'
+        '<path id="kvg:098df-s3" d="M3"/>'
+        '</g></svg>'
+    )
+    zip_path = _make_kanjivg_zip(tmp_path, {"食": svg})
+
+    out_dir = tmp_path / "stroke-order"
+    out_index = tmp_path / "stroke-order-index.json"
+    kanji_json = tmp_path / "kanji.json"
+    kanji_json.write_text(json.dumps({"kanji": [{"character": "食", "stroke_count": 9}]}), encoding="utf-8")
+
+    monkeypatch.setattr(mod, "SOURCE_ZIP", zip_path)
+    monkeypatch.setattr(mod, "OUT_DIR", out_dir)
+    monkeypatch.setattr(mod, "OUT_INDEX", out_index)
+    monkeypatch.setattr(mod, "KANJI_JSON", kanji_json)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    assert out_index.exists()
+    index = json.loads(out_index.read_text(encoding="utf-8"))
+    assert "食" in index["characters"]
+    assert index["characters"]["食"]["stroke_count"] == 3
+    assert index["characters"]["食"]["unicode"] == "098df"
+    # SVG file written
+    assert (out_dir / "食.svg").exists()
+
+
+def test_stroke_order_build_filters_to_kanji_set(tmp_path: Path, monkeypatch) -> None:
+    """Characters not in kanji.json are excluded."""
+    from build.transform import stroke_order as mod
+
+    svg_a = '<svg><path id="kvg:098df-s1" d="M1"/></svg>'
+    svg_b = '<svg><path id="kvg:06c34-s1" d="M1"/></svg>'
+    zip_path = _make_kanjivg_zip(tmp_path, {"食": svg_a, "水": svg_b})
+
+    out_dir = tmp_path / "stroke-order"
+    out_index = tmp_path / "stroke-order-index.json"
+    kanji_json = tmp_path / "kanji.json"
+    # Only 食 in kanji.json, not 水
+    kanji_json.write_text(json.dumps({"kanji": [{"character": "食", "stroke_count": 9}]}), encoding="utf-8")
+
+    monkeypatch.setattr(mod, "SOURCE_ZIP", zip_path)
+    monkeypatch.setattr(mod, "OUT_DIR", out_dir)
+    monkeypatch.setattr(mod, "OUT_INDEX", out_index)
+    monkeypatch.setattr(mod, "KANJI_JSON", kanji_json)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    index = json.loads(out_index.read_text(encoding="utf-8"))
+    assert "食" in index["characters"]
+    assert "水" not in index["characters"]
+
+
+def test_stroke_order_build_variant_skipped(tmp_path: Path, monkeypatch) -> None:
+    """Variant files (e.g., 098df-Kaisho.svg) are skipped."""
+    import zipfile
+    from build.transform import stroke_order as mod
+
+    zip_path = tmp_path / "kanjivg-main.zip"
+    with zipfile.ZipFile(zip_path, "w") as zf:
+        zf.writestr("kanji/098df.svg", '<svg><path id="kvg:098df-s1" d="M1"/></svg>')
+        zf.writestr("kanji/098df-Kaisho.svg", '<svg><path id="kvg:098df-s1" d="M1"/></svg>')
+
+    out_dir = tmp_path / "stroke-order"
+    out_index = tmp_path / "stroke-order-index.json"
+
+    monkeypatch.setattr(mod, "SOURCE_ZIP", zip_path)
+    monkeypatch.setattr(mod, "OUT_DIR", out_dir)
+    monkeypatch.setattr(mod, "OUT_INDEX", out_index)
+    monkeypatch.setattr(mod, "KANJI_JSON", tmp_path / "nope.json")  # no filter
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    index = json.loads(out_index.read_text(encoding="utf-8"))
+    # Should have exactly 1 entry (the variant is skipped)
+    assert index["metadata"]["count"] == 1
+
+
+def test_stroke_order_build_mismatch_detection(tmp_path: Path, monkeypatch) -> None:
+    """Stroke count mismatches against kanji.json are recorded in metadata."""
+    from build.transform import stroke_order as mod
+
+    # SVG has 2 strokes but kanji.json says 9
+    svg = '<svg><path id="kvg:098df-s1" d="M1"/><path id="kvg:098df-s2" d="M2"/></svg>'
+    zip_path = _make_kanjivg_zip(tmp_path, {"食": svg})
+
+    out_dir = tmp_path / "stroke-order"
+    out_index = tmp_path / "stroke-order-index.json"
+    kanji_json = tmp_path / "kanji.json"
+    kanji_json.write_text(json.dumps({"kanji": [{"character": "食", "stroke_count": 9}]}), encoding="utf-8")
+
+    monkeypatch.setattr(mod, "SOURCE_ZIP", zip_path)
+    monkeypatch.setattr(mod, "OUT_DIR", out_dir)
+    monkeypatch.setattr(mod, "OUT_INDEX", out_index)
+    monkeypatch.setattr(mod, "KANJI_JSON", kanji_json)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    index = json.loads(out_index.read_text(encoding="utf-8"))
+    mismatches = index["metadata"]["stroke_count_mismatches"]
+    assert len(mismatches) == 1
+    assert mismatches[0]["character"] == "食"
+    assert mismatches[0]["kanjidic2_count"] == 9
+    assert mismatches[0]["kanjivg_count"] == 2
+
+
+# ---------------------------------------------------------------------------
+# kanji — _transform_character edge cases, _metadata, build()
+# ---------------------------------------------------------------------------
+
+def test_kanji_transform_character_dic_refs() -> None:
+    from build.transform.kanji import _transform_character
+    ch = {
+        "literal": "食",
+        "dictionaryReferences": [
+            {"type": "heisig", "value": 1472},
+            {"type": "nelson_c", "value": 5154},
+            {"type": "unknown_type", "value": 999},  # not in WANTED_DIC_REFS
+        ],
+        "misc": {"strokeCounts": [9]},
+    }
+    result = _transform_character(ch)
+    assert result["dic_refs"]["heisig"] == "1472"
+    assert result["dic_refs"]["nelson_c"] == "5154"
+    assert "unknown_type" not in result["dic_refs"]
+
+
+def test_kanji_transform_character_query_codes_skip_misclass() -> None:
+    from build.transform.kanji import _transform_character
+    ch = {
+        "literal": "食",
+        "queryCodes": [
+            {"type": "skip", "value": "2-4-5", "skipMisclassification": True},
+            {"type": "skip", "value": "2-2-7"},
+            {"type": "four_corner", "value": "8073.2"},
+        ],
+        "misc": {"strokeCounts": [9]},
+    }
+    result = _transform_character(ch)
+    # Misclassified SKIP is excluded; primary SKIP kept
+    assert result["query_codes"]["skip"] == "2-2-7"
+    assert result["query_codes"]["four_corner"] == "8073.2"
+
+
+def test_kanji_transform_character_readings_cjk() -> None:
+    from build.transform.kanji import _transform_character
+    ch = {
+        "literal": "食",
+        "readingMeaning": {"groups": [{"readings": [
+            {"type": "ja_on", "value": "ショク"},
+            {"type": "ja_kun", "value": "た.べる"},
+            {"type": "pinyin", "value": "shí"},
+            {"type": "korean_r", "value": "sig"},
+            {"type": "korean_h", "value": "식"},
+            {"type": "vietnam", "value": "Thực"},
+        ], "meanings": [
+            {"lang": "en", "value": "eat"},
+            {"lang": "fr", "value": "manger"},
+        ]}], "nanori": ["くい"]},
+        "misc": {"strokeCounts": [9]},
+    }
+    result = _transform_character(ch)
+    assert result["readings_cjk"]["pinyin"] == ["shí"]
+    assert result["readings_cjk"]["korean_romanized"] == ["sig"]
+    assert result["readings_cjk"]["korean_hangul"] == ["식"]
+    assert result["readings_cjk"]["vietnamese"] == ["Thực"]
+    assert result["meanings"]["fr"] == ["manger"]
+    assert result["nanori"] == ["くい"]
+
+
+def test_kanji_transform_character_variants() -> None:
+    from build.transform.kanji import _transform_character
+    ch = {
+        "literal": "食",
+        "misc": {
+            "strokeCounts": [9, 8],
+            "variants": [{"type": "jis208", "value": "1-31-29"}],
+        },
+    }
+    result = _transform_character(ch)
+    assert result["stroke_count"] == 9
+    assert result["stroke_count_variants"] == [8]
+    assert result["variants"] == [{"type": "jis208", "value": "1-31-29"}]
+
+
+def test_kanji_transform_character_jis212_jis213() -> None:
+    from build.transform.kanji import _transform_character
+    ch = {
+        "literal": "𠀋",
+        "codepoints": [
+            {"type": "ucs", "value": "200CB"},
+            {"type": "jis212", "value": "1-2-3"},
+            {"type": "jis213", "value": "2-1-2"},
+        ],
+        "misc": {"strokeCounts": [5]},
+    }
+    result = _transform_character(ch)
+    assert result["jis212"] == "1-2-3"
+    assert result["jis213"] == "2-1-2"
+
+
+def test_kanji_metadata_fields() -> None:
+    from build.transform.kanji import _metadata
+    source_meta = {
+        "version": "3.6.2",
+        "dictDate": "2024-01-01",
+        "databaseVersion": "2024-175",
+        "fileVersion": 4,
+        "languages": ["eng", "fre"],
+    }
+    result = _metadata(source_meta, 100, "Test filter")
+    assert result["source_version"] == "3.6.2"
+    assert result["count"] == 100
+    assert result["filter"] == "Test filter"
+    assert result["upstream_file_version"] == 4
+    assert result["upstream_languages"] == ["eng", "fre"]
+
+
+def test_kanji_load_jlpt_map(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import kanji as mod
+    jlpt_path = tmp_path / "jlpt.json"
+    jlpt_path.write_text(json.dumps({"classifications": [
+        {"kind": "kanji", "text": "食", "level": "N5"},
+        {"kind": "vocab", "text": "食べる", "level": "N5"},  # ignored — not kanji kind
+    ]}), encoding="utf-8")
+    monkeypatch.setattr(mod, "JLPT_ENRICHMENT", jlpt_path)
+    result = mod._load_kanji_jlpt_map()
+    assert result == {"食": "N5"}
+
+
+def test_kanji_load_radical_components_map(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import kanji as mod
+    rad_path = tmp_path / "radicals.json"
+    rad_path.write_text(json.dumps({"kanji_to_radicals": {"食": ["人", "良"]}}), encoding="utf-8")
+    monkeypatch.setattr(mod, "RADICALS_ENRICHMENT", rad_path)
+    result = mod._load_radical_components_map()
+    assert result == {"食": ["人", "良"]}
+
+
+def test_kanji_load_radical_components_map_missing(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import kanji as mod
+    monkeypatch.setattr(mod, "RADICALS_ENRICHMENT", tmp_path / "nope.json")
+    assert mod._load_radical_components_map() == {}
+
+
+def test_kanji_build_with_mock_source(tmp_path: Path, monkeypatch) -> None:
+    """Full build() with a mock tgz source."""
+    import tarfile
+    from build.transform import kanji as mod
+
+    # Create a minimal KANJIDIC2-like source
+    source_data = {
+        "version": "test",
+        "characters": [{
+            "literal": "食",
+            "codepoints": [{"type": "ucs", "value": "98DF"}],
+            "radicals": [{"type": "classical", "value": 184}],
+            "misc": {"strokeCounts": [9], "grade": 2, "frequency": 328},
+            "readingMeaning": {
+                "groups": [{"readings": [
+                    {"type": "ja_on", "value": "ショク"},
+                    {"type": "ja_kun", "value": "た.べる"},
+                ], "meanings": [{"lang": "en", "value": "eat"}]}],
+                "nanori": [],
+            },
+        }, {
+            "literal": "芝",
+            "misc": {"strokeCounts": [6], "grade": 9},  # jinmeiyo
+            "readingMeaning": {
+                "groups": [{"readings": [
+                    {"type": "ja_on", "value": "シ"},
+                ], "meanings": [{"lang": "en", "value": "lawn"}]}],
+            },
+        }],
+    }
+
+    # Pack into a tgz
+    source_tgz = tmp_path / "source.tgz"
+    json_bytes = json.dumps(source_data).encode("utf-8")
+    import io
+    with tarfile.open(source_tgz, "w:gz") as tf:
+        info = tarfile.TarInfo(name="kanjidic2.json")
+        info.size = len(json_bytes)
+        tf.addfile(info, io.BytesIO(json_bytes))
+
+    out_full = tmp_path / "kanji.json"
+    out_joyo = tmp_path / "kanji-joyo.json"
+    out_jinmeiyo = tmp_path / "kanji-jinmeiyo.json"
+
+    monkeypatch.setattr(mod, "SOURCE_TGZ", source_tgz)
+    monkeypatch.setattr(mod, "OUT_FULL", out_full)
+    monkeypatch.setattr(mod, "OUT_JOYO", out_joyo)
+    monkeypatch.setattr(mod, "OUT_JINMEIYO", out_jinmeiyo)
+    monkeypatch.setattr(mod, "JLPT_ENRICHMENT", tmp_path / "nope.json")
+    monkeypatch.setattr(mod, "RADICALS_ENRICHMENT", tmp_path / "nope.json")
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    assert out_full.exists()
+    assert out_joyo.exists()
+    assert out_jinmeiyo.exists()
+
+    full = json.loads(out_full.read_text(encoding="utf-8"))
+    assert full["metadata"]["count"] == 2
+
+    joyo = json.loads(out_joyo.read_text(encoding="utf-8"))
+    assert joyo["metadata"]["count"] == 1  # grade 2 only
+    assert joyo["kanji"][0]["character"] == "食"
+
+    jinmeiyo = json.loads(out_jinmeiyo.read_text(encoding="utf-8"))
+    assert jinmeiyo["metadata"]["count"] == 1  # grade 9 only
+    assert jinmeiyo["kanji"][0]["character"] == "芝"
+
+
+# ---------------------------------------------------------------------------
+# sentences — build()
+# ---------------------------------------------------------------------------
+
+def test_sentences_build(tmp_path: Path, monkeypatch) -> None:
+    """Full build() with a mock tgz."""
+    import io, tarfile
+    from build.transform import sentences as mod
+
+    source_data = {"words": [{
+        "id": "1000010",
+        "sense": [{"examples": [{
+            "source": {"type": "tatoeba", "value": "100"},
+            "sentences": [
+                {"lang": "jpn", "text": "食べます"},
+                {"lang": "eng", "text": "I eat"},
+            ],
+        }]}],
+    }, {
+        "id": "1000020",
+        "sense": [{"examples": [{
+            "source": {"type": "tatoeba", "value": "100"},  # duplicate
+            "sentences": [
+                {"lang": "jpn", "text": "食べます"},
+                {"lang": "eng", "text": "I eat"},
+            ],
+        }, {
+            "source": {"type": "other", "value": "999"},  # not tatoeba
+            "sentences": [],
+        }]}],
+    }]}
+
+    tgz_path = tmp_path / "source.tgz"
+    json_bytes = json.dumps(source_data).encode("utf-8")
+    with tarfile.open(tgz_path, "w:gz") as tf:
+        info = tarfile.TarInfo(name="jmdict.json")
+        info.size = len(json_bytes)
+        tf.addfile(info, io.BytesIO(json_bytes))
+
+    out_path = tmp_path / "sentences.json"
+    monkeypatch.setattr(mod, "SOURCE_TGZ", tgz_path)
+    monkeypatch.setattr(mod, "OUT", out_path)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    result = json.loads(out_path.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 1  # deduped to 1
+    assert result["sentences"][0]["id"] == "100"
+    assert result["sentences"][0]["curated"] is True
+
+
+def test_sentences_build_skips_no_japanese(tmp_path: Path, monkeypatch) -> None:
+    """Entries with no Japanese text are skipped."""
+    import io, tarfile
+    from build.transform import sentences as mod
+
+    source_data = {"words": [{
+        "sense": [{"examples": [{
+            "source": {"type": "tatoeba", "value": "100"},
+            "sentences": [{"lang": "eng", "text": "only english"}],
+        }]}],
+    }]}
+
+    tgz_path = tmp_path / "source.tgz"
+    json_bytes = json.dumps(source_data).encode("utf-8")
+    with tarfile.open(tgz_path, "w:gz") as tf:
+        info = tarfile.TarInfo(name="jmdict.json")
+        info.size = len(json_bytes)
+        tf.addfile(info, io.BytesIO(json_bytes))
+
+    out_path = tmp_path / "sentences.json"
+    monkeypatch.setattr(mod, "SOURCE_TGZ", tgz_path)
+    monkeypatch.setattr(mod, "OUT", out_path)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    result = json.loads(out_path.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 0
+
+
+# ---------------------------------------------------------------------------
+# expressions — build()
+# ---------------------------------------------------------------------------
+
+def test_expressions_build(tmp_path: Path, monkeypatch) -> None:
+    import io, tarfile
+    from build.transform import expressions as mod
+
+    source_data = {"version": "test", "dictDate": "2024-01-01", "words": [{
+        "id": 2000,
+        "kanji": [{"text": "お疲れ様", "common": True}],
+        "kana": [{"text": "おつかれさま", "common": False}],
+        "sense": [{"partOfSpeech": ["exp", "n"], "gloss": [{"text": "good work"}], "misc": ["pol"]}],
+    }, {
+        "id": 3000,
+        "kanji": [],
+        "kana": [{"text": "はい", "tags": []}],
+        "sense": [{"partOfSpeech": ["int"], "gloss": [{"text": "yes"}], "misc": []}],  # not exp
+    }]}
+
+    tgz_path = tmp_path / "source.tgz"
+    json_bytes = json.dumps(source_data).encode("utf-8")
+    with tarfile.open(tgz_path, "w:gz") as tf:
+        info = tarfile.TarInfo(name="jmdict.json")
+        info.size = len(json_bytes)
+        tf.addfile(info, io.BytesIO(json_bytes))
+
+    out_path = tmp_path / "expressions.json"
+    monkeypatch.setattr(mod, "SOURCE_TGZ", tgz_path)
+    monkeypatch.setattr(mod, "OUT", out_path)
+    monkeypatch.setattr(mod, "JLPT_ENRICHMENT", tmp_path / "nope.json")
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    result = json.loads(out_path.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 1
+    assert result["expressions"][0]["text"] == "お疲れ様"
+    assert result["expressions"][0]["common"] is True
+    assert "pol" in result["expressions"][0]["misc"]
+
+
+# ---------------------------------------------------------------------------
+# kftt — build()
+# ---------------------------------------------------------------------------
+
+def test_kftt_build(tmp_path: Path, monkeypatch) -> None:
+    import tarfile
+    from build.transform import kftt as mod
+
+    tgz_path = tmp_path / "kftt-data-1.0.tar.gz"
+    with tarfile.open(tgz_path, "w:gz") as tf:
+        for split in ("kyoto-train", "kyoto-dev", "kyoto-test", "kyoto-tune"):
+            ja_content = "京都は美しい\n東京タワー\n".encode("utf-8")
+            en_content = "Kyoto is beautiful\nTokyo Tower\n".encode("utf-8")
+            for suffix, content in [
+                (f"data/orig/{split}.ja", ja_content),
+                (f"data/orig/{split}.en", en_content),
+            ]:
+                info = tarfile.TarInfo(name=suffix)
+                info.size = len(content)
+                import io
+                tf.addfile(info, io.BytesIO(content))
+
+    out_path = tmp_path / "sentences-kftt.json"
+    monkeypatch.setattr(mod, "SOURCE_TGZ", tgz_path)
+    monkeypatch.setattr(mod, "OUT", out_path)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    result = json.loads(out_path.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 8  # 2 per split × 4 splits
+    assert result["sentences"][0]["id"] == "kftt-1"
+    assert result["sentences"][0]["curated"] is False
+
+
+def test_kftt_build_missing_source(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import kftt as mod
+    monkeypatch.setattr(mod, "SOURCE_TGZ", tmp_path / "nope.tar.gz")
+    with pytest.raises(FileNotFoundError):
+        mod.build()
+
+
+# ---------------------------------------------------------------------------
+# frequency — build()
+# ---------------------------------------------------------------------------
+
+def test_frequency_build(tmp_path: Path, monkeypatch) -> None:
+    import io, tarfile
+    from build.transform import frequency as mod
+
+    source_data = {"version": "test", "characters": [
+        {"literal": "食", "misc": {"frequency": 328}},
+        {"literal": "人", "misc": {"frequency": 5}},
+        {"literal": "蟲", "misc": {}},  # no frequency
+    ]}
+
+    tgz_path = tmp_path / "source.tgz"
+    json_bytes = json.dumps(source_data).encode("utf-8")
+    with tarfile.open(tgz_path, "w:gz") as tf:
+        info = tarfile.TarInfo(name="kanjidic2.json")
+        info.size = len(json_bytes)
+        tf.addfile(info, io.BytesIO(json_bytes))
+
+    out_path = tmp_path / "frequency-newspaper.json"
+    monkeypatch.setattr(mod, "SOURCE_TGZ", tgz_path)
+    monkeypatch.setattr(mod, "OUT", out_path)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    result = json.loads(out_path.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 2
+    # Sorted by rank
+    assert result["entries"][0]["text"] == "人"
+    assert result["entries"][0]["rank"] == 5
+    assert result["entries"][1]["text"] == "食"
+    assert result["entries"][1]["rank"] == 328
+
+
+# ---------------------------------------------------------------------------
+# pitch — build()
+# ---------------------------------------------------------------------------
+
+def test_pitch_build(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import pitch as mod
+
+    source_path = tmp_path / "accents.txt"
+    source_path.write_text(
+        "食べる\tたべる\t2\n"
+        "# comment\n"
+        "飲む\tのむ\t1,0\n"
+        "bad\tline\n"  # only 2 fields (actually this has 2 tabs... let me check)
+        "\n",
+        encoding="utf-8",
+    )
+
+    out_path = tmp_path / "pitch-accent.json"
+    monkeypatch.setattr(mod, "SOURCE", source_path)
+    monkeypatch.setattr(mod, "OUT", out_path)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    result = json.loads(out_path.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 2
+    assert result["entries"][0]["word"] == "食べる"
+    assert result["entries"][0]["pitch_positions"] == [2]
+    assert result["entries"][1]["pitch_positions"] == [1, 0]
+
+
+def test_pitch_build_missing_source(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import pitch as mod
+    monkeypatch.setattr(mod, "SOURCE", tmp_path / "nope.txt")
+    with pytest.raises(FileNotFoundError):
+        mod.build()
+
+
+# ---------------------------------------------------------------------------
+# names — build()
+# ---------------------------------------------------------------------------
+
+def test_names_build(tmp_path: Path, monkeypatch) -> None:
+    import io, tarfile
+    from build.transform import names as mod
+
+    source_data = {"version": "test", "tags": {"person": "personal name"},
+                   "words": [{"id": 5000, "kanji": [{"text": "田中"}],
+                              "kana": [{"text": "たなか", "appliesToKanji": ["*"]}],
+                              "translation": [{"type": ["surname"], "translation": [{"lang": "eng", "text": "Tanaka"}]}]}]}
+
+    tgz_path = tmp_path / "source.tgz"
+    json_bytes = json.dumps(source_data).encode("utf-8")
+    with tarfile.open(tgz_path, "w:gz") as tf:
+        info = tarfile.TarInfo(name="jmnedict.json")
+        info.size = len(json_bytes)
+        tf.addfile(info, io.BytesIO(json_bytes))
+
+    out_path = tmp_path / "names.json"
+    monkeypatch.setattr(mod, "SOURCE_TGZ", tgz_path)
+    monkeypatch.setattr(mod, "OUT", out_path)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    result = json.loads(out_path.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 1
+    assert result["names"][0]["id"] == "5000"
