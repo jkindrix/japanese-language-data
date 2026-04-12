@@ -362,6 +362,11 @@ def export() -> None:
         n = _insert_pitch(conn, pitch_data)
         print(f"[sqlite]   pitch accent: {n:,}")
 
+    pitch_wikt_data = _load_json(DATA_DIR / "enrichment" / "pitch-accent-wiktionary.json")
+    if pitch_wikt_data:
+        n = _insert_pitch(conn, pitch_wikt_data)
+        print(f"[sqlite]   pitch accent (wiktionary): {n:,}")
+
     freq_data = _load_json(DATA_DIR / "enrichment" / "frequency-corpus.json")
     if freq_data:
         rows = [(e["text"], e.get("reading"), e["rank"], e.get("count"))
