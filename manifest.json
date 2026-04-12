@@ -1,8 +1,8 @@
 {
   "project": "japanese-language-data",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "phase": 4,
-  "phase_description": "Phase 4 active (v0.7.2). Grammar: 595 entries across all five JLPT levels (76 N5 + 91 N4 + 139 N3 + 150 N2 + 139 N1), all review_status=draft; native-speaker review pipeline operational (docs/grammar-review.md). Radicals: 242/253 (95.7%) with Kangxi meanings via Wikipedia + curated alias table. 92 tests, byte-reproducible CI, 12 tagged releases. Remaining: native-speaker reviewer recruitment, JPDB modern frequency (license-blocked), post-2022 pitch accent; see docs/phase4-candidates.md.",
+  "phase_description": "Phase 4 active (v0.8.0). Grammar: 595 entries across all five JLPT levels, all review_status=draft; native-speaker review is the most important remaining work. Radicals: 242/253 (95.7%) with Kangxi meanings. Sentence corpus: 469,829 total (25,980 Tatoeba + 443,849 KFTT). 75.6% of grammar points have Tatoeba pattern matches. All 15 schemas hardened. 249 tests, 48% coverage. Yomitan export available. Remaining: reviewer recruitment, JPDB frequency (license-blocked).",
   "generated": "2026-04-12",
   "license": "CC-BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",

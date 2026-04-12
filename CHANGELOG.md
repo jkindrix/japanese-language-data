@@ -14,6 +14,63 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ---
 
+## [0.8.0] — 2026-04-12
+
+**Data completeness push.** Closes 6 data gaps, adds 2 new data sources, hardens all schemas, and ships a Yomitan export. Sentence corpus grows 17x. Grammar-to-Tatoeba linkage goes from 0.5% to 75.6%. Test suite grows from 200 to 249 tests.
+
+### Added — new data
+
+- **KFTT parallel corpus** (`data/corpus/sentences-kftt.json`): 443,849 JP-EN sentence pairs from Wikipedia Kyoto articles (CC-BY-SA 3.0). Sentence corpus grows from 25,980 to 469,829 total. New upstream source pinned in `manifest.json` with SHA256 verification. Gitignored due to size (~220 MB); built on demand.
+- **Reading-to-words cross-reference** (`data/cross-refs/reading-to-words.json`): 24,927 kana readings mapped to word IDs. Enables IME-style lookup by pronunciation.
+- **Full-JMdict cross-references** (gitignored): `kanji-to-words-full.json` (6,028 keys), `word-to-kanji-full.json` (173,432 keys), `reading-to-words-full.json` (233,596 keys). Built from `words-full.json` when available.
+- **Names transform implemented** (`data/optional/names.json`): 743,267 JMnedict entries. The `NotImplementedError` stub is replaced with a working transform. Gitignored, gated behind `--with-names` flag.
+- **Grammar pattern-based Tatoeba matching**: 450 of 595 grammar points (75.6%) now have `tatoeba_pattern_matches[]` — sentence IDs found by searching the corpus for the grammar pattern's Japanese core string. Up to 5 matches per point, 1,796 total.
+
+### Added — distribution
+
+- **Yomitan dictionary export** (`just export-yomitan`): produces a ~1.3 MB ZIP in Yomitan v3 format with 30,765 terms and 13,108 kanji entries, ready for direct import into the Yomitan browser extension.
+
+### Added — infrastructure
+
+- **Schema hardening**: `additionalProperties: false` added to all entry-level and metadata objects across all 15 schemas. All previously-undeclared metadata fields are now explicitly declared. `schemaVersion` bumped to 0.8.0 on affected schemas.
+- **49 new tests** (200 → 249): standard godan conjugation subtypes, full ichidan/kuru form coverage, negative schema validation for 11 schemas, semantic check injection, build/utils.py, build/bump_release.py, JLPT parsers, fetch error paths.
+- **`--cov-fail-under=45`** added to pyproject.toml. Coverage: 42% → 48%.
+- **Shared `build/utils.py`**: extracts `load_json_from_tgz`, `load_vocab_jlpt_map`, `is_common` — eliminates 4+2+3 copies of duplicated code across transform modules.
+- **Parallel fetch**: `fetch_all()` now uses `ThreadPoolExecutor(max_workers=4)` for concurrent downloads.
+- **Justfile recipes**: `just lint`, `just lint-fix`, `just check-sources`, `just export-yomitan`. `just ci` now includes byte-reproducibility double-build check.
+- **CI**: ruff linting step, `just test-cov` with coverage enforcement, Dependabot for pip + GitHub Actions.
+
+### Fixed — data quality
+
+- **539 JLPT vocab words missing from words.json**: force-included JLPT-listed words that JMdict doesn't flag as common. `words.json` grows from 22,580 → 23,119 entries. All 7,747 JLPT vocab items now match (was 93.0%, now 100%).
+- **16,030 null `mora_count` in pitch-accent.json**: Kanjium leaves reading empty for kana-only words. Fixed by falling back to the word text for mora counting. Null rate drops from 12.9% → 0.0%.
+- **`jmdict_seq` and `grammar_id` undeclared in JLPT schema**: these join keys existed in built data but weren't in the schema. Now declared.
+- **`minItems: 1`** added to `pitch_positions`, grammar `examples`, grammar `sources`. Empty arrays are now rejected.
+- **`minimum: 1`** added to frequency `rank`.
+- **`mora_count` null warning** added to pitch-accent metadata (now reports 0%).
+
+### Fixed — documentation
+
+- `docs/architecture.md` directory tree updated (was stale since Phase 0: listed 7 docs/12 schemas, actual 14/15).
+- `docs/sources.md` Tatoeba pin placeholder replaced with actual pinning description.
+- README quick-start now mentions installing `just`.
+- Hardcoded `"0.7.2"` strings in tests replaced with dynamic manifest reads.
+
+### Honest limitations
+
+- Grammar review remains at 0% — all 595 entries are `review_status: draft`. The review infrastructure is operational but no reviewers have been recruited. This is the project's most important remaining work.
+- `frequency_media` remains null for all words (JPDB license-blocked).
+- `translation_id` remains null for all sentences (upstream lacks it).
+- 145 grammar points (24.4%) have no Tatoeba pattern matches — their patterns are too rare or too specific for the corpus.
+- KFTT sentences are machine-aligned Wikipedia pairs, not editor-curated like Tatoeba. Quality varies.
+
+### Verification
+
+- 249 tests, all passing.
+- 21 data files validated against schemas + semantic integrity checks.
+- Coverage: 48% (fail-under: 45%).
+- Byte-reproducibility verified (pipeline runs twice with identical output).
+
 ## [0.7.2] — 2026-04-12
 
 **Comprehensive review-driven cleanup.** Responds to an end-to-end review that flagged 16 findings ranging from documentation staleness to missing test coverage. No data content changes; all changes are infrastructure, documentation, testing, and internal consistency.
