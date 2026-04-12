@@ -77,6 +77,9 @@ All files are schema-validated JSON with metadata headers crediting upstream sou
 ## Quick start
 
 ```bash
+# Install just (task runner) — see https://github.com/casey/just#installation
+# e.g.: cargo install just  /  brew install just  /  apt install just
+
 git clone https://github.com/jkindrix/japanese-language-data.git
 cd japanese-language-data
 python3 -m venv .venv && . .venv/bin/activate

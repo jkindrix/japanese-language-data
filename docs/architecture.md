@@ -48,48 +48,63 @@ japanese-language-data/
 │
 ├── docs/                      Documentation of every non-obvious thing
 │   ├── architecture.md        This file
-│   ├── sources.md             Every upstream source in detail
-│   ├── gaps.md                What we don't cover, and why
-│   ├── phase4-candidates.md   Deferred data domains under consideration
-│   ├── contributing.md        How to contribute
 │   ├── build.md               How to rebuild from scratch
+│   ├── call-for-reviewers.md  Recruitment pitch for grammar reviewers
+│   ├── contributing.md        How to contribute
+│   ├── cookbook.md             Code examples (Python, JS, jq)
+│   ├── downstream.md          Guide for downstream consumers
+│   ├── gaps.md                What we don't cover, and why
+│   ├── grammar-review.md      Grammar reviewer workflow
+│   ├── grammar-review-checklist.md  Per-entry review checklist
+│   ├── phase4-candidates.md   Deferred data domains under consideration
+│   ├── release.md             Release process and drift prevention
 │   ├── schema.md              Schema design philosophy
+│   ├── sources.md             Every upstream source in detail
 │   └── upstream-issues.md     Log of errors/gaps to file upstream
 │
 ├── schemas/                   JSON Schema files (Draft 2020-12)
+│   ├── conjugations.schema.json
+│   ├── cross-refs.schema.json
+│   ├── expressions.schema.json
+│   ├── frequency.schema.json
+│   ├── grammar.schema.json
+│   ├── jlpt.schema.json
 │   ├── kana.schema.json
 │   ├── kanji.schema.json
-│   ├── word.schema.json
+│   ├── manifest.schema.json
 │   ├── name.schema.json
+│   ├── pitch-accent.schema.json
 │   ├── radical.schema.json
 │   ├── sentence.schema.json
-│   ├── pitch-accent.schema.json
-│   ├── frequency.schema.json
-│   ├── jlpt.schema.json
 │   ├── stroke-order.schema.json
-│   ├── grammar.schema.json
-│   └── cross-refs.schema.json
+│   └── word.schema.json
 │
 ├── build/                     Reproducible pipeline source code
 │   ├── __init__.py
+│   ├── bump_release.py        Version bump automation
+│   ├── constants.py           Shared path constants
 │   ├── fetch.py               Download + cache upstream sources
 │   ├── pipeline.py            Orchestrate the full build
+│   ├── utils.py               Shared transform utilities
 │   ├── validate.py            Schema validation of every output
 │   ├── stats.py               Coverage and count reporting
 │   ├── requirements.txt       Pinned Python dependencies
 │   └── transform/             Per-domain transformation modules
 │       ├── __init__.py
-│       ├── kanji.py
-│       ├── words.py
-│       ├── names.py
-│       ├── radicals.py
-│       ├── stroke_order.py
-│       ├── sentences.py
-│       ├── pitch.py
+│       ├── conjugations.py
+│       ├── cross_links.py
+│       ├── expressions.py
 │       ├── frequency.py
+│       ├── grammar.py
 │       ├── jlpt.py
 │       ├── kana.py
-│       └── cross_links.py
+│       ├── kanji.py
+│       ├── names.py
+│       ├── pitch.py
+│       ├── radicals.py
+│       ├── sentences.py
+│       ├── stroke_order.py
+│       └── words.py
 │
 ├── sources/                   (gitignored) Cached upstream downloads
 │                              Reproducible from manifest.json pins
@@ -122,14 +137,32 @@ japanese-language-data/
 │   └── optional/              (gitignored) Opt-in large data
 │       └── names.json         JMnedict, ~720k entries
 │
-├── tests/                     Schema and integration tests
+├── tests/                     Pytest test suite (200+ tests)
 │   ├── __init__.py
-│   └── test_schemas.py
+│   ├── test_data_integrity.py Regression tests and data invariants
+│   ├── test_docs.py           Documentation and release metadata
+│   ├── test_infrastructure.py Pipeline DAG, fetch, validation tests
+│   ├── test_schema_negative.py  Negative validation tests
+│   ├── test_schemas.py        Schema self-validity tests
+│   └── test_transform_units.py  Transform function unit tests
+│
+├── grammar-curated/           Hand-curated grammar input files
+│   ├── n1.json                N1 grammar points (139 entries)
+│   ├── n2.json                N2 grammar points (150 entries)
+│   ├── n3.json                N3 grammar points (139 entries)
+│   ├── n4.json                N4 grammar points (91 entries)
+│   └── n5.json                N5 grammar points (76 entries)
 │
 ├── scratch/                   (gitignored) Experiments and one-offs
 │
+├── .github/                   CI workflow + issue/PR templates
+│   ├── workflows/build.yml    CI pipeline with reproducibility check
+│   ├── ISSUE_TEMPLATE/        6 issue templates
+│   └── PULL_REQUEST_TEMPLATE.md
+│
 ├── justfile                   Task runner recipes
-├── .python-version            Python version pin
+├── pyproject.toml             Pytest + coverage configuration
+├── .python-version            Python version pin (3.11)
 ├── .gitignore
 └── .gitattributes
 ```

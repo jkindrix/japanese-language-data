@@ -97,16 +97,26 @@ def test_get_version_reads_manifest() -> None:
     """_get_version should return the version from manifest.json."""
     from build.fetch import _get_version
 
-    assert _get_version() == "0.7.2"
+    version = _get_version()
+    # Read expected version from manifest.json dynamically so this test
+    # does not break on every version bump.
+    manifest = json.loads((REPO_ROOT / "manifest.json").read_text(encoding="utf-8"))
+    expected = manifest["version"]
+    assert version == expected, (
+        f"_get_version() returned {version!r}, manifest says {expected!r}"
+    )
 
 
 def test_build_session_has_correct_user_agent() -> None:
     """The session User-Agent must include the project version and URL."""
     from build.fetch import _build_session
 
+    manifest = json.loads((REPO_ROOT / "manifest.json").read_text(encoding="utf-8"))
+    expected_version = manifest["version"]
+
     session = _build_session()
     ua = session.headers["User-Agent"]
-    assert "0.7.2" in ua, f"version missing from User-Agent: {ua!r}"
+    assert expected_version in ua, f"version missing from User-Agent: {ua!r}"
     assert "github.com/jkindrix/japanese-language-data" in ua, (
         f"project URL missing from User-Agent: {ua!r}"
     )

@@ -74,7 +74,7 @@ Not all kanji characters in KANJIDIC2 are in KanjiVG. Characters without SVGs ar
 **Downloads**: https://downloads.tatoeba.org/exports/
 **License**: CC-BY 2.0 FR (default), CC0 1.0 (subset)
 **Update cadence**: Daily snapshots
-**Our pin**: Will be set at Phase 1 build time against the snapshot of that day.
+**Our pin**: Sentences are ingested indirectly via the `jmdict-examples-eng` release from scriptin/jmdict-simplified (version 3.6.2+20260406125001), which bundles Tatoeba links selected by JMdict editors. The Tatoeba content is therefore pinned to whatever snapshot the jmdict-simplified release used at build time.
 
 Tatoeba is a community-contributed multilingual sentence corpus. Quality varies by contributor and language pair. We use two distinct ingestion paths:
 

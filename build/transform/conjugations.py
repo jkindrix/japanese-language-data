@@ -49,9 +49,9 @@ class (rare; most entries have a single class).
 from __future__ import annotations
 
 import json
-import tarfile
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+from build.utils import load_json_from_tgz, is_common
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "jmdict-examples-eng.json.tgz"
@@ -292,24 +292,11 @@ def _conjugate_na_adjective(stem: str) -> dict[str, str]:
 
 
 def _load_source() -> dict:
-    with tarfile.open(SOURCE_TGZ, "r:gz") as tf:
-        for member in tf.getmembers():
-            if member.name.endswith(".json"):
-                f = tf.extractfile(member)
-                if f is None:
-                    raise RuntimeError(f"Cannot extract {member.name}")
-                return json.loads(f.read().decode("utf-8"))
-    raise RuntimeError(f"No JSON file found in {SOURCE_TGZ}")
+    return load_json_from_tgz(SOURCE_TGZ)
 
 
 def _is_common(word: dict) -> bool:
-    for k in word.get("kanji", []) or []:
-        if k.get("common"):
-            return True
-    for k in word.get("kana", []) or []:
-        if k.get("common"):
-            return True
-    return False
+    return is_common(word)
 
 
 def _longest_common_suffix_length(a: str, b: str) -> int:

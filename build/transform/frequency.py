@@ -18,9 +18,9 @@ preserved, and entries without a frequency rank are not emitted.
 from __future__ import annotations
 
 import json
-import tarfile
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+from build.utils import load_json_from_tgz
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "kanjidic2-all.json.tgz"
@@ -28,14 +28,7 @@ OUT = REPO_ROOT / "data" / "enrichment" / "frequency-newspaper.json"
 
 
 def _load_source() -> dict:
-    with tarfile.open(SOURCE_TGZ, "r:gz") as tf:
-        for member in tf.getmembers():
-            if member.name.endswith(".json"):
-                f = tf.extractfile(member)
-                if f is None:
-                    raise RuntimeError(f"Cannot extract {member.name}")
-                return json.loads(f.read().decode("utf-8"))
-    raise RuntimeError(f"No JSON file found in {SOURCE_TGZ}")
+    return load_json_from_tgz(SOURCE_TGZ)
 
 
 def build() -> None:

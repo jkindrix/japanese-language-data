@@ -19,9 +19,9 @@ Output: ``data/grammar/expressions.json`` conforming to
 from __future__ import annotations
 
 import json
-import tarfile
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+from build.utils import load_json_from_tgz, load_vocab_jlpt_map, is_common
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "jmdict-examples-eng.json.tgz"
@@ -30,46 +30,15 @@ JLPT_ENRICHMENT = REPO_ROOT / "data" / "enrichment" / "jlpt-classifications.json
 
 
 def _load_source() -> dict:
-    with tarfile.open(SOURCE_TGZ, "r:gz") as tf:
-        for member in tf.getmembers():
-            if member.name.endswith(".json"):
-                f = tf.extractfile(member)
-                if f is None:
-                    raise RuntimeError(f"Cannot extract {member.name}")
-                return json.loads(f.read().decode("utf-8"))
-    raise RuntimeError(f"No JSON file found in {SOURCE_TGZ}")
+    return load_json_from_tgz(SOURCE_TGZ)
 
 
 def _load_vocab_jlpt_map() -> dict[str, str]:
-    """D4 fix: for duplicate jmdict_seq, the easier level (higher N-number) wins.
-    See build/transform/words.py for the full rationale."""
-    LEVEL_ORDER = {"N5": 0, "N4": 1, "N3": 2, "N2": 3, "N1": 4}
-    if not JLPT_ENRICHMENT.exists():
-        return {}
-    data = json.loads(JLPT_ENRICHMENT.read_text(encoding="utf-8"))
-    result: dict[str, str] = {}
-    for entry in data.get("classifications", []):
-        if entry.get("kind") == "vocab":
-            seq = entry.get("jmdict_seq", "")
-            level = entry.get("level")
-            if not seq or not level:
-                continue
-            if seq in result:
-                if LEVEL_ORDER.get(level, 99) < LEVEL_ORDER.get(result[seq], 99):
-                    result[seq] = level
-            else:
-                result[seq] = level
-    return result
+    return load_vocab_jlpt_map(JLPT_ENRICHMENT)
 
 
 def _is_common(word: dict) -> bool:
-    for k in word.get("kanji", []) or []:
-        if k.get("common"):
-            return True
-    for k in word.get("kana", []) or []:
-        if k.get("common"):
-            return True
-    return False
+    return is_common(word)
 
 
 def build() -> None:

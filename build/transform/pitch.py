@@ -96,6 +96,8 @@ def build() -> None:
 
     print(f"[pitch]    parsed {len(entries):,} entries  (malformed skipped: {malformed_lines:,})")
 
+    null_mora = sum(1 for e in entries if e.get("mora_count") is None)
+
     output = {
         "metadata": {
             "source": "Kanjium accents.txt",
@@ -105,6 +107,12 @@ def build() -> None:
             "generated": BUILD_DATE,
             "count": len(entries),
             "coverage_date": "approximately 2022 (upstream last substantive update)",
+            "warnings": [
+                f"mora_count is null for {null_mora:,} of {len(entries):,} entries "
+                f"({100 * null_mora / len(entries):.1f}%). These entries have valid "
+                f"pitch_positions but the reading could not be resolved to a mora "
+                f"count (typically empty or unusual readings in the upstream data).",
+            ],
             "attribution": (
                 "Pitch accent data from the Kanjium project by mifunetoshiro "
                 "and contributors, released under CC-BY-SA 4.0. See "
