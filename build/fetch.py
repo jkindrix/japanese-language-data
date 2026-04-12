@@ -24,6 +24,7 @@ import hashlib
 import json
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Iterable
@@ -324,11 +325,69 @@ def _save_manifest(manifest: dict) -> None:
     )
 
 
+def _fetch_one(
+    source: Source,
+    sources_meta: dict,
+    session: requests.Session,
+) -> None:
+    """Fetch a single source, verifying or recording its SHA256 hash.
+
+    Called from fetch_all() — either serially or in parallel via a
+    ThreadPoolExecutor.  On success, updates sources_meta[source.name]
+    in place.
+    """
+    cache_full = SOURCES_DIR / source.cache_path
+    entry = sources_meta.setdefault(source.name, {})
+    entry["url"] = source.url
+    entry["license"] = source.license
+    entry["description"] = source.description
+
+    expected = entry.get("sha256")
+    need_download = True
+
+    if cache_full.exists() and expected:
+        observed = _sha256(cache_full)
+        if observed == expected:
+            print(f"[cache ok]   {source.name}")
+            need_download = False
+        else:
+            raise SystemExit(
+                f"\nFATAL: SHA256 mismatch for cached source {source.name!r}.\n"
+                f"  Cached file: {cache_full}\n"
+                f"  Expected:    {expected}\n"
+                f"  Observed:    {observed}\n"
+                f"  Either the cached file is corrupt (delete it and re-run) or\n"
+                f"  the upstream pin has been updated and manifest.json needs to\n"
+                f"  be updated deliberately.\n"
+            )
+
+    if need_download:
+        print(f"[fetching]   {source.name} <- {source.url}")
+        _download_with_retries(source.url, cache_full, session)
+        observed = _sha256(cache_full)
+        if expected and observed != expected:
+            raise SystemExit(
+                f"\nFATAL: SHA256 mismatch after downloading {source.name!r}.\n"
+                f"  Downloaded: {cache_full}\n"
+                f"  Expected:   {expected}\n"
+                f"  Observed:   {observed}\n"
+                f"  Upstream source has changed. Update manifest.json if this\n"
+                f"  is intentional.\n"
+            )
+        entry["sha256"] = observed
+        entry["size_bytes"] = cache_full.stat().st_size
+        print(f"[fetched]    {source.name} sha256={observed[:16]}… size={entry['size_bytes']:,}B")
+
+
 def fetch_all(sources: Iterable[Source] = SOURCES) -> dict:
-    """Fetch every source, verifying or recording SHA256 hashes.
+    """Fetch every source in parallel, verifying or recording SHA256 hashes.
 
     Returns the updated manifest dict. Writes any newly-observed hashes
     to ``manifest.json``.
+
+    Sources are fetched in parallel (up to 4 concurrent downloads) since
+    they target different hosts and are entirely independent. The
+    requests.Session is thread-safe for concurrent use.
 
     Hash verification policy:
         - If the manifest already has a hash for the source and the
@@ -342,49 +401,15 @@ def fetch_all(sources: Iterable[Source] = SOURCES) -> dict:
     manifest.setdefault("sources", {})
     sources_meta = manifest["sources"]
     session = _build_session()
+    sources_list = list(sources)
 
-    for source in sources:
-        cache_full = SOURCES_DIR / source.cache_path
-        entry = sources_meta.setdefault(source.name, {})
-        entry["url"] = source.url
-        entry["license"] = source.license
-        entry["description"] = source.description
-
-        expected = entry.get("sha256")
-        need_download = True
-
-        if cache_full.exists() and expected:
-            observed = _sha256(cache_full)
-            if observed == expected:
-                print(f"[cache ok]   {source.name}")
-                need_download = False
-            else:
-                raise SystemExit(
-                    f"\nFATAL: SHA256 mismatch for cached source {source.name!r}.\n"
-                    f"  Cached file: {cache_full}\n"
-                    f"  Expected:    {expected}\n"
-                    f"  Observed:    {observed}\n"
-                    f"  Either the cached file is corrupt (delete it and re-run) or\n"
-                    f"  the upstream pin has been updated and manifest.json needs to\n"
-                    f"  be updated deliberately.\n"
-                )
-
-        if need_download:
-            print(f"[fetching]   {source.name} <- {source.url}")
-            _download_with_retries(source.url, cache_full, session)
-            observed = _sha256(cache_full)
-            if expected and observed != expected:
-                raise SystemExit(
-                    f"\nFATAL: SHA256 mismatch after downloading {source.name!r}.\n"
-                    f"  Downloaded: {cache_full}\n"
-                    f"  Expected:   {expected}\n"
-                    f"  Observed:   {observed}\n"
-                    f"  Upstream source has changed. Update manifest.json if this\n"
-                    f"  is intentional.\n"
-                )
-            entry["sha256"] = observed
-            entry["size_bytes"] = cache_full.stat().st_size
-            print(f"[fetched]    {source.name} sha256={observed[:16]}… size={entry['size_bytes']:,}B")
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = {
+            executor.submit(_fetch_one, source, sources_meta, session): source
+            for source in sources_list
+        }
+        for future in as_completed(futures):
+            future.result()  # propagate any exception
 
     session.close()
     _save_manifest(manifest)

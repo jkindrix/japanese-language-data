@@ -106,16 +106,21 @@ test-cov:
     @printf '{{cyan}}==> Running tests with coverage{{reset}}\n'
     {{python}} -m pytest tests/ -v --cov=build --cov-report=term-missing
 
-# Reproducibility smoke test: fetch → build → validate → test → stats. Matches .github/workflows/build.yml.
+# Reproducibility smoke test: fetch → build → validate → test → stats → reproducibility check. Matches .github/workflows/build.yml.
 [group('validate')]
 ci:
-    @printf '{{cyan}}==> CI smoke test: fetch → build → validate → test → stats{{reset}}\n'
+    @printf '{{cyan}}==> CI smoke test: fetch → build → validate → test → stats → reproducibility{{reset}}\n'
     @just fetch
     @just build
     @just validate
     @just test
     @just stats
-    @printf '{{green}}==> CI smoke test PASSED{{reset}}\n'
+    @printf '{{cyan}}==> Byte-reproducibility check (second build + hash diff){{reset}}\n'
+    find data -type f \( -name '*.json' -o -name '*.svg' \) | sort | xargs sha256sum > /tmp/jld-hashes-1.txt
+    {{python}} -m build.pipeline
+    find data -type f \( -name '*.json' -o -name '*.svg' \) | sort | xargs sha256sum > /tmp/jld-hashes-2.txt
+    diff /tmp/jld-hashes-1.txt /tmp/jld-hashes-2.txt
+    @printf '{{green}}==> CI smoke test PASSED (byte-reproducible){{reset}}\n'
 
 # ============================================================================
 # CLEANUP
@@ -135,6 +140,28 @@ clean-all:
     find data -type f \( -name '*.json' -o -name '*.svg' \) -delete
     find sources -type f -delete 2>/dev/null || true
     @printf '{{green}}Done. Next build will re-fetch everything.{{reset}}\n'
+
+# ============================================================================
+# CODE QUALITY
+# ============================================================================
+
+# Lint Python code with ruff
+[group('quality')]
+lint:
+    @printf '{{cyan}}==> Linting Python code{{reset}}\n'
+    {{python}} -m ruff check build/ tests/
+
+# Auto-fix lint issues
+[group('quality')]
+lint-fix:
+    @printf '{{cyan}}==> Auto-fixing lint issues{{reset}}\n'
+    {{python}} -m ruff check --fix build/ tests/
+
+# Verify source cache hashes without downloading
+[group('quality')]
+check-sources:
+    @printf '{{cyan}}==> Verifying source cache integrity{{reset}}\n'
+    {{python}} -c "from build.fetch import _load_manifest, _sha256, SOURCES, SOURCES_DIR; import sys; m = _load_manifest(); errs = 0; [print(f'[ok]   {s.name}') if (SOURCES_DIR / s.cache_path).exists() and _sha256(SOURCES_DIR / s.cache_path) == m.get('sources', {}).get(s.name, {}).get('sha256') else (print(f'[FAIL] {s.name}: missing or hash mismatch'), setattr(sys, '_err', True)) for s in SOURCES]; sys.exit(1 if getattr(sys, '_err', False) else 0)"
 
 # ============================================================================
 # DEVELOPMENT
