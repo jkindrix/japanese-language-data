@@ -62,39 +62,95 @@ def _validate_entry(entry: dict, source_file: str) -> None:
         )
 
 
-def _load_tatoeba_text_index() -> dict[str, str]:
-    """Build a Japanese-text → Tatoeba-sentence-id index from sentences.json.
+def _normalize_japanese_for_match(text: str) -> str:
+    """Return a conservative normalized form of a Japanese sentence for matching.
 
-    Used for exact-match linkage of grammar example sentences. Returns an
-    empty dict if sentences.json does not exist yet (backward-compatible
+    The normalization trims trailing sentence-final punctuation that is
+    often missing or different between Tatoeba and curated examples
+    (``。``, ``、``, full-width space), collapses internal whitespace to
+    single characters, and strips outer whitespace. Nothing else.
+
+    Intentionally NOT normalized:
+        * Character case / width (half-width / full-width): Tatoeba
+          already uses the conventional form most of the time and
+          forcing a normalization would risk false matches.
+        * Kanji ↔ kana equivalence: two readings with different kanji
+          count as different sentences and must not be collapsed.
+        * Punctuation inside the sentence (commas, colons): they carry
+          meaning.
+
+    The goal is to close the "missing final period" gap without creating
+    any false positives. Conservative normalization is preferred because
+    false positives would link a curated example to an unrelated Tatoeba
+    sentence — a silent data corruption worse than a low link rate.
+    """
+    if not text:
+        return ""
+    normalized = text.strip()
+    # Strip one trailing sentence-final punct if present.
+    while normalized and normalized[-1] in "。、．，!?！？.,":
+        normalized = normalized[:-1]
+    # Collapse runs of whitespace to single space.
+    import re
+    normalized = re.sub(r"\s+", " ", normalized).strip()
+    return normalized
+
+
+def _load_tatoeba_text_index() -> tuple[dict[str, str], dict[str, str]]:
+    """Build Japanese-text → Tatoeba-sentence-id indices from sentences.json.
+
+    Returns (exact_index, normalized_index):
+
+        * ``exact_index`` — verbatim Japanese text → sentence id
+        * ``normalized_index`` — _normalize_japanese_for_match(text) → sentence id
+
+    Exact-match wins when both indices disagree. Returns two empty
+    dicts if sentences.json does not exist yet (backward-compatible
     with running grammar.build before sentences.build).
 
-    Collisions (multiple sentences with identical Japanese text) resolve
-    to the first one encountered, which is deterministic given the
-    upstream sorted output.
+    Collisions (multiple sentences with identical normalized text)
+    resolve to the first one encountered, which is deterministic given
+    the upstream sorted output.
     """
     if not SENTENCES_JSON.exists():
-        return {}
+        return {}, {}
     data = json.loads(SENTENCES_JSON.read_text(encoding="utf-8"))
-    result: dict[str, str] = {}
+    exact: dict[str, str] = {}
+    normalized: dict[str, str] = {}
     for sentence in data.get("sentences", []):
         text = sentence.get("japanese", "")
         sid = sentence.get("id", "")
         if not text or not sid:
             continue
-        if text not in result:
-            result[text] = sid
-    return result
+        if text not in exact:
+            exact[text] = sid
+        norm = _normalize_japanese_for_match(text)
+        if norm and norm not in normalized:
+            normalized[norm] = sid
+    return exact, normalized
 
 
-def _link_examples_to_tatoeba(entries: list[dict], text_index: dict[str, str]) -> tuple[int, int]:
+def _link_examples_to_tatoeba(
+    entries: list[dict],
+    text_index: dict[str, str],
+    normalized_index: dict[str, str],
+) -> tuple[int, int, int]:
     """Mutate grammar entries in place, populating sentence_id where the
-    example's Japanese text exactly matches a Tatoeba sentence.
+    example's Japanese text matches a Tatoeba sentence.
 
-    Returns (total_examples, linked_count) for reporting.
+    Matching is attempted in two passes per example:
+        1. Exact-string match against ``text_index``.
+        2. Normalized match against ``normalized_index`` (trailing
+           punctuation and whitespace stripped).
+
+    Returns (total_examples, linked_count, linked_via_normalization) for
+    reporting. The third value is the subset of linked_count that hit
+    only after normalization — useful for sanity-checking that the
+    normalization pass is not overmatching.
     """
     total = 0
     linked = 0
+    linked_via_norm = 0
     for entry in entries:
         for example in entry.get("examples", []):
             total += 1
@@ -106,11 +162,15 @@ def _link_examples_to_tatoeba(entries: list[dict], text_index: dict[str, str]) -
                 continue
             japanese = example.get("japanese", "")
             sid = text_index.get(japanese)
+            if not sid:
+                sid = normalized_index.get(_normalize_japanese_for_match(japanese))
+                if sid:
+                    linked_via_norm += 1
             if sid:
                 example["source"] = "tatoeba"
                 example["sentence_id"] = sid
                 linked += 1
-    return total, linked
+    return total, linked, linked_via_norm
 
 
 def build() -> None:
@@ -150,23 +210,31 @@ def build() -> None:
 
     # Tatoeba sentence linkage: text-match grammar examples against the
     # sentences corpus and populate sentence_id where the Japanese text
-    # exactly matches. Low match rate is expected on initial curation
-    # (grammar examples are written for pedagogy, not to match corpus
-    # entries), but the mechanism is in place for future additions and
-    # fuzzy-matching passes.
-    tatoeba_index = _load_tatoeba_text_index()
-    if tatoeba_index and entries:
-        total_examples, linked_examples = _link_examples_to_tatoeba(entries, tatoeba_index)
+    # matches. Low match rate is expected on initial curation (grammar
+    # examples are written for pedagogy, not to match corpus entries),
+    # but the mechanism is in place for future additions.
+    #
+    # Two-pass match: exact text, then conservatively-normalized text
+    # (trailing punctuation and whitespace stripped). The normalization
+    # pass is intentionally minimal — false positives would corrupt
+    # the linkage silently, which is worse than a low match rate.
+    exact_index, normalized_index = _load_tatoeba_text_index()
+    linked_via_norm = 0
+    if exact_index and entries:
+        total_examples, linked_examples, linked_via_norm = _link_examples_to_tatoeba(
+            entries, exact_index, normalized_index,
+        )
         link_rate_pct = (100.0 * linked_examples / total_examples) if total_examples else 0.0
         print(
             f"[grammar]  Tatoeba linkage: {linked_examples}/{total_examples} "
-            f"({link_rate_pct:.1f}%) examples matched by exact text"
+            f"({link_rate_pct:.2f}%) examples matched "
+            f"(exact + {linked_via_norm} via normalization)"
         )
     else:
         total_examples = sum(len(e.get("examples", [])) for e in entries)
         linked_examples = 0
         link_rate_pct = 0.0
-        if not tatoeba_index:
+        if not exact_index:
             print("[grammar]  Tatoeba linkage: skipped (sentences.json not built)")
 
     # Stats
@@ -184,6 +252,29 @@ def build() -> None:
             print(f"[grammar]    {lvl}: {by_level[lvl]:,}")
     print(f"[grammar]  by review status: {by_status}")
 
+    # Curation outliers — structural heuristics that flag entries a
+    # reviewer might prioritize. These are NOT quality judgements; they
+    # are purely counts of structural fields. A "sparse_examples" entry
+    # is not wrong, it just has fewer examples than typical. Reviewers
+    # can use these lists as triage signals.
+    sparse_examples = sorted(
+        e["id"] for e in entries
+        if len(e.get("examples") or []) < 3
+    )
+    no_related = sorted(
+        e["id"] for e in entries
+        if not (e.get("related") or [])
+    )
+    no_formation_notes = sorted(
+        e["id"] for e in entries
+        if not (e.get("formation_notes") or [])
+    )
+    print(
+        f"[grammar]  outliers: sparse_examples={len(sparse_examples)} "
+        f"no_related={len(no_related)} "
+        f"no_formation_notes={len(no_formation_notes)}"
+    )
+
     output = {
         "metadata": {
             "source": "Hand-curated (project original) — see grammar-curated/ for input files",
@@ -192,11 +283,37 @@ def build() -> None:
             "count": len(entries),
             "by_level": by_level,
             "review_coverage": by_status,
+            "curation_outliers": {
+                "description": (
+                    "Structural-heuristic lists of entries reviewers may "
+                    "wish to prioritize. These are NOT quality judgements — "
+                    "they are pure counts of schema fields. A 'sparse_examples' "
+                    "entry has fewer than 3 examples; 'no_related' has an "
+                    "empty related array; 'no_formation_notes' has no "
+                    "formation_notes entries. Most entries are structurally "
+                    "uniform so these lists are short, and reviewing them "
+                    "first gives a cheap reviewer signal about where the "
+                    "curation is thinnest."
+                ),
+                "sparse_examples_count": len(sparse_examples),
+                "sparse_examples": sparse_examples,
+                "no_related_count": len(no_related),
+                "no_related": no_related,
+                "no_formation_notes_count": len(no_formation_notes),
+                "no_formation_notes": no_formation_notes,
+            },
             "tatoeba_linkage": {
                 "total_examples": total_examples,
                 "linked_examples": linked_examples,
+                "linked_via_normalization": linked_via_norm,
                 "link_rate_pct": round(link_rate_pct, 2),
-                "method": "exact text match against data/corpus/sentences.json",
+                "method": (
+                    "Two-pass text match against data/corpus/sentences.json: "
+                    "first exact, then conservatively normalized (trailing "
+                    "sentence-final punctuation and whitespace stripped). "
+                    "Normalization never collapses kanji/kana variants or "
+                    "changes width/case."
+                ),
             },
             "authorship_statement": (
                 "All grammar explanations are written in our own words based on "

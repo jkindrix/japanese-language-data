@@ -19,7 +19,7 @@
       {"japanese": "早く起きられない。", "english": "I can't get up early. (plain)", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "passive-form",
@@ -40,7 +40,7 @@
       {"japanese": "ドアが開けられた。", "english": "The door was opened. (plain)", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "causative-form",
@@ -60,7 +60,7 @@
       {"japanese": "子供を遊ばせました。", "english": "I let the children play.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ta-koto-ga-aru",
@@ -82,7 +82,7 @@
       {"japanese": "一度も会ったことがない。", "english": "I have never met (them) even once.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "tsumori-intention",
@@ -103,7 +103,7 @@
       {"japanese": "お酒を飲まないつもりです。", "english": "I intend not to drink alcohol.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "to-omou",
@@ -124,7 +124,7 @@
       {"japanese": "彼はいい人だと思う。", "english": "I think he's a good person. (plain)", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "to-iu",
@@ -144,7 +144,7 @@
       {"japanese": "田中という人を知っていますか。", "english": "Do you know a person called Tanaka?", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "darou-deshou-conjecture",
@@ -165,7 +165,7 @@
       {"japanese": "彼はもう帰ったでしょう。", "english": "He's probably already gone home.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "kamoshirenai-might",
@@ -185,7 +185,7 @@
       {"japanese": "彼は来ないかもしれない。", "english": "He might not come. (plain)", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "hazu-expected",
@@ -206,7 +206,7 @@
       {"japanese": "そんなはずはない。", "english": "There's no way that can be true. (plain)", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "tara-conditional",
@@ -227,7 +227,7 @@
       {"japanese": "家に帰ったら、手紙が来ていた。", "english": "When I got home, a letter had come.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ba-conditional",
@@ -248,7 +248,7 @@
       {"japanese": "安ければ買います。", "english": "If it's cheap, I'll buy it.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "to-conditional",
@@ -269,7 +269,7 @@
       {"japanese": "春になると桜が咲きます。", "english": "When spring comes, the cherry blossoms bloom.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "nara-conditional",
@@ -290,7 +290,7 @@
       {"japanese": "寿司なら、あの店が一番です。", "english": "When it comes to sushi, that shop is the best.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "volitional-form",
@@ -311,7 +311,7 @@
       {"japanese": "来年、日本へ行こうと思っています。", "english": "I'm thinking of going to Japan next year.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "te-wa-ikenai-prohibition",
@@ -332,7 +332,7 @@
       {"japanese": "図書館で話してはいけない。", "english": "You must not talk in the library. (plain)", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "te-mo-ii-permission",
@@ -353,7 +353,7 @@
       {"japanese": "写真を撮ってもいいです。", "english": "You may take photos.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "nakereba-naranai",
@@ -374,7 +374,7 @@
       {"japanese": "薬を飲まなきゃ。", "english": "I gotta take my medicine. (casual)", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "nakute-mo-ii",
@@ -394,7 +394,7 @@
       {"japanese": "お金を払わなくてもいい。", "english": "You don't have to pay. (plain)", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "kara-cause",
@@ -415,7 +415,7 @@
       {"japanese": "雨が降っているから、傘を持って行きます。", "english": "Since it's raining, I'll take an umbrella.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "node-cause",
@@ -436,7 +436,7 @@
       {"japanese": "疲れているので、今日は帰ります。", "english": "Because I'm tired, I'll go home today.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ga-kedo-although",
@@ -457,7 +457,7 @@
       {"japanese": "行きたいけど、時間がない。", "english": "I want to go, but I don't have time. (casual)", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "n-desu-explanation",
@@ -478,7 +478,7 @@
       {"japanese": "なぜ来なかったんですか。", "english": "Why didn't you come?", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ni-naru-become",
@@ -499,7 +499,7 @@
       {"japanese": "寒くなってきました。", "english": "It's gotten cold.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ni-suru-decide",
@@ -519,7 +519,7 @@
       {"japanese": "明日行くことにしました。", "english": "I've decided to go tomorrow.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "hajimeru-auxiliary",
@@ -540,7 +540,7 @@
       {"japanese": "雨が降り始めた。", "english": "It started to rain. (plain)", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "owaru-finish",
@@ -560,7 +560,7 @@
       {"japanese": "宿題をやり終えた。", "english": "I finished the homework. (plain)", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "sugiru-too-much",
@@ -580,7 +580,7 @@
       {"japanese": "この服は高すぎる。", "english": "These clothes are too expensive.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "yasui-easy",
@@ -600,7 +600,7 @@
       {"japanese": "先生の説明は分かりやすい。", "english": "The teacher's explanation is easy to understand.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "nikui-hard",
@@ -621,7 +621,7 @@
       {"japanese": "この肉は食べにくい。", "english": "This meat is hard to eat.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "noun-modifying-clause",
@@ -642,7 +642,7 @@
       {"japanese": "私が住んでいる町はとても静かです。", "english": "The town where I live is very quiet.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "tari-tari-suru",
@@ -668,7 +668,7 @@
       {"japanese": "休みの日は掃除したり洗濯したりする。", "english": "On days off I do things like cleaning and laundry.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "jidoushi-tadoushi",
@@ -696,7 +696,7 @@
       {"japanese": "電気を消してください。", "english": "Please turn off the light.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "garu-third-person-emotion",
@@ -723,7 +723,7 @@
       {"japanese": "犬は散歩に行きたがる。", "english": "The dog wants to go for a walk.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "kata-way-of-doing",
@@ -749,7 +749,7 @@
       {"japanese": "日本語の勉強の仕方は人それぞれだ。", "english": "Everyone has their own way of studying Japanese.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "you-ni-suru",
@@ -775,7 +775,7 @@
       {"japanese": "早く寝るようにします。", "english": "I'll try to go to bed early.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "te-kara-after-doing",
@@ -802,7 +802,7 @@
       {"japanese": "学校が終わってから、友達と遊びました。", "english": "After school ended, I played with friends.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "mae-ni-before-doing",
@@ -828,7 +828,7 @@
       {"japanese": "日本に来る前に、日本語を勉強しました。", "english": "Before coming to Japan, I studied Japanese.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ato-de-after-doing",
@@ -854,7 +854,7 @@
       {"japanese": "仕事が終わった後で、飲みに行きましょう。", "english": "After work is over, let's go drinking.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "koto-ga-dekiru",
@@ -880,7 +880,7 @@
       {"japanese": "彼は料理することができる。", "english": "He can cook.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "koto-ni-suru-decide",
@@ -907,7 +907,7 @@
       {"japanese": "留学することにした。", "english": "I decided to study abroad.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "koto-ni-naru-be-decided",
@@ -934,7 +934,7 @@
       {"japanese": "会議は来週開くことになった。", "english": "It's been decided that the meeting will be held next week.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "nasai-command",
@@ -960,7 +960,7 @@
       {"japanese": "野菜を食べなさい。", "english": "Eat your vegetables.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "te-hoshii-want-someone",
@@ -987,7 +987,7 @@
       {"japanese": "早く帰ってきてほしい。", "english": "I want you to come home early.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "shi-reason-listing",
@@ -1014,7 +1014,7 @@
       {"japanese": "頭も痛いし、熱もあるし、今日は休みます。", "english": "I have a headache, I have a fever, so I'll take the day off.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "you-to-omou-volitional-intent",
@@ -1041,7 +1041,7 @@
       {"japanese": "新しいパソコンを買おうと思う。", "english": "I think I'll buy a new computer.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "te-kureru-favor-received",
@@ -1068,7 +1068,7 @@
       {"japanese": "先生が日本語を教えてくださった。", "english": "The teacher kindly taught me Japanese.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "te-morau-request-favor",
@@ -1096,7 +1096,7 @@
       {"japanese": "少し待ってもらえますか。", "english": "Could you wait a moment?", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "te-ageru-favor-given",
@@ -1123,7 +1123,7 @@
       {"japanese": "先生に手紙を書いてさしあげる。", "english": "I'll write a letter for my teacher.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ageru-give-outward",
@@ -1150,7 +1150,7 @@
       {"japanese": "これをあなたにあげる。", "english": "I'll give this to you.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "kureru-give-toward",
@@ -1177,7 +1177,7 @@
       {"japanese": "妹がこのペンをくれました。", "english": "My younger sister gave me this pen.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "morau-receive",
@@ -1205,7 +1205,7 @@
       {"japanese": "誕生日にケーキをもらった。", "english": "I received a cake for my birthday.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "o-v-kudasai-polite-honor",
@@ -1232,7 +1232,7 @@
       {"japanese": "ご注意ください。", "english": "Please be careful.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "sonkeigo-reru-rareru",
@@ -1259,7 +1259,7 @@
       {"japanese": "何時に帰られますか。", "english": "What time will you go home?", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "humble-o-suru",
@@ -1285,7 +1285,7 @@
       {"japanese": "ご案内します。", "english": "I will show you around.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "te-goran-try-casual",
@@ -1312,7 +1312,7 @@
       {"japanese": "食べてごらん、おいしいから。", "english": "Try eating it, it's delicious.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "sou-iu-kou-iu",
@@ -1338,7 +1338,7 @@
       {"japanese": "どういう意味ですか。", "english": "What do you mean?", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ki-ga-suru-feel-like",
@@ -1365,7 +1365,7 @@
       {"japanese": "彼は来ない気がする。", "english": "I have a feeling he's not coming.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "tai-to-omou-want-to-think",
@@ -1392,7 +1392,7 @@
       {"japanese": "将来、医者になりたいと思う。", "english": "I think I want to become a doctor in the future.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ba-ai-in-case",
@@ -1418,7 +1418,7 @@
       {"japanese": "遅れる場合は、必ず連絡してください。", "english": "If you're going to be late, please contact (us).", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "zutsu-each-per",
@@ -1444,7 +1444,7 @@
       {"japanese": "二人ずつ並んでください。", "english": "Please line up in pairs (two each).", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "tsumori-datta-had-intended",
@@ -1470,7 +1470,7 @@
       {"japanese": "朝ごはんを食べるつもりだった。", "english": "I had intended to eat breakfast.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "hazu-datta-was-supposed",
@@ -1496,7 +1496,7 @@
       {"japanese": "昨日、雨が降るはずでしたが、晴れました。", "english": "It was supposed to rain yesterday, but it was sunny.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "demo-noun-even",
@@ -1522,7 +1522,7 @@
       {"japanese": "お茶でもどうですか。", "english": "How about some tea (or something)?", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "te-itadaku-polite-favor-received",
@@ -1549,7 +1549,7 @@
       {"japanese": "教えていただいて、ありがとうございました。", "english": "Thank you for kindly teaching me.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ba-ii-should",
@@ -1577,7 +1577,7 @@
       {"japanese": "早く寝ればいい。", "english": "You just need to go to bed early.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "yaru-casual-giving",
@@ -1604,7 +1604,7 @@
       {"japanese": "弟に宿題を手伝ってやった。", "english": "I helped my little brother with his homework.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "v-temo-even-if",
@@ -1632,7 +1632,7 @@
       {"japanese": "いくら食べても太らない。", "english": "No matter how much I eat, I don't gain weight.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "irassharu-honorific",
@@ -1659,7 +1659,7 @@
       {"japanese": "いらっしゃいませ。", "english": "Welcome. (shop greeting)", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ossharu-honorific",
@@ -1686,7 +1686,7 @@
       {"japanese": "おっしゃる通りです。", "english": "It's just as you say.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "goran-ni-naru-honorific",
@@ -1712,7 +1712,7 @@
       {"japanese": "画面をご覧になりながらお聞きください。", "english": "Please listen while looking at the screen.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "nasaru-honorific",
@@ -1738,7 +1738,7 @@
       {"japanese": "お気をつけてお帰りなさい。", "english": "Please take care on your way home.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "mairu-humble",
@@ -1764,7 +1764,7 @@
       {"japanese": "まもなく電車が参ります。", "english": "The train is arriving shortly.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "mousu-humble",
@@ -1791,7 +1791,7 @@
       {"japanese": "先ほど申した通りです。", "english": "It's just as I said earlier.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "itadaku-humble-verb",
@@ -1817,7 +1817,7 @@
       {"japanese": "お茶をいただけますか。", "english": "May I have some tea?", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "kudasaru-honorific-verb",
@@ -1844,7 +1844,7 @@
       {"japanese": "お手紙をくださってありがとうございます。", "english": "Thank you for kindly sending me a letter.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "shika-nai",
@@ -1870,7 +1870,7 @@
       {"japanese": "一つしか残っていない。", "english": "There's only one left.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ga-suki-kirai",
@@ -1898,7 +1898,7 @@
       {"japanese": "日本語の勉強が大好きです。", "english": "I love studying Japanese.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ga-wakaru",
@@ -1925,7 +1925,7 @@
       {"japanese": "この問題が全然わかりません。", "english": "I don't understand this problem at all.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ga-dekiru",
@@ -1953,7 +1953,7 @@
       {"japanese": "運転ができる。", "english": "I can drive.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "ga-kikoeru-mieru",
@@ -1980,7 +1980,7 @@
       {"japanese": "小さい声が聞こえない。", "english": "I can't hear the quiet voice.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "tatoe-temo",
@@ -2006,7 +2006,7 @@
       {"japanese": "たとえお金があっても、幸せとは限らない。", "english": "Even if you have money, you're not necessarily happy.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "dakara-so",
@@ -2033,7 +2033,7 @@
       {"japanese": "だから言ったでしょう。", "english": "That's what I told you, isn't it?", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "sorede-and-then",
@@ -2060,7 +2060,7 @@
       {"japanese": "それで、どうしましたか。", "english": "And then, what happened?", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "sorekara-after",
@@ -2087,7 +2087,7 @@
       {"japanese": "宿題をして、それから、寝ます。", "english": "I'll do my homework, and after that, sleep.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "shikashi-but",
@@ -2114,7 +2114,7 @@
       {"japanese": "勉強した。しかし、試験に落ちた。", "english": "I studied. But I failed the exam.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "kedomo-formal-but",
@@ -2141,7 +2141,7 @@
       {"japanese": "彼は若いけれども、しっかりしている。", "english": "He is young, but he's very solid/reliable.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "toka-listing",
@@ -2168,7 +2168,7 @@
       {"japanese": "りんごとかバナナとかを買いました。", "english": "I bought things like apples and bananas.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "tte-quotation",
@@ -2195,7 +2195,7 @@
       {"japanese": "佐藤って人を知ってる？", "english": "Do you know someone called Sato?", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "mono-da-general",
@@ -2221,7 +2221,7 @@
       {"japanese": "昔はよくここで遊んだものだ。", "english": "I used to play here a lot long ago. (nostalgic)", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   },
   {
     "id": "soredemo-even-so",
@@ -2248,6 +2248,6 @@
       {"japanese": "難しい。それでも、やってみる価値がある。", "english": "It's difficult. Nonetheless, it's worth trying.", "source": "original"}
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge."]
+    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
   }
 ]
