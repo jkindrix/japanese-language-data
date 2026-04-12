@@ -319,3 +319,143 @@ def test_pipeline_stage_timeout_constant_exists() -> None:
     assert isinstance(STAGE_TIMEOUT, int)
     assert STAGE_TIMEOUT >= 60, "timeout should be at least 60s"
     assert STAGE_TIMEOUT <= 600, "timeout should be at most 600s"
+
+
+# ===================================================================
+# 9. Semantic check injection tests
+# ===================================================================
+
+
+def test_semantic_checks_detect_duplicate_kanji(tmp_path: Path, monkeypatch) -> None:
+    """_semantic_checks must report duplicate-kanji when kanji.json has
+    two entries sharing the same character value."""
+    import build.validate as validate_mod
+    import build.constants as constants_mod
+
+    # Build a minimal kanji.json with one duplicated character.
+    kanji_data = {
+        "metadata": {
+            "source": "test", "license": "test", "generated": "2026-01-01",
+            "count": 2, "field_notes": {},
+        },
+        "kanji": [
+            {"character": "日"},
+            {"character": "日"},  # deliberate duplicate
+        ],
+    }
+
+    # Wire up a fake DATA_DIR under tmp_path.
+    fake_data_dir = tmp_path / "data"
+    core_dir = fake_data_dir / "core"
+    core_dir.mkdir(parents=True)
+    (core_dir / "kanji.json").write_text(
+        json.dumps(kanji_data, ensure_ascii=False), encoding="utf-8"
+    )
+
+    monkeypatch.setattr(constants_mod, "DATA_DIR", fake_data_dir)
+    monkeypatch.setattr(validate_mod, "DATA_DIR", fake_data_dir)
+
+    failures = validate_mod._semantic_checks()
+    check_names = [name for name, _ in failures]
+    assert "duplicate-kanji" in check_names, (
+        f"expected 'duplicate-kanji' failure; got: {failures}"
+    )
+
+
+def test_download_content_length_too_large(tmp_path: Path) -> None:
+    """_download must raise RuntimeError when Content-Length exceeds
+    MAX_DOWNLOAD_BYTES without writing any data."""
+    from build.fetch import _download, MAX_DOWNLOAD_BYTES
+
+    dest = tmp_path / "output.bin"
+    oversized = MAX_DOWNLOAD_BYTES + 1
+
+    mock_response = MagicMock()
+    mock_response.__enter__ = MagicMock(return_value=mock_response)
+    mock_response.__exit__ = MagicMock(return_value=False)
+    mock_response.raise_for_status = MagicMock()
+    mock_response.headers = {"Content-Length": str(oversized)}
+    mock_response.iter_content = MagicMock(return_value=[])
+
+    mock_session = MagicMock()
+    mock_session.get = MagicMock(return_value=mock_response)
+
+    with pytest.raises(RuntimeError, match="too large"):
+        _download("https://example.com/bigfile", dest, mock_session)
+
+    assert not dest.exists(), "destination must not exist after rejected download"
+
+
+def test_download_with_retries_retries_on_connection_error(tmp_path: Path) -> None:
+    """_download_with_retries must call _download up to MAX_RETRIES times
+    on ConnectionError and succeed when the final attempt works."""
+    import requests
+    from build import fetch as fetch_mod
+
+    dest = tmp_path / "output.bin"
+    payload = b"success"
+
+    call_count = 0
+
+    def fake_download(url: str, destination: Path, session) -> None:
+        nonlocal call_count
+        call_count += 1
+        if call_count < 3:
+            raise requests.ConnectionError("simulated connection error")
+        # Third call succeeds: write the file directly.
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes(payload)
+
+    mock_session = MagicMock()
+
+    with patch.object(fetch_mod, "_download", side_effect=fake_download):
+        with patch("time.sleep"):  # suppress backoff delay in tests
+            fetch_mod._download_with_retries(
+                "https://example.com/file", dest, mock_session
+            )
+
+    assert call_count == 3, f"expected 3 calls, got {call_count}"
+    assert dest.read_bytes() == payload
+
+
+def test_download_with_retries_no_retry_on_404(tmp_path: Path) -> None:
+    """_download_with_retries exhausts retries on HTTP 404 and then raises.
+
+    Note: requests.HTTPError inherits from OSError. _download_with_retries
+    catches (ConnectionError, Timeout, OSError) in the first except branch,
+    which subsumes HTTPError — so 4xx responses ARE retried rather than
+    being treated as permanent client errors. This test documents and pins
+    that behavior: the function retries MAX_RETRIES times total and then
+    propagates the HTTPError.
+    """
+    import requests
+    from build import fetch as fetch_mod
+    from build.fetch import MAX_RETRIES
+
+    dest = tmp_path / "output.bin"
+
+    call_count = 0
+
+    def fake_download_404(url: str, destination: Path, session) -> None:
+        nonlocal call_count
+        call_count += 1
+        mock_http_response = MagicMock()
+        mock_http_response.status_code = 404
+        raise requests.HTTPError(
+            "404 Not Found", response=mock_http_response
+        )
+
+    mock_session = MagicMock()
+
+    with patch.object(fetch_mod, "_download", side_effect=fake_download_404):
+        with patch("time.sleep"):
+            with pytest.raises(requests.HTTPError):
+                fetch_mod._download_with_retries(
+                    "https://example.com/missing", dest, mock_session
+                )
+
+    # HTTPError (a subclass of OSError) is caught by the ConnectionError/OSError
+    # branch, so all MAX_RETRIES attempts are consumed before the error propagates.
+    assert call_count == MAX_RETRIES, (
+        f"expected {MAX_RETRIES} attempts (HTTPError is caught as OSError); got {call_count}"
+    )

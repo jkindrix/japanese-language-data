@@ -884,3 +884,452 @@ def test_build_word_cross_refs_kana_only() -> None:
     k2w, w2k, w2s = _build_word_cross_refs(words_data)
     assert "300" not in w2k
     assert len(k2w) == 0
+
+
+# ===========================================================================
+# Standard godan subtypes — one representative verb per class
+# ===========================================================================
+
+def test_conjugate_godan_v5k_kaku() -> None:
+    """v5k (standard く-ending): 書く conjugation."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("かく", "v5k")
+    assert forms is not None
+    assert forms["te_form"] == "かいて", f"v5k te_form: expected かいて, got {forms['te_form']!r}"
+    assert forms["ta_form"] == "かいた", f"v5k ta_form: expected かいた, got {forms['ta_form']!r}"
+    assert forms["nai_form"] == "かかない", f"v5k nai_form: expected かかない, got {forms['nai_form']!r}"
+    assert forms["polite_nonpast"] == "かきます", f"v5k polite_nonpast: expected かきます, got {forms['polite_nonpast']!r}"
+
+
+def test_conjugate_godan_v5g_oyogu() -> None:
+    """v5g (ぐ-ending): 泳ぐ conjugation."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("およぐ", "v5g")
+    assert forms is not None
+    assert forms["te_form"] == "およいで", f"v5g te_form: expected およいで, got {forms['te_form']!r}"
+    assert forms["ta_form"] == "およいだ", f"v5g ta_form: expected およいだ, got {forms['ta_form']!r}"
+    assert forms["nai_form"] == "およがない", f"v5g nai_form: expected およがない, got {forms['nai_form']!r}"
+    assert forms["polite_nonpast"] == "およぎます", f"v5g polite_nonpast: expected およぎます, got {forms['polite_nonpast']!r}"
+
+
+def test_conjugate_godan_v5s_hanasu() -> None:
+    """v5s (す-ending): 話す conjugation."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("はなす", "v5s")
+    assert forms is not None
+    assert forms["te_form"] == "はなして", f"v5s te_form: expected はなして, got {forms['te_form']!r}"
+    assert forms["ta_form"] == "はなした", f"v5s ta_form: expected はなした, got {forms['ta_form']!r}"
+    assert forms["nai_form"] == "はなさない", f"v5s nai_form: expected はなさない, got {forms['nai_form']!r}"
+    assert forms["polite_nonpast"] == "はなします", f"v5s polite_nonpast: expected はなします, got {forms['polite_nonpast']!r}"
+
+
+def test_conjugate_godan_v5t_motsu() -> None:
+    """v5t (つ-ending): 持つ conjugation."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("もつ", "v5t")
+    assert forms is not None
+    assert forms["te_form"] == "もって", f"v5t te_form: expected もって, got {forms['te_form']!r}"
+    assert forms["ta_form"] == "もった", f"v5t ta_form: expected もった, got {forms['ta_form']!r}"
+    assert forms["nai_form"] == "もたない", f"v5t nai_form: expected もたない, got {forms['nai_form']!r}"
+    assert forms["polite_nonpast"] == "もちます", f"v5t polite_nonpast: expected もちます, got {forms['polite_nonpast']!r}"
+
+
+def test_conjugate_godan_v5n_shinu() -> None:
+    """v5n (ぬ-ending): 死ぬ conjugation."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("しぬ", "v5n")
+    assert forms is not None
+    assert forms["te_form"] == "しんで", f"v5n te_form: expected しんで, got {forms['te_form']!r}"
+    assert forms["ta_form"] == "しんだ", f"v5n ta_form: expected しんだ, got {forms['ta_form']!r}"
+    assert forms["nai_form"] == "しなない", f"v5n nai_form: expected しなない, got {forms['nai_form']!r}"
+    assert forms["polite_nonpast"] == "しにます", f"v5n polite_nonpast: expected しにます, got {forms['polite_nonpast']!r}"
+
+
+def test_conjugate_godan_v5b_asobu() -> None:
+    """v5b (ぶ-ending): 遊ぶ conjugation."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("あそぶ", "v5b")
+    assert forms is not None
+    assert forms["te_form"] == "あそんで", f"v5b te_form: expected あそんで, got {forms['te_form']!r}"
+    assert forms["ta_form"] == "あそんだ", f"v5b ta_form: expected あそんだ, got {forms['ta_form']!r}"
+    assert forms["nai_form"] == "あそばない", f"v5b nai_form: expected あそばない, got {forms['nai_form']!r}"
+    assert forms["polite_nonpast"] == "あそびます", f"v5b polite_nonpast: expected あそびます, got {forms['polite_nonpast']!r}"
+
+
+def test_conjugate_godan_v5m_yomu() -> None:
+    """v5m (む-ending): 読む conjugation."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("よむ", "v5m")
+    assert forms is not None
+    assert forms["te_form"] == "よんで", f"v5m te_form: expected よんで, got {forms['te_form']!r}"
+    assert forms["ta_form"] == "よんだ", f"v5m ta_form: expected よんだ, got {forms['ta_form']!r}"
+    assert forms["nai_form"] == "よまない", f"v5m nai_form: expected よまない, got {forms['nai_form']!r}"
+    assert forms["polite_nonpast"] == "よみます", f"v5m polite_nonpast: expected よみます, got {forms['polite_nonpast']!r}"
+
+
+def test_conjugate_godan_v5u_kau() -> None:
+    """v5u (standard う-ending, not v5u-s): 買う conjugation.
+
+    Key distinguisher from v5u-s: te/ta use って/った (not うて/うた),
+    and nai uses わない (historical わ-row).
+    """
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("かう", "v5u")
+    assert forms is not None
+    assert forms["te_form"] == "かって", f"v5u te_form: expected かって, got {forms['te_form']!r}"
+    assert forms["ta_form"] == "かった", f"v5u ta_form: expected かった, got {forms['ta_form']!r}"
+    assert forms["nai_form"] == "かわない", f"v5u nai_form: expected かわない, got {forms['nai_form']!r}"
+    assert forms["polite_nonpast"] == "かいます", f"v5u polite_nonpast: expected かいます, got {forms['polite_nonpast']!r}"
+
+
+def test_conjugate_godan_v5r_hashiru() -> None:
+    """v5r (standard る-ending, not v5r-i): 走る conjugation."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("はしる", "v5r")
+    assert forms is not None
+    assert forms["te_form"] == "はしって", f"v5r te_form: expected はしって, got {forms['te_form']!r}"
+    assert forms["ta_form"] == "はしった", f"v5r ta_form: expected はしった, got {forms['ta_form']!r}"
+    assert forms["nai_form"] == "はしらない", f"v5r nai_form: expected はしらない, got {forms['nai_form']!r}"
+    assert forms["polite_nonpast"] == "はしります", f"v5r polite_nonpast: expected はしります, got {forms['polite_nonpast']!r}"
+
+
+# ===========================================================================
+# Ichidan — full 16-form coverage for 食べる
+# ===========================================================================
+
+def test_conjugate_ichidan_taberu_all_forms() -> None:
+    """Verify all 16 conjugation slots for 食べる (たべる), including the
+    less-commonly tested conditional and passive/causative slots."""
+    from build.transform.conjugations import _conjugate_ichidan
+    forms = _conjugate_ichidan("たべる")
+    assert forms["dictionary"] == "たべる", f"dictionary: {forms['dictionary']!r}"
+    assert forms["polite_nonpast"] == "たべます", f"polite_nonpast: {forms['polite_nonpast']!r}"
+    assert forms["polite_past"] == "たべました", f"polite_past: {forms['polite_past']!r}"
+    assert forms["polite_negative"] == "たべません", f"polite_negative: {forms['polite_negative']!r}"
+    assert forms["polite_past_negative"] == "たべませんでした", f"polite_past_negative: {forms['polite_past_negative']!r}"
+    assert forms["te_form"] == "たべて", f"te_form: {forms['te_form']!r}"
+    assert forms["ta_form"] == "たべた", f"ta_form: {forms['ta_form']!r}"
+    assert forms["nai_form"] == "たべない", f"nai_form: {forms['nai_form']!r}"
+    assert forms["nakatta_form"] == "たべなかった", f"nakatta_form: {forms['nakatta_form']!r}"
+    assert forms["potential"] == "たべられる", f"potential: {forms['potential']!r}"
+    assert forms["passive"] == "たべられる", f"passive: {forms['passive']!r}"
+    assert forms["causative"] == "たべさせる", f"causative: {forms['causative']!r}"
+    assert forms["imperative"] == "たべろ", f"imperative: {forms['imperative']!r}"
+    assert forms["volitional"] == "たべよう", f"volitional: {forms['volitional']!r}"
+    assert forms["conditional_ba"] == "たべれば", f"conditional_ba: {forms['conditional_ba']!r}"
+    assert forms["conditional_tara"] == "たべたら", f"conditional_tara: {forms['conditional_tara']!r}"
+
+
+# ===========================================================================
+# Kuru — untested form assertions
+# ===========================================================================
+
+def test_conjugate_kuru_extended_forms() -> None:
+    """Verify the kuru forms not covered by test_conjugate_kuru_irregular_forms."""
+    from build.transform.conjugations import _conjugate_kuru
+    forms = _conjugate_kuru()
+    assert forms["potential"] == "こられる", f"potential: {forms['potential']!r}"
+    assert forms["causative"] == "こさせる", f"causative: {forms['causative']!r}"
+    assert forms["conditional_ba"] == "くれば", f"conditional_ba: {forms['conditional_ba']!r}"
+    assert forms["conditional_tara"] == "きたら", f"conditional_tara: {forms['conditional_tara']!r}"
+    assert forms["imperative"] == "こい", f"imperative: {forms['imperative']!r}"
+    assert forms["volitional"] == "こよう", f"volitional: {forms['volitional']!r}"
+    assert forms["passive"] == "こられる", f"passive: {forms['passive']!r}"
+
+
+# ===========================================================================
+# build/utils.py shared utility functions
+# ===========================================================================
+
+def test_load_json_from_tgz_extracts_json(tmp_path) -> None:
+    """load_json_from_tgz should extract and parse the first JSON in the archive."""
+    import io
+    import tarfile as tarfile_mod
+
+    from build.utils import load_json_from_tgz
+
+    payload = {"hello": "world", "number": 42}
+    tgz_path = tmp_path / "test.json.tgz"
+
+    buf = io.BytesIO()
+    with tarfile_mod.open(fileobj=buf, mode="w:gz") as tf:
+        data = json.dumps(payload).encode("utf-8")
+        info = tarfile_mod.TarInfo(name="test.json")
+        info.size = len(data)
+        tf.addfile(info, io.BytesIO(data))
+    tgz_path.write_bytes(buf.getvalue())
+
+    result = load_json_from_tgz(tgz_path)
+    assert result == payload, f"expected {payload!r}, got {result!r}"
+
+
+def test_load_json_from_tgz_no_json_raises(tmp_path) -> None:
+    """load_json_from_tgz should raise RuntimeError when no JSON member exists."""
+    import io
+    import tarfile as tarfile_mod
+
+    from build.utils import load_json_from_tgz
+
+    tgz_path = tmp_path / "empty.tgz"
+
+    buf = io.BytesIO()
+    with tarfile_mod.open(fileobj=buf, mode="w:gz") as tf:
+        data = b"not json at all"
+        info = tarfile_mod.TarInfo(name="readme.txt")
+        info.size = len(data)
+        tf.addfile(info, io.BytesIO(data))
+    tgz_path.write_bytes(buf.getvalue())
+
+    with pytest.raises(RuntimeError, match="No JSON file found"):
+        load_json_from_tgz(tgz_path)
+
+
+def test_load_vocab_jlpt_map_missing_file_returns_empty(tmp_path) -> None:
+    """load_vocab_jlpt_map with a missing path should return an empty dict."""
+    from build.utils import load_vocab_jlpt_map
+
+    missing = tmp_path / "does-not-exist.json"
+    result = load_vocab_jlpt_map(missing)
+    assert result == {}, f"expected empty dict, got {result!r}"
+
+
+def test_load_vocab_jlpt_map_easier_level_wins(tmp_path) -> None:
+    """D4 easier-level-wins: when the same jmdict_seq appears at N2 and N5,
+    N5 (the easier level) must win regardless of which is encountered first."""
+    from build.utils import load_vocab_jlpt_map
+
+    fake = tmp_path / "jlpt.json"
+    fake.write_text(
+        json.dumps({
+            "metadata": {"source": "test", "license": "test",
+                         "generated": "2026-04-12", "count": 2, "field_notes": {}},
+            "classifications": [
+                {"kind": "vocab", "jmdict_seq": "9999999", "level": "N2", "text": "遭う"},
+                {"kind": "vocab", "jmdict_seq": "9999999", "level": "N5", "text": "会う"},
+            ],
+        }),
+        encoding="utf-8",
+    )
+    result = load_vocab_jlpt_map(fake)
+    assert result.get("9999999") == "N5", \
+        f"N5 should win over N2 (easier wins), got {result.get('9999999')!r}"
+
+
+def test_is_common_true_from_utils() -> None:
+    """is_common returns True when any kanji writing is flagged common."""
+    from build.utils import is_common
+
+    word = {"kanji": [{"text": "食べる", "common": True}], "kana": []}
+    assert is_common(word) is True, "expected True for common kanji writing"
+
+
+def test_is_common_false_from_utils() -> None:
+    """is_common returns False when no writing is flagged common."""
+    from build.utils import is_common
+
+    word = {"kanji": [{"text": "食べる", "common": False}], "kana": []}
+    assert is_common(word) is False, "expected False for non-common writing"
+
+
+def test_is_common_kana_only_common(tmp_path) -> None:
+    """is_common returns True for a kana-only word flagged common."""
+    from build.utils import is_common
+
+    word = {"kanji": [], "kana": [{"text": "ある", "common": True}]}
+    assert is_common(word) is True, "expected True for common kana-only word"
+
+
+def test_is_common_empty_word(tmp_path) -> None:
+    """is_common returns False for a word with no kanji or kana entries."""
+    from build.utils import is_common
+
+    word = {"kanji": [], "kana": []}
+    assert is_common(word) is False, "expected False for word with no writings"
+
+
+# ===========================================================================
+# build/bump_release.py
+# ===========================================================================
+
+def test_latest_changelog_version_returns_version_string() -> None:
+    """latest_changelog_version should return a semver string matching the
+    actual top CHANGELOG entry."""
+    from build.bump_release import latest_changelog_version
+
+    version, date_str = latest_changelog_version()
+    # Must be a non-empty semver-like string
+    assert version, "expected a non-empty version string from CHANGELOG"
+    parts = version.split(".")
+    assert len(parts) == 3, f"expected N.N.N version, got {version!r}"
+    for part in parts:
+        assert part.isdigit(), f"version part {part!r} is not a digit in {version!r}"
+
+
+def test_version_header_re_matches_full_header() -> None:
+    """VERSION_HEADER_RE must match '## [0.7.2] — 2026-04-12' and extract
+    both the version number and the date."""
+    from build.bump_release import VERSION_HEADER_RE
+
+    line = "## [0.7.2] — 2026-04-12"
+    m = VERSION_HEADER_RE.search(line)
+    assert m is not None, f"VERSION_HEADER_RE should match {line!r} but did not"
+    assert m.group(1) == "0.7.2", f"expected version '0.7.2', got {m.group(1)!r}"
+    assert m.group(2) == "2026-04-12", f"expected date '2026-04-12', got {m.group(2)!r}"
+
+
+def test_version_header_re_rejects_unreleased() -> None:
+    """VERSION_HEADER_RE must NOT match '## [Unreleased]' — that is not a
+    concrete release and must be skipped by latest_changelog_version."""
+    from build.bump_release import VERSION_HEADER_RE
+
+    line = "## [Unreleased]"
+    m = VERSION_HEADER_RE.search(line)
+    assert m is None, f"VERSION_HEADER_RE should not match {line!r} but did: {m!r}"
+
+
+def test_load_manifest_returns_dict_with_version() -> None:
+    """_load_manifest should return a dict that has a 'version' key."""
+    from build.bump_release import _load_manifest
+
+    manifest = _load_manifest()
+    assert isinstance(manifest, dict), f"expected dict, got {type(manifest)!r}"
+    assert "version" in manifest, "manifest should have a 'version' key"
+    assert isinstance(manifest["version"], str), \
+        f"manifest['version'] should be a string, got {type(manifest['version'])!r}"
+
+
+# ===========================================================================
+# build/transform/jlpt.py — JLPT parsers
+# ===========================================================================
+
+def test_parse_vocab_csv_basic(tmp_path) -> None:
+    """_parse_vocab_csv should parse a stephenmk-format CSV into entries."""
+    import csv as csv_mod
+    from build.transform.jlpt import _parse_vocab_csv
+
+    csv_path = tmp_path / "n5.csv"
+    rows = [
+        {"jmdict_seq": "1000220", "kana": "あした", "kanji": "明日",
+         "waller_definition": "tomorrow"},
+        {"jmdict_seq": "1588800", "kana": "いぬ", "kanji": "",
+         "waller_definition": "dog"},
+    ]
+    with csv_path.open("w", encoding="utf-8", newline="") as f:
+        writer = csv_mod.DictWriter(
+            f, fieldnames=["jmdict_seq", "kana", "kanji", "waller_definition"]
+        )
+        writer.writeheader()
+        writer.writerows(rows)
+
+    entries = _parse_vocab_csv(csv_path, "N5", "2026-04-12")
+
+    assert len(entries) == 2, f"expected 2 entries, got {len(entries)}"
+
+    # First entry has a kanji writing — that should become text
+    e0 = entries[0]
+    assert e0["text"] == "明日", f"expected text='明日', got {e0['text']!r}"
+    assert e0["reading"] == "あした", f"expected reading='あした', got {e0['reading']!r}"
+    assert e0["level"] == "N5", f"expected level='N5', got {e0['level']!r}"
+    assert e0["kind"] == "vocab", f"expected kind='vocab', got {e0['kind']!r}"
+    assert e0["jmdict_seq"] == "1000220", f"expected jmdict_seq='1000220', got {e0['jmdict_seq']!r}"
+    assert e0["meaning_en"] == "tomorrow", f"expected meaning_en='tomorrow', got {e0['meaning_en']!r}"
+
+    # Second entry has no kanji writing — kana should become text
+    e1 = entries[1]
+    assert e1["text"] == "いぬ", f"kana-only: expected text='いぬ', got {e1['text']!r}"
+
+
+def test_parse_kanji_jlpt_basic(tmp_path) -> None:
+    """_parse_kanji_jlpt should emit kind='kanji' entries for characters with
+    a non-null jlpt_new field, and skip those without one."""
+    from build.transform.jlpt import _parse_kanji_jlpt
+
+    kanji_json = tmp_path / "kanji-data.json"
+    kanji_json.write_text(
+        json.dumps({
+            "一": {"jlpt_new": 5, "meanings": ["one", "one radical"]},
+            "語": {"jlpt_new": 4, "meanings": ["language", "word"]},
+            "𠀀": {"jlpt_new": None, "meanings": []},   # no JLPT level — should be skipped
+        }),
+        encoding="utf-8",
+    )
+
+    entries = _parse_kanji_jlpt(kanji_json, "2026-04-12")
+
+    # Only the two characters with a non-null jlpt_new should appear
+    assert len(entries) == 2, f"expected 2 entries, got {len(entries)}"
+
+    texts = {e["text"] for e in entries}
+    assert "一" in texts, "'一' should be in kanji JLPT entries"
+    assert "語" in texts, "'語' should be in kanji JLPT entries"
+    assert "𠀀" not in texts, "'𠀀' (no JLPT level) should be excluded"
+
+    # Spot-check field values for 一
+    ichi = next(e for e in entries if e["text"] == "一")
+    assert ichi["level"] == "N5", f"expected level='N5', got {ichi['level']!r}"
+    assert ichi["kind"] == "kanji", f"expected kind='kanji', got {ichi['kind']!r}"
+    assert ichi["meaning_en"] == "one", f"expected meaning_en='one', got {ichi['meaning_en']!r}"
+
+
+def test_parse_curated_grammar_basic(tmp_path, monkeypatch) -> None:
+    """_parse_curated_grammar should read *.json files from GRAMMAR_CURATED_DIR
+    and emit kind='grammar' entries for each valid grammar point."""
+    import build.transform.jlpt as jlpt_mod
+    from build.transform.jlpt import _parse_curated_grammar
+
+    grammar_dir = tmp_path / "grammar-curated"
+    grammar_dir.mkdir()
+
+    # Write a two-entry grammar file
+    gp_data = [
+        {
+            "id": "te-form-request",
+            "pattern": "〜てください",
+            "level": "N5",
+            "meaning_en": "please do ~",
+        },
+        {
+            "id": "nai-form-prohibition",
+            "pattern": "〜てはいけない",
+            "level": "N4",
+            "meaning_en": "must not ~",
+        },
+    ]
+    (grammar_dir / "n5-n4.json").write_text(
+        json.dumps(gp_data), encoding="utf-8"
+    )
+
+    # Write a non-list file — should be silently skipped
+    (grammar_dir / "invalid.json").write_text(
+        json.dumps({"not": "a list"}), encoding="utf-8"
+    )
+
+    # Patch the module-level constant so the function reads our tmp dir
+    monkeypatch.setattr(jlpt_mod, "GRAMMAR_CURATED_DIR", grammar_dir)
+
+    entries = _parse_curated_grammar("2026-04-12")
+
+    assert len(entries) == 2, f"expected 2 grammar entries, got {len(entries)}"
+
+    ids = {e["grammar_id"] for e in entries}
+    assert "te-form-request" in ids, "'te-form-request' missing from entries"
+    assert "nai-form-prohibition" in ids, "'nai-form-prohibition' missing from entries"
+
+    e0 = next(e for e in entries if e["grammar_id"] == "te-form-request")
+    assert e0["kind"] == "grammar", f"expected kind='grammar', got {e0['kind']!r}"
+    assert e0["level"] == "N5", f"expected level='N5', got {e0['level']!r}"
+    assert e0["text"] == "〜てください", f"expected text='〜てください', got {e0['text']!r}"
+    assert e0["meaning_en"] == "please do ~", f"expected meaning_en='please do ~', got {e0['meaning_en']!r}"
+
+
+def test_parse_curated_grammar_missing_dir(monkeypatch) -> None:
+    """_parse_curated_grammar should return an empty list when GRAMMAR_CURATED_DIR
+    does not exist (e.g. in a stripped checkout)."""
+    import build.transform.jlpt as jlpt_mod
+    from build.transform.jlpt import _parse_curated_grammar
+    from pathlib import Path
+
+    monkeypatch.setattr(jlpt_mod, "GRAMMAR_CURATED_DIR", Path("/nonexistent/grammar-curated"))
+
+    entries = _parse_curated_grammar("2026-04-12")
+    assert entries == [], f"expected empty list for missing dir, got {entries!r}"
