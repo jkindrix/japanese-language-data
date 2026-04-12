@@ -4495,3 +4495,175 @@ def test_frequency_wikipedia_build(tmp_path: Path, monkeypatch) -> None:
     assert result["metadata"]["count"] >= 1
     texts = [e["text"] for e in result["entries"]]
     assert "京都" in texts
+
+
+# ---------------------------------------------------------------------------
+# frequency_corpus — build()
+# ---------------------------------------------------------------------------
+
+def test_frequency_corpus_build(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import frequency_corpus as mod
+
+    words = {"words": [
+        {"id": "1", "kanji": [{"text": "食べる"}], "kana": [{"text": "たべる"}]},
+        {"id": "2", "kanji": [{"text": "飲む"}], "kana": [{"text": "のむ"}]},
+    ]}
+    (tmp_path / "words.json").write_text(json.dumps(words), encoding="utf-8")
+
+    sentences = {"sentences": [
+        {"japanese": "食べる", "english": "to eat"},
+        {"japanese": "食べるのが好き", "english": "I like eating"},
+        {"japanese": "飲む", "english": "to drink"},
+    ]}
+    (tmp_path / "sentences.json").write_text(json.dumps(sentences), encoding="utf-8")
+
+    out = tmp_path / "frequency-corpus.json"
+    monkeypatch.setattr(mod, "WORDS_JSON", tmp_path / "words.json")
+    monkeypatch.setattr(mod, "SENTENCES_JSON", tmp_path / "sentences.json")
+    monkeypatch.setattr(mod, "KFTT_JSON", tmp_path / "nope.json")
+    monkeypatch.setattr(mod, "OUT", out)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    result = json.loads(out.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 2
+    # 食べる appears in 2 sentences, so should rank higher than 飲む (1)
+    assert result["entries"][0]["text"] == "食べる"
+    assert result["entries"][0]["count"] == 2
+    assert result["entries"][1]["text"] == "飲む"
+    assert result["entries"][1]["count"] == 1
+
+
+# ---------------------------------------------------------------------------
+# words — build()
+# ---------------------------------------------------------------------------
+
+def test_words_build(tmp_path: Path, monkeypatch) -> None:
+    import io, tarfile
+    from build.transform import words as mod
+
+    source_data = {
+        "version": "test", "dictDate": "2024-01-01",
+        "languages": ["eng"], "commonOnly": False, "tags": {"n": "noun"},
+        "words": [{
+            "id": 1000010,
+            "kanji": [{"text": "食べる", "common": True}],
+            "kana": [{"text": "たべる", "common": True, "appliesToKanji": ["*"]}],
+            "sense": [{"partOfSpeech": ["v1"], "gloss": [{"text": "to eat", "lang": "eng"}]}],
+        }, {
+            "id": 2000020,
+            "kanji": [{"text": "珍奇", "common": False}],
+            "kana": [{"text": "ちんき", "common": False}],
+            "sense": [{"partOfSpeech": ["adj-na"], "gloss": [{"text": "rare"}]}],
+        }],
+    }
+
+    tgz_path = tmp_path / "source.tgz"
+    json_bytes = json.dumps(source_data).encode("utf-8")
+    with tarfile.open(tgz_path, "w:gz") as tf:
+        info = tarfile.TarInfo(name="jmdict.json")
+        info.size = len(json_bytes)
+        tf.addfile(info, io.BytesIO(json_bytes))
+
+    out_common = tmp_path / "words.json"
+    out_full = tmp_path / "words-full.json"
+    monkeypatch.setattr(mod, "SOURCE_TGZ", tgz_path)
+    monkeypatch.setattr(mod, "OUT_COMMON", out_common)
+    monkeypatch.setattr(mod, "OUT_FULL", out_full)
+    monkeypatch.setattr(mod, "JLPT_ENRICHMENT", tmp_path / "nope.json")
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    common = json.loads(out_common.read_text(encoding="utf-8"))
+    full = json.loads(out_full.read_text(encoding="utf-8"))
+    assert common["metadata"]["count"] == 1  # only the common word
+    assert full["metadata"]["count"] == 2  # both words
+    assert common["words"][0]["id"] == "1000010"
+
+
+def test_words_build_with_jlpt_force_include(tmp_path: Path, monkeypatch) -> None:
+    """JLPT-listed words not flagged common are force-included."""
+    import io, tarfile
+    from build.transform import words as mod
+
+    source_data = {
+        "version": "test", "dictDate": "2024-01-01",
+        "tags": {}, "words": [{
+            "id": 1000010,
+            "kanji": [{"text": "食べる", "common": True}],
+            "kana": [{"text": "たべる", "common": True}],
+            "sense": [{"gloss": [{"text": "to eat"}]}],
+        }, {
+            "id": 2000020,
+            "kanji": [{"text": "珍奇"}],
+            "kana": [{"text": "ちんき"}],
+            "sense": [{"gloss": [{"text": "rare"}]}],
+        }],
+    }
+
+    tgz_path = tmp_path / "source.tgz"
+    json_bytes = json.dumps(source_data).encode("utf-8")
+    with tarfile.open(tgz_path, "w:gz") as tf:
+        info = tarfile.TarInfo(name="jmdict.json")
+        info.size = len(json_bytes)
+        tf.addfile(info, io.BytesIO(json_bytes))
+
+    jlpt_path = tmp_path / "jlpt.json"
+    jlpt_path.write_text(json.dumps({"classifications": [
+        {"kind": "vocab", "jmdict_seq": "2000020", "level": "N3", "text": "珍奇", "reading": "ちんき"},
+    ]}), encoding="utf-8")
+
+    out_common = tmp_path / "words.json"
+    out_full = tmp_path / "words-full.json"
+    monkeypatch.setattr(mod, "SOURCE_TGZ", tgz_path)
+    monkeypatch.setattr(mod, "OUT_COMMON", out_common)
+    monkeypatch.setattr(mod, "OUT_FULL", out_full)
+    monkeypatch.setattr(mod, "JLPT_ENRICHMENT", jlpt_path)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    common = json.loads(out_common.read_text(encoding="utf-8"))
+    # Both words should be in common: one is common=True, other is JLPT-listed
+    assert common["metadata"]["count"] == 2
+
+
+# ---------------------------------------------------------------------------
+# check_upstream — _extract_version_from_url, main
+# ---------------------------------------------------------------------------
+
+def test_check_upstream_extract_version() -> None:
+    from build.check_upstream import _extract_version_from_url
+    url = "https://github.com/scriptin/jmdict-simplified/releases/download/3.6.2%2B20260406/file.tgz"
+    assert _extract_version_from_url(url, "3.") == "3.6.2%2B20260406"
+
+
+def test_check_upstream_extract_version_no_match() -> None:
+    from build.check_upstream import _extract_version_from_url
+    assert _extract_version_from_url("https://example.com/file.txt", "v") == "(unknown)"
+
+
+def test_check_upstream_main_runs(tmp_path: Path, monkeypatch) -> None:
+    """main() runs without errors when manifest exists (may hit network)."""
+    from build import check_upstream as mod
+    # Use a manifest with no sources to avoid network calls
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text(json.dumps({"sources": {}}), encoding="utf-8")
+    monkeypatch.setattr(mod, "MANIFEST_PATH", manifest_path)
+    assert mod.main() == 0
+
+
+# ---------------------------------------------------------------------------
+# validate — edge cases
+# ---------------------------------------------------------------------------
+
+def test_validate_missing_data_file_skipped(tmp_path: Path, monkeypatch) -> None:
+    """Validate skips files that don't exist (e.g., gitignored)."""
+    from build import validate as mod
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+    # SCHEMA_MAP points to files that won't exist under tmp_path
+    errors = mod.validate_all()
+    # Should return 0 errors (files don't exist, so they're skipped)
+    assert errors == 0
