@@ -2162,3 +2162,76 @@ def test_print_report_various_counts(capsys) -> None:
     assert "1,000" in captured.out
     assert "(not built)" in captured.out
     assert "(error)" in captured.out
+
+
+# ---------------------------------------------------------------------------
+# frequency_corpus — surface form collection
+# ---------------------------------------------------------------------------
+
+def test_collect_surface_forms_basic() -> None:
+    from build.transform.frequency_corpus import _collect_surface_forms
+    words_data = {"words": [
+        {
+            "id": "100",
+            "kanji": [{"text": "漢字"}],
+            "kana": [{"text": "かんじ"}],
+        },
+        {
+            "id": "200",
+            "kanji": [],
+            "kana": [{"text": "ああ"}],  # too short (< 3 chars)
+        },
+        {
+            "id": "300",
+            "kanji": [],
+            "kana": [{"text": "ありがとう"}],  # 5 chars, included
+        },
+    ]}
+    forms = _collect_surface_forms(words_data)
+    assert "漢字" in forms  # 2-char kanji
+    assert "ああ" not in forms  # too short kana
+    assert "ありがとう" in forms  # 5-char kana
+
+
+def test_collect_surface_forms_single_kanji_excluded() -> None:
+    from build.transform.frequency_corpus import _collect_surface_forms
+    words_data = {"words": [
+        {"id": "100", "kanji": [{"text": "食"}], "kana": [{"text": "しょく"}]},
+    ]}
+    forms = _collect_surface_forms(words_data)
+    assert "食" not in forms  # single kanji excluded
+    assert "しょく" in forms   # 3+ char kana included
+
+
+# ---------------------------------------------------------------------------
+# check_upstream — version extraction
+# ---------------------------------------------------------------------------
+
+def test_extract_version_from_url() -> None:
+    from build.check_upstream import _extract_version_from_url
+    url = "https://github.com/foo/bar/releases/download/3.6.2%2B20260406/file.json"
+    result = _extract_version_from_url(url, "3.")
+    assert "3." in result
+
+
+# ---------------------------------------------------------------------------
+# export_sqlite — schema creation
+# ---------------------------------------------------------------------------
+
+def test_sqlite_schema_creation(tmp_path: Path) -> None:
+    import sqlite3
+    from build.export_sqlite import _create_schema
+    db_path = tmp_path / "test.sqlite"
+    conn = sqlite3.connect(str(db_path))
+    _create_schema(conn)
+    # Verify tables exist
+    cursor = conn.execute("SELECT name FROM sqlite_master WHERE type='table'")
+    tables = {row[0] for row in cursor.fetchall()}
+    assert "words" in tables
+    assert "kanji" in tables
+    assert "sentences" in tables
+    assert "grammar" in tables
+    assert "pitch_accent" in tables
+    assert "furigana" in tables
+    assert "kanji_to_words" in tables
+    conn.close()
