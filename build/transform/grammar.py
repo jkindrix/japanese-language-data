@@ -65,33 +65,44 @@ def _validate_entry(entry: dict, source_file: str) -> None:
 def _normalize_japanese_for_match(text: str) -> str:
     """Return a conservative normalized form of a Japanese sentence for matching.
 
-    The normalization trims trailing sentence-final punctuation that is
-    often missing or different between Tatoeba and curated examples
-    (``。``, ``、``, full-width space), collapses internal whitespace to
-    single characters, and strips outer whitespace. Nothing else.
+    The normalization performs these steps (in order):
+
+        1. Strip outer whitespace.
+        2. Strip leading/trailing quotation marks (「」『』""'').
+        3. Normalize half-width katakana and digits to full-width via
+           Unicode NFKC (width normalization only — this does NOT
+           collapse kanji/kana equivalence).
+        4. Strip trailing sentence-final punctuation (。、．，!?！？.,).
+        5. Collapse internal runs of whitespace to a single space.
 
     Intentionally NOT normalized:
-        * Character case / width (half-width / full-width): Tatoeba
-          already uses the conventional form most of the time and
-          forcing a normalization would risk false matches.
+
         * Kanji ↔ kana equivalence: two readings with different kanji
           count as different sentences and must not be collapsed.
         * Punctuation inside the sentence (commas, colons): they carry
           meaning.
 
-    The goal is to close the "missing final period" gap without creating
-    any false positives. Conservative normalization is preferred because
-    false positives would link a curated example to an unrelated Tatoeba
-    sentence — a silent data corruption worse than a low link rate.
+    The goal is to close superficial formatting gaps (missing final
+    period, half-width katakana, quotation-mark wrapping) without
+    creating false positives. Conservative normalization is preferred
+    because false positives would link a curated example to an unrelated
+    Tatoeba sentence — a silent data corruption worse than a low link
+    rate.
     """
     if not text:
         return ""
+    import re
+    import unicodedata
     normalized = text.strip()
-    # Strip one trailing sentence-final punct if present.
+    # Strip leading/trailing quotation marks.
+    quote_chars = "「」『』""''\""
+    normalized = normalized.strip(quote_chars)
+    # Width-normalize half-width katakana and digits to full-width.
+    normalized = unicodedata.normalize("NFKC", normalized)
+    # Strip trailing sentence-final punct.
     while normalized and normalized[-1] in "。、．，!?！？.,":
         normalized = normalized[:-1]
     # Collapse runs of whitespace to single space.
-    import re
     normalized = re.sub(r"\s+", " ", normalized).strip()
     return normalized
 
