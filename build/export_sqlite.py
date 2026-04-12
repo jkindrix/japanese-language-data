@@ -127,6 +127,37 @@ def _create_schema(conn: sqlite3.Connection) -> None:
             word_id TEXT
         );
 
+        CREATE TABLE IF NOT EXISTS word_to_grammar (
+            word_id TEXT,
+            grammar_id TEXT
+        );
+
+        CREATE TABLE IF NOT EXISTS expressions (
+            id TEXT PRIMARY KEY,
+            text TEXT,
+            reading TEXT,
+            meanings_json TEXT,
+            common INTEGER,
+            jlpt TEXT
+        );
+
+        CREATE TABLE IF NOT EXISTS conjugations (
+            dictionary_form TEXT,
+            reading TEXT,
+            class TEXT,
+            forms_json TEXT,
+            display_forms_json TEXT
+        );
+
+        CREATE TABLE IF NOT EXISTS jlpt_classifications (
+            kind TEXT,
+            level TEXT,
+            jmdict_seq TEXT,
+            grammar_id TEXT,
+            text TEXT,
+            reading TEXT
+        );
+
         -- Indexes for common queries
         CREATE INDEX IF NOT EXISTS idx_words_jlpt ON words(jlpt);
         CREATE INDEX IF NOT EXISTS idx_words_kanji ON words(kanji_primary);
@@ -144,6 +175,13 @@ def _create_schema(conn: sqlite3.Connection) -> None:
         CREATE INDEX IF NOT EXISTS idx_k2s_kanji ON kanji_to_sentences(kanji);
         CREATE INDEX IF NOT EXISTS idx_r2k_radical ON radical_to_kanji(radical);
         CREATE INDEX IF NOT EXISTS idx_r2w_reading ON reading_to_words(reading);
+        CREATE INDEX IF NOT EXISTS idx_w2g_word ON word_to_grammar(word_id);
+        CREATE INDEX IF NOT EXISTS idx_exp_text ON expressions(text);
+        CREATE INDEX IF NOT EXISTS idx_exp_jlpt ON expressions(jlpt);
+        CREATE INDEX IF NOT EXISTS idx_conj_form ON conjugations(dictionary_form);
+        CREATE INDEX IF NOT EXISTS idx_conj_class ON conjugations(class);
+        CREATE INDEX IF NOT EXISTS idx_jlpt_level ON jlpt_classifications(level);
+        CREATE INDEX IF NOT EXISTS idx_jlpt_kind ON jlpt_classifications(kind);
     """)
 
 
@@ -305,6 +343,41 @@ def export() -> None:
         conn.executemany("INSERT INTO furigana VALUES (?,?,?)", rows)
         print(f"[sqlite]   furigana: {len(rows):,}")
 
+    # Expressions
+    expr_data = _load_json(DATA_DIR / "grammar" / "expressions.json")
+    if expr_data:
+        rows = [
+            (e.get("id", ""), e.get("text", ""), e.get("reading", ""),
+             json.dumps(e.get("meanings", []), ensure_ascii=False),
+             1 if e.get("common") else 0, e.get("jlpt_waller"))
+            for e in expr_data.get("expressions", [])
+        ]
+        conn.executemany("INSERT OR IGNORE INTO expressions VALUES (?,?,?,?,?,?)", rows)
+        print(f"[sqlite]   expressions: {len(rows):,}")
+
+    # Conjugations
+    conj_data = _load_json(DATA_DIR / "grammar" / "conjugations.json")
+    if conj_data:
+        rows = [
+            (e.get("dictionary_form", ""), e.get("reading", ""), e.get("class", ""),
+             json.dumps(e.get("forms", {}), ensure_ascii=False),
+             json.dumps(e.get("display_forms", {}), ensure_ascii=False))
+            for e in conj_data.get("entries", [])
+        ]
+        conn.executemany("INSERT INTO conjugations VALUES (?,?,?,?,?)", rows)
+        print(f"[sqlite]   conjugations: {len(rows):,}")
+
+    # JLPT classifications
+    jlpt_data = _load_json(DATA_DIR / "enrichment" / "jlpt-classifications.json")
+    if jlpt_data:
+        rows = [
+            (e.get("kind", ""), e.get("level", ""), e.get("jmdict_seq", ""),
+             e.get("grammar_id", ""), e.get("text", ""), e.get("reading", ""))
+            for e in jlpt_data.get("classifications", [])
+        ]
+        conn.executemany("INSERT INTO jlpt_classifications VALUES (?,?,?,?,?,?)", rows)
+        print(f"[sqlite]   jlpt classifications: {len(rows):,}")
+
     # Cross-references
     for fname, table in [
         ("kanji-to-words.json", "kanji_to_words"),
@@ -312,6 +385,7 @@ def export() -> None:
         ("kanji-to-sentences.json", "kanji_to_sentences"),
         ("radical-to-kanji.json", "radical_to_kanji"),
         ("reading-to-words.json", "reading_to_words"),
+        ("word-to-grammar.json", "word_to_grammar"),
     ]:
         xref_data = _load_json(DATA_DIR / "cross-refs" / fname)
         if xref_data:

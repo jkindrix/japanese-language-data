@@ -51,7 +51,7 @@ STAGE_DEPENDENCIES: dict[str, set[str]] = {
     "words": {"jlpt"},
     "stroke_order": {"kanji"},
     "expressions": {"jlpt"},
-    "cross_links": {"kanji", "words", "radicals", "sentences"},
+    "cross_links": {"kanji", "words", "radicals", "sentences", "grammar"},
     "frequency_subtitles": {"words"},
     "grammar": {"sentences"},
 }
@@ -154,11 +154,11 @@ def _build_stages() -> list[Stage]:
         Stage("stroke_order", "Stroke order SVGs from KanjiVG (filtered to characters in kanji.json).", stroke_order.build, phase=2),
         # ---- Enrichment that depends on core data ----
         Stage("frequency_subtitles", "Word frequency from OpenSubtitles 2018 media corpus.", frequency_subtitles.build, phase=4),
-        # ---- Cross-references (depend on core + enrichment data) ----
-        Stage("cross_links", "Generate all cross-reference files.", cross_links.build, phase=2),
-        # ---- Grammar (Phase 3 — original contribution + derivatives) ----
+        # ---- Grammar (Phase 3 — must run before cross_links for word-to-grammar index) ----
         Stage("grammar", "Curated Japanese grammar dataset (original, from grammar-curated/).", grammar.build, phase=3),
         Stage("expressions", "Lexicalized grammar patterns extracted from JMdict 'exp' entries.", expressions.build, phase=3),
+        # ---- Cross-references (depend on core + enrichment + grammar data) ----
+        Stage("cross_links", "Generate all cross-reference files.", cross_links.build, phase=2),
         # ---- Names (optional, any phase) ----
         Stage("names", "Proper nouns from JMnedict (optional build target).", names.build, phase=1),
     ]
