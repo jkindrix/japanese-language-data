@@ -16,6 +16,50 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+## [0.7.0] — 2026-04-12
+
+**All five JLPT levels reach community-standard completeness.** After Batches B9 + B10 + B11 + B12 the grammar dataset stands at **579 entries** across all levels:
+- **N5**: 60 (community standard: ~80; close, may get a final fill in the future)
+- **N4**: 91 (community standard: ~80-100; complete)
+- **N3**: 139 (community standard: ~140-160; complete)
+- **N2**: 150 (community standard: ~150-180; complete)
+- **N1**: 139 (community standard: ~140-160; complete)
+
+**Coverage: 83–116% of the 500–700 community-standard target.** Entry count crosses the 500-entry lower bound and is well within the target band. This is the first release where all five JLPT levels are represented.
+
+### Added (Batch B12)
+
+- **N1 batch 4** — 30 more hand-curated N1 entries appended to `grammar-curated/n1.json`: こともあろうに, 〜には及ばない, 〜に即して, 〜と相まって, 〜たらきりがない, 〜(た)が最後, 〜この上ない, 〜とされる, 〜とおぼしい, 〜を引き合いに, あろうことか, 〜こそあれ, 〜あろうとも, 〜ぐるみ, いっこうに〜ない, 〜になぞらえて, 〜抜きで, 当の + N, 〜を極める, 〜とは裏腹に, ひいては, 〜のよしみで, 〜ながらも, ただでさえ, あしからず, 〜まんざら〜でもない, 〜ですら, 〜を尻目に, 〜ことながら, 〜ざるを得ない.
+- Grammar total: 549 → **579** (+30). N1: 109 → **139**.
+- `data/enrichment/jlpt-classifications.json`: 11,053 → **11,083**.
+- Three self-caught broken `related` references during initial builds (zenzen-not-at-all, sore-de, mo-mo-already), all resolved to existing IDs before commit.
+
+### Milestone
+
+**v0.7.0** marks the completion of all five JLPT levels at community-standard coverage. The grammar dataset grew from **81 entries** (v0.4.1 baseline) to **579 entries** over 12 batches (B1-B12) of hand-curated content. Every entry remains `review_status: "draft"` — zero native-speaker reviewers engaged. This is the dataset's content milestone; the next critical phase is native-speaker review.
+
+Honest limitations (unchanged from v0.5.0 and v0.6.0):
+- **Zero native-speaker reviewers engaged.** Everything is `draft`. Native-speaker review is the most important remaining work before these entries can be called authoritative.
+- **Level assignments are community-consensus judgments**, not JLPT-official. Individual patterns may shift levels under review.
+- **N5 is at 60 entries** (slightly below the typical ~80 community standard). A small future fill could round this out.
+- **N1 patterns have higher nuance uncertainty** than lower levels; training-derived knowledge is less reliable at N1 for subtle distinctions. Classical / archaic patterns especially benefit from native review.
+- **Example sentences are all `source: "original"`** — no Tatoeba cross-linking has been attempted since v0.3.2. A text-match pass could populate `sentence_id` for exact matches.
+
+### Dataset-level summary (v0.4.1 → v0.7.0)
+
+| Level | v0.4.1 | v0.7.0 | Δ |
+|---|---:|---:|---:|
+| N5 | 50 | 60 | +10 |
+| N4 | 31 | 91 | +60 |
+| N3 | 0 | 139 | +139 |
+| N2 | 0 | 150 | +150 |
+| N1 | 0 | 139 | +139 |
+| **Total** | **81** | **579** | **+498** |
+
+Total JLPT classifications in `data/enrichment/jlpt-classifications.json`: 10,585 → **11,083** (+498 grammar classifications).
+
+---
+
 ### Added (Batch B11)
 
 - **N1 batch 3** — 30 more hand-curated N1 entries appended to `grammar-curated/n1.json`: 〜かたがた, 〜んとする, 〜に相違ない, 〜(が)ゆえの, 〜とあっては, 〜に関わる, 〜ものを, 〜と見なす, 〜ではあるまいか, 〜ようかと思う, 〜恐れがある, 〜ほかならぬ, 〜ほどではない, 〜に飽き足らず, 〜べくして, 〜たるゆえん, いやしくも, 〜んとばかりに, 〜かと思うと, 〜さながら, 〜であったとしても, 〜のみ, いわば, 〜も構わず, しかも, 〜ばかりの, 〜を目の当たりにする, 及ばずながら, 〜なくてなんであろう, 〜に当たる.

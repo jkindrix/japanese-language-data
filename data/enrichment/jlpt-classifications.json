@@ -6,7 +6,7 @@
     "source_version_vocab": "stephenmk/yomitan-jlpt-vocab main (pinned via SHA256)",
     "source_version_kanji": "davidluzgouveia/kanji-data master (pinned via SHA256)",
     "generated": "2026-04-12",
-    "count": 11053,
+    "count": 11083,
     "counts_by_kind_and_level": {
       "vocab_N5": 684,
       "vocab_N4": 640,
@@ -22,7 +22,7 @@
       "grammar_N4": 91,
       "grammar_N3": 139,
       "grammar_N2": 150,
-      "grammar_N1": 109
+      "grammar_N1": 139
     },
     "attribution": "JLPT classifications adapted from Jonathan Waller's JLPT Resources at http://www.tanos.co.uk/jlpt/ under CC-BY. Vocabulary data distributed via stephenmk/yomitan-jlpt-vocab (CC-BY-SA 4.0). Kanji classifications extracted from davidluzgouveia/kanji-data (code MIT, Waller data CC-BY). Only the jlpt_new field was used from davidluzgouveia; WaniKani-derived fields were deliberately ignored due to incompatible license.",
     "disclaimer": "These classifications are community-reverse-engineered from past JLPT test questions and are NOT JLPT-official. JLPT stopped publishing official vocabulary lists in 2010. Edge cases between levels are particularly uncertain; some entries are disputed in the community. Treat these as the best available community consensus, not canonical truth.",
@@ -93342,6 +93342,276 @@
       "level": "N1",
       "meaning_en": "correspond to / be equivalent to / fall on (a day)",
       "grammar_id": "ni-ataru-correspond",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "こともあろうに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "of all things / unbelievably / of all places",
+      "grammar_id": "koto-mo-arou-ni",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V dict / noun + には及ばない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "no need to / not necessary to / not up to",
+      "grammar_id": "ni-wa-oyoba-nai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + に即して / に即した",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "in accordance with / based on / in line with",
+      "grammar_id": "ni-soku-shite",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + と相まって",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "combined with / together with (producing X effect)",
+      "grammar_id": "to-aimatte",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V-たら + きりがない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "there's no end to / (if you list X) it would be endless",
+      "grammar_id": "tara-kiri-ga-nai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V-たら / V dict + が最後",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "once X (happens), that's the end / if X, nothing can stop what follows",
+      "grammar_id": "ga-sai-go",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "i-adj / na-adj + この上ない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "utmost / supreme / nothing could be more",
+      "grammar_id": "no-ue-nai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Plain form + とされる / とされている",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "is considered / is said to be",
+      "grammar_id": "to-sareru",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Plain form + とおぼしい / とおぼしき",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "seems to be / presumed to be",
+      "grammar_id": "to-oboshii",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + を引き合いに (出して)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "citing as an example / drawing a comparison to",
+      "grammar_id": "wo-hikiai-ni",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "あろうことか (sentence-initial)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "unbelievably / of all things / to make matters worse",
+      "grammar_id": "aro-u-koto-ka",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Plain form / noun + こそあれ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "although having / although X is the case",
+      "grammar_id": "koso-are",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V volitional + とも / あろうとも",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "no matter what / whatever happens",
+      "grammar_id": "aro-u-tomo",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + ぐるみ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "whole / entire / collectively (including X)",
+      "grammar_id": "gurumi",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "いっこうに + V 〜ない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "not at all / not in the slightest",
+      "grammar_id": "ikkou-ni-nai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + になぞらえて",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "likening to / comparing to (metaphorically)",
+      "grammar_id": "ni-nazoraete",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + 抜きで / 抜きでは / 抜きに",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "without (X) / leaving out",
+      "grammar_id": "nuki-de",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "当の + noun",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "the very (person/thing) in question / the X in question",
+      "grammar_id": "tou-no",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + を極める",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "reach the extreme of / master / be in the height of",
+      "grammar_id": "wo-kiwameru",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun / plain form + とは裏腹に",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "contrary to / in contrast to (expectation vs reality)",
+      "grammar_id": "to-wa-urahara-ni",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "ひいては (sentence-initial / mid-sentence)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "by extension / ultimately / eventually",
+      "grammar_id": "hiite-wa",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + のよしみで",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "for the sake of / by virtue of the connection",
+      "grammar_id": "yoshi-mi",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V ます-stem / i-adj / noun + ながらも",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "although / even while / despite",
+      "grammar_id": "nagara-mo",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "ただでさえ",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "even normally / already (in an unmodified state)",
+      "grammar_id": "tada-de-sae",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "あしからず (sentence-final)",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "please don't take it wrong / please excuse (refusal)",
+      "grammar_id": "ashikara-zu",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "まんざら + plain form + でもない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "not entirely / not completely (negation hedged)",
+      "grammar_id": "manzara-de-mo-nai",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + ですら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "even (literary variant of さえ)",
+      "grammar_id": "desura",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + を尻目に",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "flippantly ignoring / with casual disregard",
+      "grammar_id": "wo-shirime-ni",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "Noun + の + こと + ながら",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "as usual / as expected / as one would expect",
+      "grammar_id": "koto-nagara",
+      "source_retrieved": "2026-04-12"
+    },
+    {
+      "text": "V negative stem + ざるを得ない",
+      "reading": null,
+      "kind": "grammar",
+      "level": "N1",
+      "meaning_en": "cannot help but / have no choice but to",
+      "grammar_id": "zaru-wo-enai",
       "source_retrieved": "2026-04-12"
     },
     {

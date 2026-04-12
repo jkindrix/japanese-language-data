@@ -3,23 +3,23 @@
     "source": "Hand-curated (project original) — see grammar-curated/ for input files",
     "license": "CC-BY-SA 4.0",
     "generated": "2026-04-12",
-    "count": 549,
+    "count": 579,
     "by_level": {
-      "N1": 109,
+      "N1": 139,
       "N2": 150,
       "N3": 139,
       "N4": 91,
       "N5": 60
     },
     "review_coverage": {
-      "draft": 549,
+      "draft": 579,
       "community_reviewed": 0,
       "native_speaker_reviewed": 0
     },
     "tatoeba_linkage": {
-      "total_examples": 1584,
+      "total_examples": 1674,
       "linked_examples": 3,
-      "link_rate_pct": 0.19,
+      "link_rate_pct": 0.18,
       "method": "exact text match against data/corpus/sentences.json"
     },
     "authorship_statement": "All grammar explanations are written in our own words based on general, well-known, non-copyrightable facts about Japanese grammar. We do not copy from Tae Kim's Guide to Japanese (CC-BY-NC-SA, license incompatible with our CC-BY-SA 4.0 output), Dictionary of Basic Japanese Grammar, Handbook of Japanese Grammar Patterns, or any other copyrighted source. Every entry is marked review_status=draft and awaits native-speaker review. See docs/contributing.md for the call to native-speaker reviewers.",
@@ -4481,6 +4481,1224 @@
         {
           "japanese": "1ドルは約110円に当たる。",
           "english": "One dollar corresponds to about 110 yen.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "koto-mo-arou-ni",
+      "pattern": "こともあろうに",
+      "level": "N1",
+      "meaning_en": "of all things / unbelievably / of all places",
+      "meaning_detailed": "こともあろうに is a fixed literary expression meaning 'of all things' — used to express disbelief or strong criticism at the choice of something particularly inappropriate or unexpected. Often precedes a noun or action. Formal / literary register, typical of narratives and editorials.",
+      "formation": "こともあろうに + noun / main clause.",
+      "formation_notes": [
+        "Disbelief / criticism — 'of all things, they chose X'.",
+        "Literary fixed phrase — rare in casual speech.",
+        "Often with surprising negative choices.",
+        "Formal / dramatic register."
+      ],
+      "formality": "formal",
+      "related": [
+        "tomo-arou",
+        "aro-u-koto-ka"
+      ],
+      "examples": [
+        {
+          "japanese": "こともあろうに、父の誕生日を忘れてしまった。",
+          "english": "Of all things, I forgot my father's birthday.",
+          "source": "original"
+        },
+        {
+          "japanese": "こともあろうに、彼はそこで転んだ。",
+          "english": "Of all places, he fell there.",
+          "source": "original"
+        },
+        {
+          "japanese": "こともあろうに、大事な会議に遅刻した。",
+          "english": "Of all things, I was late to an important meeting.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "ni-wa-oyoba-nai",
+      "pattern": "V dict / noun + には及ばない",
+      "level": "N1",
+      "meaning_en": "no need to / not necessary to / not up to",
+      "meaning_detailed": "〜には及ばない has two senses: (1) 'no need to X' — often in polite dismissal (心配には及びません 'there's no need to worry'); (2) 'does not measure up to / cannot match' — comparing abilities or qualities. Formal / polite register.",
+      "formation": "V dict / noun + には及ばない.",
+      "formation_notes": [
+        "Two senses — 'no need to' (dismissive) and 'cannot match' (comparative).",
+        "Common fixed phrase: 心配には及びません ('no need to worry').",
+        "Comparative: 彼の実力には及ばない ('I can't match his ability').",
+        "Formal / polite register."
+      ],
+      "formality": "formal",
+      "related": [
+        "made-mo-nai",
+        "ni-tari-nai"
+      ],
+      "examples": [
+        {
+          "japanese": "ご心配には及びません。",
+          "english": "There's no need for concern.",
+          "source": "original"
+        },
+        {
+          "japanese": "お礼を言うには及ばない。",
+          "english": "No need to thank me.",
+          "source": "original"
+        },
+        {
+          "japanese": "私の実力は彼には及ばない。",
+          "english": "My ability doesn't match his.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "ni-soku-shite",
+      "pattern": "Noun + に即して / に即した",
+      "level": "N1",
+      "meaning_en": "in accordance with / based on / in line with",
+      "meaning_detailed": "〜に即して expresses 'in accordance with / based on' — typically with facts, reality, rules, or needs. Formal / literary register, common in policy, legal, and analytical contexts. The attributive form に即した + noun is productive. Close in meaning to 〜に基づいて but with a more 'fitting the situation' flavor.",
+      "formation": "Noun + に即して (adverbial); noun + に即した + noun (attributive).",
+      "formation_notes": [
+        "Formal 'in accordance with / fitting X'.",
+        "Common with 事実, 現実, 状況, 実情.",
+        "Related: 〜に基づいて (based on, more general).",
+        "Formal / policy register."
+      ],
+      "formality": "formal",
+      "related": [
+        "ni-shitagatte",
+        "doori-just-as",
+        "wo-motoni-based-on"
+      ],
+      "examples": [
+        {
+          "japanese": "現実に即した対策が必要だ。",
+          "english": "We need countermeasures in line with reality.",
+          "source": "original"
+        },
+        {
+          "japanese": "事実に即して話してください。",
+          "english": "Please speak in accordance with the facts.",
+          "source": "original"
+        },
+        {
+          "japanese": "状況に即した判断を下した。",
+          "english": "We made a judgment in line with the situation.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "to-aimatte",
+      "pattern": "Noun + と相まって",
+      "level": "N1",
+      "meaning_en": "combined with / together with (producing X effect)",
+      "meaning_detailed": "〜と相まって expresses that two factors work together to produce a combined effect — 'X combined with Y, producing Z'. Literary / formal register. Common in descriptive narratives and analyses where the combination is synergistic or noteworthy. The verb 相まる means 'to intertwine / combine'.",
+      "formation": "Noun + と相まって.",
+      "formation_notes": [
+        "Synergistic combination — factors working together.",
+        "Common in descriptions: 自然と相まって ('combined with nature'), 天候と相まって ('combined with the weather').",
+        "Literary / formal register.",
+        "Main clause describes the combined effect or result."
+      ],
+      "formality": "formal",
+      "related": [
+        "to-tomoni-together",
+        "ni-tomonatte-accompany",
+        "wo-kanete"
+      ],
+      "examples": [
+        {
+          "japanese": "美しい景色と相まって、素晴らしい体験だった。",
+          "english": "Combined with the beautiful scenery, it was a wonderful experience.",
+          "source": "original"
+        },
+        {
+          "japanese": "努力と才能が相まって、成功を収めた。",
+          "english": "Effort combined with talent, he achieved success.",
+          "source": "original"
+        },
+        {
+          "japanese": "天候と相まって、売上が伸びた。",
+          "english": "Combined with the weather, sales grew.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "tara-kiri-ga-nai",
+      "pattern": "V-たら + きりがない",
+      "level": "N1",
+      "meaning_en": "there's no end to / (if you list X) it would be endless",
+      "meaning_detailed": "〜たらきりがない expresses that there is no end / no limit to X if one were to continue — 'there's no end to listing / doing X'. Often used when the speaker wants to stop listing or discussing because the list would be endless. Conversational register.",
+      "formation": "V-たら + きりがない (fixed conditional).",
+      "formation_notes": [
+        "Endless list / action — 'could go on forever'.",
+        "Common fixed phrase: 〜を挙げたらきりがない ('the list would be endless').",
+        "Conversational / neutral register.",
+        "Often paired with topics of abundance or complaint."
+      ],
+      "formality": "neutral",
+      "related": [
+        "kagiri-as-long-as",
+        "hodo-extent"
+      ],
+      "examples": [
+        {
+          "japanese": "欠点を挙げたらきりがない。",
+          "english": "If you list the flaws, there's no end.",
+          "source": "original"
+        },
+        {
+          "japanese": "言いたいことを言ったらきりがない。",
+          "english": "If I said everything I wanted, there'd be no end.",
+          "source": "original"
+        },
+        {
+          "japanese": "考えだしたらきりがない。",
+          "english": "Once you start thinking about it, there's no end.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "ga-sai-go",
+      "pattern": "V-たら / V dict + が最後",
+      "level": "N1",
+      "meaning_en": "once X (happens), that's the end / if X, nothing can stop what follows",
+      "meaning_detailed": "〜が最後 / 〜たら最後 expresses that once X happens, there is no turning back — the consequence in the main clause is inevitable and usually undesirable. Literary register, common in warnings and dramatic declarations.",
+      "formation": "V-た + が最後; V-たら + 最後.",
+      "formation_notes": [
+        "Point of no return — once X, the consequence follows inevitably.",
+        "Literary / dramatic register.",
+        "Main clause typically negative or warning.",
+        "Related to 〜ばそれまで (similar idea)."
+      ],
+      "formality": "formal",
+      "related": [
+        "ba-sore-made",
+        "to-tan-moment",
+        "hitotabi"
+      ],
+      "examples": [
+        {
+          "japanese": "彼は寝たが最後、朝まで起きない。",
+          "english": "Once he falls asleep, he won't wake until morning.",
+          "source": "original"
+        },
+        {
+          "japanese": "言ってしまったら最後、もう戻れない。",
+          "english": "Once you say it, there's no going back.",
+          "source": "original"
+        },
+        {
+          "japanese": "始めたが最後、最後までやり遂げるつもりだ。",
+          "english": "Once I've started, I intend to see it through.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "no-ue-nai",
+      "pattern": "i-adj / na-adj + この上ない",
+      "level": "N1",
+      "meaning_en": "utmost / supreme / nothing could be more",
+      "meaning_detailed": "〜この上ない is a literary expression meaning 'nothing above this' — expressing that something is at the utmost degree. Often attached to positive qualities: 幸せこの上ない ('nothing more fortunate'), 光栄この上ない ('the utmost honor'). Very formal / literary register.",
+      "formation": "i-adj / na-adj + この上ない. For nouns: noun + この上ない.",
+      "formation_notes": [
+        "Literary superlative — 'utmost / supreme'.",
+        "Often with positive / honorific qualities: 幸せ, 光栄, 喜び.",
+        "Very formal / literary register.",
+        "Related to 〜の極み / 〜の至り."
+      ],
+      "formality": "formal",
+      "related": [
+        "no-itari",
+        "no-kiwami",
+        "kagiri-da-emotional"
+      ],
+      "examples": [
+        {
+          "japanese": "お会いできて光栄この上ない。",
+          "english": "To meet you is the utmost honor.",
+          "source": "original"
+        },
+        {
+          "japanese": "幸せこの上ない人生だ。",
+          "english": "Nothing could make my life more fortunate.",
+          "source": "original"
+        },
+        {
+          "japanese": "彼と結婚できるなんて、嬉しいこの上ない。",
+          "english": "To be able to marry him — I couldn't be happier.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "to-sareru",
+      "pattern": "Plain form + とされる / とされている",
+      "level": "N1",
+      "meaning_en": "is considered / is said to be",
+      "meaning_detailed": "〜とされる is a formal passive expression meaning 'is considered / regarded as'. Common in academic writing, news, and official statements — it presents X as a widely-held view without specifying who holds it. The progressive とされている emphasizes ongoing / current consensus.",
+      "formation": "Plain-form clause / noun + とされる / とされている.",
+      "formation_notes": [
+        "Passive / impersonal 'is regarded as'.",
+        "Common in academic and formal writing.",
+        "The progressive とされている emphasizes current consensus.",
+        "Related to 〜と見なす (actively regard as) — とされる is the passive form."
+      ],
+      "formality": "formal",
+      "related": [
+        "to-minasu",
+        "to-iu-koto-da",
+        "rashii-seems"
+      ],
+      "examples": [
+        {
+          "japanese": "彼は天才とされている。",
+          "english": "He is considered a genius.",
+          "source": "original"
+        },
+        {
+          "japanese": "この薬は安全だとされている。",
+          "english": "This medicine is considered safe.",
+          "source": "original"
+        },
+        {
+          "japanese": "事故の原因は運転ミスとされた。",
+          "english": "The cause of the accident was deemed driver error.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "to-oboshii",
+      "pattern": "Plain form + とおぼしい / とおぼしき",
+      "level": "N1",
+      "meaning_en": "seems to be / presumed to be",
+      "meaning_detailed": "〜とおぼしい is a literary / archaic evidential meaning 'seems to be' or 'presumed to be'. The attributive form とおぼしき + noun is common in narrative descriptions where the speaker is guessing identity or nature. Very literary register, rare in casual speech.",
+      "formation": "Plain form / noun + とおぼしい; attributive: とおぼしき + noun.",
+      "formation_notes": [
+        "Literary evidential — 'seems / presumed'.",
+        "The attributive form とおぼしき is most common.",
+        "Very literary / classical register.",
+        "Common in narrative descriptions of strangers or ambiguous scenes."
+      ],
+      "formality": "formal",
+      "related": [
+        "rashii-seems",
+        "you-da-appearance",
+        "to-mieru"
+      ],
+      "examples": [
+        {
+          "japanese": "犯人とおぼしき男が現場から逃げた。",
+          "english": "A man presumed to be the culprit fled the scene.",
+          "source": "original"
+        },
+        {
+          "japanese": "記者とおぼしき人々が集まっていた。",
+          "english": "People apparently journalists were gathered.",
+          "source": "original"
+        },
+        {
+          "japanese": "外国人とおぼしき観光客がいた。",
+          "english": "There was a tourist who seemed to be a foreigner.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "wo-hikiai-ni",
+      "pattern": "Noun + を引き合いに (出して)",
+      "level": "N1",
+      "meaning_en": "citing as an example / drawing a comparison to",
+      "meaning_detailed": "〜を引き合いに(出して) expresses 'citing X as an example' — using X as a point of comparison or evidence in an argument. Formal / literary register, common in discussions and arguments. 引き合い literally means 'pulling together' or 'reference'.",
+      "formation": "Noun + を引き合いに(出して).",
+      "formation_notes": [
+        "Using X as comparison / example in argument.",
+        "Formal / literary register.",
+        "The longer form 〜を引き合いに出して emphasizes the act of citing.",
+        "Common in academic and argumentative contexts."
+      ],
+      "formality": "formal",
+      "related": [
+        "wo-motoni-based-on",
+        "wo-tsuujite-through"
+      ],
+      "examples": [
+        {
+          "japanese": "彼は歴史を引き合いに出して説明した。",
+          "english": "He explained by citing history as an example.",
+          "source": "original"
+        },
+        {
+          "japanese": "他国を引き合いに、日本の問題を論じた。",
+          "english": "Citing other countries, he discussed Japan's problems.",
+          "source": "original"
+        },
+        {
+          "japanese": "過去の事例を引き合いに出して、反論した。",
+          "english": "He argued back by citing past cases.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "aro-u-koto-ka",
+      "pattern": "あろうことか (sentence-initial)",
+      "level": "N1",
+      "meaning_en": "unbelievably / of all things / to make matters worse",
+      "meaning_detailed": "あろうことか is a literary exclamation expressing shock and criticism — 'unbelievably' / 'of all things'. Used sentence-initially to emphasize the unexpected or outrageous nature of what follows. Similar in function to こともあろうに. Literary / dramatic register.",
+      "formation": "あろうことか + [sentence describing shocking event].",
+      "formation_notes": [
+        "Expression of shock / disbelief.",
+        "Similar to こともあろうに.",
+        "Literary / dramatic register — common in narratives and editorials.",
+        "Main clause describes an unexpected negative event."
+      ],
+      "formality": "formal",
+      "related": [
+        "koto-mo-arou-ni",
+        "tomo-arou",
+        "nan-te-how"
+      ],
+      "examples": [
+        {
+          "japanese": "あろうことか、彼は約束を破った。",
+          "english": "Unbelievably, he broke his promise.",
+          "source": "original"
+        },
+        {
+          "japanese": "あろうことか、先生が生徒に手を出した。",
+          "english": "Of all things, the teacher struck a student.",
+          "source": "original"
+        },
+        {
+          "japanese": "あろうことか、重要な書類をなくした。",
+          "english": "Unbelievably, I lost the important documents.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "koso-are",
+      "pattern": "Plain form / noun + こそあれ",
+      "level": "N1",
+      "meaning_en": "although having / although X is the case",
+      "meaning_detailed": "〜こそあれ is a literary concessive meaning 'although X is the case' — conceding a point before presenting a contrasting main clause. Combines the emphatic こそ with the literary verb あれ (imperative 'be'). Very literary / archaic register, rare in casual speech.",
+      "formation": "Noun / plain form + こそあれ.",
+      "formation_notes": [
+        "Literary / archaic concessive — 'although X, Y'.",
+        "Very formal — rare in casual speech.",
+        "Related to こそ (emphasis) + あれ (classical imperative).",
+        "Common in essays and literary prose."
+      ],
+      "formality": "formal",
+      "related": [
+        "to-wa-ie",
+        "to-iedomo",
+        "koso-precisely"
+      ],
+      "examples": [
+        {
+          "japanese": "違いこそあれ、目的は同じだ。",
+          "english": "Although there are differences, the goal is the same.",
+          "source": "original"
+        },
+        {
+          "japanese": "困難こそあれ、諦めない。",
+          "english": "Although there are difficulties, I won't give up.",
+          "source": "original"
+        },
+        {
+          "japanese": "程度の差こそあれ、みんな同じ問題を抱えている。",
+          "english": "Although to varying degrees, everyone has the same problem.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "aro-u-tomo",
+      "pattern": "V volitional + とも / あろうとも",
+      "level": "N1",
+      "meaning_en": "no matter what / whatever happens",
+      "meaning_detailed": "〜あろうとも (and the broader 〜うとも pattern) is a literary concessive meaning 'whatever X may be' / 'no matter what'. Very emphatic, used to declare resolve regardless of circumstances. Literary / dramatic register, common in speeches and formal declarations.",
+      "formation": "V volitional + とも. Common: あろうとも, あるいは どうあろうとも.",
+      "formation_notes": [
+        "Literary concessive — 'whatever may be / no matter what'.",
+        "Common fixed phrase: どうあろうとも ('no matter how things are').",
+        "Related to 〜うと (N2, same meaning).",
+        "Literary / dramatic register."
+      ],
+      "formality": "formal",
+      "related": [
+        "you-to-regardless",
+        "you-to-mai-to",
+        "v-temo-even-if"
+      ],
+      "examples": [
+        {
+          "japanese": "どうあろうとも、私は自分の道を歩む。",
+          "english": "Whatever may happen, I will walk my own path.",
+          "source": "original"
+        },
+        {
+          "japanese": "何があろうとも、諦めない。",
+          "english": "Whatever happens, I won't give up.",
+          "source": "original"
+        },
+        {
+          "japanese": "困難があろうとも、乗り越えてみせる。",
+          "english": "Whatever difficulties, I will overcome them.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "gurumi",
+      "pattern": "Noun + ぐるみ",
+      "level": "N1",
+      "meaning_en": "whole / entire / collectively (including X)",
+      "meaning_detailed": "〜ぐるみ expresses 'entire X' or 'the whole X together' — typically with group or collective nouns: 家族ぐるみ ('the whole family / as a family unit'), 地域ぐるみ ('community-wide'). Formal / somewhat literary register, common in collective-action descriptions.",
+      "formation": "Noun + ぐるみ. Limited productivity — mostly with group nouns.",
+      "formation_notes": [
+        "Collective / entire — typically with group or body nouns.",
+        "Common: 家族ぐるみ, 地域ぐるみ, 会社ぐるみ, 町ぐるみ, 身ぐるみ.",
+        "Formal / neutral register.",
+        "Limited productivity — fixed collocations."
+      ],
+      "formality": "neutral",
+      "related": [
+        "issho-ni-together",
+        "wa-mochiron"
+      ],
+      "examples": [
+        {
+          "japanese": "家族ぐるみで付き合っている。",
+          "english": "We interact as whole families (family to family).",
+          "source": "original"
+        },
+        {
+          "japanese": "地域ぐるみで、この問題に取り組んでいる。",
+          "english": "The whole community is working on this problem.",
+          "source": "original"
+        },
+        {
+          "japanese": "会社ぐるみで不正をしていた。",
+          "english": "The whole company was involved in the fraud.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "ikkou-ni-nai",
+      "pattern": "いっこうに + V 〜ない",
+      "level": "N1",
+      "meaning_en": "not at all / not in the slightest",
+      "meaning_detailed": "いっこうに is a literary adverb meaning 'not at all' when paired with a negative predicate. Expresses emphatic lack of progress or change — 'there's no improvement whatsoever'. Formal / literary register, common in complaints and analyses.",
+      "formation": "いっこうに + V ない / adjective ない.",
+      "formation_notes": [
+        "Literary intensifier for negation — 'not at all'.",
+        "Common with verbs of change: 変わらない, 進まない, 治らない.",
+        "Formal / literary register.",
+        "Always followed by a negative predicate."
+      ],
+      "formality": "formal",
+      "related": [
+        "mo-nan-tomo-nai"
+      ],
+      "examples": [
+        {
+          "japanese": "状況はいっこうに改善しない。",
+          "english": "The situation doesn't improve at all.",
+          "source": "original"
+        },
+        {
+          "japanese": "何度言ってもいっこうに変わらない。",
+          "english": "No matter how many times I say it, nothing changes at all.",
+          "source": "original"
+        },
+        {
+          "japanese": "薬を飲んでも、いっこうに効かない。",
+          "english": "Even taking the medicine, it has no effect at all.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "ni-nazoraete",
+      "pattern": "Noun + になぞらえて",
+      "level": "N1",
+      "meaning_en": "likening to / comparing to (metaphorically)",
+      "meaning_detailed": "〜になぞらえて expresses that the main-clause subject is metaphorically likened to X — 'likening to X' / 'compared to X'. Common in descriptive and metaphorical writing. The verb なぞらえる means 'to liken / imitate'. Literary / formal register.",
+      "formation": "Noun + になぞらえて.",
+      "formation_notes": [
+        "Metaphorical comparison — likening one thing to another.",
+        "Common in descriptive prose and poetry.",
+        "Literary / formal register.",
+        "Related: 〜になぞらえた + noun (attributive)."
+      ],
+      "formality": "formal",
+      "related": [
+        "sanagara",
+        "mitai-looks-like",
+        "gotoku-as-if"
+      ],
+      "examples": [
+        {
+          "japanese": "人生を旅になぞらえて表現した。",
+          "english": "He expressed life by comparing it to a journey.",
+          "source": "original"
+        },
+        {
+          "japanese": "恋を花になぞらえた詩だ。",
+          "english": "It's a poem that likens love to a flower.",
+          "source": "original"
+        },
+        {
+          "japanese": "時の流れを川になぞらえている。",
+          "english": "He likens the flow of time to a river.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "nuki-de",
+      "pattern": "Noun + 抜きで / 抜きでは / 抜きに",
+      "level": "N1",
+      "meaning_en": "without (X) / leaving out",
+      "meaning_detailed": "〜抜きで expresses 'without X' — excluding or omitting something. Often used in food (preferences: ワサビ抜きで 'without wasabi') and in excluding something from consideration. Neutral / conversational register, widely used.",
+      "formation": "Noun + 抜きで / 抜きに / 抜きでは / 抜きにして.",
+      "formation_notes": [
+        "Exclusion / omission — 'without X'.",
+        "Common in food preferences: ワサビ抜き, ピーマン抜き.",
+        "Also in analysis: 冗談抜きで ('joking aside'), 理屈抜きに ('without reasoning').",
+        "Neutral / conversational register."
+      ],
+      "formality": "neutral",
+      "related": [
+        "nashi-ni-without",
+        "zu-ni",
+        "igai-other-than"
+      ],
+      "examples": [
+        {
+          "japanese": "ワサビ抜きで、お願いします。",
+          "english": "Without wasabi, please.",
+          "source": "original"
+        },
+        {
+          "japanese": "冗談抜きで、本当に困っている。",
+          "english": "Joking aside, I'm really in trouble.",
+          "source": "original"
+        },
+        {
+          "japanese": "彼抜きでは、このプロジェクトは進まない。",
+          "english": "Without him, this project can't move forward.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "tou-no",
+      "pattern": "当の + noun",
+      "level": "N1",
+      "meaning_en": "the very (person/thing) in question / the X in question",
+      "meaning_detailed": "〜当の + noun marks the person or thing that is the direct subject of discussion — 'the X in question'. Used to distinguish the focal person from others, often when that person is behaving unexpectedly compared to what others are doing. Formal register.",
+      "formation": "当の + noun.",
+      "formation_notes": [
+        "Focal identification — 'the very X being discussed'.",
+        "Common: 当の本人 ('the person themselves'), 当の本人は〜 ('the person in question is ...').",
+        "Often contrasts focal X with bystanders.",
+        "Formal / neutral register."
+      ],
+      "formality": "formal",
+      "related": [
+        "koso-precisely",
+        "sono-mono"
+      ],
+      "examples": [
+        {
+          "japanese": "当の本人は全く気にしていない。",
+          "english": "The person in question isn't bothered at all.",
+          "source": "original"
+        },
+        {
+          "japanese": "当の先生が最も驚いていた。",
+          "english": "The teacher in question was the most surprised.",
+          "source": "original"
+        },
+        {
+          "japanese": "当の犯人はまだ捕まっていない。",
+          "english": "The culprit in question still hasn't been caught.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "wo-kiwameru",
+      "pattern": "Noun + を極める",
+      "level": "N1",
+      "meaning_en": "reach the extreme of / master / be in the height of",
+      "meaning_detailed": "〜を極める expresses that the subject 'reaches the extreme / height of' X — mastering a skill, being at the peak of glory, or being in extreme difficulty. Can be both positive (mastery, glory) and negative (extreme hardship). Formal / literary register.",
+      "formation": "Noun + を極める (conjugates as ichidan verb).",
+      "formation_notes": [
+        "Reaching the extreme — positive or negative.",
+        "Positive: 技を極める ('master the craft'), 栄華を極める ('reach the height of glory').",
+        "Negative: 困難を極める ('reach extreme difficulty'), 混乱を極める ('be in utter confusion').",
+        "Formal / literary register."
+      ],
+      "formality": "formal",
+      "related": [
+        "kiwamari-nai",
+        "no-kiwami",
+        "no-itari"
+      ],
+      "examples": [
+        {
+          "japanese": "彼は剣道の技を極めた。",
+          "english": "He mastered the craft of kendo.",
+          "source": "original"
+        },
+        {
+          "japanese": "救助活動は困難を極めた。",
+          "english": "The rescue operation reached extreme difficulty.",
+          "source": "original"
+        },
+        {
+          "japanese": "現場は混乱を極めていた。",
+          "english": "The scene was in utter confusion.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "to-wa-urahara-ni",
+      "pattern": "Noun / plain form + とは裏腹に",
+      "level": "N1",
+      "meaning_en": "contrary to / in contrast to (expectation vs reality)",
+      "meaning_detailed": "〜とは裏腹に expresses contrast between expectation and reality — 'contrary to X, Y'. The X represents surface appearance or expectation, and Y the contrasting reality. 裏腹 literally means 'back and belly' — two opposite sides. Formal / literary register.",
+      "formation": "Noun / plain form + とは裏腹に.",
+      "formation_notes": [
+        "Contrast between appearance and reality.",
+        "Common: 期待とは裏腹に ('contrary to expectations'), 外見とは裏腹に ('contrary to outward appearance').",
+        "Formal / literary register.",
+        "裏腹 is a fixed expression meaning 'opposite / contradictory'."
+      ],
+      "formality": "formal",
+      "related": [
+        "noni-although",
+        "ni-mo-kakawarazu-despite",
+        "you-de-seemingly"
+      ],
+      "examples": [
+        {
+          "japanese": "期待とは裏腹に、結果は散々だった。",
+          "english": "Contrary to expectations, the result was terrible.",
+          "source": "original"
+        },
+        {
+          "japanese": "見た目とは裏腹に、彼は優しい。",
+          "english": "Contrary to appearances, he is kind.",
+          "source": "original"
+        },
+        {
+          "japanese": "言葉とは裏腹に、心の中では悲しんでいた。",
+          "english": "Contrary to his words, he was sad in his heart.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "hiite-wa",
+      "pattern": "ひいては (sentence-initial / mid-sentence)",
+      "level": "N1",
+      "meaning_en": "by extension / ultimately / eventually",
+      "meaning_detailed": "ひいては is a literary adverb / connective meaning 'by extension' or 'ultimately leading to'. Used when pointing out a broader or longer-term consequence — X affects immediate Y, and by extension also affects Z. Formal / literary register.",
+      "formation": "[immediate statement]、ひいては [broader / longer-term consequence].",
+      "formation_notes": [
+        "Extension / broader consequence — 'and by extension'.",
+        "Common in analytical writing that traces chains of effect.",
+        "Formal / literary register.",
+        "Often in discussions of policy, health, society."
+      ],
+      "formality": "formal",
+      "related": [
+        "sorede-and-then",
+        "dakara-so",
+        "yue-ni-because"
+      ],
+      "examples": [
+        {
+          "japanese": "健康は自分のためであり、ひいては家族のためでもある。",
+          "english": "Health is for yourself, and by extension, for your family.",
+          "source": "original"
+        },
+        {
+          "japanese": "教育は個人の成長、ひいては社会の発展につながる。",
+          "english": "Education leads to personal growth and, by extension, societal development.",
+          "source": "original"
+        },
+        {
+          "japanese": "努力は今の成功、ひいては将来の幸せをもたらす。",
+          "english": "Effort brings present success and, by extension, future happiness.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "yoshi-mi",
+      "pattern": "Noun + のよしみで",
+      "level": "N1",
+      "meaning_en": "for the sake of / by virtue of the connection",
+      "meaning_detailed": "〜のよしみで expresses 'for the sake of the friendship / connection / old times' — a request or act done out of prior relationship. よしみ literally means 'friendship / close connection'. Formal / somewhat old-fashioned register, common in polite appeals.",
+      "formation": "Noun + の + よしみで.",
+      "formation_notes": [
+        "Appeal based on prior relationship or connection.",
+        "Common: 昔のよしみで ('for old times' sake'), 友人のよしみで ('as a friend').",
+        "Formal / somewhat old-fashioned register.",
+        "Related: 〜あっての."
+      ],
+      "formality": "formal",
+      "related": [
+        "atte-no-thanks-to",
+        "toshite-as"
+      ],
+      "examples": [
+        {
+          "japanese": "昔のよしみで、手伝ってくれないか。",
+          "english": "For old times' sake, won't you help?",
+          "source": "original"
+        },
+        {
+          "japanese": "友人のよしみで、お願いします。",
+          "english": "For the sake of our friendship, please.",
+          "source": "original"
+        },
+        {
+          "japanese": "同窓のよしみで、会ってくれた。",
+          "english": "He met with me as a fellow alumnus.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "nagara-mo",
+      "pattern": "V ます-stem / i-adj / noun + ながらも",
+      "level": "N1",
+      "meaning_en": "although / even while / despite",
+      "meaning_detailed": "〜ながらも is a literary concessive meaning 'although / even while X, Y'. Similar to 〜ながら (simultaneous) but with concessive nuance — the main clause is unexpected or contrasting. Formal / literary register.",
+      "formation": "V ます-stem + ながらも; i-adj + ながらも; na-adj + でありながらも; noun + でありながらも.",
+      "formation_notes": [
+        "Concessive — 'although X, Y'.",
+        "Distinct from 〜ながら (neutral simultaneity).",
+        "Common: 小さいながらも, 貧しいながらも, 子供ながらも.",
+        "Literary / formal register."
+      ],
+      "formality": "formal",
+      "related": [
+        "nagara",
+        "de-ari-nagara",
+        "noni-although"
+      ],
+      "examples": [
+        {
+          "japanese": "小さいながらも、立派な家だ。",
+          "english": "Small though it is, it's a splendid house.",
+          "source": "original"
+        },
+        {
+          "japanese": "子供ながらも、しっかりしている。",
+          "english": "Although he's a child, he's very reliable.",
+          "source": "original"
+        },
+        {
+          "japanese": "貧しいながらも、幸せに暮らしている。",
+          "english": "Although poor, they live happily.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "tada-de-sae",
+      "pattern": "ただでさえ",
+      "level": "N1",
+      "meaning_en": "even normally / already (in an unmodified state)",
+      "meaning_detailed": "ただでさえ is a literary adverb meaning 'even normally / even as is' — the main clause describes something that is already Y without any special condition, and the implication is that with additional factors it gets worse. Often introduces a crescendo of difficulty. Formal / literary register.",
+      "formation": "ただでさえ + [sentence describing normal state] + 〜のに + [worsening factor].",
+      "formation_notes": [
+        "Literary intensifier — 'even in the normal state, X'.",
+        "Often followed by a 'worsening' clause with のに or に.",
+        "Formal / literary register.",
+        "Common in complaints and analyses of compounding problems."
+      ],
+      "formality": "formal",
+      "related": [
+        "mou-ta-already",
+        "noni-although"
+      ],
+      "examples": [
+        {
+          "japanese": "ただでさえ忙しいのに、追加の仕事が来た。",
+          "english": "Even normally busy, on top of that, extra work came.",
+          "source": "original"
+        },
+        {
+          "japanese": "ただでさえ狭い部屋に、家具が増えた。",
+          "english": "Even the normally cramped room, and now more furniture.",
+          "source": "original"
+        },
+        {
+          "japanese": "ただでさえ眠いのに、会議が長い。",
+          "english": "Already tired as it is, and the meeting is long.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "ashikara-zu",
+      "pattern": "あしからず (sentence-final)",
+      "level": "N1",
+      "meaning_en": "please don't take it wrong / please excuse (refusal)",
+      "meaning_detailed": "あしからず is a formal fixed phrase used at the end of polite refusals or declinations — 'please don't take it the wrong way'. Derived from classical 悪しからず ('not badly'). Common in business correspondence and polite declines. Very formal register.",
+      "formation": "[refusal statement], あしからず.",
+      "formation_notes": [
+        "Fixed polite phrase — softens refusals.",
+        "Classical origin: 悪しからず (literally 'not taken badly').",
+        "Very formal — common in business and polite correspondence.",
+        "Often at the end of emails and letters declining offers."
+      ],
+      "formality": "formal",
+      "related": [
+        "kane-ru-hard-to",
+        "humble-o-suru"
+      ],
+      "examples": [
+        {
+          "japanese": "今回はご要望にお応えできかねます。あしからず。",
+          "english": "This time we cannot meet your request. Please understand.",
+          "source": "original"
+        },
+        {
+          "japanese": "参加できませんが、あしからずご了承ください。",
+          "english": "I cannot participate; please understand without taking offense.",
+          "source": "original"
+        },
+        {
+          "japanese": "ご期待に添えず、あしからずご了承願います。",
+          "english": "I'm unable to meet your expectations; please excuse me.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "manzara-de-mo-nai",
+      "pattern": "まんざら + plain form + でもない",
+      "level": "N1",
+      "meaning_en": "not entirely / not completely (negation hedged)",
+      "meaning_detailed": "〜まんざら〜でもない is a hedging negation meaning 'not entirely X' — often used when someone is secretly pleased or when a claim is partially true. Common in observation of subtle feelings: まんざらでもない顔 ('a not-entirely-displeased face'). Conversational register.",
+      "formation": "まんざら + noun / adjective / V plain + でもない.",
+      "formation_notes": [
+        "Hedging — 'not entirely X, perhaps secretly Y'.",
+        "Common for observing subtle feelings.",
+        "Conversational register.",
+        "Often stands alone: まんざらでもない ('not entirely unpleased')."
+      ],
+      "formality": "neutral",
+      "related": [
+        "nai-de-mo-nai",
+        "nai-koto-wa-nai",
+        "naku-mo-nai"
+      ],
+      "examples": [
+        {
+          "japanese": "褒められて、彼はまんざらでもない顔をしていた。",
+          "english": "Being praised, he looked not entirely displeased.",
+          "source": "original"
+        },
+        {
+          "japanese": "嫌がっていたが、まんざらでもなさそうだ。",
+          "english": "He was protesting, but he didn't seem entirely unhappy.",
+          "source": "original"
+        },
+        {
+          "japanese": "その申し出は、まんざら悪い話でもない。",
+          "english": "That offer isn't an entirely bad proposal.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "desura",
+      "pattern": "Noun + ですら",
+      "level": "N1",
+      "meaning_en": "even (literary variant of さえ)",
+      "meaning_detailed": "〜ですら is a formal / literary variant of 〜さえ ('even'). Used to emphasize that even a minimal or unlikely case applies. Common in literary writing and formal speech. Often with a negative following clause.",
+      "formation": "Noun + ですら.",
+      "formation_notes": [
+        "Literary variant of 〜さえ.",
+        "Often emphasizes minimal or unlikely cases.",
+        "Formal / literary register.",
+        "Grammatically parallels さえ."
+      ],
+      "formality": "formal",
+      "related": [
+        "sae-even",
+        "demo-noun-even",
+        "made-mo-nai"
+      ],
+      "examples": [
+        {
+          "japanese": "子供ですら知っていることだ。",
+          "english": "It's something even a child knows.",
+          "source": "original"
+        },
+        {
+          "japanese": "専門家ですら分からない問題だ。",
+          "english": "It's a problem even experts don't understand.",
+          "source": "original"
+        },
+        {
+          "japanese": "彼の親ですら驚いた。",
+          "english": "Even his parents were surprised.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "wo-shirime-ni",
+      "pattern": "Noun + を尻目に",
+      "level": "N1",
+      "meaning_en": "flippantly ignoring / with casual disregard",
+      "meaning_detailed": "〜を尻目に expresses that the subject acts 'with casual disregard' or 'flippantly ignoring' X — often with a slightly arrogant or indifferent nuance. 尻目 literally means 'side glance / corner of the eye'. Formal / literary register.",
+      "formation": "Noun + を尻目に.",
+      "formation_notes": [
+        "Casual disregard — 'barely glancing at X'.",
+        "Often with a hint of arrogance or indifference.",
+        "Common with 人目 ('others' eyes'), 心配 ('worries'), 反対 ('opposition').",
+        "Formal / literary register."
+      ],
+      "formality": "formal",
+      "related": [
+        "wo-yoso-ni",
+        "wo-mono-to-mo-sezu",
+        "mo-kamawa-zu"
+      ],
+      "examples": [
+        {
+          "japanese": "彼は周囲の心配を尻目に、計画を進めた。",
+          "english": "Flippantly disregarding everyone's worries, he pushed forward with the plan.",
+          "source": "original"
+        },
+        {
+          "japanese": "反対を尻目に、彼は独断で決めた。",
+          "english": "Casually ignoring opposition, he decided unilaterally.",
+          "source": "original"
+        },
+        {
+          "japanese": "人目を尻目に、大声で歌っていた。",
+          "english": "Disregarding onlookers, he was singing loudly.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "koto-nagara",
+      "pattern": "Noun + の + こと + ながら",
+      "level": "N1",
+      "meaning_en": "as usual / as expected / as one would expect",
+      "meaning_detailed": "〜ことながら expresses that something is characteristic or expected — 'as expected (of X)' or 'as is characteristic of X'. Often in compliments or acknowledgments of predictable but noteworthy qualities. Formal register. Common: 毎度のことながら ('as always'), いつものことながら ('as usual').",
+      "formation": "Noun + の + こと + ながら.",
+      "formation_notes": [
+        "Expected / characteristic — 'as one would expect of X'.",
+        "Common fixed phrases: 毎度のことながら, いつものことながら.",
+        "Formal register.",
+        "Often in acknowledgments or light complaints about habitual things."
+      ],
+      "formality": "formal",
+      "related": [
+        "nari-ni-in-own-way",
+        "narade-wa-no"
+      ],
+      "examples": [
+        {
+          "japanese": "毎度のことながら、彼は遅刻した。",
+          "english": "As always, he was late.",
+          "source": "original"
+        },
+        {
+          "japanese": "いつものことながら、素晴らしい演奏だった。",
+          "english": "As always, it was a splendid performance.",
+          "source": "original"
+        },
+        {
+          "japanese": "彼の繊細な気遣いは、毎回のことながら感心する。",
+          "english": "His delicate consideration — each time, I'm impressed.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ]
+    },
+    {
+      "id": "zaru-wo-enai",
+      "pattern": "V negative stem + ざるを得ない",
+      "level": "N1",
+      "meaning_en": "cannot help but / have no choice but to",
+      "meaning_detailed": "〜ざるを得ない is a formal / literary construction meaning 'cannot help but X' or 'have no choice but to X'. Expresses that external circumstances compel the action even if the speaker would rather not. Very formal register, common in reports and analyses. Irregular: する → せざるを得ない.",
+      "formation": "V ない-stem + ざるを得ない. Irregular: する → せざるを得ない.",
+      "formation_notes": [
+        "Formal compulsion — 'cannot avoid doing X'.",
+        "Irregular: せざるを得ない for する.",
+        "Based on the classical negative ざる plus 得ない ('cannot obtain').",
+        "Very formal register — common in news, essays, and formal speech."
+      ],
+      "formality": "formal",
+      "related": [
+        "shika-nai",
+        "hoka-nai-no-choice",
+        "wo-yogi-naku-sareru"
+      ],
+      "examples": [
+        {
+          "japanese": "彼の意見に賛成せざるを得ない。",
+          "english": "I cannot help but agree with his opinion.",
+          "source": "original"
+        },
+        {
+          "japanese": "そう結論づけざるを得ない。",
+          "english": "One cannot help but conclude so.",
+          "source": "original"
+        },
+        {
+          "japanese": "事実を認めざるを得ない。",
+          "english": "I have no choice but to acknowledge the facts.",
           "source": "original"
         }
       ],
