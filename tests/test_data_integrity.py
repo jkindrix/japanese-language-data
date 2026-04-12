@@ -539,6 +539,11 @@ _DATA_FILES = [
     "data/corpus/sentences.json",
     "data/enrichment/pitch-accent.json",
     "data/enrichment/frequency-newspaper.json",
+    "data/enrichment/frequency-corpus.json",
+    "data/enrichment/frequency-subtitles.json",
+    "data/enrichment/furigana.json",
+    "data/enrichment/counter-words.json",
+    "data/enrichment/ateji.json",
     "data/enrichment/jlpt-classifications.json",
     "data/enrichment/stroke-order-index.json",
     "data/grammar/grammar.json",
@@ -548,12 +553,16 @@ _DATA_FILES = [
     "data/cross-refs/word-to-kanji.json",
     "data/cross-refs/word-to-sentences.json",
     "data/cross-refs/kanji-to-radicals.json",
+    "data/cross-refs/reading-to-words.json",
+    "data/cross-refs/radical-to-kanji.json",
+    "data/cross-refs/kanji-to-sentences.json",
 ]
 
 
 def test_all_data_files_have_open_license() -> None:
     """Every committed data file must declare an open license (CC-BY-SA,
-    CC-BY, or CC0). Sentences use CC-BY 2.0 FR from Tatoeba, not CC-BY-SA."""
+    CC-BY, CC0, or MIT). Sentences use CC-BY 2.0 FR from Tatoeba;
+    frequency-subtitles uses MIT (FrequencyWords)."""
     for rel_path in _DATA_FILES:
         path = REPO_ROOT / rel_path
         if not path.exists():
@@ -561,7 +570,7 @@ def test_all_data_files_have_open_license() -> None:
         data = json.loads(path.read_text(encoding="utf-8"))
         meta = data.get("metadata", {})
         license_val = meta.get("license", "")
-        assert any(tag in license_val for tag in ("CC-BY-SA", "CC-BY", "CC0")), \
+        assert any(tag in license_val for tag in ("CC-BY-SA", "CC-BY", "CC0", "MIT")), \
             f"{rel_path}: metadata.license should contain an open license, got {license_val!r}"
 
 

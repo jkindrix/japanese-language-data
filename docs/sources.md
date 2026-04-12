@@ -28,7 +28,7 @@ This is the primary upstream for JMdict, JMnedict, KANJIDIC2, KRADFILE, and RADK
 
 ### What we extract and transform
 
-- **Words (JMdict-examples-eng)**: Every entry preserved with its ID, kanji writings, kana writings (with `appliesToKanji` cross-references), senses (parts of speech, domains, dialects, misc tags, translations, example links), language-source notes for loanwords, and cross-references. We augment each entry with a `jlpt_level` field filled from the Waller list (see below), a `frequency_media` field from JPDB (see below), and a `source_refs` field listing the origin of every datum in the entry.
+- **Words (JMdict-examples-eng)**: Every entry preserved with its ID, kanji writings, kana writings (with `appliesToKanji` cross-references), senses (parts of speech, domains, dialects, misc tags, translations, example links), language-source notes for loanwords, and cross-references. We augment each entry with a `jlpt_waller` field filled from the Waller list (see below). The `frequency_media` field is reserved for future inline frequency data (currently null — see `data/enrichment/frequency-subtitles.json` for spoken-media frequency as a standalone enrichment file).
 - **Kanji (KANJIDIC2-en)**: Every entry preserved with readings (on/kun/nanori), meanings, stroke count, grade, JLPT (old system — see `field_notes`), frequency rank, radical info, dictionary references, query codes, and variants. We augment each entry with a `jlpt_waller` field from the Waller list (current community-standard classification, distinct from the old JLPT in KANJIDIC2).
 - **Names (JMnedict)**: Preserved largely as-is for the optional `data/optional/names.json` build. No augmentation — names are reference data, not learning data.
 - **Radicals (KRADFILE+RADKFILE)**: Combined into a single `data/core/radicals.json` with bidirectional lookup: radical → kanji list and kanji → radical list.
@@ -198,25 +198,59 @@ Produced at `data/enrichment/jlpt-classifications.json` with entries of the form
 
 ---
 
-## JPDB frequency list (MarvNC)
+## JPDB frequency list — LICENSE-BLOCKED
 
 **Project**: https://github.com/MarvNC/jpdb-freq-list
 **Underlying data**: jpdb.io corpus analysis
-**License**: Verified per release
-**Update cadence**: Irregular releases
-**Our pin**: To be set at Phase 2 build time.
+**License**: No explicit license declared in the repo. Integration deferred pending license clarification. See `docs/phase4-candidates.md`.
+**Status**: NOT INTEGRATED. The `frequency_media` field on words.json is null. See OpenSubtitles frequency (below) for the spoken-media frequency source we use instead.
 
-Modern media frequency data derived from analysis of light novels, visual novels, anime, and drama. This is a better frequency signal for media-consumption learners than the newspaper corpus that underlies KANJIDIC2's frequency field.
+---
 
-### Asset we use
+## OpenSubtitles word frequency via FrequencyWords (added v0.8.0+)
 
-- Yomitan-compatible frequency dictionary ZIP from the latest release
-- Converted into a flat mapping in `data/enrichment/frequency-modern.json`
+**Project**: https://github.com/hermitdave/FrequencyWords
+**Underlying data**: OpenSubtitles 2018 Japanese subtitle corpus
+**License**: MIT (FrequencyWords code). Frequency counts are non-copyrightable facts.
+**Our pin**: `content/2018/ja/ja_full.txt` on master branch, SHA256-verified in `manifest.json`.
 
-### Known gaps
+Spoken-media word frequency derived from movie, TV, and anime subtitles. The closest openly-licensed substitute for JPDB.
 
-- Covers words, not kanji directly (though kanji frequency can be derived by aggregating across word usages)
-- Corpus selection reflects one community's consumption patterns; not a balanced national corpus
+### What we extract
+
+- 34,504 raw word-frequency pairs from the pre-counted text file
+- Matched against `words.json` vocabulary (8,598 entries after filtering)
+- Output: `data/enrichment/frequency-subtitles.json`
+
+---
+
+## JmdictFurigana (added v0.8.0)
+
+**Project**: https://github.com/Doublevil/JmdictFurigana
+**License**: CC-BY-SA 4.0 (derived from JMdict, EDRDG License)
+**Our pin**: Release 2.3.1+2026-03-25, SHA256-verified.
+
+Per-character reading alignment (furigana) for JMdict entries. Maps individual kanji within compound words to their readings, enabling ruby text rendering.
+
+### What we extract
+
+- 28,920 entries filtered to words in our common subset
+- Output: `data/enrichment/furigana.json`
+
+---
+
+## KFTT — Kyoto Free Translation Task (added v0.8.0)
+
+**Project**: https://www.phontron.com/kftt/
+**License**: CC-BY-SA 3.0 (NICT bilingual corpus)
+**Our pin**: kftt-data-1.0.tar.gz, SHA256-verified.
+
+443,849 Japanese-English parallel sentence pairs from Wikipedia Kyoto articles. Machine-aligned, not editor-curated. Gitignored due to size (~220 MB).
+
+### What we extract
+
+- All 4 splits (train, dev, test, tune) from the `orig/` (untokenized) files
+- Output: `data/corpus/sentences-kftt.json`
 
 ---
 
