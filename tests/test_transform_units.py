@@ -2633,6 +2633,278 @@ def test_expressions_is_common_delegates_to_utils() -> None:
     assert _is_common(word_uncommon) is False
 
 
+# ---------------------------------------------------------------------------
+# jukugo — compound extraction
+# ---------------------------------------------------------------------------
+
+def test_jukugo_is_kanji() -> None:
+    from build.transform.jukugo import _is_kanji
+    assert _is_kanji("\u98df") is True   # 食
+    assert _is_kanji("\u3042") is False  # あ
+    assert _is_kanji("A") is False
+
+
+def test_jukugo_extract_compounds_basic() -> None:
+    from build.transform.jukugo import _extract_compounds
+    words_data = {"words": [
+        {"id": "1", "kanji": [{"text": "\u5b66\u6821"}],
+         "kana": [{"text": "\u304c\u3063\u3053\u3046"}],
+         "sense": [{"gloss": [{"text": "school"}]}], "jlpt_waller": "N5"},
+        {"id": "2", "kanji": [{"text": "\u98df"}],
+         "kana": [{"text": "\u305f"}],
+         "sense": [{"gloss": [{"text": "eat"}]}]},
+        {"id": "3", "kanji": [],
+         "kana": [{"text": "\u3042\u308a\u304c\u3068\u3046"}],
+         "sense": [{"gloss": [{"text": "thanks"}]}]},
+    ]}
+    kanji_meanings = {
+        "\u5b66": ["study"], "\u6821": ["school"],
+        "\u98df": ["eat"],
+    }
+    compounds = _extract_compounds(words_data, kanji_meanings)
+    assert len(compounds) == 1
+    c = compounds[0]
+    assert c["word_id"] == "1"
+    assert c["text"] == "\u5b66\u6821"
+    assert c["kanji_count"] == 2
+    assert c["kanji_sequence"] == ["\u5b66", "\u6821"]
+    assert c["components"][0]["kanji"] == "\u5b66"
+    assert "study" in c["components"][0]["meanings"]
+    assert c["jlpt_waller"] == "N5"
+
+
+# ---------------------------------------------------------------------------
+# counters — counter-word extraction
+# ---------------------------------------------------------------------------
+
+def test_extract_counters_basic() -> None:
+    from build.transform.counters import _extract_counters
+    words_data = {"words": [
+        {"id": "1",
+         "kanji": [{"text": "\u99c5"}],
+         "kana": [{"text": "\u3048\u304d"}],
+         "sense": [{"partOfSpeech": ["ctr"], "gloss": [{"text": "railway station"}]}],
+         "jlpt_waller": "N3"},
+        {"id": "2",
+         "kanji": [{"text": "\u98df\u3079\u308b"}],
+         "kana": [{"text": "\u305f\u3079\u308b"}],
+         "sense": [{"partOfSpeech": ["v1"], "gloss": [{"text": "to eat"}]}]},
+    ]}
+    counters = _extract_counters(words_data)
+    assert len(counters) == 1
+    assert counters[0]["word_id"] == "1"
+    assert counters[0]["meanings"] == ["railway station"]
+    assert counters[0]["jlpt_waller"] == "N3"
+
+
+def test_extract_counters_no_ctr() -> None:
+    from build.transform.counters import _extract_counters
+    words_data = {"words": [
+        {"id": "1", "kanji": [], "kana": [{"text": "abc"}],
+         "sense": [{"partOfSpeech": ["n"], "gloss": [{"text": "noun"}]}]},
+    ]}
+    assert _extract_counters(words_data) == []
+
+
+# ---------------------------------------------------------------------------
+# ateji — ateji extraction
+# ---------------------------------------------------------------------------
+
+def test_extract_ateji_basic() -> None:
+    from build.transform.ateji import _extract_ateji
+    words_data = {"words": [
+        {"id": "1",
+         "kanji": [{"text": "\u5c48\u5ea6", "tags": ["ateji"]}],
+         "kana": [{"text": "\u304d\u3063\u3068"}],
+         "sense": [{"gloss": [{"text": "surely"}]}],
+         "jlpt_waller": None},
+        {"id": "2",
+         "kanji": [{"text": "\u98df\u3079\u308b", "tags": []}],
+         "kana": [{"text": "\u305f\u3079\u308b"}],
+         "sense": [{"gloss": [{"text": "to eat"}]}]},
+    ]}
+    entries = _extract_ateji(words_data)
+    assert len(entries) == 1
+    assert entries[0]["word_id"] == "1"
+    assert entries[0]["text"] == "\u5c48\u5ea6"
+    assert entries[0]["meanings"] == ["surely"]
+
+
+def test_extract_ateji_no_ateji() -> None:
+    from build.transform.ateji import _extract_ateji
+    words_data = {"words": [
+        {"id": "1", "kanji": [{"text": "abc", "tags": []}],
+         "kana": [{"text": "abc"}], "sense": [{"gloss": [{"text": "x"}]}]},
+    ]}
+    assert _extract_ateji(words_data) == []
+
+
+# ---------------------------------------------------------------------------
+# export_yomitan — pitch and frequency lookup loading
+# ---------------------------------------------------------------------------
+
+def test_load_pitch_lookup(tmp_path: Path, monkeypatch) -> None:
+    from build import export_yomitan as ym
+    pitch_file = tmp_path / "pitch.json"
+    pitch_file.write_text(json.dumps({
+        "entries": [
+            {"word": "\u98df\u3079\u308b", "reading": "\u305f\u3079\u308b",
+             "pitch_positions": [0], "mora_count": 3},
+            {"word": "\u5b66\u6821", "reading": "\u304c\u3063\u3053\u3046",
+             "pitch_positions": [0], "mora_count": 4},
+        ]
+    }, ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(ym, "PITCH_JSON", pitch_file)
+    lookup = ym._load_pitch_lookup()
+    assert ("\u98df\u3079\u308b", "\u305f\u3079\u308b") in lookup
+    assert lookup[("\u98df\u3079\u308b", "\u305f\u3079\u308b")] == "0"
+
+
+def test_load_pitch_lookup_missing_file(tmp_path: Path, monkeypatch) -> None:
+    from build import export_yomitan as ym
+    monkeypatch.setattr(ym, "PITCH_JSON", tmp_path / "nonexistent.json")
+    assert ym._load_pitch_lookup() == {}
+
+
+def test_load_freq_lookup(tmp_path: Path, monkeypatch) -> None:
+    from build import export_yomitan as ym
+    freq_file = tmp_path / "freq.json"
+    freq_file.write_text(json.dumps({
+        "entries": [
+            {"text": "\u3042\u306a\u305f", "rank": 1, "count": 61249},
+        ]
+    }, ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(ym, "FREQ_SUB_JSON", freq_file)
+    lookup = ym._load_freq_lookup()
+    assert lookup["\u3042\u306a\u305f"] == 1
+
+
+def test_load_freq_lookup_missing_file(tmp_path: Path, monkeypatch) -> None:
+    from build import export_yomitan as ym
+    monkeypatch.setattr(ym, "FREQ_SUB_JSON", tmp_path / "nonexistent.json")
+    assert ym._load_freq_lookup() == {}
+
+
+# ---------------------------------------------------------------------------
+# export_yomitan — term banks with enrichment
+# ---------------------------------------------------------------------------
+
+def test_yomitan_term_banks_with_pitch() -> None:
+    """Pitch accent should appear as first definition element."""
+    from build.export_yomitan import _build_term_banks
+    words_data = {"words": [
+        {"id": "100", "kanji": [{"text": "\u98df\u3079\u308b"}],
+         "kana": [{"text": "\u305f\u3079\u308b"}],
+         "sense": [{"partOfSpeech": ["v1"], "gloss": [{"text": "to eat"}]}],
+         "jlpt_waller": "N5"},
+    ]}
+    pitch_lookup = {("\u98df\u3079\u308b", "\u305f\u3079\u308b"): "0"}
+    banks = _build_term_banks(words_data, pitch_lookup, {})
+    entry = banks[0][0]
+    assert entry[5][0] == "[pitch: 0]"
+    assert entry[5][1] == "to eat"
+
+
+def test_yomitan_term_banks_with_frequency_boost() -> None:
+    """High-frequency words should get a score boost."""
+    from build.export_yomitan import _build_term_banks
+    words_data = {"words": [
+        {"id": "100", "kanji": [{"text": "\u6642\u9593"}],
+         "kana": [{"text": "\u3058\u304b\u3093"}],
+         "sense": [{"partOfSpeech": ["n"], "gloss": [{"text": "time"}]}],
+         "jlpt_waller": "N5"},
+    ]}
+    freq_lookup = {"\u6642\u9593": 10}  # rank 10 = top 3000
+    banks = _build_term_banks(words_data, {}, freq_lookup)
+    entry = banks[0][0]
+    # N5=5, plus frequency boost +1 = 6
+    assert entry[4] == 6
+
+
+def test_yomitan_term_banks_no_enrichment() -> None:
+    """Without enrichment data, definitions should be plain."""
+    from build.export_yomitan import _build_term_banks
+    words_data = {"words": [
+        {"id": "100", "kanji": [{"text": "\u98df\u3079\u308b"}],
+         "kana": [{"text": "\u305f\u3079\u308b"}],
+         "sense": [{"partOfSpeech": ["v1"], "gloss": [{"text": "to eat"}]}]},
+    ]}
+    banks = _build_term_banks(words_data, {}, {})
+    entry = banks[0][0]
+    assert entry[5] == ["to eat"]  # no pitch prefix
+
+
+# ---------------------------------------------------------------------------
+# jukugo — build with mock data
+# ---------------------------------------------------------------------------
+
+def test_jukugo_build(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import jukugo as jukugo_mod
+    words_file = tmp_path / "words.json"
+    words_file.write_text(json.dumps({"words": [
+        {"id": "1", "kanji": [{"text": "\u5b66\u6821"}],
+         "kana": [{"text": "\u304c\u3063\u3053\u3046"}],
+         "sense": [{"gloss": [{"text": "school"}]}], "jlpt_waller": "N5"},
+    ]}, ensure_ascii=False), encoding="utf-8")
+    kanji_file = tmp_path / "kanji.json"
+    kanji_file.write_text(json.dumps({"kanji": [
+        {"character": "\u5b66", "meanings": {"en": ["study"]}},
+        {"character": "\u6821", "meanings": {"en": ["school"]}},
+    ]}, ensure_ascii=False), encoding="utf-8")
+    out_file = tmp_path / "jukugo.json"
+    monkeypatch.setattr(jukugo_mod, "WORDS_JSON", words_file)
+    monkeypatch.setattr(jukugo_mod, "KANJI_JSON", kanji_file)
+    monkeypatch.setattr(jukugo_mod, "OUT", out_file)
+    monkeypatch.setattr(jukugo_mod, "REPO_ROOT", tmp_path)
+    jukugo_mod.build()
+    result = json.loads(out_file.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 1
+    assert result["compounds"][0]["text"] == "\u5b66\u6821"
+
+
+# ---------------------------------------------------------------------------
+# counters — build with mock data
+# ---------------------------------------------------------------------------
+
+def test_counters_build(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import counters as counters_mod
+    words_file = tmp_path / "words.json"
+    words_file.write_text(json.dumps({"words": [
+        {"id": "1", "kanji": [{"text": "\u99c5"}],
+         "kana": [{"text": "\u3048\u304d"}],
+         "sense": [{"partOfSpeech": ["ctr"], "gloss": [{"text": "station"}]}],
+         "jlpt_waller": None},
+    ]}, ensure_ascii=False), encoding="utf-8")
+    out_file = tmp_path / "counters.json"
+    monkeypatch.setattr(counters_mod, "WORDS_JSON", words_file)
+    monkeypatch.setattr(counters_mod, "OUT", out_file)
+    monkeypatch.setattr(counters_mod, "REPO_ROOT", tmp_path)
+    counters_mod.build()
+    result = json.loads(out_file.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 1
+
+
+# ---------------------------------------------------------------------------
+# ateji — build with mock data
+# ---------------------------------------------------------------------------
+
+def test_ateji_build(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import ateji as ateji_mod
+    words_file = tmp_path / "words.json"
+    words_file.write_text(json.dumps({"words": [
+        {"id": "1", "kanji": [{"text": "\u5c48\u5ea6", "tags": ["ateji"]}],
+         "kana": [{"text": "\u304d\u3063\u3068"}],
+         "sense": [{"gloss": [{"text": "surely"}]}], "jlpt_waller": None},
+    ]}, ensure_ascii=False), encoding="utf-8")
+    out_file = tmp_path / "ateji.json"
+    monkeypatch.setattr(ateji_mod, "WORDS_JSON", words_file)
+    monkeypatch.setattr(ateji_mod, "OUT", out_file)
+    monkeypatch.setattr(ateji_mod, "REPO_ROOT", tmp_path)
+    ateji_mod.build()
+    result = json.loads(out_file.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 1
+
+
 def test_sqlite_insert_pitch(tmp_path: Path) -> None:
     import sqlite3
     from build.export_sqlite import _create_schema, _insert_pitch
