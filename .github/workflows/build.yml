@@ -18,7 +18,13 @@ on:
     tags: ["v*"]
   pull_request:
     branches: [main]
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      with_names:
+        description: "Include JMnedict names build (large, gitignored)"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -65,7 +71,12 @@ jobs:
         run: just fetch
 
       - name: Run the full build pipeline
-        run: just build
+        run: |
+          if [ "${{ inputs.with_names }}" = "true" ]; then
+            just build-names
+          else
+            just build
+          fi
 
       - name: Validate every output against its schema
         run: just validate
@@ -77,6 +88,7 @@ jobs:
         run: just stats
 
       - name: Byte-reproducibility check (build twice, compare hashes)
+        timeout-minutes: 10
         # Principle 1 of docs/architecture.md: every byte of built data
         # must be reproducible. This step runs the pipeline a second
         # time and asserts that data/ is byte-identical between the

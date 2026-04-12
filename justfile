@@ -100,6 +100,12 @@ test:
     @printf '{{cyan}}==> Running tests{{reset}}\n'
     {{python}} -m pytest tests/ -v
 
+# Run the test suite with code coverage report
+[group('validate')]
+test-cov:
+    @printf '{{cyan}}==> Running tests with coverage{{reset}}\n'
+    {{python}} -m pytest tests/ -v --cov=build --cov-report=term-missing
+
 # Reproducibility smoke test: fetch → build → validate → test → stats. Matches .github/workflows/build.yml.
 [group('validate')]
 ci:

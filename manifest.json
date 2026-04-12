@@ -148,12 +148,12 @@
     },
     "operational_reviewers_engaged": 0,
     "as_of": "2026-04-12",
-    "note": "Zero native-speaker reviewers engaged as of this release. docs/contributing.md has the aspirational call for reviewers but no operational pipeline exists yet. The grammar dataset is usable-but-not-authoritative until this changes. This is the single weakest dimension of the project by the maintainer's own admission in README.md and docs/gaps.md."
+    "note": "Zero native-speaker reviewers engaged as of this release. The review pipeline is operational (docs/grammar-review.md, docs/grammar-review-checklist.md, GitHub issue templates) but no reviewers have participated yet. The grammar dataset is usable-but-not-authoritative until native-speaker review begins. This is the single weakest dimension of the project by the maintainer's own admission in README.md and docs/gaps.md."
   },
   "next_actions": [
-    "Grammar: expand N3 coverage from the current batch 1 (40 entries) toward ~80-100 entries across successive patch releases; tag v0.5.0 when N3 reaches a stable milestone. Continue filling remaining N4 gaps — N4 is at 36 entries against community-standard ~80-100 for a 'complete' N4 grammar set.",
-    "Recruit native-speaker reviewers to move grammar entries from draft → native_speaker_reviewed (see docs/contributing.md).",
-    "Text-match Tatoeba sentences against grammar-curated examples to populate Tatoeba sentence IDs where exact matches exist (currently ~1.7% link rate on 180 original examples; expanded corpus brings new linkage opportunities).",
-    "Phase 4: evaluate remaining candidates in docs/phase4-candidates.md — notably JPDB modern frequency (blocked on license clarification), variant-to-Kangxi radical alias table (~22% radical gap), post-2022 Wiktionary pitch accent fill, classical handwriting datasets, and audio corpora."
+    "Recruit native-speaker reviewers to move grammar entries from draft → native_speaker_reviewed (see docs/grammar-review.md for the operational review workflow).",
+    "Improve Tatoeba linkage rate (currently 4/1722 examples matched) — consider expanding the sentence corpus or relaxing normalization for higher-confidence matches.",
+    "Phase 4: evaluate remaining candidates in docs/phase4-candidates.md — notably JPDB modern frequency (blocked on license clarification), post-2022 Wiktionary pitch accent fill, furigana alignment (JmdictFurigana), and audio corpora.",
+    "Increase direct unit test coverage of transform modules (currently 31% overall; transforms are tested indirectly via data integrity tests)."
   ]
 }

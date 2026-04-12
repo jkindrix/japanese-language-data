@@ -71,6 +71,7 @@ def test_all_schemas_are_present() -> None:
         "cross-refs.schema.json",
         "expressions.schema.json",
         "conjugations.schema.json",
+        "manifest.schema.json",
     }
     found_names = {p.name for p in _schema_files()}
     missing = expected_names - found_names

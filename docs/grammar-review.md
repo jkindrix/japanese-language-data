@@ -8,6 +8,16 @@ For the per-entry checklist (what a reviewer actually checks on each grammar poi
 
 ---
 
+## Curation methodology
+
+The grammar entries in this dataset are original curation, not copied from any textbook, study guide, or copyrighted reference work. The curated facts are non-copyrightable grammar rules of the Japanese language — the same rules taught in every classroom and described in every grammar reference.
+
+Curation drew on the general body of Japanese language pedagogy — community knowledge, JLPT study materials, published grammar references — to identify which patterns to include, formulate explanations, and create example sentences. No content was copied from any source. Explanations are written in the project author's own words; example sentences are original compositions.
+
+Each entry's `sources` field reads `"General Japanese grammar knowledge (non-copyrightable facts)"` to reflect this provenance. The field exists for transparency, not to claim derivation from a specific work.
+
+---
+
 ## Who can review
 
 You are eligible to review if **any** of the following is true:
