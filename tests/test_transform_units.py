@@ -1452,7 +1452,7 @@ def test_yomitan_build_term_banks_kanji_word() -> None:
             },
         ]
     }
-    banks = _build_term_banks(words_data)
+    banks = _build_term_banks(words_data, {}, {})
     assert len(banks) == 1
     assert len(banks[0]) == 1
 
@@ -1481,7 +1481,7 @@ def test_yomitan_build_term_banks_kana_only() -> None:
             },
         ]
     }
-    banks = _build_term_banks(words_data)
+    banks = _build_term_banks(words_data, {}, {})
     entry = banks[0][0]
     assert entry[0] == "ああ"            # term = kana
     assert entry[1] == ""                # empty reading for kana-only
@@ -1502,7 +1502,7 @@ def test_yomitan_build_term_banks_no_definitions_skipped() -> None:
             },
         ]
     }
-    banks = _build_term_banks(words_data)
+    banks = _build_term_banks(words_data, {}, {})
     # No definitions -> entry should be skipped
     total_entries = sum(len(b) for b in banks)
     assert total_entries == 0
@@ -1521,7 +1521,7 @@ def test_yomitan_build_term_banks_splits_into_bank_size() -> None:
             "kana": [{"text": f"じ{i}"}],
             "sense": [{"partOfSpeech": ["n"], "gloss": [{"text": f"def{i}"}]}],
         })
-    banks = _build_term_banks({"words": words})
+    banks = _build_term_banks({"words": words}, {}, {})
     assert len(banks) == 2
     assert len(banks[0]) == BANK_SIZE
     assert len(banks[1]) == 5

@@ -20,6 +20,8 @@ from build.constants import DATA_DIR, MANIFEST_PATH, REPO_ROOT
 DIST_DIR = REPO_ROOT / "dist"
 WORDS_JSON = DATA_DIR / "core" / "words.json"
 KANJI_JSON = DATA_DIR / "core" / "kanji.json"
+PITCH_JSON = DATA_DIR / "enrichment" / "pitch-accent.json"
+FREQ_SUB_JSON = DATA_DIR / "enrichment" / "frequency-subtitles.json"
 OUT_ZIP = DIST_DIR / "japanese-language-data.zip"
 
 # Max entries per bank file (Yomitan convention)
@@ -37,9 +39,49 @@ def _build_tag_bank(words_data: dict) -> list[list]:
     return bank
 
 
-def _build_term_banks(words_data: dict) -> list[list[list]]:
+def _load_pitch_lookup() -> dict[tuple[str, str], str]:
+    """Build (word, reading) → pitch notation from pitch-accent.json.
+
+    Returns a compact string like '⬇0' (heiban), '⬇1' (atamadaka),
+    '⬇N' (drop after mora N). Multiple positions are joined with '/'.
+    """
+    lookup: dict[tuple[str, str], str] = {}
+    if not PITCH_JSON.exists():
+        return lookup
+    data = json.loads(PITCH_JSON.read_text(encoding="utf-8"))
+    for e in data.get("entries", []):
+        word = e.get("word", "")
+        reading = e.get("reading", "")
+        positions = e.get("pitch_positions", [])
+        if word and reading and positions:
+            notation = "/".join(str(p) for p in positions)
+            lookup[(word, reading)] = notation
+    return lookup
+
+
+def _load_freq_lookup() -> dict[str, int]:
+    """Build text → rank from frequency-subtitles.json."""
+    lookup: dict[str, int] = {}
+    if not FREQ_SUB_JSON.exists():
+        return lookup
+    data = json.loads(FREQ_SUB_JSON.read_text(encoding="utf-8"))
+    for e in data.get("entries", []):
+        text = e.get("text", "")
+        rank = e.get("rank")
+        if text and rank is not None:
+            lookup[text] = rank
+    return lookup
+
+
+def _build_term_banks(
+    words_data: dict,
+    pitch_lookup: dict[tuple[str, str], str],
+    freq_lookup: dict[str, int],
+) -> list[list[list]]:
     """Convert words.json entries to Yomitan term_bank arrays."""
     entries: list[list] = []
+    pitch_hits = 0
+    freq_hits = 0
     for word in words_data.get("words", []):
         wid = word.get("id", "")
         seq = int(wid) if wid.isdigit() else 0
@@ -69,7 +111,41 @@ def _build_term_banks(words_data: dict) -> list[list[list]]:
         kana_list = word.get("kana", []) or []
         primary_reading = kana_list[0].get("text", "") if kana_list else ""
 
+        # Enrich definitions with pitch accent
+        enriched_defs = list(definitions)
+        pitch_key_candidates = []
         kanji_list = word.get("kanji", []) or []
+        if kanji_list:
+            for k in kanji_list:
+                pitch_key_candidates.append((k.get("text", ""), primary_reading))
+        if primary_reading:
+            pitch_key_candidates.append((primary_reading, primary_reading))
+
+        pitch_notation = None
+        for key in pitch_key_candidates:
+            if key in pitch_lookup:
+                pitch_notation = pitch_lookup[key]
+                break
+
+        if pitch_notation is not None:
+            pitch_hits += 1
+            enriched_defs.insert(0, f"[pitch: {pitch_notation}]")
+
+        # Add frequency bonus to score (subtitle rank under 3000 → +1)
+        for k in kanji_list:
+            if k.get("text", "") in freq_lookup:
+                rank = freq_lookup[k["text"]]
+                if rank <= 3000:
+                    score += 1
+                freq_hits += 1
+                break
+        else:
+            if primary_reading in freq_lookup:
+                rank = freq_lookup[primary_reading]
+                if rank <= 3000:
+                    score += 1
+                freq_hits += 1
+
         if kanji_list:
             for k in kanji_list:
                 term = k.get("text", "")
@@ -80,7 +156,7 @@ def _build_term_banks(words_data: dict) -> list[list[list]]:
                         definition_tags,
                         rules,
                         score,
-                        definitions,
+                        enriched_defs,
                         seq,
                         "",
                     ])
@@ -93,7 +169,7 @@ def _build_term_banks(words_data: dict) -> list[list[list]]:
                     definition_tags,
                     rules,
                     score,
-                    definitions,
+                    enriched_defs,
                     seq,
                     "",
                 ])
@@ -161,9 +237,17 @@ def export() -> None:
     words_data = json.loads(WORDS_JSON.read_text(encoding="utf-8"))
     kanji_data = json.loads(KANJI_JSON.read_text(encoding="utf-8"))
 
+    # Load enrichment data
+    pitch_lookup = _load_pitch_lookup()
+    freq_lookup = _load_freq_lookup()
+    if pitch_lookup:
+        print(f"[yomitan]  loaded {len(pitch_lookup):,} pitch accent entries")
+    if freq_lookup:
+        print(f"[yomitan]  loaded {len(freq_lookup):,} subtitle frequency entries")
+
     # Build components
     tag_bank = _build_tag_bank(words_data)
-    term_banks = _build_term_banks(words_data)
+    term_banks = _build_term_banks(words_data, pitch_lookup, freq_lookup)
     kanji_banks = _build_kanji_banks(kanji_data)
 
     index = {
