@@ -74,7 +74,7 @@ As of v0.7.1 (see `manifest.json` for live counts), the `data/` directory contai
 
 All files are schema-validated JSON with metadata headers crediting upstream sources. **Live counts are maintained in `manifest.json.counts` and refreshed by `just stats` on every build**; this table is a snapshot for discoverability.
 
-## Quick start (once Phase 1 is built)
+## Quick start
 
 ```bash
 git clone https://github.com/jkindrix/japanese-language-data.git
@@ -86,8 +86,6 @@ just build    # transform and cross-link
 just validate # schema-check every output
 just stats    # print counts and coverage
 ```
-
-None of these will work until Phase 1 is implemented. Phase 0 (current) provides the scaffolding only.
 
 ## Licensing
 

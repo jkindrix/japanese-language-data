@@ -169,7 +169,41 @@ If you disagree with a prior reviewer's judgment on an entry:
 3. Leave the `review_status` at its prior value (do not downgrade).
 4. Open a GitHub issue tagged `grammar-review-disagreement` linking the entry and summarizing the disagreement.
 
-The project author will mediate. If two native speakers disagree about a usage call, the default resolution is to state both positions in `formation_notes` and leave the call unresolved rather than picking one — Japanese usage has real regional and generational variation and the dataset should reflect that rather than imposing a false consensus.
+The project author will respond to disagreement issues within **one week**. During mediation, entries stay at their current `review_status` — they are not downgraded to `draft` while the discussion is open.
+
+### How mediation works
+
+If two native speakers disagree about a usage call (e.g., whether a pattern is formal or neutral, whether an example sounds natural), the default resolution is to **state both positions** in `formation_notes` rather than picking one. Japanese usage has real regional and generational variation; the dataset should reflect that variation, not impose a false consensus.
+
+**Example: disagreement recorded in `reviewer_notes`**
+
+```json
+"reviewer_notes": [
+  {
+    "reviewer": "reviewer-A",
+    "date": "2026-05-01",
+    "note": "Marked formality as 'formal'. This pattern is used in business and academic writing."
+  },
+  {
+    "reviewer": "reviewer-B",
+    "date": "2026-05-10",
+    "note": "Disagree with 'formal' — this pattern is common in casual speech in Kansai. See issue #42."
+  }
+]
+```
+
+**Example: both positions stated in `formation_notes`**
+
+```json
+"formation_notes": [
+  "In standard (Tokyo) Japanese, this pattern is primarily used in formal writing and speeches.",
+  "In Kansai dialect, this pattern is also common in everyday casual conversation (see reviewer discussion in issue #42)."
+]
+```
+
+### Regional and generational variation
+
+Disagreements that stem from regional or generational differences in usage are **not errors** — they are valuable data. When a reviewer flags that a pattern is used differently in their region or generation, the preferred resolution is to document both usages rather than discard one. The dataset is stronger for acknowledging variation.
 
 ---
 

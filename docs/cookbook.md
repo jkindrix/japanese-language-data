@@ -175,3 +175,70 @@ jq -r --slurpfile ids <(jq -R . /tmp/word_ids.txt) \
 jq -r '[.grammar_points[].level] | group_by(.) | map({level: .[0], count: length}) | .[]' \
   data/grammar/grammar.json
 ```
+
+---
+
+## Working with large files
+
+The committed `data/core/words.json` (22,580 common entries, ~45 MB) loads comfortably in any language. The full `data/core/words-full.json` (216,173 entries, ~285 MB) requires more care.
+
+### Prefer the common subset
+
+Unless you specifically need rare, archaic, or specialized vocabulary, use `words.json` (the common subset). It contains every entry whose kanji or kana writings carry JMdict priority markers (`news1`, `ichi1`, `spec1`, `spec2`, `gai1`) — this covers the vocabulary a learner or general-purpose app needs.
+
+### Memory estimates
+
+| File | Entries | Disk | In-memory (Python dict) |
+|---|---:|---:|---:|
+| `words.json` | 22,580 | ~45 MB | ~120 MB |
+| `words-full.json` | 216,173 | ~285 MB | ~800 MB |
+| `kanji.json` | 13,108 | ~17 MB | ~60 MB |
+| `pitch-accent.json` | 124,011 | ~17 MB | ~80 MB |
+
+### Lazy loading with cross-references
+
+Load cross-reference files first (they're small), then load entries on demand:
+
+```python
+import json
+
+# Cross-refs are small — load fully
+with open("data/cross-refs/kanji-to-words.json") as f:
+    k2w = json.load(f)["mapping"]
+
+# Load words index once
+with open("data/core/words.json") as f:
+    words_by_id = {w["id"]: w for w in json.load(f)["words"]}
+
+# Look up on demand
+def words_for_kanji(kanji_char: str) -> list[dict]:
+    return [words_by_id[wid] for wid in k2w.get(kanji_char, [])
+            if wid in words_by_id]
+```
+
+### Faster JSON parsing
+
+Python's built-in `json` module is adequate for most files. For `words-full.json` or batch processing, consider:
+
+- **`orjson`** (pip install orjson): 3–5x faster parsing, returns `bytes` instead of `str`.
+- **`ijson`** (pip install ijson): Streaming parser — process entries one at a time without loading the full file.
+
+```python
+# Streaming with ijson (words-full.json without loading 800 MB)
+import ijson
+
+with open("data/core/words-full.json", "rb") as f:
+    for word in ijson.items(f, "words.item"):
+        if word.get("jlpt_waller") == "N5":
+            print(word["kana"][0]["text"])
+```
+
+### jq streaming for large files
+
+```bash
+# Stream words-full.json without loading it fully
+jq --stream 'select(.[0][0] == "words" and .[0][2] == "id") | .[1]' \
+  data/core/words-full.json | head -20
+```
+
+For most `jq` queries on files under 50 MB, standard (non-streaming) mode is fine.
