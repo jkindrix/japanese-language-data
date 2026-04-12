@@ -2,9 +2,9 @@
 
 This file tracks errors, gaps, and improvement suggestions discovered in upstream sources during this project's build phases. Items here are batched and filed upstream at the end of each phase, per the upstream contribution workflow described in `docs/architecture.md`.
 
-## Phase 1–4 filing status (as of v0.7.1, 2026-04-12)
+## Phase 1–4 filing status (as of v0.8.0+, 2026-04-12)
 
-**Zero *defect* items have been filed to any upstream through Phase 4, because no substantive upstream defects have been identified.** Two *feature requests* targeting `scriptin/jmdict-simplified` have been drafted and are queued in "Drafted, pending-decision-to-file" below — they are schema exposure requests, not defect reports.
+**Zero *defect* items have been filed to any upstream through Phase 4, because no substantive upstream defects have been identified.** Two *feature requests* targeting `scriptin/jmdict-simplified` were filed on 2026-04-12 as issues [#36](https://github.com/scriptin/jmdict-simplified/issues/36) and [#37](https://github.com/scriptin/jmdict-simplified/issues/37) — they are schema exposure requests, not defect reports.
 
 Honest accounting:
 
@@ -64,11 +64,9 @@ Each entry should include:
 
 ---
 
-## Drafted, pending-decision-to-file
+## Drafted (now filed — kept for reference)
 
-These are pre-written GitHub issue bodies targeting `scriptin/jmdict-simplified`. They are feature requests asking the upstream to consider documenting or exposing existing fields more prominently. The project owner can copy-paste either one into a new GitHub issue at https://github.com/scriptin/jmdict-simplified/issues when ready; the decision to file has been deferred because (a) the information is not *missing* upstream, only *shaped* in a way our schema does not round-trip, and (b) the upstream is a single-maintainer project and we want to be courteous about volume of open issues.
-
-These are the first Principle 6 drafts. Filing them is discretionary.
+The following were filed on 2026-04-12 as issues #36 and #37 on scriptin/jmdict-simplified. Draft text preserved below for reference.
 
 ### Draft A — `skipMisclassification` documentation
 
@@ -110,7 +108,21 @@ These are the first Principle 6 drafts. Filing them is discretionary.
 
 ## Filed
 
-_(Nothing filed yet.)_
+### [2026-04-12] scriptin/jmdict-simplified: skipMisclassification documentation
+
+**Entry**: queryCodes[].skipMisclassification on KANJIDIC2 SKIP entries
+**Issue**: Field is present in JSON output but not documented in README or type definitions
+**Status**: filed
+**Filed**: https://github.com/scriptin/jmdict-simplified/issues/36
+**Discovered during**: Phase 1 kanjidic2 structure inspection
+
+### [2026-04-12] scriptin/jmdict-simplified: Morohashi volume/page exposure
+
+**Entry**: dictionaryReferences[type=moro] missing m_vol/m_page from upstream XML
+**Issue**: Volume and page metadata lost in JSON transform; only entry number preserved
+**Status**: filed
+**Filed**: https://github.com/scriptin/jmdict-simplified/issues/37
+**Discovered during**: Phase 1 kanjidic2 structure inspection
 
 ---
 
