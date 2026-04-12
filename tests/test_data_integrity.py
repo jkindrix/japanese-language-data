@@ -164,6 +164,39 @@ def test_m1_display_forms_preserves_kanji_prefix() -> None:
 # Python set and produced different key orderings across rebuilds.
 # ---------------------------------------------------------------------------
 
+def test_stroke_order_index_is_filtered_to_kanji_json_characters() -> None:
+    """Stroke-order index must only contain characters that appear in kanji.json.
+
+    Regression guard for the pipeline-ordering bug fixed in v0.7.2: if
+    stroke_order.build() runs BEFORE kanji.build(), kanji.json does not
+    exist, _load_kanji_set() returns an empty set, and no filter is
+    applied. The result is that the stroke-order/ directory and the
+    stroke-order-index.json index include ~286 non-kanji SVGs (digits,
+    Latin letters, iteration marks, etc.) that are not in the kanji
+    dataset.
+
+    This test asserts that every character in the stroke-order index
+    is either in kanji.json (a known kanji) OR the character is
+    explicitly one we chose to include as a non-kanji (currently: none).
+    If the filter regresses, the index will contain characters like '0'
+    or 'A' or 'ー' and this test will fail with those characters listed.
+    """
+    index = _load_if_exists(REPO_ROOT / "data" / "enrichment" / "stroke-order-index.json")
+    kanji = _load_if_exists(REPO_ROOT / "data" / "core" / "kanji.json")
+    if index is None or kanji is None:
+        pytest.skip("stroke-order-index.json or kanji.json not built yet")
+    kanji_chars = {k["character"] for k in kanji.get("kanji", [])}
+    index_chars = set(index.get("characters", {}).keys())
+    non_kanji = sorted(ch for ch in index_chars if ch not in kanji_chars)
+    assert not non_kanji, (
+        f"stroke-order-index.json contains {len(non_kanji)} characters "
+        f"not present in kanji.json: {''.join(non_kanji[:30])}"
+        f"{'…' if len(non_kanji) > 30 else ''}. This means stroke_order "
+        f"ran before kanji in the pipeline, an ordering regression. See "
+        f"build/pipeline.py stage order."
+    )
+
+
 def test_stroke_order_characters_keys_are_sorted() -> None:
     """The characters map in stroke-order-index.json must have its keys
     in sorted Unicode-codepoint order. Regression guard for the
@@ -314,6 +347,116 @@ def test_invariant_grammar_jlpt_ids_resolve() -> None:
             f"jlpt grammar classification references unknown grammar_id {gid!r}"
 
 
+def test_grammar_tatoeba_linkage_floor() -> None:
+    """Tatoeba linkage must not silently regress.
+
+    The grammar dataset is built with a two-pass text-match against
+    sentences.json (exact, then conservatively normalized). The absolute
+    number of linked examples has been stable at 4 since the mechanism
+    was introduced in v0.3.2 — the curated examples are pedagogically
+    written, so hits are rare but the ones that match are stable
+    (sentences like 机の上に本があります。).
+
+    This test asserts an absolute floor of 3 linked examples: if a
+    future transform change or a curated-edit somehow drops the
+    mechanism entirely, the count will hit 0 and this test catches it.
+    We use an absolute count rather than a percentage because the
+    denominator (total examples) grows with every batch, which would
+    mask a regression in the absolute mechanism.
+    """
+    data = _load_if_exists(REPO_ROOT / "data" / "grammar" / "grammar.json")
+    if data is None:
+        pytest.skip("grammar.json not built yet")
+    linkage = data.get("metadata", {}).get("tatoeba_linkage") or {}
+    total = linkage.get("total_examples", 0)
+    linked = linkage.get("linked_examples", 0)
+    linked_via_norm = linkage.get("linked_via_normalization", 0)
+    assert isinstance(linked, int) and linked >= 3, (
+        f"Tatoeba linkage dropped to {linked}/{total} examples. "
+        f"The floor is 3 (stable since v0.3.2). If a curated example "
+        f"that previously matched was edited, find a new exact match or "
+        f"adjust the floor deliberately in this test."
+    )
+    # linked_via_normalization is tracked but not asserted — it may
+    # legitimately be 0 if the curated examples and Tatoeba sentences
+    # have identical trailing punctuation (which is the current case).
+    assert isinstance(linked_via_norm, int) and linked_via_norm >= 0
+
+
+def test_grammar_curated_sources_are_canonical() -> None:
+    """All grammar-curated/*.json sources entries must use the canonical form.
+
+    Prior to v0.7.2 cleanup, two distinct source strings coexisted:
+
+        "General Japanese grammar knowledge."
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+
+    N1/N2/N3 used the long form; N4/N5 used the short form. The long
+    form is the canonical one because it is legally explicit about why
+    no attribution is required (facts about grammar are not
+    copyrightable). This test prevents the short form from re-appearing.
+    """
+    curated_dir = REPO_ROOT / "grammar-curated"
+    if not curated_dir.exists():
+        pytest.skip("grammar-curated/ not present")
+    canonical = "General Japanese grammar knowledge (non-copyrightable facts)."
+    forbidden = "General Japanese grammar knowledge."
+    offenders: list[str] = []
+    for path in sorted(curated_dir.glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, list):
+            continue
+        for entry in data:
+            sources = entry.get("sources") or []
+            for source in sources:
+                if source == forbidden:
+                    offenders.append(f"{path.name}:{entry.get('id', '<no id>')}")
+    assert not offenders, (
+        f"grammar-curated entries using the short (non-canonical) source "
+        f"string: {offenders[:10]}{'…' if len(offenders) > 10 else ''}. "
+        f"Replace with the canonical form: {canonical!r}."
+    )
+
+
+def test_grammar_review_status_state_machine() -> None:
+    """A non-draft review_status must be backed by reviewer_notes.
+
+    The schema enum allows {draft, community_reviewed, native_speaker_reviewed}.
+    An entry claiming `community_reviewed` or `native_speaker_reviewed`
+    without any reviewer_notes is a state-machine violation — the state
+    transition should always leave behind a record of who reviewed what
+    and when.
+
+    This is an operational pre-condition for the review pipeline
+    described in docs/grammar-review.md. It is safe on the current
+    dataset (all 595 entries are still `draft`) and will guard against
+    a malformed merge the first time an actual reviewer files their PR.
+    """
+    data = _load_if_exists(REPO_ROOT / "data" / "grammar" / "grammar.json")
+    if data is None:
+        pytest.skip("grammar.json not built yet")
+    for entry in data.get("grammar_points", []):
+        status = entry.get("review_status", "draft")
+        if status == "draft":
+            continue
+        notes = entry.get("reviewer_notes") or []
+        assert notes, (
+            f"grammar entry {entry.get('id')!r} has review_status={status!r} "
+            f"but no reviewer_notes. Non-draft status must be backed by at "
+            f"least one reviewer note recording who reviewed the entry, "
+            f"when, and what they said. See docs/grammar-review.md."
+        )
+        # Each note must carry reviewer, date, note
+        for i, note in enumerate(notes):
+            assert isinstance(note, dict), \
+                f"grammar entry {entry.get('id')!r} reviewer_notes[{i}] must be an object"
+            for required in ("reviewer", "date", "note"):
+                assert note.get(required), (
+                    f"grammar entry {entry.get('id')!r} reviewer_notes[{i}] "
+                    f"missing required field {required!r}"
+                )
+
+
 def test_radicals_wikipedia_coverage_above_threshold() -> None:
     """v0.4.0 regression (raised at v0.7.x): radicals.json must have at
     least 95% of its 253 entries populated with Kangxi numbers and
@@ -359,14 +502,26 @@ def test_invariant_word_to_kanji_inverse_of_kanji_to_words() -> None:
     """word-to-kanji should be the exact inverse of kanji-to-words
     restricted to non-orphan characters. For every (kanji -> word_id)
     in kanji-to-words, there should be a matching (word_id -> kanji)
-    in word-to-kanji."""
+    in word-to-kanji, and vice-versa. Symmetry in both directions
+    catches bugs where the two indices diverge because one was built
+    from a different source than the other."""
     k2w = _load_if_exists(REPO_ROOT / "data" / "cross-refs" / "kanji-to-words.json")
     w2k = _load_if_exists(REPO_ROOT / "data" / "cross-refs" / "word-to-kanji.json")
     if k2w is None or w2k is None:
         pytest.skip("files not built")
+    k2w_map = k2w.get("mapping", {})
     w2k_map = w2k.get("mapping", {})
-    for kanji, word_ids in k2w.get("mapping", {}).items():
+
+    # Forward: every (kanji, wid) in k2w must appear as (wid, kanji) in w2k
+    for kanji, word_ids in k2w_map.items():
         for wid in word_ids:
             assert kanji in w2k_map.get(wid, []), \
-                f"Inverse mismatch: {kanji!r} in kanji-to-words[{wid}] " \
+                f"Inverse mismatch (forward): {kanji!r} in kanji-to-words[{wid}] " \
                 f"but not in word-to-kanji[{wid}]"
+
+    # Reverse: every (wid, kanji) in w2k must appear as (kanji, wid) in k2w
+    for wid, kanji_list in w2k_map.items():
+        for kanji in kanji_list:
+            assert wid in k2w_map.get(kanji, []), \
+                f"Inverse mismatch (reverse): {kanji!r} in word-to-kanji[{wid}] " \
+                f"but {wid!r} not in kanji-to-words[{kanji}]"
