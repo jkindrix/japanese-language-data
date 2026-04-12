@@ -134,3 +134,67 @@ jobs:
       - name: Summarize reproducibility check
         run: |
           echo "::notice::Reproducible build completed: fetch (SHA256-verified) → build → validate → tests → stats → build-twice-diff. Counts: see 'Print stats report' step above."
+
+  release:
+    name: Publish GitHub Release
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: build/requirements.txt
+
+      - name: Install just
+        uses: extractions/setup-just@v2
+        with:
+          just-version: "1.35.0"
+
+      - name: Install pipeline dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install --upgrade pip
+          .venv/bin/pip install -r build/requirements.txt
+
+      - name: Cache upstream sources
+        uses: actions/cache@v4
+        with:
+          path: sources
+          key: sources-${{ hashFiles('manifest.json') }}
+          restore-keys: |
+            sources-
+
+      - name: Fetch and build
+        run: |
+          just fetch
+          just build
+
+      - name: Generate export artifacts
+        run: |
+          just export-sqlite
+          just export-yomitan
+
+      - name: Extract release notes from CHANGELOG
+        id: notes
+        run: |
+          # Extract content between the first and second ## [N.N.N] headers
+          awk '/^## \[/{if(found) exit; found=1; next} found' \
+            CHANGELOG.md > /tmp/release-notes.md
+          echo "Extracted $(wc -l < /tmp/release-notes.md) lines of release notes"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: /tmp/release-notes.md
+          files: |
+            dist/japanese-language-data.sqlite
+            dist/japanese-language-data.zip
