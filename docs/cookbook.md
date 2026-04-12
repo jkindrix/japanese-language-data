@@ -242,3 +242,99 @@ jq --stream 'select(.[0][0] == "words" and .[0][2] == "id") | .[1]' \
 ```
 
 For most `jq` queries on files under 50 MB, standard (non-streaming) mode is fine.
+
+---
+
+## SQLite database
+
+The SQLite export (`dist/japanese-language-data.sqlite`, built via `just export-sqlite`) puts all data into a single queryable file. No JSON parsing needed.
+
+### Word lookup with JLPT level and pitch accent
+
+```sql
+SELECT w.kanji_primary, w.kana_primary, w.jlpt,
+       pa.positions AS pitch, fs.rank AS media_freq
+FROM words w
+LEFT JOIN pitch_accent pa ON pa.text = w.kanji_primary AND pa.reading = w.kana_primary
+LEFT JOIN frequency_subtitles fs ON fs.text = w.kanji_primary
+WHERE w.kanji_primary = '食べる';
+```
+
+### N3 grammar points sorted by pattern
+
+```sql
+SELECT id, pattern, meaning_en FROM grammar WHERE level = 'N3' ORDER BY pattern;
+```
+
+### Counter words with JLPT level
+
+```sql
+SELECT text, reading, meanings_json, jlpt FROM counter_words ORDER BY text;
+```
+
+### Most common words in spoken media (top 20)
+
+```sql
+SELECT fs.text, fs.reading, fs.rank, w.jlpt
+FROM frequency_subtitles fs
+LEFT JOIN words w ON w.kanji_primary = fs.text OR w.kana_primary = fs.text
+ORDER BY fs.rank
+LIMIT 20;
+```
+
+---
+
+## Subtitle frequency
+
+### Python: load and rank
+
+```python
+import json
+
+with open("data/enrichment/frequency-subtitles.json") as f:
+    freq = json.load(f)
+
+# Top 10 most frequent words in spoken media
+for entry in freq["entries"][:10]:
+    print(f"{entry['rank']:>5}  {entry['text']}  ({entry['reading']})  count={entry['count']}")
+```
+
+### jq: top N words
+
+```bash
+jq '.entries[:10][] | "\(.rank) \(.text) (\(.reading))"' data/enrichment/frequency-subtitles.json
+```
+
+---
+
+## Furigana (ruby text)
+
+### Python: render ruby annotations
+
+```python
+import json
+
+with open("data/enrichment/furigana.json") as f:
+    furigana = json.load(f)
+
+# Build lookup by (text, reading)
+furi_lookup = {(e["text"], e["reading"]): e["segments"] for e in furigana["entries"]}
+
+# Render HTML ruby for a word
+segments = furi_lookup.get(("食べる", "たべる"), [])
+html = ""
+for seg in segments:
+    base = seg.get("ruby", "")
+    rt = seg.get("rt", "")
+    if rt:
+        html += f"<ruby>{base}<rt>{rt}</rt></ruby>"
+    else:
+        html += base
+print(html)  # <ruby>食<rt>た</rt></ruby>べる
+```
+
+### jq: list all furigana entries for a word
+
+```bash
+jq '.entries[] | select(.text == "食べる")' data/enrichment/furigana.json
+```
