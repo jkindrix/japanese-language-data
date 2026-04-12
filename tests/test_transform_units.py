@@ -2763,6 +2763,7 @@ def test_load_pitch_lookup(tmp_path: Path, monkeypatch) -> None:
 def test_load_pitch_lookup_missing_file(tmp_path: Path, monkeypatch) -> None:
     from build import export_yomitan as ym
     monkeypatch.setattr(ym, "PITCH_JSON", tmp_path / "nonexistent.json")
+    monkeypatch.setattr(ym, "PITCH_WIKT_JSON", tmp_path / "nonexistent2.json")
     assert ym._load_pitch_lookup() == {}
 
 
@@ -2782,6 +2783,9 @@ def test_load_freq_lookup(tmp_path: Path, monkeypatch) -> None:
 def test_load_freq_lookup_missing_file(tmp_path: Path, monkeypatch) -> None:
     from build import export_yomitan as ym
     monkeypatch.setattr(ym, "FREQ_SUB_JSON", tmp_path / "nonexistent.json")
+    monkeypatch.setattr(ym, "FREQ_WEB_JSON", tmp_path / "nonexistent2.json")
+    monkeypatch.setattr(ym, "FREQ_WIKI_JSON", tmp_path / "nonexistent3.json")
+    monkeypatch.setattr(ym, "FREQ_CORPUS_JSON", tmp_path / "nonexistent4.json")
     assert ym._load_freq_lookup() == {}
 
 

@@ -21,7 +21,11 @@ DIST_DIR = REPO_ROOT / "dist"
 WORDS_JSON = DATA_DIR / "core" / "words.json"
 KANJI_JSON = DATA_DIR / "core" / "kanji.json"
 PITCH_JSON = DATA_DIR / "enrichment" / "pitch-accent.json"
+PITCH_WIKT_JSON = DATA_DIR / "enrichment" / "pitch-accent-wiktionary.json"
 FREQ_SUB_JSON = DATA_DIR / "enrichment" / "frequency-subtitles.json"
+FREQ_WEB_JSON = DATA_DIR / "enrichment" / "frequency-web.json"
+FREQ_WIKI_JSON = DATA_DIR / "enrichment" / "frequency-wikipedia.json"
+FREQ_CORPUS_JSON = DATA_DIR / "enrichment" / "frequency-corpus.json"
 OUT_ZIP = DIST_DIR / "japanese-language-data.zip"
 
 # Max entries per bank file (Yomitan convention)
@@ -40,36 +44,45 @@ def _build_tag_bank(words_data: dict) -> list[list]:
 
 
 def _load_pitch_lookup() -> dict[tuple[str, str], str]:
-    """Build (word, reading) → pitch notation from pitch-accent.json.
+    """Build (word, reading) → pitch notation from all pitch accent sources.
 
-    Returns a compact string like '⬇0' (heiban), '⬇1' (atamadaka),
-    '⬇N' (drop after mora N). Multiple positions are joined with '/'.
+    Loads Kanjium first, then Wiktionary supplement (entries not already
+    in Kanjium). Returns a compact string like '0' (heiban), '1'
+    (atamadaka), 'N' (drop after mora N). Multiple positions joined with '/'.
     """
     lookup: dict[tuple[str, str], str] = {}
-    if not PITCH_JSON.exists():
-        return lookup
-    data = json.loads(PITCH_JSON.read_text(encoding="utf-8"))
-    for e in data.get("entries", []):
-        word = e.get("word", "")
-        reading = e.get("reading", "")
-        positions = e.get("pitch_positions", [])
-        if word and reading and positions:
-            notation = "/".join(str(p) for p in positions)
-            lookup[(word, reading)] = notation
+    for path in (PITCH_JSON, PITCH_WIKT_JSON):
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        for e in data.get("entries", []):
+            word = e.get("word", "")
+            reading = e.get("reading", "")
+            positions = e.get("pitch_positions", [])
+            if word and positions:
+                key = (word, reading)
+                if key not in lookup:
+                    lookup[key] = "/".join(str(p) for p in positions)
     return lookup
 
 
 def _load_freq_lookup() -> dict[str, int]:
-    """Build text → rank from frequency-subtitles.json."""
+    """Build text → best rank across all frequency sources.
+
+    For each word, the lowest (best) rank across subtitles, web,
+    Wikipedia, and corpus frequency sources is kept.
+    """
     lookup: dict[str, int] = {}
-    if not FREQ_SUB_JSON.exists():
-        return lookup
-    data = json.loads(FREQ_SUB_JSON.read_text(encoding="utf-8"))
-    for e in data.get("entries", []):
-        text = e.get("text", "")
-        rank = e.get("rank")
-        if text and rank is not None:
-            lookup[text] = rank
+    for path in (FREQ_SUB_JSON, FREQ_WEB_JSON, FREQ_WIKI_JSON, FREQ_CORPUS_JSON):
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        for e in data.get("entries", []):
+            text = e.get("text", "")
+            rank = e.get("rank")
+            if text and rank is not None:
+                if text not in lookup or rank < lookup[text]:
+                    lookup[text] = rank
     return lookup
 
 

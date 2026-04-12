@@ -207,6 +207,7 @@ def _create_schema(conn: sqlite3.Connection) -> None:
         CREATE INDEX IF NOT EXISTS idx_sentences_source ON sentences(source);
         CREATE INDEX IF NOT EXISTS idx_grammar_level ON grammar(level);
         CREATE INDEX IF NOT EXISTS idx_pitch_text ON pitch_accent(text);
+        CREATE INDEX IF NOT EXISTS idx_pitch_text_reading ON pitch_accent(text, reading);
         CREATE INDEX IF NOT EXISTS idx_freq_rank ON frequency_corpus(rank);
         CREATE INDEX IF NOT EXISTS idx_freqsub_rank ON frequency_subtitles(rank);
         CREATE INDEX IF NOT EXISTS idx_freqsub_text ON frequency_subtitles(text);
