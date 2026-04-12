@@ -108,6 +108,11 @@ def _normalize_japanese_for_match(text: str) -> str:
     return normalized
 
 
+def _has_kanji(text: str) -> bool:
+    """True if text contains at least one CJK kanji character."""
+    return any("\u4e00" <= c <= "\u9fff" for c in text)
+
+
 def _extract_japanese_core(pattern: str) -> str:
     """Extract the searchable Japanese portion from a grammar pattern string.
 
@@ -117,29 +122,47 @@ def _extract_japanese_core(pattern: str) -> str:
     would appear in an actual sentence.
 
     Returns the extracted string, or "" if no usable Japanese portion
-    (length >= 2 characters) is found.
+    is found. Minimum length: 2 chars if kanji-containing, 3 chars
+    if pure kana (to avoid matching ubiquitous particles like ない).
+    """
+    candidates = _extract_japanese_candidates(pattern)
+    # Return the longest candidate (backward-compatible with callers
+    # that expect a single string).
+    return candidates[0] if candidates else ""
+
+
+def _extract_japanese_candidates(pattern: str) -> list[str]:
+    """Extract ALL searchable Japanese substrings from a pattern.
+
+    Returns candidates sorted longest-first. Used by _find_pattern_matches
+    to try multiple search terms per grammar point.
     """
     import re
     # Remove tilde markers
-    p = pattern.replace("〜", "").replace("～", "")
-    # Split on + and try the last segment first (usually the grammar form)
-    segments = p.split("+")
-    candidates = [segments[-1].strip()] if len(segments) > 1 else []
-    candidates.append(p.strip())
-
-    best = ""
-    for candidate in candidates:
-        # Find contiguous Japanese character runs (hiragana, katakana,
-        # kanji, Japanese punctuation range, long vowel mark)
-        runs = re.findall(
-            r"[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u3000-\u303Fー]+",
-            candidate,
-        )
-        for run in runs:
-            clean = run.strip("（）")
-            if len(clean) > len(best):
-                best = clean
-    return best if len(best) >= 2 else ""
+    p = pattern.replace("\u301c", "").replace("\uff5e", "")
+    # Resolve parenthesized content: 末(に) → 末に
+    p = re.sub(r"[（(]([^)）]+)[)）]", r"\1", p)
+    # Split on / to get alternatives
+    alternatives = [a.strip() for a in p.split("/")]
+    # Collect all candidate runs
+    raw_candidates: set[str] = set()
+    for alt in alternatives:
+        # Split on + to get segments
+        segments = alt.split("+")
+        for seg in segments:
+            seg = seg.strip()
+            runs = re.findall(
+                r"[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u3000-\u303F\u30FC]+",
+                seg,
+            )
+            for run in runs:
+                clean = run.strip("\u3000\u3001\u3002")
+                if not clean:
+                    continue
+                if len(clean) >= 2:
+                    raw_candidates.add(clean)
+    # Sort longest-first for best match quality
+    return sorted(raw_candidates, key=len, reverse=True)
 
 
 def _find_pattern_matches(
@@ -165,15 +188,20 @@ def _find_pattern_matches(
     matched_count = 0
 
     for entry in entries:
-        search_term = _extract_japanese_core(entry.get("pattern", ""))
-        if not search_term:
+        candidates = _extract_japanese_candidates(entry.get("pattern", ""))
+        if not candidates:
             continue
         matches: list[str] = []
-        for sid, text in sentences:
-            if search_term in text:
-                matches.append(sid)
-                if len(matches) >= max_per_point:
-                    break
+        for cand in candidates:
+            if len(matches) >= max_per_point:
+                break
+            for sid, text in sentences:
+                if cand in text:
+                    matches.append(sid)
+                    if len(matches) >= max_per_point:
+                        break
+            if matches:
+                break  # found matches with this candidate, stop trying others
         if matches:
             pattern_matches[entry["id"]] = matches
             total_matches += len(matches)
