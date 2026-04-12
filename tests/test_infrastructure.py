@@ -265,3 +265,47 @@ def test_constants_paths_exist(attr: str) -> None:
 
     path = getattr(constants, attr)
     assert path.exists(), f"build.constants.{attr} = {path} does not exist"
+
+
+# ===================================================================
+# 8. Error-path tests
+# ===================================================================
+
+
+def test_count_entries_malformed_data() -> None:
+    """_count_entries should return 0 for data without the payload key."""
+    from build.stats import _count_entries
+    assert _count_entries({}, "words") == 0
+    assert _count_entries({"other_key": [1, 2, 3]}, "words") == 0
+
+
+def test_count_entries_list_payload() -> None:
+    from build.stats import _count_entries
+    assert _count_entries({"words": [1, 2, 3]}, "words") == 3
+
+
+def test_count_entries_dict_payload() -> None:
+    from build.stats import _count_entries
+    assert _count_entries({"mapping": {"a": 1, "b": 2}}, "mapping") == 2
+
+
+def test_compute_counts_missing_files(tmp_path, monkeypatch) -> None:
+    """compute_counts handles missing files gracefully with None."""
+    import build.stats as stats_mod
+    import build.constants as constants_mod
+    # Point REPO_ROOT to a temp directory with no data files
+    monkeypatch.setattr(constants_mod, "REPO_ROOT", tmp_path)
+    monkeypatch.setattr(constants_mod, "DATA_DIR", tmp_path / "data")
+    monkeypatch.setattr(stats_mod, "REPO_ROOT", tmp_path)
+    counts = stats_mod.compute_counts()
+    # All files should be None (not built)
+    for val in counts.values():
+        assert val is None
+
+
+def test_pipeline_stage_timeout_constant_exists() -> None:
+    """Verify the STAGE_TIMEOUT constant is defined and reasonable."""
+    from build.pipeline import STAGE_TIMEOUT
+    assert isinstance(STAGE_TIMEOUT, int)
+    assert STAGE_TIMEOUT >= 60, "timeout should be at least 60s"
+    assert STAGE_TIMEOUT <= 600, "timeout should be at most 600s"

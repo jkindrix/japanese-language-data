@@ -525,3 +525,101 @@ def test_invariant_word_to_kanji_inverse_of_kanji_to_words() -> None:
             assert wid in k2w_map.get(kanji, []), \
                 f"Inverse mismatch (reverse): {kanji!r} in word-to-kanji[{wid}] " \
                 f"but {wid!r} not in kanji-to-words[{kanji}]"
+
+
+# ---------------------------------------------------------------------------
+# Metadata consistency across all data files
+# ---------------------------------------------------------------------------
+
+_DATA_FILES = [
+    "data/core/kana.json",
+    "data/core/kanji.json",
+    "data/core/words.json",
+    "data/core/radicals.json",
+    "data/corpus/sentences.json",
+    "data/enrichment/pitch-accent.json",
+    "data/enrichment/frequency-newspaper.json",
+    "data/enrichment/jlpt-classifications.json",
+    "data/enrichment/stroke-order-index.json",
+    "data/grammar/grammar.json",
+    "data/grammar/expressions.json",
+    "data/grammar/conjugations.json",
+    "data/cross-refs/kanji-to-words.json",
+    "data/cross-refs/word-to-kanji.json",
+    "data/cross-refs/word-to-sentences.json",
+    "data/cross-refs/kanji-to-radicals.json",
+]
+
+
+def test_all_data_files_have_open_license() -> None:
+    """Every committed data file must declare an open license (CC-BY-SA,
+    CC-BY, or CC0). Sentences use CC-BY 2.0 FR from Tatoeba, not CC-BY-SA."""
+    for rel_path in _DATA_FILES:
+        path = REPO_ROOT / rel_path
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        meta = data.get("metadata", {})
+        license_val = meta.get("license", "")
+        assert any(tag in license_val for tag in ("CC-BY-SA", "CC-BY", "CC0")), \
+            f"{rel_path}: metadata.license should contain an open license, got {license_val!r}"
+
+
+def test_all_data_files_have_generated_date() -> None:
+    """Every committed data file must have a YYYY-MM-DD generated date."""
+    import re
+    date_re = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+    for rel_path in _DATA_FILES:
+        path = REPO_ROOT / rel_path
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        generated = data.get("metadata", {}).get("generated", "")
+        assert date_re.match(generated), \
+            f"{rel_path}: metadata.generated should be YYYY-MM-DD, got {generated!r}"
+
+
+def test_all_data_files_have_nonempty_source() -> None:
+    """Every committed data file must have a non-empty source field."""
+    for rel_path in _DATA_FILES:
+        path = REPO_ROOT / rel_path
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        source = data.get("metadata", {}).get("source", "")
+        assert source, f"{rel_path}: metadata.source is empty"
+
+
+def test_all_data_files_count_matches_entries() -> None:
+    """metadata.count should match the actual number of entries."""
+    # Map of file -> (payload_key, is_dict)
+    payload_keys = {
+        "data/core/kana.json": "kana",
+        "data/core/kanji.json": "kanji",
+        "data/core/words.json": "words",
+        "data/core/radicals.json": "radicals",
+        "data/corpus/sentences.json": "sentences",
+        "data/enrichment/pitch-accent.json": "entries",
+        "data/enrichment/frequency-newspaper.json": "entries",
+        "data/enrichment/jlpt-classifications.json": "classifications",
+        "data/enrichment/stroke-order-index.json": "characters",
+        "data/grammar/grammar.json": "grammar_points",
+        "data/grammar/expressions.json": "expressions",
+        "data/grammar/conjugations.json": "entries",
+        "data/cross-refs/kanji-to-words.json": "mapping",
+        "data/cross-refs/word-to-kanji.json": "mapping",
+        "data/cross-refs/word-to-sentences.json": "mapping",
+        "data/cross-refs/kanji-to-radicals.json": "mapping",
+    }
+    for rel_path, key in payload_keys.items():
+        path = REPO_ROOT / rel_path
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        meta_count = data.get("metadata", {}).get("count")
+        if meta_count is None:
+            continue  # some files may not have count in metadata
+        payload = data.get(key, {})
+        actual = len(payload) if payload else 0
+        assert meta_count == actual, \
+            f"{rel_path}: metadata.count={meta_count} but actual={actual}"
