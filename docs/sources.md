@@ -246,7 +246,7 @@ For each row of the Wikipedia wikitable:
 
 ### Coverage and known limitations
 
-- **197 of 253 radicals (77.9%)** are populated by this source. The 56 unmatched are Japanese-dictionary-specific forms — simplified variants (亀 for 龜), katakana-shaped markers (ノ, ハ, マ, ユ, ヨ), fullwidth pipe (｜ for 丨), and other Nelson-style forms. These have no direct match in the Wikipedia Kangxi table and would require a curated alias table to bridge, deferred as a future patch.
+- **242 of 253 radicals (95.7%)** are populated by this source, as of v0.7.1. Wikipedia alone supplied 197/253 (77.9%) in v0.4.0 via the primary-and-alternate parser; v0.7.1 added a curated variant-to-Kangxi alias table in `build/transform/radicals.py` (`KANGXI_ALIASES`, 45 entries) that bridges Japanese-dictionary-specific variants — shinjitai simplifications, radical-in-compound variants, and positional markers — to their Kangxi parents. The 11 remaining unmatched radicals (マ, ユ, 尚, 杰, 井, 五, 巴, 禹, 世, 奄, 無) are Nelson-style variants whose Kangxi attribution is ambiguous; they are deliberately left unmatched rather than assigned arbitrary parents.
 - **Stroke count mismatches are not expected** (Wikipedia's stroke column is read for reference only but not emitted).
 - **Revision drift**: Wikipedia articles change over time. Our pin to revision 1346511063 locks the data to a specific snapshot. Updating requires a deliberate pin bump in `build/fetch.py` and `build/transform/radicals.py`.
 

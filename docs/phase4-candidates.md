@@ -151,12 +151,13 @@ Status values:
 
 ## Addressed Phase 4 items
 
-### Radical meanings and Kangxi numbers — **ADDRESSED (v0.4.0)**
+### Radical meanings and Kangxi numbers — **ADDRESSED (v0.4.0 + v0.7.1)**
 
-- **Status**: DELIVERED in v0.4.0. First Phase 4 candidate actually shipped.
+- **Status**: DELIVERED in two increments. First Phase 4 candidate to reach stable completion.
 - **Source**: Wikipedia "Kangxi radicals" article, pinned to revision 1346511063, licensed CC-BY-SA 4.0 (compatible with our output). Fetched via `index.php?action=raw` for stable wikitext without JSON wrapping.
-- **Coverage**: 197 of 253 radicals (77.9%) now have authoritative English meanings and Kangxi numbers populated directly from Wikipedia's Kangxi radical table. The 214 primary Kangxi radicals plus their documented alternate forms (e.g., 亻 listed as alternate for 人) are all mapped.
-- **Remaining gap**: 56 radicals (22.1%) are Japanese-dictionary-specific forms — simplified variants (亀 for 龜), katakana-shaped markers (ノ, ハ, マ, ユ, ヨ), fullwidth pipe (｜ for 丨), and Nelson-style dictionary variants — that have no direct match in Wikipedia's Kangxi table. Closing this gap requires a curated variant-to-Kangxi alias table, deferred as a future patch (potentially v0.4.1 or v0.4.2).
+- **v0.4.0 initial coverage**: 197 of 253 radicals (77.9%) populated from the Wikipedia Kangxi radical table directly. The 214 primary Kangxi radicals plus their documented alternate forms (e.g., 亻 listed as alternate for 人) were all mapped via the primary/alternate parser.
+- **v0.7.1 expansion**: A curated variant-to-Kangxi alias table (`KANGXI_ALIASES` in `build/transform/radicals.py`, 45 entries) bridges 45 Japanese-dictionary-specific variants to their Kangxi parents — shinjitai simplifications (亀→龜, 麦→麥, 歯→齒), radical-in-compound variants (汁→水 via 氵, 忙→心 via 忄, 邦→邑 via right-side 阝), positional markers (｜→丨, ノ→丿, ハ→八, ヨ→彐), and unambiguous kanji-as-component indicators. **Coverage is now 242 of 253 (95.7%).**
+- **Remaining gap**: 11 radicals (マ, ユ, 尚, 杰, 井, 五, 巴, 禹, 世, 奄, 無) are Nelson-style variants whose Kangxi attribution is ambiguous. They are deliberately left unmatched rather than assigned arbitrary parents, preserving honest provenance. Closing this residual gap would require a Nelson-radical-specific source or native-speaker judgment.
 - **Parser**: lives in `build/transform/radicals.py`. Reusable pattern for future Wikipedia ingestion (wikitable extraction, template unpacking, cell parsing).
 
 ## Frequency data (discovered during Phase 2)

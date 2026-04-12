@@ -107,7 +107,7 @@ These contributors have granted permission for inclusion under the broader EDRDG
 
 **What we extract**: The English meaning (from the "Meaning" column) and the Kangxi radical number (1–214) for each of the 214 classical radicals, plus the alternate form characters listed for each radical (e.g., 亻 and 𠆢 listed under 人, radical 9). We deliberately do NOT use the Wikipedia stroke count column — RADKFILE is the authoritative source for stroke counts in our dataset and using two sources risks divergence.
 
-**Target**: `data/core/radicals.json` `meanings` and `classical_number` fields. 197 of 253 radicals (77.9%) are populated via this source. The remaining 56 are Japanese-dictionary-specific variants that have no direct Kangxi table match.
+**Target**: `data/core/radicals.json` `meanings` and `classical_number` fields. Wikipedia directly supplies 197 of 253 radicals (77.9%); from v0.7.1, a curated variant-to-Kangxi alias table in `build/transform/radicals.py` (`KANGXI_ALIASES`) bridges an additional 45 Japanese-dictionary-specific variants (shinjitai, radical-in-compound forms, positional markers) to their Wikipedia-sourced Kangxi parents, bringing total coverage to 242 of 253 (95.7%). The 11 remaining unmatched radicals are ambiguous Nelson-style variants deliberately left unmatched rather than assigned arbitrary Kangxi parents.
 
 **Required attribution wording**:
 
