@@ -38,13 +38,15 @@ Cross-reference files (`data/cross-refs/`) are already keyed by ID — load them
 
 | File | Entries | Disk | In-memory (approx) |
 |---|---:|---:|---:|
-| `words.json` | 22,580 | 45 MB | 120 MB |
+| `words.json` | 23,119 | 46 MB | 120 MB |
 | `words-full.json` | 216,173 | 285 MB | 800 MB |
 | `kanji.json` | 13,108 | 17 MB | 60 MB |
 | `pitch-accent.json` | 124,011 | 17 MB | 80 MB |
+| `frequency-subtitles.json` | 8,598 | 1.6 MB | 5 MB |
+| `furigana.json` | 28,920 | 6.8 MB | 20 MB |
 | `grammar.json` | 595 | 1.1 MB | 3 MB |
 | `sentences.json` | 25,980 | 9.3 MB | 30 MB |
-| All cross-refs | ~48K mappings | 3.1 MB | 15 MB |
+| All cross-refs | ~76K mappings | 5.5 MB | 25 MB |
 
 For `words-full.json`, consider streaming (see `docs/cookbook.md` § Working with large files).
 

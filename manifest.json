@@ -180,11 +180,11 @@
   },
   "next_actions": [
     "Recruit native-speaker reviewers to move grammar entries from draft → native_speaker_reviewed (see docs/grammar-review.md for the operational review workflow).",
-    "Expand grammar-to-sentence linking beyond Tatoeba — match against KFTT corpus to improve the 75.6% pattern match rate and cover the 145 unlinked grammar points.",
-    "Phase 4: evaluate remaining candidates in docs/phase4-candidates.md — notably JPDB modern frequency (blocked on license clarification), post-2022 Wiktionary pitch accent fill, furigana alignment (JmdictFurigana), and audio corpora.",
-    "Increase direct unit test coverage of transform modules toward 65%+ (currently 48% overall; transforms are tested indirectly via data integrity tests).",
-    "Add new cross-reference indices: word-to-grammar, kanji-to-sentences, radical-to-kanji, sentence difficulty scoring.",
-    "Add new derived data: corpus-derived word frequency, jukugo compound index, ateji/jukujikun, counter words.",
-    "Add export formats: Anki .apkg, SQLite, enhanced Yomitan with pitch accent and JLPT data."
+    "Expand grammar-to-sentence linking — current 88.1% pattern match rate (Tatoeba + KFTT) may improve with broader corpus matching or relaxed normalization.",
+    "Phase 4 candidates: post-2022 Wiktionary pitch accent fill, Aozora Bunko literary corpus, Mozilla Common Voice transcripts (CC0). See docs/phase4-candidates.md.",
+    "Increase direct unit test coverage toward 65%+ (currently 51%; fail-under at 50%).",
+    "Implement word-to-grammar cross-reference (code scaffolded in cross_links.py but grammar examples lack word_ids — needs text-matching approach).",
+    "Add new derived data: jukugo compound index, ateji/jukujikun, counter words.",
+    "Add export format: Anki .apkg."
   ]
 }
