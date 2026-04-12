@@ -19,7 +19,9 @@ Run via ``just stats`` or ``python -m build.stats``.
 from __future__ import annotations
 
 import json
+import os
 import sys
+import tempfile
 from build.pipeline import BUILD_DATE
 from pathlib import Path
 
@@ -142,10 +144,20 @@ def update_manifest(counts: dict[str, int | None]) -> None:
         manifest = {}
     manifest["counts"] = counts
     manifest["generated"] = BUILD_DATE
-    MANIFEST_PATH.write_text(
-        json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
+    # Atomic write: write to a temp file in the same directory, then
+    # rename.  This prevents a crash mid-write from corrupting the
+    # manifest (the same pattern fetch.py uses for downloads).
+    tmp_fd, tmp_path = tempfile.mkstemp(
+        dir=MANIFEST_PATH.parent, suffix=".tmp",
     )
+    try:
+        with os.fdopen(tmp_fd, "w", encoding="utf-8") as f:
+            json.dump(manifest, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+        Path(tmp_path).replace(MANIFEST_PATH)
+    except BaseException:
+        Path(tmp_path).unlink(missing_ok=True)
+        raise
 
 
 def main() -> int:
