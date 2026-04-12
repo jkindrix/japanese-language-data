@@ -17,21 +17,18 @@ By submitting a contribution, you agree that your contribution will be released 
 
 ### Native-speaker reviewers for grammar
 
-The grammar dataset (Phase 3) is our largest original contribution and the area where we most need help. Entries in `data/grammar/grammar.json` carry a `review_status` field with these values:
+The grammar dataset (Phase 3) is our largest original contribution and the area where we most need help. As of v0.7.1, all 595 entries carry `review_status: "draft"` — every one of them was written by the project author from general grammar knowledge and awaits expert eyes.
 
-- `draft` — written by the project author from English sources; not reviewed
-- `community_reviewed` — checked by at least one community contributor who is not the original author
-- `native_speaker_reviewed` — confirmed by a native Japanese speaker with teaching or linguistic background
+**There is a full reviewer workflow documented at [`docs/grammar-review.md`](grammar-review.md), with a per-entry checklist at [`docs/grammar-review-checklist.md`](grammar-review-checklist.md).** If you are considering reviewing, read those documents first — they cover eligibility, the two review tracks (`community_reviewed` and `native_speaker_reviewed`), how to claim a slice, how to record a review, and how to handle disagreement.
 
-At the time of any pre-1.0 release, most entries will be `draft`. The goal is for 1.0 to have all N5 and N4 entries at `native_speaker_reviewed`. **We need native-speaker reviewers to close this gap.**
+Summary:
 
-If you are a native Japanese speaker (or a near-native equivalent with formal linguistic training) and are willing to review grammar entries, please open an issue titled `grammar-review: available` and let us know:
+- The `review_status` enum is `draft` → `community_reviewed` → `native_speaker_reviewed` (the latter two are parallel, not sequential; a native reviewer does not need a prior community review).
+- Eligibility is permissive for community review (linguistics training / teaching experience / strong N1) and strict for native review (native speaker or near-native equivalent).
+- Reviews are recorded as `reviewer_notes` entries on each grammar point and credited in `README.md` unless the reviewer opts out.
+- Use the [`grammar-review-availability`](/.github/ISSUE_TEMPLATE/grammar-review-availability.md) issue template to signal availability, and the [`grammar-review-batch`](/.github/ISSUE_TEMPLATE/grammar-review-batch.md) template to claim a specific slice.
 
-- Your background relevant to Japanese linguistics or language teaching
-- How many entries per month you're willing to review
-- Whether you want to review all levels or specific JLPT levels
-
-Grammar review consists of reading an entry, checking the formation rule, checking the English explanation against your intuition, checking the example sentences for naturalness, and confirming or correcting the nuance/usage notes. A reviewer does not need to write original content.
+**We need native-speaker reviewers to close this gap.** It is the single most important remaining work before any grammar entry can be considered authoritative.
 
 ### Error reports for existing upstream data
 

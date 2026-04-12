@@ -51,7 +51,50 @@ Before submitting, please check:
 - [ ] New entries have `review_status: "draft"`
 - [ ] Examples are `source: "original"` (or `"tatoeba"` with a real `sentence_id`)
 - [ ] `related` cross-references resolve (the build will hard-fail otherwise)
-- [ ] `sources` field honestly cites "General Japanese grammar knowledge" — not copied from copyrighted references
+- [ ] `sources` field uses the canonical string `"General Japanese grammar knowledge (non-copyrightable facts)."` — not copied from copyrighted references
+
+## For grammar review PRs
+
+<!--
+Fill this in if your PR updates `review_status` on any grammar entry.
+See docs/grammar-review.md for the full workflow and
+docs/grammar-review-checklist.md for the per-entry checks.
+-->
+
+- [ ] I have read `docs/grammar-review.md` and `docs/grammar-review-checklist.md`
+- [ ] My `reviewer_notes` entries follow the required format (`reviewer`, `date`, `note`)
+- [ ] I used the appropriate review track (`community_reviewed` vs `native_speaker_reviewed`)
+- [ ] I did not downgrade any prior review status
+- [ ] `just test` passes locally — including `test_grammar_review_status_state_machine`
+
+**Slice reviewed**:
+
+<!-- Which slice did you cover? E.g., "n5.json entries 1–20" or "all sparse_examples outliers" -->
+
+**Per-entry breakdown**:
+
+| Status change | Count |
+|---|---:|
+| `draft` → `native_speaker_reviewed` | |
+| `draft` → `community_reviewed` | |
+| `draft` → `draft` (reviewed but flagged for rewrite) | |
+| `draft` → `draft` (reviewed but not yet decided) | |
+
+**Substantive findings** (if any):
+
+<!--
+Any cross-cutting observations: patterns of errors, systemic issues,
+stylistic suggestions for the dataset as a whole. The author will use
+these to open follow-up issues if needed.
+-->
+
+**Reviewer credit preference**:
+
+- [ ] Real name in `reviewer_notes.reviewer` (specify): _____
+- [ ] GitHub handle in `reviewer_notes.reviewer` (specify): _____
+- [ ] Pseudonym in `reviewer_notes.reviewer` (specify): _____
+- [ ] Anonymous — do not credit in README
+- [ ] Credit in README's Reviewers section (name/handle): _____
 
 ## For schema changes
 
