@@ -185,6 +185,16 @@ versions:
     @printf '{{cyan}}Pytest:{{reset}}   '; {{python}} -m pytest --version 2>/dev/null || echo '(not installed)'
 
 # ============================================================================
+# EXPORT
+# ============================================================================
+
+# Export as Yomitan-compatible dictionary ZIP
+[group('export')]
+export-yomitan:
+    @printf '{{cyan}}==> Exporting Yomitan dictionary{{reset}}\n'
+    {{python}} -m build.export_yomitan
+
+# ============================================================================
 # RELEASE
 # ============================================================================
 
