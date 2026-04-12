@@ -1333,3 +1333,832 @@ def test_parse_curated_grammar_missing_dir(monkeypatch) -> None:
 
     entries = _parse_curated_grammar("2026-04-12")
     assert entries == [], f"expected empty list for missing dir, got {entries!r}"
+
+
+# ---------------------------------------------------------------------------
+# cross_links._is_kanji_char — CJK block detection
+# ---------------------------------------------------------------------------
+
+@pytest.mark.parametrize("char, expected", [
+    ("亜", True),      # CJK Unified Ideographs (U+4E00-U+9FFF)
+    ("食", True),
+    ("龍", True),
+    ("𠂉", True),      # CJK Extension B (U+20000-U+2A6DF)
+    ("a", False),       # Latin
+    ("A", False),
+    ("ぁ", False),      # Hiragana
+    ("ア", False),      # Katakana
+    ("1", False),       # Digit
+    ("Ａ", False),      # Fullwidth Latin
+    ("１", False),      # Fullwidth digit
+])
+def test_is_kanji_char(char: str, expected: bool) -> None:
+    from build.transform.cross_links import _is_kanji_char
+    assert _is_kanji_char(char) is expected, (
+        f"_is_kanji_char({char!r}) should be {expected}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# cross_links._build_word_cross_refs — core cross-reference logic
+# ---------------------------------------------------------------------------
+
+def test_build_word_cross_refs_basic() -> None:
+    """Cross-ref builder extracts kanji-to-word and word-to-kanji mappings."""
+    from build.transform.cross_links import _build_word_cross_refs
+
+    words_data = {"words": [
+        {
+            "id": "100",
+            "kanji": [{"text": "漢字"}],
+            "kana": [{"text": "かんじ"}],
+            "sense": [{"examples": [{"sentence_id": "s1"}]}],
+        },
+        {
+            "id": "200",
+            "kanji": [{"text": "漢方"}],
+            "kana": [{"text": "かんぽう"}],
+            "sense": [],
+        },
+    ]}
+    k2w, w2k, w2s = _build_word_cross_refs(words_data)
+
+    # 漢 appears in both words
+    assert "漢" in k2w
+    assert set(k2w["漢"]) == {"100", "200"}
+
+    # 字 only in first word
+    assert "字" in k2w
+    assert k2w["字"] == ["100"]
+
+    # Word-to-kanji mappings
+    assert set(w2k["100"]) == {"漢", "字"}
+    assert set(w2k["200"]) == {"漢", "方"}
+
+    # Word-to-sentences
+    assert w2s["100"] == ["s1"]
+    assert "200" not in w2s
+
+
+def test_build_word_cross_refs_kana_only() -> None:
+    """Kana-only words produce no kanji cross-refs."""
+    from build.transform.cross_links import _build_word_cross_refs
+
+    words_data = {"words": [
+        {
+            "id": "300",
+            "kanji": [],
+            "kana": [{"text": "ああ"}],
+            "sense": [],
+        },
+    ]}
+    k2w, w2k, w2s = _build_word_cross_refs(words_data)
+    assert k2w == {}
+    assert w2k == {}
+    assert w2s == {}
+
+
+def test_build_word_cross_refs_deduplicates_sentence_ids() -> None:
+    """Sentence IDs should be deduplicated across senses."""
+    from build.transform.cross_links import _build_word_cross_refs
+
+    words_data = {"words": [
+        {
+            "id": "400",
+            "kanji": [{"text": "食"}],
+            "kana": [{"text": "しょく"}],
+            "sense": [
+                {"examples": [{"sentence_id": "s1"}, {"sentence_id": "s2"}]},
+                {"examples": [{"sentence_id": "s1"}]},  # duplicate
+            ],
+        },
+    ]}
+    _, _, w2s = _build_word_cross_refs(words_data)
+    assert sorted(w2s["400"]) == ["s1", "s2"]
+
+
+# ---------------------------------------------------------------------------
+# cross_links._build_reading_to_words — reading reverse index
+# ---------------------------------------------------------------------------
+
+def test_build_reading_to_words_basic() -> None:
+    """Reading-to-words maps kana readings to word IDs."""
+    from build.transform.cross_links import _build_reading_to_words
+
+    words_data = {"words": [
+        {"id": "100", "kana": [{"text": "かん"}]},
+        {"id": "200", "kana": [{"text": "かん"}]},  # same reading
+        {"id": "300", "kana": [{"text": "はな"}]},
+    ]}
+    r2w = _build_reading_to_words(words_data)
+    assert set(r2w["かん"]) == {"100", "200"}
+    assert r2w["はな"] == ["300"]
+
+
+def test_build_reading_to_words_deduplicates() -> None:
+    """Same word ID should not appear twice under same reading."""
+    from build.transform.cross_links import _build_reading_to_words
+
+    words_data = {"words": [
+        {"id": "100", "kana": [{"text": "かん"}, {"text": "かん"}]},  # dupe
+    ]}
+    r2w = _build_reading_to_words(words_data)
+    assert r2w["かん"] == ["100"]  # not ["100", "100"]
+
+
+# ---------------------------------------------------------------------------
+# names._transform_name — safe conversion
+# ---------------------------------------------------------------------------
+
+def test_transform_name_complete_entry() -> None:
+    from build.transform.names import _transform_name
+
+    entry = {
+        "id": 12345,
+        "kanji": [{"text": "太郎"}],
+        "kana": [{"text": "たろう"}],
+        "translation": [{"text": "Taro"}],
+    }
+    result = _transform_name(entry)
+    assert result["id"] == "12345"  # converted to string
+    assert result["kanji"] == [{"text": "太郎"}]
+    assert result["kana"] == [{"text": "たろう"}]
+    assert result["translation"] == [{"text": "Taro"}]
+
+
+def test_transform_name_none_fields() -> None:
+    from build.transform.names import _transform_name
+
+    entry = {"id": 0, "kanji": None, "kana": None, "translation": None}
+    result = _transform_name(entry)
+    assert result["id"] == "0"
+    assert result["kanji"] == []
+    assert result["kana"] == []
+    assert result["translation"] == []
+
+
+def test_transform_name_missing_fields() -> None:
+    from build.transform.names import _transform_name
+
+    result = _transform_name({})
+    assert result["id"] == ""
+    assert result["kanji"] == []
+    assert result["kana"] == []
+    assert result["translation"] == []
+
+
+# ---------------------------------------------------------------------------
+# export_yomitan — tag bank, term banks, kanji banks
+# ---------------------------------------------------------------------------
+
+def test_yomitan_build_tag_bank() -> None:
+    from build.export_yomitan import _build_tag_bank
+
+    words_data = {
+        "metadata": {
+            "tags": {
+                "v1": "Ichidan verb",
+                "n": "Noun",
+                "adj-i": "I-adjective",
+            }
+        }
+    }
+    bank = _build_tag_bank(words_data)
+    assert len(bank) == 3
+
+    # Sorted by abbreviation
+    names = [entry[0] for entry in bank]
+    assert names == ["adj-i", "n", "v1"]
+
+    # Category logic: v* and adj* -> partOfSpeech, else misc
+    adj_entry = next(e for e in bank if e[0] == "adj-i")
+    assert adj_entry[1] == "partOfSpeech"
+
+    n_entry = next(e for e in bank if e[0] == "n")
+    assert n_entry[1] == "misc"
+
+    v_entry = next(e for e in bank if e[0] == "v1")
+    assert v_entry[1] == "partOfSpeech"
+
+
+def test_yomitan_build_term_banks_kanji_word() -> None:
+    from build.export_yomitan import _build_term_banks
+
+    words_data = {
+        "words": [
+            {
+                "id": "1000",
+                "jlpt_waller": "N5",
+                "kanji": [{"text": "食べる"}],
+                "kana": [{"text": "たべる"}],
+                "sense": [{
+                    "partOfSpeech": ["v1"],
+                    "gloss": [{"text": "to eat"}],
+                }],
+            },
+        ]
+    }
+    banks = _build_term_banks(words_data)
+    assert len(banks) == 1
+    assert len(banks[0]) == 1
+
+    entry = banks[0][0]
+    assert entry[0] == "食べる"          # term
+    assert entry[1] == "たべる"          # reading
+    assert entry[4] == 5                 # N5 score
+    assert entry[5] == ["to eat"]        # definitions
+    assert entry[6] == 1000              # sequence
+
+
+def test_yomitan_build_term_banks_kana_only() -> None:
+    from build.export_yomitan import _build_term_banks
+
+    words_data = {
+        "words": [
+            {
+                "id": "2000",
+                "jlpt_waller": None,
+                "kanji": [],
+                "kana": [{"text": "ああ"}],
+                "sense": [{
+                    "partOfSpeech": ["intj"],
+                    "gloss": [{"text": "ah"}],
+                }],
+            },
+        ]
+    }
+    banks = _build_term_banks(words_data)
+    entry = banks[0][0]
+    assert entry[0] == "ああ"            # term = kana
+    assert entry[1] == ""                # empty reading for kana-only
+    assert entry[4] == 0                 # no JLPT = score 0
+
+
+def test_yomitan_build_term_banks_no_definitions_skipped() -> None:
+    from build.export_yomitan import _build_term_banks
+
+    words_data = {
+        "words": [
+            {
+                "id": "3000",
+                "jlpt_waller": None,
+                "kanji": [{"text": "空"}],
+                "kana": [{"text": "から"}],
+                "sense": [{"partOfSpeech": ["n"], "gloss": []}],
+            },
+        ]
+    }
+    banks = _build_term_banks(words_data)
+    # No definitions -> entry should be skipped
+    total_entries = sum(len(b) for b in banks)
+    assert total_entries == 0
+
+
+def test_yomitan_build_term_banks_splits_into_bank_size() -> None:
+    from build.export_yomitan import _build_term_banks, BANK_SIZE
+
+    # Create more words than BANK_SIZE
+    words = []
+    for i in range(BANK_SIZE + 5):
+        words.append({
+            "id": str(i),
+            "jlpt_waller": None,
+            "kanji": [{"text": f"字{i}"}],
+            "kana": [{"text": f"じ{i}"}],
+            "sense": [{"partOfSpeech": ["n"], "gloss": [{"text": f"def{i}"}]}],
+        })
+    banks = _build_term_banks({"words": words})
+    assert len(banks) == 2
+    assert len(banks[0]) == BANK_SIZE
+    assert len(banks[1]) == 5
+
+
+def test_yomitan_build_kanji_banks_joyo() -> None:
+    from build.export_yomitan import _build_kanji_banks
+
+    kanji_data = {
+        "kanji": [
+            {
+                "character": "食",
+                "grade": 2,
+                "jlpt_waller": "N5",
+                "readings": {"on": ["ショク", "ジキ"], "kun": ["く.う", "た.べる"]},
+                "meanings": {"en": ["eat", "food"]},
+                "stroke_count": 9,
+                "frequency": 328,
+            },
+        ]
+    }
+    banks = _build_kanji_banks(kanji_data)
+    entry = banks[0][0]
+    assert entry[0] == "食"
+    assert "ショク" in entry[1]       # on readings
+    assert "た.べる" in entry[2]      # kun readings
+    assert "joyo" in entry[3]          # tags
+    assert "N5" in entry[3]
+    assert entry[4] == ["eat", "food"]
+    assert entry[5]["strokes"] == "9"
+    assert entry[5]["grade"] == "2"
+    assert entry[5]["freq"] == "328"
+    assert entry[5]["jlpt"] == "N5"
+
+
+def test_yomitan_build_kanji_banks_jinmeiyo() -> None:
+    from build.export_yomitan import _build_kanji_banks
+
+    kanji_data = {
+        "kanji": [
+            {
+                "character": "亮",
+                "grade": 9,
+                "jlpt_waller": None,
+                "readings": {"on": ["リョウ"], "kun": []},
+                "meanings": {"en": ["clear"]},
+                "stroke_count": 9,
+                "frequency": None,
+            },
+        ]
+    }
+    banks = _build_kanji_banks(kanji_data)
+    entry = banks[0][0]
+    assert "jinmeiyo" in entry[3]
+    assert "freq" not in entry[5]  # no frequency
+
+
+def test_yomitan_build_kanji_banks_empty_char_skipped() -> None:
+    from build.export_yomitan import _build_kanji_banks
+
+    kanji_data = {"kanji": [{"character": "", "grade": None, "jlpt_waller": None,
+                              "readings": {}, "meanings": {}, "stroke_count": None,
+                              "frequency": None}]}
+    banks = _build_kanji_banks(kanji_data)
+    total = sum(len(b) for b in banks)
+    assert total == 0
+
+
+# ---------------------------------------------------------------------------
+# stats._count_entries — polymorphic entry counting
+# ---------------------------------------------------------------------------
+
+def test_count_entries_list_payload() -> None:
+    from build.stats import _count_entries
+    assert _count_entries({"words": [1, 2, 3]}, "words") == 3
+
+
+def test_count_entries_dict_payload() -> None:
+    from build.stats import _count_entries
+    assert _count_entries({"mapping": {"a": [], "b": []}}, "mapping") == 2
+
+
+def test_count_entries_none_payload() -> None:
+    from build.stats import _count_entries
+    assert _count_entries({"words": None}, "words") == 0
+
+
+def test_count_entries_missing_key() -> None:
+    from build.stats import _count_entries
+    assert _count_entries({}, "words") == 0
+
+
+# ---------------------------------------------------------------------------
+# bump_release — version regex parsing
+# ---------------------------------------------------------------------------
+
+def test_latest_changelog_version_with_date(tmp_path: Path, monkeypatch) -> None:
+    import build.bump_release as br
+    changelog = tmp_path / "CHANGELOG.md"
+    changelog.write_text(
+        "# Changelog\n\n## [Unreleased]\n\n## [1.2.3] — 2026-04-12\n\nContent\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(br, "CHANGELOG_PATH", changelog)
+
+    version, date_str = br.latest_changelog_version()
+    assert version == "1.2.3"
+    assert date_str == "2026-04-12"
+
+
+def test_latest_changelog_version_without_date(tmp_path: Path, monkeypatch) -> None:
+    import build.bump_release as br
+    changelog = tmp_path / "CHANGELOG.md"
+    changelog.write_text("## [0.1.0]\nContent\n", encoding="utf-8")
+    monkeypatch.setattr(br, "CHANGELOG_PATH", changelog)
+
+    version, date_str = br.latest_changelog_version()
+    assert version == "0.1.0"
+    assert date_str is None
+
+
+def test_latest_changelog_version_no_match_raises(tmp_path: Path, monkeypatch) -> None:
+    import build.bump_release as br
+    changelog = tmp_path / "CHANGELOG.md"
+    changelog.write_text("## [Unreleased]\nNo versions\n", encoding="utf-8")
+    monkeypatch.setattr(br, "CHANGELOG_PATH", changelog)
+
+    with pytest.raises(RuntimeError, match="No concrete-version header"):
+        br.latest_changelog_version()
+
+
+def test_bump_dry_run_no_changes(tmp_path: Path, monkeypatch) -> None:
+    import build.bump_release as br
+    manifest_path = tmp_path / "manifest.json"
+    changelog_path = tmp_path / "CHANGELOG.md"
+
+    manifest_path.write_text(
+        json.dumps({"version": "1.0.0", "generated": "2026-04-12",
+                     "phase_description": "test v1.0.0"}),
+        encoding="utf-8",
+    )
+    changelog_path.write_text("## [1.0.0] — 2026-04-12\n", encoding="utf-8")
+
+    monkeypatch.setattr(br, "MANIFEST_PATH", manifest_path)
+    monkeypatch.setattr(br, "CHANGELOG_PATH", changelog_path)
+
+    rc = br.bump(dry_run=True)
+    assert rc == 0
+
+
+def test_bump_updates_version(tmp_path: Path, monkeypatch) -> None:
+    import build.bump_release as br
+    manifest_path = tmp_path / "manifest.json"
+    changelog_path = tmp_path / "CHANGELOG.md"
+
+    manifest_path.write_text(
+        json.dumps({"version": "0.9.0", "generated": "2026-01-01",
+                     "phase_description": "old"}),
+        encoding="utf-8",
+    )
+    changelog_path.write_text("## [1.0.0] — 2026-04-12\n", encoding="utf-8")
+
+    monkeypatch.setattr(br, "MANIFEST_PATH", manifest_path)
+    monkeypatch.setattr(br, "CHANGELOG_PATH", changelog_path)
+
+    rc = br.bump(dry_run=False)
+    assert rc == 0
+
+    updated = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assert updated["version"] == "1.0.0"
+    assert updated["generated"] == "2026-04-12"
+
+
+# ---------------------------------------------------------------------------
+# grammar._normalize_japanese_for_match — normalization for Tatoeba matching
+# ---------------------------------------------------------------------------
+
+def test_normalize_japanese_strips_trailing_punctuation() -> None:
+    from build.transform.grammar import _normalize_japanese_for_match
+    assert _normalize_japanese_for_match("食べる。") == "食べる"
+    assert _normalize_japanese_for_match("食べる、") == "食べる"
+    assert _normalize_japanese_for_match("食べる.") == "食べる"
+
+
+def test_normalize_japanese_strips_whitespace() -> None:
+    from build.transform.grammar import _normalize_japanese_for_match
+    assert _normalize_japanese_for_match("  食べる  ") == "食べる"
+
+
+def test_normalize_japanese_noop_for_clean_input() -> None:
+    from build.transform.grammar import _normalize_japanese_for_match
+    assert _normalize_japanese_for_match("食べる") == "食べる"
+
+
+# ---------------------------------------------------------------------------
+# grammar._validate_entry — structural validation
+# ---------------------------------------------------------------------------
+
+def test_validate_entry_valid() -> None:
+    from build.transform.grammar import _validate_entry
+    entry = {
+        "id": "test-1",
+        "pattern": "〜てください",
+        "meaning_en": "please do ~",
+        "level": "N5",
+        "formation": "Verb て-form + ください",
+        "examples": [{"ja": "食べてください", "en": "Please eat."}],
+        "review_status": "draft",
+        "sources": ["General knowledge"],
+    }
+    # Should not raise
+    _validate_entry(entry, "test.json")
+
+
+def test_validate_entry_missing_required_field() -> None:
+    from build.transform.grammar import _validate_entry
+    entry = {
+        "id": "test-2",
+        # missing pattern
+        "meaning_en": "please do ~",
+        "level": "N5",
+        "formation": "test",
+        "examples": [{"ja": "test", "en": "test"}],
+        "review_status": "draft",
+        "sources": ["test"],
+    }
+    with pytest.raises(ValueError, match="missing required fields"):
+        _validate_entry(entry, "test.json")
+
+
+def test_validate_entry_no_examples() -> None:
+    from build.transform.grammar import _validate_entry
+    entry = {
+        "id": "test-3",
+        "pattern": "〜てください",
+        "meaning_en": "please do ~",
+        "level": "N5",
+        "formation": "test",
+        "examples": [],
+        "review_status": "draft",
+        "sources": ["test"],
+    }
+    with pytest.raises(ValueError, match="has no examples"):
+        _validate_entry(entry, "test.json")
+
+
+# ---------------------------------------------------------------------------
+# conjugations — additional verb type coverage
+# ---------------------------------------------------------------------------
+
+def test_conjugate_ichidan_basic() -> None:
+    """Standard ichidan verb 食べる."""
+    from build.transform.conjugations import _conjugate_ichidan
+    forms = _conjugate_ichidan("たべる")
+    assert forms is not None
+    assert forms["te_form"] == "たべて"
+    assert forms["nai_form"] == "たべない"
+    assert forms["polite_nonpast"] == "たべます"
+    assert forms["potential"] == "たべられる"
+    assert forms["passive"] == "たべられる"
+    assert forms["causative"] == "たべさせる"
+    assert forms["volitional"] == "たべよう"
+    assert forms["imperative"] == "たべろ"
+    assert forms["conditional_ba"] == "たべれば"
+    assert forms["conditional_tara"] == "たべたら"
+    assert forms["ta_form"] == "たべた"
+
+
+def test_conjugate_ichidan_short() -> None:
+    """Ichidan verbs with stem of length 1 (e.g., 見る = みる)."""
+    from build.transform.conjugations import _conjugate_ichidan
+    forms = _conjugate_ichidan("みる")
+    assert forms is not None
+    assert forms["te_form"] == "みて"
+    assert forms["nai_form"] == "みない"
+    assert forms["polite_nonpast"] == "みます"
+
+
+def test_conjugate_godan_v5g() -> None:
+    """v5g (g-column) godan verb: 泳ぐ."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("およぐ", "v5g")
+    assert forms is not None
+    assert forms["te_form"] == "およいで"
+    assert forms["ta_form"] == "およいだ"
+    assert forms["nai_form"] == "およがない"
+    assert forms["polite_nonpast"] == "およぎます"
+
+
+def test_conjugate_godan_v5s() -> None:
+    """v5s (s-column) godan verb: 話す."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("はなす", "v5s")
+    assert forms is not None
+    assert forms["te_form"] == "はなして"
+    assert forms["ta_form"] == "はなした"
+    assert forms["nai_form"] == "はなさない"
+    assert forms["polite_nonpast"] == "はなします"
+
+
+def test_conjugate_godan_v5t() -> None:
+    """v5t (t-column) godan verb: 待つ."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("まつ", "v5t")
+    assert forms is not None
+    assert forms["te_form"] == "まって"
+    assert forms["ta_form"] == "まった"
+    assert forms["nai_form"] == "またない"
+
+
+def test_conjugate_godan_v5n() -> None:
+    """v5n (n-column) godan verb: 死ぬ."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("しぬ", "v5n")
+    assert forms is not None
+    assert forms["te_form"] == "しんで"
+    assert forms["ta_form"] == "しんだ"
+    assert forms["nai_form"] == "しなない"
+
+
+def test_conjugate_godan_v5b() -> None:
+    """v5b (b-column) godan verb: 遊ぶ."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("あそぶ", "v5b")
+    assert forms is not None
+    assert forms["te_form"] == "あそんで"
+    assert forms["ta_form"] == "あそんだ"
+    assert forms["nai_form"] == "あそばない"
+
+
+def test_conjugate_godan_v5m() -> None:
+    """v5m (m-column) godan verb: 読む."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("よむ", "v5m")
+    assert forms is not None
+    assert forms["te_form"] == "よんで"
+    assert forms["ta_form"] == "よんだ"
+    assert forms["nai_form"] == "よまない"
+
+
+def test_conjugate_godan_v5r() -> None:
+    """v5r (r-column, regular) godan verb: 取る."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("とる", "v5r")
+    assert forms is not None
+    assert forms["te_form"] == "とって"
+    assert forms["ta_form"] == "とった"
+    assert forms["nai_form"] == "とらない"
+    assert forms["polite_nonpast"] == "とります"
+
+
+def test_conjugate_godan_v5u() -> None:
+    """v5u (u-column, regular) godan verb: 買う."""
+    from build.transform.conjugations import _conjugate_godan
+    forms = _conjugate_godan("かう", "v5u")
+    assert forms is not None
+    assert forms["te_form"] == "かって"
+    assert forms["ta_form"] == "かった"
+    assert forms["nai_form"] == "かわない"
+
+
+def test_conjugate_suru_compound() -> None:
+    """suru compound verb: 勉強する."""
+    from build.transform.conjugations import _conjugate_suru_compound
+    forms = _conjugate_suru_compound("べんきょうする")
+    assert forms is not None
+    assert forms["te_form"] == "べんきょうして"
+    assert forms["nai_form"] == "べんきょうしない"
+    assert forms["polite_nonpast"] == "べんきょうします"
+    assert forms["passive"] == "べんきょうされる"
+    assert forms["causative"] == "べんきょうさせる"
+    assert forms["potential"] == "べんきょうできる"
+
+
+def test_conjugate_kuru() -> None:
+    """Irregular verb 来る (くる)."""
+    from build.transform.conjugations import _conjugate_kuru
+    forms = _conjugate_kuru()
+    assert forms is not None
+    assert forms["te_form"] == "きて"
+    assert forms["nai_form"] == "こない"
+    assert forms["polite_nonpast"] == "きます"
+    assert forms["ta_form"] == "きた"
+    assert forms["passive"] == "こられる"
+
+
+def test_conjugate_i_adjective() -> None:
+    """i-adjective: 高い."""
+    from build.transform.conjugations import _conjugate_i_adjective
+    forms = _conjugate_i_adjective("たかい")
+    assert forms is not None
+    assert forms["te_form"] == "たかくて"
+    assert forms["negative"] == "たかくない"
+    assert forms["past"] == "たかかった"
+    assert forms["past_negative"] == "たかくなかった"
+    assert forms["adverbial"] == "たかく"
+    assert forms["conditional_ba"] == "たかければ"
+    assert forms["conditional_tara"] == "たかかったら"
+
+
+def test_conjugate_na_adjective() -> None:
+    """na-adjective: 静か."""
+    from build.transform.conjugations import _conjugate_na_adjective
+    forms = _conjugate_na_adjective("しずか")
+    assert forms is not None
+    assert forms["te_form"] == "しずかで"
+    assert forms["nai_form"] == "しずかではない"
+    assert forms["dictionary"] == "しずかだ"
+    assert forms["attributive"] == "しずかな"
+    assert forms["polite_nonpast"] == "しずかです"
+    assert forms["polite_past"] == "しずかでした"
+
+
+# ---------------------------------------------------------------------------
+# conjugations — display_forms helpers
+# ---------------------------------------------------------------------------
+
+def test_longest_common_suffix_length() -> None:
+    from build.transform.conjugations import _longest_common_suffix_length
+    assert _longest_common_suffix_length("食べる", "たべる") == 2  # べる
+    assert _longest_common_suffix_length("abc", "def") == 0      # nothing
+    assert _longest_common_suffix_length("abc", "abc") == 3      # all
+    assert _longest_common_suffix_length("", "abc") == 0
+
+
+def test_replace_prefix_in_forms() -> None:
+    from build.transform.conjugations import _replace_prefix_in_forms
+    forms = {"te_form": "たべて", "empty": ""}
+    result = _replace_prefix_in_forms(forms, "たべ", "食べ")
+    assert result["te_form"] == "食べて"
+    assert result["empty"] == ""
+
+
+def test_replace_prefix_no_match() -> None:
+    from build.transform.conjugations import _replace_prefix_in_forms
+    forms = {"te_form": "きて"}  # くる → きて, prefix changed
+    result = _replace_prefix_in_forms(forms, "たべ", "食べ")
+    assert result["te_form"] == "きて"  # unchanged
+
+
+def test_display_forms_adj_na() -> None:
+    from build.transform.conjugations import _display_forms_adj_na
+    forms = {"dictionary": "しずかだ", "te_form": "しずかで", "attributive": "しずかな"}
+    result = _display_forms_adj_na("静か", "しずか", forms)
+    assert result["dictionary"] == "静かだ"
+    assert result["te_form"] == "静かで"
+    assert result["attributive"] == "静かな"
+
+
+def test_display_forms_common_suffix_verb() -> None:
+    from build.transform.conjugations import _display_forms_common_suffix
+    forms = {"te_form": "たべて", "nai_form": "たべない"}
+    result = _display_forms_common_suffix("食べる", "たべる", forms)
+    assert result["te_form"] == "食べて"
+    assert result["nai_form"] == "食べない"
+
+
+def test_display_forms_common_suffix_no_match() -> None:
+    from build.transform.conjugations import _display_forms_common_suffix
+    forms = {"te_form": "きて"}
+    result = _display_forms_common_suffix("xyz", "abc", forms)
+    # No common suffix → verbatim copy
+    assert result["te_form"] == "きて"
+
+
+def test_display_forms_common_suffix_pure_kana() -> None:
+    from build.transform.conjugations import _display_forms_common_suffix
+    forms = {"te_form": "たべて"}
+    result = _display_forms_common_suffix("たべる", "たべる", forms)
+    # Same dict/reading → no replacement needed (kanji_prefix is empty)
+    assert result["te_form"] == "たべて"
+
+
+def test_compute_display_forms_dispatch() -> None:
+    """_compute_display_forms dispatches adj-na vs. other classes correctly."""
+    from build.transform.conjugations import _compute_display_forms
+
+    na_forms = {"dictionary": "しずかだ", "te_form": "しずかで"}
+    result_na = _compute_display_forms("静か", "しずか", na_forms, "adj-na")
+    assert result_na["dictionary"] == "静かだ"
+
+    verb_forms = {"te_form": "たべて"}
+    result_verb = _compute_display_forms("食べる", "たべる", verb_forms, "v1")
+    assert result_verb["te_form"] == "食べて"
+
+    # Pure kana → display_forms == forms
+    kana_forms = {"te_form": "たべて"}
+    result_kana = _compute_display_forms("たべる", "たべる", kana_forms, "v1")
+    assert result_kana["te_form"] == "たべて"
+
+
+# ---------------------------------------------------------------------------
+# stats — compute_counts and update_manifest
+# ---------------------------------------------------------------------------
+
+def test_compute_counts_against_real_data() -> None:
+    """compute_counts on real data should produce non-zero counts for core files."""
+    from build.stats import compute_counts
+    counts = compute_counts()
+    # Core files must exist and have entries
+    assert counts.get("data/core/words.json", 0) > 0
+    assert counts.get("data/core/kanji.json", 0) > 0
+
+
+def test_update_manifest_atomic_write(tmp_path: Path) -> None:
+    """update_manifest should atomically write to manifest.json."""
+    import build.stats as stats_mod
+
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text(json.dumps({"version": "test"}), encoding="utf-8")
+
+    from unittest.mock import patch
+    with patch.object(stats_mod, "MANIFEST_PATH", manifest_path):
+        stats_mod.update_manifest({"data/core/words.json": 100})
+
+    result = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assert result["counts"] == {"data/core/words.json": 100}
+    assert "generated" in result
+    assert result["version"] == "test"  # preserved
+
+
+def test_print_report_various_counts(capsys) -> None:
+    from build.stats import print_report
+    counts = {
+        "data/core/words.json": 1000,
+        "data/optional/names.json": None,
+        "data/core/broken.json": -1,
+        "data/core/empty.json": 0,
+    }
+    print_report(counts)
+    captured = capsys.readouterr()
+    assert "1,000" in captured.out
+    assert "(not built)" in captured.out
+    assert "(error)" in captured.out
