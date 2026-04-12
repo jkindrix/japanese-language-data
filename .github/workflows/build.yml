@@ -76,6 +76,46 @@ jobs:
       - name: Print stats report
         run: just stats
 
+      - name: Byte-reproducibility check (build twice, compare hashes)
+        # Principle 1 of docs/architecture.md: every byte of built data
+        # must be reproducible. This step runs the pipeline a second
+        # time and asserts that data/ is byte-identical between the
+        # two runs. It catches non-deterministic iteration order,
+        # time-dependent output (same-day so dates match), and any
+        # silent mutation the first build did beyond its declared
+        # outputs.
+        #
+        # The check hashes data/ contents before and after the second
+        # build rather than using `git diff` so it is robust against
+        # the committed state of data/ — it directly compares the
+        # first build's output against the second build's output.
+        run: |
+          # Hash data/ after the first build (already done above).
+          find data -type f \( -name '*.json' -o -name '*.svg' \) -print0 \
+            | sort -z \
+            | xargs -0 sha256sum > /tmp/data-hashes-first.txt
+          echo "First build: $(wc -l </tmp/data-hashes-first.txt) files hashed"
+
+          # Run the pipeline a second time (transforms only; no need to
+          # re-validate or re-stats — we care about transform output).
+          .venv/bin/python -m build.pipeline > /tmp/second-build.log 2>&1 || {
+            cat /tmp/second-build.log
+            echo "::error::Second build failed. This is a stronger signal than the first build failing (something non-idempotent). Investigate."
+            exit 1
+          }
+
+          find data -type f \( -name '*.json' -o -name '*.svg' \) -print0 \
+            | sort -z \
+            | xargs -0 sha256sum > /tmp/data-hashes-second.txt
+          echo "Second build: $(wc -l </tmp/data-hashes-second.txt) files hashed"
+
+          if ! diff -q /tmp/data-hashes-first.txt /tmp/data-hashes-second.txt >/dev/null; then
+            echo "::error::Byte-reproducibility violated: two consecutive pipeline runs produced different data/ output. Diverging file hashes:"
+            diff /tmp/data-hashes-first.txt /tmp/data-hashes-second.txt | head -50
+            exit 1
+          fi
+          echo "::notice::Byte-reproducibility verified: two consecutive pipeline runs produced byte-identical data/."
+
       - name: Summarize reproducibility check
         run: |
-          echo "::notice::Reproducible build completed: fetch (SHA256-verified) → build → validate → tests → stats. Counts: see 'Print stats report' step above."
+          echo "::notice::Reproducible build completed: fetch (SHA256-verified) → build → validate → tests → stats → build-twice-diff. Counts: see 'Print stats report' step above."
