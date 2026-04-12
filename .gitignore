@@ -34,6 +34,7 @@ sources/kanjium/
 sources/jpdb-freq/
 sources/waller-jlpt/
 sources/wikipedia/
+sources/kftt/
 sources/*.tgz
 sources/*.zip
 sources/*.tar.bz2
@@ -47,6 +48,9 @@ data/optional/*.json
 
 # Full word list (216k entries, ~150 MB) — built on demand, committed as release artifact
 data/core/words-full.json
+
+# KFTT sentence corpus (~220 MB) — built on demand, committed as release artifact
+data/corpus/sentences-kftt.json
 
 # Full-JMdict cross-references (built alongside words-full.json)
 data/cross-refs/kanji-to-words-full.json

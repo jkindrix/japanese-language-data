@@ -104,7 +104,8 @@
           "type": "string",
           "enum": [
             "CC-BY-2.0-FR",
-            "CC0-1.0"
+            "CC0-1.0",
+            "CC-BY-SA-3.0"
           ],
           "description": "License of this specific sentence. Defaults to CC-BY 2.0 FR; some sentences are CC0."
         },

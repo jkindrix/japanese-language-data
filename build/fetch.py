@@ -169,6 +169,14 @@ SOURCES: tuple[Source, ...] = (
         description="Jonathan Waller JLPT kanji classifications via davidluzgouveia/kanji-data (jlpt_new field only). Code is MIT; data fields derive from Waller CC-BY.",
         license="CC-BY 4.0 (Waller JLPT data)",
     ),
+    # ---- KFTT parallel corpus -----------------------------------------------
+    Source(
+        name="kftt",
+        url="https://www.phontron.com/kftt/download/kftt-data-1.0.tar.gz",
+        cache_path="kftt/kftt-data-1.0.tar.gz",
+        description="Kyoto Free Translation Task — ~440k JP-EN parallel sentence pairs from Wikipedia Kyoto articles.",
+        license="CC-BY-SA 3.0",
+    ),
     # ---- Phase 4 additions --------------------------------------------------
     # Wikipedia "Kangxi radicals" article, pinned to revision 1346511063 via
     # index.php's action=raw endpoint. This returns the raw wikitext for that

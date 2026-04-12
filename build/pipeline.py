@@ -121,6 +121,7 @@ def _build_stages() -> list[Stage]:
         jlpt,
         kana,
         kanji,
+        kftt,
         names,
         pitch,
         radicals,
@@ -144,6 +145,7 @@ def _build_stages() -> list[Stage]:
         Stage("jlpt", "JLPT level classifications from Waller.", jlpt.build, phase=2),
         Stage("frequency", "Frequency rankings (newspaper corpus from KANJIDIC2).", frequency.build, phase=2),
         Stage("sentences", "Example sentences from Tatoeba via jmdict-examples.", sentences.build, phase=1),
+        Stage("kftt", "KFTT parallel corpus (~440k JP-EN sentence pairs from Wikipedia Kyoto articles).", kftt.build, phase=4),
         Stage("conjugations", "Auto-generated verb and adjective conjugation tables.", conjugations.build, phase=3),
         # ---- Core transforms that read enrichment outputs ----
         Stage("kanji", "Kanji entries from KANJIDIC2, enriched with radical components and JLPT level.", kanji.build, phase=1),

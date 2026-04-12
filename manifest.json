@@ -105,6 +105,13 @@
       "description": "Wikipedia 'Kangxi radicals' article raw wikitext, pinned to revision 1346511063 (2024). Source for radical English meanings and Kangxi numbers used to populate data/core/radicals.json.",
       "sha256": "62e0c85ebcc339760dabe3ca5daee64d5d6e144926f550b409cdabb6244d3fe2",
       "size_bytes": 74968
+    },
+    "kftt": {
+      "url": "https://www.phontron.com/kftt/download/kftt-data-1.0.tar.gz",
+      "license": "CC-BY-SA 3.0",
+      "description": "Kyoto Free Translation Task — ~440k JP-EN parallel sentence pairs from Wikipedia Kyoto articles.",
+      "sha256": "fcfcaa670d6d59aa691b0e909c0d7c393852dd2fb1d6310fda9b3282dc6d1638",
+      "size_bytes": 99246893
     }
   },
   "counts": {
@@ -117,6 +124,7 @@
     "data/core/radicals.json": 253,
     "data/optional/names.json": null,
     "data/corpus/sentences.json": 25980,
+    "data/corpus/sentences-kftt.json": 443849,
     "data/enrichment/pitch-accent.json": 124011,
     "data/enrichment/frequency-newspaper.json": 2501,
     "data/enrichment/frequency-modern.json": null,
