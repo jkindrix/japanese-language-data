@@ -220,6 +220,7 @@ EXPECTED_SCHEMAS = {
     "cross-refs.schema.json",
     "expressions.schema.json",
     "frequency.schema.json",
+    "furigana.schema.json",
     "grammar.schema.json",
     "jlpt.schema.json",
     "kana.schema.json",

@@ -112,6 +112,13 @@
       "description": "Kyoto Free Translation Task — ~440k JP-EN parallel sentence pairs from Wikipedia Kyoto articles.",
       "sha256": "fcfcaa670d6d59aa691b0e909c0d7c393852dd2fb1d6310fda9b3282dc6d1638",
       "size_bytes": 99246893
+    },
+    "jmdict-furigana": {
+      "url": "https://github.com/Doublevil/JmdictFurigana/releases/download/2.3.1%2B2026-03-25/JmdictFurigana.json.zip",
+      "license": "CC-BY-SA 4.0 (derived from JMdict, EDRDG License)",
+      "description": "JmdictFurigana — per-character reading alignment (furigana) for JMdict entries.",
+      "sha256": "c4016e14be5adad5d9f28e941411c814c2f9234084ccdaf8caa095a7b27ae076",
+      "size_bytes": 5166995
     }
   },
   "counts": {

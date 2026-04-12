@@ -64,6 +64,7 @@ def test_all_schemas_are_present() -> None:
         "sentence.schema.json",
         "pitch-accent.schema.json",
         "frequency.schema.json",
+        "furigana.schema.json",
         "jlpt.schema.json",
         "stroke-order.schema.json",
         "grammar.schema.json",
