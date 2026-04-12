@@ -36,6 +36,7 @@ sources/waller-jlpt/
 sources/wikipedia/
 sources/kftt/
 sources/opensubtitles/
+sources/leeds/
 sources/jmdict-furigana/
 sources/*.tgz
 sources/*.zip

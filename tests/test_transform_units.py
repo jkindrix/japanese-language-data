@@ -4319,3 +4319,59 @@ def test_names_build(tmp_path: Path, monkeypatch) -> None:
     result = json.loads(out_path.read_text(encoding="utf-8"))
     assert result["metadata"]["count"] == 1
     assert result["names"][0]["id"] == "5000"
+
+
+# ---------------------------------------------------------------------------
+# frequency_web — build()
+# ---------------------------------------------------------------------------
+
+def test_frequency_web_parse_file(tmp_path: Path) -> None:
+    from build.transform.frequency_web import _parse_frequency_file
+    content = (
+        "The frequency distribution for attribute 'lemma'\n"
+        "For more information visit http://corpus.leeds.ac.uk/\n"
+        " - corpus size: 253071774 tokens\n"
+        " - lexicon size: 124489 types\n"
+        "1 41309.50 の\n"
+        "2 23509.54 に\n"
+        "3 100.00 hello\n"  # pure ASCII — filtered out
+        "4 50.00 ・\n"  # punctuation only — filtered out
+        "\n"
+    )
+    p = tmp_path / "freq.num"
+    p.write_text(content, encoding="utf-8")
+    result = _parse_frequency_file(p)
+    assert len(result) == 2
+    assert result[0] == ("の", 41309.50, 1)
+    assert result[1] == ("に", 23509.54, 2)
+
+
+def test_frequency_web_build(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import frequency_web as mod
+
+    source = tmp_path / "internet-jp.num"
+    source.write_text(
+        "header1\nheader2\nheader3\nheader4\n"
+        "1 41309.50 食べる\n"
+        "2 100.00 飲む\n",
+        encoding="utf-8",
+    )
+
+    words_path = tmp_path / "words.json"
+    words_path.write_text(json.dumps({"words": [
+        {"id": "1", "kanji": [{"text": "食べる"}], "kana": [{"text": "たべる"}]},
+        {"id": "2", "kanji": [{"text": "飲む"}], "kana": [{"text": "のむ"}]},
+    ]}), encoding="utf-8")
+
+    out = tmp_path / "frequency-web.json"
+    monkeypatch.setattr(mod, "SOURCE_FILE", source)
+    monkeypatch.setattr(mod, "WORDS_JSON", words_path)
+    monkeypatch.setattr(mod, "OUT", out)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    result = json.loads(out.read_text(encoding="utf-8"))
+    assert result["metadata"]["count"] == 2
+    assert result["entries"][0]["text"] == "食べる"
+    assert result["entries"][0]["rank"] == 1

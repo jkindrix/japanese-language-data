@@ -185,6 +185,14 @@ SOURCES: tuple[Source, ...] = (
         description="Japanese word frequency from OpenSubtitles 2018 via hermitdave/FrequencyWords.",
         license="MIT (code); data derived from OpenSubtitles",
     ),
+    # ---- Leeds University web frequency (Phase 4) ----------------------------
+    Source(
+        name="leeds-frequency",
+        url="https://web.archive.org/web/2023/http://corpus.leeds.ac.uk/frqc/internet-jp.num",
+        cache_path="leeds/internet-jp.num",
+        description="Leeds University Internet Japanese Word Frequency List (~15K lemmas, web corpus).",
+        license="CC-BY (Creative Commons Attribution)",
+    ),
     # ---- Phase 4 additions --------------------------------------------------
     # Wikipedia "Kangxi radicals" article, pinned to revision 1346511063 via
     # index.php's action=raw endpoint. This returns the raw wikitext for that

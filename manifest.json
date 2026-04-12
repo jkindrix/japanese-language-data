@@ -120,6 +120,13 @@
       "sha256": "c4016e14be5adad5d9f28e941411c814c2f9234084ccdaf8caa095a7b27ae076",
       "size_bytes": 5166995
     },
+    "leeds-frequency": {
+      "url": "https://web.archive.org/web/2023/http://corpus.leeds.ac.uk/frqc/internet-jp.num",
+      "license": "CC-BY (Creative Commons Attribution)",
+      "description": "Leeds University Internet Japanese Word Frequency List (~15K lemmas, web corpus, ChaSen-tokenized). Via Wayback Machine (original server down).",
+      "sha256": "d2911d7a3297b0a57893cb796cd15f3d8a2cea5208ed222b9f9fa6f14fed055b",
+      "size_bytes": 287685
+    },
     "opensubtitles-frequency": {
       "url": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/ja/ja_full.txt",
       "license": "MIT (code); data derived from OpenSubtitles",
@@ -144,6 +151,7 @@
     "data/enrichment/frequency-modern.json": null,
     "data/enrichment/frequency-corpus.json": 14647,
     "data/enrichment/frequency-subtitles.json": 8598,
+    "data/enrichment/frequency-web.json": 11038,
     "data/enrichment/furigana.json": 28920,
     "data/enrichment/counter-words.json": 125,
     "data/enrichment/ateji.json": 239,
