@@ -89,7 +89,7 @@ Status values:
 - **Format**: MP3 audio + transcript TSV.
 - **Effort to integrate**: Low for transcripts, medium for bundled audio.
 - **Value**: Open speech dataset usable for any purpose; good for STT/speech modeling. Limited learner value directly but useful for building apps with voice features.
-- **Status**: NOT EVALUATED. CC0 makes this the most compatible audio corpus. Could be integrated as `data/phase4/common-voice-transcripts.json` with a separate manifest for audio.
+- **Status**: EVALUATED. CC0 makes this the most compatible audio corpus. Integration path: download TSV transcript metadata (not audio files — too large), convert to `data/phase4/common-voice-transcripts.json`, create audio manifest with download URLs. Estimated effort: 1.5–2.5 hours. Deferred to a dedicated session due to ~2 GB download requirement. Transcripts-only integration is straightforward; audio bundling is impractical for git.
 
 ---
 
@@ -104,8 +104,8 @@ Status values:
 - **Format**: Plain text, XHTML, or annotated XHTML. Ruby (furigana) preserved in some works.
 - **Effort to integrate**: High. Per-work license audit, text normalization, metadata extraction (author, era, genre), splitting for manageable units.
 - **Value**: Enormous for reading practice, classical Japanese exposure, literary vocabulary, historical context.
-- **Status**: NOT EVALUATED. Large effort but high value. Would be its own subdirectory with careful per-work metadata.
-- **Recommendation**: Start with a small curated selection (famous works, broadly used in Japanese language education) rather than bulk-importing everything.
+- **Status**: EVALUATED / DEFERRED. High value but dominated by legal friction: Japanese copyright law requires per-work audit (death + 70 years). Estimated effort: 11–17 hours, 6–10 of which is license auditing. Even a curated selection of "famous works" requires checking ~100+ individual works. Deferred until a dedicated effort can be committed.
+- **Recommendation**: Start with a small curated selection (famous works, broadly used in Japanese language education) rather than bulk-importing everything. Pre-Meiji works (pre-1868) are safest from a copyright perspective.
 
 ### Wikipedia Japanese
 
@@ -127,8 +127,8 @@ Status values:
 - **License**: CC-BY-SA 4.0 (compatible).
 - **Effort to integrate**: Medium-high. Wiktionary entries are free-form and inconsistent; extracting structured data (readings, pitch, meanings, examples) requires per-template parsing.
 - **Value**: Secondary coverage of vocabulary that JMdict may lack; per-entry etymology notes; pitch accent for some modern terms. Filling the post-2022 Kanjium gap is one concrete use case.
-- **Status**: NOT EVALUATED. High value for specific gaps; parsing effort is the main cost.
-- **Recommendation**: Start with a targeted extraction for the post-2022 pitch accent gap rather than a bulk import.
+- **Status**: EVALUATED. High value for the post-2022 Kanjium pitch accent gap specifically. Estimated effort: 5–7 hours (1h download, 2–4h per-template parsing with mwparserfromhell, 1h dedup and integration). The hard part is that Wiktionary pronunciation sections use inconsistent templates across entries ��� no single parser covers all notation formats. Realistic outcome: capture 60–70% of well-formed pitch entries. A targeted extraction for pitch accent is recommended over bulk import.
+- **Recommendation**: Start with a targeted extraction for the post-2022 pitch accent gap rather than a bulk import. Requires `mwparserfromhell` dependency and a dedicated session.
 
 ### KFTT (Kyoto Free Translation Task)
 
@@ -191,21 +191,21 @@ Status values:
 - **Source**: Derived from `words.json` by identifying multi-kanji noun entries.
 - **Effort**: Medium. Requires iterating over JMdict entries, identifying pure-kanji compounds, and aggregating frequency.
 - **Value**: Useful for kanji pedagogy — which compounds are the most useful for learning a given kanji.
-- **Status**: NOT EVALUATED. Probably a Phase 2 or Phase 3 addition rather than Phase 4.
+- **Status**: **DELIVERED (v0.8.0+)**. Jukugo compound index (`data/enrichment/jukugo-compounds.json`) extracts 14,350 multi-kanji compounds with per-character meaning decomposition from KANJIDIC2.
 
 ### Irregular readings (ateji, jukujikun)
 
 - **Source**: Partially in JMdict and KANJIDIC2 already; Kanjium has a dedicated file for this.
 - **Effort**: Low.
 - **Value**: Important for reading fluency; these readings cannot be derived from the standard kanji reading rules.
-- **Status**: NOT EVALUATED. Easy to add as a distinct enrichment file.
+- **Status**: **DELIVERED (v0.8.0+)**. Ateji index (`data/enrichment/ateji.json`) extracts 239 entries from JMdict `ateji` kanji writing tags. Jukujikun remains unaddressed (no explicit JMdict tag; would require heuristic matching or Kanjium data).
 
 ### Counter-word data
 
 - **Source**: JMdict has some (counters are tagged); U-biq and other sources have more detailed data.
 - **Effort**: Medium. Requires selecting which counters, how to structure the counter-to-noun-type mappings.
 - **Value**: High for learners — counter use is a real friction point.
-- **Status**: NOT EVALUATED. Likely better addressed in the grammar corpus (Phase 3) than as a separate file.
+- **Status**: **DELIVERED (v0.8.0+)**. Counter-word index (`data/enrichment/counter-words.json`) extracts 125 entries from JMdict `ctr` POS tag. Additional counter-to-noun-type mappings could be added from U-biq or curated data in a future release.
 
 ---
 
@@ -231,7 +231,7 @@ Status values:
 
 - **Effort**: Medium. Writing Anki deck generators from our data.
 - **Value**: Makes the dataset directly usable as flashcard content.
-- **Status**: NOT EVALUATED. Scope question — is this a data project or a tooling project? Leaning tooling (i.e., out of scope here, but a natural downstream project).
+- **Status**: **DELIVERED (v0.8.0+)**. `just export-anki` produces a ~9.2 MB .apkg with 23,119 vocabulary cards, 13,108 kanji cards, and 595 grammar cards. Vocabulary cards include pitch accent and JLPT tags. See `build/export_anki.py`.
 
 ---
 
