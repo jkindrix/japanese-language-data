@@ -1,0 +1,1268 @@
+{
+  "metadata": {
+    "source": "JMdict 'ctr' (counter) part-of-speech entries via words.json",
+    "source_url": "https://github.com/scriptin/jmdict-simplified",
+    "license": "CC-BY-SA 4.0 (EDRDG License)",
+    "generated": "2026-04-12",
+    "count": 125,
+    "field_notes": {
+      "word_id": "JMdict entry ID. Join with data/core/words.json for full entry.",
+      "text": "Primary kanji or kana writing of the counter.",
+      "reading": "Primary kana reading.",
+      "meanings": "English glosses from senses carrying the 'ctr' POS tag.",
+      "jlpt_waller": "JLPT level if classified, null otherwise."
+    }
+  },
+  "counter_words": [
+    {
+      "word_id": "2086750",
+      "text": "カ国",
+      "reading": "かこく",
+      "meanings": [
+        "counter for countries"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1194480",
+      "text": "ヶ月",
+      "reading": "かげつ",
+      "meanings": [
+        "counter for months"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "2080720",
+      "text": "両",
+      "reading": "りょう",
+      "meanings": [
+        "counter for carriages (e.g. in a train)",
+        "counter for vehicles",
+        "counter for suits of clothing, sets of armor, etc."
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "2149890",
+      "text": "人",
+      "reading": "にん",
+      "meanings": [
+        "counter for people"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "2842624",
+      "text": "代目",
+      "reading": "だいめ",
+      "meanings": [
+        "nth generation",
+        "nth (person to occupy a position, e.g. president)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1255940",
+      "text": "件",
+      "reading": "けん",
+      "meanings": [
+        "matter",
+        "affair",
+        "case",
+        "item",
+        "subject",
+        "counter for (received) emails, text messages, voicemail messages, etc.",
+        "counter for accounts (on a website, email service, etc.)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "2068010",
+      "text": "位",
+      "reading": "い",
+      "meanings": [
+        "rank",
+        "place (e.g. first place)",
+        "decimal place",
+        "counter for ghosts"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1580550",
+      "text": "信",
+      "reading": "しん",
+      "meanings": [
+        "counter for received messages"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1583390",
+      "text": "俵",
+      "reading": "たわら",
+      "meanings": [
+        "counter for sacks (of rice, potatoes, coal, etc.)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1264740",
+      "text": "個",
+      "reading": "こ",
+      "meanings": [
+        "counter for (small) things or pieces",
+        "counter for military units"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1473230",
+      "text": "倍",
+      "reading": "ばい",
+      "meanings": [
+        "times (as much)",
+        "-fold",
+        "1-nth",
+        "1 to n",
+        "1 in n"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "2836694",
+      "text": "傑",
+      "reading": "けつ",
+      "meanings": [
+        "the top (e.g. top ten)",
+        "the best"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1260670",
+      "text": "元",
+      "reading": "もと",
+      "meanings": [
+        "counter for plants or trees",
+        "counter for falcons (in falconry)"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1244950",
+      "text": "具",
+      "reading": "ぐ",
+      "meanings": [
+        "counter for sets of armor, utensils, furniture, etc."
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1298520",
+      "text": "冊",
+      "reading": "さつ",
+      "meanings": [
+        "counter for books"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1577620",
+      "text": "冠",
+      "reading": "かんむり",
+      "meanings": [
+        "counter for titles"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "2386360",
+      "text": "分間",
+      "reading": "ふんかん",
+      "meanings": [
+        "minutes (period of)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1383800",
+      "text": "切り",
+      "reading": "きり",
+      "meanings": [
+        "counter for slices (esp. thick slices)",
+        "counter for cuts (of fish, meat, etc.)"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1384840",
+      "text": "切れ",
+      "reading": "きれ",
+      "meanings": [
+        "counter for scraps, pieces, etc."
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1558330",
+      "text": "列",
+      "reading": "れつ",
+      "meanings": [
+        "counter for rows"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1606950",
+      "text": "割引",
+      "reading": "わりびき",
+      "meanings": [
+        "tenths discounted",
+        "tenths reduced"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1515340",
+      "text": "包み",
+      "reading": "つつみ",
+      "meanings": [
+        "counter for wrapped objects"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1583370",
+      "text": "匹",
+      "reading": "ひき",
+      "meanings": [
+        "counter for small animals",
+        "counter for rolls of cloth (two han in size)",
+        "counter for horses"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1415580",
+      "text": "卓",
+      "reading": "たく",
+      "meanings": [
+        "counter for tables, desks, etc."
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1398670",
+      "text": "双",
+      "reading": "そう",
+      "meanings": [
+        "pair"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1275640",
+      "text": "口",
+      "reading": "くち",
+      "meanings": [
+        "counter for mouthfuls, shares (of money) and stove burners",
+        "counter for swords, blades, etc."
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1412560",
+      "text": "台",
+      "reading": "だい",
+      "meanings": [
+        "counter for machines and vehicles"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1956260",
+      "text": "合",
+      "reading": "ごう",
+      "meanings": [
+        "counter for covered containers",
+        "counter for matches, battles, etc."
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1331020",
+      "text": "周",
+      "reading": "しゅう",
+      "meanings": [
+        "counter for laps or circuits"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "2648780",
+      "text": "品",
+      "reading": "ひん",
+      "meanings": [
+        "counter for items (of food, etc.)",
+        "counter for dishes or courses (at a restaurant)"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1634040",
+      "text": "問",
+      "reading": "もん",
+      "meanings": [
+        "counter for questions"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1199330",
+      "text": "回",
+      "reading": "かい",
+      "meanings": [
+        "counter for occurrences"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "2800530",
+      "text": "回り",
+      "reading": "まわり",
+      "meanings": [
+        "round",
+        "turn",
+        "size",
+        "12-year period",
+        "12-year age difference"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1226630",
+      "text": "客",
+      "reading": "きゃく",
+      "meanings": [
+        "counter for containers used to entertain guests"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1409810",
+      "text": "対",
+      "reading": "つい",
+      "meanings": [
+        "counter for items that come in pairs",
+        "counter for sets (of clothes, small furniture, utensils, etc.)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1239560",
+      "text": "局",
+      "reading": "きょく",
+      "meanings": [
+        "game (of go, shogi, etc.)"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1302680",
+      "text": "山",
+      "reading": "やま",
+      "meanings": [
+        "mountain",
+        "hill",
+        "mine",
+        "(mountain) forest",
+        "heap",
+        "pile",
+        "stack",
+        "mountain"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1524750",
+      "text": "幕",
+      "reading": "まく",
+      "meanings": [
+        "act (in a play)"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "2084840",
+      "text": "年",
+      "reading": "ねん",
+      "meanings": [
+        "counter for years (e.g. of an era), grades (e.g. school)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1445150",
+      "text": "度",
+      "reading": "たび",
+      "meanings": [
+        "time (three times, each time, etc.)",
+        "times"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1445160",
+      "text": "度",
+      "reading": "ど",
+      "meanings": [
+        "counter for occurrences"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1291770",
+      "text": "座",
+      "reading": "ざ",
+      "meanings": [
+        "counter for theatres, deities, Buddhist images, tall mountains, and satokagura songs"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1659920",
+      "text": "戸",
+      "reading": "こ",
+      "meanings": [
+        "counter for houses, households, apartments, etc."
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1519300",
+      "text": "房",
+      "reading": "ふさ",
+      "meanings": [
+        "bunch (of grapes, bananas, etc.)",
+        "cluster (of flowers)",
+        "segment (of a tangerine, etc.)",
+        "section"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1327190",
+      "text": "手",
+      "reading": "て",
+      "meanings": [
+        "move (in go, shogi, etc.)"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1607320",
+      "text": "把",
+      "reading": "わ",
+      "meanings": [
+        "counter for bundles"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1385780",
+      "text": "折",
+      "reading": "おり",
+      "meanings": [
+        "counter for folded items",
+        "counter for items (esp. food) packed in an oribako"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1361130",
+      "text": "振り",
+      "reading": "ふり",
+      "meanings": [
+        "swing",
+        "shake",
+        "sweep",
+        "wave",
+        "wag",
+        "counter for swords, blades, etc."
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "2083100",
+      "text": "日",
+      "reading": "にち",
+      "meanings": [
+        "counter for days"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1482110",
+      "text": "晩",
+      "reading": "ばん",
+      "meanings": [
+        "counter for nights"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1500940",
+      "text": "服",
+      "reading": "ふく",
+      "meanings": [
+        "counter for doses of medicine, gulps of tea, puffs of a cigarette, etc."
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1522150",
+      "text": "本",
+      "reading": "ほん",
+      "meanings": [
+        "counter for long, cylindrical things",
+        "counter for films, TV shows, etc.",
+        "counter for goals, home runs, etc.",
+        "counter for telephone calls"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1404450",
+      "text": "束",
+      "reading": "たば",
+      "meanings": [
+        "bundle",
+        "bunch",
+        "sheaf"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1524610",
+      "text": "枚",
+      "reading": "まい",
+      "meanings": [
+        "counter for thin, flat objects (e.g. sheets of paper, plates, coins)",
+        "counter for portions of gyōza or soba",
+        "counter for ranks",
+        "counter for wrestlers of a particular rank",
+        "counter for fields or rice paddies",
+        "counter for palanquin bearers"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1426480",
+      "text": "柱",
+      "reading": "はしら",
+      "meanings": [
+        "counter for buddhas, gods, nobles, etc."
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "2259610",
+      "text": "校",
+      "reading": "こう",
+      "meanings": [
+        "school",
+        "proofreading",
+        "proof"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1208920",
+      "text": "株",
+      "reading": "かぶ",
+      "meanings": [
+        "stock",
+        "share",
+        "(clump of) roots",
+        "plant with attached roots or stem",
+        "strain (of bacteria, etc.)"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1448350",
+      "text": "棟",
+      "reading": "むね",
+      "meanings": [
+        "counter for buildings, apartments, etc."
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1448340",
+      "text": "棟",
+      "reading": "とう",
+      "meanings": [
+        "counter for buildings, apartments, etc."
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1562780",
+      "text": "椀",
+      "reading": "わん",
+      "meanings": [
+        "counter for bowls of food or drink"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "2037700",
+      "text": "機",
+      "reading": "き",
+      "meanings": [
+        "counter for aircraft",
+        "counter for (remaining) lives"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1579580",
+      "text": "次",
+      "reading": "じ",
+      "meanings": [
+        "order",
+        "sequence",
+        "time",
+        "times"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1514300",
+      "text": "歩",
+      "reading": "ほ",
+      "meanings": [
+        "counter for steps"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1294940",
+      "text": "歳",
+      "reading": "さい",
+      "meanings": [
+        "... years old",
+        "age (of) ..."
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1633690",
+      "text": "段",
+      "reading": "だん",
+      "meanings": [
+        "step",
+        "stair",
+        "rung",
+        "(flight of) steps",
+        "shelf",
+        "layer",
+        "tier",
+        "dan (degree of advanced proficiency in martial arts, go, shogi, etc.)",
+        "rank",
+        "column (of print)",
+        "act (in kabuki, joruri, etc.)",
+        "section",
+        "scene",
+        "counter for breaks in written language or speech"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "2101130",
+      "text": "氏",
+      "reading": "し",
+      "meanings": [
+        "counter for people"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1222490",
+      "text": "気筒",
+      "reading": "きとう",
+      "meanings": [
+        "cylinder"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1919550",
+      "text": "泊",
+      "reading": "はく",
+      "meanings": [
+        "counter for nights of a stay"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1441390",
+      "text": "点",
+      "reading": "てん",
+      "meanings": [
+        "counter for points, marks, goals, etc.",
+        "counter for goods, items, articles of clothing, works of art, etc."
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1481480",
+      "text": "版",
+      "reading": "はん",
+      "meanings": [
+        "counter for editions of a publication"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1240530",
+      "text": "玉",
+      "reading": "たま",
+      "meanings": [
+        "okonomiyaki"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1229880",
+      "text": "球",
+      "reading": "きゅう",
+      "meanings": [
+        "counter for pitches"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1197050",
+      "text": "画",
+      "reading": "かく",
+      "meanings": [
+        "stroke (of a kanji)"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1482410",
+      "text": "番目",
+      "reading": "ばんめ",
+      "meanings": [
+        "the nth ..."
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1356740",
+      "text": "畳",
+      "reading": "じょう",
+      "meanings": [
+        "tatami mat (esp. as a measure of room size, either 1.82 sqm or 1.54 sqm)"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1477120",
+      "text": "発",
+      "reading": "はつ",
+      "meanings": [
+        "counter for engines (on an aircraft)",
+        "counter for gunshots, bursts of gas, etc.",
+        "counter for bullets, bombs, etc.",
+        "counter for blows (punches)",
+        "counter for jokes, puns, etc.",
+        "counter for ideas, thoughts or guesses",
+        "counter for ejaculations or sexual intercourse"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1299680",
+      "text": "皿",
+      "reading": "さら",
+      "meanings": [
+        "serving",
+        "helping",
+        "course"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1597470",
+      "text": "着",
+      "reading": "ちゃく",
+      "meanings": [
+        "counter for items or suits of clothing",
+        "nth place (in a race)",
+        "counter for moves"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1562840",
+      "text": "碗",
+      "reading": "わん",
+      "meanings": [
+        "counter for bowls of food or drink"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1557450",
+      "text": "礼",
+      "reading": "れい",
+      "meanings": [
+        "bow (i.e. bending of the body)",
+        "bowing"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1489320",
+      "text": "票",
+      "reading": "ひょう",
+      "meanings": [
+        "vote",
+        "ballot"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1328890",
+      "text": "種類",
+      "reading": "しゅるい",
+      "meanings": [
+        "counter for kinds, species, etc."
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1214060",
+      "text": "竿",
+      "reading": "さお",
+      "meanings": [
+        "counter for flags (on poles)",
+        "counter for long, thin Japanese sweets (e.g. yōkan)"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1487770",
+      "text": "筆",
+      "reading": "ふで",
+      "meanings": [
+        "(land) lot",
+        "plot"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1582305",
+      "text": "等",
+      "reading": "とう",
+      "meanings": [
+        "class",
+        "order",
+        "rank"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1241750",
+      "text": "筋",
+      "reading": "すじ",
+      "meanings": [
+        "counter for long thin things",
+        "counter for roads or blocks when giving directions",
+        "(Edo period) counter for hundreds of mon (obsolete unit of currency)"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "2220320",
+      "text": "箇",
+      "reading": "か",
+      "meanings": [
+        "counter used with Sino-Japanese words"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1590250",
+      "text": "箇所",
+      "reading": "かしょ",
+      "meanings": [
+        "counter for places, parts, passages, etc."
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1577650",
+      "text": "管",
+      "reading": "かん",
+      "meanings": [
+        "counter for tube-shaped objects"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1585650",
+      "text": "箱",
+      "reading": "はこ",
+      "meanings": [
+        "counter for boxes (or boxed objects)"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1552890",
+      "text": "粒",
+      "reading": "つぶ",
+      "meanings": [
+        "counter for small round objects including grains, seeds, pills, drops"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1919590",
+      "text": "級",
+      "reading": "きゅう",
+      "meanings": [
+        "(school) grade",
+        "year",
+        "class",
+        "kyu (junior rank in martial arts, go, shogi, etc.)"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1397450",
+      "text": "組",
+      "reading": "くみ",
+      "meanings": [
+        "group (of people)",
+        "party",
+        "team",
+        "crew",
+        "set (of items)",
+        "assortment",
+        "deck (of cards)",
+        "pack"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1853450",
+      "text": "締め",
+      "reading": "しめ",
+      "meanings": [
+        "counter for bundles (of wood, cotton, etc.)",
+        "counter for reams of 2000 sheets of Japanese writing paper"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1511870",
+      "text": "編",
+      "reading": "へん",
+      "meanings": [
+        "volume (of a text)",
+        "completed literary work"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1214540",
+      "text": "缶",
+      "reading": "かん",
+      "meanings": [
+        "can",
+        "tin"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1607310",
+      "text": "羽",
+      "reading": "わ",
+      "meanings": [
+        "counter for birds or rabbits"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1547530",
+      "text": "翼",
+      "reading": "つばさ",
+      "meanings": [
+        "counter for birds or bird wings"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1501110",
+      "text": "腹",
+      "reading": "はら",
+      "meanings": [
+        "counter for hard roe",
+        "counter for containers with bulging middles (pots, vases, etc.)"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1396490",
+      "text": "膳",
+      "reading": "ぜん",
+      "meanings": [
+        "counter for bowlfuls of rice",
+        "counter for pairs of chopsticks"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1514050",
+      "text": "舗",
+      "reading": "ほ",
+      "meanings": [
+        "counter for foldable things such as maps, etc."
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1602800",
+      "text": "船",
+      "reading": "ふね",
+      "meanings": [
+        "counter for boat-shaped containers (e.g. of sashimi)"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1312610",
+      "text": "誌",
+      "reading": "し",
+      "meanings": [
+        "magazine",
+        "journal"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1270910",
+      "text": "語",
+      "reading": "ご",
+      "meanings": [
+        "word",
+        "term"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1195710",
+      "text": "課",
+      "reading": "か",
+      "meanings": [
+        "counter for lessons and chapters (of a book)"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1956010",
+      "text": "貫",
+      "reading": "かん",
+      "meanings": [
+        "counter for pieces of sushi"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "2078590",
+      "text": "軒",
+      "reading": "けん",
+      "meanings": [
+        "counter for buildings (esp. houses)"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1555700",
+      "text": "輪",
+      "reading": "りん",
+      "meanings": [
+        "counter for wheels and flowers"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1432840",
+      "text": "通",
+      "reading": "つう",
+      "meanings": [
+        "counter for messages, letters, notes, documents, etc."
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1432920",
+      "text": "通り",
+      "reading": "とおり",
+      "meanings": [
+        "counter for sets of things",
+        "counter for methods, ways, kinds, etc."
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1433610",
+      "text": "通話",
+      "reading": "つうわ",
+      "meanings": [
+        "counter for telephone calls of a set duration"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1499290",
+      "text": "部",
+      "reading": "ぶ",
+      "meanings": [
+        "counter for copies of a newspaper, magazine, book, etc."
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1621470",
+      "text": "都",
+      "reading": "と",
+      "meanings": [
+        "counter for cities and towns"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1335730",
+      "text": "重",
+      "reading": "え",
+      "meanings": [
+        "-fold",
+        "-ply"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1242600",
+      "text": "金",
+      "reading": "きん",
+      "meanings": [
+        "karat (measure of purity of gold)",
+        "carat"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1366210",
+      "text": "針",
+      "reading": "はり",
+      "meanings": [
+        "counter for stitches"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1633480",
+      "text": "錠",
+      "reading": "じょう",
+      "meanings": [
+        "tablet",
+        "pill"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1584800",
+      "text": "門",
+      "reading": "もん",
+      "meanings": [
+        "counter for cannons"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1203020",
+      "text": "階",
+      "reading": "かい",
+      "meanings": [
+        "counter for storeys and floors of a building"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1584695",
+      "text": "面",
+      "reading": "めん",
+      "meanings": [
+        "counter for broad, flat objects, levels or stages, e.g. in a video game"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1120410",
+      "text": "頁",
+      "reading": "ページ",
+      "meanings": [
+        "page"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1450690",
+      "text": "頭",
+      "reading": "とう",
+      "meanings": [
+        "counter for large animals (e.g. head of cattle)",
+        "counter for insects in a collection",
+        "counter for helmets, masks, etc."
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1415470",
+      "text": "題",
+      "reading": "だい",
+      "meanings": [
+        "counter for questions (on a test)"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1956480",
+      "text": "食",
+      "reading": "しょく",
+      "meanings": [
+        "meal",
+        "portion"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1175140",
+      "text": "駅",
+      "reading": "えき",
+      "meanings": [
+        "counter for railway stations and bus stations"
+      ],
+      "jlpt_waller": "N5"
+    }
+  ]
+}

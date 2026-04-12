@@ -55,6 +55,8 @@ SCHEMA_MAP: dict[str, str] = {
     "data/enrichment/furigana.json": "furigana.schema.json",
     "data/cross-refs/radical-to-kanji.json": "cross-refs.schema.json",
     "data/cross-refs/kanji-to-sentences.json": "cross-refs.schema.json",
+    "data/enrichment/counter-words.json": "counter-words.schema.json",
+    "data/enrichment/ateji.json": "ateji.schema.json",
     "data/cross-refs/word-to-grammar.json": "cross-refs.schema.json",
 }
 

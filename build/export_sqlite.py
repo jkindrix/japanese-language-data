@@ -149,6 +149,22 @@ def _create_schema(conn: sqlite3.Connection) -> None:
             display_forms_json TEXT
         );
 
+        CREATE TABLE IF NOT EXISTS counter_words (
+            word_id TEXT,
+            text TEXT,
+            reading TEXT,
+            meanings_json TEXT,
+            jlpt TEXT
+        );
+
+        CREATE TABLE IF NOT EXISTS ateji (
+            word_id TEXT,
+            text TEXT,
+            reading TEXT,
+            meanings_json TEXT,
+            jlpt TEXT
+        );
+
         CREATE TABLE IF NOT EXISTS jlpt_classifications (
             kind TEXT,
             level TEXT,
@@ -182,6 +198,8 @@ def _create_schema(conn: sqlite3.Connection) -> None:
         CREATE INDEX IF NOT EXISTS idx_conj_class ON conjugations(class);
         CREATE INDEX IF NOT EXISTS idx_jlpt_level ON jlpt_classifications(level);
         CREATE INDEX IF NOT EXISTS idx_jlpt_kind ON jlpt_classifications(kind);
+        CREATE INDEX IF NOT EXISTS idx_ctr_text ON counter_words(text);
+        CREATE INDEX IF NOT EXISTS idx_ateji_text ON ateji(text);
     """)
 
 
@@ -377,6 +395,28 @@ def export() -> None:
         ]
         conn.executemany("INSERT INTO jlpt_classifications VALUES (?,?,?,?,?,?)", rows)
         print(f"[sqlite]   jlpt classifications: {len(rows):,}")
+
+    # Counter words
+    ctr_data = _load_json(DATA_DIR / "enrichment" / "counter-words.json")
+    if ctr_data:
+        rows = [
+            (e.get("word_id", ""), e.get("text", ""), e.get("reading", ""),
+             json.dumps(e.get("meanings", []), ensure_ascii=False), e.get("jlpt_waller"))
+            for e in ctr_data.get("counter_words", [])
+        ]
+        conn.executemany("INSERT INTO counter_words VALUES (?,?,?,?,?)", rows)
+        print(f"[sqlite]   counter words: {len(rows):,}")
+
+    # Ateji
+    ateji_data = _load_json(DATA_DIR / "enrichment" / "ateji.json")
+    if ateji_data:
+        rows = [
+            (e.get("word_id", ""), e.get("text", ""), e.get("reading", ""),
+             json.dumps(e.get("meanings", []), ensure_ascii=False), e.get("jlpt_waller"))
+            for e in ateji_data.get("entries", [])
+        ]
+        conn.executemany("INSERT INTO ateji VALUES (?,?,?,?,?)", rows)
+        print(f"[sqlite]   ateji: {len(rows):,}")
 
     # Cross-references
     for fname, table in [

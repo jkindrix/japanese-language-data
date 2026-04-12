@@ -56,22 +56,24 @@ def test_all_schemas_are_present() -> None:
     deletions or renames.
     """
     expected_names = {
-        "kana.schema.json",
-        "kanji.schema.json",
-        "word.schema.json",
-        "name.schema.json",
-        "radical.schema.json",
-        "sentence.schema.json",
-        "pitch-accent.schema.json",
-        "frequency.schema.json",
-        "furigana.schema.json",
-        "jlpt.schema.json",
-        "stroke-order.schema.json",
-        "grammar.schema.json",
+        "ateji.schema.json",
+        "conjugations.schema.json",
+        "counter-words.schema.json",
         "cross-refs.schema.json",
         "expressions.schema.json",
-        "conjugations.schema.json",
+        "frequency.schema.json",
+        "furigana.schema.json",
+        "grammar.schema.json",
+        "jlpt.schema.json",
+        "kana.schema.json",
+        "kanji.schema.json",
         "manifest.schema.json",
+        "name.schema.json",
+        "pitch-accent.schema.json",
+        "radical.schema.json",
+        "sentence.schema.json",
+        "stroke-order.schema.json",
+        "word.schema.json",
     }
     found_names = {p.name for p in _schema_files()}
     missing = expected_names - found_names

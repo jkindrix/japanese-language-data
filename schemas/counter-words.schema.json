@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/counter-words.schema.json",
+  "title": "Counter Words",
+  "description": "Japanese counter words (josushi) extracted from JMdict entries tagged with the 'ctr' part-of-speech. Counter words are used when counting objects, people, animals, events, etc. and are a persistent difficulty for learners of Japanese.",
+  "schemaVersion": "0.9.0",
+  "type": "object",
+  "required": ["metadata", "counter_words"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["source", "license", "generated", "count", "field_notes"],
+      "properties": {
+        "source": { "type": "string" },
+        "source_url": { "type": "string", "format": "uri" },
+        "license": { "type": "string" },
+        "generated": { "type": "string", "format": "date" },
+        "count": { "type": "integer", "minimum": 0 },
+        "field_notes": { "type": "object", "additionalProperties": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "counter_words": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["word_id", "text", "reading", "meanings"],
+        "properties": {
+          "word_id": { "type": "string" },
+          "text": { "type": "string" },
+          "reading": { "type": "string" },
+          "meanings": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "jlpt_waller": { "type": ["string", "null"], "enum": ["N1", "N2", "N3", "N4", "N5", null] }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

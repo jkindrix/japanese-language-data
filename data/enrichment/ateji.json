@@ -1,0 +1,2586 @@
+{
+  "metadata": {
+    "source": "JMdict 'ateji' kanji writing tags via words.json",
+    "source_url": "https://github.com/scriptin/jmdict-simplified",
+    "license": "CC-BY-SA 4.0 (EDRDG License)",
+    "generated": "2026-04-12",
+    "count": 239,
+    "field_notes": {
+      "word_id": "JMdict entry ID. Join with data/core/words.json for full entry.",
+      "text": "The ateji kanji writing (phonetic, not semantic).",
+      "reading": "Kana reading — this is the 'real' pronunciation the kanji approximate.",
+      "meanings": "English glosses (up to 5). The meaning relates to the reading, not the individual kanji.",
+      "jlpt_waller": "JLPT level if classified, null otherwise."
+    }
+  },
+  "entries": [
+    {
+      "word_id": "1647360",
+      "text": "お目出度い",
+      "reading": "おめでたい",
+      "meanings": [
+        "(matter) for congratulations",
+        "worthy of celebration",
+        "happy (occasion, ending, etc.)",
+        "joyous",
+        "auspicious"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1593570",
+      "text": "ご存知",
+      "reading": "ごぞんじ",
+      "meanings": [
+        "knowing",
+        "being aware (of)",
+        "(an) acquaintance"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1042650",
+      "text": "キロ米",
+      "reading": "キロメートル",
+      "meanings": [
+        "kilometer",
+        "kilometre"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1728130",
+      "text": "一図",
+      "reading": "いちず",
+      "meanings": [
+        "single-minded",
+        "intent",
+        "determined",
+        "wholehearted",
+        "earnest"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1427340",
+      "text": "丁度",
+      "reading": "ちょうど",
+      "meanings": [
+        "exactly",
+        "precisely",
+        "just",
+        "right",
+        "opportunely"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1061910",
+      "text": "三鞭酒",
+      "reading": "シャンパン",
+      "meanings": [
+        "champagne"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1493240",
+      "text": "不図",
+      "reading": "ふと",
+      "meanings": [
+        "suddenly",
+        "casually",
+        "accidentally",
+        "incidentally",
+        "unexpectedly"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1568080",
+      "text": "不苦労",
+      "reading": "ふくろう",
+      "meanings": [
+        "owl (esp. the Ural owl, Strix uralensis)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1599430",
+      "text": "中味",
+      "reading": "なかみ",
+      "meanings": [
+        "contents",
+        "interior",
+        "filling",
+        "substance",
+        "content"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1045150",
+      "text": "久留子",
+      "reading": "クルス",
+      "meanings": [
+        "cross sign"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1481920",
+      "text": "五月蝿い",
+      "reading": "うるさい",
+      "meanings": [
+        "noisy",
+        "loud",
+        "annoying",
+        "troublesome",
+        "tiresome"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1019210",
+      "text": "亜爾加里",
+      "reading": "アルカリ",
+      "meanings": [
+        "alkali"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1149830",
+      "text": "亜米利加",
+      "reading": "アメリカ",
+      "meanings": [
+        "(United States of) America",
+        "United States",
+        "US",
+        "USA",
+        "America (land mass)"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1015840",
+      "text": "亜細亜",
+      "reading": "アジア",
+      "meanings": [
+        "Asia"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1586450",
+      "text": "仇名",
+      "reading": "あだな",
+      "meanings": [
+        "nickname"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1652680",
+      "text": "仏蘭西",
+      "reading": "フランス",
+      "meanings": [
+        "France"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1075090",
+      "text": "仙",
+      "reading": "セント",
+      "meanings": [
+        "cent (monetary unit)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1021300",
+      "text": "以色列",
+      "reading": "イスラエル",
+      "meanings": [
+        "Israel"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1021360",
+      "text": "伊太利",
+      "reading": "イタリア",
+      "meanings": [
+        "Italy"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1113730",
+      "text": "伯剌西爾",
+      "reading": "ブラジル",
+      "meanings": [
+        "Brazil"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1595750",
+      "text": "住居",
+      "reading": "すまい",
+      "meanings": [
+        "dwelling",
+        "house",
+        "residence",
+        "address",
+        "living"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1148230",
+      "text": "倫敦",
+      "reading": "ロンドン",
+      "meanings": [
+        "London (UK)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1243910",
+      "text": "倶楽部",
+      "reading": "クラブ",
+      "meanings": [
+        "club",
+        "fraternity",
+        "sorority",
+        "clubhouse"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1595400",
+      "text": "儒艮",
+      "reading": "ジュゴン",
+      "meanings": [
+        "dugong (Dugong dugon)",
+        "sea pig"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1335080",
+      "text": "充分",
+      "reading": "じゅうぶん",
+      "meanings": [
+        "enough",
+        "sufficient",
+        "plenty",
+        "adequate",
+        "satisfactory"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1388100",
+      "text": "先達て",
+      "reading": "せんだって",
+      "meanings": [
+        "the other day",
+        "some time ago",
+        "recently"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1443990",
+      "text": "兎に角",
+      "reading": "とにかく",
+      "meanings": [
+        "anyway",
+        "anyhow",
+        "at any rate",
+        "in any case",
+        "at least"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1444010",
+      "text": "兎も角",
+      "reading": "ともかく",
+      "meanings": [
+        "anyhow",
+        "anyway",
+        "somehow or other",
+        "generally speaking",
+        "in any case"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1211380",
+      "text": "八釜しい",
+      "reading": "やかましい",
+      "meanings": [
+        "noisy",
+        "loud",
+        "clamorous",
+        "boisterous",
+        "much talked of"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1339630",
+      "text": "出鱈目",
+      "reading": "でたらめ",
+      "meanings": [
+        "nonsense",
+        "irresponsible remark",
+        "codswallop",
+        "hogwash",
+        "rubbish"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1042500",
+      "text": "切支丹",
+      "reading": "キリシタン",
+      "meanings": [
+        "Christianity (in feudal Japan)",
+        "Christian"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1596090",
+      "text": "切角",
+      "reading": "せっかく",
+      "meanings": [
+        "with trouble",
+        "at great pains",
+        "rare",
+        "valuable",
+        "precious"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1478550",
+      "text": "判子",
+      "reading": "はんこ",
+      "meanings": [
+        "seal (used in lieu of a signature)",
+        "stamp",
+        "chop"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1659590",
+      "text": "利比亜",
+      "reading": "リビア",
+      "meanings": [
+        "Libya"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1142800",
+      "text": "利比利亜",
+      "reading": "リベリア",
+      "meanings": [
+        "Liberia"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1037870",
+      "text": "加奈陀",
+      "reading": "カナダ",
+      "meanings": [
+        "Canada"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1038890",
+      "text": "加爾基",
+      "reading": "カルキ",
+      "meanings": [
+        "chlorinated lime",
+        "calcium hypochlorite",
+        "chloride of lime",
+        "bleaching powder"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1037840",
+      "text": "加特力",
+      "reading": "カトリック",
+      "meanings": [
+        "Catholic",
+        "Catholicism",
+        "Catholic Church"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1037540",
+      "text": "加答児",
+      "reading": "カタル",
+      "meanings": [
+        "catarrh"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1114500",
+      "text": "勃牙利",
+      "reading": "ブルガリア",
+      "meanings": [
+        "Bulgaria"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1596700",
+      "text": "十露盤",
+      "reading": "そろばん",
+      "meanings": [
+        "abacus",
+        "soroban",
+        "calculation (esp. of profit and loss)",
+        "reckoning"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1023840",
+      "text": "印度",
+      "reading": "インド",
+      "meanings": [
+        "India"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1023890",
+      "text": "印度尼西亜",
+      "reading": "インドネシア",
+      "meanings": [
+        "Indonesia"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1023880",
+      "text": "印度支那",
+      "reading": "インドシナ",
+      "meanings": [
+        "Indochina"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1027900",
+      "text": "厄瓜多",
+      "reading": "エクアドル",
+      "meanings": [
+        "Ecuador"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1275600",
+      "text": "厚味",
+      "reading": "あつみ",
+      "meanings": [
+        "thickness",
+        "profundity",
+        "depth",
+        "thickness",
+        "strong and tight group or wall of stones"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1062920",
+      "text": "叙利亜",
+      "reading": "シリア",
+      "meanings": [
+        "Syria"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1049920",
+      "text": "古加涅",
+      "reading": "コカイン",
+      "meanings": [
+        "cocaine"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1590740",
+      "text": "可哀想",
+      "reading": "かわいそう",
+      "meanings": [
+        "poor",
+        "pitiable",
+        "pathetic",
+        "pitiful"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1577200",
+      "text": "可愛い",
+      "reading": "かわいい",
+      "meanings": [
+        "cute",
+        "adorable",
+        "charming",
+        "lovely",
+        "pretty"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1284590",
+      "text": "合羽",
+      "reading": "カッパ",
+      "meanings": [
+        "raincoat"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1023330",
+      "text": "吋",
+      "reading": "インチ",
+      "meanings": [
+        "inch"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1515590",
+      "text": "呆気",
+      "reading": "あっけ",
+      "meanings": [
+        "being taken aback",
+        "state of shock",
+        "dumbfoundedness"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1515600",
+      "text": "呆気ない",
+      "reading": "あっけない",
+      "meanings": [
+        "unsatisfying",
+        "disappointing",
+        "abrupt",
+        "not enough",
+        "too quick"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1600560",
+      "text": "呑気",
+      "reading": "のんき",
+      "meanings": [
+        "easy",
+        "easygoing",
+        "carefree",
+        "happy-go-lucky",
+        "optimistic"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1527070",
+      "text": "味方",
+      "reading": "みかた",
+      "meanings": [
+        "friend",
+        "ally",
+        "supporter",
+        "taking sides (with)",
+        "supporting"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1584580",
+      "text": "味気ない",
+      "reading": "あじけない",
+      "meanings": [
+        "wearisome",
+        "insipid",
+        "dull",
+        "irksome",
+        "wretched"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1302710",
+      "text": "和佐比",
+      "reading": "わさび",
+      "meanings": [
+        "wasabi (Wasabia japonica)",
+        "Japanese horseradish",
+        "horseradish (or any blend of wasabi and horseradish)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "2679370",
+      "text": "和地関",
+      "reading": "バチカン",
+      "meanings": [
+        "Vatican"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1127070",
+      "text": "哩",
+      "reading": "マイル",
+      "meanings": [
+        "mile"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "2538870",
+      "text": "嗚呼嗚呼",
+      "reading": "ああああ",
+      "meanings": [
+        "aaah!",
+        "oooh!",
+        "oh no!",
+        "oh boy!"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1419200",
+      "text": "団栗",
+      "reading": "どんぐり",
+      "meanings": [
+        "acorn"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1445340",
+      "text": "土砂降り",
+      "reading": "どしゃぶり",
+      "meanings": [
+        "downpour",
+        "pouring rain",
+        "heavy rain",
+        "pelting rain",
+        "cloudburst"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1086880",
+      "text": "土耳古",
+      "reading": "トルコ",
+      "meanings": [
+        "Turkey",
+        "Türkiye",
+        "turquoise"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1037560",
+      "text": "型録",
+      "reading": "カタログ",
+      "meanings": [
+        "catalog",
+        "catalogue"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1028500",
+      "text": "埃及",
+      "reading": "エジプト",
+      "meanings": [
+        "Egypt"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1042520",
+      "text": "基督",
+      "reading": "キリスト",
+      "meanings": [
+        "Christ"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1042530",
+      "text": "基督教",
+      "reading": "キリストきょう",
+      "meanings": [
+        "Christianity"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1211370",
+      "text": "堪能",
+      "reading": "たんのう",
+      "meanings": [
+        "proficient",
+        "skilled",
+        "skillful",
+        "good",
+        "accomplished"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1074820",
+      "text": "塞爾維",
+      "reading": "セルビア",
+      "meanings": [
+        "Serbia"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1133090",
+      "text": "墨西哥",
+      "reading": "メキシコ",
+      "meanings": [
+        "Mexico"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1071060",
+      "text": "士篤恒",
+      "reading": "ストックホルム",
+      "meanings": [
+        "Stockholm (Sweden)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1440590",
+      "text": "天ぷら",
+      "reading": "てんぷら",
+      "meanings": [
+        "tempura",
+        "deep-fried fish and vegetables in a light batter"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1438200",
+      "text": "天津",
+      "reading": "あまつ",
+      "meanings": [
+        "heavenly",
+        "imperial"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "2258150",
+      "text": "存知",
+      "reading": "ぞんじ",
+      "meanings": [
+        "knowing",
+        "being aware (of)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1026830",
+      "text": "宇柳貝",
+      "reading": "ウルグアイ",
+      "meanings": [
+        "Uruguay"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1020730",
+      "text": "安母尼亜",
+      "reading": "アンモニア",
+      "meanings": [
+        "ammonia"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1224890",
+      "text": "宜敷く",
+      "reading": "よろしく",
+      "meanings": [
+        "well",
+        "properly",
+        "suitably",
+        "best regards",
+        "please remember me"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1595650",
+      "text": "寿司",
+      "reading": "すし",
+      "meanings": [
+        "sushi",
+        "range of dishes made with vinegared rice combined with fish, vegetables, egg, etc."
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1474440",
+      "text": "寿喜焼",
+      "reading": "すきやき",
+      "meanings": [
+        "sukiyaki",
+        "thin slices of beef, cooked with various vegetables in a table-top cast-iron pan"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1066140",
+      "text": "寿府",
+      "reading": "ジュネーブ",
+      "meanings": [
+        "Geneva"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1091080",
+      "text": "尼加拉瓦",
+      "reading": "ニカラグア",
+      "meanings": [
+        "Nicaragua"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1089910",
+      "text": "尼羅",
+      "reading": "ナイル",
+      "meanings": [
+        "Nile (river)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1457320",
+      "text": "屯",
+      "reading": "トン",
+      "meanings": [
+        "ton (esp. a metric ton, i.e. 1000 kg)",
+        "tonne"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1003430",
+      "text": "屹度",
+      "reading": "きっと",
+      "meanings": [
+        "surely",
+        "undoubtedly",
+        "almost certainly",
+        "most likely (e.g. 90 percent)",
+        "sternly"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1566450",
+      "text": "巫山戯る",
+      "reading": "ふざける",
+      "meanings": [
+        "to joke",
+        "to jest",
+        "to kid",
+        "to josh",
+        "to make fun of"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1101370",
+      "text": "巴基斯担",
+      "reading": "パキスタン",
+      "meanings": [
+        "Pakistan"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1102040",
+      "text": "巴奈馬",
+      "reading": "パナマ",
+      "meanings": [
+        "Panama"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1098270",
+      "text": "巴格達",
+      "reading": "バグダッド",
+      "meanings": [
+        "Baghdad (Iraq)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1102740",
+      "text": "巴里",
+      "reading": "パリ",
+      "meanings": [
+        "Paris (France)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1096400",
+      "text": "布哇",
+      "reading": "ハワイ",
+      "meanings": [
+        "Hawaii",
+        "Hawai'i"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1496890",
+      "text": "布団",
+      "reading": "ふとん",
+      "meanings": [
+        "futon",
+        "Japanese bedding consisting of a mattress and a duvet",
+        "round cushion used for Zen meditation (traditionally made of woven bulrush leaves)"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1043190",
+      "text": "希臘",
+      "reading": "ギリシャ",
+      "meanings": [
+        "Greece"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1089090",
+      "text": "弗",
+      "reading": "ドル",
+      "meanings": [
+        "dollar",
+        "money",
+        "cash"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1130560",
+      "text": "弥撒",
+      "reading": "ミサ",
+      "meanings": [
+        "(Catholic) Mass"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1606160",
+      "text": "弱味",
+      "reading": "よわみ",
+      "meanings": [
+        "(a) weakness",
+        "shortcoming",
+        "failing",
+        "sore point"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1236140",
+      "text": "強味",
+      "reading": "つよみ",
+      "meanings": [
+        "forte",
+        "strong point"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1449190",
+      "text": "当前",
+      "reading": "とうぜん",
+      "meanings": [
+        "natural",
+        "right",
+        "proper",
+        "just",
+        "reasonable"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1079240",
+      "text": "得撒",
+      "reading": "テキサス",
+      "meanings": [
+        "Texas"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1270700",
+      "text": "御目出度う",
+      "reading": "おめでとう",
+      "meanings": [
+        "congratulations!",
+        "well done!",
+        "best wishes!",
+        "all the best!"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1360820",
+      "text": "心地",
+      "reading": "ここち",
+      "meanings": [
+        "feeling",
+        "sensation",
+        "mood"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1309630",
+      "text": "思惑",
+      "reading": "おもわく",
+      "meanings": [
+        "expectation",
+        "anticipation",
+        "prediction",
+        "forecast",
+        "calculations"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1200220",
+      "text": "怪我",
+      "reading": "けが",
+      "meanings": [
+        "injury",
+        "wound",
+        "mistake",
+        "accident",
+        "loss"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1250500",
+      "text": "恵比寿",
+      "reading": "えびす",
+      "meanings": [
+        "Ebisu",
+        "god of fishing and commerce"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1000260",
+      "text": "悪どい",
+      "reading": "あくどい",
+      "meanings": [
+        "gaudy",
+        "showy",
+        "garish",
+        "loud",
+        "crooked"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1004040",
+      "text": "愚図愚図",
+      "reading": "ぐずぐず",
+      "meanings": [
+        "slowly",
+        "tardily",
+        "dawdling",
+        "lingering",
+        "hesitantly"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1245240",
+      "text": "愚連隊",
+      "reading": "ぐれんたい",
+      "meanings": [
+        "gang of young toughs",
+        "hooligans",
+        "hoodlums",
+        "hoods",
+        "yobbos"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1066590",
+      "text": "成吉思汗",
+      "reading": "ジンギスかん",
+      "meanings": [
+        "jingisukan",
+        "grilled mutton and vegetable dish",
+        "slotted dome cast iron grill (used for jingisukan)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1076650",
+      "text": "打",
+      "reading": "ダース",
+      "meanings": [
+        "dozen"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1139300",
+      "text": "拉丁",
+      "reading": "ラテン",
+      "meanings": [
+        "Latin (language)",
+        "Latin-American",
+        "Latin",
+        "Latino",
+        "Latin (i.e. relating to the literature, culture, etc. of ancient Rome)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1139330",
+      "text": "拉丁語",
+      "reading": "ラテンご",
+      "meanings": [
+        "Latin (language)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1630110",
+      "text": "拠出",
+      "reading": "きょしゅつ",
+      "meanings": [
+        "donation",
+        "contribution"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1135990",
+      "text": "摩洛哥",
+      "reading": "モロッコ",
+      "meanings": [
+        "Morocco"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1056970",
+      "text": "撒哈拉",
+      "reading": "サハラ",
+      "meanings": [
+        "Sahara"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1310300",
+      "text": "支払う",
+      "reading": "しはらう",
+      "meanings": [
+        "to pay"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1063410",
+      "text": "新嘉坡",
+      "reading": "シンガポール",
+      "meanings": [
+        "Singapore"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1091460",
+      "text": "新西蘭",
+      "reading": "ニュージーランド",
+      "meanings": [
+        "New Zealand"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1464950",
+      "text": "日和",
+      "reading": "ひより",
+      "meanings": [
+        "weather",
+        "climatic conditions",
+        "fine weather",
+        "clear day",
+        "situation"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1048730",
+      "text": "日耳曼",
+      "reading": "ゲルマン",
+      "meanings": [
+        "Germanic (people, language, culture, etc.)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1000225",
+      "text": "明白",
+      "reading": "あからさま",
+      "meanings": [
+        "plain",
+        "frank",
+        "candid",
+        "open",
+        "direct"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1316140",
+      "text": "時計",
+      "reading": "とけい",
+      "meanings": [
+        "clock",
+        "watch",
+        "timepiece"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1100140",
+      "text": "晩香波",
+      "reading": "バンクーバー",
+      "meanings": [
+        "Vancouver"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1497180",
+      "text": "普段",
+      "reading": "ふだん",
+      "meanings": [
+        "usual",
+        "normal",
+        "everyday",
+        "habitual",
+        "ordinary"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1078320",
+      "text": "智利",
+      "reading": "チリ",
+      "meanings": [
+        "Chile"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1100160",
+      "text": "曼谷",
+      "reading": "バンコク",
+      "meanings": [
+        "Bangkok (Thailand)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1612660",
+      "text": "有耶無耶",
+      "reading": "うやむや",
+      "meanings": [
+        "indefinite",
+        "hazy",
+        "vague",
+        "unsettled",
+        "undecided"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1130450",
+      "text": "木乃伊",
+      "reading": "ミイラ",
+      "meanings": [
+        "mummy"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1137570",
+      "text": "欧羅巴",
+      "reading": "ヨーロッパ",
+      "meanings": [
+        "Europe"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1590710",
+      "text": "歌留多",
+      "reading": "カルタ",
+      "meanings": [
+        "karuta",
+        "traditional Japanese playing cards, esp. hyakunin isshu karuta or iroha karuta"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1595020",
+      "text": "正油",
+      "reading": "しょうゆ",
+      "meanings": [
+        "soy sauce",
+        "soya sauce",
+        "shoyu"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1109290",
+      "text": "比律賓",
+      "reading": "フィリピン",
+      "meanings": [
+        "Philippines"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1177490",
+      "text": "江に",
+      "reading": "えん",
+      "meanings": [
+        "fate",
+        "destiny (esp. as a mysterious force that binds two people together)",
+        "relationship (e.g. between two people)",
+        "bond",
+        "link"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1568640",
+      "text": "洒落",
+      "reading": "しゃれ",
+      "meanings": [
+        "joke",
+        "pun",
+        "jest",
+        "witticism",
+        "wordplay"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1568670",
+      "text": "洒落る",
+      "reading": "しゃれる",
+      "meanings": [
+        "to dress stylishly",
+        "to joke",
+        "to play on words"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1609030",
+      "text": "浅墓",
+      "reading": "あさはか",
+      "meanings": [
+        "shallow",
+        "superficial",
+        "thoughtless",
+        "short-sighted",
+        "foolish"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1147940",
+      "text": "浪漫",
+      "reading": "ロマン",
+      "meanings": [
+        "romance (e.g. Arthurian romances)",
+        "heroic tale",
+        "(nigh) impossible dream",
+        "adventurous spirit",
+        "great undertaking"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1143520",
+      "text": "淋巴",
+      "reading": "リンパ",
+      "meanings": [
+        "lymph"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1362670",
+      "text": "深味",
+      "reading": "ふかみ",
+      "meanings": [
+        "deep place",
+        "depths",
+        "depth",
+        "profundity"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1051860",
+      "text": "混凝土",
+      "reading": "コンクリート",
+      "meanings": [
+        "concrete"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1129990",
+      "text": "満俺",
+      "reading": "マンガン",
+      "meanings": [
+        "manganese (Mn)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1611660",
+      "text": "満更",
+      "reading": "まんざら",
+      "meanings": [
+        "(not) altogether",
+        "(not) wholly"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1532980",
+      "text": "滅多",
+      "reading": "めった",
+      "meanings": [
+        "thoughtless",
+        "reckless",
+        "careless",
+        "rash",
+        "ordinary"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1612000",
+      "text": "滅多に",
+      "reading": "めったに",
+      "meanings": [
+        "rarely",
+        "seldom"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1533000",
+      "text": "滅茶苦茶",
+      "reading": "めちゃくちゃ",
+      "meanings": [
+        "absurd",
+        "unreasonable",
+        "nonsensical",
+        "preposterous",
+        "incoherent"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1031680",
+      "text": "濠太剌利",
+      "reading": "オーストラリア",
+      "meanings": [
+        "Australia"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1026740",
+      "text": "烏克蘭",
+      "reading": "ウクライナ",
+      "meanings": [
+        "Ukraine"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1531030",
+      "text": "無理矢理",
+      "reading": "むりやり",
+      "meanings": [
+        "forcibly",
+        "by force",
+        "against one's will"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1530670",
+      "text": "無茶",
+      "reading": "むちゃ",
+      "meanings": [
+        "absurd",
+        "unreasonable",
+        "ridiculous",
+        "rash",
+        "reckless"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1530680",
+      "text": "無茶苦茶",
+      "reading": "むちゃくちゃ",
+      "meanings": [
+        "nonsensical",
+        "unreasonable",
+        "absurd",
+        "unrealistic",
+        "awfully"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1529590",
+      "text": "無闇に",
+      "reading": "むやみに",
+      "meanings": [
+        "thoughtlessly",
+        "recklessly",
+        "rashly",
+        "indiscriminately",
+        "indiscreetly"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1530510",
+      "text": "無駄",
+      "reading": "むだ",
+      "meanings": [
+        "futility",
+        "waste",
+        "uselessness",
+        "pointlessness",
+        "idleness"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1128430",
+      "text": "燐寸",
+      "reading": "マッチ",
+      "meanings": [
+        "match (for lighting a fire)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1065660",
+      "text": "牙買加",
+      "reading": "ジャマイカ",
+      "meanings": [
+        "Jamaica"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1599200",
+      "text": "独逸",
+      "reading": "ドイツ",
+      "meanings": [
+        "Germany"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1042340",
+      "text": "玖馬",
+      "reading": "キューバ",
+      "meanings": [
+        "Cuba"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1049180",
+      "text": "珈琲",
+      "reading": "コーヒー",
+      "meanings": [
+        "coffee"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1610360",
+      "text": "珍紛漢紛",
+      "reading": "ちんぷんかんぷん",
+      "meanings": [
+        "unintelligible language",
+        "incoherent language",
+        "talking nonsense",
+        "babble",
+        "gibberish"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1067410",
+      "text": "瑞典",
+      "reading": "スウェーデン",
+      "meanings": [
+        "Sweden"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1067190",
+      "text": "瑞西",
+      "reading": "スイス",
+      "meanings": [
+        "Switzerland"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1046160",
+      "text": "瓜姆",
+      "reading": "グアム",
+      "meanings": [
+        "Guam"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1040060",
+      "text": "瓦斯",
+      "reading": "ガス",
+      "meanings": [
+        "gas (as a fuel)",
+        "gas (state of matter)",
+        "poison gas",
+        "dense fog",
+        "thick fog"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1609070",
+      "text": "甘味",
+      "reading": "あまみ",
+      "meanings": [
+        "sweetness",
+        "sugary taste",
+        "sweets",
+        "dessert",
+        "cake"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1379210",
+      "text": "生憎",
+      "reading": "あいにく",
+      "meanings": [
+        "unfortunately",
+        "sorry, but ..."
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1442840",
+      "text": "田圃",
+      "reading": "たんぼ",
+      "meanings": [
+        "rice field",
+        "rice paddy",
+        "paddy field"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1280250",
+      "text": "甲斐",
+      "reading": "かい",
+      "meanings": [
+        "result (that makes an act worthwhile)",
+        "worth (in doing something)",
+        "value",
+        "effect",
+        "use"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1120030",
+      "text": "白耳義",
+      "reading": "ベルギー",
+      "meanings": [
+        "Belgium"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1608630",
+      "text": "目出度い",
+      "reading": "めでたい",
+      "meanings": [
+        "happy",
+        "auspicious",
+        "propitious",
+        "joyous",
+        "naive"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1604980",
+      "text": "目茶目茶",
+      "reading": "めちゃめちゃ",
+      "meanings": [
+        "disorderly",
+        "messy",
+        "ruined",
+        "absurd",
+        "unreasonable"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1394780",
+      "text": "真っ当",
+      "reading": "まっとう",
+      "meanings": [
+        "proper",
+        "respectable",
+        "decent",
+        "honest",
+        "entirely"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1363540",
+      "text": "真逆",
+      "reading": "まさか",
+      "meanings": [
+        "by no means",
+        "never!",
+        "well, I never!",
+        "you don't say!",
+        "no way!"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1364360",
+      "text": "真面目",
+      "reading": "まじめ",
+      "meanings": [
+        "serious",
+        "earnest",
+        "sober",
+        "grave",
+        "honest"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1012810",
+      "text": "矢っ張り",
+      "reading": "やっぱり",
+      "meanings": [
+        "as expected",
+        "sure enough",
+        "just as one thought",
+        "after all (is said and done)",
+        "in the end"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "2772770",
+      "text": "矢張り",
+      "reading": "やはり",
+      "meanings": [
+        "as expected",
+        "sure enough",
+        "just as one thought",
+        "after all (is said and done)",
+        "in the end"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1537780",
+      "text": "矢鱈",
+      "reading": "やたら",
+      "meanings": [
+        "indiscriminately",
+        "blindly",
+        "at random",
+        "recklessly",
+        "thoughtlessly"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1612330",
+      "text": "碌な",
+      "reading": "ろくな",
+      "meanings": [
+        "satisfactory",
+        "decent",
+        "good",
+        "proper",
+        "respectable"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1043550",
+      "text": "科威都",
+      "reading": "クウェート",
+      "meanings": [
+        "Kuwait"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1121320",
+      "text": "秘露",
+      "reading": "ペルー",
+      "meanings": [
+        "Peru"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1078220",
+      "text": "突尼斯",
+      "reading": "チュニジア",
+      "meanings": [
+        "Tunisia"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1077760",
+      "text": "窒扶斯",
+      "reading": "チフス",
+      "meanings": [
+        "typhoid",
+        "paratyphoid",
+        "typhus"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1080090",
+      "text": "第希蘭",
+      "reading": "テヘラン",
+      "meanings": [
+        "Tehran (Iran)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1132570",
+      "text": "米",
+      "reading": "メートル",
+      "meanings": [
+        "metre (unit of length)",
+        "meter",
+        "meter",
+        "gauge"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1091940",
+      "text": "紐育",
+      "reading": "ニューヨーク",
+      "meanings": [
+        "New York"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1397350",
+      "text": "素敵",
+      "reading": "すてき",
+      "meanings": [
+        "lovely",
+        "wonderful",
+        "charming",
+        "enchanting",
+        "nice"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1214540",
+      "text": "缶",
+      "reading": "かん",
+      "meanings": [
+        "can",
+        "tin",
+        "canned food"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1138610",
+      "text": "羅宇",
+      "reading": "ラオス",
+      "meanings": [
+        "Laos"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "2078870",
+      "text": "羅馬",
+      "reading": "ローマ",
+      "meanings": [
+        "Rome"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1146810",
+      "text": "羅馬字",
+      "reading": "ローマじ",
+      "meanings": [
+        "Latin alphabet",
+        "Roman alphabet",
+        "romaji",
+        "romanized Japanese",
+        "system of transliterating Japanese into the Latin alphabet"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1259620",
+      "text": "美事",
+      "reading": "みごと",
+      "meanings": [
+        "splendid",
+        "magnificent",
+        "excellent",
+        "fine",
+        "superb"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1472740",
+      "text": "背広",
+      "reading": "せびろ",
+      "meanings": [
+        "business suit"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1562910",
+      "text": "腕白",
+      "reading": "わんぱく",
+      "meanings": [
+        "naughty",
+        "mischievous",
+        "unruly"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1047070",
+      "text": "臥児狼徳",
+      "reading": "グリーンランド",
+      "meanings": [
+        "Greenland"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1059750",
+      "text": "舎路",
+      "reading": "シアトル",
+      "meanings": [
+        "Seattle"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1130020",
+      "text": "芒果",
+      "reading": "マンゴー",
+      "meanings": [
+        "mango (Mangifera indica)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1109460",
+      "text": "芬蘭",
+      "reading": "フィンランド",
+      "meanings": [
+        "Finland"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1244630",
+      "text": "苦味",
+      "reading": "にがみ",
+      "meanings": [
+        "bitterness",
+        "bitter taste"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1021160",
+      "text": "英吉利",
+      "reading": "イギリス",
+      "meanings": [
+        "United Kingdom",
+        "UK",
+        "Britain",
+        "Great Britain",
+        "England"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1003810",
+      "text": "草臥れる",
+      "reading": "くたびれる",
+      "meanings": [
+        "to get tired",
+        "to become exhausted",
+        "to grow weary",
+        "to become worn out",
+        "to become battered (from long use)"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1134920",
+      "text": "莫斯科",
+      "reading": "モスクワ",
+      "meanings": [
+        "Moscow (Russia)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1149020",
+      "text": "華盛頓",
+      "reading": "ワシントン",
+      "meanings": [
+        "Washington, D.C. (United States)",
+        "Washington (US state)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1125940",
+      "text": "葡萄牙",
+      "reading": "ポルトガル",
+      "meanings": [
+        "Portugal"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1012490",
+      "text": "藻掻く",
+      "reading": "もがく",
+      "meanings": [
+        "to struggle",
+        "to writhe",
+        "to wriggle",
+        "to squirm",
+        "to act frantically"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1075470",
+      "text": "蘇維埃",
+      "reading": "ソビエト",
+      "meanings": [
+        "soviet",
+        "Soviet Union"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "2154660",
+      "text": "虎列刺",
+      "reading": "コレラ",
+      "meanings": [
+        "cholera"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1282180",
+      "text": "行衛",
+      "reading": "ゆくえ",
+      "meanings": [
+        "(one's) whereabouts",
+        "destination",
+        "where one is headed",
+        "outcome",
+        "course (of events)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1061180",
+      "text": "西比利亜",
+      "reading": "シベリア",
+      "meanings": [
+        "Siberia",
+        "cake made with layers of sweet bean paste and sponge cake"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1766800",
+      "text": "西班牙",
+      "reading": "スペイン",
+      "meanings": [
+        "Spain"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1259240",
+      "text": "見世物",
+      "reading": "みせもの",
+      "meanings": [
+        "misemono",
+        "type of Edo- and Meiji-period side show often held outdoors or in small temporarily erected shacks on temple and shrine grounds",
+        "show",
+        "exhibition",
+        "spectacle"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1578350",
+      "text": "見栄",
+      "reading": "みえ",
+      "meanings": [
+        "show",
+        "display",
+        "pretensions",
+        "appearances",
+        "ostentation"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1312420",
+      "text": "試合",
+      "reading": "しあい",
+      "meanings": [
+        "match",
+        "game",
+        "bout",
+        "contest"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1271480",
+      "text": "誤魔化す",
+      "reading": "ごまかす",
+      "meanings": [
+        "to deceive",
+        "to cheat",
+        "to swindle",
+        "to falsify",
+        "to misrepresent"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1005010",
+      "text": "護美箱",
+      "reading": "ごみばこ",
+      "meanings": [
+        "trash can",
+        "garbage can",
+        "rubbish bin",
+        "dustbin"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1054570",
+      "text": "護謨",
+      "reading": "ゴム",
+      "meanings": [
+        "gum",
+        "rubber",
+        "eraser",
+        "condom"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1450070",
+      "text": "豆富",
+      "reading": "とうふ",
+      "meanings": [
+        "tofu",
+        "bean curd",
+        "beancurd"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1027750",
+      "text": "越幾斯",
+      "reading": "エキス",
+      "meanings": [
+        "extract (of plants, meat, etc.)",
+        "essence",
+        "concentrate",
+        "concentrated stock"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1030360",
+      "text": "越歴",
+      "reading": "エレキ",
+      "meanings": [
+        "electricity",
+        "electric guitar"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1365930",
+      "text": "辛棒",
+      "reading": "しんぼう",
+      "meanings": [
+        "patience",
+        "endurance",
+        "perseverance"
+      ],
+      "jlpt_waller": "N1"
+    },
+    {
+      "word_id": "1077190",
+      "text": "達頼喇嘛",
+      "reading": "ダライラマ",
+      "meanings": [
+        "Dalai Lama"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1589410",
+      "text": "重味",
+      "reading": "おもみ",
+      "meanings": [
+        "weight",
+        "weight (e.g. of someone's words)",
+        "burden",
+        "grandeur",
+        "dignity"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1537620",
+      "text": "野暮",
+      "reading": "やぼ",
+      "meanings": [
+        "boorish",
+        "unsophisticated",
+        "unrefined",
+        "uncouth",
+        "tasteless"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1037910",
+      "text": "金糸雀",
+      "reading": "カナリア",
+      "meanings": [
+        "canary (esp. the island canary, Serinus canaria)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1123880",
+      "text": "釦",
+      "reading": "ボタン",
+      "meanings": [
+        "button (clothing)",
+        "push-button",
+        "button"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1629420",
+      "text": "錻力",
+      "reading": "ブリキ",
+      "meanings": [
+        "tin plate"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1586600",
+      "text": "阿呆",
+      "reading": "アホ",
+      "meanings": [
+        "fool",
+        "idiot",
+        "simpleton"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1929050",
+      "text": "阿弗利加",
+      "reading": "アフリカ",
+      "meanings": [
+        "Africa"
+      ],
+      "jlpt_waller": "N4"
+    },
+    {
+      "word_id": "1035520",
+      "text": "阿蘭陀",
+      "reading": "オランダ",
+      "meanings": [
+        "Netherlands",
+        "Holland"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1060780",
+      "text": "雪特尼",
+      "reading": "シドニー",
+      "meanings": [
+        "Sydney (Australia)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1775880",
+      "text": "露西亜",
+      "reading": "ロシア",
+      "meanings": [
+        "Russia"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1533550",
+      "text": "面倒",
+      "reading": "めんどう",
+      "meanings": [
+        "trouble",
+        "bother",
+        "trouble",
+        "difficulty",
+        "care"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1217700",
+      "text": "頑張る",
+      "reading": "がんばる",
+      "meanings": [
+        "to persevere",
+        "to persist",
+        "to keep at it",
+        "to hang on",
+        "to hold out"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1574310",
+      "text": "首肯く",
+      "reading": "うなずく",
+      "meanings": [
+        "to nod",
+        "to bow one's head in assent",
+        "to agree"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1129530",
+      "text": "馬克",
+      "reading": "マルク",
+      "meanings": [
+        "mark (former currency of Germany)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1128910",
+      "text": "馬尼剌",
+      "reading": "マニラ",
+      "meanings": [
+        "Manila (Philippines)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1129900",
+      "text": "馬来西亜",
+      "reading": "マレーシア",
+      "meanings": [
+        "Malaysia"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1098340",
+      "text": "馬穴",
+      "reading": "バケツ",
+      "meanings": [
+        "bucket",
+        "pail"
+      ],
+      "jlpt_waller": "N2"
+    },
+    {
+      "word_id": "1601260",
+      "text": "馬鹿",
+      "reading": "ばか",
+      "meanings": [
+        "idiot",
+        "moron",
+        "fool",
+        "stupid",
+        "foolish"
+      ],
+      "jlpt_waller": "N3"
+    },
+    {
+      "word_id": "1050390",
+      "text": "骨杯",
+      "reading": "コップ",
+      "meanings": [
+        "glass (drinking vessel)",
+        "tumbler",
+        "cups (suit)"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1163940",
+      "text": "鳥渡",
+      "reading": "ちょっと",
+      "meanings": [
+        "a little",
+        "a bit",
+        "slightly",
+        "just a minute",
+        "for a moment"
+      ],
+      "jlpt_waller": "N5"
+    },
+    {
+      "word_id": "1145730",
+      "text": "黎巴嫩",
+      "reading": "レバノン",
+      "meanings": [
+        "Lebanon"
+      ],
+      "jlpt_waller": null
+    },
+    {
+      "word_id": "1148640",
+      "text": "Ｙシャツ",
+      "reading": "ワイシャツ",
+      "meanings": [
+        "(formal) shirt",
+        "dress shirt",
+        "business shirt",
+        "button-up shirt"
+      ],
+      "jlpt_waller": "N5"
+    }
+  ]
+}

@@ -53,6 +53,8 @@ STAGE_DEPENDENCIES: dict[str, set[str]] = {
     "expressions": {"jlpt"},
     "cross_links": {"kanji", "words", "radicals", "sentences", "grammar"},
     "frequency_subtitles": {"words"},
+    "counters": {"words"},
+    "ateji": {"words"},
     "grammar": {"sentences"},
 }
 
@@ -112,7 +114,9 @@ def _build_stages() -> list[Stage]:
     import-time errors.
     """
     from build.transform import (
+        ateji,
         conjugations,
+        counters,
         cross_links,
         expressions,
         frequency,
@@ -154,6 +158,8 @@ def _build_stages() -> list[Stage]:
         Stage("stroke_order", "Stroke order SVGs from KanjiVG (filtered to characters in kanji.json).", stroke_order.build, phase=2),
         # ---- Enrichment that depends on core data ----
         Stage("frequency_subtitles", "Word frequency from OpenSubtitles 2018 media corpus.", frequency_subtitles.build, phase=4),
+        Stage("counters", "Counter-word (josushi) index extracted from JMdict 'ctr' POS tag.", counters.build, phase=4),
+        Stage("ateji", "Ateji (phonetic kanji spelling) index from JMdict kanji tags.", ateji.build, phase=4),
         # ---- Grammar (Phase 3 — must run before cross_links for word-to-grammar index) ----
         Stage("grammar", "Curated Japanese grammar dataset (original, from grammar-curated/).", grammar.build, phase=3),
         Stage("expressions", "Lexicalized grammar patterns extracted from JMdict 'exp' entries.", expressions.build, phase=3),

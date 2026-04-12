@@ -216,7 +216,9 @@ def test_validate_handles_missing_schema_gracefully() -> None:
 # ===================================================================
 
 EXPECTED_SCHEMAS = {
+    "ateji.schema.json",
     "conjugations.schema.json",
+    "counter-words.schema.json",
     "cross-refs.schema.json",
     "expressions.schema.json",
     "frequency.schema.json",
