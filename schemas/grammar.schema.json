@@ -248,6 +248,13 @@
           },
           "description": "Explicit list of references consulted when writing this entry (URLs, book citations, etc.).",
           "minItems": 1
+        },
+        "tatoeba_pattern_matches": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Tatoeba sentence IDs where the grammar pattern appears in the sentence text. Found via pattern-string search, not example-text matching. Up to 5 per grammar point."
         }
       },
       "additionalProperties": false

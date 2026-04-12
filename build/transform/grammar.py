@@ -107,6 +107,80 @@ def _normalize_japanese_for_match(text: str) -> str:
     return normalized
 
 
+def _extract_japanese_core(pattern: str) -> str:
+    """Extract the searchable Japanese portion from a grammar pattern string.
+
+    Grammar patterns contain English metalanguage (e.g.,
+    "Noun / V dict + に難くない"). This function extracts the longest
+    contiguous run of Japanese characters — the functional part that
+    would appear in an actual sentence.
+
+    Returns the extracted string, or "" if no usable Japanese portion
+    (length >= 2 characters) is found.
+    """
+    import re
+    # Remove tilde markers
+    p = pattern.replace("〜", "").replace("～", "")
+    # Split on + and try the last segment first (usually the grammar form)
+    segments = p.split("+")
+    candidates = [segments[-1].strip()] if len(segments) > 1 else []
+    candidates.append(p.strip())
+
+    best = ""
+    for candidate in candidates:
+        # Find contiguous Japanese character runs (hiragana, katakana,
+        # kanji, Japanese punctuation range, long vowel mark)
+        runs = re.findall(
+            r"[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u3000-\u303Fー]+",
+            candidate,
+        )
+        for run in runs:
+            clean = run.strip("（）")
+            if len(clean) > len(best):
+                best = clean
+    return best if len(best) >= 2 else ""
+
+
+def _find_pattern_matches(
+    entries: list[dict],
+    sentences: list[tuple[str, str]],
+    max_per_point: int = 5,
+) -> tuple[dict[str, list[str]], int, int]:
+    """Find Tatoeba sentences that contain each grammar point's pattern.
+
+    Unlike _link_examples_to_tatoeba (which matches example *text*
+    against sentence *text*), this function searches for the grammar
+    *pattern string* within sentences. This yields much higher match
+    rates because it finds sentences that demonstrate the grammar in
+    natural use.
+
+    Returns:
+        pattern_matches: dict of grammar_id → list of sentence IDs
+        matched_count: number of grammar points with ≥1 match
+        total_matches: total sentence matches across all points
+    """
+    pattern_matches: dict[str, list[str]] = {}
+    total_matches = 0
+    matched_count = 0
+
+    for entry in entries:
+        search_term = _extract_japanese_core(entry.get("pattern", ""))
+        if not search_term:
+            continue
+        matches: list[str] = []
+        for sid, text in sentences:
+            if search_term in text:
+                matches.append(sid)
+                if len(matches) >= max_per_point:
+                    break
+        if matches:
+            pattern_matches[entry["id"]] = matches
+            total_matches += len(matches)
+            matched_count += 1
+
+    return pattern_matches, matched_count, total_matches
+
+
 def _load_tatoeba_text_index() -> tuple[dict[str, str], dict[str, str]]:
     """Build Japanese-text → Tatoeba-sentence-id indices from sentences.json.
 
@@ -255,6 +329,33 @@ def build() -> None:
         if not exact_index:
             print("[grammar]  Tatoeba linkage: skipped (sentences.json not built)")
 
+    # Pattern-based Tatoeba matching: search sentence corpus for sentences
+    # that contain the grammar pattern's Japanese core. This is a separate,
+    # higher-coverage linkage mechanism — grammar examples are constructed
+    # for pedagogy and rarely match corpus text, but pattern-string search
+    # finds natural usage of the grammar in real sentences.
+    pattern_match_count = 0
+    pattern_total_matches = 0
+    if SENTENCES_JSON.exists() and entries:
+        sentences_data = json.loads(SENTENCES_JSON.read_text(encoding="utf-8"))
+        sentence_tuples = [
+            (s["id"], s["japanese"])
+            for s in sentences_data.get("sentences", [])
+        ]
+        pattern_matches, pattern_match_count, pattern_total_matches = \
+            _find_pattern_matches(entries, sentence_tuples)
+        # Store matches on each entry
+        for entry in entries:
+            entry["tatoeba_pattern_matches"] = pattern_matches.get(entry["id"], [])
+        print(
+            f"[grammar]  pattern matching: {pattern_match_count}/{len(entries)} "
+            f"points matched ({100*pattern_match_count/len(entries):.1f}%), "
+            f"{pattern_total_matches} total sentence matches"
+        )
+    else:
+        for entry in entries:
+            entry["tatoeba_pattern_matches"] = []
+
     # Stats
     by_level: dict[str, int] = {}
     by_status: dict[str, int] = {"draft": 0, "community_reviewed": 0, "native_speaker_reviewed": 0}
@@ -331,6 +432,17 @@ def build() -> None:
                     "sentence-final punctuation and whitespace stripped). "
                     "Normalization never collapses kanji/kana variants or "
                     "changes width/case."
+                ),
+                "pattern_match_points": pattern_match_count,
+                "pattern_match_total": pattern_total_matches,
+                "pattern_match_pct": round(
+                    100 * pattern_match_count / len(entries), 2
+                ) if entries else 0,
+                "pattern_match_method": (
+                    "Separate from example-text linkage. Extracts the Japanese "
+                    "core of each grammar pattern and searches sentences.json "
+                    "for sentences containing it. Up to 5 matches per grammar "
+                    "point. Stored in tatoeba_pattern_matches[] on each entry."
                 ),
             },
             "authorship_statement": (
