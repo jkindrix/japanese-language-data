@@ -24,6 +24,14 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 - **Jukugo compound index** (`data/enrichment/jukugo-compounds.json`): 14,350 multi-kanji compounds with per-character meaning decomposition from KANJIDIC2. Enables "what compounds use this kanji?" lookups.
 - **Word-to-grammar cross-reference** (`data/cross-refs/word-to-grammar.json`): 1,577 words mapped to grammar points via text matching against grammar examples and pattern strings.
 - **Grammar pattern matching improvement**: Multi-candidate extraction raises grammar-to-sentence linking from 75.6% to 90.3% (537 of 595 grammar points matched). Extracts multiple pattern candidates per grammar point and tries each against the corpus.
+- **Leeds web-corpus frequency** (`data/enrichment/frequency-web.json`): 11,038 vocabulary-matched word frequency entries from the Leeds University Internet Japanese Word Frequency List (~253M-token web corpus, ChaSen-tokenized). Provides web-text register frequency. Source pinned via Wayback Machine (CC-BY).
+- **Wiktionary pitch accent supplement** (`data/enrichment/pitch-accent-wiktionary.json`): 7,378 entries extracted from Japanese Wiktionary via kaikki.org/wiktextract. Covers post-2022 vocabulary not in Kanjium. Accent type tags converted to numeric mora positions. CC-BY-SA 4.0.
+- **Wikipedia-derived word frequency** (`data/enrichment/frequency-wikipedia.json`): 14,553 vocabulary-matched word frequency entries from MeCab tokenization of the KFTT Wikipedia corpus (443,849 sentences). Provides formal/encyclopedic written Japanese frequency.
+
+### Added — Phase 4 pipelines
+
+- **Aozora Bunko curated corpus** (`data/phase4/aozora-corpus.json`, built on demand): 14 public-domain literary works by 7 authors (Soseki, Akutagawa, Dazai, Miyazawa, Nakajima, Mori, Higuchi). ~620K chars with ruby (furigana) extraction. All authors died before 1955, definitively public domain.
+- **Common Voice JA transcript pipeline** (`data/phase4/common-voice-transcripts.json`, built on demand): Pipeline for extracting unique Japanese transcripts from Mozilla Common Voice. Requires manual download (Mozilla account authentication). CC-0.
 
 ### Added — distribution
 
@@ -34,8 +42,9 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ### Added — infrastructure
 
-- **125 new tests** (317 → 442): Unit tests for frequency_subtitles, export_sqlite insert functions, furigana mock-build, kftt tarball extraction, grammar pattern extraction, stroke_order edge cases, sentences dedup, expressions filter, cross_links build, grammar multi-candidate matching, Anki note model builders. Full build() integration tests for export_anki, export_sqlite, grammar, cross_links, stroke_order, kanji, sentences, expressions, kftt, frequency, pitch, and names modules. Coverage: 47% → 77%.
+- **133 new tests** (317 → 450): Unit tests for frequency_subtitles, export_sqlite insert functions, furigana mock-build, kftt tarball extraction, grammar pattern extraction, stroke_order edge cases, sentences dedup, expressions filter, cross_links build, grammar multi-candidate matching, Anki note model builders. Full build() integration tests for export_anki, export_sqlite, grammar, cross_links, stroke_order, kanji, sentences, expressions, kftt, frequency, pitch, names, frequency_web, frequency_wikipedia, common_voice, and aozora modules. Coverage: 47% → 77%.
 - **Coverage floor bumped** from 45% to 77% (`pyproject.toml`).
+- **MeCab dependency** added to requirements.txt (`mecab-python3`, `unidic-lite`) for Wikipedia frequency tokenization.
 
 ### Fixed — pipeline
 
@@ -53,8 +62,8 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ### Verification
 
-- 442 tests, all passing.
-- 28 data files validated against schemas + semantic integrity checks.
+- 450 tests, all passing.
+- 31 data files validated against schemas + semantic integrity checks.
 - Coverage: 77% (fail-under: 77%).
 - Lint clean.
 
