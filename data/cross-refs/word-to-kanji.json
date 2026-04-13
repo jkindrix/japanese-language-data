@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2026-04-12",
+    "generated": "2026-04-13",
     "count": 18574,
     "direction": "Word ID → list of kanji characters appearing in any kanji writing of that word.",
     "key_type": "word_id",

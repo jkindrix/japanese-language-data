@@ -33,6 +33,14 @@ Generated files:
         Each word ID → list of grammar point IDs that reference it
         in their examples.
 
+    * ``data/cross-refs/grammar-to-sentences.json``
+        Each grammar point → list of sentence IDs demonstrating it,
+        extracted from the pattern-matching embedded in grammar.json.
+
+    * ``data/cross-refs/kanji-to-sentences-full.json``  (gitignored)
+        Same as kanji-to-sentences.json but across ALL corpora
+        (4.35M sentences), not just the curated 26K.
+
 All cross-reference files conform to ``schemas/cross-refs.schema.json``.
 
 The transform reads ``data/core/words.json`` (the common subset) for
@@ -59,6 +67,16 @@ SENTENCES_JSON = REPO_ROOT / "data" / "corpus" / "sentences.json"
 RADICALS_JSON = REPO_ROOT / "data" / "core" / "radicals.json"
 GRAMMAR_JSON = REPO_ROOT / "data" / "grammar" / "grammar.json"
 OUT_DIR = REPO_ROOT / "data" / "cross-refs"
+
+# All sentence corpora — for expanded cross-refs (gitignored outputs)
+CORPUS_DIR = REPO_ROOT / "data" / "corpus"
+ALL_SENTENCE_FILES: list[tuple[str, str]] = [
+    ("sentences.json", ""),                    # curated: IDs are plain integers
+    ("sentences-tatoeba-full.json", ""),        # full Tatoeba: IDs are plain integers
+    ("sentences-kftt.json", ""),                # KFTT: IDs already prefixed "kftt-"
+    ("sentences-jesc.json", ""),                # JESC: IDs already prefixed "jesc-"
+    ("sentences-wikimatrix.json", ""),          # WikiMatrix: IDs already prefixed "wikimatrix-"
+]
 
 
 def _load_json(path: Path) -> dict:
@@ -399,6 +417,54 @@ def build() -> None:
                 ["data/grammar/grammar.json"],
                 {"mapping": "Links vocabulary to relevant grammar. Enables 'what grammar should I learn to use this word?' queries."},
             )
+
+    # grammar-to-sentences: extract pattern-matched sentence IDs from grammar.json
+    if GRAMMAR_JSON.exists():
+        grammar_to_sentences: dict[str, list[str]] = {}
+        for entry in grammar_data.get("grammar_points", []):
+            matches = entry.get("tatoeba_pattern_matches", [])
+            if matches:
+                grammar_to_sentences[entry["id"]] = matches
+        if grammar_to_sentences:
+            total_matches = sum(len(v) for v in grammar_to_sentences.values())
+            log.info(f"grammar→sentences: {len(grammar_to_sentences):,} points, {total_matches:,} matches")
+            _write_xref(
+                OUT_DIR / "grammar-to-sentences.json",
+                grammar_to_sentences,
+                "Grammar point ID → list of sentence IDs demonstrating the pattern.",
+                "grammar_id",
+                "sentence_id",
+                ["data/grammar/grammar.json"],
+                {"mapping": "Enables 'show me sentences using this grammar pattern' queries. Sentence IDs may be Tatoeba IDs (plain) or KFTT IDs (prefixed 'kftt:')."},
+            )
+
+    # kanji-to-sentences-full: scan ALL corpora for kanji occurrences
+    # (gitignored — much larger than the curated-only version)
+    all_corpus_sentences: list[dict] = []
+    corpus_names: list[str] = []
+    for filename, _prefix in ALL_SENTENCE_FILES:
+        corpus_path = CORPUS_DIR / filename
+        if corpus_path.exists():
+            corpus_data = _load_json(corpus_path)
+            all_corpus_sentences.extend(corpus_data.get("sentences", []))
+            corpus_names.append(filename)
+
+    if len(all_corpus_sentences) > 30000:  # only if we have more than just curated
+        full_k2s = _build_kanji_to_sentences({"sentences": all_corpus_sentences})
+        total_refs = sum(len(v) for v in full_k2s.values())
+        log.info(
+            f"kanji→sentences-full: {len(full_k2s):,} kanji, "
+            f"{total_refs:,} refs from {len(all_corpus_sentences):,} sentences"
+        )
+        _write_xref(
+            OUT_DIR / "kanji-to-sentences-full.json",
+            full_k2s,
+            f"Kanji character → sentence IDs across all corpora ({', '.join(corpus_names)}).",
+            "kanji_char",
+            "sentence_id",
+            [f"data/corpus/{n}" for n in corpus_names],
+            {"mapping": "Full-corpus version of kanji-to-sentences.json. Much larger — covers all available sentence corpora."},
+        )
 
     # Full-JMdict cross-references (gitignored, built on demand alongside
     # words-full.json). These cover the entire 216k-entry JMdict, not just

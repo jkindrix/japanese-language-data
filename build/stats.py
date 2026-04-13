@@ -81,6 +81,8 @@ TARGET_FILES: list[tuple[str, str]] = [
     ("data/cross-refs/radical-to-kanji.json", "mapping"),
     ("data/cross-refs/kanji-to-sentences.json", "mapping"),
     ("data/cross-refs/word-to-grammar.json", "mapping"),
+    ("data/cross-refs/grammar-to-sentences.json", "mapping"),
+    ("data/cross-refs/kanji-to-sentences-full.json", "mapping"),
     ("data/cross-refs/word-relations.json", "relations"),
     ("data/corpus/sentences-jesc.json", "sentences"),
     ("data/corpus/sentences-wikimatrix.json", "sentences"),
@@ -138,6 +140,7 @@ GITIGNORED_PATHS = {
     "data/cross-refs/kanji-to-words-full.json",
     "data/cross-refs/word-to-kanji-full.json",
     "data/cross-refs/reading-to-words-full.json",
+    "data/cross-refs/kanji-to-sentences-full.json",
     "data/optional/names.json",
 }
 

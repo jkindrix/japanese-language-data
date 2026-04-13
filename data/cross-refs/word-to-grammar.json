@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2026-04-12",
+    "generated": "2026-04-13",
     "count": 1577,
     "direction": "Word ID → list of grammar point IDs that reference this word in their examples.",
     "key_type": "word_id",

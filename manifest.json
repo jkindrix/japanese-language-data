@@ -199,7 +199,9 @@
     "data/cross-refs/word-relations.json": 2283,
     "data/corpus/sentences-jesc.json": 2801388,
     "data/corpus/sentences-wikimatrix.json": 851706,
-    "data/cross-refs/wordnet-synonyms.json": 596612
+    "data/cross-refs/wordnet-synonyms.json": 596612,
+    "data/cross-refs/grammar-to-sentences.json": 537,
+    "data/cross-refs/kanji-to-sentences-full.json": 7317
   },
   "grammar_curation_status": {
     "total_entries": 595,

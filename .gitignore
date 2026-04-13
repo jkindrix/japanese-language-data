@@ -83,6 +83,9 @@ data/cross-refs/kanji-to-words-full.json
 data/cross-refs/word-to-kanji-full.json
 data/cross-refs/reading-to-words-full.json
 
+# Full-corpus kanji-to-sentences (built when all corpora are present)
+data/cross-refs/kanji-to-sentences-full.json
+
 # Phase 4 data outputs (large, built on demand)
 data/phase4/
 
