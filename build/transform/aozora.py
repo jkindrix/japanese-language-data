@@ -57,10 +57,60 @@ CURATED_WORKS = [
     ("000081", "雨ニモマケズ", "宮沢賢治", "most memorized Japanese poem"),
     # Nakajima Atsushi (d. 1942)
     ("000119", "山月記", "中島敦", "standard textbook inclusion, prose style model"),
+    ("001737", "李陵", "中島敦", "historical fiction, Chinese classical allusion"),
+    ("000620", "名人伝", "中島敦", "zen archery parable"),
     # Mori Ōgai (d. 1922)
     ("000058", "舞姫", "森鷗外", "literary Japanese, Meiji cultural reference"),
+    ("000691", "高瀬舟", "森鷗外", "standard textbook short story"),
+    ("000689", "山椒大夫", "森鷗外", "classic tale, widely anthologized"),
     # Higuchi Ichiyō (d. 1896)
     ("000079", "たけくらべ", "樋口一葉", "classical/modern transitional prose"),
+    # Kajii Motojirō (d. 1932)
+    ("046349", "檸檬", "梶井基次郎", "iconic modernist short story, widely taught"),
+    # Sakaguchi Ango (d. 1955)
+    ("042620", "堕落論", "坂口安吾", "famous postwar essay"),
+    ("042618", "桜の森の満開の下", "坂口安吾", "supernatural classic"),
+    # Kobayashi Takiji (d. 1933)
+    ("001465", "蟹工船", "小林多喜二", "canonical proletarian novel"),
+    # Niimi Nankichi (d. 1943) — children's stories, widely taught in schools
+    ("000628", "ごん狐", "新美南吉", "most-taught children's story in Japanese schools"),
+    ("000637", "手袋を買いに", "新美南吉", "beloved children's story, simple language"),
+    # Izumi Kyōka (d. 1939)
+    ("043466", "高野聖", "泉鏡花", "classic supernatural tale"),
+    ("000360", "外科室", "泉鏡花", "famous short story"),
+    # Arishima Takeo (d. 1923)
+    ("000211", "一房の葡萄", "有島武郎", "widely anthologized, accessible"),
+    ("001111", "生まれいずる悩み", "有島武郎", "coming-of-age classic"),
+    # Kunikida Doppo (d. 1908)
+    ("000329", "武蔵野", "国木田独歩", "iconic nature essay"),
+    # Hori Tatsuo (d. 1953)
+    ("004803", "風立ちぬ", "堀辰雄", "source for Miyazaki film, lyrical prose"),
+    # Nakahara Chūya (d. 1937)
+    ("000219", "在りし日の歌", "中原中也", "major modern poetry collection"),
+    # Shimazaki Tōson (d. 1943)
+    ("001502", "破戒", "島崎藤村", "groundbreaking social novel"),
+    # Yokomitsu Riichi (d. 1947)
+    ("000907", "機械", "横光利一", "modernist classic, experimental prose"),
+    # Hayama Yoshiki (d. 1945)
+    ("000863", "海に生くる人々", "葉山嘉樹", "proletarian literature"),
+    # Masaoka Shiki (d. 1902)
+    ("043537", "病牀六尺", "正岡子規", "iconic essay, haiku master"),
+    # Natsume Sōseki (additional)
+    ("000799", "夢十夜", "夏目漱石", "10 dream stories, each self-contained"),
+    # Akutagawa Ryūnosuke (additional)
+    ("000042", "鼻", "芥川龍之介", "classic short story, standard textbook"),
+    ("000170", "杜子春", "芥川龍之介", "accessible tale"),
+    ("000061", "地獄変", "芥川龍之介", "powerful short story"),
+    ("000069", "河童", "芥川龍之介", "satirical novella"),
+    ("000019", "或阿呆の一生", "芥川龍之介", "autobiographical, literary Japanese"),
+    # Dazai Osamu (additional)
+    ("001565", "斜陽", "太宰治", "postwar classic novel"),
+    ("000275", "女生徒", "太宰治", "accessible first-person narrative"),
+    ("002253", "ヴィヨンの妻", "太宰治", "Nobel-adjacent short story"),
+    # Miyazawa Kenji (additional)
+    ("000473", "よだかの星", "宮沢賢治", "poignant children's fable"),
+    ("000470", "セロ弾きのゴーシュ", "宮沢賢治", "musical children's story"),
+    ("000462", "風の又三郎", "宮沢賢治", "nature and childhood classic"),
 ]
 
 
