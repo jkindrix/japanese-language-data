@@ -780,7 +780,7 @@
       "Often used in polite requests/explanations: 忙しいので、失礼します ('I'm busy so I'll excuse myself').",
       "Considered softer and more polite than から."
     ],
-    "formality": "formal",
+    "formality": "neutral",
     "related": [
       "kara-cause"
     ],
@@ -2344,7 +2344,7 @@
       "The optional は (〜場合は) marks the case as a topic for contrast.",
       "Past form 場合 + でした can express retrospective 'in the case where ___'."
     ],
-    "formality": "formal",
+    "formality": "neutral",
     "related": [
       "tara-conditional",
       "ba-conditional"

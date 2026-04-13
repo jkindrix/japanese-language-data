@@ -10,7 +10,7 @@
     "upstream_languages": [
       "all"
     ],
-    "generated": "2026-04-12",
+    "generated": "2026-04-13",
     "count": 2136,
     "filter": "Jōyō kanji only: kyōiku (grades 1-6) and secondary (grade 8), per the 2010 MEXT revision.",
     "attribution": "This work uses KANJIDIC2 from the Electronic Dictionary Research and Development Group (EDRDG), used in conformance with the Group's license. See https://www.edrdg.org/edrdg/licence.html. Per-field contributors: SKIP codes (Jack Halpern), pinyin (Christian Wittern and Koichi Yasuoka), Four Corner codes and Morohashi (Urs App), Spahn/Hadamitzky descriptors (Mark Spahn and Wolfgang Hadamitzky), Korean readings (Charles Muller), De Roo codes (Joseph De Roo).",
@@ -29,8 +29,8 @@
       "readings_cjk": "Cross-linguistic readings (Mandarin pinyin, Korean romanized/hangul, Vietnamese) for reference. Not needed for Japanese learning but included for completeness.",
       "nanori": "Name-only readings used in personal and place names, not general vocabulary.",
       "dic_refs": "Selected dictionary reference indices. Includes Heisig (RTK), Nelson classic/new, Halpern (NJECD and KKLD 2nd ed), Morohashi, Kodansha Compact, Gakken, O'Neill, and Henshall.",
-      "dic_refs.moro": "Morohashi Dai Kan-Wa Jiten entry number. Volume and page detail dropped in Phase 1 (see docs/upstream-issues.md).",
-      "query_codes.skip": "SKIP code (Jack Halpern). Primary value only; skipMisclassification flag dropped in Phase 1 (see docs/upstream-issues.md).",
+      "dic_refs.moro": "Morohashi Dai Kan-Wa Jiten entry number. Volume and page available upstream but dropped here (flat string map).",
+      "query_codes.skip": "SKIP code (Jack Halpern). Primary value only; misclassification variants dropped (schema simplification).",
       "query_codes.four_corner": "Four Corner code (Urs App).",
       "query_codes.sh_desc": "Spahn/Hadamitzky descriptor.",
       "query_codes.deroo": "De Roo code."

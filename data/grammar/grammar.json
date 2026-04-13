@@ -2,7 +2,7 @@
   "metadata": {
     "source": "Hand-curated (project original) — see grammar-curated/ for input files",
     "license": "CC-BY-SA 4.0",
-    "generated": "2026-04-12",
+    "generated": "2026-04-13",
     "count": 595,
     "by_level": {
       "N1": 139,
@@ -32,7 +32,7 @@
       "link_rate_pct": 0.22,
       "method": "Two-pass text match against data/corpus/sentences.json: first exact, then conservatively normalized (trailing sentence-final punctuation and whitespace stripped). Normalization never collapses kanji/kana variants or changes width/case.",
       "pattern_match_points": 537,
-      "pattern_match_total": 2094,
+      "pattern_match_total": 2099,
       "pattern_match_pct": 90.25,
       "pattern_match_method": "Separate from example-text linkage. Extracts the Japanese core of each grammar pattern and searches sentences.json for sentences containing it. Up to 5 matches per grammar point. Stored in tatoeba_pattern_matches[] on each entry."
     },
@@ -4769,7 +4769,7 @@
         "More formal than 〜だけでなく or 〜ばかりか attached within a sentence.",
         "Formal / neutral register."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "bakari-ka-not-only",
         "ue-ni-in-addition",
@@ -6196,7 +6196,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "230442"
+        "74702",
+        "74802",
+        "75432",
+        "76996",
+        "77006"
       ]
     },
     {
@@ -6247,13 +6251,13 @@
       "id": "wo-shirime-ni",
       "pattern": "Noun + を尻目に",
       "level": "N1",
-      "meaning_en": "flippantly ignoring / with casual disregard",
-      "meaning_detailed": "〜を尻目に expresses that the subject acts 'with casual disregard' or 'flippantly ignoring' X — often with a slightly arrogant or indifferent nuance. 尻目 literally means 'side glance / corner of the eye'. Formal / literary register.",
+      "meaning_en": "disregarding / paying no heed to",
+      "meaning_detailed": "〜を尻目に expresses that the subject acts while disregarding or paying no heed to X — often with a nuance of indifference toward others' concerns or objections. 尻目 literally means 'side glance / corner of the eye'. Formal / literary register.",
       "formation": "Noun + を尻目に.",
       "formation_notes": [
-        "Casual disregard — 'barely glancing at X'.",
-        "Often with a hint of arrogance or indifference.",
-        "Common with 人目 ('others' eyes'), 心配 ('worries'), 反対 ('opposition').",
+        "Disregarding — 'paying no heed to X'.",
+        "Often with a nuance of indifference toward others' concerns.",
+        "Common with 心配 ('worries'), 反対 ('opposition'), 不況 ('recession').",
         "Formal / literary register."
       ],
       "formality": "formal",
@@ -6265,17 +6269,17 @@
       "examples": [
         {
           "japanese": "彼は周囲の心配を尻目に、計画を進めた。",
-          "english": "Flippantly disregarding everyone's worries, he pushed forward with the plan.",
+          "english": "Paying no heed to everyone's worries, he pushed forward with the plan.",
           "source": "original"
         },
         {
           "japanese": "反対を尻目に、彼は独断で決めた。",
-          "english": "Casually ignoring opposition, he decided unilaterally.",
+          "english": "Disregarding opposition, he decided unilaterally.",
           "source": "original"
         },
         {
-          "japanese": "人目を尻目に、大声で歌っていた。",
-          "english": "Disregarding onlookers, he was singing loudly.",
+          "japanese": "不況を尻目に、その会社は業績を伸ばした。",
+          "english": "Paying no heed to the recession, that company grew its results.",
           "source": "original"
         }
       ],
@@ -6715,7 +6719,7 @@
         "The main clause often describes tears, fainting, or other intense reactions.",
         "Formal register — rare in casual speech."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "sugiru-too-much",
         "kara-cause"
@@ -7478,11 +7482,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74482",
-        "149501",
-        "187492",
-        "217258",
-        "229108"
+        "74717",
+        "76337",
+        "142512",
+        "146102",
+        "173773"
       ]
     },
     {
@@ -8345,7 +8349,7 @@
         "Often used after observing or experiencing the main-clause quality: 〜だけのことはあるね ('no wonder').",
         "Common in reviews and compliments."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "dake-atte-as-expected",
         "dake-ni-precisely"
@@ -8694,8 +8698,9 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "149289",
-        "234089"
+        "179295",
+        "194956",
+        "222082"
       ]
     },
     {
@@ -8711,7 +8716,7 @@
         "Often used in declarations of commitment: 約束したからには、守ります ('now that I've promised, I'll keep it').",
         "Formal / determined register."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "ijou-since",
         "ue-wa-now",
@@ -9936,7 +9941,7 @@
         "Commonly follows drawn-out effort or hesitation.",
         "Formal register — common in stories and formal writing."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "sue-ni-after",
         "kekka-result"
@@ -9979,7 +9984,7 @@
         "More formal than a simple が/けど contrast.",
         "Common in essays and balanced assessments."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "ippou-de-one-hand",
         "ga-kedo-although",
@@ -11023,8 +11028,8 @@
           "source": "original"
         },
         {
-          "japanese": "子供だって分かるよ。",
-          "english": "Even a kid can understand that.",
+          "japanese": "どんなに頑張ったって、無理なものは無理だよ。",
+          "english": "No matter how hard you try, what's impossible is impossible.",
           "source": "original"
         }
       ],
@@ -11168,11 +11173,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "75246",
-        "113317",
-        "121934",
-        "123616",
-        "144622"
+        "74269",
+        "93030",
+        "105107",
+        "114108",
+        "114109"
       ]
     },
     {
@@ -12178,7 +12183,7 @@
         "Formal / literary register, common in essays and reviews.",
         "Distinct from other ものがある phrases (existence of a thing)."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "mono-da-general",
         "mono-no-although"
@@ -12622,10 +12627,10 @@
     },
     {
       "id": "yashinai-emphatic",
-      "pattern": "V negative + やしない",
+      "pattern": "V ます-stem + やしない",
       "level": "N2",
       "meaning_en": "(emphatic) not at all / definitely not (casual)",
-      "meaning_detailed": "〜やしない is a casual emphatic negative — 'definitely won't / absolutely not'. Attached to verb negative forms to strengthen the negation. Common in frustrated or emphatic denials. Strictly casual register.",
+      "meaning_detailed": "〜やしない is a casual emphatic negative — 'definitely won't / absolutely not'. Attached to the verb ます-stem to strengthen the negation. Common in frustrated or emphatic denials. Strictly casual register.",
       "formation": "V ます-stem + やしない (most common) or V ない-form + やしない.",
       "formation_notes": [
         "Casual emphatic negation — 'definitely won't'.",
@@ -13371,7 +13376,7 @@
         "The adverbial form ように is highly productive — see you-ni-purpose for the purpose construction.",
         "より formal/written than みたい; roughly interchangeable in meaning."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "mitai-looks-like",
         "sou-da-appearance",
@@ -14707,7 +14712,7 @@
         "Passive agent: より is also used for this in formal writing; によって is slightly more modern / common.",
         "The distinction among three senses is context-dependent; almost always clear from surrounding meaning."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "ni-tsuite",
         "ni-totte",
@@ -14755,7 +14760,7 @@
         "Compare with 〜たほうがいい: より gentler, suggestion-level.",
         "Compare with 〜なければならない: より concrete necessity rather than moral should."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "ta-hou-ga-ii",
         "nakereba-naranai"
@@ -14877,11 +14882,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "121292",
-        "138461",
-        "143617",
-        "144378",
-        "151057"
+        "75373",
+        "75999",
+        "76146",
+        "76195",
+        "76230"
       ]
     },
     {
@@ -15080,7 +15085,7 @@
         "Used adverbially: 何も言わずに去った ('left without saying anything').",
         "The 〜ず form without に is more poetic / archaic; 〜ずに is the modern standard."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "nai-form",
         "nai-de-kudasai"
@@ -15459,7 +15464,7 @@
         "〜ている限り: as long as a state is maintained (生きている限り 'as long as I'm alive').",
         "Knowledge-scope use: 知っている限り ('as far as I know')."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "nagara",
         "uchi-ni",
@@ -15741,7 +15746,7 @@
         "The intensive form ようもない is slightly stronger.",
         "Literary / formal register; less common in casual speech."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "potential-form",
         "koto-ga-dekiru"
@@ -15884,7 +15889,7 @@
         "Also: evaluative 'even for X' — 子供にしても大人にしても.",
         "Related: 〜にしろ / 〜にせよ (more formal literary variants) — covered as separate entry candidates."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "v-temo-even-if",
         "tatoe-temo",
@@ -15932,7 +15937,7 @@
         "Often used with verbs of behavior: 〜かのようにふるまう ('to act as if').",
         "The attributive form 〜かのような + noun is also productive."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "mitai-looks-like",
         "you-da-appearance",
@@ -16074,7 +16079,7 @@
         "Formal / written — alternatives in casual speech: 〜から (with temporal noun), 〜て以来.",
         "Often paired with 一度も〜ない ('not even once since'): あれ以来、一度も会っていない."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "te-kara-after-doing",
         "kara-cause"
@@ -16121,7 +16126,7 @@
         "More formal than に toward (〜に対して 失礼 vs 〜に 失礼).",
         "Contrast with について (topic), にとって (perspective), and に (target)."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "ni-tsuite",
         "ni-totte",
@@ -16216,7 +16221,7 @@
         "Attributive form 〜に沿った + noun is common in formal writing.",
         "Related: 〜にしたがって (more about following instructions), 〜に基づいて (based on)."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "ni-shitagatte",
         "ni-yotte"
@@ -16260,7 +16265,7 @@
         "Common in openings: 社長にかわって、私がご挨拶いたします ('on behalf of the president, I will give the greeting').",
         "Also as 〜代わりに (more common), noun-based: お茶の代わりにコーヒーを飲む."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "ni-taishite-toward",
         "toshite-as"
@@ -16535,7 +16540,7 @@
         "Can also express abstract simultaneity and correlation.",
         "Common in essays, news articles, and formal announcements."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "issho-ni-together",
         "ni-tsurete-as"
@@ -16610,11 +16615,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74087",
-        "74192",
-        "74246",
-        "74453",
-        "74518"
+        "74095",
+        "74591",
+        "75284",
+        "76234",
+        "76416"
       ]
     },
     {
@@ -16818,7 +16823,7 @@
         "Distinct from 〜どころか ('far from X, actually Y' — a contrastive construction).",
         "Common in praise or criticism that extends in the same direction."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "dokoro-ka-far-from",
         "bakari-only"
@@ -17001,7 +17006,7 @@
         "Often lists 2-3 items as representative examples of a larger category.",
         "Common in essays, introductions, and descriptions."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "toka-listing",
         "mitai-looks-like"
@@ -17096,7 +17101,7 @@
         "As a na-adjective: 悲しげな顔 ('a sad-looking face'), 嬉しげに ('happily, adverbial').",
         "Common fixed forms: 自信ありげ, 意味ありげ, 親しげ, 眠たげ."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "sou-da-appearance",
         "ppoi-seems",
@@ -17229,7 +17234,7 @@
         "Distinct from 〜一方だ ('keeps only X-ing'); same 一方 but different construction.",
         "Often used to balance praise and criticism, or to describe concurrent trends."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "ippou-da-keeps",
         "noni-although",
@@ -17320,7 +17325,7 @@
         "Distinct from the locative 上 ('above / on top of physically').",
         "Common in praising: 頭がいい上に、親切だ ('smart and also kind'). Also in complaining: 雨が降る上に、風も強い ('raining and also windy')."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "shi-reason-listing",
         "bakari-ka-not-only",
@@ -17368,7 +17373,7 @@
         "Attributive form 〜上での + noun: 相談した上での決定 ('a decision made after consultation').",
         "Distinct from the locative 上 ('on top of') and from 〜上に (additive)."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "ue-ni-in-addition",
         "te-kara-after-doing"
@@ -17508,7 +17513,7 @@
         "Common with cognitive / emotional verbs: 気になってならない, 悲しくてならない.",
         "First-person primarily; more formal / literary register."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "te-tamaranai-unbearably",
         "ki-ga-suru-feel-like"
@@ -17582,11 +17587,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "76033",
-        "113513",
-        "113518",
-        "168105",
-        "212506"
+        "98043",
+        "124029",
+        "161071",
+        "213568",
+        "236419"
       ]
     },
     {
@@ -17884,7 +17889,7 @@
         "Related: 〜に基づいて (similar 'based on', slightly more formal).",
         "Similar to 〜に基づいて — both mean 'based on', with small register differences."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "ni-yotte",
         "ni-kanshite-regarding"
@@ -18051,11 +18056,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74045",
-        "74062",
-        "74082",
-        "74169",
-        "74185"
+        "75403",
+        "75516",
+        "75614",
+        "75652",
+        "75913"
       ]
     },
     {
@@ -18161,7 +18166,7 @@
         "Compare with 〜に決まっている (more colloquial and emphatic 'of course / for sure').",
         "For nouns and na-adj, attach directly without だ: 犯人にちがいない (not 犯人だにちがいない)."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "hazu-expected",
         "darou-deshou-conjecture",
@@ -18209,7 +18214,7 @@
         "Compare with 〜たほうがいい (neutral suggestion) and 〜べきだ (moral duty).",
         "Can also be used positively — stating a core recommendation."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "ta-hou-ga-ii",
         "beki-da",
@@ -18257,7 +18262,7 @@
         "The より and は are often dropped: 帰るよりほかない / 帰るほかない — both acceptable.",
         "Common in formal or resigned explanations."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "shika-nai",
         "you-ga-nai-no-way"
@@ -18300,7 +18305,7 @@
         "Formal / written register — rarely used in casual speech.",
         "The は is optional and adds emphasis."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "koto-nominalizer",
         "sou-da-hearsay"
@@ -18394,7 +18399,7 @@
         "A separate sense 'excel at / be skilled at': 料理にかけては彼が一番 ('when it comes to cooking, he's the best').",
         "Formal / neutral register."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "particle-kara-from",
         "particle-made-until"
@@ -18441,7 +18446,7 @@
         "Similar to 〜からには (more emphatic 'now that').",
         "Formal register — common in essays, formal speech, and business."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "kara-cause",
         "node-cause"
@@ -18578,7 +18583,7 @@
         "Distinct from 〜おきに (interval with gap): 1年おきに (every OTHER year) vs 1年ごとに (every year).",
         "Common in writing and formal speech."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "tabi-ni-every-time",
         "okini-intervals"
@@ -19141,7 +19146,7 @@
         "Often implies reluctance: 'I'd rather not, but I have to'.",
         "Positive counterpart: 〜わけにはいかない ('can't afford to do it')."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "wake-ni-wa-ikanai",
         "nakereba-naranai",
@@ -19189,7 +19194,7 @@
         "Negative counterpart: 〜ないわけにはいかない ('can't not do' = 'have to').",
         "Distinct from できない (simple 'can't') in that わけにはいかない is about permission / circumstance, not ability."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "nai-wake-ni-ikanai",
         "wake-da-meaning",
@@ -19281,7 +19286,7 @@
         "Attributive form: 〜をはじめとする + noun.",
         "Close to といった but with a 'leading example' flavor."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "to-itta-such-as",
         "toka-listing"
@@ -19328,7 +19333,7 @@
         "Formal / literary register — common in essays, poetry, and formal speech.",
         "Distinct from 〜ものの (although) and 〜ものだ (general truth)."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "ba-conditional",
         "ba-yokatta",
@@ -19373,7 +19378,7 @@
         "Main clause often expresses value or meaning: 努力してこそ、成功する ('only by making effort, can one succeed').",
         "Distinct from 〜こそ (standalone emphasis marker)."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "koso-precisely",
         "ba-conditional",
@@ -19562,7 +19567,7 @@
         "The irregular せずに済む for する is the one exception.",
         "Alternative: 〜ないで済む (casual equivalent)."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "zu-ni",
         "nai-de-without-doing"
@@ -19605,7 +19610,7 @@
         "Related: 〜と比べて (similar, slightly less formal).",
         "Common in statistical or year-over-year comparisons: 去年に比べて ('compared to last year')."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "hou-ga-comparative",
         "hodo-extent"
@@ -19652,7 +19657,7 @@
         "Distinct from 〜たら (neutral conditional) and 〜なら (topic-setting conditional).",
         "Common in discussing plans and contingencies."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "nara-conditional",
         "ba-ai-in-case",
@@ -19745,7 +19750,7 @@
         "Formal / reflective register — common in reports, essays, and reminiscences.",
         "Main clause typically past tense: 〜て初めて分かった."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "te-kara-after-doing",
         "ta-tokoro",
@@ -20659,7 +20664,7 @@
         "Often used in polite requests/explanations: 忙しいので、失礼します ('I'm busy so I'll excuse myself').",
         "Considered softer and more polite than から."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "kara-cause"
       ],
@@ -22351,11 +22356,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74629",
-        "74841",
-        "147419",
-        "192821",
-        "225032"
+        "74256",
+        "74312",
+        "75287",
+        "75556",
+        "75954"
       ]
     },
     {
@@ -22466,7 +22471,7 @@
         "The optional は (〜場合は) marks the case as a topic for contrast.",
         "Past form 場合 + でした can express retrospective 'in the case where ___'."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "tara-conditional",
         "ba-conditional"
@@ -23326,11 +23331,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74032",
-        "74076",
-        "74234",
-        "74354",
-        "74383"
+        "74344",
+        "76676",
+        "77088",
+        "85779",
+        "87884"
       ]
     },
     {
@@ -24762,7 +24767,7 @@
         "In casual speech か is typically replaced by rising intonation alone.",
         "Embedded questions use か at the end of the embedded clause."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "particle-ne-seeking-agreement",
         "particle-yo-emphasis"
@@ -24903,11 +24908,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74024",
-        "74053",
-        "74146",
-        "74177",
-        "74192"
+        "4925",
+        "4996",
+        "74107",
+        "74148",
+        "74152"
       ]
     },
     {
@@ -24947,11 +24952,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4995",
-        "74099",
-        "74159",
-        "74378",
-        "74790"
+        "4954",
+        "74019",
+        "74086",
+        "74100",
+        "74164"
       ]
     },
     {
@@ -25599,11 +25604,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74027",
-        "74173",
-        "74269",
-        "74282",
-        "74388"
+        "74068",
+        "74182",
+        "74198",
+        "74213",
+        "74234"
       ]
     },
     {

@@ -27,10 +27,13 @@ into a single list:
     * ``dictionaryReferences[]`` → flat ``dic_refs`` object (selected refs)
     * ``queryCodes[]`` → flat ``query_codes`` object
 
-Known gaps tracked in ``docs/upstream-issues.md``:
+Schema simplifications (our choice, not upstream gaps):
     * SKIP codes with ``skipMisclassification`` flag: we keep only the
-      primary SKIP code, dropping misclassification metadata.
-    * Morohashi volume/page detail is dropped; only the value is kept.
+      primary SKIP code, dropping misclassification metadata. The field
+      is documented upstream in the ``Kanjidic2QueryCodeSkip`` type.
+    * Morohashi volume/page: upstream exposes ``morohashi: {volume, page}``
+      on ~50% of moro references, but we flatten dic_refs to a string map
+      and only keep the entry number.
 """
 
 from __future__ import annotations
@@ -181,7 +184,7 @@ def _transform_character(
         if t not in WANTED_QUERY_CODES:
             continue
         # For SKIP codes, prefer the one without skipMisclassification.
-        # See docs/upstream-issues.md for the schema gap.
+        # We drop misclassification metadata as a schema simplification.
         if t == "skip" and qc.get("skipMisclassification"):
             continue
         if t not in query_codes:
@@ -300,8 +303,8 @@ def _metadata(source_meta: dict, count: int, filter_note: str = "") -> dict:
             "readings_cjk": "Cross-linguistic readings (Mandarin pinyin, Korean romanized/hangul, Vietnamese) for reference. Not needed for Japanese learning but included for completeness.",
             "nanori": "Name-only readings used in personal and place names, not general vocabulary.",
             "dic_refs": "Selected dictionary reference indices. Includes Heisig (RTK), Nelson classic/new, Halpern (NJECD and KKLD 2nd ed), Morohashi, Kodansha Compact, Gakken, O'Neill, and Henshall.",
-            "dic_refs.moro": "Morohashi Dai Kan-Wa Jiten entry number. Volume and page detail dropped in Phase 1 (see docs/upstream-issues.md).",
-            "query_codes.skip": "SKIP code (Jack Halpern). Primary value only; skipMisclassification flag dropped in Phase 1 (see docs/upstream-issues.md).",
+            "dic_refs.moro": "Morohashi Dai Kan-Wa Jiten entry number. Volume and page available upstream but dropped here (flat string map).",
+            "query_codes.skip": "SKIP code (Jack Halpern). Primary value only; misclassification variants dropped (schema simplification).",
             "query_codes.four_corner": "Four Corner code (Urs App).",
             "query_codes.sh_desc": "Spahn/Hadamitzky descriptor.",
             "query_codes.deroo": "De Roo code.",

@@ -18,12 +18,26 @@
       "gatai-difficult"
     ],
     "examples": [
-      {"japanese": "彼の苦労は想像に難くない。", "english": "His hardship is easy to imagine.", "source": "original"},
-      {"japanese": "結果は予想するに難くない。", "english": "The result is not hard to predict.", "source": "original"},
-      {"japanese": "親の気持ちは察するに難くない。", "english": "A parent's feelings are easy to infer.", "source": "original"}
+      {
+        "japanese": "彼の苦労は想像に難くない。",
+        "english": "His hardship is easy to imagine.",
+        "source": "original"
+      },
+      {
+        "japanese": "結果は予想するに難くない。",
+        "english": "The result is not hard to predict.",
+        "source": "original"
+      },
+      {
+        "japanese": "親の気持ちは察するに難くない。",
+        "english": "A parent's feelings are easy to infer.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "wo-yogi-naku-sareru",
@@ -45,12 +59,26 @@
       "kane-ru-hard-to"
     ],
     "examples": [
-      {"japanese": "台風のため、会議の中止を余儀なくされた。", "english": "Due to the typhoon, we were forced to cancel the meeting.", "source": "original"},
-      {"japanese": "経営悪化で、社長は辞任を余儀なくされた。", "english": "Due to poor management, the president was forced to resign.", "source": "original"},
-      {"japanese": "怪我で、計画変更を余儀なくされた。", "english": "Due to injury, we had no choice but to change the plan.", "source": "original"}
+      {
+        "japanese": "台風のため、会議の中止を余儀なくされた。",
+        "english": "Due to the typhoon, we were forced to cancel the meeting.",
+        "source": "original"
+      },
+      {
+        "japanese": "経営悪化で、社長は辞任を余儀なくされた。",
+        "english": "Due to poor management, the president was forced to resign.",
+        "source": "original"
+      },
+      {
+        "japanese": "怪我で、計画変更を余儀なくされた。",
+        "english": "Due to injury, we had no choice but to change the plan.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "wo-kinjienai",
@@ -72,12 +100,26 @@
       "zu-ni-wa-irarenai"
     ],
     "examples": [
-      {"japanese": "その話を聞いて、涙を禁じ得なかった。", "english": "Hearing the story, I couldn't hold back my tears.", "source": "original"},
-      {"japanese": "彼の態度に、怒りを禁じ得ない。", "english": "I cannot suppress my anger at his attitude.", "source": "original"},
-      {"japanese": "被害者に対して同情を禁じ得ない。", "english": "I can't help feeling sympathy for the victims.", "source": "original"}
+      {
+        "japanese": "その話を聞いて、涙を禁じ得なかった。",
+        "english": "Hearing the story, I couldn't hold back my tears.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼の態度に、怒りを禁じ得ない。",
+        "english": "I cannot suppress my anger at his attitude.",
+        "source": "original"
+      },
+      {
+        "japanese": "被害者に対して同情を禁じ得ない。",
+        "english": "I can't help feeling sympathy for the victims.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "zu-ni-wa-okanai",
@@ -99,12 +141,26 @@
       "ni-chigainai-must"
     ],
     "examples": [
-      {"japanese": "この事実を世に知らしめずにはおかない。", "english": "I will not rest without making this fact known to the world.", "source": "original"},
-      {"japanese": "彼の発言は波紋を広げずにはおかない。", "english": "His remarks will inevitably cause ripples.", "source": "original"},
-      {"japanese": "真実を明らかにせずにはおかない。", "english": "I will not stop until the truth is made clear.", "source": "original"}
+      {
+        "japanese": "この事実を世に知らしめずにはおかない。",
+        "english": "I will not rest without making this fact known to the world.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼の発言は波紋を広げずにはおかない。",
+        "english": "His remarks will inevitably cause ripples.",
+        "source": "original"
+      },
+      {
+        "japanese": "真実を明らかにせずにはおかない。",
+        "english": "I will not stop until the truth is made clear.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nai-dewa-okanai",
@@ -125,12 +181,26 @@
       "nai-dewa-irarenai"
     ],
     "examples": [
-      {"japanese": "彼に一言言わないではおかない。", "english": "I will not leave without saying a word to him.", "source": "original"},
-      {"japanese": "この発見は歴史を変えないではおかない。", "english": "This discovery will inevitably change history.", "source": "original"},
-      {"japanese": "真相を明らかにしないではおかない。", "english": "I won't rest until the truth is revealed.", "source": "original"}
+      {
+        "japanese": "彼に一言言わないではおかない。",
+        "english": "I will not leave without saying a word to him.",
+        "source": "original"
+      },
+      {
+        "japanese": "この発見は歴史を変えないではおかない。",
+        "english": "This discovery will inevitably change history.",
+        "source": "original"
+      },
+      {
+        "japanese": "真相を明らかにしないではおかない。",
+        "english": "I won't rest until the truth is revealed.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-mo-mashite",
@@ -151,12 +221,26 @@
       "hou-ga-comparative"
     ],
     "examples": [
-      {"japanese": "以前にもまして、忙しくなった。", "english": "I've become busier than before.", "source": "original"},
-      {"japanese": "今年は去年にもまして暑い。", "english": "This year is even hotter than last year.", "source": "original"},
-      {"japanese": "誰にもまして、彼女が頑張っている。", "english": "More than anyone, she's working hard.", "source": "original"}
+      {
+        "japanese": "以前にもまして、忙しくなった。",
+        "english": "I've become busier than before.",
+        "source": "original"
+      },
+      {
+        "japanese": "今年は去年にもまして暑い。",
+        "english": "This year is even hotter than last year.",
+        "source": "original"
+      },
+      {
+        "japanese": "誰にもまして、彼女が頑張っている。",
+        "english": "More than anyone, she's working hard.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "wo-mono-to-mo-sezu",
@@ -178,12 +262,26 @@
       "ni-mo-kakawarazu-despite"
     ],
     "examples": [
-      {"japanese": "彼は困難をものともせず、目標を達成した。", "english": "Undaunted by difficulties, he achieved his goal.", "source": "original"},
-      {"japanese": "大雨をものともせず、試合は続けられた。", "english": "Braving the heavy rain, the match continued.", "source": "original"},
-      {"japanese": "反対をものともせず、彼は自分の道を進んだ。", "english": "In defiance of opposition, he followed his own path.", "source": "original"}
+      {
+        "japanese": "彼は困難をものともせず、目標を達成した。",
+        "english": "Undaunted by difficulties, he achieved his goal.",
+        "source": "original"
+      },
+      {
+        "japanese": "大雨をものともせず、試合は続けられた。",
+        "english": "Braving the heavy rain, the match continued.",
+        "source": "original"
+      },
+      {
+        "japanese": "反対をものともせず、彼は自分の道を進んだ。",
+        "english": "In defiance of opposition, he followed his own path.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ikan-ni-yorazu",
@@ -205,12 +303,26 @@
       "wo-towazu-regardless"
     ],
     "examples": [
-      {"japanese": "理由のいかんによらず、遅刻は許されない。", "english": "Regardless of the reason, tardiness is not allowed.", "source": "original"},
-      {"japanese": "結果のいかんを問わず、挑戦する。", "english": "Regardless of the outcome, I will try.", "source": "original"},
-      {"japanese": "性別のいかんにかかわらず、誰でも応募できる。", "english": "Regardless of gender, anyone can apply.", "source": "original"}
+      {
+        "japanese": "理由のいかんによらず、遅刻は許されない。",
+        "english": "Regardless of the reason, tardiness is not allowed.",
+        "source": "original"
+      },
+      {
+        "japanese": "結果のいかんを問わず、挑戦する。",
+        "english": "Regardless of the outcome, I will try.",
+        "source": "original"
+      },
+      {
+        "japanese": "性別のいかんにかかわらず、誰でも応募できる。",
+        "english": "Regardless of gender, anyone can apply.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tomo-arou",
@@ -232,12 +344,26 @@
       "taru-mono-as-x"
     ],
     "examples": [
-      {"japanese": "先生ともあろう者が、嘘をつくとは。", "english": "For a teacher of all people to tell a lie!", "source": "original"},
-      {"japanese": "大人ともあろう者が、そんな行動をとるべきではない。", "english": "A grown adult shouldn't behave that way.", "source": "original"},
-      {"japanese": "社長ともあろう人が、約束を破るなんて。", "english": "For the president, of all people, to break his word!", "source": "original"}
+      {
+        "japanese": "先生ともあろう者が、嘘をつくとは。",
+        "english": "For a teacher of all people to tell a lie!",
+        "source": "original"
+      },
+      {
+        "japanese": "大人ともあろう者が、そんな行動をとるべきではない。",
+        "english": "A grown adult shouldn't behave that way.",
+        "source": "original"
+      },
+      {
+        "japanese": "社長ともあろう人が、約束を破るなんて。",
+        "english": "For the president, of all people, to break his word!",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "narade-wa-no",
@@ -258,12 +384,26 @@
       "koso-precisely"
     ],
     "examples": [
-      {"japanese": "京都ならではの美しい景色だ。", "english": "It's beautiful scenery unique to Kyoto.", "source": "original"},
-      {"japanese": "子供ならではの発想が面白い。", "english": "The ideas unique to children are interesting.", "source": "original"},
-      {"japanese": "この味は日本ならではだ。", "english": "This flavor is distinctively Japanese.", "source": "original"}
+      {
+        "japanese": "京都ならではの美しい景色だ。",
+        "english": "It's beautiful scenery unique to Kyoto.",
+        "source": "original"
+      },
+      {
+        "japanese": "子供ならではの発想が面白い。",
+        "english": "The ideas unique to children are interesting.",
+        "source": "original"
+      },
+      {
+        "japanese": "この味は日本ならではだ。",
+        "english": "This flavor is distinctively Japanese.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-atte",
@@ -284,12 +424,26 @@
       "ni-atatte-occasion"
     ],
     "examples": [
-      {"japanese": "このグローバル時代にあって、英語は必須だ。", "english": "In this global age, English is essential.", "source": "original"},
-      {"japanese": "困難な状況にあって、彼は冷静を保った。", "english": "In a difficult situation, he kept calm.", "source": "original"},
-      {"japanese": "平和な時代にあっても、危機管理は必要だ。", "english": "Even in peaceful times, crisis management is necessary.", "source": "original"}
+      {
+        "japanese": "このグローバル時代にあって、英語は必須だ。",
+        "english": "In this global age, English is essential.",
+        "source": "original"
+      },
+      {
+        "japanese": "困難な状況にあって、彼は冷静を保った。",
+        "english": "In a difficult situation, he kept calm.",
+        "source": "original"
+      },
+      {
+        "japanese": "平和な時代にあっても、危機管理は必要だ。",
+        "english": "Even in peaceful times, crisis management is necessary.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "taru-mono-as-x",
@@ -311,12 +465,26 @@
       "toshite-as"
     ],
     "examples": [
-      {"japanese": "リーダーたる者、部下の模範となるべきだ。", "english": "As a leader, one should be a model for subordinates.", "source": "original"},
-      {"japanese": "教師たる者、常に学び続けなければならない。", "english": "As a teacher, one must always keep learning.", "source": "original"},
-      {"japanese": "武士たる者、名誉を重んじるべきだ。", "english": "As a samurai, one should value honor.", "source": "original"}
+      {
+        "japanese": "リーダーたる者、部下の模範となるべきだ。",
+        "english": "As a leader, one should be a model for subordinates.",
+        "source": "original"
+      },
+      {
+        "japanese": "教師たる者、常に学び続けなければならない。",
+        "english": "As a teacher, one must always keep learning.",
+        "source": "original"
+      },
+      {
+        "japanese": "武士たる者、名誉を重んじるべきだ。",
+        "english": "As a samurai, one should value honor.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nari-nari",
@@ -338,12 +506,26 @@
       "dano-dano"
     ],
     "examples": [
-      {"japanese": "電話するなりメールするなり、連絡してください。", "english": "Contact me by phone or email, whichever.", "source": "original"},
-      {"japanese": "親に相談するなり、先生に聞くなりしなさい。", "english": "Talk to your parents or ask your teacher, whichever.", "source": "original"},
-      {"japanese": "休むなり、薬を飲むなりしたほうがいい。", "english": "You should rest, or take medicine, one or the other.", "source": "original"}
+      {
+        "japanese": "電話するなりメールするなり、連絡してください。",
+        "english": "Contact me by phone or email, whichever.",
+        "source": "original"
+      },
+      {
+        "japanese": "親に相談するなり、先生に聞くなりしなさい。",
+        "english": "Talk to your parents or ask your teacher, whichever.",
+        "source": "original"
+      },
+      {
+        "japanese": "休むなり、薬を飲むなりしたほうがいい。",
+        "english": "You should rest, or take medicine, one or the other.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-iwazu-to-iwazu",
@@ -365,12 +547,26 @@
       "nari-nari"
     ],
     "examples": [
-      {"japanese": "昼といわず夜といわず、働き続けた。", "english": "Day and night alike, he kept working.", "source": "original"},
-      {"japanese": "手といわず顔といわず、泥だらけだった。", "english": "His hands, his face — everywhere was covered in mud.", "source": "original"},
-      {"japanese": "子供といわず大人といわず、みんな楽しんでいた。", "english": "Children and adults alike, everyone was enjoying it.", "source": "original"}
+      {
+        "japanese": "昼といわず夜といわず、働き続けた。",
+        "english": "Day and night alike, he kept working.",
+        "source": "original"
+      },
+      {
+        "japanese": "手といわず顔といわず、泥だらけだった。",
+        "english": "His hands, his face — everywhere was covered in mud.",
+        "source": "original"
+      },
+      {
+        "japanese": "子供といわず大人といわず、みんな楽しんでいた。",
+        "english": "Children and adults alike, everyone was enjoying it.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "de-are-de-are",
@@ -392,12 +588,26 @@
       "nari-nari"
     ],
     "examples": [
-      {"japanese": "男であれ女であれ、誰もが平等だ。", "english": "Whether man or woman, everyone is equal.", "source": "original"},
-      {"japanese": "プロであれアマであれ、基本が大切だ。", "english": "Whether pro or amateur, the basics are important.", "source": "original"},
-      {"japanese": "大人であれ子供であれ、ルールを守るべきだ。", "english": "Whether adult or child, one should follow the rules.", "source": "original"}
+      {
+        "japanese": "男であれ女であれ、誰もが平等だ。",
+        "english": "Whether man or woman, everyone is equal.",
+        "source": "original"
+      },
+      {
+        "japanese": "プロであれアマであれ、基本が大切だ。",
+        "english": "Whether pro or amateur, the basics are important.",
+        "source": "original"
+      },
+      {
+        "japanese": "大人であれ子供であれ、ルールを守るべきだ。",
+        "english": "Whether adult or child, one should follow the rules.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "made-da",
@@ -419,12 +629,26 @@
       "hoka-nai-no-choice"
     ],
     "examples": [
-      {"japanese": "だめなら、諦めるまでだ。", "english": "If it doesn't work, I'll just give up.", "source": "original"},
-      {"japanese": "できないなら、自分でやるまでだ。", "english": "If no one can, I'll just do it myself.", "source": "original"},
-      {"japanese": "嫌なら、帰るまでだ。", "english": "If you don't like it, I'll just go home.", "source": "original"}
+      {
+        "japanese": "だめなら、諦めるまでだ。",
+        "english": "If it doesn't work, I'll just give up.",
+        "source": "original"
+      },
+      {
+        "japanese": "できないなら、自分でやるまでだ。",
+        "english": "If no one can, I'll just do it myself.",
+        "source": "original"
+      },
+      {
+        "japanese": "嫌なら、帰るまでだ。",
+        "english": "If you don't like it, I'll just go home.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "made-no-koto-da",
@@ -446,12 +670,26 @@
       "dake-only-basic"
     ],
     "examples": [
-      {"japanese": "お礼を言われることではない。当然のことをしたまでのことです。", "english": "No need to thank me — I just did what was natural.", "source": "original"},
-      {"japanese": "私は本当のことを言ったまでのことだ。", "english": "I was only telling the truth.", "source": "original"},
-      {"japanese": "指示に従ったまでのことです。", "english": "I was just following instructions.", "source": "original"}
+      {
+        "japanese": "お礼を言われることではない。当然のことをしたまでのことです。",
+        "english": "No need to thank me — I just did what was natural.",
+        "source": "original"
+      },
+      {
+        "japanese": "私は本当のことを言ったまでのことだ。",
+        "english": "I was only telling the truth.",
+        "source": "original"
+      },
+      {
+        "japanese": "指示に従ったまでのことです。",
+        "english": "I was just following instructions.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-wa",
@@ -473,12 +711,26 @@
       "koto-ni-surprise"
     ],
     "examples": [
-      {"japanese": "彼が来るとは思わなかった。", "english": "I never thought he'd come.", "source": "original"},
-      {"japanese": "友情とは、助け合うことだ。", "english": "Friendship means helping each other.", "source": "original"},
-      {"japanese": "こんなことが起こるとは、信じられない。", "english": "That something like this would happen — I can't believe it.", "source": "original"}
+      {
+        "japanese": "彼が来るとは思わなかった。",
+        "english": "I never thought he'd come.",
+        "source": "original"
+      },
+      {
+        "japanese": "友情とは、助け合うことだ。",
+        "english": "Friendship means helping each other.",
+        "source": "original"
+      },
+      {
+        "japanese": "こんなことが起こるとは、信じられない。",
+        "english": "That something like this would happen — I can't believe it.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-itatte-wa",
@@ -500,12 +752,26 @@
       "dokoro-ka-far-from"
     ],
     "examples": [
-      {"japanese": "彼の遅刻に至っては、もう許せない。", "english": "When it comes to his tardiness, I can no longer forgive it.", "source": "original"},
-      {"japanese": "私に至っては、一度も行ったことがない。", "english": "As for me, I've never even been there.", "source": "original"},
-      {"japanese": "最後の試験に至っては、完全に失敗した。", "english": "When it came to the last exam, I failed completely.", "source": "original"}
+      {
+        "japanese": "彼の遅刻に至っては、もう許せない。",
+        "english": "When it comes to his tardiness, I can no longer forgive it.",
+        "source": "original"
+      },
+      {
+        "japanese": "私に至っては、一度も行ったことがない。",
+        "english": "As for me, I've never even been there.",
+        "source": "original"
+      },
+      {
+        "japanese": "最後の試験に至っては、完全に失敗した。",
+        "english": "When it came to the last exam, I failed completely.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "wo-oite",
@@ -527,12 +793,26 @@
       "hoka-nai-no-choice"
     ],
     "examples": [
-      {"japanese": "彼をおいて、適任者はいない。", "english": "There's no one suitable other than him.", "source": "original"},
-      {"japanese": "この役は彼女をおいて他にいない。", "english": "There's no one for this role other than her.", "source": "original"},
-      {"japanese": "今をおいて、他にチャンスはない。", "english": "There's no chance other than now.", "source": "original"}
+      {
+        "japanese": "彼をおいて、適任者はいない。",
+        "english": "There's no one suitable other than him.",
+        "source": "original"
+      },
+      {
+        "japanese": "この役は彼女をおいて他にいない。",
+        "english": "There's no one for this role other than her.",
+        "source": "original"
+      },
+      {
+        "japanese": "今をおいて、他にチャンスはない。",
+        "english": "There's no chance other than now.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "koto-nashi-ni",
@@ -554,12 +834,26 @@
       "nashi-ni-without"
     ],
     "examples": [
-      {"japanese": "努力することなしに、成功はあり得ない。", "english": "Without making an effort, success is impossible.", "source": "original"},
-      {"japanese": "苦労することなしに、何も得られない。", "english": "Without hardship, nothing is gained.", "source": "original"},
-      {"japanese": "彼の助けがあることなしに、できなかった。", "english": "Without his help, I couldn't have done it.", "source": "original"}
+      {
+        "japanese": "努力することなしに、成功はあり得ない。",
+        "english": "Without making an effort, success is impossible.",
+        "source": "original"
+      },
+      {
+        "japanese": "苦労することなしに、何も得られない。",
+        "english": "Without hardship, nothing is gained.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼の助けがあることなしに、できなかった。",
+        "english": "Without his help, I couldn't have done it.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "kitte-no",
@@ -580,12 +874,26 @@
       "narade-wa-no"
     ],
     "examples": [
-      {"japanese": "彼はこの会社きっての専門家だ。", "english": "He is the foremost expert in this company.", "source": "original"},
-      {"japanese": "この町きっての名医を紹介します。", "english": "I'll introduce the town's most distinguished doctor.", "source": "original"},
-      {"japanese": "彼女は世界きってのピアニストだ。", "english": "She is the world's most distinguished pianist.", "source": "original"}
+      {
+        "japanese": "彼はこの会社きっての専門家だ。",
+        "english": "He is the foremost expert in this company.",
+        "source": "original"
+      },
+      {
+        "japanese": "この町きっての名医を紹介します。",
+        "english": "I'll introduce the town's most distinguished doctor.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女は世界きってのピアニストだ。",
+        "english": "She is the world's most distinguished pianist.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tomo-nareba",
@@ -606,12 +914,26 @@
       "taru-mono-as-x"
     ],
     "examples": [
-      {"japanese": "大人ともなれば、責任を持たなければならない。", "english": "Once one is an adult, one must bear responsibility.", "source": "original"},
-      {"japanese": "社長ともなれば、多くの判断が求められる。", "english": "Once one is a company president, many judgments are demanded.", "source": "original"},
-      {"japanese": "親ともなれば、心配が尽きない。", "english": "Once one is a parent, worries are endless.", "source": "original"}
+      {
+        "japanese": "大人ともなれば、責任を持たなければならない。",
+        "english": "Once one is an adult, one must bear responsibility.",
+        "source": "original"
+      },
+      {
+        "japanese": "社長ともなれば、多くの判断が求められる。",
+        "english": "Once one is a company president, many judgments are demanded.",
+        "source": "original"
+      },
+      {
+        "japanese": "親ともなれば、心配が尽きない。",
+        "english": "Once one is a parent, worries are endless.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "no-itari",
@@ -633,12 +955,26 @@
       "te-tamaranai-unbearably"
     ],
     "examples": [
-      {"japanese": "このような賞をいただき、光栄の至りです。", "english": "Receiving such an award is the height of honor.", "source": "original"},
-      {"japanese": "初めての出版で、感激の至りです。", "english": "With my first publication, I'm overwhelmed with emotion.", "source": "original"},
-      {"japanese": "お恥ずかしい限りで、赤面の至りです。", "english": "I'm so embarrassed I could blush.", "source": "original"}
+      {
+        "japanese": "このような賞をいただき、光栄の至りです。",
+        "english": "Receiving such an award is the height of honor.",
+        "source": "original"
+      },
+      {
+        "japanese": "初めての出版で、感激の至りです。",
+        "english": "With my first publication, I'm overwhelmed with emotion.",
+        "source": "original"
+      },
+      {
+        "japanese": "お恥ずかしい限りで、赤面の至りです。",
+        "english": "I'm so embarrassed I could blush.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "katawara",
@@ -660,12 +996,26 @@
       "gatera-while"
     ],
     "examples": [
-      {"japanese": "彼は会社で働くかたわら、夜は大学で学んでいる。", "english": "He works at a company, while also studying at university at night.", "source": "original"},
-      {"japanese": "子育てのかたわら、趣味を続けている。", "english": "While raising children, she continues her hobby.", "source": "original"},
-      {"japanese": "仕事のかたわら、ボランティアをしている。", "english": "Alongside work, I do volunteer activities.", "source": "original"}
+      {
+        "japanese": "彼は会社で働くかたわら、夜は大学で学んでいる。",
+        "english": "He works at a company, while also studying at university at night.",
+        "source": "original"
+      },
+      {
+        "japanese": "子育てのかたわら、趣味を続けている。",
+        "english": "While raising children, she continues her hobby.",
+        "source": "original"
+      },
+      {
+        "japanese": "仕事のかたわら、ボランティアをしている。",
+        "english": "Alongside work, I do volunteer activities.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "gatera-while",
@@ -687,12 +1037,26 @@
       "katawara"
     ],
     "examples": [
-      {"japanese": "散歩がてら、買い物に行った。", "english": "While on a walk, I also went shopping.", "source": "original"},
-      {"japanese": "仕事がてら、観光を楽しんだ。", "english": "On a work trip, I enjoyed some sightseeing.", "source": "original"},
-      {"japanese": "お礼がてら、手土産を持って行った。", "english": "To express thanks, I brought a gift.", "source": "original"}
+      {
+        "japanese": "散歩がてら、買い物に行った。",
+        "english": "While on a walk, I also went shopping.",
+        "source": "original"
+      },
+      {
+        "japanese": "仕事がてら、観光を楽しんだ。",
+        "english": "On a work trip, I enjoyed some sightseeing.",
+        "source": "original"
+      },
+      {
+        "japanese": "お礼がてら、手土産を持って行った。",
+        "english": "To express thanks, I brought a gift.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "bekarazu",
@@ -714,12 +1078,26 @@
       "te-wa-ikenai-prohibition"
     ],
     "examples": [
-      {"japanese": "ここに立ち入るべからず。", "english": "No entry here.", "source": "original"},
-      {"japanese": "これは許すべからざる行為だ。", "english": "This is an unforgivable act.", "source": "original"},
-      {"japanese": "彼は欠くべからざる存在だ。", "english": "He is an indispensable presence.", "source": "original"}
+      {
+        "japanese": "ここに立ち入るべからず。",
+        "english": "No entry here.",
+        "source": "original"
+      },
+      {
+        "japanese": "これは許すべからざる行為だ。",
+        "english": "This is an unforgivable act.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は欠くべからざる存在だ。",
+        "english": "He is an indispensable presence.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "zu-ni-wa-sumanai",
@@ -741,12 +1119,26 @@
       "zu-ni-wa-irarenai"
     ],
     "examples": [
-      {"japanese": "謝らずにはすまないだろう。", "english": "He'll have no choice but to apologize.", "source": "original"},
-      {"japanese": "この問題は解決せずにはすまない。", "english": "This problem must inevitably be resolved.", "source": "original"},
-      {"japanese": "責任を取らずにはすまない。", "english": "He cannot get by without taking responsibility.", "source": "original"}
+      {
+        "japanese": "謝らずにはすまないだろう。",
+        "english": "He'll have no choice but to apologize.",
+        "source": "original"
+      },
+      {
+        "japanese": "この問題は解決せずにはすまない。",
+        "english": "This problem must inevitably be resolved.",
+        "source": "original"
+      },
+      {
+        "japanese": "責任を取らずにはすまない。",
+        "english": "He cannot get by without taking responsibility.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-itta-tokoro-da",
@@ -768,12 +1160,26 @@
       "to-itta-such-as"
     ],
     "examples": [
-      {"japanese": "参加者は50人といったところだ。", "english": "The participants are about 50 people.", "source": "original"},
-      {"japanese": "今週末は少し休めるといったところだ。", "english": "This weekend I can rest a little, roughly speaking.", "source": "original"},
-      {"japanese": "勉強時間は1日2時間といったところです。", "english": "My study time is roughly 2 hours per day.", "source": "original"}
+      {
+        "japanese": "参加者は50人といったところだ。",
+        "english": "The participants are about 50 people.",
+        "source": "original"
+      },
+      {
+        "japanese": "今週末は少し休めるといったところだ。",
+        "english": "This weekend I can rest a little, roughly speaking.",
+        "source": "original"
+      },
+      {
+        "japanese": "勉強時間は1日2時間といったところです。",
+        "english": "My study time is roughly 2 hours per day.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "you-ni-mo-nai",
@@ -795,12 +1201,26 @@
       "volitional-form"
     ],
     "examples": [
-      {"japanese": "言おうにも言えない状況だ。", "english": "It's a situation where I can't speak even if I wanted to.", "source": "original"},
-      {"japanese": "行こうにも足が痛くて行けない。", "english": "Even if I wanted to go, my leg hurts so I can't.", "source": "original"},
-      {"japanese": "忘れようにも忘れられない。", "english": "Even if I wanted to forget, I can't.", "source": "original"}
+      {
+        "japanese": "言おうにも言えない状況だ。",
+        "english": "It's a situation where I can't speak even if I wanted to.",
+        "source": "original"
+      },
+      {
+        "japanese": "行こうにも足が痛くて行けない。",
+        "english": "Even if I wanted to go, my leg hurts so I can't.",
+        "source": "original"
+      },
+      {
+        "japanese": "忘れようにも忘れられない。",
+        "english": "Even if I wanted to forget, I can't.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "n-ga-tame",
@@ -822,12 +1242,26 @@
       "beku-in-order-to"
     ],
     "examples": [
-      {"japanese": "真実を知らんがために、調査を続けた。", "english": "In order to know the truth, he continued the investigation.", "source": "original"},
-      {"japanese": "夢を実現せんがため、努力している。", "english": "For the purpose of realizing his dream, he is working hard.", "source": "original"},
-      {"japanese": "勝利を得んがために、全力を尽くした。", "english": "In order to gain victory, he gave his all.", "source": "original"}
+      {
+        "japanese": "真実を知らんがために、調査を続けた。",
+        "english": "In order to know the truth, he continued the investigation.",
+        "source": "original"
+      },
+      {
+        "japanese": "夢を実現せんがため、努力している。",
+        "english": "For the purpose of realizing his dream, he is working hard.",
+        "source": "original"
+      },
+      {
+        "japanese": "勝利を得んがために、全力を尽くした。",
+        "english": "In order to gain victory, he gave his all.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "n-bakari",
@@ -849,12 +1283,26 @@
       "mitai-looks-like"
     ],
     "examples": [
-      {"japanese": "彼女は泣かんばかりの表情だった。", "english": "She had an expression as if she were about to cry.", "source": "original"},
-      {"japanese": "彼は飛び上がらんばかりに喜んだ。", "english": "He rejoiced as if about to jump for joy.", "source": "original"},
-      {"japanese": "叫ばんばかりに抗議した。", "english": "He protested as if about to scream.", "source": "original"}
+      {
+        "japanese": "彼女は泣かんばかりの表情だった。",
+        "english": "She had an expression as if she were about to cry.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は飛び上がらんばかりに喜んだ。",
+        "english": "He rejoiced as if about to jump for joy.",
+        "source": "original"
+      },
+      {
+        "japanese": "叫ばんばかりに抗議した。",
+        "english": "He protested as if about to scream.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "u-ni-mo",
@@ -876,12 +1324,26 @@
       "volitional-form"
     ],
     "examples": [
-      {"japanese": "寝ようにも、眠れない。", "english": "Even if I try to sleep, I can't sleep.", "source": "original"},
-      {"japanese": "帰ろうにも、終電が終わってしまった。", "english": "Even if I wanted to go home, the last train is gone.", "source": "original"},
-      {"japanese": "説明しようにも、言葉が見つからない。", "english": "Even if I try to explain, I can't find the words.", "source": "original"}
+      {
+        "japanese": "寝ようにも、眠れない。",
+        "english": "Even if I try to sleep, I can't sleep.",
+        "source": "original"
+      },
+      {
+        "japanese": "帰ろうにも、終電が終わってしまった。",
+        "english": "Even if I wanted to go home, the last train is gone.",
+        "source": "original"
+      },
+      {
+        "japanese": "説明しようにも、言葉が見つからない。",
+        "english": "Even if I try to explain, I can't find the words.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "u-mono-nara",
@@ -903,12 +1365,26 @@
       "volitional-form"
     ],
     "examples": [
-      {"japanese": "遅刻しようものなら、上司に叱られる。", "english": "If you dare to be late, the boss will scold you.", "source": "original"},
-      {"japanese": "文句を言おうものなら、すぐ怒り出す。", "english": "If you complain, he'll get angry right away.", "source": "original"},
-      {"japanese": "失敗しようものなら、大変なことになる。", "english": "If you fail, it'll be a disaster.", "source": "original"}
+      {
+        "japanese": "遅刻しようものなら、上司に叱られる。",
+        "english": "If you dare to be late, the boss will scold you.",
+        "source": "original"
+      },
+      {
+        "japanese": "文句を言おうものなら、すぐ怒り出す。",
+        "english": "If you complain, he'll get angry right away.",
+        "source": "original"
+      },
+      {
+        "japanese": "失敗しようものなら、大変なことになる。",
+        "english": "If you fail, it'll be a disaster.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tari-tomo",
@@ -929,12 +1405,26 @@
       "hodo-extent"
     ],
     "examples": [
-      {"japanese": "一瞬たりとも油断できない。", "english": "I can't let my guard down for even a moment.", "source": "original"},
-      {"japanese": "一円たりとも無駄にしない。", "english": "I won't waste even a single yen.", "source": "original"},
-      {"japanese": "一度たりとも彼を疑ったことはない。", "english": "I've never doubted him, not even once.", "source": "original"}
+      {
+        "japanese": "一瞬たりとも油断できない。",
+        "english": "I can't let my guard down for even a moment.",
+        "source": "original"
+      },
+      {
+        "japanese": "一円たりとも無駄にしない。",
+        "english": "I won't waste even a single yen.",
+        "source": "original"
+      },
+      {
+        "japanese": "一度たりとも彼を疑ったことはない。",
+        "english": "I've never doubted him, not even once.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nashi-ni-without",
@@ -956,12 +1446,26 @@
       "koto-nashi-ni"
     ],
     "examples": [
-      {"japanese": "許可なしに、ここに入ってはいけない。", "english": "You must not enter here without permission.", "source": "original"},
-      {"japanese": "努力なしには、成功できない。", "english": "Without effort, you cannot succeed.", "source": "original"},
-      {"japanese": "彼女の助けなしに、やり遂げられなかった。", "english": "Without her help, I couldn't have completed it.", "source": "original"}
+      {
+        "japanese": "許可なしに、ここに入ってはいけない。",
+        "english": "You must not enter here without permission.",
+        "source": "original"
+      },
+      {
+        "japanese": "努力なしには、成功できない。",
+        "english": "Without effort, you cannot succeed.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女の助けなしに、やり遂げられなかった。",
+        "english": "Without her help, I couldn't have completed it.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "naku-shite-wa",
@@ -983,12 +1487,26 @@
       "naku-mo-nai"
     ],
     "examples": [
-      {"japanese": "愛なくして、人生は語れない。", "english": "Life cannot be spoken of without love.", "source": "original"},
-      {"japanese": "彼の協力なくしては、成功は不可能だった。", "english": "Without his cooperation, success would have been impossible.", "source": "original"},
-      {"japanese": "努力なくして、目標は達成できない。", "english": "Without effort, goals cannot be achieved.", "source": "original"}
+      {
+        "japanese": "愛なくして、人生は語れない。",
+        "english": "Life cannot be spoken of without love.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼の協力なくしては、成功は不可能だった。",
+        "english": "Without his cooperation, success would have been impossible.",
+        "source": "original"
+      },
+      {
+        "japanese": "努力なくして、目標は達成できない。",
+        "english": "Without effort, goals cannot be achieved.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ya-literary",
@@ -1010,12 +1528,26 @@
       "ga-hayai-ka"
     ],
     "examples": [
-      {"japanese": "彼は家を出るや、走り出した。", "english": "The moment he left the house, he ran off.", "source": "original"},
-      {"japanese": "目を開けるや否や、眩しい光が差し込んだ。", "english": "The moment I opened my eyes, bright light poured in.", "source": "original"},
-      {"japanese": "話を聞くや、彼は立ち上がった。", "english": "The moment he heard the story, he stood up.", "source": "original"}
+      {
+        "japanese": "彼は家を出るや、走り出した。",
+        "english": "The moment he left the house, he ran off.",
+        "source": "original"
+      },
+      {
+        "japanese": "目を開けるや否や、眩しい光が差し込んだ。",
+        "english": "The moment I opened my eyes, bright light poured in.",
+        "source": "original"
+      },
+      {
+        "japanese": "話を聞くや、彼は立ち上がった。",
+        "english": "The moment he heard the story, he stood up.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "no-kiwami",
@@ -1037,12 +1569,26 @@
       "kiwamari-nai"
     ],
     "examples": [
-      {"japanese": "このホテルは贅沢の極みだ。", "english": "This hotel is the height of luxury.", "source": "original"},
-      {"japanese": "疲労の極みに達した。", "english": "I reached the extreme of fatigue.", "source": "original"},
-      {"japanese": "子供の笑顔は幸せの極みだ。", "english": "A child's smile is the ultimate happiness.", "source": "original"}
+      {
+        "japanese": "このホテルは贅沢の極みだ。",
+        "english": "This hotel is the height of luxury.",
+        "source": "original"
+      },
+      {
+        "japanese": "疲労の極みに達した。",
+        "english": "I reached the extreme of fatigue.",
+        "source": "original"
+      },
+      {
+        "japanese": "子供の笑顔は幸せの極みだ。",
+        "english": "A child's smile is the ultimate happiness.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-mae",
@@ -1064,12 +1610,26 @@
       "toshite-as"
     ],
     "examples": [
-      {"japanese": "約束した手前、引き下がれない。", "english": "Having promised, I can't back down.", "source": "original"},
-      {"japanese": "子供の手前、ちゃんとしなければならない。", "english": "For the sake of the children, I have to behave properly.", "source": "original"},
-      {"japanese": "みんなの手前、断れなかった。", "english": "In front of everyone, I couldn't refuse.", "source": "original"}
+      {
+        "japanese": "約束した手前、引き下がれない。",
+        "english": "Having promised, I can't back down.",
+        "source": "original"
+      },
+      {
+        "japanese": "子供の手前、ちゃんとしなければならない。",
+        "english": "For the sake of the children, I have to behave properly.",
+        "source": "original"
+      },
+      {
+        "japanese": "みんなの手前、断れなかった。",
+        "english": "In front of everyone, I couldn't refuse.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-nottotte",
@@ -1091,12 +1651,26 @@
       "ni-terashite"
     ],
     "examples": [
-      {"japanese": "伝統に則って、式を行った。", "english": "We held the ceremony in accordance with tradition.", "source": "original"},
-      {"japanese": "法律に則り、処理した。", "english": "I handled it in accordance with the law.", "source": "original"},
-      {"japanese": "規則に則って行動してください。", "english": "Please act in accordance with the rules.", "source": "original"}
+      {
+        "japanese": "伝統に則って、式を行った。",
+        "english": "We held the ceremony in accordance with tradition.",
+        "source": "original"
+      },
+      {
+        "japanese": "法律に則り、処理した。",
+        "english": "I handled it in accordance with the law.",
+        "source": "original"
+      },
+      {
+        "japanese": "規則に則って行動してください。",
+        "english": "Please act in accordance with the rules.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "wo-motte",
@@ -1118,12 +1692,26 @@
       "wo-tsuujite-through"
     ],
     "examples": [
-      {"japanese": "これをもって、会議を終わります。", "english": "With this, we conclude the meeting.", "source": "original"},
-      {"japanese": "努力をもって、成功を勝ち取った。", "english": "By means of effort, he achieved success.", "source": "original"},
-      {"japanese": "本日をもって、退職いたします。", "english": "As of today, I am retiring.", "source": "original"}
+      {
+        "japanese": "これをもって、会議を終わります。",
+        "english": "With this, we conclude the meeting.",
+        "source": "original"
+      },
+      {
+        "japanese": "努力をもって、成功を勝ち取った。",
+        "english": "By means of effort, he achieved success.",
+        "source": "original"
+      },
+      {
+        "japanese": "本日をもって、退職いたします。",
+        "english": "As of today, I am retiring.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tokoro-wo",
@@ -1145,12 +1733,26 @@
       "kuse-ni-despite"
     ],
     "examples": [
-      {"japanese": "お忙しいところを、ありがとうございます。", "english": "Thank you for your time despite being busy.", "source": "original"},
-      {"japanese": "お休みのところをすみません。", "english": "I'm sorry to disturb your rest.", "source": "original"},
-      {"japanese": "お食事中のところを失礼します。", "english": "Excuse me for interrupting your meal.", "source": "original"}
+      {
+        "japanese": "お忙しいところを、ありがとうございます。",
+        "english": "Thank you for your time despite being busy.",
+        "source": "original"
+      },
+      {
+        "japanese": "お休みのところをすみません。",
+        "english": "I'm sorry to disturb your rest.",
+        "source": "original"
+      },
+      {
+        "japanese": "お食事中のところを失礼します。",
+        "english": "Excuse me for interrupting your meal.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-habakaranai",
@@ -1172,12 +1774,26 @@
       "majiki-unacceptable"
     ],
     "examples": [
-      {"japanese": "彼は自分が一番だと言ってはばからない。", "english": "He openly declares he's the best.", "source": "original"},
-      {"japanese": "その政治家は改革を主張してはばからなかった。", "english": "The politician unhesitatingly advocated for reform.", "source": "original"},
-      {"japanese": "彼女は意見を言ってはばからない性格だ。", "english": "She has a personality that doesn't hesitate to voice opinions.", "source": "original"}
+      {
+        "japanese": "彼は自分が一番だと言ってはばからない。",
+        "english": "He openly declares he's the best.",
+        "source": "original"
+      },
+      {
+        "japanese": "その政治家は改革を主張してはばからなかった。",
+        "english": "The politician unhesitatingly advocated for reform.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女は意見を言ってはばからない性格だ。",
+        "english": "She has a personality that doesn't hesitate to voice opinions.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "beku-mo-nai",
@@ -1199,12 +1815,26 @@
       "beki-da"
     ],
     "examples": [
-      {"japanese": "彼の意図を知るべくもない。", "english": "There's no way to know his intentions.", "source": "original"},
-      {"japanese": "結果を予測すべくもない。", "english": "There's no way to predict the result.", "source": "original"},
-      {"japanese": "真実を知るべくもなかった。", "english": "There was no way to know the truth.", "source": "original"}
+      {
+        "japanese": "彼の意図を知るべくもない。",
+        "english": "There's no way to know his intentions.",
+        "source": "original"
+      },
+      {
+        "japanese": "結果を予測すべくもない。",
+        "english": "There's no way to predict the result.",
+        "source": "original"
+      },
+      {
+        "japanese": "真実を知るべくもなかった。",
+        "english": "There was no way to know the truth.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-yara",
@@ -1226,12 +1856,26 @@
       "sou-da-hearsay"
     ],
     "examples": [
-      {"japanese": "田中さんとやらは、どこの人ですか。", "english": "This Tanaka person — where is he from?", "source": "original"},
-      {"japanese": "何とやらいう病気にかかったらしい。", "english": "It seems he caught some kind of illness.", "source": "original"},
-      {"japanese": "彼は新しい会社を作ったとやら。", "english": "I hear he started a new company or something.", "source": "original"}
+      {
+        "japanese": "田中さんとやらは、どこの人ですか。",
+        "english": "This Tanaka person — where is he from?",
+        "source": "original"
+      },
+      {
+        "japanese": "何とやらいう病気にかかったらしい。",
+        "english": "It seems he caught some kind of illness.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は新しい会社を作ったとやら。",
+        "english": "I hear he started a new company or something.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nai-de-mo-nai",
@@ -1253,12 +1897,26 @@
       "wake-dewa-nai"
     ],
     "examples": [
-      {"japanese": "行かないでもないが、気が進まない。", "english": "It's not that I won't go, but I'm not enthusiastic.", "source": "original"},
-      {"japanese": "分からないでもない。", "english": "It's not that I don't understand.", "source": "original"},
-      {"japanese": "できないでもないけど、時間がかかる。", "english": "It's not impossible, but it would take time.", "source": "original"}
+      {
+        "japanese": "行かないでもないが、気が進まない。",
+        "english": "It's not that I won't go, but I'm not enthusiastic.",
+        "source": "original"
+      },
+      {
+        "japanese": "分からないでもない。",
+        "english": "It's not that I don't understand.",
+        "source": "original"
+      },
+      {
+        "japanese": "できないでもないけど、時間がかかる。",
+        "english": "It's not impossible, but it would take time.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "wo-kawakiri-ni",
@@ -1280,12 +1938,26 @@
       "ni-sakigakete"
     ],
     "examples": [
-      {"japanese": "東京を皮切りに、全国ツアーが始まる。", "english": "Starting with Tokyo, the national tour begins.", "source": "original"},
-      {"japanese": "彼の発言を皮切りに、議論が始まった。", "english": "Starting with his remark, the discussion began.", "source": "original"},
-      {"japanese": "初日を皮切りに、多くの観客が訪れた。", "english": "Starting on the first day, many spectators visited.", "source": "original"}
+      {
+        "japanese": "東京を皮切りに、全国ツアーが始まる。",
+        "english": "Starting with Tokyo, the national tour begins.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼の発言を皮切りに、議論が始まった。",
+        "english": "Starting with his remark, the discussion began.",
+        "source": "original"
+      },
+      {
+        "japanese": "初日を皮切りに、多くの観客が訪れた。",
+        "english": "Starting on the first day, many spectators visited.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "wo-kagiri-ni",
@@ -1306,12 +1978,26 @@
       "wo-motte"
     ],
     "examples": [
-      {"japanese": "今月を限りに、この店は閉店します。", "english": "As of this month, this store will close.", "source": "original"},
-      {"japanese": "今日を限りに、タバコをやめる。", "english": "As of today, I'll quit smoking.", "source": "original"},
-      {"japanese": "今年を限りに引退する。", "english": "I'll retire as of this year.", "source": "original"}
+      {
+        "japanese": "今月を限りに、この店は閉店します。",
+        "english": "As of this month, this store will close.",
+        "source": "original"
+      },
+      {
+        "japanese": "今日を限りに、タバコをやめる。",
+        "english": "As of today, I'll quit smoking.",
+        "source": "original"
+      },
+      {
+        "japanese": "今年を限りに引退する。",
+        "english": "I'll retire as of this year.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ori-ni",
@@ -1333,12 +2019,26 @@
       "ni-atatte-occasion"
     ],
     "examples": [
-      {"japanese": "お近くにお越しの折には、お寄りください。", "english": "When you come near us, please drop by.", "source": "original"},
-      {"japanese": "結婚式の折には、彼も出席した。", "english": "On the occasion of the wedding, he also attended.", "source": "original"},
-      {"japanese": "ご入り用の折には、ご連絡ください。", "english": "When you need it, please contact us.", "source": "original"}
+      {
+        "japanese": "お近くにお越しの折には、お寄りください。",
+        "english": "When you come near us, please drop by.",
+        "source": "original"
+      },
+      {
+        "japanese": "結婚式の折には、彼も出席した。",
+        "english": "On the occasion of the wedding, he also attended.",
+        "source": "original"
+      },
+      {
+        "japanese": "ご入り用の折には、ご連絡ください。",
+        "english": "When you need it, please contact us.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nagara-ni",
@@ -1360,12 +2060,26 @@
       "nagara-no"
     ],
     "examples": [
-      {"japanese": "彼は生まれながらにして、才能があった。", "english": "He had talent from birth.", "source": "original"},
-      {"japanese": "彼女は涙ながらに語った。", "english": "She spoke through tears.", "source": "original"},
-      {"japanese": "昔ながらの味が楽しめる。", "english": "You can enjoy the traditional flavor.", "source": "original"}
+      {
+        "japanese": "彼は生まれながらにして、才能があった。",
+        "english": "He had talent from birth.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女は涙ながらに語った。",
+        "english": "She spoke through tears.",
+        "source": "original"
+      },
+      {
+        "japanese": "昔ながらの味が楽しめる。",
+        "english": "You can enjoy the traditional flavor.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "oose-ru",
@@ -1386,12 +2100,26 @@
       "tsuzukeru-continue"
     ],
     "examples": [
-      {"japanese": "犯人は警察から逃げおおせた。", "english": "The criminal succeeded in escaping the police.", "source": "original"},
-      {"japanese": "何とかやりおおせた。", "english": "Somehow I managed to accomplish it.", "source": "original"},
-      {"japanese": "嘘をつきおおせるのは難しい。", "english": "It's hard to successfully maintain a lie.", "source": "original"}
+      {
+        "japanese": "犯人は警察から逃げおおせた。",
+        "english": "The criminal succeeded in escaping the police.",
+        "source": "original"
+      },
+      {
+        "japanese": "何とかやりおおせた。",
+        "english": "Somehow I managed to accomplish it.",
+        "source": "original"
+      },
+      {
+        "japanese": "嘘をつきおおせるのは難しい。",
+        "english": "It's hard to successfully maintain a lie.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "konasu",
@@ -1413,12 +2141,26 @@
       "tsuzukeru-continue"
     ],
     "examples": [
-      {"japanese": "彼は英語を使いこなしている。", "english": "He has mastered the use of English.", "source": "original"},
-      {"japanese": "新しいソフトを使いこなすのに時間がかかった。", "english": "It took time to master the new software.", "source": "original"},
-      {"japanese": "彼女は着物を美しく着こなしている。", "english": "She wears kimono beautifully.", "source": "original"}
+      {
+        "japanese": "彼は英語を使いこなしている。",
+        "english": "He has mastered the use of English.",
+        "source": "original"
+      },
+      {
+        "japanese": "新しいソフトを使いこなすのに時間がかかった。",
+        "english": "It took time to master the new software.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女は着物を美しく着こなしている。",
+        "english": "She wears kimono beautifully.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mekasu",
@@ -1439,12 +2181,26 @@
       "buru-pretend"
     ],
     "examples": [
-      {"japanese": "彼は冗談めかして話した。", "english": "He spoke with a joking air.", "source": "original"},
-      {"japanese": "彼女は秘密めかして微笑んだ。", "english": "She smiled with a mysterious air.", "source": "original"},
-      {"japanese": "皮肉めかした言い方をやめてほしい。", "english": "I wish he'd stop speaking with that ironic air.", "source": "original"}
+      {
+        "japanese": "彼は冗談めかして話した。",
+        "english": "He spoke with a joking air.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女は秘密めかして微笑んだ。",
+        "english": "She smiled with a mysterious air.",
+        "source": "original"
+      },
+      {
+        "japanese": "皮肉めかした言い方をやめてほしい。",
+        "english": "I wish he'd stop speaking with that ironic air.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-hoka-naranai",
@@ -1466,12 +2222,26 @@
       "to-iu-mono-da"
     ],
     "examples": [
-      {"japanese": "これは努力の結果に他ならない。", "english": "This is nothing but the result of effort.", "source": "original"},
-      {"japanese": "成功は運ではなく、準備に他ならない。", "english": "Success is not luck but preparation, nothing else.", "source": "original"},
-      {"japanese": "この問題の原因は無関心に他ならない。", "english": "The cause of this problem is nothing but indifference.", "source": "original"}
+      {
+        "japanese": "これは努力の結果に他ならない。",
+        "english": "This is nothing but the result of effort.",
+        "source": "original"
+      },
+      {
+        "japanese": "成功は運ではなく、準備に他ならない。",
+        "english": "Success is not luck but preparation, nothing else.",
+        "source": "original"
+      },
+      {
+        "japanese": "この問題の原因は無関心に他ならない。",
+        "english": "The cause of this problem is nothing but indifference.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mo-saru-koto-nagara",
@@ -1493,12 +2263,26 @@
       "wa-mochiron"
     ],
     "examples": [
-      {"japanese": "味もさることながら、雰囲気も素晴らしい。", "english": "The flavor is excellent, and so is the atmosphere.", "source": "original"},
-      {"japanese": "実力もさることながら、努力も素晴らしい。", "english": "His ability is notable, and so is his effort.", "source": "original"},
-      {"japanese": "値段もさることながら、品質も気になる。", "english": "The price matters, but so does the quality.", "source": "original"}
+      {
+        "japanese": "味もさることながら、雰囲気も素晴らしい。",
+        "english": "The flavor is excellent, and so is the atmosphere.",
+        "source": "original"
+      },
+      {
+        "japanese": "実力もさることながら、努力も素晴らしい。",
+        "english": "His ability is notable, and so is his effort.",
+        "source": "original"
+      },
+      {
+        "japanese": "値段もさることながら、品質も気になる。",
+        "english": "The price matters, but so does the quality.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "made-mo-naku",
@@ -1520,12 +2304,26 @@
       "wa-mochiron"
     ],
     "examples": [
-      {"japanese": "言うまでもなく、彼は天才だ。", "english": "Needless to say, he is a genius.", "source": "original"},
-      {"japanese": "調べるまでもなく、答えは明らかだ。", "english": "Without even needing to check, the answer is obvious.", "source": "original"},
-      {"japanese": "聞くまでもなく、理由は分かっている。", "english": "Without even needing to ask, I know the reason.", "source": "original"}
+      {
+        "japanese": "言うまでもなく、彼は天才だ。",
+        "english": "Needless to say, he is a genius.",
+        "source": "original"
+      },
+      {
+        "japanese": "調べるまでもなく、答えは明らかだ。",
+        "english": "Without even needing to check, the answer is obvious.",
+        "source": "original"
+      },
+      {
+        "japanese": "聞くまでもなく、理由は分かっている。",
+        "english": "Without even needing to ask, I know the reason.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nara-mada-shimo",
@@ -1547,12 +2345,26 @@
       "kuse-ni-despite"
     ],
     "examples": [
-      {"japanese": "一度ならまだしも、何度も遅刻するのは困る。", "english": "Once I could accept, but being late repeatedly is a problem.", "source": "original"},
-      {"japanese": "無料ならまだしも、有料でこれはひどい。", "english": "If it were free it'd be OK, but for pay, this is awful.", "source": "original"},
-      {"japanese": "子供ならまだしも、大人がそんなことをするとは。", "english": "If it were a child it would be understandable, but for an adult to do that!", "source": "original"}
+      {
+        "japanese": "一度ならまだしも、何度も遅刻するのは困る。",
+        "english": "Once I could accept, but being late repeatedly is a problem.",
+        "source": "original"
+      },
+      {
+        "japanese": "無料ならまだしも、有料でこれはひどい。",
+        "english": "If it were free it'd be OK, but for pay, this is awful.",
+        "source": "original"
+      },
+      {
+        "japanese": "子供ならまだしも、大人がそんなことをするとは。",
+        "english": "If it were a child it would be understandable, but for an adult to do that!",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nara-iza-shirazu",
@@ -1573,12 +2385,26 @@
       "noni-although"
     ],
     "examples": [
-      {"japanese": "子供ならいざ知らず、大人がそんな失敗をするなんて。", "english": "If it were a child I wouldn't know, but for an adult to make such a mistake!", "source": "original"},
-      {"japanese": "初心者ならいざ知らず、プロがミスするとは。", "english": "For a beginner, maybe — but for a pro to make a mistake!", "source": "original"},
-      {"japanese": "昔ならいざ知らず、今の時代に合わない。", "english": "For olden times maybe, but it doesn't fit this era.", "source": "original"}
+      {
+        "japanese": "子供ならいざ知らず、大人がそんな失敗をするなんて。",
+        "english": "If it were a child I wouldn't know, but for an adult to make such a mistake!",
+        "source": "original"
+      },
+      {
+        "japanese": "初心者ならいざ知らず、プロがミスするとは。",
+        "english": "For a beginner, maybe — but for a pro to make a mistake!",
+        "source": "original"
+      },
+      {
+        "japanese": "昔ならいざ知らず、今の時代に合わない。",
+        "english": "For olden times maybe, but it doesn't fit this era.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "hitotabi",
@@ -1600,12 +2426,26 @@
       "nara-conditional"
     ],
     "examples": [
-      {"japanese": "ひとたび決めたら、最後までやり遂げる。", "english": "Once I've decided, I see it through to the end.", "source": "original"},
-      {"japanese": "ひとたび約束したら、守るべきだ。", "english": "Once you've promised, you should keep it.", "source": "original"},
-      {"japanese": "ひとたび火がつくと、消すのが大変だ。", "english": "Once a fire starts, it's hard to put out.", "source": "original"}
+      {
+        "japanese": "ひとたび決めたら、最後までやり遂げる。",
+        "english": "Once I've decided, I see it through to the end.",
+        "source": "original"
+      },
+      {
+        "japanese": "ひとたび約束したら、守るべきだ。",
+        "english": "Once you've promised, you should keep it.",
+        "source": "original"
+      },
+      {
+        "japanese": "ひとたび火がつくと、消すのが大変だ。",
+        "english": "Once a fire starts, it's hard to put out.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-shita-tokoro-de",
@@ -1627,12 +2467,26 @@
       "ta-tokoro-de"
     ],
     "examples": [
-      {"japanese": "仮に成功したとしたところで、喜べない。", "english": "Even if we assume it succeeded, I can't be happy.", "source": "original"},
-      {"japanese": "行ったとしたところで、何も変わらない。", "english": "Even assuming I went, nothing would change.", "source": "original"},
-      {"japanese": "彼が謝ったとしたところで、許せない。", "english": "Even if he apologized, I couldn't forgive.", "source": "original"}
+      {
+        "japanese": "仮に成功したとしたところで、喜べない。",
+        "english": "Even if we assume it succeeded, I can't be happy.",
+        "source": "original"
+      },
+      {
+        "japanese": "行ったとしたところで、何も変わらない。",
+        "english": "Even assuming I went, nothing would change.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼が謝ったとしたところで、許せない。",
+        "english": "Even if he apologized, I couldn't forgive.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "hodo-no",
@@ -1654,12 +2508,26 @@
       "hodo-no-mono-dewa-nai"
     ],
     "examples": [
-      {"japanese": "これほどの大事件は初めてだ。", "english": "An incident of this magnitude is a first.", "source": "original"},
-      {"japanese": "涙が出るほどの感動だった。", "english": "It was emotion to the extent of tears.", "source": "original"},
-      {"japanese": "彼は奇跡と呼べるほどの回復を見せた。", "english": "He showed a recovery you could call a miracle.", "source": "original"}
+      {
+        "japanese": "これほどの大事件は初めてだ。",
+        "english": "An incident of this magnitude is a first.",
+        "source": "original"
+      },
+      {
+        "japanese": "涙が出るほどの感動だった。",
+        "english": "It was emotion to the extent of tears.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は奇跡と呼べるほどの回復を見せた。",
+        "english": "He showed a recovery you could call a miracle.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "zu-mogana",
@@ -1681,12 +2549,26 @@
       "nai-made-mo"
     ],
     "examples": [
-      {"japanese": "言わずもがなのことを言ってしまった。", "english": "I said something that would have been better left unsaid.", "source": "original"},
-      {"japanese": "言わずもがな、健康が一番大切だ。", "english": "Needless to say, health is most important.", "source": "original"},
-      {"japanese": "それは言わずもがなのことだ。", "english": "That goes without saying.", "source": "original"}
+      {
+        "japanese": "言わずもがなのことを言ってしまった。",
+        "english": "I said something that would have been better left unsaid.",
+        "source": "original"
+      },
+      {
+        "japanese": "言わずもがな、健康が一番大切だ。",
+        "english": "Needless to say, health is most important.",
+        "source": "original"
+      },
+      {
+        "japanese": "それは言わずもがなのことだ。",
+        "english": "That goes without saying.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-matsuwaru",
@@ -1707,12 +2589,26 @@
       "ni-tsuite"
     ],
     "examples": [
-      {"japanese": "彼にまつわる噂を聞いた。", "english": "I heard rumors surrounding him.", "source": "original"},
-      {"japanese": "この城にまつわる伝説がある。", "english": "There's a legend related to this castle.", "source": "original"},
-      {"japanese": "お金にまつわる問題が多い。", "english": "There are many problems related to money.", "source": "original"}
+      {
+        "japanese": "彼にまつわる噂を聞いた。",
+        "english": "I heard rumors surrounding him.",
+        "source": "original"
+      },
+      {
+        "japanese": "この城にまつわる伝説がある。",
+        "english": "There's a legend related to this castle.",
+        "source": "original"
+      },
+      {
+        "japanese": "お金にまつわる問題が多い。",
+        "english": "There are many problems related to money.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "wo-kanete",
@@ -1734,12 +2630,26 @@
       "to-tomoni-together"
     ],
     "examples": [
-      {"japanese": "散歩を兼ねて、買い物に行った。", "english": "I went shopping, also taking it as a walk.", "source": "original"},
-      {"japanese": "挨拶を兼ねて、お土産を持っていった。", "english": "I brought a gift, also serving as a greeting.", "source": "original"},
-      {"japanese": "観光を兼ねた出張だった。", "english": "It was a business trip that also served as sightseeing.", "source": "original"}
+      {
+        "japanese": "散歩を兼ねて、買い物に行った。",
+        "english": "I went shopping, also taking it as a walk.",
+        "source": "original"
+      },
+      {
+        "japanese": "挨拶を兼ねて、お土産を持っていった。",
+        "english": "I brought a gift, also serving as a greeting.",
+        "source": "original"
+      },
+      {
+        "japanese": "観光を兼ねた出張だった。",
+        "english": "It was a business trip that also served as sightseeing.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "de-ari-nagara",
@@ -1761,12 +2671,26 @@
       "kuse-ni-despite"
     ],
     "examples": [
-      {"japanese": "子供でありながら、大人のように話す。", "english": "Even though he's a child, he talks like an adult.", "source": "original"},
-      {"japanese": "プロでありながら、基本的なミスをした。", "english": "Even though he's a pro, he made a basic mistake.", "source": "original"},
-      {"japanese": "医者でありながら、自分の健康を気にしない。", "english": "Although he's a doctor, he doesn't care about his own health.", "source": "original"}
+      {
+        "japanese": "子供でありながら、大人のように話す。",
+        "english": "Even though he's a child, he talks like an adult.",
+        "source": "original"
+      },
+      {
+        "japanese": "プロでありながら、基本的なミスをした。",
+        "english": "Even though he's a pro, he made a basic mistake.",
+        "source": "original"
+      },
+      {
+        "japanese": "医者でありながら、自分の健康を気にしない。",
+        "english": "Although he's a doctor, he doesn't care about his own health.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "te-mi-se-ru",
@@ -1788,12 +2712,26 @@
       "volitional-form"
     ],
     "examples": [
-      {"japanese": "絶対に合格してみせる。", "english": "I'll definitely pass, you'll see.", "source": "original"},
-      {"japanese": "必ず成功してみせます。", "english": "I will definitely succeed.", "source": "original"},
-      {"japanese": "この困難を乗り越えてみせる。", "english": "I'll overcome this difficulty, just watch.", "source": "original"}
+      {
+        "japanese": "絶対に合格してみせる。",
+        "english": "I'll definitely pass, you'll see.",
+        "source": "original"
+      },
+      {
+        "japanese": "必ず成功してみせます。",
+        "english": "I will definitely succeed.",
+        "source": "original"
+      },
+      {
+        "japanese": "この困難を乗り越えてみせる。",
+        "english": "I'll overcome this difficulty, just watch.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-shite-hajimete",
@@ -1815,12 +2753,26 @@
       "ni-shite"
     ],
     "examples": [
-      {"japanese": "30歳にして初めて、親の苦労が分かった。", "english": "Only at 30 did I understand my parents' hardship.", "source": "original"},
-      {"japanese": "彼にして初めてできる技だ。", "english": "It's a technique only someone of his level can do.", "source": "original"},
-      {"japanese": "プロにして初めて、これが分かる。", "english": "Only as a pro do you understand this.", "source": "original"}
+      {
+        "japanese": "30歳にして初めて、親の苦労が分かった。",
+        "english": "Only at 30 did I understand my parents' hardship.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼にして初めてできる技だ。",
+        "english": "It's a technique only someone of his level can do.",
+        "source": "original"
+      },
+      {
+        "japanese": "プロにして初めて、これが分かる。",
+        "english": "Only as a pro do you understand this.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nagara-no",
@@ -1842,12 +2794,26 @@
       "narade-wa-no"
     ],
     "examples": [
-      {"japanese": "この店は昔ながらの味を守っている。", "english": "This shop has preserved its traditional flavor.", "source": "original"},
-      {"japanese": "彼女には生まれながらの才能がある。", "english": "She has innate, natural talent.", "source": "original"},
-      {"japanese": "昔ながらの風景が残っている。", "english": "The traditional scenery remains.", "source": "original"}
+      {
+        "japanese": "この店は昔ながらの味を守っている。",
+        "english": "This shop has preserved its traditional flavor.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女には生まれながらの才能がある。",
+        "english": "She has innate, natural talent.",
+        "source": "original"
+      },
+      {
+        "japanese": "昔ながらの風景が残っている。",
+        "english": "The traditional scenery remains.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ikan-se-n",
@@ -1868,12 +2834,26 @@
       "zu-ni"
     ],
     "examples": [
-      {"japanese": "やりたいが、いかんせん、時間がない。", "english": "I want to, but unfortunately, I have no time.", "source": "original"},
-      {"japanese": "いかんせん、予算が足りない。", "english": "The trouble is, the budget is insufficient.", "source": "original"},
-      {"japanese": "努力はしたが、いかんせん、結果が出なかった。", "english": "I made an effort, but regrettably, no result came.", "source": "original"}
+      {
+        "japanese": "やりたいが、いかんせん、時間がない。",
+        "english": "I want to, but unfortunately, I have no time.",
+        "source": "original"
+      },
+      {
+        "japanese": "いかんせん、予算が足りない。",
+        "english": "The trouble is, the budget is insufficient.",
+        "source": "original"
+      },
+      {
+        "japanese": "努力はしたが、いかんせん、結果が出なかった。",
+        "english": "I made an effort, but regrettably, no result came.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-mo-hodo-ga-aru",
@@ -1895,12 +2875,26 @@
       "majiki-unacceptable"
     ],
     "examples": [
-      {"japanese": "冗談にもほどがある。", "english": "There's a limit to joking — this has gone too far.", "source": "original"},
-      {"japanese": "失礼にもほどがある。", "english": "That's rude beyond limits.", "source": "original"},
-      {"japanese": "遅刻にもほどがある。", "english": "Being late has its limits — this is too much.", "source": "original"}
+      {
+        "japanese": "冗談にもほどがある。",
+        "english": "There's a limit to joking — this has gone too far.",
+        "source": "original"
+      },
+      {
+        "japanese": "失礼にもほどがある。",
+        "english": "That's rude beyond limits.",
+        "source": "original"
+      },
+      {
+        "japanese": "遅刻にもほどがある。",
+        "english": "Being late has its limits — this is too much.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ba-sore-made",
@@ -1922,12 +2916,26 @@
       "ba-conditional"
     ],
     "examples": [
-      {"japanese": "失敗すればそれまでだ。", "english": "If you fail, that's the end of it.", "source": "original"},
-      {"japanese": "バッテリーが切れれば、それまでだ。", "english": "If the battery dies, that's it.", "source": "original"},
-      {"japanese": "諦めればそれまでだ。", "english": "If you give up, that's the end.", "source": "original"}
+      {
+        "japanese": "失敗すればそれまでだ。",
+        "english": "If you fail, that's the end of it.",
+        "source": "original"
+      },
+      {
+        "japanese": "バッテリーが切れれば、それまでだ。",
+        "english": "If the battery dies, that's it.",
+        "source": "original"
+      },
+      {
+        "japanese": "諦めればそれまでだ。",
+        "english": "If you give up, that's the end.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mo-nan-tomo-nai",
@@ -1949,12 +2957,26 @@
       "wake-ga-nai"
     ],
     "examples": [
-      {"japanese": "寒くもなんともない。", "english": "I'm not cold at all.", "source": "original"},
-      {"japanese": "大したことでもなんでもない。", "english": "It's nothing important at all.", "source": "original"},
-      {"japanese": "面白くもなんともなかった。", "english": "It wasn't interesting at all.", "source": "original"}
+      {
+        "japanese": "寒くもなんともない。",
+        "english": "I'm not cold at all.",
+        "source": "original"
+      },
+      {
+        "japanese": "大したことでもなんでもない。",
+        "english": "It's nothing important at all.",
+        "source": "original"
+      },
+      {
+        "japanese": "面白くもなんともなかった。",
+        "english": "It wasn't interesting at all.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-teihyou-ga-aru",
@@ -1975,12 +2997,26 @@
       "narade-wa-no"
     ],
     "examples": [
-      {"japanese": "この店は味に定評がある。", "english": "This restaurant has a solid reputation for flavor.", "source": "original"},
-      {"japanese": "彼女は演技に定評がある女優だ。", "english": "She's an actress known for her acting skill.", "source": "original"},
-      {"japanese": "この会社は品質に定評がある。", "english": "This company has a reputation for quality.", "source": "original"}
+      {
+        "japanese": "この店は味に定評がある。",
+        "english": "This restaurant has a solid reputation for flavor.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女は演技に定評がある女優だ。",
+        "english": "She's an actress known for her acting skill.",
+        "source": "original"
+      },
+      {
+        "japanese": "この会社は品質に定評がある。",
+        "english": "This company has a reputation for quality.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-tari-nai",
@@ -2002,12 +3038,26 @@
       "ni-taenai"
     ],
     "examples": [
-      {"japanese": "それは取るに足りないことだ。", "english": "That's not worth mentioning.", "source": "original"},
-      {"japanese": "彼は恐れるに足りない相手だ。", "english": "He's not an opponent worth fearing.", "source": "original"},
-      {"japanese": "その情報は信頼するに足りない。", "english": "That information is not worthy of trust.", "source": "original"}
+      {
+        "japanese": "それは取るに足りないことだ。",
+        "english": "That's not worth mentioning.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は恐れるに足りない相手だ。",
+        "english": "He's not an opponent worth fearing.",
+        "source": "original"
+      },
+      {
+        "japanese": "その情報は信頼するに足りない。",
+        "english": "That information is not worthy of trust.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "wo-mae-ni-shite",
@@ -2029,12 +3079,26 @@
       "ni-atatte-occasion"
     ],
     "examples": [
-      {"japanese": "試験を前にして、緊張している。", "english": "Facing the exam, I'm nervous.", "source": "original"},
-      {"japanese": "大勢の観客を前にして、彼は堂々と話した。", "english": "Before a large audience, he spoke with confidence.", "source": "original"},
-      {"japanese": "卒業を前にして、感慨深い。", "english": "With graduation approaching, I'm deeply moved.", "source": "original"}
+      {
+        "japanese": "試験を前にして、緊張している。",
+        "english": "Facing the exam, I'm nervous.",
+        "source": "original"
+      },
+      {
+        "japanese": "大勢の観客を前にして、彼は堂々と話した。",
+        "english": "Before a large audience, he spoke with confidence.",
+        "source": "original"
+      },
+      {
+        "japanese": "卒業を前にして、感慨深い。",
+        "english": "With graduation approaching, I'm deeply moved.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tari-mo-shinai",
@@ -2056,12 +3120,26 @@
       "yashinai-emphatic"
     ],
     "examples": [
-      {"japanese": "彼は謝ったりもしない。", "english": "He doesn't even apologize.", "source": "original"},
-      {"japanese": "連絡したりもしないで、勝手に来た。", "english": "Without even contacting, he came on his own.", "source": "original"},
-      {"japanese": "考えたりもしなかった。", "english": "I didn't even think about it.", "source": "original"}
+      {
+        "japanese": "彼は謝ったりもしない。",
+        "english": "He doesn't even apologize.",
+        "source": "original"
+      },
+      {
+        "japanese": "連絡したりもしないで、勝手に来た。",
+        "english": "Without even contacting, he came on his own.",
+        "source": "original"
+      },
+      {
+        "japanese": "考えたりもしなかった。",
+        "english": "I didn't even think about it.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-ari-gachi",
@@ -2083,12 +3161,26 @@
       "ppoi-seems"
     ],
     "examples": [
-      {"japanese": "それは若者にありがちな失敗だ。", "english": "That's a mistake typical of young people.", "source": "original"},
-      {"japanese": "初心者にありがちな間違いを犯した。", "english": "I made a mistake common among beginners.", "source": "original"},
-      {"japanese": "現代人にありがちな悩みだ。", "english": "It's a worry common to modern people.", "source": "original"}
+      {
+        "japanese": "それは若者にありがちな失敗だ。",
+        "english": "That's a mistake typical of young people.",
+        "source": "original"
+      },
+      {
+        "japanese": "初心者にありがちな間違いを犯した。",
+        "english": "I made a mistake common among beginners.",
+        "source": "original"
+      },
+      {
+        "japanese": "現代人にありがちな悩みだ。",
+        "english": "It's a worry common to modern people.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "sono-mono",
@@ -2110,12 +3202,26 @@
       "kagiri-da-emotional"
     ],
     "examples": [
-      {"japanese": "彼は親切そのものだ。", "english": "He is kindness itself.", "source": "original"},
-      {"japanese": "彼女は健康そのものだ。", "english": "She is the picture of health.", "source": "original"},
-      {"japanese": "その景色は美しさそのものだった。", "english": "That scenery was beauty itself.", "source": "original"}
+      {
+        "japanese": "彼は親切そのものだ。",
+        "english": "He is kindness itself.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女は健康そのものだ。",
+        "english": "She is the picture of health.",
+        "source": "original"
+      },
+      {
+        "japanese": "その景色は美しさそのものだった。",
+        "english": "That scenery was beauty itself.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "katagata-combining",
@@ -2137,12 +3243,26 @@
       "tsuide-ni"
     ],
     "examples": [
-      {"japanese": "お礼かたがた、ご挨拶に伺います。", "english": "I will visit you for a greeting, which also serves as thanks.", "source": "original"},
-      {"japanese": "ご報告かたがた、お手紙を差し上げます。", "english": "I'm sending a letter that also serves as a report.", "source": "original"},
-      {"japanese": "散歩かたがた、郵便局へ行った。", "english": "I went to the post office, which was also a walk.", "source": "original"}
+      {
+        "japanese": "お礼かたがた、ご挨拶に伺います。",
+        "english": "I will visit you for a greeting, which also serves as thanks.",
+        "source": "original"
+      },
+      {
+        "japanese": "ご報告かたがた、お手紙を差し上げます。",
+        "english": "I'm sending a letter that also serves as a report.",
+        "source": "original"
+      },
+      {
+        "japanese": "散歩かたがた、郵便局へ行った。",
+        "english": "I went to the post office, which was also a walk.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "n-to-suru",
@@ -2164,12 +3284,26 @@
       "n-bakari"
     ],
     "examples": [
-      {"japanese": "彼の言わんとするところを理解した。", "english": "I understood what he was trying to say.", "source": "original"},
-      {"japanese": "太陽が沈まんとしている。", "english": "The sun is about to set.", "source": "original"},
-      {"japanese": "新たな時代が始まらんとしている。", "english": "A new era is about to begin.", "source": "original"}
+      {
+        "japanese": "彼の言わんとするところを理解した。",
+        "english": "I understood what he was trying to say.",
+        "source": "original"
+      },
+      {
+        "japanese": "太陽が沈まんとしている。",
+        "english": "The sun is about to set.",
+        "source": "original"
+      },
+      {
+        "japanese": "新たな時代が始まらんとしている。",
+        "english": "A new era is about to begin.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-soui-nai",
@@ -2191,12 +3325,26 @@
       "hazu-expected"
     ],
     "examples": [
-      {"japanese": "彼が犯人に相違ない。", "english": "There's no doubt he's the culprit.", "source": "original"},
-      {"japanese": "この話は事実に相違ない。", "english": "This story is certainly true.", "source": "original"},
-      {"japanese": "成功するに相違ないと信じている。", "english": "I believe he'll certainly succeed.", "source": "original"}
+      {
+        "japanese": "彼が犯人に相違ない。",
+        "english": "There's no doubt he's the culprit.",
+        "source": "original"
+      },
+      {
+        "japanese": "この話は事実に相違ない。",
+        "english": "This story is certainly true.",
+        "source": "original"
+      },
+      {
+        "japanese": "成功するに相違ないと信じている。",
+        "english": "I believe he'll certainly succeed.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "yue-no",
@@ -2218,12 +3366,26 @@
       "mono-dakara"
     ],
     "examples": [
-      {"japanese": "それは貧しさゆえの苦労だった。", "english": "It was a hardship stemming from poverty.", "source": "original"},
-      {"japanese": "若さゆえの失敗は、誰にでもある。", "english": "Mistakes stemming from youth — everyone has them.", "source": "original"},
-      {"japanese": "彼の成功は努力ゆえのものだ。", "english": "His success is something stemming from effort.", "source": "original"}
+      {
+        "japanese": "それは貧しさゆえの苦労だった。",
+        "english": "It was a hardship stemming from poverty.",
+        "source": "original"
+      },
+      {
+        "japanese": "若さゆえの失敗は、誰にでもある。",
+        "english": "Mistakes stemming from youth — everyone has them.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼の成功は努力ゆえのものだ。",
+        "english": "His success is something stemming from effort.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-atte-wa",
@@ -2245,12 +3407,26 @@
       "kara-ni-wa"
     ],
     "examples": [
-      {"japanese": "緊急事態とあっては、すぐ駆けつけなければならない。", "english": "If it's an emergency, I have to rush over right away.", "source": "original"},
-      {"japanese": "彼の頼みとあっては、断れない。", "english": "If it's his request, I can't refuse.", "source": "original"},
-      {"japanese": "子供のためとあっては、仕方がない。", "english": "If it's for the children, it can't be helped.", "source": "original"}
+      {
+        "japanese": "緊急事態とあっては、すぐ駆けつけなければならない。",
+        "english": "If it's an emergency, I have to rush over right away.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼の頼みとあっては、断れない。",
+        "english": "If it's his request, I can't refuse.",
+        "source": "original"
+      },
+      {
+        "japanese": "子供のためとあっては、仕方がない。",
+        "english": "If it's for the children, it can't be helped.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-kakawaru",
@@ -2272,12 +3448,26 @@
       "ni-kakatte-iru"
     ],
     "examples": [
-      {"japanese": "これは命に関わる問題だ。", "english": "This is a matter of life and death.", "source": "original"},
-      {"japanese": "会社の信用に関わるから、慎重に対応すべきだ。", "english": "It concerns the company's credibility, so we should handle it carefully.", "source": "original"},
-      {"japanese": "名誉に関わる事件が起こった。", "english": "An incident affecting honor has occurred.", "source": "original"}
+      {
+        "japanese": "これは命に関わる問題だ。",
+        "english": "This is a matter of life and death.",
+        "source": "original"
+      },
+      {
+        "japanese": "会社の信用に関わるから、慎重に対応すべきだ。",
+        "english": "It concerns the company's credibility, so we should handle it carefully.",
+        "source": "original"
+      },
+      {
+        "japanese": "名誉に関わる事件が起こった。",
+        "english": "An incident affecting honor has occurred.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mono-wo-if-only",
@@ -2299,12 +3489,26 @@
       "noni-although"
     ],
     "examples": [
-      {"japanese": "早く言ってくれればよかったものを。", "english": "If only you had told me sooner.", "source": "original"},
-      {"japanese": "素直に謝ればいいものを、彼は頑なだ。", "english": "He should just apologize, but he's stubborn.", "source": "original"},
-      {"japanese": "少し休めばよかったものを、無理してしまった。", "english": "I should have rested a bit, but I pushed myself.", "source": "original"}
+      {
+        "japanese": "早く言ってくれればよかったものを。",
+        "english": "If only you had told me sooner.",
+        "source": "original"
+      },
+      {
+        "japanese": "素直に謝ればいいものを、彼は頑なだ。",
+        "english": "He should just apologize, but he's stubborn.",
+        "source": "original"
+      },
+      {
+        "japanese": "少し休めばよかったものを、無理してしまった。",
+        "english": "I should have rested a bit, but I pushed myself.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-minasu",
@@ -2325,12 +3529,26 @@
       "ni-hoka-naranai"
     ],
     "examples": [
-      {"japanese": "無断欠席は退学とみなされる。", "english": "Unexcused absence will be regarded as withdrawal.", "source": "original"},
-      {"japanese": "返事がない場合は、同意とみなします。", "english": "If there's no reply, we will consider it as consent.", "source": "original"},
-      {"japanese": "彼を犯人とみなすのは早すぎる。", "english": "It's too early to regard him as the culprit.", "source": "original"}
+      {
+        "japanese": "無断欠席は退学とみなされる。",
+        "english": "Unexcused absence will be regarded as withdrawal.",
+        "source": "original"
+      },
+      {
+        "japanese": "返事がない場合は、同意とみなします。",
+        "english": "If there's no reply, we will consider it as consent.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼を犯人とみなすのは早すぎる。",
+        "english": "It's too early to regard him as the culprit.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mai-ka-wonder",
@@ -2352,12 +3570,26 @@
       "kamoshirenai-might"
     ],
     "examples": [
-      {"japanese": "これは間違いではあるまいか。", "english": "I wonder if this isn't a mistake.", "source": "original"},
-      {"japanese": "彼が知っているのではあるまいか。", "english": "I wonder if he might know.", "source": "original"},
-      {"japanese": "今が最後のチャンスではあるまいか。", "english": "I wonder if now isn't the last chance.", "source": "original"}
+      {
+        "japanese": "これは間違いではあるまいか。",
+        "english": "I wonder if this isn't a mistake.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼が知っているのではあるまいか。",
+        "english": "I wonder if he might know.",
+        "source": "original"
+      },
+      {
+        "japanese": "今が最後のチャンスではあるまいか。",
+        "english": "I wonder if now isn't the last chance.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "you-ka-to-omou",
@@ -2379,12 +3611,26 @@
       "tsumori-intention"
     ],
     "examples": [
-      {"japanese": "留学しようかと思っています。", "english": "I'm considering studying abroad.", "source": "original"},
-      {"japanese": "会社を辞めようかと思っている。", "english": "I'm thinking of quitting the company.", "source": "original"},
-      {"japanese": "新しいパソコンを買おうかと思う。", "english": "I'm thinking of buying a new computer.", "source": "original"}
+      {
+        "japanese": "留学しようかと思っています。",
+        "english": "I'm considering studying abroad.",
+        "source": "original"
+      },
+      {
+        "japanese": "会社を辞めようかと思っている。",
+        "english": "I'm thinking of quitting the company.",
+        "source": "original"
+      },
+      {
+        "japanese": "新しいパソコンを買おうかと思う。",
+        "english": "I'm thinking of buying a new computer.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "osore-ga-aru",
@@ -2405,12 +3651,26 @@
       "kamoshirenai-might"
     ],
     "examples": [
-      {"japanese": "明日は大雨の恐れがあります。", "english": "There's a risk of heavy rain tomorrow.", "source": "original"},
-      {"japanese": "この薬には副作用の恐れがある。", "english": "This medicine has a risk of side effects.", "source": "original"},
-      {"japanese": "地震が発生する恐れがある。", "english": "There's a risk of an earthquake occurring.", "source": "original"}
+      {
+        "japanese": "明日は大雨の恐れがあります。",
+        "english": "There's a risk of heavy rain tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "この薬には副作用の恐れがある。",
+        "english": "This medicine has a risk of side effects.",
+        "source": "original"
+      },
+      {
+        "japanese": "地震が発生する恐れがある。",
+        "english": "There's a risk of an earthquake occurring.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "hoka-naranu",
@@ -2431,12 +3691,26 @@
       "koso-precisely"
     ],
     "examples": [
-      {"japanese": "ほかならぬあなたの頼みだから、引き受けよう。", "english": "Since it's a request from none other than you, I'll take it on.", "source": "original"},
-      {"japanese": "これはほかならぬ私自身の決断だ。", "english": "This is a decision from none other than myself.", "source": "original"},
-      {"japanese": "ほかならぬ家族のためだ。", "english": "It's for none other than my family.", "source": "original"}
+      {
+        "japanese": "ほかならぬあなたの頼みだから、引き受けよう。",
+        "english": "Since it's a request from none other than you, I'll take it on.",
+        "source": "original"
+      },
+      {
+        "japanese": "これはほかならぬ私自身の決断だ。",
+        "english": "This is a decision from none other than myself.",
+        "source": "original"
+      },
+      {
+        "japanese": "ほかならぬ家族のためだ。",
+        "english": "It's for none other than my family.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "hodo-dewa-nai",
@@ -2458,12 +3732,26 @@
       "hodo-no-mono-dewa-nai"
     ],
     "examples": [
-      {"japanese": "痛いけど、病院に行くほどではない。", "english": "It hurts, but not to the extent of going to the hospital.", "source": "original"},
-      {"japanese": "忙しいが、断るほどではない。", "english": "I'm busy, but not so much that I need to decline.", "source": "original"},
-      {"japanese": "難しいけど、不可能なほどではない。", "english": "It's difficult, but not to the extent of being impossible.", "source": "original"}
+      {
+        "japanese": "痛いけど、病院に行くほどではない。",
+        "english": "It hurts, but not to the extent of going to the hospital.",
+        "source": "original"
+      },
+      {
+        "japanese": "忙しいが、断るほどではない。",
+        "english": "I'm busy, but not so much that I need to decline.",
+        "source": "original"
+      },
+      {
+        "japanese": "難しいけど、不可能なほどではない。",
+        "english": "It's difficult, but not to the extent of being impossible.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-aki-tarazu",
@@ -2485,12 +3773,26 @@
       "no-minarazu"
     ],
     "examples": [
-      {"japanese": "彼は現状に飽き足らず、新しい挑戦を始めた。", "english": "Not content with the status quo, he began a new challenge.", "source": "original"},
-      {"japanese": "国内市場に飽き足らず、海外進出を図った。", "english": "Not satisfied with the domestic market, they pursued overseas expansion.", "source": "original"},
-      {"japanese": "小さな成功に飽き足らず、さらに上を目指した。", "english": "Not content with small successes, he aimed higher.", "source": "original"}
+      {
+        "japanese": "彼は現状に飽き足らず、新しい挑戦を始めた。",
+        "english": "Not content with the status quo, he began a new challenge.",
+        "source": "original"
+      },
+      {
+        "japanese": "国内市場に飽き足らず、海外進出を図った。",
+        "english": "Not satisfied with the domestic market, they pursued overseas expansion.",
+        "source": "original"
+      },
+      {
+        "japanese": "小さな成功に飽き足らず、さらに上を目指した。",
+        "english": "Not content with small successes, he aimed higher.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "beku-shite",
@@ -2512,12 +3814,26 @@
       "ni-chigainai-must"
     ],
     "examples": [
-      {"japanese": "この事件は起こるべくして起こった。", "english": "This incident happened as it was destined to happen.", "source": "original"},
-      {"japanese": "彼は勝つべくして勝った。", "english": "He won as he was bound to win.", "source": "original"},
-      {"japanese": "失敗するべくして失敗した。", "english": "He failed as he was destined to.", "source": "original"}
+      {
+        "japanese": "この事件は起こるべくして起こった。",
+        "english": "This incident happened as it was destined to happen.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は勝つべくして勝った。",
+        "english": "He won as he was bound to win.",
+        "source": "original"
+      },
+      {
+        "japanese": "失敗するべくして失敗した。",
+        "english": "He failed as he was destined to.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "taru-yuen",
@@ -2538,12 +3854,26 @@
       "toshite-as"
     ],
     "examples": [
-      {"japanese": "考えることこそ、人間たるゆえんだ。", "english": "Thinking is what makes us human.", "source": "original"},
-      {"japanese": "誠実さが、教師たるゆえんだ。", "english": "Sincerity is what makes a teacher a teacher.", "source": "original"},
-      {"japanese": "責任感がリーダーたるゆえんだ。", "english": "A sense of responsibility is what makes a leader.", "source": "original"}
+      {
+        "japanese": "考えることこそ、人間たるゆえんだ。",
+        "english": "Thinking is what makes us human.",
+        "source": "original"
+      },
+      {
+        "japanese": "誠実さが、教師たるゆえんだ。",
+        "english": "Sincerity is what makes a teacher a teacher.",
+        "source": "original"
+      },
+      {
+        "japanese": "責任感がリーダーたるゆえんだ。",
+        "english": "A sense of responsibility is what makes a leader.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "iyashiku-mo",
@@ -2565,12 +3895,26 @@
       "beki-da"
     ],
     "examples": [
-      {"japanese": "いやしくも教師であるなら、模範となるべきだ。", "english": "If one is truly a teacher, one should be a model.", "source": "original"},
-      {"japanese": "いやしくも社会人である以上、責任を持つべきだ。", "english": "If one is truly a working adult, one should take responsibility.", "source": "original"},
-      {"japanese": "いやしくもプロフェッショナルなら、妥協してはならない。", "english": "If one is truly a professional, one must not compromise.", "source": "original"}
+      {
+        "japanese": "いやしくも教師であるなら、模範となるべきだ。",
+        "english": "If one is truly a teacher, one should be a model.",
+        "source": "original"
+      },
+      {
+        "japanese": "いやしくも社会人である以上、責任を持つべきだ。",
+        "english": "If one is truly a working adult, one should take responsibility.",
+        "source": "original"
+      },
+      {
+        "japanese": "いやしくもプロフェッショナルなら、妥協してはならない。",
+        "english": "If one is truly a professional, one must not compromise.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "n-to-bakari-ni",
@@ -2592,12 +3936,26 @@
       "n-to-suru"
     ],
     "examples": [
-      {"japanese": "彼は今にも泣かんとばかりの表情だった。", "english": "He had an expression as if about to cry at any moment.", "source": "original"},
-      {"japanese": "叫ばんとばかりに、彼は拳を振り上げた。", "english": "He raised his fist as if about to shout.", "source": "original"},
-      {"japanese": "飛び掛からんとばかりに、犬が吠えた。", "english": "The dog barked as if about to jump.", "source": "original"}
+      {
+        "japanese": "彼は今にも泣かんとばかりの表情だった。",
+        "english": "He had an expression as if about to cry at any moment.",
+        "source": "original"
+      },
+      {
+        "japanese": "叫ばんとばかりに、彼は拳を振り上げた。",
+        "english": "He raised his fist as if about to shout.",
+        "source": "original"
+      },
+      {
+        "japanese": "飛び掛からんとばかりに、犬が吠えた。",
+        "english": "The dog barked as if about to jump.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ka-to-omou-to",
@@ -2619,12 +3977,26 @@
       "ka-nai-ka-no-uchi-ni"
     ],
     "examples": [
-      {"japanese": "泣いたかと思うと、すぐ笑い出した。", "english": "No sooner had she cried than she started laughing.", "source": "original"},
-      {"japanese": "晴れたかと思うと、雨が降り出した。", "english": "Just when it cleared up, it started raining.", "source": "original"},
-      {"japanese": "寝たかと思ったら、もう起きている。", "english": "Just when I thought he was asleep, he's already awake.", "source": "original"}
+      {
+        "japanese": "泣いたかと思うと、すぐ笑い出した。",
+        "english": "No sooner had she cried than she started laughing.",
+        "source": "original"
+      },
+      {
+        "japanese": "晴れたかと思うと、雨が降り出した。",
+        "english": "Just when it cleared up, it started raining.",
+        "source": "original"
+      },
+      {
+        "japanese": "寝たかと思ったら、もう起きている。",
+        "english": "Just when I thought he was asleep, he's already awake.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "sanagara",
@@ -2646,12 +4018,26 @@
       "gotoku-as-if"
     ],
     "examples": [
-      {"japanese": "その景色はまるで夢さながらだった。", "english": "The scenery was just like a dream.", "source": "original"},
-      {"japanese": "戦場さながらの現場だった。", "english": "It was a scene just like a battlefield.", "source": "original"},
-      {"japanese": "彼女はプロさながらの演奏を見せた。", "english": "She showed a performance just like a pro's.", "source": "original"}
+      {
+        "japanese": "その景色はまるで夢さながらだった。",
+        "english": "The scenery was just like a dream.",
+        "source": "original"
+      },
+      {
+        "japanese": "戦場さながらの現場だった。",
+        "english": "It was a scene just like a battlefield.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼女はプロさながらの演奏を見せた。",
+        "english": "She showed a performance just like a pro's.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "de-atta-to-shitemo",
@@ -2673,12 +4059,26 @@
       "tatoe-temo"
     ],
     "examples": [
-      {"japanese": "それが本当であったとしても、驚かない。", "english": "Even if that were true, I wouldn't be surprised.", "source": "original"},
-      {"japanese": "彼が犯人であったとしても、信じられない。", "english": "Even if he were the culprit, I couldn't believe it.", "source": "original"},
-      {"japanese": "成功であったとしても、喜べなかっただろう。", "english": "Even if it had been a success, I probably couldn't have been happy.", "source": "original"}
+      {
+        "japanese": "それが本当であったとしても、驚かない。",
+        "english": "Even if that were true, I wouldn't be surprised.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼が犯人であったとしても、信じられない。",
+        "english": "Even if he were the culprit, I couldn't believe it.",
+        "source": "original"
+      },
+      {
+        "japanese": "成功であったとしても、喜べなかっただろう。",
+        "english": "Even if it had been a success, I probably couldn't have been happy.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nomi-only",
@@ -2700,12 +4100,26 @@
       "shika-nai"
     ],
     "examples": [
-      {"japanese": "会員のみ入場できます。", "english": "Only members may enter.", "source": "original"},
-      {"japanese": "ただ努力するのみだ。", "english": "I can only strive.", "source": "original"},
-      {"japanese": "結果を待つのみだ。", "english": "All we can do is wait for the result.", "source": "original"}
+      {
+        "japanese": "会員のみ入場できます。",
+        "english": "Only members may enter.",
+        "source": "original"
+      },
+      {
+        "japanese": "ただ努力するのみだ。",
+        "english": "I can only strive.",
+        "source": "original"
+      },
+      {
+        "japanese": "結果を待つのみだ。",
+        "english": "All we can do is wait for the result.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "iwaba",
@@ -2727,12 +4141,26 @@
       "sanagara"
     ],
     "examples": [
-      {"japanese": "彼はいわば現代の芸術家だ。", "english": "He is, so to speak, a modern artist.", "source": "original"},
-      {"japanese": "これはいわば試金石のようなものだ。", "english": "This is, as it were, a kind of touchstone.", "source": "original"},
-      {"japanese": "いわば彼は家族の大黒柱だ。", "english": "So to speak, he is the pillar of the family.", "source": "original"}
+      {
+        "japanese": "彼はいわば現代の芸術家だ。",
+        "english": "He is, so to speak, a modern artist.",
+        "source": "original"
+      },
+      {
+        "japanese": "これはいわば試金石のようなものだ。",
+        "english": "This is, as it were, a kind of touchstone.",
+        "source": "original"
+      },
+      {
+        "japanese": "いわば彼は家族の大黒柱だ。",
+        "english": "So to speak, he is the pillar of the family.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "mo-kamawa-zu",
@@ -2754,12 +4182,26 @@
       "wo-kaerimi-zu"
     ],
     "examples": [
-      {"japanese": "彼は雨も構わず走り続けた。", "english": "He kept running despite the rain.", "source": "original"},
-      {"japanese": "人目も構わず、彼女は泣き出した。", "english": "Without caring who was watching, she burst into tears.", "source": "original"},
-      {"japanese": "危険も構わず、子供を助けに行った。", "english": "Without regard to the danger, he went to save the child.", "source": "original"}
+      {
+        "japanese": "彼は雨も構わず走り続けた。",
+        "english": "He kept running despite the rain.",
+        "source": "original"
+      },
+      {
+        "japanese": "人目も構わず、彼女は泣き出した。",
+        "english": "Without caring who was watching, she burst into tears.",
+        "source": "original"
+      },
+      {
+        "japanese": "危険も構わず、子供を助けに行った。",
+        "english": "Without regard to the danger, he went to save the child.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "shikamo-moreover",
@@ -2774,19 +4216,33 @@
       "More formal than 〜だけでなく or 〜ばかりか attached within a sentence.",
       "Formal / neutral register."
     ],
-    "formality": "formal",
+    "formality": "neutral",
     "related": [
       "bakari-ka-not-only",
       "ue-ni-in-addition",
       "soredemo-even-so"
     ],
     "examples": [
-      {"japanese": "彼は頭がいい。しかも、性格も素晴らしい。", "english": "He's smart. Moreover, his personality is wonderful.", "source": "original"},
-      {"japanese": "この商品は安い。しかも、品質もいい。", "english": "This product is cheap. What's more, the quality is good.", "source": "original"},
-      {"japanese": "雨が降っている。しかも、風も強い。", "english": "It's raining. On top of that, the wind is strong.", "source": "original"}
+      {
+        "japanese": "彼は頭がいい。しかも、性格も素晴らしい。",
+        "english": "He's smart. Moreover, his personality is wonderful.",
+        "source": "original"
+      },
+      {
+        "japanese": "この商品は安い。しかも、品質もいい。",
+        "english": "This product is cheap. What's more, the quality is good.",
+        "source": "original"
+      },
+      {
+        "japanese": "雨が降っている。しかも、風も強い。",
+        "english": "It's raining. On top of that, the wind is strong.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "bakari-no",
@@ -2808,12 +4264,26 @@
       "ippou-de-one-hand"
     ],
     "examples": [
-      {"japanese": "物価は上がるばかりだ。", "english": "Prices keep only going up.", "source": "original"},
-      {"japanese": "状況は悪くなるばかりだった。", "english": "The situation kept only getting worse.", "source": "original"},
-      {"japanese": "人口は減るばかりだ。", "english": "The population keeps only decreasing.", "source": "original"}
+      {
+        "japanese": "物価は上がるばかりだ。",
+        "english": "Prices keep only going up.",
+        "source": "original"
+      },
+      {
+        "japanese": "状況は悪くなるばかりだった。",
+        "english": "The situation kept only getting worse.",
+        "source": "original"
+      },
+      {
+        "japanese": "人口は減るばかりだ。",
+        "english": "The population keeps only decreasing.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ma-no-atari-ni",
@@ -2834,12 +4304,26 @@
       "wo-mae-ni-shite"
     ],
     "examples": [
-      {"japanese": "事故の瞬間を目の当たりにした。", "english": "I witnessed the moment of the accident firsthand.", "source": "original"},
-      {"japanese": "彼の努力を目の当たりにして、感動した。", "english": "Witnessing his effort firsthand, I was moved.", "source": "original"},
-      {"japanese": "歴史的な瞬間を目の当たりにした。", "english": "I witnessed a historic moment firsthand.", "source": "original"}
+      {
+        "japanese": "事故の瞬間を目の当たりにした。",
+        "english": "I witnessed the moment of the accident firsthand.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼の努力を目の当たりにして、感動した。",
+        "english": "Witnessing his effort firsthand, I was moved.",
+        "source": "original"
+      },
+      {
+        "japanese": "歴史的な瞬間を目の当たりにした。",
+        "english": "I witnessed a historic moment firsthand.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "oyoba-zu-nagara",
@@ -2861,12 +4345,26 @@
       "te-itadaku-polite-favor-received"
     ],
     "examples": [
-      {"japanese": "及ばずながら、お手伝いさせていただきます。", "english": "Though my ability may fall short, please let me help.", "source": "original"},
-      {"japanese": "及ばずながら、お力添えいたします。", "english": "To the best of my humble ability, I will support you.", "source": "original"},
-      {"japanese": "及ばずながら、努力いたします。", "english": "Though I may fall short, I will do my best.", "source": "original"}
+      {
+        "japanese": "及ばずながら、お手伝いさせていただきます。",
+        "english": "Though my ability may fall short, please let me help.",
+        "source": "original"
+      },
+      {
+        "japanese": "及ばずながら、お力添えいたします。",
+        "english": "To the best of my humble ability, I will support you.",
+        "source": "original"
+      },
+      {
+        "japanese": "及ばずながら、努力いたします。",
+        "english": "Though I may fall short, I will do my best.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "naku-te-nan-de-arou",
@@ -2888,12 +4386,26 @@
       "ni-soui-nai"
     ],
     "examples": [
-      {"japanese": "これが愛でなくてなんであろう。", "english": "If this isn't love, what else could it be?", "source": "original"},
-      {"japanese": "これが奇跡でなくてなんであろうか。", "english": "If this isn't a miracle, what else?", "source": "original"},
-      {"japanese": "これが幸せでなくてなんだろう。", "english": "If this isn't happiness, then what is?", "source": "original"}
+      {
+        "japanese": "これが愛でなくてなんであろう。",
+        "english": "If this isn't love, what else could it be?",
+        "source": "original"
+      },
+      {
+        "japanese": "これが奇跡でなくてなんであろうか。",
+        "english": "If this isn't a miracle, what else?",
+        "source": "original"
+      },
+      {
+        "japanese": "これが幸せでなくてなんだろう。",
+        "english": "If this isn't happiness, then what is?",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-ataru-correspond",
@@ -2914,12 +4426,26 @@
       "ni-hoka-naranai"
     ],
     "examples": [
-      {"japanese": "今日は父の誕生日に当たる。", "english": "Today corresponds to my father's birthday.", "source": "original"},
-      {"japanese": "彼は私の叔父に当たる。", "english": "He is my uncle (corresponds to my uncle).", "source": "original"},
-      {"japanese": "1ドルは約110円に当たる。", "english": "One dollar corresponds to about 110 yen.", "source": "original"}
+      {
+        "japanese": "今日は父の誕生日に当たる。",
+        "english": "Today corresponds to my father's birthday.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は私の叔父に当たる。",
+        "english": "He is my uncle (corresponds to my uncle).",
+        "source": "original"
+      },
+      {
+        "japanese": "1ドルは約110円に当たる。",
+        "english": "One dollar corresponds to about 110 yen.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "koto-mo-arou-ni",
@@ -2940,12 +4466,26 @@
       "aro-u-koto-ka"
     ],
     "examples": [
-      {"japanese": "こともあろうに、父の誕生日を忘れてしまった。", "english": "Of all things, I forgot my father's birthday.", "source": "original"},
-      {"japanese": "こともあろうに、彼はそこで転んだ。", "english": "Of all places, he fell there.", "source": "original"},
-      {"japanese": "こともあろうに、大事な会議に遅刻した。", "english": "Of all things, I was late to an important meeting.", "source": "original"}
+      {
+        "japanese": "こともあろうに、父の誕生日を忘れてしまった。",
+        "english": "Of all things, I forgot my father's birthday.",
+        "source": "original"
+      },
+      {
+        "japanese": "こともあろうに、彼はそこで転んだ。",
+        "english": "Of all places, he fell there.",
+        "source": "original"
+      },
+      {
+        "japanese": "こともあろうに、大事な会議に遅刻した。",
+        "english": "Of all things, I was late to an important meeting.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-wa-oyoba-nai",
@@ -2966,12 +4506,26 @@
       "ni-tari-nai"
     ],
     "examples": [
-      {"japanese": "ご心配には及びません。", "english": "There's no need for concern.", "source": "original"},
-      {"japanese": "お礼を言うには及ばない。", "english": "No need to thank me.", "source": "original"},
-      {"japanese": "私の実力は彼には及ばない。", "english": "My ability doesn't match his.", "source": "original"}
+      {
+        "japanese": "ご心配には及びません。",
+        "english": "There's no need for concern.",
+        "source": "original"
+      },
+      {
+        "japanese": "お礼を言うには及ばない。",
+        "english": "No need to thank me.",
+        "source": "original"
+      },
+      {
+        "japanese": "私の実力は彼には及ばない。",
+        "english": "My ability doesn't match his.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-soku-shite",
@@ -2993,12 +4547,26 @@
       "wo-motoni-based-on"
     ],
     "examples": [
-      {"japanese": "現実に即した対策が必要だ。", "english": "We need countermeasures in line with reality.", "source": "original"},
-      {"japanese": "事実に即して話してください。", "english": "Please speak in accordance with the facts.", "source": "original"},
-      {"japanese": "状況に即した判断を下した。", "english": "We made a judgment in line with the situation.", "source": "original"}
+      {
+        "japanese": "現実に即した対策が必要だ。",
+        "english": "We need countermeasures in line with reality.",
+        "source": "original"
+      },
+      {
+        "japanese": "事実に即して話してください。",
+        "english": "Please speak in accordance with the facts.",
+        "source": "original"
+      },
+      {
+        "japanese": "状況に即した判断を下した。",
+        "english": "We made a judgment in line with the situation.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-aimatte",
@@ -3020,12 +4588,26 @@
       "wo-kanete"
     ],
     "examples": [
-      {"japanese": "美しい景色と相まって、素晴らしい体験だった。", "english": "Combined with the beautiful scenery, it was a wonderful experience.", "source": "original"},
-      {"japanese": "努力と才能が相まって、成功を収めた。", "english": "Effort combined with talent, he achieved success.", "source": "original"},
-      {"japanese": "天候と相まって、売上が伸びた。", "english": "Combined with the weather, sales grew.", "source": "original"}
+      {
+        "japanese": "美しい景色と相まって、素晴らしい体験だった。",
+        "english": "Combined with the beautiful scenery, it was a wonderful experience.",
+        "source": "original"
+      },
+      {
+        "japanese": "努力と才能が相まって、成功を収めた。",
+        "english": "Effort combined with talent, he achieved success.",
+        "source": "original"
+      },
+      {
+        "japanese": "天候と相まって、売上が伸びた。",
+        "english": "Combined with the weather, sales grew.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tara-kiri-ga-nai",
@@ -3046,12 +4628,26 @@
       "hodo-extent"
     ],
     "examples": [
-      {"japanese": "欠点を挙げたらきりがない。", "english": "If you list the flaws, there's no end.", "source": "original"},
-      {"japanese": "言いたいことを言ったらきりがない。", "english": "If I said everything I wanted, there'd be no end.", "source": "original"},
-      {"japanese": "考えだしたらきりがない。", "english": "Once you start thinking about it, there's no end.", "source": "original"}
+      {
+        "japanese": "欠点を挙げたらきりがない。",
+        "english": "If you list the flaws, there's no end.",
+        "source": "original"
+      },
+      {
+        "japanese": "言いたいことを言ったらきりがない。",
+        "english": "If I said everything I wanted, there'd be no end.",
+        "source": "original"
+      },
+      {
+        "japanese": "考えだしたらきりがない。",
+        "english": "Once you start thinking about it, there's no end.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ga-sai-go",
@@ -3073,12 +4669,26 @@
       "hitotabi"
     ],
     "examples": [
-      {"japanese": "彼は寝たが最後、朝まで起きない。", "english": "Once he falls asleep, he won't wake until morning.", "source": "original"},
-      {"japanese": "言ってしまったら最後、もう戻れない。", "english": "Once you say it, there's no going back.", "source": "original"},
-      {"japanese": "始めたが最後、最後までやり遂げるつもりだ。", "english": "Once I've started, I intend to see it through.", "source": "original"}
+      {
+        "japanese": "彼は寝たが最後、朝まで起きない。",
+        "english": "Once he falls asleep, he won't wake until morning.",
+        "source": "original"
+      },
+      {
+        "japanese": "言ってしまったら最後、もう戻れない。",
+        "english": "Once you say it, there's no going back.",
+        "source": "original"
+      },
+      {
+        "japanese": "始めたが最後、最後までやり遂げるつもりだ。",
+        "english": "Once I've started, I intend to see it through.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "no-ue-nai",
@@ -3100,12 +4710,26 @@
       "kagiri-da-emotional"
     ],
     "examples": [
-      {"japanese": "お会いできて光栄この上ない。", "english": "To meet you is the utmost honor.", "source": "original"},
-      {"japanese": "幸せこの上ない人生だ。", "english": "Nothing could make my life more fortunate.", "source": "original"},
-      {"japanese": "彼と結婚できるなんて、嬉しいこの上ない。", "english": "To be able to marry him — I couldn't be happier.", "source": "original"}
+      {
+        "japanese": "お会いできて光栄この上ない。",
+        "english": "To meet you is the utmost honor.",
+        "source": "original"
+      },
+      {
+        "japanese": "幸せこの上ない人生だ。",
+        "english": "Nothing could make my life more fortunate.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼と結婚できるなんて、嬉しいこの上ない。",
+        "english": "To be able to marry him — I couldn't be happier.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-sareru",
@@ -3127,12 +4751,26 @@
       "rashii-seems"
     ],
     "examples": [
-      {"japanese": "彼は天才とされている。", "english": "He is considered a genius.", "source": "original"},
-      {"japanese": "この薬は安全だとされている。", "english": "This medicine is considered safe.", "source": "original"},
-      {"japanese": "事故の原因は運転ミスとされた。", "english": "The cause of the accident was deemed driver error.", "source": "original"}
+      {
+        "japanese": "彼は天才とされている。",
+        "english": "He is considered a genius.",
+        "source": "original"
+      },
+      {
+        "japanese": "この薬は安全だとされている。",
+        "english": "This medicine is considered safe.",
+        "source": "original"
+      },
+      {
+        "japanese": "事故の原因は運転ミスとされた。",
+        "english": "The cause of the accident was deemed driver error.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-oboshii",
@@ -3154,12 +4792,26 @@
       "to-mieru"
     ],
     "examples": [
-      {"japanese": "犯人とおぼしき男が現場から逃げた。", "english": "A man presumed to be the culprit fled the scene.", "source": "original"},
-      {"japanese": "記者とおぼしき人々が集まっていた。", "english": "People apparently journalists were gathered.", "source": "original"},
-      {"japanese": "外国人とおぼしき観光客がいた。", "english": "There was a tourist who seemed to be a foreigner.", "source": "original"}
+      {
+        "japanese": "犯人とおぼしき男が現場から逃げた。",
+        "english": "A man presumed to be the culprit fled the scene.",
+        "source": "original"
+      },
+      {
+        "japanese": "記者とおぼしき人々が集まっていた。",
+        "english": "People apparently journalists were gathered.",
+        "source": "original"
+      },
+      {
+        "japanese": "外国人とおぼしき観光客がいた。",
+        "english": "There was a tourist who seemed to be a foreigner.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "wo-hikiai-ni",
@@ -3180,12 +4832,26 @@
       "wo-tsuujite-through"
     ],
     "examples": [
-      {"japanese": "彼は歴史を引き合いに出して説明した。", "english": "He explained by citing history as an example.", "source": "original"},
-      {"japanese": "他国を引き合いに、日本の問題を論じた。", "english": "Citing other countries, he discussed Japan's problems.", "source": "original"},
-      {"japanese": "過去の事例を引き合いに出して、反論した。", "english": "He argued back by citing past cases.", "source": "original"}
+      {
+        "japanese": "彼は歴史を引き合いに出して説明した。",
+        "english": "He explained by citing history as an example.",
+        "source": "original"
+      },
+      {
+        "japanese": "他国を引き合いに、日本の問題を論じた。",
+        "english": "Citing other countries, he discussed Japan's problems.",
+        "source": "original"
+      },
+      {
+        "japanese": "過去の事例を引き合いに出して、反論した。",
+        "english": "He argued back by citing past cases.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "aro-u-koto-ka",
@@ -3207,12 +4873,26 @@
       "nan-te-how"
     ],
     "examples": [
-      {"japanese": "あろうことか、彼は約束を破った。", "english": "Unbelievably, he broke his promise.", "source": "original"},
-      {"japanese": "あろうことか、先生が生徒に手を出した。", "english": "Of all things, the teacher struck a student.", "source": "original"},
-      {"japanese": "あろうことか、重要な書類をなくした。", "english": "Unbelievably, I lost the important documents.", "source": "original"}
+      {
+        "japanese": "あろうことか、彼は約束を破った。",
+        "english": "Unbelievably, he broke his promise.",
+        "source": "original"
+      },
+      {
+        "japanese": "あろうことか、先生が生徒に手を出した。",
+        "english": "Of all things, the teacher struck a student.",
+        "source": "original"
+      },
+      {
+        "japanese": "あろうことか、重要な書類をなくした。",
+        "english": "Unbelievably, I lost the important documents.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "koso-are",
@@ -3234,12 +4914,26 @@
       "koso-precisely"
     ],
     "examples": [
-      {"japanese": "違いこそあれ、目的は同じだ。", "english": "Although there are differences, the goal is the same.", "source": "original"},
-      {"japanese": "困難こそあれ、諦めない。", "english": "Although there are difficulties, I won't give up.", "source": "original"},
-      {"japanese": "程度の差こそあれ、みんな同じ問題を抱えている。", "english": "Although to varying degrees, everyone has the same problem.", "source": "original"}
+      {
+        "japanese": "違いこそあれ、目的は同じだ。",
+        "english": "Although there are differences, the goal is the same.",
+        "source": "original"
+      },
+      {
+        "japanese": "困難こそあれ、諦めない。",
+        "english": "Although there are difficulties, I won't give up.",
+        "source": "original"
+      },
+      {
+        "japanese": "程度の差こそあれ、みんな同じ問題を抱えている。",
+        "english": "Although to varying degrees, everyone has the same problem.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "aro-u-tomo",
@@ -3261,12 +4955,26 @@
       "v-temo-even-if"
     ],
     "examples": [
-      {"japanese": "どうあろうとも、私は自分の道を歩む。", "english": "Whatever may happen, I will walk my own path.", "source": "original"},
-      {"japanese": "何があろうとも、諦めない。", "english": "Whatever happens, I won't give up.", "source": "original"},
-      {"japanese": "困難があろうとも、乗り越えてみせる。", "english": "Whatever difficulties, I will overcome them.", "source": "original"}
+      {
+        "japanese": "どうあろうとも、私は自分の道を歩む。",
+        "english": "Whatever may happen, I will walk my own path.",
+        "source": "original"
+      },
+      {
+        "japanese": "何があろうとも、諦めない。",
+        "english": "Whatever happens, I won't give up.",
+        "source": "original"
+      },
+      {
+        "japanese": "困難があろうとも、乗り越えてみせる。",
+        "english": "Whatever difficulties, I will overcome them.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "gurumi",
@@ -3287,12 +4995,26 @@
       "wa-mochiron"
     ],
     "examples": [
-      {"japanese": "家族ぐるみで付き合っている。", "english": "We interact as whole families (family to family).", "source": "original"},
-      {"japanese": "地域ぐるみで、この問題に取り組んでいる。", "english": "The whole community is working on this problem.", "source": "original"},
-      {"japanese": "会社ぐるみで不正をしていた。", "english": "The whole company was involved in the fraud.", "source": "original"}
+      {
+        "japanese": "家族ぐるみで付き合っている。",
+        "english": "We interact as whole families (family to family).",
+        "source": "original"
+      },
+      {
+        "japanese": "地域ぐるみで、この問題に取り組んでいる。",
+        "english": "The whole community is working on this problem.",
+        "source": "original"
+      },
+      {
+        "japanese": "会社ぐるみで不正をしていた。",
+        "english": "The whole company was involved in the fraud.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ikkou-ni-nai",
@@ -3312,12 +5034,26 @@
       "mo-nan-tomo-nai"
     ],
     "examples": [
-      {"japanese": "状況はいっこうに改善しない。", "english": "The situation doesn't improve at all.", "source": "original"},
-      {"japanese": "何度言ってもいっこうに変わらない。", "english": "No matter how many times I say it, nothing changes at all.", "source": "original"},
-      {"japanese": "薬を飲んでも、いっこうに効かない。", "english": "Even taking the medicine, it has no effect at all.", "source": "original"}
+      {
+        "japanese": "状況はいっこうに改善しない。",
+        "english": "The situation doesn't improve at all.",
+        "source": "original"
+      },
+      {
+        "japanese": "何度言ってもいっこうに変わらない。",
+        "english": "No matter how many times I say it, nothing changes at all.",
+        "source": "original"
+      },
+      {
+        "japanese": "薬を飲んでも、いっこうに効かない。",
+        "english": "Even taking the medicine, it has no effect at all.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ni-nazoraete",
@@ -3339,12 +5075,26 @@
       "gotoku-as-if"
     ],
     "examples": [
-      {"japanese": "人生を旅になぞらえて表現した。", "english": "He expressed life by comparing it to a journey.", "source": "original"},
-      {"japanese": "恋を花になぞらえた詩だ。", "english": "It's a poem that likens love to a flower.", "source": "original"},
-      {"japanese": "時の流れを川になぞらえている。", "english": "He likens the flow of time to a river.", "source": "original"}
+      {
+        "japanese": "人生を旅になぞらえて表現した。",
+        "english": "He expressed life by comparing it to a journey.",
+        "source": "original"
+      },
+      {
+        "japanese": "恋を花になぞらえた詩だ。",
+        "english": "It's a poem that likens love to a flower.",
+        "source": "original"
+      },
+      {
+        "japanese": "時の流れを川になぞらえている。",
+        "english": "He likens the flow of time to a river.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nuki-de",
@@ -3366,12 +5116,26 @@
       "igai-other-than"
     ],
     "examples": [
-      {"japanese": "ワサビ抜きで、お願いします。", "english": "Without wasabi, please.", "source": "original"},
-      {"japanese": "冗談抜きで、本当に困っている。", "english": "Joking aside, I'm really in trouble.", "source": "original"},
-      {"japanese": "彼抜きでは、このプロジェクトは進まない。", "english": "Without him, this project can't move forward.", "source": "original"}
+      {
+        "japanese": "ワサビ抜きで、お願いします。",
+        "english": "Without wasabi, please.",
+        "source": "original"
+      },
+      {
+        "japanese": "冗談抜きで、本当に困っている。",
+        "english": "Joking aside, I'm really in trouble.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼抜きでは、このプロジェクトは進まない。",
+        "english": "Without him, this project can't move forward.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tou-no",
@@ -3392,12 +5156,26 @@
       "sono-mono"
     ],
     "examples": [
-      {"japanese": "当の本人は全く気にしていない。", "english": "The person in question isn't bothered at all.", "source": "original"},
-      {"japanese": "当の先生が最も驚いていた。", "english": "The teacher in question was the most surprised.", "source": "original"},
-      {"japanese": "当の犯人はまだ捕まっていない。", "english": "The culprit in question still hasn't been caught.", "source": "original"}
+      {
+        "japanese": "当の本人は全く気にしていない。",
+        "english": "The person in question isn't bothered at all.",
+        "source": "original"
+      },
+      {
+        "japanese": "当の先生が最も驚いていた。",
+        "english": "The teacher in question was the most surprised.",
+        "source": "original"
+      },
+      {
+        "japanese": "当の犯人はまだ捕まっていない。",
+        "english": "The culprit in question still hasn't been caught.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "wo-kiwameru",
@@ -3419,12 +5197,26 @@
       "no-itari"
     ],
     "examples": [
-      {"japanese": "彼は剣道の技を極めた。", "english": "He mastered the craft of kendo.", "source": "original"},
-      {"japanese": "救助活動は困難を極めた。", "english": "The rescue operation reached extreme difficulty.", "source": "original"},
-      {"japanese": "現場は混乱を極めていた。", "english": "The scene was in utter confusion.", "source": "original"}
+      {
+        "japanese": "彼は剣道の技を極めた。",
+        "english": "He mastered the craft of kendo.",
+        "source": "original"
+      },
+      {
+        "japanese": "救助活動は困難を極めた。",
+        "english": "The rescue operation reached extreme difficulty.",
+        "source": "original"
+      },
+      {
+        "japanese": "現場は混乱を極めていた。",
+        "english": "The scene was in utter confusion.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "to-wa-urahara-ni",
@@ -3446,12 +5238,26 @@
       "you-de-seemingly"
     ],
     "examples": [
-      {"japanese": "期待とは裏腹に、結果は散々だった。", "english": "Contrary to expectations, the result was terrible.", "source": "original"},
-      {"japanese": "見た目とは裏腹に、彼は優しい。", "english": "Contrary to appearances, he is kind.", "source": "original"},
-      {"japanese": "言葉とは裏腹に、心の中では悲しんでいた。", "english": "Contrary to his words, he was sad in his heart.", "source": "original"}
+      {
+        "japanese": "期待とは裏腹に、結果は散々だった。",
+        "english": "Contrary to expectations, the result was terrible.",
+        "source": "original"
+      },
+      {
+        "japanese": "見た目とは裏腹に、彼は優しい。",
+        "english": "Contrary to appearances, he is kind.",
+        "source": "original"
+      },
+      {
+        "japanese": "言葉とは裏腹に、心の中では悲しんでいた。",
+        "english": "Contrary to his words, he was sad in his heart.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "hiite-wa",
@@ -3473,12 +5279,26 @@
       "yue-ni-because"
     ],
     "examples": [
-      {"japanese": "健康は自分のためであり、ひいては家族のためでもある。", "english": "Health is for yourself, and by extension, for your family.", "source": "original"},
-      {"japanese": "教育は個人の成長、ひいては社会の発展につながる。", "english": "Education leads to personal growth and, by extension, societal development.", "source": "original"},
-      {"japanese": "努力は今の成功、ひいては将来の幸せをもたらす。", "english": "Effort brings present success and, by extension, future happiness.", "source": "original"}
+      {
+        "japanese": "健康は自分のためであり、ひいては家族のためでもある。",
+        "english": "Health is for yourself, and by extension, for your family.",
+        "source": "original"
+      },
+      {
+        "japanese": "教育は個人の成長、ひいては社会の発展につながる。",
+        "english": "Education leads to personal growth and, by extension, societal development.",
+        "source": "original"
+      },
+      {
+        "japanese": "努力は今の成功、ひいては将来の幸せをもたらす。",
+        "english": "Effort brings present success and, by extension, future happiness.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "yoshi-mi",
@@ -3499,12 +5319,26 @@
       "toshite-as"
     ],
     "examples": [
-      {"japanese": "昔のよしみで、手伝ってくれないか。", "english": "For old times' sake, won't you help?", "source": "original"},
-      {"japanese": "友人のよしみで、お願いします。", "english": "For the sake of our friendship, please.", "source": "original"},
-      {"japanese": "同窓のよしみで、会ってくれた。", "english": "He met with me as a fellow alumnus.", "source": "original"}
+      {
+        "japanese": "昔のよしみで、手伝ってくれないか。",
+        "english": "For old times' sake, won't you help?",
+        "source": "original"
+      },
+      {
+        "japanese": "友人のよしみで、お願いします。",
+        "english": "For the sake of our friendship, please.",
+        "source": "original"
+      },
+      {
+        "japanese": "同窓のよしみで、会ってくれた。",
+        "english": "He met with me as a fellow alumnus.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "nagara-mo",
@@ -3526,12 +5360,26 @@
       "noni-although"
     ],
     "examples": [
-      {"japanese": "小さいながらも、立派な家だ。", "english": "Small though it is, it's a splendid house.", "source": "original"},
-      {"japanese": "子供ながらも、しっかりしている。", "english": "Although he's a child, he's very reliable.", "source": "original"},
-      {"japanese": "貧しいながらも、幸せに暮らしている。", "english": "Although poor, they live happily.", "source": "original"}
+      {
+        "japanese": "小さいながらも、立派な家だ。",
+        "english": "Small though it is, it's a splendid house.",
+        "source": "original"
+      },
+      {
+        "japanese": "子供ながらも、しっかりしている。",
+        "english": "Although he's a child, he's very reliable.",
+        "source": "original"
+      },
+      {
+        "japanese": "貧しいながらも、幸せに暮らしている。",
+        "english": "Although poor, they live happily.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "tada-de-sae",
@@ -3552,12 +5400,26 @@
       "noni-although"
     ],
     "examples": [
-      {"japanese": "ただでさえ忙しいのに、追加の仕事が来た。", "english": "Even normally busy, on top of that, extra work came.", "source": "original"},
-      {"japanese": "ただでさえ狭い部屋に、家具が増えた。", "english": "Even the normally cramped room, and now more furniture.", "source": "original"},
-      {"japanese": "ただでさえ眠いのに、会議が長い。", "english": "Already tired as it is, and the meeting is long.", "source": "original"}
+      {
+        "japanese": "ただでさえ忙しいのに、追加の仕事が来た。",
+        "english": "Even normally busy, on top of that, extra work came.",
+        "source": "original"
+      },
+      {
+        "japanese": "ただでさえ狭い部屋に、家具が増えた。",
+        "english": "Even the normally cramped room, and now more furniture.",
+        "source": "original"
+      },
+      {
+        "japanese": "ただでさえ眠いのに、会議が長い。",
+        "english": "Already tired as it is, and the meeting is long.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "ashikara-zu",
@@ -3578,12 +5440,26 @@
       "humble-o-suru"
     ],
     "examples": [
-      {"japanese": "今回はご要望にお応えできかねます。あしからず。", "english": "This time we cannot meet your request. Please understand.", "source": "original"},
-      {"japanese": "参加できませんが、あしからずご了承ください。", "english": "I cannot participate; please understand without taking offense.", "source": "original"},
-      {"japanese": "ご期待に添えず、あしからずご了承願います。", "english": "I'm unable to meet your expectations; please excuse me.", "source": "original"}
+      {
+        "japanese": "今回はご要望にお応えできかねます。あしからず。",
+        "english": "This time we cannot meet your request. Please understand.",
+        "source": "original"
+      },
+      {
+        "japanese": "参加できませんが、あしからずご了承ください。",
+        "english": "I cannot participate; please understand without taking offense.",
+        "source": "original"
+      },
+      {
+        "japanese": "ご期待に添えず、あしからずご了承願います。",
+        "english": "I'm unable to meet your expectations; please excuse me.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "manzara-de-mo-nai",
@@ -3605,12 +5481,26 @@
       "naku-mo-nai"
     ],
     "examples": [
-      {"japanese": "褒められて、彼はまんざらでもない顔をしていた。", "english": "Being praised, he looked not entirely displeased.", "source": "original"},
-      {"japanese": "嫌がっていたが、まんざらでもなさそうだ。", "english": "He was protesting, but he didn't seem entirely unhappy.", "source": "original"},
-      {"japanese": "その申し出は、まんざら悪い話でもない。", "english": "That offer isn't an entirely bad proposal.", "source": "original"}
+      {
+        "japanese": "褒められて、彼はまんざらでもない顔をしていた。",
+        "english": "Being praised, he looked not entirely displeased.",
+        "source": "original"
+      },
+      {
+        "japanese": "嫌がっていたが、まんざらでもなさそうだ。",
+        "english": "He was protesting, but he didn't seem entirely unhappy.",
+        "source": "original"
+      },
+      {
+        "japanese": "その申し出は、まんざら悪い話でもない。",
+        "english": "That offer isn't an entirely bad proposal.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "desura",
@@ -3632,24 +5522,38 @@
       "made-mo-nai"
     ],
     "examples": [
-      {"japanese": "子供ですら知っていることだ。", "english": "It's something even a child knows.", "source": "original"},
-      {"japanese": "専門家ですら分からない問題だ。", "english": "It's a problem even experts don't understand.", "source": "original"},
-      {"japanese": "彼の親ですら驚いた。", "english": "Even his parents were surprised.", "source": "original"}
+      {
+        "japanese": "子供ですら知っていることだ。",
+        "english": "It's something even a child knows.",
+        "source": "original"
+      },
+      {
+        "japanese": "専門家ですら分からない問題だ。",
+        "english": "It's a problem even experts don't understand.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼の親ですら驚いた。",
+        "english": "Even his parents were surprised.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "wo-shirime-ni",
     "pattern": "Noun + を尻目に",
     "level": "N1",
-    "meaning_en": "flippantly ignoring / with casual disregard",
-    "meaning_detailed": "〜を尻目に expresses that the subject acts 'with casual disregard' or 'flippantly ignoring' X — often with a slightly arrogant or indifferent nuance. 尻目 literally means 'side glance / corner of the eye'. Formal / literary register.",
+    "meaning_en": "disregarding / paying no heed to",
+    "meaning_detailed": "〜を尻目に expresses that the subject acts while disregarding or paying no heed to X — often with a nuance of indifference toward others' concerns or objections. 尻目 literally means 'side glance / corner of the eye'. Formal / literary register.",
     "formation": "Noun + を尻目に.",
     "formation_notes": [
-      "Casual disregard — 'barely glancing at X'.",
-      "Often with a hint of arrogance or indifference.",
-      "Common with 人目 ('others' eyes'), 心配 ('worries'), 反対 ('opposition').",
+      "Disregarding — 'paying no heed to X'.",
+      "Often with a nuance of indifference toward others' concerns.",
+      "Common with 心配 ('worries'), 反対 ('opposition'), 不況 ('recession').",
       "Formal / literary register."
     ],
     "formality": "formal",
@@ -3659,12 +5563,26 @@
       "mo-kamawa-zu"
     ],
     "examples": [
-      {"japanese": "彼は周囲の心配を尻目に、計画を進めた。", "english": "Flippantly disregarding everyone's worries, he pushed forward with the plan.", "source": "original"},
-      {"japanese": "反対を尻目に、彼は独断で決めた。", "english": "Casually ignoring opposition, he decided unilaterally.", "source": "original"},
-      {"japanese": "人目を尻目に、大声で歌っていた。", "english": "Disregarding onlookers, he was singing loudly.", "source": "original"}
+      {
+        "japanese": "彼は周囲の心配を尻目に、計画を進めた。",
+        "english": "Paying no heed to everyone's worries, he pushed forward with the plan.",
+        "source": "original"
+      },
+      {
+        "japanese": "反対を尻目に、彼は独断で決めた。",
+        "english": "Disregarding opposition, he decided unilaterally.",
+        "source": "original"
+      },
+      {
+        "japanese": "不況を尻目に、その会社は業績を伸ばした。",
+        "english": "Paying no heed to the recession, that company grew its results.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "koto-nagara",
@@ -3685,12 +5603,26 @@
       "narade-wa-no"
     ],
     "examples": [
-      {"japanese": "毎度のことながら、彼は遅刻した。", "english": "As always, he was late.", "source": "original"},
-      {"japanese": "いつものことながら、素晴らしい演奏だった。", "english": "As always, it was a splendid performance.", "source": "original"},
-      {"japanese": "彼の繊細な気遣いは、毎回のことながら感心する。", "english": "His delicate consideration — each time, I'm impressed.", "source": "original"}
+      {
+        "japanese": "毎度のことながら、彼は遅刻した。",
+        "english": "As always, he was late.",
+        "source": "original"
+      },
+      {
+        "japanese": "いつものことながら、素晴らしい演奏だった。",
+        "english": "As always, it was a splendid performance.",
+        "source": "original"
+      },
+      {
+        "japanese": "彼の繊細な気遣いは、毎回のことながら感心する。",
+        "english": "His delicate consideration — each time, I'm impressed.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   },
   {
     "id": "zaru-wo-enai",
@@ -3712,11 +5644,25 @@
       "wo-yogi-naku-sareru"
     ],
     "examples": [
-      {"japanese": "彼の意見に賛成せざるを得ない。", "english": "I cannot help but agree with his opinion.", "source": "original"},
-      {"japanese": "そう結論づけざるを得ない。", "english": "One cannot help but conclude so.", "source": "original"},
-      {"japanese": "事実を認めざるを得ない。", "english": "I have no choice but to acknowledge the facts.", "source": "original"}
+      {
+        "japanese": "彼の意見に賛成せざるを得ない。",
+        "english": "I cannot help but agree with his opinion.",
+        "source": "original"
+      },
+      {
+        "japanese": "そう結論づけざるを得ない。",
+        "english": "One cannot help but conclude so.",
+        "source": "original"
+      },
+      {
+        "japanese": "事実を認めざるを得ない。",
+        "english": "I have no choice but to acknowledge the facts.",
+        "source": "original"
+      }
     ],
     "review_status": "draft",
-    "sources": ["General Japanese grammar knowledge (non-copyrightable facts)."]
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   }
 ]
