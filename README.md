@@ -23,7 +23,7 @@ This repository assembles the puzzle once, commits the result, and provides a re
 
 ## Data inventory
 
-As of v0.8.0 (see `manifest.json` for live counts), the `data/` directory contains:
+As of the current build (see `manifest.json` for live counts), the `data/` directory contains:
 
 ### Core
 
@@ -57,6 +57,8 @@ As of v0.8.0 (see `manifest.json` for live counts), the `data/` directory contai
 | `data/enrichment/counter-words.json` | JMdict `ctr` POS entries via words.json | 125 | ✓ | Counter-word (josushi) index for counter-word study and lookup |
 | `data/enrichment/ateji.json` | JMdict `ateji` kanji tags via words.json | 239 | ✓ | Ateji (phonetic kanji spelling) index — words where kanji are used for sound, not meaning |
 | `data/enrichment/jukugo-compounds.json` | Derived from words.json + kanji.json | 14,350 | ✓ | Multi-kanji compound index with per-character meaning decomposition from KANJIDIC2 |
+| `data/enrichment/sentence-difficulty.json` | Derived from sentence corpora + JLPT | 702,197 | gitignored | JLPT-based difficulty estimate for every sentence across all corpora. Built on demand. |
+| `data/enrichment/frequency-tatoeba.json` | Derived from Tatoeba sentences | 12,298 | gitignored | Tatoeba corpus-derived word frequency. Built on demand. |
 
 ### Corpus
 
@@ -64,6 +66,9 @@ As of v0.8.0 (see `manifest.json` for live counts), the `data/` directory contai
 |---|---|---:|---|---|
 | `data/corpus/sentences.json` | Tatoeba (via jmdict-examples) | 25,980 | ✓ | Editor-curated JA–EN example sentence pairs (dedup'd by Tatoeba ID) |
 | `data/corpus/sentences-kftt.json` | KFTT (Wikipedia Kyoto) | 443,849 | gitignored | Machine-aligned JP-EN pairs from Wikipedia Kyoto articles. ~220 MB; built on demand. |
+| `data/corpus/sentences-tatoeba-full.json` | Tatoeba full export | 232,368 | gitignored | Full Tatoeba JP-EN corpus (superset of curated). Built on demand. |
+| `data/corpus/sentences-jesc.json` | JESC (subtitle corpus) | 2,801,388 | gitignored | Japanese-English subtitle sentence pairs from movies/TV. Built on demand. |
+| `data/corpus/sentences-wikimatrix.json` | WikiMatrix (OPUS) | 851,706 | gitignored | Wikipedia-mined JP-EN parallel pairs via LASER embeddings. Built on demand. |
 
 ### Grammar
 
@@ -84,6 +89,9 @@ As of v0.8.0 (see `manifest.json` for live counts), the `data/` directory contai
 | `data/cross-refs/reading-to-words.json` | Generated from `words.json` | 24,927 | ✓ | IME-style reverse lookup: kana reading → word IDs |
 | `data/cross-refs/radical-to-kanji.json` | Generated from `radicals.json` | 253 | ✓ | Reverse lookup: radical → kanji containing it |
 | `data/cross-refs/kanji-to-sentences.json` | Generated from `sentences.json` | 2,543 | ✓ | Every kanji → list of sentence IDs containing it |
+| `data/cross-refs/word-to-grammar.json` | Generated from `grammar.json` | 1,577 | ✓ | Every word → list of grammar point IDs matched by text |
+| `data/cross-refs/word-relations.json` | JMdict xref/antonym fields | 2,283 | ✓ | JMdict-curated word-to-word relations (related + antonym) |
+| `data/cross-refs/wordnet-synonyms.json` | Japanese WordNet (wn-ja) | 596,612 | gitignored | Synonym and hypernym relations from WordNet. Built on demand. |
 
 All files are schema-validated JSON with metadata headers crediting upstream sources. **Live counts are maintained in `manifest.json.counts` and refreshed by `just stats` on every build**; this table is a snapshot for discoverability.
 

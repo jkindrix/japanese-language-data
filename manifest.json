@@ -223,7 +223,7 @@
   "next_actions": [
     "Recruit native-speaker reviewers to move grammar entries from draft → native_speaker_reviewed (see docs/grammar-review.md for the operational review workflow).",
     "Expand grammar-to-sentence linking — current 90.3% pattern match rate (Tatoeba + KFTT) may improve with broader corpus matching or relaxed normalization.",
-    "Phase 4 remaining: expand Aozora curated selection (14 works → more), download Common Voice JA transcripts (needs Mozilla account), explore additional frequency sources. See docs/phase4-candidates.md.",
-    "Increase direct unit test coverage toward 85%+ (currently 81%; fail-under at 80%)."
+    "Phase 4 remaining: expand Aozora curated selection (47 works → more), download Common Voice JA transcripts (needs Mozilla account), explore additional frequency sources. See docs/phase4-candidates.md.",
+    "Increase direct unit test coverage toward 85%+ (currently 80%; fail-under at 80%). Low-coverage modules: validate.py (63%), conjugations.py (60%), aozora.py (50%)."
   ]
 }
