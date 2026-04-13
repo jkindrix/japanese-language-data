@@ -124,11 +124,17 @@ JMdict has tags for `hum` (humble), `pol` (polite), `hon` (honorific), `fam` (fa
 
 ## Corpus data
 
-### Parallel corpora beyond Tatoeba (PARTIALLY ADDRESSED)
+### Parallel corpora beyond Tatoeba (SUBSTANTIALLY ADDRESSED)
 
-As of v0.8.0, the dataset includes both Tatoeba (25,980 curated JP-EN pairs) and KFTT (443,849 Wikipedia-sourced JP-EN pairs, CC-BY-SA 3.0), totaling 469,829 sentences. KFTT sentences are machine-aligned from Wikipedia Kyoto articles — quality is variable compared to Tatoeba's editor-curated pairs.
+As of v0.8.0+, the dataset includes four parallel corpora totaling 4,355,291 sentence pairs:
 
-Remaining options (JParaCrawl, WMT Japanese-English pairs) have varying licenses and would add scale but not necessarily quality. Deferred unless a concrete need for additional parallel text arises.
+- Tatoeba curated: 25,980 editor-reviewed pairs
+- Tatoeba full: 232,368 community-contributed pairs
+- KFTT: 443,849 Wikipedia-sourced pairs (CC-BY-SA 3.0)
+- JESC: 2,801,388 conversational pairs from subtitles (CC-BY-SA 4.0)
+- WikiMatrix: 851,706 Wikipedia-mined pairs (CC-BY-SA 4.0)
+
+Remaining options (JParaCrawl — research-only license, CCMatrix — noisy web-mined) have varying licenses or quality concerns. The current corpus covers formal (KFTT, WikiMatrix), conversational (JESC), and curated (Tatoeba) registers.
 
 ### Balanced written corpus (NINJAL BCCWJ) (LICENSE)
 

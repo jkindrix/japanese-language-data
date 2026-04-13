@@ -332,6 +332,54 @@ The `freq` field in KANJIDIC2 entries (ingested via jmdict-simplified) provides 
 
 ---
 
+## JESC (Japanese-English Subtitle Corpus)
+
+- **What it is**: ~2.8 million conversational Japanese-English sentence pairs extracted from movie and TV subtitles.
+- **Where we use it**: `data/corpus/sentences-jesc.json` — conversational/colloquial register parallel sentences.
+- **License**: CC-BY-SA 4.0.
+- **Project page**: https://nlp.stanford.edu/projects/jesc/
+- **Reference**: Pryzant et al. "JESC: Japanese-English Subtitle Corpus" (arXiv:1710.10639).
+- **Pinned URL**: `https://nlp.stanford.edu/projects/jesc/data/raw.tar.gz`, SHA256-verified in `manifest.json`.
+- **Format**: Tab-separated `<english>\t<japanese>` pairs inside a tar.gz archive.
+- **Transform**: `build/transform/jesc.py`.
+
+---
+
+## WikiMatrix ja-en (via OPUS)
+
+- **What it is**: ~852K Japanese-English sentence pairs mined from Wikipedia using multilingual sentence embeddings (LASER).
+- **Where we use it**: `data/corpus/sentences-wikimatrix.json` — encyclopedic/formal register parallel sentences.
+- **License**: CC-BY-SA 4.0 (derived from Wikipedia).
+- **Reference**: Schwenk et al. "WikiMatrix: Mining 135M Parallel Sentences in 1620 Language Pairs from Wikipedia" (EACL 2021).
+- **Pinned URL**: `https://object.pouta.csc.fi/OPUS-WikiMatrix/v1/moses/en-ja.txt.zip`, SHA256-verified.
+- **Format**: ZIP containing line-aligned `.en` and `.ja` text files (Moses format, via OPUS).
+- **Transform**: `build/transform/wikimatrix.py`.
+
+### Quality note
+
+WikiMatrix pairs are embedding-aligned, not editor-curated. Alignment quality varies; some pairs contain mixed-language text or imperfect translations. The `curated: false` flag is set on all entries.
+
+---
+
+## Japanese WordNet (wn-ja) v1.1
+
+- **What it is**: A Japanese translation of Princeton WordNet 3.0, providing 93,834 Japanese words, 158,058 senses, and 283,600 semantic relations (hypernyms, hyponyms, meronyms, etc.).
+- **Where we use it**: `data/cross-refs/wordnet-synonyms.json` — synonym groups and hypernym pairs.
+- **License**: NICT permissive (BSD-style): free to use, copy, modify, and distribute for any purpose without fee or royalty.
+- **Project page**: https://bond-lab.github.io/wnja/
+- **Reference**: Isahara et al. "Development of the Japanese WordNet" (2008).
+- **Pinned URL**: `https://github.com/bond-lab/wnja/releases/download/v1.1/wnjpn.db.gz`, SHA256-verified.
+- **Format**: Gzipped SQLite database.
+- **Transform**: `build/transform/wordnet.py`. Decompresses the DB, queries Japanese synonym groups (words sharing synsets) and hypernym pairs, outputs structured JSON.
+
+### What we extract
+
+- **Synonym pairs**: 559,545 pairs of Japanese words that share at least one WordNet synset (i.e., near-synonyms). Each pair includes the synset ID and English definition.
+- **Hypernym pairs**: 37,067 pairs where one Japanese word is a more specific term (hyponym) for another (hypernym), e.g., 犬 IS-A 動物.
+- **Synset groups**: 21,152 synsets with 2+ Japanese words, enabling consumers to look up all synonyms for a concept.
+
+---
+
 ## Pinning strategy
 
 Every upstream source has two pinning components:

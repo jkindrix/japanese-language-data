@@ -253,6 +253,12 @@ We ingest JMdict, JMnedict, KANJIDIC2, KRADFILE, and RADKFILE via the pre-parsed
 >   see http://corpus.leeds.ac.uk/
 > - Pitch accent supplement from Japanese Wiktionary via wiktextract, CC-BY-SA 4.0;
 >   see https://ja.wiktionary.org/
+> - JESC (Japanese-English Subtitle Corpus) by Pryzant et al., CC-BY-SA 4.0;
+>   see https://nlp.stanford.edu/projects/jesc/
+> - WikiMatrix parallel sentences from OPUS, CC-BY-SA 4.0;
+>   see https://opus.nlpl.eu/WikiMatrix.php
+> - Japanese WordNet (wn-ja) v1.1 by NICT, permissive license;
+>   see https://bond-lab.github.io/wnja/
 > - JSON distribution tooling from scriptin/jmdict-simplified;
 >   see https://github.com/scriptin/jmdict-simplified
 >

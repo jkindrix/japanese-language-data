@@ -151,6 +151,30 @@ Status values:
 
 ## Addressed Phase 4 items
 
+### JESC (Japanese-English Subtitle Corpus) — **DELIVERED (v0.8.0+)**
+
+- **Status**: DELIVERED. 2,801,388 conversational JP-EN sentence pairs integrated.
+- **Source**: Stanford NLP, `https://nlp.stanford.edu/projects/jesc/data/raw.tar.gz`
+- **License**: CC-BY-SA 4.0 (compatible).
+- **Transform**: `build/transform/jesc.py`. Output: `data/corpus/sentences-jesc.json` (gitignored, built on demand).
+- **Value**: Fills the conversational/colloquial register gap — Tatoeba and KFTT are formal/curated.
+
+### WikiMatrix ja-en — **DELIVERED (v0.8.0+)**
+
+- **Status**: DELIVERED. 851,706 Wikipedia-mined JP-EN sentence pairs integrated.
+- **Source**: OPUS, `https://object.pouta.csc.fi/OPUS-WikiMatrix/v1/moses/en-ja.txt.zip`
+- **License**: CC-BY-SA 4.0 (derived from Wikipedia).
+- **Transform**: `build/transform/wikimatrix.py`. Output: `data/corpus/sentences-wikimatrix.json` (gitignored, built on demand).
+- **Value**: Supplements KFTT with broader Wikipedia coverage (KFTT is restricted to Kyoto articles).
+
+### Japanese WordNet (wn-ja) — **DELIVERED (v0.8.0+)**
+
+- **Status**: DELIVERED. 596,612 semantic relations (559,545 synonym + 37,067 hypernym pairs) across 87,995 unique Japanese words.
+- **Source**: NICT, `https://github.com/bond-lab/wnja/releases/download/v1.1/wnjpn.db.gz`
+- **License**: NICT permissive (BSD-style, no fee/royalty).
+- **Transform**: `build/transform/wordnet.py`. Output: `data/cross-refs/wordnet-synonyms.json` (gitignored, built on demand).
+- **Value**: Massively expands word relations from 2,283 (JMdict xrefs only) to 598,895 total semantic pairs.
+
 ### Radical meanings and Kangxi numbers — **ADDRESSED (v0.4.0 + v0.7.1)**
 
 - **Status**: DELIVERED in two increments. First Phase 4 candidate to reach stable completion.
