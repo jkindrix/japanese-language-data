@@ -78,6 +78,22 @@
         },
         "attribution": {
           "type": "string"
+        },
+        "corpus_size_tokens": {
+          "type": "integer",
+          "description": "Total number of tokens in the source corpus."
+        },
+        "tokenizer": {
+          "type": "string",
+          "description": "Tokenizer used for morphological analysis (e.g., MeCab with UniDic)."
+        },
+        "total_tokens": {
+          "type": "integer",
+          "description": "Total tokens counted after tokenization."
+        },
+        "unique_lemmas": {
+          "type": "integer",
+          "description": "Number of unique lemmas before vocabulary matching."
         }
       },
       "additionalProperties": false

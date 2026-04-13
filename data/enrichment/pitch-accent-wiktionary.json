@@ -13,7 +13,8 @@
       "reading": "Kana reading from Wiktionary pronunciation section.",
       "pitch_positions": "Mora positions (0=heiban, 1=atamadaka, N=drop after Nth mora).",
       "mora_count": "Number of morae in the reading."
-    }
+    },
+    "generated": "2026-04-12"
   },
   "entries": [
     {

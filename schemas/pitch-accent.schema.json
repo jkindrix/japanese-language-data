@@ -74,6 +74,19 @@
             "type": "string"
           },
           "description": "Data quality warnings (e.g., null mora_count rate)."
+        },
+        "note": {
+          "type": "string",
+          "description": "Additional context about the data source or extraction methodology."
+        },
+        "extraction_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when the data was extracted from the upstream source."
+        },
+        "wiktextract_dump_date": {
+          "type": "string",
+          "description": "Date of the Wiktionary dump processed by wiktextract."
         }
       },
       "additionalProperties": false
