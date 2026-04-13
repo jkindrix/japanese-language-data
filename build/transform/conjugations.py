@@ -17,6 +17,8 @@ Supported word classes:
     * vk — Kuru (来る) irregular.
     * vs-i — Suru-verb (compound -する).
     * adj-i — い-adjective.
+    * adj-ix — Irregular い-adjective (いい and compounds). All inflected
+      forms use よ- as the stem instead of い-.
     * adj-na — な-adjective (conjugates via copula forms).
 
 For ichidan and godan verbs, this module generates:
@@ -200,17 +202,17 @@ def _conjugate_godan(stem: str, pos: str) -> dict[str, str] | None:
             prefix = stem[:-2]
             forms["nai_form"] = prefix + "ない"
             forms["nakatta_form"] = prefix + "なかった"
-            # Compound v5r-i entries (ことがある, である, でもある) do not
-            # have well-formed potential/passive/causative/imperative/
-            # volitional/conditional_ba forms — the bare verb ある is
-            # itself restricted in these and compounds inherit the
-            # restriction. The regular godan-r derivation produced
-            # nonsensical output like ことがあれ (imperative of 事がある).
-            # Blank them so downstream consumers can treat empty string
-            # as "form not well-defined" instead of shipping wrong data.
+            # ある does not have potential, passive, or causative forms
+            # in any register of modern Japanese. Blank these for bare
+            # ある and all compounds.
+            for f in ("potential", "passive", "causative"):
+                forms[f] = ""
+            # Compound v5r-i entries (ことがある, である, でもある)
+            # additionally lack imperative/volitional/conditional_ba.
+            # Bare ある keeps these: あれ (literary: 幸あれ), あろう
+            # (literary: あろうとも), あれば (common: 時間があれば).
             if prefix:
-                for f in ("potential", "passive", "causative",
-                          "imperative", "volitional", "conditional_ba"):
+                for f in ("imperative", "volitional", "conditional_ba"):
                     forms[f] = ""
 
     return forms
@@ -280,6 +282,28 @@ def _conjugate_i_adjective(stem: str) -> dict[str, str] | None:
     }
 
 
+def _conjugate_ix_adjective(stem: str) -> dict[str, str] | None:
+    """Irregular い-adjectives (adj-ix). Stem must end in いい.
+
+    All inflected forms use よ- instead of い- as the stem.
+    Applies to いい and compounds like かっこいい, 格好いい, etc.
+    """
+    if not stem.endswith("いい"):
+        return None
+    # Replace final いい with よ- for all inflected forms
+    root = stem[:-2] + "よ"
+    return {
+        "dictionary": stem,
+        "negative": root + "くない",
+        "past": root + "かった",
+        "past_negative": root + "くなかった",
+        "adverbial": root + "く",
+        "te_form": root + "くて",
+        "conditional_ba": root + "ければ",
+        "conditional_tara": root + "かったら",
+    }
+
+
 def _conjugate_na_adjective(stem: str) -> dict[str, str]:
     """な-adjectives conjugate via the copula. Stem is the bare form."""
     return {
@@ -290,6 +314,8 @@ def _conjugate_na_adjective(stem: str) -> dict[str, str]:
         "polite_past_negative": stem + "ではありませんでした",
         "te_form": stem + "で",
         "nai_form": stem + "ではない",
+        "ta_form": stem + "だった",
+        "nakatta_form": stem + "ではなかった",
         "attributive": stem + "な",  # Used to modify nouns
     }
 
@@ -450,6 +476,10 @@ def build() -> None:
                 # The only vk is くる
                 if reading in ("くる", "来る"):
                     forms = _conjugate_kuru()
+            elif cls == "adj-ix":
+                result = _conjugate_ix_adjective(reading)
+                if result is not None:
+                    forms = result
             elif cls == "adj-i":
                 result = _conjugate_i_adjective(reading)
                 if result is not None:
@@ -506,6 +536,7 @@ def build() -> None:
                 "v1": "Ichidan verbs: 食べる, 見る, 起きる, etc.",
                 "v5u-v5m": "Godan verbs grouped by the kana ending of the dictionary form.",
                 "adj-i": "い-adjectives: 高い, 新しい, 小さい, etc.",
+                "adj-ix": "Irregular い-adjectives: いい, かっこいい, etc. All inflected forms use よ- stem instead of い-.",
                 "adj-na": "な-adjectives: 静か, 元気, etc. (conjugate via the copula).",
                 "potential_ichidan_note": "Modern colloquial Japanese often drops the ら in ichidan potential forms (ら抜き言葉), e.g., 食べられる → 食べれる. We generate the traditional form; the ら-less form is grammatically nonstandard but widely used.",
             },
