@@ -2943,5 +2943,44 @@
     "sources": [
       "General Japanese grammar knowledge (non-copyrightable facts)."
     ]
+  },
+  {
+    "id": "kara-cause",
+    "pattern": "Plain or polite form + から",
+    "level": "N5",
+    "meaning_en": "because / since ___",
+    "meaning_detailed": "から following a clause means 'because' — it gives the reason or cause for something. The clause before から can be in either plain or polite form (though plain is more common in casual speech, polite in formal speech). から tends to be used when the speaker is giving a subjective reason or justification. It differs from ので (softer, more objective reason) in feel.",
+    "formation": "Clause (plain or polite) + から. Usually plain is used when the main clause is also plain, and polite for polite.",
+    "formation_notes": [
+      "から is more subjective/assertive than ので.",
+      "Can appear at the end of a sentence as an explanation: だから ('that's why').",
+      "Contrast with から as a particle meaning 'from' (N5) which attaches to nouns."
+    ],
+    "formality": "neutral",
+    "related": [
+      "node-cause",
+      "particle-kara-from"
+    ],
+    "examples": [
+      {
+        "japanese": "時間がないから、急ぎます。",
+        "english": "Because I don't have time, I'll hurry.",
+        "source": "original"
+      },
+      {
+        "japanese": "雨が降っているから、傘を持って行きます。",
+        "english": "Since it's raining, I'll take an umbrella.",
+        "source": "original"
+      },
+      {
+        "japanese": "暑いから、窓を開けてください。",
+        "english": "Because it's hot, please open the window.",
+        "source": "original"
+      }
+    ],
+    "review_status": "draft",
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
   }
 ]

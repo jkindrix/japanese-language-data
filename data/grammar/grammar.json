@@ -8,8 +8,8 @@
       "N1": 150,
       "N2": 149,
       "N3": 130,
-      "N4": 90,
-      "N5": 76
+      "N4": 89,
+      "N5": 77
     },
     "review_coverage": {
       "draft": 595,
@@ -32,7 +32,7 @@
       "link_rate_pct": 0.22,
       "method": "Two-pass text match against data/corpus/sentences.json: first exact, then conservatively normalized (trailing sentence-final punctuation and whitespace stripped). Normalization never collapses kanji/kana variants or changes width/case.",
       "pattern_match_points": 537,
-      "pattern_match_total": 2087,
+      "pattern_match_total": 2095,
       "pattern_match_pct": 90.25,
       "pattern_match_method": "Separate from example-text linkage. Extracts the Japanese core of each grammar pattern and searches sentences.json for sentences containing it. Up to 5 matches per grammar point. Stored in tatoeba_pattern_matches[] on each entry."
     },
@@ -5466,7 +5466,7 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "116473"
+        "191515"
       ]
     },
     {
@@ -6732,11 +6732,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74269",
-        "93030",
-        "105107",
-        "114108",
-        "114109"
+        "75246",
+        "113317",
+        "121934",
+        "123616",
+        "144622"
       ]
     },
     {
@@ -7968,11 +7968,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74482",
-        "149501",
-        "187492",
-        "217258",
-        "229108"
+        "74717",
+        "76337",
+        "142512",
+        "146102",
+        "173773"
       ]
     },
     {
@@ -8207,11 +8207,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "103259",
-        "114313",
-        "141195",
-        "186159",
-        "207356"
+        "4726",
+        "4925",
+        "74013",
+        "74026",
+        "74033"
       ]
     },
     {
@@ -9184,8 +9184,9 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "149289",
-        "234089"
+        "179295",
+        "194956",
+        "222082"
       ]
     },
     {
@@ -10004,11 +10005,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "77183",
-        "179369",
-        "180083",
-        "188807",
-        "192722"
+        "74186",
+        "82698",
+        "121243",
+        "144666",
+        "174900"
       ]
     },
     {
@@ -10370,9 +10371,10 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "81580",
-        "176730",
-        "188702"
+        "74334",
+        "85739",
+        "207412",
+        "225407"
       ]
     },
     {
@@ -11796,11 +11798,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74440",
-        "75273",
-        "75860",
-        "76755",
-        "76863"
+        "4726",
+        "4925",
+        "74013",
+        "74026",
+        "74033"
       ]
     },
     {
@@ -12752,7 +12754,9 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "163655"
+        "115918",
+        "171747",
+        "200816"
       ]
     },
     {
@@ -12781,8 +12785,8 @@
           "source": "original"
         },
         {
-          "japanese": "この報告書は正式な記録として保管してください。",
-          "english": "Please keep this report as an official record.",
+          "japanese": "この規則は絶対的なものとして守ってください。",
+          "english": "Please follow this rule as something absolute.",
           "source": "original"
         },
         {
@@ -13017,11 +13021,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "75110",
-        "75822",
-        "76078",
-        "76645",
-        "76788"
+        "4726",
+        "4925",
+        "74013",
+        "74026",
+        "74033"
       ]
     },
     {
@@ -13529,11 +13533,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74872",
-        "76840",
-        "78664",
-        "116307",
-        "157615"
+        "75601",
+        "76341",
+        "76606",
+        "76662",
+        "84074"
       ]
     },
     {
@@ -14727,11 +14731,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74027",
-        "74167",
-        "74290",
-        "74342",
-        "74399"
+        "4932",
+        "4951",
+        "4988",
+        "4995",
+        "74027"
       ]
     },
     {
@@ -15241,11 +15245,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "75373",
-        "75999",
-        "76146",
-        "76195",
-        "76230"
+        "121292",
+        "138461",
+        "143617",
+        "144378",
+        "151057"
       ]
     },
     {
@@ -15709,11 +15713,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74241",
-        "79126",
-        "122956",
-        "140438",
-        "141009"
+        "4726",
+        "4925",
+        "74013",
+        "74026",
+        "74033"
       ]
     },
     {
@@ -16507,11 +16511,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74190",
-        "74211",
-        "75389",
-        "75722",
-        "75855"
+        "74909",
+        "82663",
+        "90838",
+        "122516",
+        "122732"
       ]
     },
     {
@@ -16740,11 +16744,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74087",
-        "74192",
-        "74246",
-        "74453",
-        "74518"
+        "74095",
+        "74591",
+        "75284",
+        "76234",
+        "76416"
       ]
     },
     {
@@ -17664,11 +17668,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "76033",
-        "113513",
-        "113518",
-        "168105",
-        "212506"
+        "98043",
+        "124029",
+        "161071",
+        "213568",
+        "236419"
       ]
     },
     {
@@ -17711,11 +17715,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74981",
-        "80937",
-        "103576",
-        "122205",
-        "167697"
+        "4726",
+        "4925",
+        "74013",
+        "74026",
+        "74033"
       ]
     },
     {
@@ -17805,10 +17809,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "126294",
-        "141499",
-        "145572",
-        "185225"
+        "4726",
+        "4925",
+        "74013",
+        "74026",
+        "74033"
       ]
     },
     {
@@ -17851,11 +17856,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74720",
-        "75631",
-        "75705",
-        "76859",
-        "80263"
+        "4726",
+        "4925",
+        "74013",
+        "74026",
+        "74033"
       ]
     },
     {
@@ -17898,11 +17903,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74229",
-        "74547",
-        "74980",
-        "75217",
-        "75845"
+        "4726",
+        "4925",
+        "74013",
+        "74026",
+        "74033"
       ]
     },
     {
@@ -17945,11 +17950,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74380",
-        "75119",
-        "75150",
-        "75507",
-        "75712"
+        "4726",
+        "4925",
+        "74013",
+        "74026",
+        "74033"
       ]
     },
     {
@@ -18784,8 +18789,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "116346",
-        "127355"
+        "171828",
+        "172502",
+        "179319",
+        "213568",
+        "230971"
       ]
     },
     {
@@ -20641,52 +20649,6 @@
       ]
     },
     {
-      "id": "kara-cause",
-      "pattern": "Plain or polite form + から",
-      "level": "N4",
-      "meaning_en": "because / since ___",
-      "meaning_detailed": "から following a clause means 'because' — it gives the reason or cause for something. The clause before から can be in either plain or polite form (though plain is more common in casual speech, polite in formal speech). から tends to be used when the speaker is giving a subjective reason or justification. It differs from ので (softer, more objective reason) in feel.",
-      "formation": "Clause (plain or polite) + から. Usually plain is used when the main clause is also plain, and polite for polite.",
-      "formation_notes": [
-        "から is more subjective/assertive than ので.",
-        "Can appear at the end of a sentence as an explanation: だから ('that's why').",
-        "Contrast with から as a particle meaning 'from' (N5) which attaches to nouns."
-      ],
-      "formality": "neutral",
-      "related": [
-        "node-cause",
-        "particle-kara-from"
-      ],
-      "examples": [
-        {
-          "japanese": "時間がないから、急ぎます。",
-          "english": "Because I don't have time, I'll hurry.",
-          "source": "original"
-        },
-        {
-          "japanese": "雨が降っているから、傘を持って行きます。",
-          "english": "Since it's raining, I'll take an umbrella.",
-          "source": "original"
-        },
-        {
-          "japanese": "暑いから、窓を開けてください。",
-          "english": "Because it's hot, please open the window.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "4932",
-        "5232",
-        "74015",
-        "74027",
-        "74031"
-      ]
-    },
-    {
       "id": "node-cause",
       "pattern": "Plain form + ので",
       "level": "N4",
@@ -20818,11 +20780,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74040",
-        "74045",
-        "74050",
-        "74057",
-        "74170"
+        "4951",
+        "74094",
+        "74128",
+        "74175",
+        "74180"
       ]
     },
     {
@@ -21311,11 +21273,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4991",
-        "74050",
-        "74061",
-        "74083",
-        "74128"
+        "74026",
+        "74237",
+        "74493",
+        "76381",
+        "76916"
       ]
     },
     {
@@ -22294,11 +22256,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4858",
-        "5002",
-        "74064",
-        "74119",
-        "74125"
+        "4726",
+        "4925",
+        "74013",
+        "74026",
+        "74033"
       ]
     },
     {
@@ -22341,11 +22303,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "143956",
-        "170047",
-        "202078",
-        "234721",
-        "234722"
+        "74629",
+        "74841",
+        "147419",
+        "192821",
+        "225032"
       ]
     },
     {
@@ -24896,11 +24858,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74669",
-        "74742",
-        "75047",
-        "75168",
-        "75674"
+        "74022",
+        "74286",
+        "74427",
+        "74753",
+        "75068"
       ]
     },
     {
@@ -24940,11 +24902,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4995",
-        "74099",
-        "74159",
-        "74378",
-        "74790"
+        "74022",
+        "74026",
+        "74027",
+        "74036",
+        "74062"
       ]
     },
     {
@@ -25592,11 +25554,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74068",
-        "74182",
-        "74198",
-        "74213",
-        "74234"
+        "74027",
+        "74173",
+        "74269",
+        "74282",
+        "74388"
       ]
     },
     {
@@ -27243,6 +27205,52 @@
         "74024",
         "74030",
         "74039"
+      ]
+    },
+    {
+      "id": "kara-cause",
+      "pattern": "Plain or polite form + から",
+      "level": "N5",
+      "meaning_en": "because / since ___",
+      "meaning_detailed": "から following a clause means 'because' — it gives the reason or cause for something. The clause before から can be in either plain or polite form (though plain is more common in casual speech, polite in formal speech). から tends to be used when the speaker is giving a subjective reason or justification. It differs from ので (softer, more objective reason) in feel.",
+      "formation": "Clause (plain or polite) + から. Usually plain is used when the main clause is also plain, and polite for polite.",
+      "formation_notes": [
+        "から is more subjective/assertive than ので.",
+        "Can appear at the end of a sentence as an explanation: だから ('that's why').",
+        "Contrast with から as a particle meaning 'from' (N5) which attaches to nouns."
+      ],
+      "formality": "neutral",
+      "related": [
+        "node-cause",
+        "particle-kara-from"
+      ],
+      "examples": [
+        {
+          "japanese": "時間がないから、急ぎます。",
+          "english": "Because I don't have time, I'll hurry.",
+          "source": "original"
+        },
+        {
+          "japanese": "雨が降っているから、傘を持って行きます。",
+          "english": "Since it's raining, I'll take an umbrella.",
+          "source": "original"
+        },
+        {
+          "japanese": "暑いから、窓を開けてください。",
+          "english": "Because it's hot, please open the window.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "4932",
+        "5232",
+        "74015",
+        "74027",
+        "74031"
       ]
     }
   ]
