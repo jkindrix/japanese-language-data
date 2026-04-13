@@ -145,7 +145,7 @@ def build() -> None:
         "metadata": {
             "source": "OpenSubtitles 2018 word frequency via hermitdave/FrequencyWords",
             "source_url": "https://github.com/hermitdave/FrequencyWords",
-            "license": "MIT (FrequencyWords code); data derived from OpenSubtitles (open parallel corpus). Frequency counts are non-copyrightable facts.",
+            "license": "CC-BY-SA 4.0 (FrequencyWords content); MIT (FrequencyWords code). Data derived from OpenSubtitles parallel corpus.",
             "generated": BUILD_DATE,
             "count": len(entries),
             "corpus": (
@@ -158,7 +158,7 @@ def build() -> None:
             "kind": "word",
             "attribution": (
                 "Frequency data from FrequencyWords by Hermit Dave "
-                "(https://github.com/hermitdave/FrequencyWords, MIT license), "
+                "(https://github.com/hermitdave/FrequencyWords, CC-BY-SA 4.0), "
                 "derived from the OpenSubtitles parallel corpus "
                 "(https://www.opensubtitles.org/). Matched against JMdict "
                 "vocabulary for quality filtering."

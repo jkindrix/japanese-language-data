@@ -211,7 +211,7 @@ Produced at `data/enrichment/jlpt-classifications.json` with entries of the form
 
 **Project**: https://github.com/hermitdave/FrequencyWords
 **Underlying data**: OpenSubtitles 2018 Japanese subtitle corpus
-**License**: MIT (FrequencyWords code). Frequency counts are non-copyrightable facts.
+**License**: CC-BY-SA 4.0 (FrequencyWords content); MIT (FrequencyWords code). The upstream README specifies "MIT License for code. CC-by-sa-4.0 for content."
 **Our pin**: `content/2018/ja/ja_full.txt` on master branch, SHA256-verified in `manifest.json`.
 
 Spoken-media word frequency derived from movie, TV, and anime subtitles. The closest openly-licensed substitute for JPDB.
@@ -236,6 +236,21 @@ Per-character reading alignment (furigana) for JMdict entries. Maps individual k
 
 - 28,920 entries filtered to words in our common subset
 - Output: `data/enrichment/furigana.json`
+
+---
+
+## Aozora Bunko (added v0.8.0+)
+
+**Project**: https://www.aozora.gr.jp/
+**License**: Public domain (著作権なし — copyright expired). Aozora Bunko requests attribution per their usage guidelines.
+**Our pin**: Individual work HTML files, SHA256-verified per work.
+
+Curated literary corpus from public-domain Japanese literary works. Used for frequency analysis and reading practice material.
+
+### What we extract
+
+- Curated selection of literary works (prose text extracted from HTML)
+- Output: `data/phase4/aozora-corpus.json`
 
 ---
 

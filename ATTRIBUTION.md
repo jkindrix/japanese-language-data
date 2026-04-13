@@ -125,7 +125,7 @@ These contributors have granted permission for inclusion under the broader EDRDG
 
 **Copyright holder**: Hermit Dave (FrequencyWords tool); OpenSubtitles (underlying corpus).
 
-**License**: MIT (FrequencyWords code). Frequency counts are non-copyrightable facts derived from the OpenSubtitles parallel corpus.
+**License**: CC-BY-SA 4.0 (FrequencyWords content); MIT (FrequencyWords code). The upstream README specifies "MIT License for code. CC-by-sa-4.0 for content."
 
 **Project page**: https://github.com/hermitdave/FrequencyWords
 
@@ -135,7 +135,7 @@ These contributors have granted permission for inclusion under the broader EDRDG
 
 **Required attribution wording**:
 
-> Word frequency data from FrequencyWords by Hermit Dave (https://github.com/hermitdave/FrequencyWords, MIT license), derived from the OpenSubtitles parallel corpus (https://www.opensubtitles.org/).
+> Word frequency data from FrequencyWords by Hermit Dave (https://github.com/hermitdave/FrequencyWords, CC-BY-SA 4.0), derived from the OpenSubtitles parallel corpus (https://www.opensubtitles.org/).
 
 ### JmdictFurigana
 
@@ -199,6 +199,34 @@ Pitch accent data extracted from the Japanese-edition Wiktionary (ja.wiktionary.
 
 > Pitch accent data from Japanese Wiktionary (ja.wiktionary.org), extracted via wiktextract (https://github.com/tatuylonen/wiktextract). Content is CC-BY-SA 4.0 per Wikimedia Foundation terms.
 
+### Aozora Bunko
+
+**Copyright holder**: Individual authors (works in public domain); Aozora Bunko (digitization).
+
+**License**: Public domain (著作権なし — copyright expired). Aozora Bunko's digitization work requests attribution per their usage guidelines.
+
+**Project page**: https://www.aozora.gr.jp/
+
+**What we extract**: Curated literary corpus from public-domain Japanese literary works for frequency analysis and reading practice.
+
+**Required attribution wording**:
+
+> Literary corpus data from Aozora Bunko (https://www.aozora.gr.jp/), a digital library of Japanese public-domain works.
+
+### Wikipedia Kangxi radicals
+
+**Copyright holder**: Wikimedia Foundation contributors.
+
+**License**: CC-BY-SA 4.0.
+
+**Project page**: https://en.wikipedia.org/wiki/Kangxi_radical
+
+**What we extract**: English meanings and Kangxi radical numbers used to annotate RADKFILE radical entries. 242 of 253 RADKFILE radicals mapped to Kangxi equivalents via this source.
+
+**Required attribution wording**:
+
+> Kangxi radical English meanings from Wikipedia (https://en.wikipedia.org/wiki/Kangxi_radical), CC-BY-SA 4.0.
+
 ---
 
 ## Tooling and intermediate transformations
@@ -243,7 +271,7 @@ We ingest JMdict, JMnedict, KANJIDIC2, KRADFILE, and RADKFILE via the pre-parsed
 >   see https://github.com/mifunetoshiro/kanjium
 > - JLPT classifications adapted from Jonathan Waller's JLPT Resources, CC-BY;
 >   see http://www.tanos.co.uk/jlpt/
-> - Spoken-media word frequency from FrequencyWords/OpenSubtitles, MIT;
+> - Spoken-media word frequency from FrequencyWords/OpenSubtitles, CC-BY-SA 4.0;
 >   see https://github.com/hermitdave/FrequencyWords
 > - Furigana alignment from JmdictFurigana by Doublevil, CC-BY-SA 4.0;
 >   see https://github.com/Doublevil/JmdictFurigana
@@ -259,6 +287,10 @@ We ingest JMdict, JMnedict, KANJIDIC2, KRADFILE, and RADKFILE via the pre-parsed
 >   see https://opus.nlpl.eu/WikiMatrix.php
 > - Japanese WordNet (wn-ja) v1.1 by NICT, permissive license;
 >   see https://bond-lab.github.io/wnja/
+> - Kangxi radical data from Wikipedia, CC-BY-SA 4.0;
+>   see https://en.wikipedia.org/wiki/Kangxi_radical
+> - Aozora Bunko literary works (public domain);
+>   see https://www.aozora.gr.jp/
 > - JSON distribution tooling from scriptin/jmdict-simplified;
 >   see https://github.com/scriptin/jmdict-simplified
 >
