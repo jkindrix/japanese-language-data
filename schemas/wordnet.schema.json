@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/wordnet.schema.json",
+  "title": "WordNet semantic relations",
+  "description": "Synonym groups and semantic relations (synonym, hypernym) extracted from the Japanese WordNet (wn-ja). Each relation links two Japanese words that share a synset or have a hierarchical relationship.",
+  "schemaVersion": "0.9.0",
+  "type": "object",
+  "required": [
+    "metadata",
+    "synset_groups",
+    "relations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "synset_groups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/synsetGroup"
+      },
+      "description": "Groups of Japanese words sharing a WordNet synset."
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      },
+      "description": "Pairwise semantic relations between Japanese words."
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "generated",
+        "count",
+        "source",
+        "license",
+        "field_notes"
+      ],
+      "properties": {
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total number of relations."
+        },
+        "synonym_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "hypernym_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "synset_group_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unique_words": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "attribution": {
+          "type": "string"
+        },
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "synsetGroup": {
+      "type": "object",
+      "required": [
+        "synset_id",
+        "words"
+      ],
+      "properties": {
+        "synset_id": {
+          "type": "string",
+          "description": "WordNet synset identifier (e.g., '00001740-v')."
+        },
+        "words": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "description": "Japanese words belonging to this synset."
+        },
+        "definition_en": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "English gloss for this synset."
+        },
+        "definition_ja": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Japanese gloss for this synset."
+        }
+      },
+      "additionalProperties": false
+    },
+    "relation": {
+      "type": "object",
+      "required": [
+        "word_a",
+        "word_b",
+        "relation",
+        "synset_id"
+      ],
+      "properties": {
+        "word_a": {
+          "type": "string",
+          "description": "First word in the relation pair."
+        },
+        "word_b": {
+          "type": "string",
+          "description": "Second word in the relation pair."
+        },
+        "relation": {
+          "type": "string",
+          "enum": [
+            "synonym",
+            "hypernym"
+          ],
+          "description": "Type of semantic relation."
+        },
+        "synset_id": {
+          "type": "string",
+          "description": "WordNet synset linking the two words."
+        },
+        "definition_en": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "English gloss for the shared synset."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -56,6 +56,7 @@ def test_all_schemas_are_present() -> None:
     deletions or renames.
     """
     expected_names = {
+        "aozora.schema.json",
         "ateji.schema.json",
         "conjugations.schema.json",
         "counter-words.schema.json",
@@ -73,8 +74,11 @@ def test_all_schemas_are_present() -> None:
         "pitch-accent.schema.json",
         "radical.schema.json",
         "sentence.schema.json",
+        "sentence-difficulty.schema.json",
         "stroke-order.schema.json",
         "word.schema.json",
+        "word-relations.schema.json",
+        "wordnet.schema.json",
     }
     found_names = {p.name for p in _schema_files()}
     missing = expected_names - found_names

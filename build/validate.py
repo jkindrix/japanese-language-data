@@ -63,6 +63,16 @@ SCHEMA_MAP: dict[str, str] = {
     "data/enrichment/ateji.json": "ateji.schema.json",
     "data/enrichment/jukugo-compounds.json": "jukugo.schema.json",
     "data/cross-refs/word-to-grammar.json": "cross-refs.schema.json",
+    "data/corpus/sentences-jesc.json": "sentence.schema.json",
+    "data/corpus/sentences-wikimatrix.json": "sentence.schema.json",
+    "data/enrichment/frequency-tatoeba.json": "frequency.schema.json",
+    "data/enrichment/sentence-difficulty.json": "sentence-difficulty.schema.json",
+    "data/cross-refs/wordnet-synonyms.json": "wordnet.schema.json",
+    "data/cross-refs/word-relations.json": "word-relations.schema.json",
+    "data/cross-refs/kanji-to-words-full.json": "cross-refs.schema.json",
+    "data/cross-refs/word-to-kanji-full.json": "cross-refs.schema.json",
+    "data/cross-refs/reading-to-words-full.json": "cross-refs.schema.json",
+    "data/phase4/aozora-corpus.json": "aozora.schema.json",
 }
 
 
@@ -224,6 +234,23 @@ def _semantic_checks() -> list[tuple[str, str]]:
                 "k2r-missing-radicals",
                 f"kanji-to-radicals references {len(missing_rads)} radicals "
                 f"not in radicals.json: {sorted(missing_rads)[:10]}"
+            ))
+
+    # --- Check 2b: word-to-grammar referential integrity ---
+    w2g = _load_json_safe(DATA_DIR / "cross-refs" / "word-to-grammar.json")
+    if grammar_data and w2g:
+        grammar_ids = {g["id"] for g in grammar_data.get("grammar_points", [])}
+        w2g_mapping = w2g.get("mapping", {})
+        dangling_grammar = set()
+        for word_id, gids in w2g_mapping.items():
+            for gid in gids:
+                if gid not in grammar_ids:
+                    dangling_grammar.add(gid)
+        if dangling_grammar:
+            failures.append((
+                "w2g-dangling",
+                f"word-to-grammar references {len(dangling_grammar)} grammar IDs "
+                f"not in grammar.json: {sorted(dangling_grammar)[:5]}..."
             ))
 
     # --- Check 3: Bidirectional consistency (kanji↔words) ---

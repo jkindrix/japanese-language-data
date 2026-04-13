@@ -219,6 +219,7 @@ def test_validate_handles_missing_schema_gracefully() -> None:
 # ===================================================================
 
 EXPECTED_SCHEMAS = {
+    "aozora.schema.json",
     "ateji.schema.json",
     "conjugations.schema.json",
     "counter-words.schema.json",
@@ -236,8 +237,11 @@ EXPECTED_SCHEMAS = {
     "pitch-accent.schema.json",
     "radical.schema.json",
     "sentence.schema.json",
+    "sentence-difficulty.schema.json",
     "stroke-order.schema.json",
     "word.schema.json",
+    "word-relations.schema.json",
+    "wordnet.schema.json",
 }
 
 

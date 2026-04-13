@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/word-relations.schema.json",
+  "title": "Word relations",
+  "description": "Cross-reference relationships between JMdict words extracted from the xref and antonym fields. Each relation links a source word to a target word with a relation type.",
+  "schemaVersion": "0.9.0",
+  "type": "object",
+  "required": [
+    "metadata",
+    "relations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/wordRelation"
+      },
+      "description": "Array of directional word-to-word relations."
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "generated",
+        "count",
+        "source",
+        "license",
+        "field_notes"
+      ],
+      "properties": {
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source": {
+          "type": "string"
+        },
+        "license": {
+          "type": "string"
+        },
+        "related_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of 'related' relations."
+        },
+        "antonym_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of 'antonym' relations."
+        },
+        "unresolved_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of upstream xrefs that could not be resolved to word IDs."
+        },
+        "attribution": {
+          "type": "string"
+        },
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "wordRelation": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "source_text",
+        "target_id",
+        "target_text",
+        "relation"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "description": "JMdict ID of the source word."
+        },
+        "source_text": {
+          "type": "string",
+          "description": "Primary text of the source word."
+        },
+        "target_id": {
+          "type": "string",
+          "description": "JMdict ID of the target word."
+        },
+        "target_text": {
+          "type": "string",
+          "description": "Primary text of the target word."
+        },
+        "relation": {
+          "type": "string",
+          "enum": [
+            "related",
+            "antonym"
+          ],
+          "description": "Type of relationship between the words."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/aozora.schema.json",
+  "title": "Aozora Bunko corpus",
+  "description": "Curated selection of public-domain Japanese literary works from Aozora Bunko, with full text and extracted ruby (furigana) pairs for reading assistance.",
+  "schemaVersion": "0.9.0",
+  "type": "object",
+  "required": [
+    "metadata",
+    "works"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "works": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/workEntry"
+      },
+      "description": "Array of curated literary works."
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "count"
+      ],
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "note": {
+          "type": "string"
+        },
+        "attribution": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "workEntry": {
+      "type": "object",
+      "required": [
+        "work_id",
+        "title",
+        "author",
+        "text"
+      ],
+      "properties": {
+        "work_id": {
+          "type": "string",
+          "description": "Aozora Bunko work ID."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the work in Japanese."
+        },
+        "author": {
+          "type": "string",
+          "description": "Author name in Japanese."
+        },
+        "reason": {
+          "type": "string",
+          "description": "Why this work was selected for the curated corpus."
+        },
+        "char_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total character count of the full text."
+        },
+        "sentence_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Estimated sentence count."
+        },
+        "ruby_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of ruby (furigana) annotations extracted."
+        },
+        "text": {
+          "type": "string",
+          "description": "Full text of the work (ruby markup stripped)."
+        },
+        "ruby_pairs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rubyPair"
+          },
+          "description": "Extracted kanji-reading pairs from ruby annotations."
+        }
+      },
+      "additionalProperties": false
+    },
+    "rubyPair": {
+      "type": "object",
+      "required": [
+        "kanji",
+        "reading"
+      ],
+      "properties": {
+        "kanji": {
+          "type": "string",
+          "description": "Kanji text annotated with furigana."
+        },
+        "reading": {
+          "type": "string",
+          "description": "Reading (furigana) for the kanji."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

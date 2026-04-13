@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jkindrix/japanese-language-data/schemas/sentence-difficulty.schema.json",
+  "title": "Sentence difficulty",
+  "description": "JLPT-based difficulty estimates for sentences across all corpora (Tatoeba curated, Tatoeba full, KFTT). Each sentence is scored by the hardest JLPT level required to read it.",
+  "schemaVersion": "0.9.0",
+  "type": "object",
+  "required": [
+    "metadata",
+    "entries"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/difficultyEntry"
+      }
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "count",
+        "field_notes"
+      ],
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "license": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "level_distribution": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "description": "Count of sentences per estimated JLPT level."
+        },
+        "methodology": {
+          "type": "string",
+          "description": "Description of how difficulty scores are computed."
+        },
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "difficultyEntry": {
+      "type": "object",
+      "required": [
+        "sentence_id",
+        "source",
+        "estimated_level",
+        "level_numeric"
+      ],
+      "properties": {
+        "sentence_id": {
+          "type": "string",
+          "description": "Sentence ID (join with the source corpus file)."
+        },
+        "source": {
+          "type": "string",
+          "enum": [
+            "tatoeba",
+            "tatoeba-full",
+            "kftt"
+          ],
+          "description": "Which corpus this sentence belongs to."
+        },
+        "estimated_level": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "N5",
+            "N4",
+            "N3",
+            "N2",
+            "N1",
+            null
+          ],
+          "description": "Estimated JLPT level (N5=easiest, N1=hardest). Null if unscored."
+        },
+        "level_numeric": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Numeric level: 1=N5, 2=N4, 3=N3, 4=N2, 5=N1, 0=unscored."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
