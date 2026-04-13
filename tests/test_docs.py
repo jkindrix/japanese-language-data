@@ -126,11 +126,29 @@ def test_manifest_phase_description_mentions_current_version() -> None:
     )
 
 
+def _is_gitignored(rel_path: str) -> bool:
+    """Return True if *rel_path* is covered by .gitignore rules."""
+    try:
+        result = subprocess.run(
+            ["git", "check-ignore", "-q", rel_path],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            timeout=5,
+        )
+        return result.returncode == 0
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        return False
+
+
 def test_manifest_counts_match_reality() -> None:
     """Every count in manifest.json.counts must match the actual entries.
 
-    Files that don't exist should be recorded as null, not 0, so
+    For committed files that don't exist, the count should be null so
     consumers can distinguish "not yet built" from "built but empty".
+
+    Gitignored files may carry a non-null count from the last full
+    build — this is valid documentation of what the pipeline produces,
+    even when the file isn't present locally.
     """
     manifest = _load_manifest()
     counts = manifest.get("counts", {})
@@ -142,8 +160,12 @@ def test_manifest_counts_match_reality() -> None:
 
     for rel_path, manifest_count in counts.items():
         live = live_counts.get(rel_path)
-        # If the file doesn't exist, the count should be None (null in JSON).
+        # If the file doesn't exist, gitignored files may keep their
+        # manifest count (documentation of a prior full build).
+        # Committed files must have null when absent.
         if live is None:
+            if _is_gitignored(rel_path):
+                continue
             assert manifest_count is None, (
                 f"manifest.counts[{rel_path!r}]={manifest_count} but the file "
                 f"does not exist. Expected null. Run `just stats` to reconcile."
