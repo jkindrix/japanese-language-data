@@ -611,12 +611,12 @@
     "pattern": "X + から",
     "level": "N5",
     "meaning_en": "marks the starting point: from (place/time)",
-    "meaning_detailed": "から marks the starting point of an action or movement — 'from' a place or 'since/from' a time. It is often paired with まで to express a range ('from X until Y'). A separate use of から is 'because', covered in N4.",
+    "meaning_detailed": "から marks the starting point of an action or movement — 'from' a place or 'since/from' a time. It is often paired with まで to express a range ('from X until Y'). A separate use of から is 'because' (also N5 — see kara-cause).",
     "formation": "Noun (place or time) + から",
     "formation_notes": [
       "Place: 家から学校まで ('from home to school').",
       "Time: 九時から五時まで ('from 9 to 5').",
-      "The 'because' meaning attaches to verbs/adjectives/sentences, not nouns, and is covered at N4."
+      "The 'because' meaning attaches to verbs/adjectives/sentences, not nouns, and is also N5 (see kara-cause)."
     ],
     "formality": "neutral",
     "related": [
@@ -1821,7 +1821,7 @@
     "meaning_detailed": "ないでください is the negative counterpart of てください. It attaches でください to the ない-form of a verb and expresses 'please do not do X'.",
     "formation": "Verb-ない + でください (drop nothing from the ない-form; just append でください)",
     "formation_notes": [
-      "Note the space: 食べないでください, not 食べなくてください.",
+      "Note the form: 食べないでください, not 食べなくてください.",
       "The particle で here comes from the て-form of the auxiliary ない (via ないで), not from the particle で."
     ],
     "formality": "formal",
@@ -2460,12 +2460,11 @@
     "level": "N5",
     "meaning_en": "how much (price / quantity)",
     "meaning_detailed": "いくら is the interrogative 'how much', primarily used for asking prices but also for uncountable amounts (quantity, time). The most common usage is これはいくらですか ('how much is this?'). In compound usages like いくらでも ('any amount') and いくら〜ても ('no matter how much'), it takes on broader senses.",
-    "formation": "いくら (as standalone question); いくら + でも ('any amount'); いくら + 〜ても ('no matter how much').",
+    "formation": "いくら + ですか (asking price/amount).",
     "formation_notes": [
       "Most common for prices: いくらですか.",
       "Also for quantity of uncountables: water, time, effort.",
-      "Compound: いくらでも ('any amount / as much as you want').",
-      "Concessive: いくら〜ても ('no matter how much X')."
+      "Compound: いくらでも ('any amount / as much as you want')."
     ],
     "formality": "neutral",
     "related": [
@@ -2485,8 +2484,8 @@
         "source": "original"
       },
       {
-        "japanese": "いくら食べても太らない。",
-        "english": "No matter how much I eat, I don't gain weight.",
+        "japanese": "全部でいくらですか。",
+        "english": "How much is it altogether?",
         "source": "original"
       }
     ],
@@ -2626,7 +2625,7 @@
     "meaning_detailed": "〜分 (ふん / ぷん) is the counter for minutes — both clock-time minutes and duration. Reading changes between ふん (voiceless) and ぷん (voiced / geminated) depending on the preceding number. Several numbers have irregular or combined forms. Common contexts: clock time (3時10分), duration (10分), distance by time (駅から5分).",
     "formation": "Number + 分. Reading: ぷん after 1/3/4/6/8/10; ふん after 2/5/7/9. Half-hour fixed form: 半 (はん, for 30 minutes).",
     "formation_notes": [
-      "Reading rules: 1ぷん, 2ふん, 3ぷん, 4ぷん, 5ふん, 6ぷん, 7ふん, 8ぷん, 10ぷん.",
+      "Reading rules: 1ぷん, 2ふん, 3ぷん, 4ぷん, 5ふん, 6ぷん, 7ふん, 8ぷん, 9ふん, 10ぷん.",
       "Half-hour 30 minutes is often written as 半: 3時半 ('3:30').",
       "Used for both clock minutes and duration.",
       "Same kanji 分 has other readings (ぶん for 'share') and meanings."
@@ -2908,7 +2907,7 @@
     "pattern": "i-adjective + です",
     "level": "N5",
     "meaning_en": "polite ending for i-adjective predicates",
-    "meaning_detailed": "When an i-adjective forms the predicate of a sentence, appending です makes the sentence polite without changing the meaning — 高い → 高いです ('it is expensive', polite). Unlike with nouns and na-adjectives, this です does NOT conjugate with tense or negation on i-adjectives: past is 高かったです (NOT 高いでした), negative is 高くないです (NOT 高くありません usually, though that's also grammatical). This is a common learner confusion: the です after an i-adjective is purely a politeness marker, not a copula.",
+    "meaning_detailed": "When an i-adjective forms the predicate of a sentence, appending です makes the sentence polite without changing the meaning — 高い → 高いです ('it is expensive', polite). Unlike with nouns and na-adjectives, this です does NOT conjugate with tense or negation on i-adjectives: past is 高かったです (NOT 高いでした), negative is 高くないです or 高くありません (both are standard polite negatives). This is a common learner confusion: the です after an i-adjective is purely a politeness marker, not a copula.",
     "formation": "i-adjective (dictionary form or conjugated form) + です. Past: 〜かったです. Negative: 〜くないです or 〜くありません.",
     "formation_notes": [
       "です after i-adj is a politeness marker, NOT a copula — it does not conjugate for tense or negation.",

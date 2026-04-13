@@ -5,10 +5,10 @@
     "generated": "2026-04-13",
     "count": 595,
     "by_level": {
-      "N1": 139,
-      "N2": 150,
-      "N3": 139,
-      "N4": 91,
+      "N1": 150,
+      "N2": 149,
+      "N3": 130,
+      "N4": 90,
       "N5": 76
     },
     "review_coverage": {
@@ -32,7 +32,7 @@
       "link_rate_pct": 0.22,
       "method": "Two-pass text match against data/corpus/sentences.json: first exact, then conservatively normalized (trailing sentence-final punctuation and whitespace stripped). Normalization never collapses kanji/kana variants or changes width/case.",
       "pattern_match_points": 537,
-      "pattern_match_total": 2099,
+      "pattern_match_total": 2097,
       "pattern_match_pct": 90.25,
       "pattern_match_method": "Separate from example-text linkage. Extracts the Japanese core of each grammar pattern and searches sentences.json for sentences containing it. Up to 5 matches per grammar point. Stored in tatoeba_pattern_matches[] on each entry."
     },
@@ -479,7 +479,7 @@
         "Often praised for authentic / unique features.",
         "Formal / literary register but widely used in everyday praise."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "dake-ni-precisely",
         "koso-precisely"
@@ -1003,8 +1003,8 @@
           "source": "original"
         },
         {
-          "japanese": "彼の助けがあることなしに、できなかった。",
-          "english": "Without his help, I couldn't have done it.",
+          "japanese": "一度も休むことなしに、最後まで走り切った。",
+          "english": "He ran to the end without resting even once.",
           "source": "original"
         }
       ],
@@ -1427,7 +1427,7 @@
       "level": "N1",
       "meaning_en": "in order to / for the purpose of (literary)",
       "meaning_detailed": "〜んがため(に) is a literary / archaic purpose marker meaning 'in order to X'. More formal and older-sounding than 〜ために or 〜ように. Rare in modern speech, common in essays, historical writing, and formal prose. Irregular: する → せんがため.",
-      "formation": "V dict-form (without final る for ichidan) + んがため(に). Irregular: する → せんがため.",
+      "formation": "V ない-stem + んがため(に). Irregular: する → せんがため.",
       "formation_notes": [
         "Very literary / archaic purpose marker.",
         "Irregular: せんがため for する.",
@@ -1470,11 +1470,11 @@
     },
     {
       "id": "n-bakari",
-      "pattern": "Verb dict / V-た + んばかり(に)",
+      "pattern": "V ない-stem + んばかり(に)",
       "level": "N1",
       "meaning_en": "as if about to / looking as if",
       "meaning_detailed": "〜んばかり(に) expresses that something looks as if it is about to happen or happen intensely — 'as if about to X'. Often used metaphorically for emphasis: 泣かんばかりに ('as if about to cry'). Literary register. The ん is from archaic negative む, but the meaning is 'about to'.",
-      "formation": "V dict (without final る) + んばかり(に) / んばかりだ.",
+      "formation": "V ない-stem + んばかり(に) / んばかりだ.",
       "formation_notes": [
         "Metaphorical 'as if about to' — often hyperbolic.",
         "Common: 泣かんばかりに, 飛びかからんばかりに, 叫ばんばかりに.",
@@ -4068,100 +4068,6 @@
       ]
     },
     {
-      "id": "you-ka-to-omou",
-      "pattern": "Verb volitional + かと思う",
-      "level": "N1",
-      "meaning_en": "thinking of doing / half-considering",
-      "meaning_detailed": "〜ようかと思う expresses that the speaker is considering doing X, but with some hesitation or uncertainty — 'thinking of doing X / half-considering'. Less committed than 〜ようと思う (intend to do). Often used for tentative plans. Neutral / formal register.",
-      "formation": "V volitional + かと思う.",
-      "formation_notes": [
-        "Tentative consideration — less committed than 〜ようと思う.",
-        "Similar to 〜ようと思っている but with the か adding doubt.",
-        "Common in tentative planning: 留学しようかと思っている.",
-        "Neutral register."
-      ],
-      "formality": "neutral",
-      "related": [
-        "you-to-omou-volitional-intent",
-        "to-omou",
-        "tsumori-intention"
-      ],
-      "examples": [
-        {
-          "japanese": "留学しようかと思っています。",
-          "english": "I'm considering studying abroad.",
-          "source": "original"
-        },
-        {
-          "japanese": "会社を辞めようかと思っている。",
-          "english": "I'm thinking of quitting the company.",
-          "source": "original"
-        },
-        {
-          "japanese": "新しいパソコンを買おうかと思う。",
-          "english": "I'm thinking of buying a new computer.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "77081",
-        "216615",
-        "225507",
-        "235848"
-      ]
-    },
-    {
-      "id": "osore-ga-aru",
-      "pattern": "V plain / noun + の + 恐れがある",
-      "level": "N1",
-      "meaning_en": "risk of / fear that (may happen)",
-      "meaning_detailed": "〜恐れがある expresses that there is a risk or possibility of something (usually negative) happening — 'there's a risk of X'. Common in news reports, weather forecasts, and cautionary statements. 恐れ literally means 'fear / apprehension'. Formal register.",
-      "formation": "V plain (non-past) + 恐れがある; noun + の + 恐れがある. Attributive: 〜恐れのある + noun.",
-      "formation_notes": [
-        "Negative risk — 'there's a risk / fear that X'.",
-        "Common in weather forecasts: 大雨の恐れがある.",
-        "Attributive form: 〜恐れのある + noun ('at risk of X').",
-        "Formal / news register."
-      ],
-      "formality": "formal",
-      "related": [
-        "kane-nai-might",
-        "kamoshirenai-might"
-      ],
-      "examples": [
-        {
-          "japanese": "明日は大雨の恐れがあります。",
-          "english": "There's a risk of heavy rain tomorrow.",
-          "source": "original"
-        },
-        {
-          "japanese": "この薬には副作用の恐れがある。",
-          "english": "This medicine has a risk of side effects.",
-          "source": "original"
-        },
-        {
-          "japanese": "地震が発生する恐れがある。",
-          "english": "There's a risk of an earthquake occurring.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "kftt:kftt-6802",
-        "kftt:kftt-18155",
-        "kftt:kftt-25345",
-        "kftt:kftt-44648",
-        "kftt:kftt-62902"
-      ]
-    },
-    {
       "id": "hoka-naranu",
       "pattern": "Noun + ほかならぬ + noun",
       "level": "N1",
@@ -4202,54 +4108,6 @@
       ],
       "tatoeba_pattern_matches": [
         "211883"
-      ]
-    },
-    {
-      "id": "hodo-dewa-nai",
-      "pattern": "Plain form + ほどではない",
-      "level": "N1",
-      "meaning_en": "not to the extent of / not as much as",
-      "meaning_detailed": "〜ほどではない is a negation of 〜ほど, expressing that something is 'not to the extent' of X — downplaying a comparison. Often used to moderate a previous statement: 'yes, but not that much'. Neutral / formal register.",
-      "formation": "V plain / i-adj + ほどではない; na-adj + な + ほどではない; noun + の + ほどではない.",
-      "formation_notes": [
-        "Moderating negation — 'not quite as much as X'.",
-        "Common to hedge: 痛いけど、救急車を呼ぶほどではない.",
-        "Related to 〜ほど (extent, N3).",
-        "Neutral / formal register."
-      ],
-      "formality": "neutral",
-      "related": [
-        "hodo-extent",
-        "hodo-no",
-        "hodo-no-mono-dewa-nai"
-      ],
-      "examples": [
-        {
-          "japanese": "痛いけど、病院に行くほどではない。",
-          "english": "It hurts, but not to the extent of going to the hospital.",
-          "source": "original"
-        },
-        {
-          "japanese": "忙しいが、断るほどではない。",
-          "english": "I'm busy, but not so much that I need to decline.",
-          "source": "original"
-        },
-        {
-          "japanese": "難しいけど、不可能なほどではない。",
-          "english": "It's difficult, but not to the extent of being impossible.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "kftt:kftt-55616",
-        "kftt:kftt-71227",
-        "kftt:kftt-73231",
-        "kftt:kftt-74285",
-        "kftt:kftt-75790"
       ]
     },
     {
@@ -4475,51 +4333,6 @@
         "kftt:kftt-78418",
         "kftt:kftt-109590",
         "kftt:kftt-113247"
-      ]
-    },
-    {
-      "id": "ka-to-omou-to",
-      "pattern": "V-た form + かと思うと / かと思ったら",
-      "level": "N1",
-      "meaning_en": "no sooner had / just when (unexpected change)",
-      "meaning_detailed": "〜かと思うと expresses that two events happen in quick succession, often with an unexpected change — 'no sooner had X than Y' / 'just when I thought X, Y happened'. Similar in function to 〜や否や and 〜たとたん, but with a stronger sense of narrative surprise. Literary register.",
-      "formation": "V-た + かと思うと / かと思ったら.",
-      "formation_notes": [
-        "Unexpected follow-up — two events in quick succession.",
-        "Often narrative / dramatic: 泣いたかと思うと、笑い出した ('no sooner had she cried than she started laughing').",
-        "Related to 〜たとたん, 〜や否や, 〜か〜ないかのうちに.",
-        "Literary register."
-      ],
-      "formality": "formal",
-      "related": [
-        "ya-inaya",
-        "to-tan-moment",
-        "ka-nai-ka-no-uchi-ni"
-      ],
-      "examples": [
-        {
-          "japanese": "泣いたかと思うと、すぐ笑い出した。",
-          "english": "No sooner had she cried than she started laughing.",
-          "source": "original"
-        },
-        {
-          "japanese": "晴れたかと思うと、雨が降り出した。",
-          "english": "Just when it cleared up, it started raining.",
-          "source": "original"
-        },
-        {
-          "japanese": "寝たかと思ったら、もう起きている。",
-          "english": "Just when I thought he was asleep, he's already awake.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "225507",
-        "235848"
       ]
     },
     {
@@ -4757,102 +4570,6 @@
       ]
     },
     {
-      "id": "shikamo-moreover",
-      "pattern": "しかも (sentence-initial)",
-      "level": "N1",
-      "meaning_en": "moreover / what's more / on top of that",
-      "meaning_detailed": "しかも is a sentence-initial conjunction meaning 'moreover' / 'what's more' — adds additional, often surprising or emphatic, information to a preceding statement. The added information extends the argument or praise in the same direction. Formal / neutral register.",
-      "formation": "[Previous sentence]. しかも [additional statement].",
-      "formation_notes": [
-        "Additive conjunction — 'moreover / in addition'.",
-        "The added info often extends in the same direction (positive or negative).",
-        "More formal than 〜だけでなく or 〜ばかりか attached within a sentence.",
-        "Formal / neutral register."
-      ],
-      "formality": "neutral",
-      "related": [
-        "bakari-ka-not-only",
-        "ue-ni-in-addition",
-        "soredemo-even-so"
-      ],
-      "examples": [
-        {
-          "japanese": "彼は頭がいい。しかも、性格も素晴らしい。",
-          "english": "He's smart. Moreover, his personality is wonderful.",
-          "source": "original"
-        },
-        {
-          "japanese": "この商品は安い。しかも、品質もいい。",
-          "english": "This product is cheap. What's more, the quality is good.",
-          "source": "original"
-        },
-        {
-          "japanese": "雨が降っている。しかも、風も強い。",
-          "english": "It's raining. On top of that, the wind is strong.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "74305",
-        "76679",
-        "76680",
-        "76681",
-        "87093"
-      ]
-    },
-    {
-      "id": "bakari-no",
-      "pattern": "Verb ます-stem / plain form + ばかりの / ばかりだ",
-      "level": "N1",
-      "meaning_en": "nothing but / only one way (to decline / increase)",
-      "meaning_detailed": "〜ばかりの / 〜ばかりだ expresses that something is trending in only one direction — 'only X-ing' / 'nothing but X'. Similar to 〜一方だ but with a slightly more emphatic 'only' flavor. Often with decline / deterioration. Formal / literary register.",
-      "formation": "V dict-form + ばかりだ; attributive V dict + ばかりの + noun.",
-      "formation_notes": [
-        "Trending in one direction — often negative.",
-        "Similar to 〜一方だ (N3) but more emphatic.",
-        "Common with change verbs: 増える, 減る, 悪化する.",
-        "Distinct from 〜ばかり (only, N3) and 〜たばかり (just did, N3)."
-      ],
-      "formality": "formal",
-      "related": [
-        "ippou-da-keeps",
-        "bakari-only",
-        "ippou-de-one-hand"
-      ],
-      "examples": [
-        {
-          "japanese": "物価は上がるばかりだ。",
-          "english": "Prices keep only going up.",
-          "source": "original"
-        },
-        {
-          "japanese": "状況は悪くなるばかりだった。",
-          "english": "The situation kept only getting worse.",
-          "source": "original"
-        },
-        {
-          "japanese": "人口は減るばかりだ。",
-          "english": "The population keeps only decreasing.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "74872",
-        "76840",
-        "78664",
-        "116307",
-        "157615"
-      ]
-    },
-    {
       "id": "ma-no-atari-ni",
       "pattern": "Noun + を + 目の当たりにする",
       "level": "N1",
@@ -4983,51 +4700,6 @@
         "74293",
         "74436",
         "75035"
-      ]
-    },
-    {
-      "id": "ni-ataru-correspond",
-      "pattern": "Noun + に当たる",
-      "level": "N1",
-      "meaning_en": "correspond to / be equivalent to / fall on (a day)",
-      "meaning_detailed": "〜に当たる has several related senses: (1) correspond to / be equivalent to — used for counting equivalences (例えば Japanese in English); (2) fall on a specific day (今日は誕生日に当たる); (3) be one's family/relation. Formal / neutral register.",
-      "formation": "Noun + に当たる (polite: にあたります).",
-      "formation_notes": [
-        "Correspondence / equivalence — formal register.",
-        "Common for family relations: 彼は私の兄に当たる ('he corresponds to my older brother').",
-        "Calendar dates: 今日は祝日に当たる.",
-        "Unit conversion: 1ドルは100円に当たる."
-      ],
-      "formality": "formal",
-      "related": [
-        "toshite-as",
-        "ni-hoka-naranai"
-      ],
-      "examples": [
-        {
-          "japanese": "今日は父の誕生日に当たる。",
-          "english": "Today corresponds to my father's birthday.",
-          "source": "original"
-        },
-        {
-          "japanese": "彼は私の叔父に当たる。",
-          "english": "He is my uncle (corresponds to my uncle).",
-          "source": "original"
-        },
-        {
-          "japanese": "1ドルは約110円に当たる。",
-          "english": "One dollar corresponds to about 110 yen.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "76853",
-        "125225",
-        "150931"
       ]
     },
     {
@@ -5795,7 +5467,7 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "116473"
+        "191515"
       ]
     },
     {
@@ -6343,38 +6015,38 @@
       ]
     },
     {
-      "id": "zaru-wo-enai",
-      "pattern": "V negative stem + ざるを得ない",
+      "id": "to-nareba-if-comes-to",
+      "pattern": "Plain form + となれば",
       "level": "N1",
-      "meaning_en": "cannot help but / have no choice but to",
-      "meaning_detailed": "〜ざるを得ない is a formal / literary construction meaning 'cannot help but X' or 'have no choice but to X'. Expresses that external circumstances compel the action even if the speaker would rather not. Very formal register, common in reports and analyses. Irregular: する → せざるを得ない.",
-      "formation": "V ない-stem + ざるを得ない. Irregular: する → せざるを得ない.",
+      "meaning_en": "if it comes to / in the event that",
+      "meaning_detailed": "〜となれば presents a hypothetical scenario and the consequence that would follow — 'if it comes to X, (then) Y'. More hypothetical / formal than 〜たら or 〜なら. Common in planning, discussing contingencies, or setting up a hypothetical that leads to a necessary action.",
+      "formation": "V plain / i-adj / na-adj (+ だ) / noun (+ だ) + となれば.",
       "formation_notes": [
-        "Formal compulsion — 'cannot avoid doing X'.",
-        "Irregular: せざるを得ない for する.",
-        "Based on the classical negative ざる plus 得ない ('cannot obtain').",
-        "Very formal register — common in news, essays, and formal speech."
+        "Formal hypothetical — 'if the situation reaches X'.",
+        "Main clause typically describes an obligatory or natural consequence.",
+        "Distinct from 〜たら (neutral conditional) and 〜なら (topic-setting conditional).",
+        "Common in discussing plans and contingencies."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
-        "shika-nai",
-        "hoka-nai-no-choice",
-        "wo-yogi-naku-sareru"
+        "nara-conditional",
+        "ba-ai-in-case",
+        "to-naru-to-when-comes"
       ],
       "examples": [
         {
-          "japanese": "彼の意見に賛成せざるを得ない。",
-          "english": "I cannot help but agree with his opinion.",
+          "japanese": "留学するとなれば、準備が必要だ。",
+          "english": "If it comes to studying abroad, preparation is necessary.",
           "source": "original"
         },
         {
-          "japanese": "そう結論づけざるを得ない。",
-          "english": "One cannot help but conclude so.",
+          "japanese": "結婚するとなれば、両親に相談しなければならない。",
+          "english": "If it comes to getting married, I have to consult with my parents.",
           "source": "original"
         },
         {
-          "japanese": "事実を認めざるを得ない。",
-          "english": "I have no choice but to acknowledge the facts.",
+          "japanese": "辞めるとなれば、早めに上司に言うべきだ。",
+          "english": "If it comes to quitting, you should tell your boss early.",
           "source": "original"
         }
       ],
@@ -6383,9 +6055,828 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "144528",
-        "204782",
-        "213554"
+        "211292",
+        "229136"
+      ]
+    },
+    {
+      "id": "to-naru-to-when-comes",
+      "pattern": "Plain form + となると",
+      "level": "N1",
+      "meaning_en": "when it comes to / if it's a matter of",
+      "meaning_detailed": "〜となると introduces a topic or scenario and its expected consequence — 'when it comes to X, (the situation changes)'. Often used when the speaker realizes the implications of a stated scenario. Close in meaning to 〜となれば but slightly more conversational and often signals a shift in the speaker's perspective.",
+      "formation": "V plain / i-adj / na-adj (+ だ) / noun (+ だ) + となると.",
+      "formation_notes": [
+        "Perspective-shifting — 'now that we're talking about X...'.",
+        "Close to 〜となれば but slightly less formal / more conversational.",
+        "Often signals realization: 'when I think about it in this way...'.",
+        "Common when discussing implications or changing viewpoints."
+      ],
+      "formality": "neutral",
+      "related": [
+        "to-nareba-if-comes-to",
+        "nara-conditional",
+        "to-ieba-speaking-of"
+      ],
+      "examples": [
+        {
+          "japanese": "留学となると、お金が心配だ。",
+          "english": "When it comes to studying abroad, I worry about money.",
+          "source": "original"
+        },
+        {
+          "japanese": "いざ話すとなると、緊張する。",
+          "english": "When it actually comes to speaking, I get nervous.",
+          "source": "original"
+        },
+        {
+          "japanese": "子供のこととなると、彼女は真剣だ。",
+          "english": "When it comes to her children, she's serious.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "143199",
+        "209630",
+        "229132",
+        "234317",
+        "234540"
+      ]
+    },
+    {
+      "id": "majiki-unacceptable",
+      "pattern": "V dict-form + まじき + noun",
+      "level": "N1",
+      "meaning_en": "unacceptable / unbecoming / should not",
+      "meaning_detailed": "〜まじき is an archaic / literary construction describing behavior as 'unacceptable / unbecoming / should not be done'. Attached to a dictionary-form verb followed by a role noun: 'behavior unbecoming of a doctor'. Appears in formal criticism, editorials, and moralistic statements. Very rare in casual speech.",
+      "formation": "V dict-form + まじき + noun (role / position).",
+      "formation_notes": [
+        "Archaic / literary — critical moral judgment.",
+        "Fixed pattern: 〜まじき + 行為 / ふるまい ('act / behavior unbecoming of').",
+        "The noun is typically a role: 教師, 医者, 警察官, 大人, 政治家.",
+        "Rare in casual speech — common in editorials, formal criticism."
+      ],
+      "formality": "formal",
+      "related": [
+        "beki-da",
+        "beku-in-order-to"
+      ],
+      "examples": [
+        {
+          "japanese": "それは教師にあるまじき行為だ。",
+          "english": "That's behavior unbecoming of a teacher.",
+          "source": "original"
+        },
+        {
+          "japanese": "医者としてあるまじき発言だ。",
+          "english": "That's an unacceptable statement from a doctor.",
+          "source": "original"
+        },
+        {
+          "japanese": "公務員にあるまじきふるまいだった。",
+          "english": "It was behavior unbecoming of a civil servant.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "8318782"
+      ]
+    },
+    {
+      "id": "gotoku-as-if",
+      "pattern": "Plain form / noun + の + ごとく",
+      "level": "N1",
+      "meaning_en": "just as / like / as if (literary)",
+      "meaning_detailed": "〜ごとく is a literary / classical construction meaning 'just as' or 'like' — used for similes and comparisons in formal and literary writing. Derived from the classical adjective ごとし. Very formal, common in literature, essays, and formal speeches. Attributive form ごとき + noun is also productive.",
+      "formation": "V plain + (が)ごとく; noun + の + ごとく. Attributive: ごとき + noun.",
+      "formation_notes": [
+        "Literary / classical simile marker — 'just as'.",
+        "Very formal / written register.",
+        "Attributive form 〜ごとき: 矢のごとき速さ ('speed like an arrow').",
+        "Modern equivalent: 〜のように (more common, informal)."
+      ],
+      "formality": "formal",
+      "related": [
+        "you-da-appearance",
+        "gotoki-like",
+        "ka-no-you-ni"
+      ],
+      "examples": [
+        {
+          "japanese": "矢のごとく、時間が過ぎていく。",
+          "english": "Time passes just like an arrow.",
+          "source": "original"
+        },
+        {
+          "japanese": "彼は狂ったごとく働き続けた。",
+          "english": "He kept working as if possessed.",
+          "source": "original"
+        },
+        {
+          "japanese": "夢のごとく美しい景色だ。",
+          "english": "It's a scene beautiful like a dream.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "76300",
+        "102320",
+        "200089",
+        "214546",
+        "228757"
+      ]
+    },
+    {
+      "id": "gotoki-like",
+      "pattern": "Noun + ごとき (+ noun)",
+      "level": "N1",
+      "meaning_en": "like (a) / such as (literary, often disparaging)",
+      "meaning_detailed": "〜ごとき is the attributive form of ごとし, meaning 'like X' or 'such as X'. Often carries a dismissive or belittling nuance when used with a noun referring to a person or entity — 'someone like X (who is beneath / below expectations)'. Literary / formal, also used self-deprecatingly.",
+      "formation": "Noun + ごとき (+ noun).",
+      "formation_notes": [
+        "Often dismissive when used with people: 私ごとき ('someone like me'), お前ごとき ('someone like you').",
+        "Can also be a neutral simile with other nouns.",
+        "Literary / classical register.",
+        "Self-deprecating with 私ごとき expresses humility."
+      ],
+      "formality": "formal",
+      "related": [
+        "gotoku-as-if",
+        "nan-ka-dismissive",
+        "ni-shite-wa"
+      ],
+      "examples": [
+        {
+          "japanese": "私ごとき者にはもったいないお言葉です。",
+          "english": "Such kind words are wasted on someone like me.",
+          "source": "original"
+        },
+        {
+          "japanese": "お前ごときに負けはしない。",
+          "english": "I won't lose to someone like you.",
+          "source": "original"
+        },
+        {
+          "japanese": "子供ごときに負けて悔しい。",
+          "english": "I'm frustrated to lose to a mere child.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-14101",
+        "kftt:kftt-16094",
+        "kftt:kftt-76032",
+        "kftt:kftt-107820",
+        "kftt:kftt-110119"
+      ]
+    },
+    {
+      "id": "ni-taru",
+      "pattern": "Verb dict-form / noun + に足る",
+      "level": "N1",
+      "meaning_en": "worth / sufficient to / deserving of",
+      "meaning_detailed": "〜に足る expresses that something is worth doing or merits X — 'worth / sufficient to / deserving of'. More literary than 〜に値する ('worthy of', also N2). Often used in formal evaluations: '信頼に足る' ('worthy of trust'). The attributive 〜に足る + noun is the most common usage.",
+      "formation": "V dict-form + に足る; noun + に足る. Attributive: 〜に足る + noun.",
+      "formation_notes": [
+        "Formal / literary 'worthy of'.",
+        "Common fixed phrases: 信頼に足る ('worthy of trust'), 尊敬に足る ('worthy of respect').",
+        "Less common in speech, more common in written Japanese and formal evaluations.",
+        "Similar meaning: 〜に値する (also N2 / slightly different register)."
+      ],
+      "formality": "formal",
+      "related": [
+        "ni-taeru",
+        "ni-taenai",
+        "beki-da"
+      ],
+      "examples": [
+        {
+          "japanese": "彼は信頼に足る人物だ。",
+          "english": "He is a person worthy of trust.",
+          "source": "original"
+        },
+        {
+          "japanese": "これは一読に足る本だ。",
+          "english": "This is a book worth reading.",
+          "source": "original"
+        },
+        {
+          "japanese": "驚くに足る話ではない。",
+          "english": "It's not a story worth being surprised about.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "197340"
+      ]
+    },
+    {
+      "id": "ni-taeru",
+      "pattern": "Verb dict / noun + に堪える",
+      "level": "N1",
+      "meaning_en": "can bear / is worth (X-ing)",
+      "meaning_detailed": "〜に堪える expresses that something is tolerable or worth X — 'can bear X / is worth X'. Often used with verbs of evaluation, viewing, or listening: 見るに堪える ('worth watching / bearable to watch'). The negated form 〜に堪えない (see separate entry) is more common and means 'unbearable'.",
+      "formation": "V dict-form + に堪える; noun (endurance / evaluation) + に堪える.",
+      "formation_notes": [
+        "Tolerance / worth — 'is worth bearing'.",
+        "More common in negated form 〜に堪えない (see separate entry).",
+        "Common with 見る, 聞く, 読む: 見るに堪える, 聞くに堪える.",
+        "Distinct from 堪える ('endure') in ordinary use — this is the grammatical auxiliary form."
+      ],
+      "formality": "formal",
+      "related": [
+        "ni-taenai",
+        "ni-taru"
+      ],
+      "examples": [
+        {
+          "japanese": "この作品は鑑賞に堪える。",
+          "english": "This work is worth appreciating.",
+          "source": "original"
+        },
+        {
+          "japanese": "彼の演奏は聞くに堪える。",
+          "english": "His performance is worth listening to.",
+          "source": "original"
+        },
+        {
+          "japanese": "子供の絵だが、見るに堪える出来栄えだ。",
+          "english": "It's a child's drawing, but worth viewing.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-246678"
+      ]
+    },
+    {
+      "id": "ni-taenai",
+      "pattern": "Verb dict / noun + に堪えない",
+      "level": "N1",
+      "meaning_en": "unbearable / can't bear to / not worth",
+      "meaning_detailed": "〜に堪えない is the negation of 〜に堪える — 'unbearable to X' or 'not worth X-ing'. Common with evaluation verbs: 見るに堪えない ('unbearable to watch'), 聞くに堪えない ('unbearable to listen to'). Also used for emotional states: 感慨に堪えない ('overcome with emotion').",
+      "formation": "V dict-form + に堪えない; noun (emotion) + に堪えない.",
+      "formation_notes": [
+        "Negated form of 〜に堪える — unbearability or 'not worth'.",
+        "Common with evaluation: 見るに堪えない, 聞くに堪えない.",
+        "Emotional use: 感慨に堪えない ('unable to bear the deep emotion — overcome').",
+        "Formal / literary register."
+      ],
+      "formality": "formal",
+      "related": [
+        "ni-taeru",
+        "te-tamaranai-unbearably"
+      ],
+      "examples": [
+        {
+          "japanese": "その映画はひどすぎて、見るに堪えなかった。",
+          "english": "The movie was so bad it was unbearable to watch.",
+          "source": "original"
+        },
+        {
+          "japanese": "彼の話は聞くに堪えない。",
+          "english": "His talk is unbearable to listen to.",
+          "source": "original"
+        },
+        {
+          "japanese": "久しぶりの再会に、感慨に堪えなかった。",
+          "english": "At the long-awaited reunion, I was overcome with emotion.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-194571"
+      ]
+    },
+    {
+      "id": "te-yamanai",
+      "pattern": "V-て form + やまない",
+      "level": "N1",
+      "meaning_en": "never stop / can't help (feeling / doing)",
+      "meaning_detailed": "〜てやまない expresses that a feeling or action never stops — typically used with emotional or volitional verbs to describe ongoing, deeply held sentiments: 'I will never stop hoping', 'I cannot help but admire'. Literary / emphatic register. Common with 願う (wish), 愛する (love), 尊敬する (respect).",
+      "formation": "V-て + やまない. Usually with emotional / volitional verbs.",
+      "formation_notes": [
+        "Literary / emphatic — for deeply held ongoing feelings.",
+        "Common with: 願う, 愛する, 尊敬する, 期待する, 祈る.",
+        "やまない comes from 止む (to stop) — 'not stopping'.",
+        "Often in dedications, commemorations, formal expressions of sentiment."
+      ],
+      "formality": "formal",
+      "related": [
+        "te-tamaranai-unbearably",
+        "te-naranai-cant-help"
+      ],
+      "examples": [
+        {
+          "japanese": "ご成功を祈ってやみません。",
+          "english": "I pray endlessly for your success.",
+          "source": "original"
+        },
+        {
+          "japanese": "彼の活躍を期待してやまない。",
+          "english": "I have unending expectations for his success.",
+          "source": "original"
+        },
+        {
+          "japanese": "故郷を愛してやまない。",
+          "english": "I will never stop loving my hometown.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-22120",
+        "kftt:kftt-77679"
+      ]
+    },
+    {
+      "id": "wo-kaerimi-zu",
+      "pattern": "Noun + を顧みず",
+      "level": "N1",
+      "meaning_en": "without regard to / disregarding",
+      "meaning_detailed": "〜を顧みず expresses that an action is taken 'without regard to' X — the subject ignores X in order to proceed with the main clause action. Often with self-sacrifice: 'without regard to my own safety, I helped'. Formal / literary register. The verb 顧みる means 'to look back / consider'.",
+      "formation": "Noun + を顧みず.",
+      "formation_notes": [
+        "Self-sacrificial or single-minded disregard — often for noble purposes.",
+        "Common nouns: 危険 ('danger'), 家族 ('family'), 自分 ('self'), 健康 ('health').",
+        "Formal / literary register, often in honorifics or heroic narratives.",
+        "Related: 〜をよそに (disregard, sometimes critical)."
+      ],
+      "formality": "formal",
+      "related": [
+        "wo-yoso-ni",
+        "zu-ni"
+      ],
+      "examples": [
+        {
+          "japanese": "危険を顧みず、子供を助けた。",
+          "english": "Disregarding the danger, he helped the child.",
+          "source": "original"
+        },
+        {
+          "japanese": "家庭を顧みず、仕事に没頭した。",
+          "english": "Without regard to his family, he threw himself into work.",
+          "source": "original"
+        },
+        {
+          "japanese": "自分の健康を顧みず、働き続けた。",
+          "english": "Without regard to his own health, he kept working.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "87135"
+      ]
+    },
+    {
+      "id": "ni-sakigakete",
+      "pattern": "Noun + に先駆けて",
+      "level": "N1",
+      "meaning_en": "ahead of / before (others)",
+      "meaning_detailed": "〜に先駆けて expresses being ahead of others or preceding something — 'ahead of X'. Common in business and product release contexts ('ahead of the industry', 'before the competition'). Formal register, often used in marketing and achievement contexts. Distinct from 〜に先立って (before an upcoming event).",
+      "formation": "Noun + に先駆けて.",
+      "formation_notes": [
+        "Being ahead of / preceding — often with a competitive or innovative nuance.",
+        "Common in business: 業界に先駆けて ('ahead of the industry'), 世界に先駆けて ('ahead of the world').",
+        "Related: 〜に先立って (before an event); 〜に先駆けて emphasizes being ahead of peers.",
+        "Formal / business register."
+      ],
+      "formality": "formal",
+      "related": [
+        "ni-sakidatte-prior",
+        "ni-atatte-occasion"
+      ],
+      "examples": [
+        {
+          "japanese": "業界に先駆けて、新商品を発売した。",
+          "english": "Ahead of the industry, we launched the new product.",
+          "source": "original"
+        },
+        {
+          "japanese": "他社に先駆けて、サービスを開始した。",
+          "english": "Ahead of other companies, we started the service.",
+          "source": "original"
+        },
+        {
+          "japanese": "世界に先駆けて、この技術を開発した。",
+          "english": "Ahead of the world, we developed this technology.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-33651",
+        "kftt:kftt-38507",
+        "kftt:kftt-45736",
+        "kftt:kftt-45778",
+        "kftt:kftt-56308"
+      ]
+    },
+    {
+      "id": "to-iedomo",
+      "pattern": "Plain form + といえども",
+      "level": "N1",
+      "meaning_en": "although / even though (literary)",
+      "meaning_detailed": "〜といえども is a formal / literary concessive meaning 'even though X' or 'although X'. Often used when the speaker acknowledges that X is the case but presents a contrasting main clause. More formal than 〜とはいえ. Common in speeches, essays, and literary writing.",
+      "formation": "Plain-form clause / noun + といえども.",
+      "formation_notes": [
+        "Very formal / literary concessive — rare in casual speech.",
+        "More formal than 〜とはいえ or 〜にしても.",
+        "Often with contrasts about capability, position, or principle: 子供といえども ('even a child, though...').",
+        "Common in speeches and formal prose."
+      ],
+      "formality": "formal",
+      "related": [
+        "to-wa-ie",
+        "ni-shitemo-even",
+        "noni-although"
+      ],
+      "examples": [
+        {
+          "japanese": "子供といえども、約束は守るべきだ。",
+          "english": "Even a child should keep a promise.",
+          "source": "original"
+        },
+        {
+          "japanese": "プロといえども、失敗することはある。",
+          "english": "Even a professional sometimes fails.",
+          "source": "original"
+        },
+        {
+          "japanese": "王様といえども、ルールには従うべきだ。",
+          "english": "Even a king should follow the rules.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "85200",
+        "144777",
+        "178263"
+      ]
+    },
+    {
+      "id": "to-omoi-kiya",
+      "pattern": "Plain form + と思いきや",
+      "level": "N1",
+      "meaning_en": "but contrary to expectation / I thought but",
+      "meaning_detailed": "〜と思いきや expresses that the speaker's expectation was contradicted by reality — 'I thought X, but (the reality was Y)'. Literary register. Often used in narratives for surprising reversals of expectation.",
+      "formation": "Plain-form clause + と思いきや.",
+      "formation_notes": [
+        "Surprise reversal — expectation contradicted by reality.",
+        "Literary / narrative register.",
+        "Main clause typically presents something unexpected.",
+        "Common in stories and formal writing."
+      ],
+      "formality": "formal",
+      "related": [
+        "hazu-datta-was-supposed",
+        "noni-although",
+        "to-wa-ie"
+      ],
+      "examples": [
+        {
+          "japanese": "簡単と思いきや、意外に難しかった。",
+          "english": "I thought it would be easy, but it was surprisingly hard.",
+          "source": "original"
+        },
+        {
+          "japanese": "晴れると思いきや、雨が降ってきた。",
+          "english": "I thought it would be sunny, but it started raining.",
+          "source": "original"
+        },
+        {
+          "japanese": "勝てると思いきや、逆転負けしてしまった。",
+          "english": "I thought I'd win, but I ended up losing in an upset.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "74456",
+        "76908"
+      ]
+    },
+    {
+      "id": "naritomo",
+      "pattern": "Noun + なりとも",
+      "level": "N1",
+      "meaning_en": "at least / whatever / even just",
+      "meaning_detailed": "〜なりとも expresses 'at least X' or 'even just X' — a concessive minimizer acknowledging a small or minimal offer. Often in polite offers or requests: 少しなりとも ('even just a little'). Formal / literary register. Distinct from 〜なり (as soon as) and 〜なりに (in one's own way).",
+      "formation": "Noun + なりとも.",
+      "formation_notes": [
+        "Minimizer — 'at least X' or 'even just X'.",
+        "Common in polite offers: 少しなりともお役に立ちたい ('I'd like to be of at least some help').",
+        "Formal / literary register.",
+        "Distinct from other なり constructions."
+      ],
+      "formality": "formal",
+      "related": [
+        "dake-only-basic",
+        "demo-noun-even",
+        "nari-ni-in-own-way"
+      ],
+      "examples": [
+        {
+          "japanese": "少しなりともお役に立ちたい。",
+          "english": "I'd like to be of at least some help.",
+          "source": "original"
+        },
+        {
+          "japanese": "一言なりとも、挨拶すべきだった。",
+          "english": "I should have at least said a word of greeting.",
+          "source": "original"
+        },
+        {
+          "japanese": "多少なりともご協力いたします。",
+          "english": "I will offer at least some cooperation.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-10416",
+        "kftt:kftt-11907",
+        "kftt:kftt-73278",
+        "kftt:kftt-101898",
+        "kftt:kftt-118858"
+      ]
+    },
+    {
+      "id": "nari-as-soon-as",
+      "pattern": "V dict-form + なり",
+      "level": "N1",
+      "meaning_en": "as soon as / right after (literary)",
+      "meaning_detailed": "V dict + なり is a literary construction meaning 'as soon as X, Y'. The main clause happens immediately following X, usually unexpectedly or dramatically. Distinct from the other senses of なり ('or' / 'any X or Y'). Formal / literary register.",
+      "formation": "V dict-form + なり.",
+      "formation_notes": [
+        "Literary 'as soon as' — similar to や否や and たとたん.",
+        "Distinct from other なり senses (listing 'or', indefinite 'any').",
+        "Main clause often dramatic or unexpected.",
+        "Formal / literary — rare in casual speech."
+      ],
+      "formality": "formal",
+      "related": [
+        "ya-inaya",
+        "to-tan-moment",
+        "sobakara"
+      ],
+      "examples": [
+        {
+          "japanese": "彼は部屋に入るなり、泣き出した。",
+          "english": "As soon as he entered the room, he burst into tears.",
+          "source": "original"
+        },
+        {
+          "japanese": "彼女は私を見るなり、逃げ出した。",
+          "english": "As soon as she saw me, she ran away.",
+          "source": "original"
+        },
+        {
+          "japanese": "家に着くなり、すぐ寝てしまった。",
+          "english": "As soon as I got home, I fell right asleep.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "74067",
+        "74186",
+        "74192",
+        "74235",
+        "74261"
+      ]
+    },
+    {
+      "id": "nari-ni-in-own-way",
+      "pattern": "Noun + なりに / なりの",
+      "level": "N1",
+      "meaning_en": "in one's own way / in the manner suited to",
+      "meaning_detailed": "〜なりに expresses that the main-clause action is done 'in one's own way' or 'according to one's own level / capability' — often with an acknowledging nuance that someone is doing their best within their own limits. Common for modest self-assessments and acknowledgment of effort.",
+      "formation": "Noun + なりに (adverbial) / なりの + noun (attributive).",
+      "formation_notes": [
+        "Acknowledges personal effort within one's own limits / style.",
+        "Common for modest self-assessment: 私なりに頑張った ('I did my best in my own way').",
+        "Also for evaluating others: 子供には子供なりの悩みがある ('children have their own kind of worries').",
+        "Neutral / slightly formal register."
+      ],
+      "formality": "neutral",
+      "related": [
+        "toshite-as",
+        "ni-totte"
+      ],
+      "examples": [
+        {
+          "japanese": "私なりに一生懸命頑張った。",
+          "english": "I tried my best in my own way.",
+          "source": "original"
+        },
+        {
+          "japanese": "子供には子供なりの悩みがある。",
+          "english": "Children have their own kind of worries.",
+          "source": "original"
+        },
+        {
+          "japanese": "初心者なりに、工夫してみた。",
+          "english": "As a beginner, I tried to be creative in my own way.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "74269",
+        "93030",
+        "105107",
+        "114108",
+        "114109"
+      ]
+    },
+    {
+      "id": "ga-hayai-ka",
+      "pattern": "V dict-form + が早いか",
+      "level": "N1",
+      "meaning_en": "as soon as / the moment that (literary)",
+      "meaning_detailed": "〜が早いか is a literary construction expressing that two events happen in near-immediate succession — 'as soon as / the moment X happens, Y'. Very similar in function to 〜や否や and 〜なり (literary 'as soon as'). Formal / literary register, rare in casual speech.",
+      "formation": "V dict-form + が早いか.",
+      "formation_notes": [
+        "Literary 'as soon as' — similar to や否や, なり, か〜ないかのうちに.",
+        "Very formal / literary register — common in narratives and dramatic prose.",
+        "Main clause event follows immediately and often dramatically.",
+        "Rare in modern casual speech."
+      ],
+      "formality": "formal",
+      "related": [
+        "ya-inaya",
+        "nari-as-soon-as",
+        "ka-nai-ka-no-uchi-ni"
+      ],
+      "examples": [
+        {
+          "japanese": "ベルが鳴るが早いか、生徒たちは走り出した。",
+          "english": "The moment the bell rang, the students ran out.",
+          "source": "original"
+        },
+        {
+          "japanese": "彼は座るが早いか、居眠りを始めた。",
+          "english": "As soon as he sat down, he began to doze off.",
+          "source": "original"
+        },
+        {
+          "japanese": "ドアを開けるが早いか、猫が飛び出した。",
+          "english": "The moment I opened the door, the cat jumped out.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "76115"
+      ]
+    },
+    {
+      "id": "ni-kangamite",
+      "pattern": "Noun + に鑑みて",
+      "level": "N1",
+      "meaning_en": "in view of / considering",
+      "meaning_detailed": "〜に鑑みて expresses 'in view of X' or 'considering X' — taking a situation or circumstance into account when making a decision. Very formal, common in legal, governmental, and business documents. The kanji 鑑 means 'reflect / consider'.",
+      "formation": "Noun + に鑑みて.",
+      "formation_notes": [
+        "Very formal 'in view of / considering'.",
+        "Common in government and business: 現状に鑑みて, 状況に鑑みて.",
+        "Higher register than 〜を踏まえて.",
+        "Rare in casual speech — strictly formal writing and speeches."
+      ],
+      "formality": "formal",
+      "related": [
+        "wo-fumaete",
+        "wo-motoni-based-on",
+        "ni-terashite"
+      ],
+      "examples": [
+        {
+          "japanese": "現状に鑑みて、計画を見直す必要がある。",
+          "english": "In view of the current situation, we need to review the plan.",
+          "source": "original"
+        },
+        {
+          "japanese": "社会情勢に鑑みて、新しい政策を導入した。",
+          "english": "In view of the social situation, we introduced a new policy.",
+          "source": "original"
+        },
+        {
+          "japanese": "過去の経験に鑑みて、慎重に行動すべきだ。",
+          "english": "Considering past experience, we should act carefully.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-175628",
+        "kftt:kftt-236430",
+        "kftt:kftt-237408",
+        "kftt:kftt-390133"
+      ]
+    },
+    {
+      "id": "te-shikarubeki",
+      "pattern": "V-て form + しかるべき",
+      "level": "N1",
+      "meaning_en": "should be (fittingly) / ought to be",
+      "meaning_detailed": "〜てしかるべき expresses that an action or state 'should be' or 'is fitting' — 'ought to be done' with a sense of fairness or propriety. Very formal / literary register, common in formal criticism and arguments about what should be done. The verb しかる is literary for 'to be fitting'.",
+      "formation": "V-て + しかるべき (+ だ, or as attributive before noun).",
+      "formation_notes": [
+        "Formal / literary 'ought to be'.",
+        "Implies fairness or propriety — what 'ought' fittingly to happen.",
+        "Common in formal critique: 謝罪があってしかるべきだ ('there ought to be an apology').",
+        "Very rare in casual speech."
+      ],
+      "formality": "formal",
+      "related": [
+        "beki-da",
+        "beku-in-order-to"
+      ],
+      "examples": [
+        {
+          "japanese": "彼には謝罪があってしかるべきだ。",
+          "english": "There ought to be an apology from him.",
+          "source": "original"
+        },
+        {
+          "japanese": "その程度の配慮はあってしかるべきだ。",
+          "english": "That level of consideration ought to exist.",
+          "source": "original"
+        },
+        {
+          "japanese": "責任者には辞任を求めてしかるべきだ。",
+          "english": "The person in charge should fittingly be asked to resign.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "75359",
+        "77297"
       ]
     },
     {
@@ -7587,7 +8078,7 @@
     },
     {
       "id": "you-to-mai-to",
-      "pattern": "Verb volitional + と + verb ます-stem + まい(と)",
+      "pattern": "V volitional + と + V dict-form/ます-stem + まい(と)",
       "level": "N2",
       "meaning_en": "whether or not (one does) X",
       "meaning_detailed": "〜(よ)うと〜まいと is a paired concessive construction meaning 'whether X or not X, (the main clause holds)'. It combines the volitional + と (positive) with the negative まい + と. Formal / literary register, emphatic indifference to the positive/negative outcome of X. Common in assertions that hold no matter what.",
@@ -8356,8 +8847,8 @@
       ],
       "examples": [
         {
-          "japanese": "長年練習しただけのことはあって、演奏が素晴らしい。",
-          "english": "His practice of many years shows — the performance is splendid.",
+          "japanese": "長年練習しただけのことはある。演奏が素晴らしい。",
+          "english": "The years of practice have paid off. The performance is wonderful.",
           "source": "original"
         },
         {
@@ -8698,9 +9189,8 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "179295",
-        "194956",
-        "222082"
+        "149289",
+        "234089"
       ]
     },
     {
@@ -9462,8 +9952,8 @@
           "source": "original"
         },
         {
-          "japanese": "褒めるまでもないが、上手にできた。",
-          "english": "It's not praise-worthy, but it was well done.",
+          "japanese": "直接会わないまでも、電話くらいはしてほしい。",
+          "english": "Even if you don't meet in person, I'd at least like you to call.",
           "source": "original"
         }
       ],
@@ -9524,180 +10014,6 @@
         "121243",
         "144666",
         "174900"
-      ]
-    },
-    {
-      "id": "ni-taru",
-      "pattern": "Verb dict-form / noun + に足る",
-      "level": "N2",
-      "meaning_en": "worth / sufficient to / deserving of",
-      "meaning_detailed": "〜に足る expresses that something is worth doing or merits X — 'worth / sufficient to / deserving of'. More literary than 〜に値する ('worthy of', also N2). Often used in formal evaluations: '信頼に足る' ('worthy of trust'). The attributive 〜に足る + noun is the most common usage.",
-      "formation": "V dict-form + に足る; noun + に足る. Attributive: 〜に足る + noun.",
-      "formation_notes": [
-        "Formal / literary 'worthy of'.",
-        "Common fixed phrases: 信頼に足る ('worthy of trust'), 尊敬に足る ('worthy of respect').",
-        "Less common in speech, more common in written Japanese and formal evaluations.",
-        "Similar meaning: 〜に値する (also N2 / slightly different register)."
-      ],
-      "formality": "formal",
-      "related": [
-        "ni-taeru",
-        "ni-taenai",
-        "beki-da"
-      ],
-      "examples": [
-        {
-          "japanese": "彼は信頼に足る人物だ。",
-          "english": "He is a person worthy of trust.",
-          "source": "original"
-        },
-        {
-          "japanese": "これは一読に足る本だ。",
-          "english": "This is a book worth reading.",
-          "source": "original"
-        },
-        {
-          "japanese": "驚くに足る話ではない。",
-          "english": "It's not a story worth being surprised about.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "197340"
-      ]
-    },
-    {
-      "id": "ni-taeru",
-      "pattern": "Verb dict / noun + に堪える",
-      "level": "N2",
-      "meaning_en": "can bear / is worth (X-ing)",
-      "meaning_detailed": "〜に堪える expresses that something is tolerable or worth X — 'can bear X / is worth X'. Often used with verbs of evaluation, viewing, or listening: 見るに堪える ('worth watching / bearable to watch'). The negated form 〜に堪えない (see separate entry) is more common and means 'unbearable'.",
-      "formation": "V dict-form + に堪える; noun (endurance / evaluation) + に堪える.",
-      "formation_notes": [
-        "Tolerance / worth — 'is worth bearing'.",
-        "More common in negated form 〜に堪えない (see separate entry).",
-        "Common with 見る, 聞く, 読む: 見るに堪える, 聞くに堪える.",
-        "Distinct from 堪える ('endure') in ordinary use — this is the grammatical auxiliary form."
-      ],
-      "formality": "formal",
-      "related": [
-        "ni-taenai",
-        "ni-taru"
-      ],
-      "examples": [
-        {
-          "japanese": "この作品は鑑賞に堪える。",
-          "english": "This work is worth appreciating.",
-          "source": "original"
-        },
-        {
-          "japanese": "彼の演奏は聞くに堪える。",
-          "english": "His performance is worth listening to.",
-          "source": "original"
-        },
-        {
-          "japanese": "子供の絵だが、見るに堪える出来栄えだ。",
-          "english": "It's a child's drawing, but worth viewing.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "kftt:kftt-246678"
-      ]
-    },
-    {
-      "id": "ni-taenai",
-      "pattern": "Verb dict / noun + に堪えない",
-      "level": "N2",
-      "meaning_en": "unbearable / can't bear to / not worth",
-      "meaning_detailed": "〜に堪えない is the negation of 〜に堪える — 'unbearable to X' or 'not worth X-ing'. Common with evaluation verbs: 見るに堪えない ('unbearable to watch'), 聞くに堪えない ('unbearable to listen to'). Also used for emotional states: 感慨に堪えない ('overcome with emotion').",
-      "formation": "V dict-form + に堪えない; noun (emotion) + に堪えない.",
-      "formation_notes": [
-        "Negated form of 〜に堪える — unbearability or 'not worth'.",
-        "Common with evaluation: 見るに堪えない, 聞くに堪えない.",
-        "Emotional use: 感慨に堪えない ('unable to bear the deep emotion — overcome').",
-        "Formal / literary register."
-      ],
-      "formality": "formal",
-      "related": [
-        "ni-taeru",
-        "te-tamaranai-unbearably"
-      ],
-      "examples": [
-        {
-          "japanese": "その映画はひどすぎて、見るに堪えなかった。",
-          "english": "The movie was so bad it was unbearable to watch.",
-          "source": "original"
-        },
-        {
-          "japanese": "彼の話は聞くに堪えない。",
-          "english": "His talk is unbearable to listen to.",
-          "source": "original"
-        },
-        {
-          "japanese": "久しぶりの再会に、感慨に堪えなかった。",
-          "english": "At the long-awaited reunion, I was overcome with emotion.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "kftt:kftt-194571"
-      ]
-    },
-    {
-      "id": "te-yamanai",
-      "pattern": "V-て form + やまない",
-      "level": "N2",
-      "meaning_en": "never stop / can't help (feeling / doing)",
-      "meaning_detailed": "〜てやまない expresses that a feeling or action never stops — typically used with emotional or volitional verbs to describe ongoing, deeply held sentiments: 'I will never stop hoping', 'I cannot help but admire'. Literary / emphatic register. Common with 願う (wish), 愛する (love), 尊敬する (respect).",
-      "formation": "V-て + やまない. Usually with emotional / volitional verbs.",
-      "formation_notes": [
-        "Literary / emphatic — for deeply held ongoing feelings.",
-        "Common with: 願う, 愛する, 尊敬する, 期待する, 祈る.",
-        "やまない comes from 止む (to stop) — 'not stopping'.",
-        "Often in dedications, commemorations, formal expressions of sentiment."
-      ],
-      "formality": "formal",
-      "related": [
-        "te-tamaranai-unbearably",
-        "te-naranai-cant-help"
-      ],
-      "examples": [
-        {
-          "japanese": "ご成功を祈ってやみません。",
-          "english": "I pray endlessly for your success.",
-          "source": "original"
-        },
-        {
-          "japanese": "彼の活躍を期待してやまない。",
-          "english": "I have unending expectations for his success.",
-          "source": "original"
-        },
-        {
-          "japanese": "故郷を愛してやまない。",
-          "english": "I will never stop loving my hometown.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "kftt:kftt-22120",
-        "kftt:kftt-77679"
       ]
     },
     {
@@ -10059,10 +10375,9 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74334",
-        "85739",
-        "207412",
-        "225407"
+        "81580",
+        "176730",
+        "188702"
       ]
     },
     {
@@ -10343,53 +10658,6 @@
         "75072",
         "76067",
         "76403"
-      ]
-    },
-    {
-      "id": "ni-sakigakete",
-      "pattern": "Noun + に先駆けて",
-      "level": "N2",
-      "meaning_en": "ahead of / before (others)",
-      "meaning_detailed": "〜に先駆けて expresses being ahead of others or preceding something — 'ahead of X'. Common in business and product release contexts ('ahead of the industry', 'before the competition'). Formal register, often used in marketing and achievement contexts. Distinct from 〜に先立って (before an upcoming event).",
-      "formation": "Noun + に先駆けて.",
-      "formation_notes": [
-        "Being ahead of / preceding — often with a competitive or innovative nuance.",
-        "Common in business: 業界に先駆けて ('ahead of the industry'), 世界に先駆けて ('ahead of the world').",
-        "Related: 〜に先立って (before an event); 〜に先駆けて emphasizes being ahead of peers.",
-        "Formal / business register."
-      ],
-      "formality": "formal",
-      "related": [
-        "ni-sakidatte-prior",
-        "ni-atatte-occasion"
-      ],
-      "examples": [
-        {
-          "japanese": "業界に先駆けて、新商品を発売した。",
-          "english": "Ahead of the industry, we launched the new product.",
-          "source": "original"
-        },
-        {
-          "japanese": "他社に先駆けて、サービスを開始した。",
-          "english": "Ahead of other companies, we started the service.",
-          "source": "original"
-        },
-        {
-          "japanese": "世界に先駆けて、この技術を開発した。",
-          "english": "Ahead of the world, we developed this technology.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "kftt:kftt-33651",
-        "kftt:kftt-38507",
-        "kftt:kftt-45736",
-        "kftt:kftt-45778",
-        "kftt:kftt-56308"
       ]
     },
     {
@@ -10899,9 +11167,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "219463",
-        "226176",
-        "234433"
+        "76945",
+        "77013",
+        "83200",
+        "197417",
+        "197418"
       ]
     },
     {
@@ -11086,101 +11356,6 @@
       ]
     },
     {
-      "id": "nari-as-soon-as",
-      "pattern": "V dict-form + なり",
-      "level": "N2",
-      "meaning_en": "as soon as / right after (literary)",
-      "meaning_detailed": "V dict + なり is a literary construction meaning 'as soon as X, Y'. The main clause happens immediately following X, usually unexpectedly or dramatically. Distinct from the other senses of なり ('or' / 'any X or Y'). Formal / literary register.",
-      "formation": "V dict-form + なり.",
-      "formation_notes": [
-        "Literary 'as soon as' — similar to や否や and たとたん.",
-        "Distinct from other なり senses (listing 'or', indefinite 'any').",
-        "Main clause often dramatic or unexpected.",
-        "Formal / literary — rare in casual speech."
-      ],
-      "formality": "formal",
-      "related": [
-        "ya-inaya",
-        "to-tan-moment",
-        "sobakara"
-      ],
-      "examples": [
-        {
-          "japanese": "彼は部屋に入るなり、泣き出した。",
-          "english": "As soon as he entered the room, he burst into tears.",
-          "source": "original"
-        },
-        {
-          "japanese": "彼女は私を見るなり、逃げ出した。",
-          "english": "As soon as she saw me, she ran away.",
-          "source": "original"
-        },
-        {
-          "japanese": "家に着くなり、すぐ寝てしまった。",
-          "english": "As soon as I got home, I fell right asleep.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "74067",
-        "74186",
-        "74192",
-        "74235",
-        "74261"
-      ]
-    },
-    {
-      "id": "nari-ni-in-own-way",
-      "pattern": "Noun + なりに / なりの",
-      "level": "N2",
-      "meaning_en": "in one's own way / in the manner suited to",
-      "meaning_detailed": "〜なりに expresses that the main-clause action is done 'in one's own way' or 'according to one's own level / capability' — often with an acknowledging nuance that someone is doing their best within their own limits. Common for modest self-assessments and acknowledgment of effort.",
-      "formation": "Noun + なりに (adverbial) / なりの + noun (attributive).",
-      "formation_notes": [
-        "Acknowledges personal effort within one's own limits / style.",
-        "Common for modest self-assessment: 私なりに頑張った ('I did my best in my own way').",
-        "Also for evaluating others: 子供には子供なりの悩みがある ('children have their own kind of worries').",
-        "Neutral / slightly formal register."
-      ],
-      "formality": "neutral",
-      "related": [
-        "toshite-as",
-        "ni-totte"
-      ],
-      "examples": [
-        {
-          "japanese": "私なりに一生懸命頑張った。",
-          "english": "I tried my best in my own way.",
-          "source": "original"
-        },
-        {
-          "japanese": "子供には子供なりの悩みがある。",
-          "english": "Children have their own kind of worries.",
-          "source": "original"
-        },
-        {
-          "japanese": "初心者なりに、工夫してみた。",
-          "english": "As a beginner, I tried to be creative in my own way.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "74269",
-        "93030",
-        "105107",
-        "114108",
-        "114109"
-      ]
-    },
-    {
       "id": "atte-no-thanks-to",
       "pattern": "Noun + あっての + noun",
       "level": "N2",
@@ -11226,50 +11401,6 @@
       ]
     },
     {
-      "id": "ga-hayai-ka",
-      "pattern": "V dict-form + が早いか",
-      "level": "N2",
-      "meaning_en": "as soon as / the moment that (literary)",
-      "meaning_detailed": "〜が早いか is a literary construction expressing that two events happen in near-immediate succession — 'as soon as / the moment X happens, Y'. Very similar in function to 〜や否や and 〜なり (literary 'as soon as'). Formal / literary register, rare in casual speech.",
-      "formation": "V dict-form + が早いか.",
-      "formation_notes": [
-        "Literary 'as soon as' — similar to や否や, なり, か〜ないかのうちに.",
-        "Very formal / literary register — common in narratives and dramatic prose.",
-        "Main clause event follows immediately and often dramatically.",
-        "Rare in modern casual speech."
-      ],
-      "formality": "formal",
-      "related": [
-        "ya-inaya",
-        "nari-as-soon-as",
-        "ka-nai-ka-no-uchi-ni"
-      ],
-      "examples": [
-        {
-          "japanese": "ベルが鳴るが早いか、生徒たちは走り出した。",
-          "english": "The moment the bell rang, the students ran out.",
-          "source": "original"
-        },
-        {
-          "japanese": "彼は座るが早いか、居眠りを始めた。",
-          "english": "As soon as he sat down, he began to doze off.",
-          "source": "original"
-        },
-        {
-          "japanese": "ドアを開けるが早いか、猫が飛び出した。",
-          "english": "The moment I opened the door, the cat jumped out.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "76115"
-      ]
-    },
-    {
       "id": "ni-terashite",
       "pattern": "Noun + に照らして",
       "level": "N2",
@@ -11310,96 +11441,6 @@
       ],
       "tatoeba_pattern_matches": [
         "212026"
-      ]
-    },
-    {
-      "id": "ni-kangamite",
-      "pattern": "Noun + に鑑みて",
-      "level": "N2",
-      "meaning_en": "in view of / considering",
-      "meaning_detailed": "〜に鑑みて expresses 'in view of X' or 'considering X' — taking a situation or circumstance into account when making a decision. Very formal, common in legal, governmental, and business documents. The kanji 鑑 means 'reflect / consider'.",
-      "formation": "Noun + に鑑みて.",
-      "formation_notes": [
-        "Very formal 'in view of / considering'.",
-        "Common in government and business: 現状に鑑みて, 状況に鑑みて.",
-        "Higher register than 〜を踏まえて.",
-        "Rare in casual speech — strictly formal writing and speeches."
-      ],
-      "formality": "formal",
-      "related": [
-        "wo-fumaete",
-        "wo-motoni-based-on",
-        "ni-terashite"
-      ],
-      "examples": [
-        {
-          "japanese": "現状に鑑みて、計画を見直す必要がある。",
-          "english": "In view of the current situation, we need to review the plan.",
-          "source": "original"
-        },
-        {
-          "japanese": "社会情勢に鑑みて、新しい政策を導入した。",
-          "english": "In view of the social situation, we introduced a new policy.",
-          "source": "original"
-        },
-        {
-          "japanese": "過去の経験に鑑みて、慎重に行動すべきだ。",
-          "english": "Considering past experience, we should act carefully.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "kftt:kftt-175628",
-        "kftt:kftt-236430",
-        "kftt:kftt-237408",
-        "kftt:kftt-390133"
-      ]
-    },
-    {
-      "id": "wo-kaerimi-zu",
-      "pattern": "Noun + を顧みず",
-      "level": "N2",
-      "meaning_en": "without regard to / disregarding",
-      "meaning_detailed": "〜を顧みず expresses that an action is taken 'without regard to' X — the subject ignores X in order to proceed with the main clause action. Often with self-sacrifice: 'without regard to my own safety, I helped'. Formal / literary register. The verb 顧みる means 'to look back / consider'.",
-      "formation": "Noun + を顧みず.",
-      "formation_notes": [
-        "Self-sacrificial or single-minded disregard — often for noble purposes.",
-        "Common nouns: 危険 ('danger'), 家族 ('family'), 自分 ('self'), 健康 ('health').",
-        "Formal / literary register, often in honorifics or heroic narratives.",
-        "Related: 〜をよそに (disregard, sometimes critical)."
-      ],
-      "formality": "formal",
-      "related": [
-        "wo-yoso-ni",
-        "zu-ni"
-      ],
-      "examples": [
-        {
-          "japanese": "危険を顧みず、子供を助けた。",
-          "english": "Disregarding the danger, he helped the child.",
-          "source": "original"
-        },
-        {
-          "japanese": "家庭を顧みず、仕事に没頭した。",
-          "english": "Without regard to his family, he threw himself into work.",
-          "source": "original"
-        },
-        {
-          "japanese": "自分の健康を顧みず、働き続けた。",
-          "english": "Without regard to his own health, he kept working.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "87135"
       ]
     },
     {
@@ -11520,8 +11561,8 @@
           "source": "original"
         },
         {
-          "japanese": "大した作品ではないが、自慢するほどのものではない。",
-          "english": "It's not a great work — nothing to brag about.",
+          "japanese": "まあまあの出来だが、自慢するほどのものではない。",
+          "english": "It turned out okay, but it's nothing to brag about.",
           "source": "original"
         }
       ],
@@ -11856,49 +11897,6 @@
       ],
       "tatoeba_pattern_matches": [
         "154809"
-      ]
-    },
-    {
-      "id": "majiki-unacceptable",
-      "pattern": "V dict-form + まじき + noun",
-      "level": "N2",
-      "meaning_en": "unacceptable / unbecoming / should not",
-      "meaning_detailed": "〜まじき is an archaic / literary construction describing behavior as 'unacceptable / unbecoming / should not be done'. Attached to a dictionary-form verb followed by a role noun: 'behavior unbecoming of a doctor'. Appears in formal criticism, editorials, and moralistic statements. Very rare in casual speech.",
-      "formation": "V dict-form + まじき + noun (role / position).",
-      "formation_notes": [
-        "Archaic / literary — critical moral judgment.",
-        "Fixed pattern: 〜まじき + 行為 / ふるまい ('act / behavior unbecoming of').",
-        "The noun is typically a role: 教師, 医者, 警察官, 大人, 政治家.",
-        "Rare in casual speech — common in editorials, formal criticism."
-      ],
-      "formality": "formal",
-      "related": [
-        "beki-da",
-        "beku-in-order-to"
-      ],
-      "examples": [
-        {
-          "japanese": "それは教師にあるまじき行為だ。",
-          "english": "That's behavior unbecoming of a teacher.",
-          "source": "original"
-        },
-        {
-          "japanese": "医者としてあるまじき発言だ。",
-          "english": "That's an unacceptable statement from a doctor.",
-          "source": "original"
-        },
-        {
-          "japanese": "公務員にあるまじきふるまいだった。",
-          "english": "It was behavior unbecoming of a civil servant.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "8318782"
       ]
     },
     {
@@ -12582,50 +12580,6 @@
       ]
     },
     {
-      "id": "te-shikarubeki",
-      "pattern": "V-て form + しかるべき",
-      "level": "N2",
-      "meaning_en": "should be (fittingly) / ought to be",
-      "meaning_detailed": "〜てしかるべき expresses that an action or state 'should be' or 'is fitting' — 'ought to be done' with a sense of fairness or propriety. Very formal / literary register, common in formal criticism and arguments about what should be done. The verb しかる is literary for 'to be fitting'.",
-      "formation": "V-て + しかるべき (+ だ, or as attributive before noun).",
-      "formation_notes": [
-        "Formal / literary 'ought to be'.",
-        "Implies fairness or propriety — what 'ought' fittingly to happen.",
-        "Common in formal critique: 謝罪があってしかるべきだ ('there ought to be an apology').",
-        "Very rare in casual speech."
-      ],
-      "formality": "formal",
-      "related": [
-        "beki-da",
-        "beku-in-order-to"
-      ],
-      "examples": [
-        {
-          "japanese": "彼には謝罪があってしかるべきだ。",
-          "english": "There ought to be an apology from him.",
-          "source": "original"
-        },
-        {
-          "japanese": "その程度の配慮はあってしかるべきだ。",
-          "english": "That level of consideration ought to exist.",
-          "source": "original"
-        },
-        {
-          "japanese": "責任者には辞任を求めてしかるべきだ。",
-          "english": "The person in charge should fittingly be asked to resign.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "75359",
-        "77297"
-      ]
-    },
-    {
       "id": "yashinai-emphatic",
       "pattern": "V ます-stem + やしない",
       "level": "N2",
@@ -12764,102 +12718,6 @@
       ]
     },
     {
-      "id": "gotoku-as-if",
-      "pattern": "Plain form / noun + の + ごとく",
-      "level": "N2",
-      "meaning_en": "just as / like / as if (literary)",
-      "meaning_detailed": "〜ごとく is a literary / classical construction meaning 'just as' or 'like' — used for similes and comparisons in formal and literary writing. Derived from the classical adjective ごとし. Very formal, common in literature, essays, and formal speeches. Attributive form ごとき + noun is also productive.",
-      "formation": "V plain + (が)ごとく; noun + の + ごとく. Attributive: ごとき + noun.",
-      "formation_notes": [
-        "Literary / classical simile marker — 'just as'.",
-        "Very formal / written register.",
-        "Attributive form 〜ごとき: 矢のごとき速さ ('speed like an arrow').",
-        "Modern equivalent: 〜のように (more common, informal)."
-      ],
-      "formality": "formal",
-      "related": [
-        "you-da-appearance",
-        "gotoki-like",
-        "ka-no-you-ni"
-      ],
-      "examples": [
-        {
-          "japanese": "矢のごとく、時間が過ぎていく。",
-          "english": "Time passes just like an arrow.",
-          "source": "original"
-        },
-        {
-          "japanese": "彼は狂ったごとく働き続けた。",
-          "english": "He kept working as if possessed.",
-          "source": "original"
-        },
-        {
-          "japanese": "夢のごとく美しい景色だ。",
-          "english": "It's a scene beautiful like a dream.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "76300",
-        "102320",
-        "200089",
-        "214546",
-        "228757"
-      ]
-    },
-    {
-      "id": "gotoki-like",
-      "pattern": "Noun + ごとき (+ noun)",
-      "level": "N2",
-      "meaning_en": "like (a) / such as (literary, often disparaging)",
-      "meaning_detailed": "〜ごとき is the attributive form of ごとし, meaning 'like X' or 'such as X'. Often carries a dismissive or belittling nuance when used with a noun referring to a person or entity — 'someone like X (who is beneath / below expectations)'. Literary / formal, also used self-deprecatingly.",
-      "formation": "Noun + ごとき (+ noun).",
-      "formation_notes": [
-        "Often dismissive when used with people: 私ごとき ('someone like me'), お前ごとき ('someone like you').",
-        "Can also be a neutral simile with other nouns.",
-        "Literary / classical register.",
-        "Self-deprecating with 私ごとき expresses humility."
-      ],
-      "formality": "formal",
-      "related": [
-        "gotoku-as-if",
-        "nan-ka-dismissive",
-        "ni-shite-wa"
-      ],
-      "examples": [
-        {
-          "japanese": "私ごとき者にはもったいないお言葉です。",
-          "english": "Such kind words are wasted on someone like me.",
-          "source": "original"
-        },
-        {
-          "japanese": "お前ごときに負けはしない。",
-          "english": "I won't lose to someone like you.",
-          "source": "original"
-        },
-        {
-          "japanese": "子供ごときに負けて悔しい。",
-          "english": "I'm frustrated to lose to a mere child.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "kftt:kftt-14101",
-        "kftt:kftt-16094",
-        "kftt:kftt-76032",
-        "kftt:kftt-107820",
-        "kftt:kftt-110119"
-      ]
-    },
-    {
       "id": "ka-to-iu-to",
       "pattern": "Plain form + かというと / かといえば",
       "level": "N2",
@@ -12899,9 +12757,7 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "115918",
-        "171747",
-        "200816"
+        "163655"
       ]
     },
     {
@@ -12930,8 +12786,8 @@
           "source": "original"
         },
         {
-          "japanese": "これは正式な書類として受け取ってください。",
-          "english": "Please accept this as an official document.",
+          "japanese": "この報告書は正式な記録ものとして保管してください。",
+          "english": "Please keep this report as an official record.",
           "source": "original"
         },
         {
@@ -13039,145 +12895,6 @@
       ]
     },
     {
-      "id": "to-iedomo",
-      "pattern": "Plain form + といえども",
-      "level": "N2",
-      "meaning_en": "although / even though (literary)",
-      "meaning_detailed": "〜といえども is a formal / literary concessive meaning 'even though X' or 'although X'. Often used when the speaker acknowledges that X is the case but presents a contrasting main clause. More formal than 〜とはいえ. Common in speeches, essays, and literary writing.",
-      "formation": "Plain-form clause / noun + といえども.",
-      "formation_notes": [
-        "Very formal / literary concessive — rare in casual speech.",
-        "More formal than 〜とはいえ or 〜にしても.",
-        "Often with contrasts about capability, position, or principle: 子供といえども ('even a child, though...').",
-        "Common in speeches and formal prose."
-      ],
-      "formality": "formal",
-      "related": [
-        "to-wa-ie",
-        "ni-shitemo-even",
-        "noni-although"
-      ],
-      "examples": [
-        {
-          "japanese": "子供といえども、約束は守るべきだ。",
-          "english": "Even a child should keep a promise.",
-          "source": "original"
-        },
-        {
-          "japanese": "プロといえども、失敗することはある。",
-          "english": "Even a professional sometimes fails.",
-          "source": "original"
-        },
-        {
-          "japanese": "王様といえども、ルールには従うべきだ。",
-          "english": "Even a king should follow the rules.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "85200",
-        "144777",
-        "178263"
-      ]
-    },
-    {
-      "id": "to-omoi-kiya",
-      "pattern": "Plain form + と思いきや",
-      "level": "N2",
-      "meaning_en": "but contrary to expectation / I thought but",
-      "meaning_detailed": "〜と思いきや expresses that the speaker's expectation was contradicted by reality — 'I thought X, but (the reality was Y)'. Literary register. Often used in narratives for surprising reversals of expectation.",
-      "formation": "Plain-form clause + と思いきや.",
-      "formation_notes": [
-        "Surprise reversal — expectation contradicted by reality.",
-        "Literary / narrative register.",
-        "Main clause typically presents something unexpected.",
-        "Common in stories and formal writing."
-      ],
-      "formality": "formal",
-      "related": [
-        "hazu-datta-was-supposed",
-        "noni-although",
-        "to-wa-ie"
-      ],
-      "examples": [
-        {
-          "japanese": "簡単と思いきや、意外に難しかった。",
-          "english": "I thought it would be easy, but it was surprisingly hard.",
-          "source": "original"
-        },
-        {
-          "japanese": "晴れると思いきや、雨が降ってきた。",
-          "english": "I thought it would be sunny, but it started raining.",
-          "source": "original"
-        },
-        {
-          "japanese": "勝てると思いきや、逆転負けしてしまった。",
-          "english": "I thought I'd win, but I ended up losing in an upset.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "74456",
-        "76908"
-      ]
-    },
-    {
-      "id": "naritomo",
-      "pattern": "Noun + なりとも",
-      "level": "N2",
-      "meaning_en": "at least / whatever / even just",
-      "meaning_detailed": "〜なりとも expresses 'at least X' or 'even just X' — a concessive minimizer acknowledging a small or minimal offer. Often in polite offers or requests: 少しなりとも ('even just a little'). Formal / literary register. Distinct from 〜なり (as soon as) and 〜なりに (in one's own way).",
-      "formation": "Noun + なりとも.",
-      "formation_notes": [
-        "Minimizer — 'at least X' or 'even just X'.",
-        "Common in polite offers: 少しなりともお役に立ちたい ('I'd like to be of at least some help').",
-        "Formal / literary register.",
-        "Distinct from other なり constructions."
-      ],
-      "formality": "formal",
-      "related": [
-        "dake-only-basic",
-        "demo-noun-even",
-        "nari-ni-in-own-way"
-      ],
-      "examples": [
-        {
-          "japanese": "少しなりともお役に立ちたい。",
-          "english": "I'd like to be of at least some help.",
-          "source": "original"
-        },
-        {
-          "japanese": "一言なりとも、挨拶すべきだった。",
-          "english": "I should have at least said a word of greeting.",
-          "source": "original"
-        },
-        {
-          "japanese": "多少なりともご協力いたします。",
-          "english": "I will offer at least some cooperation.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "kftt:kftt-10416",
-        "kftt:kftt-11907",
-        "kftt:kftt-73278",
-        "kftt:kftt-101898",
-        "kftt:kftt-118858"
-      ]
-    },
-    {
       "id": "dake-nara",
       "pattern": "Noun / V plain + だけなら",
       "level": "N2",
@@ -13266,39 +12983,37 @@
       ]
     },
     {
-      "id": "sou-da-appearance",
-      "pattern": "Verb-stem / い-adj stem / な-adj root + そう(だ/です)",
-      "level": "N3",
-      "meaning_en": "looks like / seems (appearance-based judgment)",
-      "meaning_detailed": "そうだ attached to a verb stem, い-adjective stem, or na-adjective root expresses a judgment based on appearance — 'it looks like', 'it seems'. The speaker is making an inference from visual or situational evidence, not reporting something they heard. This is structurally distinct from the hearsay そうだ which attaches to plain form.",
-      "formation": "Verb ます-stem + そう; い-adj drop い + そう (高い → 高そう); な-adj root + そう (元気 → 元気そう). Exceptions: いい → よさそう, ない → なさそう.",
+      "id": "tsutsu-while",
+      "pattern": "Verb ます-stem + つつ",
+      "level": "N2",
+      "meaning_en": "while doing / although (formal)",
+      "meaning_detailed": "〜つつ attaches to a verb's ます-stem and has two related senses: (1) simultaneous action — 'while doing X' (formal equivalent of 〜ながら); (2) concessive — 'although / despite doing X'. The concessive sense often appears as つつも with the addition of も. More formal / literary than 〜ながら, common in written Japanese and formal speech.",
+      "formation": "V ます-stem + つつ (simultaneous); V ます-stem + つつも (concessive 'although doing').",
       "formation_notes": [
-        "For verbs, use the ます-stem: 食べる → 食べそう, 降る → 降りそう.",
-        "Negative of verb appearance: 〜そうにない / 〜そうもない (doesn't look like).",
-        "Negative of い-adjective appearance: 〜くなさそう (高くない → 高くなさそう).",
-        "Functions as a な-adjective grammatically: おいしそうな料理, 元気そうに見える."
+        "Formal / written register — contrast with 〜ながら, which is neutral and more common in speech.",
+        "Concessive use requires つつも: 悪いと知りつつも、やってしまった ('I did it even though I knew it was wrong').",
+        "Same subject required for both clauses, like 〜ながら.",
+        "Common in essays and formal prose."
       ],
-      "formality": "neutral",
+      "formality": "formal",
       "related": [
-        "sou-da-hearsay",
-        "you-da-appearance",
-        "mitai-looks-like",
-        "rashii-seems"
+        "nagara",
+        "noni-although"
       ],
       "examples": [
         {
-          "japanese": "雨が降りそうです。",
-          "english": "It looks like it's going to rain.",
+          "japanese": "音楽を聞きつつ、本を読んだ。",
+          "english": "I read a book while listening to music.",
           "source": "original"
         },
         {
-          "japanese": "このケーキはおいしそうですね。",
-          "english": "This cake looks delicious, doesn't it?",
+          "japanese": "悪いと知りつつも、やってしまった。",
+          "english": "Although I knew it was wrong, I went ahead and did it.",
           "source": "original"
         },
         {
-          "japanese": "彼は元気そうに見える。",
-          "english": "He looks energetic.",
+          "japanese": "景色を楽しみつつ、歩いた。",
+          "english": "I walked while enjoying the scenery.",
           "source": "original"
         }
       ],
@@ -13307,47 +13022,45 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4925",
-        "74484",
-        "74707",
-        "74823",
-        "75020"
+        "75110",
+        "75822",
+        "76078",
+        "76645",
+        "76788"
       ]
     },
     {
-      "id": "sou-da-hearsay",
-      "pattern": "Plain form + そう(だ/です)",
-      "level": "N3",
-      "meaning_en": "I heard that / apparently (reported speech)",
-      "meaning_detailed": "When そうだ attaches to a plain-form predicate (not a verb stem), it expresses hearsay — 'I heard that ___'. The speaker is reporting information received from another source rather than making their own judgment. The source can be named with 〜によると ('according to ___'). Structurally distinct from appearance-based そうだ, which attaches to the verb stem.",
-      "formation": "Plain-form verb / i-adj / na-adj / noun + だ (for nouns and na-adj) + そうだ. Examples: 食べるそうだ, 食べたそうだ, 高いそうだ, 学生だそうだ, 元気だそうだ.",
+      "id": "ni-shitagatte",
+      "pattern": "Noun + にしたがって / V plain + にしたがって",
+      "level": "N2",
+      "meaning_en": "in accordance with / as (X progresses)",
+      "meaning_detailed": "〜にしたがって has two related senses: (1) 'in accordance with' — following rules, orders, or guidelines (noun + にしたがって); (2) 'as (X progresses/increases)' — expressing a parallel change, similar to 〜につれて (V plain + にしたがって). Formal / written register, common in explanations of rules or describing progressive changes.",
+      "formation": "Noun + にしたがって (accordance); V plain + にしたがって (parallel change).",
       "formation_notes": [
-        "Note: for nouns and na-adjectives, the だ is retained before そうだ (学生だそうだ, not 学生そうだ — the latter would be an appearance-based construction).",
-        "No distinct past form for the hearsay そうだ itself — the tense is inside the reported clause (食べたそうだ = 'I heard they ate').",
-        "Cannot be negated as a whole unit — negate the reported content instead (来ないそうだ = 'I heard they're not coming').",
-        "The source of the hearsay is commonly introduced with 〜によると or 〜の話では."
+        "Two senses — 'in accordance' (following rules) and 'as (X progresses)' (parallel change).",
+        "Parallel to 〜につれて — both express correlated change, but にしたがって has a slightly more formal / rule-following nuance.",
+        "Based on 従う ('to follow / obey') — literal meaning shines through in the 'accordance' sense.",
+        "The attributive form 〜にしたがった + noun is also possible."
       ],
-      "formality": "neutral",
+      "formality": "formal",
       "related": [
-        "sou-da-appearance",
-        "to-iu",
-        "rashii-seems",
-        "you-da-appearance"
+        "ba-hodo",
+        "ni-yotte"
       ],
       "examples": [
         {
-          "japanese": "天気予報によると、明日は雨だそうです。",
-          "english": "According to the weather forecast, it will rain tomorrow.",
+          "japanese": "ルールにしたがって、行動してください。",
+          "english": "Please act in accordance with the rules.",
           "source": "original"
         },
         {
-          "japanese": "田中さんは来月結婚するそうです。",
-          "english": "I heard Mr. Tanaka is getting married next month.",
+          "japanese": "年をとるにしたがって、記憶力が衰えてくる。",
+          "english": "As one ages, one's memory declines.",
           "source": "original"
         },
         {
-          "japanese": "あの店のラーメンはおいしいそうだ。",
-          "english": "I hear the ramen at that restaurant is good.",
+          "japanese": "指示にしたがって、作業を進めた。",
+          "english": "I proceeded with the work according to the instructions.",
           "source": "original"
         }
       ],
@@ -13356,11 +13069,662 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4925",
-        "74484",
-        "74707",
-        "74823",
-        "75020"
+        "75101",
+        "76035",
+        "122394",
+        "126510",
+        "163203"
+      ]
+    },
+    {
+      "id": "ni-sotte-along",
+      "pattern": "Noun + に沿って",
+      "level": "N2",
+      "meaning_en": "along / in accordance with",
+      "meaning_detailed": "〜に沿って has two related senses: (1) spatially 'along' (川に沿って歩く 'walk along the river'); (2) figuratively 'in accordance with / following' (方針に沿って 'in line with the policy'). Formal / neutral register, common in written Japanese and business contexts.",
+      "formation": "Noun + に沿って (adverbially). Noun + に沿った + noun (attributively).",
+      "formation_notes": [
+        "Spatial sense: 道に沿って, 川に沿って, 線路に沿って.",
+        "Figurative sense: 方針に沿って, 計画に沿って, 希望に沿って.",
+        "Attributive form 〜に沿った + noun is common in formal writing.",
+        "Related: 〜にしたがって (more about following instructions), 〜に基づいて (based on)."
+      ],
+      "formality": "neutral",
+      "related": [
+        "ni-shitagatte",
+        "ni-yotte"
+      ],
+      "examples": [
+        {
+          "japanese": "川に沿って歩きました。",
+          "english": "I walked along the river.",
+          "source": "original"
+        },
+        {
+          "japanese": "会社の方針に沿って行動してください。",
+          "english": "Please act in accordance with company policy.",
+          "source": "original"
+        },
+        {
+          "japanese": "計画に沿ってプロジェクトを進めた。",
+          "english": "I proceeded with the project according to plan.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "165529",
+        "220485"
+      ]
+    },
+    {
+      "id": "mono-no-although",
+      "pattern": "Plain form + ものの",
+      "level": "N2",
+      "meaning_en": "although / even though (formal)",
+      "meaning_detailed": "〜ものの is a formal concessive marker meaning 'although X, Y', where the main clause often expresses a limitation, unexpected outcome, or reversal relative to what the ものの clause suggests. More formal and literary than けれど / が. Typical in written Japanese, reports, and formal speech. Distinct from 〜ものだ (general truth) and ものなら (if it were possible).",
+      "formation": "V plain / i-adj + ものの; na-adj + な + ものの; noun + である + ものの.",
+      "formation_notes": [
+        "Formal / literary register — alternatives in casual speech are けど / が.",
+        "Main clause typically expresses an unexpected continuation or limitation.",
+        "Distinct from 〜ものだ (general truth / tendency) and 〜ものなら (if it were possible).",
+        "Common in essays and news articles."
+      ],
+      "formality": "formal",
+      "related": [
+        "noni-although",
+        "ga-kedo-although",
+        "kuse-ni-despite"
+      ],
+      "examples": [
+        {
+          "japanese": "宿題を始めたものの、なかなか進まない。",
+          "english": "Although I started my homework, it's not progressing much.",
+          "source": "original"
+        },
+        {
+          "japanese": "買ったものの、一度も使っていない。",
+          "english": "Although I bought it, I've never used it.",
+          "source": "original"
+        },
+        {
+          "japanese": "約束したものの、守れなかった。",
+          "english": "Although I promised, I couldn't keep my word.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "74550",
+        "75251",
+        "75487",
+        "78255",
+        "93380"
+      ]
+    },
+    {
+      "id": "ka-no-you-ni",
+      "pattern": "Plain form + かのように",
+      "level": "N2",
+      "meaning_en": "as if / as though",
+      "meaning_detailed": "〜かのように compares something to a hypothetical or imagined scenario — 'as if X were the case'. It is more literary and more counterfactual than a simple simile with ように. The の can sometimes be omitted in casual speech (かように) but the full form is the standard. Often appears with verbs of behavior to describe an appearance that doesn't match reality.",
+      "formation": "V plain / i-adj + かのように; na-adj + (な / である) + かのように; noun + (である / の) + かのように.",
+      "formation_notes": [
+        "Counterfactual: the comparison is to something that isn't actually the case.",
+        "More literary than ように alone — the か adds a hypothetical / counterfactual flavor.",
+        "Often used with verbs of behavior: 〜かのようにふるまう ('to act as if').",
+        "The attributive form 〜かのような + noun is also productive."
+      ],
+      "formality": "neutral",
+      "related": [
+        "mitai-looks-like",
+        "you-da-appearance",
+        "furi-wo-suru-pretend"
+      ],
+      "examples": [
+        {
+          "japanese": "彼はまるで何も知らないかのように話した。",
+          "english": "He talked as if he knew nothing at all.",
+          "source": "original"
+        },
+        {
+          "japanese": "夢を見ているかのような気分だ。",
+          "english": "I feel as if I'm dreaming.",
+          "source": "original"
+        },
+        {
+          "japanese": "時間が止まったかのように静かだ。",
+          "english": "It's quiet as if time had stopped.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "75245",
+        "79278",
+        "96103",
+        "109348",
+        "151896"
+      ]
+    },
+    {
+      "id": "mono-nara-if-possible",
+      "pattern": "V potential form + ものなら",
+      "level": "N2",
+      "meaning_en": "if (it were) possible / if I could",
+      "meaning_detailed": "〜ものなら combined with a potential form expresses a hypothetical wish that the speaker considers difficult or impossible — 'if I could only X'. Often accompanied by a main clause describing the desired action. Formal / literary register, with a slightly wistful tone. Distinct from 〜たら / 〜ば (general conditionals).",
+      "formation": "V potential form + ものなら. Sometimes V dict + ものなら.",
+      "formation_notes": [
+        "Typically with potential forms: 会えるものなら ('if I could meet'), 戻れるものなら ('if I could go back').",
+        "Hypothetical and often wistful — implies the action is hard / impossible.",
+        "Formal / literary register — common in essays, poetry, and formal speech.",
+        "Distinct from 〜ものの (although) and 〜ものだ (general truth)."
+      ],
+      "formality": "neutral",
+      "related": [
+        "ba-conditional",
+        "ba-yokatta",
+        "kurai-nara-rather"
+      ],
+      "examples": [
+        {
+          "japanese": "昔に戻れるものなら、戻りたい。",
+          "english": "If I could go back to the past, I would.",
+          "source": "original"
+        },
+        {
+          "japanese": "会えるものなら、もう一度会いたい。",
+          "english": "If I could meet (him) again, I would want to.",
+          "source": "original"
+        },
+        {
+          "japanese": "飛べるものなら、今すぐ日本へ行きたい。",
+          "english": "If I could fly, I'd want to go to Japan right now.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "188196",
+        "228240"
+      ]
+    },
+    {
+      "id": "wo-motoni-based-on",
+      "pattern": "Noun + をもとに",
+      "level": "N2",
+      "meaning_en": "based on / on the basis of",
+      "meaning_detailed": "〜をもとに / 〜をもとにして expresses that something is created, judged, or produced 'based on' a source material, data, or foundation. Common in academic writing, storytelling origins ('based on a true story'), and data analysis. The attributive form をもとにした + noun is productive.",
+      "formation": "Noun + をもとに (adverbial) / をもとにして (emphatic adverbial) / をもとにした + noun (attributive).",
+      "formation_notes": [
+        "Formal / neutral register — common in writing and academic contexts.",
+        "Attributive をもとにした + noun: 実話をもとにした映画 ('a movie based on a true story').",
+        "Related: 〜に基づいて (similar 'based on', slightly more formal).",
+        "Similar to 〜に基づいて — both mean 'based on', with small register differences."
+      ],
+      "formality": "neutral",
+      "related": [
+        "ni-yotte",
+        "ni-kanshite-regarding"
+      ],
+      "examples": [
+        {
+          "japanese": "この小説は実話をもとに書かれた。",
+          "english": "This novel was written based on a true story.",
+          "source": "original"
+        },
+        {
+          "japanese": "データをもとに分析する。",
+          "english": "I'll analyze based on the data.",
+          "source": "original"
+        },
+        {
+          "japanese": "経験をもとにアドバイスします。",
+          "english": "I'll give advice based on experience.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "103682",
+        "149997"
+      ]
+    },
+    {
+      "id": "ue-ni-in-addition",
+      "pattern": "Plain form + 上に",
+      "level": "N2",
+      "meaning_en": "in addition to / on top of (that)",
+      "meaning_detailed": "〜上に is an additive connector meaning 'in addition to X, (also) Y'. The Y clause builds on or extends the X clause in the same direction — usually both positive or both negative. More formal than 〜し. Distinct from the locative 上 (above). Common in lists of reasons or attributes.",
+      "formation": "V plain / i-adj + 上に; na-adj + な / である + 上に; noun + である + 上に.",
+      "formation_notes": [
+        "Additive — Y clause extends X in the same direction (both positive or both negative).",
+        "Formal variant of 〜し (listing reasons/facts).",
+        "Distinct from the locative 上 ('above / on top of physically').",
+        "Common in praising: 頭がいい上に、親切だ ('smart and also kind'). Also in complaining: 雨が降る上に、風も強い ('raining and also windy')."
+      ],
+      "formality": "neutral",
+      "related": [
+        "shi-reason-listing",
+        "bakari-ka-not-only",
+        "ue-de-upon"
+      ],
+      "examples": [
+        {
+          "japanese": "この部屋は広い上に、明るい。",
+          "english": "This room is spacious and also bright.",
+          "source": "original"
+        },
+        {
+          "japanese": "頭が痛い上に、熱もある。",
+          "english": "On top of having a headache, I also have a fever.",
+          "source": "original"
+        },
+        {
+          "japanese": "彼は頭がいい上に、親切だ。",
+          "english": "He is smart and on top of that, kind.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "74064",
+        "74451",
+        "74499",
+        "74508",
+        "74740"
+      ]
+    },
+    {
+      "id": "ue-wa-now",
+      "pattern": "V plain + 上は",
+      "level": "N2",
+      "meaning_en": "now that / since (formal, implies commitment)",
+      "meaning_detailed": "〜上は (うえは) is a formal concessive / justificatory marker — 'now that X, Y must follow'. The main clause typically expresses an obligation, commitment, or necessary consequence following from the 上は premise. More formal and literary than 〜以上 (though their meanings overlap considerably). Common in business, formal writing, and speeches.",
+      "formation": "V plain (non-past or past) + 上は.",
+      "formation_notes": [
+        "Formal / literary — alternative: 〜以上(は) (slightly more common).",
+        "Main clause often expresses a required obligation or determination: 約束した上は、必ず守る.",
+        "Distinct from 〜上に (additive) and 〜上で (prerequisite) — 上は is the commitment-from-premise variant.",
+        "Register: formal, common in speeches and business."
+      ],
+      "formality": "formal",
+      "related": [
+        "ijou-since",
+        "ue-de-upon",
+        "ue-ni-in-addition"
+      ],
+      "examples": [
+        {
+          "japanese": "約束した上は、必ず守る。",
+          "english": "Now that I've promised, I'll definitely keep my word.",
+          "source": "original"
+        },
+        {
+          "japanese": "引き受けた上は、全力を尽くす。",
+          "english": "Now that I've taken it on, I'll give it my all.",
+          "source": "original"
+        },
+        {
+          "japanese": "日本に来た上は、日本語を話せるようになりたい。",
+          "english": "Now that I've come to Japan, I want to be able to speak Japanese.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "74085",
+        "100614",
+        "116182",
+        "173254",
+        "204496"
+      ]
+    },
+    {
+      "id": "ijou-since",
+      "pattern": "Plain form + 以上(は)",
+      "level": "N2",
+      "meaning_en": "since / now that / as long as",
+      "meaning_detailed": "〜以上(は) expresses that given the premise of the 以上 clause, a certain conclusion or obligation follows — 'since X is the case, Y'. Often used for commitments, obligations, or expectations that arise because of a stated fact. The optional は adds topic emphasis. Formal / neutral register.",
+      "formation": "V plain / i-adj + 以上(は); na-adj + である + 以上(は); noun + である + 以上(は).",
+      "formation_notes": [
+        "The premise justifies an obligation or expectation in the main clause.",
+        "Common in commitment contexts: 約束した以上、守らなければならない ('since I promised, I must keep it').",
+        "Similar to 〜からには (more emphatic 'now that').",
+        "Formal register — common in essays, formal speech, and business."
+      ],
+      "formality": "neutral",
+      "related": [
+        "kara-cause",
+        "node-cause"
+      ],
+      "examples": [
+        {
+          "japanese": "約束した以上、守らなければならない。",
+          "english": "Since I promised, I have to keep it.",
+          "source": "original"
+        },
+        {
+          "japanese": "引き受けた以上は、最後までやる。",
+          "english": "Now that I've taken it on, I'll see it through.",
+          "source": "original"
+        },
+        {
+          "japanese": "学生である以上、勉強が本分だ。",
+          "english": "As long as one is a student, studying is one's duty.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "204496",
+        "222084"
+      ]
+    },
+    {
+      "id": "shikamo-moreover",
+      "pattern": "しかも (sentence-initial)",
+      "level": "N2",
+      "meaning_en": "moreover / what's more / on top of that",
+      "meaning_detailed": "しかも is a sentence-initial conjunction meaning 'moreover' / 'what's more' — adds additional, often surprising or emphatic, information to a preceding statement. The added information extends the argument or praise in the same direction. Formal / neutral register.",
+      "formation": "[Previous sentence]. しかも [additional statement].",
+      "formation_notes": [
+        "Additive conjunction — 'moreover / in addition'.",
+        "The added info often extends in the same direction (positive or negative).",
+        "More formal than 〜だけでなく or 〜ばかりか attached within a sentence.",
+        "Formal / neutral register."
+      ],
+      "formality": "neutral",
+      "related": [
+        "bakari-ka-not-only",
+        "ue-ni-in-addition",
+        "soredemo-even-so"
+      ],
+      "examples": [
+        {
+          "japanese": "彼は頭がいい。しかも、性格も素晴らしい。",
+          "english": "He's smart. Moreover, his personality is wonderful.",
+          "source": "original"
+        },
+        {
+          "japanese": "この商品は安い。しかも、品質もいい。",
+          "english": "This product is cheap. What's more, the quality is good.",
+          "source": "original"
+        },
+        {
+          "japanese": "雨が降っている。しかも、風も強い。",
+          "english": "It's raining. On top of that, the wind is strong.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "74305",
+        "76679",
+        "76680",
+        "76681",
+        "87093"
+      ]
+    },
+    {
+      "id": "bakari-no",
+      "pattern": "Verb ます-stem / plain form + ばかりの / ばかりだ",
+      "level": "N2",
+      "meaning_en": "nothing but / only one way (to decline / increase)",
+      "meaning_detailed": "〜ばかりの / 〜ばかりだ expresses that something is trending in only one direction — 'only X-ing' / 'nothing but X'. Similar to 〜一方だ but with a slightly more emphatic 'only' flavor. Often with decline / deterioration. Formal / literary register.",
+      "formation": "V dict-form + ばかりだ; attributive V dict + ばかりの + noun.",
+      "formation_notes": [
+        "Trending in one direction — often negative.",
+        "Similar to 〜一方だ (N3) but more emphatic.",
+        "Common with change verbs: 増える, 減る, 悪化する.",
+        "Distinct from 〜ばかり (only, N3) and 〜たばかり (just did, N3)."
+      ],
+      "formality": "formal",
+      "related": [
+        "ippou-da-keeps",
+        "bakari-only",
+        "ippou-de-one-hand"
+      ],
+      "examples": [
+        {
+          "japanese": "物価は上がるばかりだ。",
+          "english": "Prices keep only going up.",
+          "source": "original"
+        },
+        {
+          "japanese": "状況は悪くなるばかりだった。",
+          "english": "The situation kept only getting worse.",
+          "source": "original"
+        },
+        {
+          "japanese": "人口は減るばかりだ。",
+          "english": "The population keeps only decreasing.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "75601",
+        "76341",
+        "76606",
+        "76662",
+        "84074"
+      ]
+    },
+    {
+      "id": "osore-ga-aru",
+      "pattern": "V plain / noun + の + 恐れがある",
+      "level": "N2",
+      "meaning_en": "risk of / fear that (may happen)",
+      "meaning_detailed": "〜恐れがある expresses that there is a risk or possibility of something (usually negative) happening — 'there's a risk of X'. Common in news reports, weather forecasts, and cautionary statements. 恐れ literally means 'fear / apprehension'. Formal register.",
+      "formation": "V plain (non-past) + 恐れがある; noun + の + 恐れがある. Attributive: 〜恐れのある + noun.",
+      "formation_notes": [
+        "Negative risk — 'there's a risk / fear that X'.",
+        "Common in weather forecasts: 大雨の恐れがある.",
+        "Attributive form: 〜恐れのある + noun ('at risk of X').",
+        "Formal / news register."
+      ],
+      "formality": "formal",
+      "related": [
+        "kane-nai-might",
+        "kamoshirenai-might"
+      ],
+      "examples": [
+        {
+          "japanese": "明日は大雨の恐れがあります。",
+          "english": "There's a risk of heavy rain tomorrow.",
+          "source": "original"
+        },
+        {
+          "japanese": "この薬には副作用の恐れがある。",
+          "english": "This medicine has a risk of side effects.",
+          "source": "original"
+        },
+        {
+          "japanese": "地震が発生する恐れがある。",
+          "english": "There's a risk of an earthquake occurring.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-6802",
+        "kftt:kftt-18155",
+        "kftt:kftt-25345",
+        "kftt:kftt-44648",
+        "kftt:kftt-62902"
+      ]
+    },
+    {
+      "id": "zaru-wo-enai",
+      "pattern": "V negative stem + ざるを得ない",
+      "level": "N2",
+      "meaning_en": "cannot help but / have no choice but to",
+      "meaning_detailed": "〜ざるを得ない is a formal / literary construction meaning 'cannot help but X' or 'have no choice but to X'. Expresses that external circumstances compel the action even if the speaker would rather not. Very formal register, common in reports and analyses. Irregular: する → せざるを得ない.",
+      "formation": "V ない-stem + ざるを得ない. Irregular: する → せざるを得ない.",
+      "formation_notes": [
+        "Formal compulsion — 'cannot avoid doing X'.",
+        "Irregular: せざるを得ない for する.",
+        "Based on the classical negative ざる plus 得ない ('cannot obtain').",
+        "Very formal register — common in news, essays, and formal speech."
+      ],
+      "formality": "formal",
+      "related": [
+        "shika-nai",
+        "hoka-nai-no-choice",
+        "wo-yogi-naku-sareru"
+      ],
+      "examples": [
+        {
+          "japanese": "彼の意見に賛成せざるを得ない。",
+          "english": "I cannot help but agree with his opinion.",
+          "source": "original"
+        },
+        {
+          "japanese": "そう結論づけざるを得ない。",
+          "english": "One cannot help but conclude so.",
+          "source": "original"
+        },
+        {
+          "japanese": "事実を認めざるを得ない。",
+          "english": "I have no choice but to acknowledge the facts.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "144528",
+        "204782",
+        "213554"
+      ]
+    },
+    {
+      "id": "ka-to-omou-to",
+      "pattern": "V-た form + かと思うと / かと思ったら",
+      "level": "N2",
+      "meaning_en": "no sooner had / just when (unexpected change)",
+      "meaning_detailed": "〜かと思うと expresses that two events happen in quick succession, often with an unexpected change — 'no sooner had X than Y' / 'just when I thought X, Y happened'. Similar in function to 〜や否や and 〜たとたん, but with a stronger sense of narrative surprise. Literary register.",
+      "formation": "V-た + かと思うと / かと思ったら.",
+      "formation_notes": [
+        "Unexpected follow-up — two events in quick succession.",
+        "Often narrative / dramatic: 泣いたかと思うと、笑い出した ('no sooner had she cried than she started laughing').",
+        "Related to 〜たとたん, 〜や否や, 〜か〜ないかのうちに.",
+        "Literary register."
+      ],
+      "formality": "formal",
+      "related": [
+        "ya-inaya",
+        "to-tan-moment",
+        "ka-nai-ka-no-uchi-ni"
+      ],
+      "examples": [
+        {
+          "japanese": "泣いたかと思うと、すぐ笑い出した。",
+          "english": "No sooner had she cried than she started laughing.",
+          "source": "original"
+        },
+        {
+          "japanese": "晴れたかと思うと、雨が降り出した。",
+          "english": "Just when it cleared up, it started raining.",
+          "source": "original"
+        },
+        {
+          "japanese": "寝たかと思ったら、もう起きている。",
+          "english": "Just when I thought he was asleep, he's already awake.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "225507",
+        "235848"
+      ]
+    },
+    {
+      "id": "hodo-dewa-nai",
+      "pattern": "Plain form + ほどではない",
+      "level": "N2",
+      "meaning_en": "not to the extent of / not as much as",
+      "meaning_detailed": "〜ほどではない is a negation of 〜ほど, expressing that something is 'not to the extent' of X — downplaying a comparison. Often used to moderate a previous statement: 'yes, but not that much'. Neutral / formal register.",
+      "formation": "V plain / i-adj + ほどではない; na-adj + な + ほどではない; noun + の + ほどではない.",
+      "formation_notes": [
+        "Moderating negation — 'not quite as much as X'.",
+        "Common to hedge: 痛いけど、救急車を呼ぶほどではない.",
+        "Related to 〜ほど (extent, N3).",
+        "Neutral / formal register."
+      ],
+      "formality": "neutral",
+      "related": [
+        "hodo-extent",
+        "hodo-no",
+        "hodo-no-mono-dewa-nai"
+      ],
+      "examples": [
+        {
+          "japanese": "痛いけど、病院に行くほどではない。",
+          "english": "It hurts, but not to the extent of going to the hospital.",
+          "source": "original"
+        },
+        {
+          "japanese": "忙しいが、断るほどではない。",
+          "english": "I'm busy, but not so much that I need to decline.",
+          "source": "original"
+        },
+        {
+          "japanese": "難しいけど、不可能なほどではない。",
+          "english": "It's difficult, but not to the extent of being impossible.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "kftt:kftt-55616",
+        "kftt:kftt-71227",
+        "kftt:kftt-73231",
+        "kftt:kftt-74285",
+        "kftt:kftt-75790"
       ]
     },
     {
@@ -14882,11 +15246,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "75373",
-        "75999",
-        "76146",
-        "76195",
-        "76230"
+        "121292",
+        "138461",
+        "143617",
+        "144378",
+        "151057"
       ]
     },
     {
@@ -15168,53 +15532,6 @@
       ]
     },
     {
-      "id": "tsutsu-while",
-      "pattern": "Verb ます-stem + つつ",
-      "level": "N3",
-      "meaning_en": "while doing / although (formal)",
-      "meaning_detailed": "〜つつ attaches to a verb's ます-stem and has two related senses: (1) simultaneous action — 'while doing X' (formal equivalent of 〜ながら); (2) concessive — 'although / despite doing X'. The concessive sense often appears as つつも with the addition of も. More formal / literary than 〜ながら, common in written Japanese and formal speech.",
-      "formation": "V ます-stem + つつ (simultaneous); V ます-stem + つつも (concessive 'although doing').",
-      "formation_notes": [
-        "Formal / written register — contrast with 〜ながら, which is neutral and more common in speech.",
-        "Concessive use requires つつも: 悪いと知りつつも、やってしまった ('I did it even though I knew it was wrong').",
-        "Same subject required for both clauses, like 〜ながら.",
-        "Common in essays and formal prose."
-      ],
-      "formality": "formal",
-      "related": [
-        "nagara",
-        "noni-although"
-      ],
-      "examples": [
-        {
-          "japanese": "音楽を聞きつつ、本を読んだ。",
-          "english": "I read a book while listening to music.",
-          "source": "original"
-        },
-        {
-          "japanese": "悪いと知りつつも、やってしまった。",
-          "english": "Although I knew it was wrong, I went ahead and did it.",
-          "source": "original"
-        },
-        {
-          "japanese": "景色を楽しみつつ、歩いた。",
-          "english": "I walked while enjoying the scenery.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "4726",
-        "4925",
-        "74013",
-        "74026",
-        "74033"
-      ]
-    },
-    {
       "id": "sae-even",
       "pattern": "Noun + さえ (+ negative or extreme statement)",
       "level": "N3",
@@ -15402,53 +15719,6 @@
         "74013",
         "74026",
         "74033"
-      ]
-    },
-    {
-      "id": "ni-shitagatte",
-      "pattern": "Noun + にしたがって / V plain + にしたがって",
-      "level": "N3",
-      "meaning_en": "in accordance with / as (X progresses)",
-      "meaning_detailed": "〜にしたがって has two related senses: (1) 'in accordance with' — following rules, orders, or guidelines (noun + にしたがって); (2) 'as (X progresses/increases)' — expressing a parallel change, similar to 〜につれて (V plain + にしたがって). Formal / written register, common in explanations of rules or describing progressive changes.",
-      "formation": "Noun + にしたがって (accordance); V plain + にしたがって (parallel change).",
-      "formation_notes": [
-        "Two senses — 'in accordance' (following rules) and 'as (X progresses)' (parallel change).",
-        "Parallel to 〜につれて — both express correlated change, but にしたがって has a slightly more formal / rule-following nuance.",
-        "Based on 従う ('to follow / obey') — literal meaning shines through in the 'accordance' sense.",
-        "The attributive form 〜にしたがった + noun is also possible."
-      ],
-      "formality": "formal",
-      "related": [
-        "ba-hodo",
-        "ni-yotte"
-      ],
-      "examples": [
-        {
-          "japanese": "ルールにしたがって、行動してください。",
-          "english": "Please act in accordance with the rules.",
-          "source": "original"
-        },
-        {
-          "japanese": "年をとるにしたがって、記憶力が衰えてくる。",
-          "english": "As one ages, one's memory declines.",
-          "source": "original"
-        },
-        {
-          "japanese": "指示にしたがって、作業を進めた。",
-          "english": "I proceeded with the work according to the instructions.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "75101",
-        "76035",
-        "122394",
-        "126510",
-        "163203"
       ]
     },
     {
@@ -15829,54 +16099,6 @@
       ]
     },
     {
-      "id": "mono-no-although",
-      "pattern": "Plain form + ものの",
-      "level": "N3",
-      "meaning_en": "although / even though (formal)",
-      "meaning_detailed": "〜ものの is a formal concessive marker meaning 'although X, Y', where the main clause often expresses a limitation, unexpected outcome, or reversal relative to what the ものの clause suggests. More formal and literary than けれど / が. Typical in written Japanese, reports, and formal speech. Distinct from 〜ものだ (general truth) and ものなら (if it were possible).",
-      "formation": "V plain / i-adj + ものの; na-adj + な + ものの; noun + である + ものの.",
-      "formation_notes": [
-        "Formal / literary register — alternatives in casual speech are けど / が.",
-        "Main clause typically expresses an unexpected continuation or limitation.",
-        "Distinct from 〜ものだ (general truth / tendency) and 〜ものなら (if it were possible).",
-        "Common in essays and news articles."
-      ],
-      "formality": "formal",
-      "related": [
-        "noni-although",
-        "ga-kedo-although",
-        "kuse-ni-despite"
-      ],
-      "examples": [
-        {
-          "japanese": "宿題を始めたものの、なかなか進まない。",
-          "english": "Although I started my homework, it's not progressing much.",
-          "source": "original"
-        },
-        {
-          "japanese": "買ったものの、一度も使っていない。",
-          "english": "Although I bought it, I've never used it.",
-          "source": "original"
-        },
-        {
-          "japanese": "約束したものの、守れなかった。",
-          "english": "Although I promised, I couldn't keep my word.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "74550",
-        "75251",
-        "75487",
-        "78255",
-        "93380"
-      ]
-    },
-    {
       "id": "ni-shitemo-even",
       "pattern": "Plain form + にしても",
       "level": "N3",
@@ -15922,54 +16144,6 @@
         "77035",
         "81018",
         "114575"
-      ]
-    },
-    {
-      "id": "ka-no-you-ni",
-      "pattern": "Plain form + かのように",
-      "level": "N3",
-      "meaning_en": "as if / as though",
-      "meaning_detailed": "〜かのように compares something to a hypothetical or imagined scenario — 'as if X were the case'. It is more literary and more counterfactual than a simple simile with ように. The の can sometimes be omitted in casual speech (かように) but the full form is the standard. Often appears with verbs of behavior to describe an appearance that doesn't match reality.",
-      "formation": "V plain / i-adj + かのように; na-adj + (な / である) + かのように; noun + (である / の) + かのように.",
-      "formation_notes": [
-        "Counterfactual: the comparison is to something that isn't actually the case.",
-        "More literary than ように alone — the か adds a hypothetical / counterfactual flavor.",
-        "Often used with verbs of behavior: 〜かのようにふるまう ('to act as if').",
-        "The attributive form 〜かのような + noun is also productive."
-      ],
-      "formality": "neutral",
-      "related": [
-        "mitai-looks-like",
-        "you-da-appearance",
-        "furi-wo-suru-pretend"
-      ],
-      "examples": [
-        {
-          "japanese": "彼はまるで何も知らないかのように話した。",
-          "english": "He talked as if he knew nothing at all.",
-          "source": "original"
-        },
-        {
-          "japanese": "夢を見ているかのような気分だ。",
-          "english": "I feel as if I'm dreaming.",
-          "source": "original"
-        },
-        {
-          "japanese": "時間が止まったかのように静かだ。",
-          "english": "It's quiet as if time had stopped.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "75245",
-        "79278",
-        "96103",
-        "109348",
-        "151896"
       ]
     },
     {
@@ -16206,50 +16380,6 @@
         "75094",
         "76000",
         "87699"
-      ]
-    },
-    {
-      "id": "ni-sotte-along",
-      "pattern": "Noun + に沿って",
-      "level": "N3",
-      "meaning_en": "along / in accordance with",
-      "meaning_detailed": "〜に沿って has two related senses: (1) spatially 'along' (川に沿って歩く 'walk along the river'); (2) figuratively 'in accordance with / following' (方針に沿って 'in line with the policy'). Formal / neutral register, common in written Japanese and business contexts.",
-      "formation": "Noun + に沿って (adverbially). Noun + に沿った + noun (attributively).",
-      "formation_notes": [
-        "Spatial sense: 道に沿って, 川に沿って, 線路に沿って.",
-        "Figurative sense: 方針に沿って, 計画に沿って, 希望に沿って.",
-        "Attributive form 〜に沿った + noun is common in formal writing.",
-        "Related: 〜にしたがって (more about following instructions), 〜に基づいて (based on)."
-      ],
-      "formality": "neutral",
-      "related": [
-        "ni-shitagatte",
-        "ni-yotte"
-      ],
-      "examples": [
-        {
-          "japanese": "川に沿って歩きました。",
-          "english": "I walked along the river.",
-          "source": "original"
-        },
-        {
-          "japanese": "会社の方針に沿って行動してください。",
-          "english": "Please act in accordance with company policy.",
-          "source": "original"
-        },
-        {
-          "japanese": "計画に沿ってプロジェクトを進めた。",
-          "english": "I proceeded with the project according to plan.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "165529",
-        "220485"
       ]
     },
     {
@@ -16540,7 +16670,7 @@
         "Can also express abstract simultaneity and correlation.",
         "Common in essays, news articles, and formal announcements."
       ],
-      "formality": "neutral",
+      "formality": "formal",
       "related": [
         "issho-ni-together",
         "ni-tsurete-as"
@@ -17313,54 +17443,6 @@
       ]
     },
     {
-      "id": "ue-ni-in-addition",
-      "pattern": "Plain form + 上に",
-      "level": "N3",
-      "meaning_en": "in addition to / on top of (that)",
-      "meaning_detailed": "〜上に is an additive connector meaning 'in addition to X, (also) Y'. The Y clause builds on or extends the X clause in the same direction — usually both positive or both negative. More formal than 〜し. Distinct from the locative 上 (above). Common in lists of reasons or attributes.",
-      "formation": "V plain / i-adj + 上に; na-adj + な / である + 上に; noun + である + 上に.",
-      "formation_notes": [
-        "Additive — Y clause extends X in the same direction (both positive or both negative).",
-        "Formal variant of 〜し (listing reasons/facts).",
-        "Distinct from the locative 上 ('above / on top of physically').",
-        "Common in praising: 頭がいい上に、親切だ ('smart and also kind'). Also in complaining: 雨が降る上に、風も強い ('raining and also windy')."
-      ],
-      "formality": "neutral",
-      "related": [
-        "shi-reason-listing",
-        "bakari-ka-not-only",
-        "ue-de-upon"
-      ],
-      "examples": [
-        {
-          "japanese": "この部屋は広い上に、明るい。",
-          "english": "This room is spacious and also bright.",
-          "source": "original"
-        },
-        {
-          "japanese": "頭が痛い上に、熱もある。",
-          "english": "On top of having a headache, I also have a fever.",
-          "source": "original"
-        },
-        {
-          "japanese": "彼は頭がいい上に、親切だ。",
-          "english": "He is smart and on top of that, kind.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "74064",
-        "74451",
-        "74499",
-        "74508",
-        "74740"
-      ]
-    },
-    {
       "id": "ue-de-upon",
       "pattern": "V-た form / noun + の + 上で",
       "level": "N3",
@@ -17634,11 +17716,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4726",
-        "4925",
-        "74013",
-        "74026",
-        "74033"
+        "74981",
+        "80937",
+        "103576",
+        "122205",
+        "167697"
       ]
     },
     {
@@ -17822,11 +17904,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4726",
-        "4925",
-        "74013",
-        "74026",
-        "74033"
+        "74229",
+        "74547",
+        "74980",
+        "75217",
+        "75845"
       ]
     },
     {
@@ -17874,50 +17956,6 @@
         "74013",
         "74026",
         "74033"
-      ]
-    },
-    {
-      "id": "wo-motoni-based-on",
-      "pattern": "Noun + をもとに",
-      "level": "N3",
-      "meaning_en": "based on / on the basis of",
-      "meaning_detailed": "〜をもとに / 〜をもとにして expresses that something is created, judged, or produced 'based on' a source material, data, or foundation. Common in academic writing, storytelling origins ('based on a true story'), and data analysis. The attributive form をもとにした + noun is productive.",
-      "formation": "Noun + をもとに (adverbial) / をもとにして (emphatic adverbial) / をもとにした + noun (attributive).",
-      "formation_notes": [
-        "Formal / neutral register — common in writing and academic contexts.",
-        "Attributive をもとにした + noun: 実話をもとにした映画 ('a movie based on a true story').",
-        "Related: 〜に基づいて (similar 'based on', slightly more formal).",
-        "Similar to 〜に基づいて — both mean 'based on', with small register differences."
-      ],
-      "formality": "neutral",
-      "related": [
-        "ni-yotte",
-        "ni-kanshite-regarding"
-      ],
-      "examples": [
-        {
-          "japanese": "この小説は実話をもとに書かれた。",
-          "english": "This novel was written based on a true story.",
-          "source": "original"
-        },
-        {
-          "japanese": "データをもとに分析する。",
-          "english": "I'll analyze based on the data.",
-          "source": "original"
-        },
-        {
-          "japanese": "経験をもとにアドバイスします。",
-          "english": "I'll give advice based on experience.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "103682",
-        "149997"
       ]
     },
     {
@@ -18056,11 +18094,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "75403",
-        "75516",
-        "75614",
-        "75652",
-        "75913"
+        "74045",
+        "74062",
+        "74082",
+        "74169",
+        "74185"
       ]
     },
     {
@@ -18431,50 +18469,6 @@
         "143569",
         "144107",
         "144935"
-      ]
-    },
-    {
-      "id": "ijou-since",
-      "pattern": "Plain form + 以上(は)",
-      "level": "N3",
-      "meaning_en": "since / now that / as long as",
-      "meaning_detailed": "〜以上(は) expresses that given the premise of the 以上 clause, a certain conclusion or obligation follows — 'since X is the case, Y'. Often used for commitments, obligations, or expectations that arise because of a stated fact. The optional は adds topic emphasis. Formal / neutral register.",
-      "formation": "V plain / i-adj + 以上(は); na-adj + である + 以上(は); noun + である + 以上(は).",
-      "formation_notes": [
-        "The premise justifies an obligation or expectation in the main clause.",
-        "Common in commitment contexts: 約束した以上、守らなければならない ('since I promised, I must keep it').",
-        "Similar to 〜からには (more emphatic 'now that').",
-        "Formal register — common in essays, formal speech, and business."
-      ],
-      "formality": "neutral",
-      "related": [
-        "kara-cause",
-        "node-cause"
-      ],
-      "examples": [
-        {
-          "japanese": "約束した以上、守らなければならない。",
-          "english": "Since I promised, I have to keep it.",
-          "source": "original"
-        },
-        {
-          "japanese": "引き受けた以上は、最後までやる。",
-          "english": "Now that I've taken it on, I'll see it through.",
-          "source": "original"
-        },
-        {
-          "japanese": "学生である以上、勉強が本分だ。",
-          "english": "As long as one is a student, studying is one's duty.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "204496",
-        "222084"
       ]
     },
     {
@@ -19086,54 +19080,6 @@
       ]
     },
     {
-      "id": "ue-wa-now",
-      "pattern": "V plain + 上は",
-      "level": "N3",
-      "meaning_en": "now that / since (formal, implies commitment)",
-      "meaning_detailed": "〜上は (うえは) is a formal concessive / justificatory marker — 'now that X, Y must follow'. The main clause typically expresses an obligation, commitment, or necessary consequence following from the 上は premise. More formal and literary than 〜以上 (though their meanings overlap considerably). Common in business, formal writing, and speeches.",
-      "formation": "V plain (non-past or past) + 上は.",
-      "formation_notes": [
-        "Formal / literary — alternative: 〜以上(は) (slightly more common).",
-        "Main clause often expresses a required obligation or determination: 約束した上は、必ず守る.",
-        "Distinct from 〜上に (additive) and 〜上で (prerequisite) — 上は is the commitment-from-premise variant.",
-        "Register: formal, common in speeches and business."
-      ],
-      "formality": "formal",
-      "related": [
-        "ijou-since",
-        "ue-de-upon",
-        "ue-ni-in-addition"
-      ],
-      "examples": [
-        {
-          "japanese": "約束した上は、必ず守る。",
-          "english": "Now that I've promised, I'll definitely keep my word.",
-          "source": "original"
-        },
-        {
-          "japanese": "引き受けた上は、全力を尽くす。",
-          "english": "Now that I've taken it on, I'll give it my all.",
-          "source": "original"
-        },
-        {
-          "japanese": "日本に来た上は、日本語を話せるようになりたい。",
-          "english": "Now that I've come to Japan, I want to be able to speak Japanese.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "74085",
-        "100614",
-        "116182",
-        "173254",
-        "204496"
-      ]
-    },
-    {
       "id": "nai-wake-ni-ikanai",
       "pattern": "V ない-form + わけにはいかない",
       "level": "N3",
@@ -19318,51 +19264,6 @@
         "75150",
         "75431",
         "75947"
-      ]
-    },
-    {
-      "id": "mono-nara-if-possible",
-      "pattern": "V potential form + ものなら",
-      "level": "N3",
-      "meaning_en": "if (it were) possible / if I could",
-      "meaning_detailed": "〜ものなら combined with a potential form expresses a hypothetical wish that the speaker considers difficult or impossible — 'if I could only X'. Often accompanied by a main clause describing the desired action. Formal / literary register, with a slightly wistful tone. Distinct from 〜たら / 〜ば (general conditionals).",
-      "formation": "V potential form + ものなら. Sometimes V dict + ものなら.",
-      "formation_notes": [
-        "Typically with potential forms: 会えるものなら ('if I could meet'), 戻れるものなら ('if I could go back').",
-        "Hypothetical and often wistful — implies the action is hard / impossible.",
-        "Formal / literary register — common in essays, poetry, and formal speech.",
-        "Distinct from 〜ものの (although) and 〜ものだ (general truth)."
-      ],
-      "formality": "neutral",
-      "related": [
-        "ba-conditional",
-        "ba-yokatta",
-        "kurai-nara-rather"
-      ],
-      "examples": [
-        {
-          "japanese": "昔に戻れるものなら、戻りたい。",
-          "english": "If I could go back to the past, I would.",
-          "source": "original"
-        },
-        {
-          "japanese": "会えるものなら、もう一度会いたい。",
-          "english": "If I could meet (him) again, I would want to.",
-          "source": "original"
-        },
-        {
-          "japanese": "飛べるものなら、今すぐ日本へ行きたい。",
-          "english": "If I could fly, I'd want to go to Japan right now.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "188196",
-        "228240"
       ]
     },
     {
@@ -19645,99 +19546,6 @@
       ]
     },
     {
-      "id": "to-nareba-if-comes-to",
-      "pattern": "Plain form + となれば",
-      "level": "N3",
-      "meaning_en": "if it comes to / in the event that",
-      "meaning_detailed": "〜となれば presents a hypothetical scenario and the consequence that would follow — 'if it comes to X, (then) Y'. More hypothetical / formal than 〜たら or 〜なら. Common in planning, discussing contingencies, or setting up a hypothetical that leads to a necessary action.",
-      "formation": "V plain / i-adj / na-adj (+ だ) / noun (+ だ) + となれば.",
-      "formation_notes": [
-        "Formal hypothetical — 'if the situation reaches X'.",
-        "Main clause typically describes an obligatory or natural consequence.",
-        "Distinct from 〜たら (neutral conditional) and 〜なら (topic-setting conditional).",
-        "Common in discussing plans and contingencies."
-      ],
-      "formality": "neutral",
-      "related": [
-        "nara-conditional",
-        "ba-ai-in-case",
-        "to-naru-to-when-comes"
-      ],
-      "examples": [
-        {
-          "japanese": "留学するとなれば、準備が必要だ。",
-          "english": "If it comes to studying abroad, preparation is necessary.",
-          "source": "original"
-        },
-        {
-          "japanese": "結婚するとなれば、両親に相談しなければならない。",
-          "english": "If it comes to getting married, I have to consult with my parents.",
-          "source": "original"
-        },
-        {
-          "japanese": "辞めるとなれば、早めに上司に言うべきだ。",
-          "english": "If it comes to quitting, you should tell your boss early.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "211292",
-        "229136"
-      ]
-    },
-    {
-      "id": "to-naru-to-when-comes",
-      "pattern": "Plain form + となると",
-      "level": "N3",
-      "meaning_en": "when it comes to / if it's a matter of",
-      "meaning_detailed": "〜となると introduces a topic or scenario and its expected consequence — 'when it comes to X, (the situation changes)'. Often used when the speaker realizes the implications of a stated scenario. Close in meaning to 〜となれば but slightly more conversational and often signals a shift in the speaker's perspective.",
-      "formation": "V plain / i-adj / na-adj (+ だ) / noun (+ だ) + となると.",
-      "formation_notes": [
-        "Perspective-shifting — 'now that we're talking about X...'.",
-        "Close to 〜となれば but slightly less formal / more conversational.",
-        "Often signals realization: 'when I think about it in this way...'.",
-        "Common when discussing implications or changing viewpoints."
-      ],
-      "formality": "neutral",
-      "related": [
-        "to-nareba-if-comes-to",
-        "nara-conditional",
-        "to-ieba-speaking-of"
-      ],
-      "examples": [
-        {
-          "japanese": "留学となると、お金が心配だ。",
-          "english": "When it comes to studying abroad, I worry about money.",
-          "source": "original"
-        },
-        {
-          "japanese": "いざ話すとなると、緊張する。",
-          "english": "When it actually comes to speaking, I get nervous.",
-          "source": "original"
-        },
-        {
-          "japanese": "子供のこととなると、彼女は真剣だ。",
-          "english": "When it comes to her children, she's serious.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "143199",
-        "209630",
-        "229132",
-        "234317",
-        "234540"
-      ]
-    },
-    {
       "id": "te-hajimete-only-after",
       "pattern": "V-て form + 初めて",
       "level": "N3",
@@ -19783,6 +19591,241 @@
         "76869",
         "88740",
         "143793"
+      ]
+    },
+    {
+      "id": "ni-ataru-correspond",
+      "pattern": "Noun + に当たる",
+      "level": "N3",
+      "meaning_en": "correspond to / be equivalent to / fall on (a day)",
+      "meaning_detailed": "〜に当たる has several related senses: (1) correspond to / be equivalent to — used for counting equivalences (例えば Japanese in English); (2) fall on a specific day (今日は誕生日に当たる); (3) be one's family/relation. Formal / neutral register.",
+      "formation": "Noun + に当たる (polite: にあたります).",
+      "formation_notes": [
+        "Correspondence / equivalence — formal register.",
+        "Common for family relations: 彼は私の兄に当たる ('he corresponds to my older brother').",
+        "Calendar dates: 今日は祝日に当たる.",
+        "Unit conversion: 1ドルは100円に当たる."
+      ],
+      "formality": "formal",
+      "related": [
+        "toshite-as",
+        "ni-hoka-naranai"
+      ],
+      "examples": [
+        {
+          "japanese": "今日は父の誕生日に当たる。",
+          "english": "Today corresponds to my father's birthday.",
+          "source": "original"
+        },
+        {
+          "japanese": "彼は私の叔父に当たる。",
+          "english": "He is my uncle (corresponds to my uncle).",
+          "source": "original"
+        },
+        {
+          "japanese": "1ドルは約110円に当たる。",
+          "english": "One dollar corresponds to about 110 yen.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "76853",
+        "125225",
+        "150931"
+      ]
+    },
+    {
+      "id": "tatoe-temo",
+      "pattern": "たとえ + V-て form + も",
+      "level": "N3",
+      "meaning_en": "even if (hypothetical emphatic)",
+      "meaning_detailed": "たとえ〜ても is an emphatic form of 〜ても, prefixing the adverb たとえ ('even / supposing') to make the hypothetical concessive stronger — 'even if (unlikely) X, Y'. It is often used when the main clause expresses firm resolve or principle against a challenging hypothetical. The basic 〜ても pattern is the base; たとえ just adds emphasis.",
+      "formation": "たとえ + V-て + も; たとえ + i-adj 〜くても; たとえ + na-adj / noun + でも.",
+      "formation_notes": [
+        "たとえ is an adverb meaning 'even / supposing / for example' in this construction.",
+        "Main clause often expresses firm resolve: even if X happens, I will / will not Y.",
+        "More emphatic than bare 〜ても — the たとえ signals the hypothetical is especially strong or unlikely.",
+        "Written: 例え (kanji form) is possible but たとえ in hiragana is more common in this construction."
+      ],
+      "formality": "neutral",
+      "related": [
+        "v-temo-even-if",
+        "te-mo-ii-permission"
+      ],
+      "examples": [
+        {
+          "japanese": "たとえ雨が降っても、行きます。",
+          "english": "Even if it rains, I'll go.",
+          "source": "original"
+        },
+        {
+          "japanese": "たとえ難しくても、諦めません。",
+          "english": "Even if it's difficult, I won't give up.",
+          "source": "original"
+        },
+        {
+          "japanese": "たとえお金があっても、幸せとは限らない。",
+          "english": "Even if you have money, you're not necessarily happy.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "77696",
+        "77717",
+        "94039",
+        "114395",
+        "151159"
+      ]
+    },
+    {
+      "id": "te-goran-try-casual",
+      "pattern": "V-て form + ごらん(なさい)",
+      "level": "N3",
+      "meaning_en": "try doing (warm / parental suggestion)",
+      "meaning_detailed": "〜てごらん is a casual, often parental or warm form of 'try doing X'. It overlaps with 〜てみる but carries a recommending nuance — 'give it a try, I think you'll like it'. The longer form 〜てごらんなさい is slightly more polite/instructive. Typical of parent-to-child or teacher-to-student contexts, and friends suggesting something enthusiastically.",
+      "formation": "V-て + ごらん (casual); V-て + ごらんなさい (slightly more polite/parental).",
+      "formation_notes": [
+        "Warmer and more recommending than 〜てみる alone.",
+        "Not polite enough for strangers or business contexts — use 〜てみてください instead.",
+        "ごらん comes from ご覧 ('look / honorable seeing') but is purely a grammatical auxiliary here.",
+        "Common in children's stories and parental speech."
+      ],
+      "formality": "casual",
+      "related": [
+        "te-miru",
+        "te-kudasai-request",
+        "nasai-command"
+      ],
+      "examples": [
+        {
+          "japanese": "この本を読んでごらん。面白いよ。",
+          "english": "Try reading this book. It's interesting.",
+          "source": "original"
+        },
+        {
+          "japanese": "やってごらんなさい。",
+          "english": "Go on, try it.",
+          "source": "original"
+        },
+        {
+          "japanese": "食べてごらん、おいしいから。",
+          "english": "Try eating it, it's delicious.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "195954",
+        "203535",
+        "224144",
+        "226618",
+        "230641"
+      ]
+    },
+    {
+      "id": "mono-da-general",
+      "pattern": "Plain form + ものだ",
+      "level": "N3",
+      "meaning_en": "it's natural / should be / generally (general truth or tendency)",
+      "meaning_detailed": "〜ものだ expresses a general truth, an expected state of affairs, or a common tendency — 'that's just how things are'. It is used to state something that the speaker considers universally or normatively true. Distinct from ものだ expressing nostalgia about the past ('used to do X') and from ものではない ('shouldn't / isn't done'). The past-tense form ものだった can express nostalgia: 'used to ___'.",
+      "formation": "V plain / i-adj + ものだ; na-adj + な + ものだ; noun + の + ものだ.",
+      "formation_notes": [
+        "Expresses general tendencies, common truths, or normative expectations.",
+        "Negative: 〜ものではない ('it's not done / shouldn't be done') — more strongly normative.",
+        "Past: V plain past + ものだ = nostalgic 'used to do' (子供のころ、よく公園で遊んだものだ).",
+        "Distinct from 〜ものがある (more advanced 'there is something X about it' — N2/N1)."
+      ],
+      "formality": "neutral",
+      "related": [
+        "koto-nominalizer",
+        "noun-modifying-clause"
+      ],
+      "examples": [
+        {
+          "japanese": "子供は元気なものだ。",
+          "english": "Children are naturally energetic.",
+          "source": "original"
+        },
+        {
+          "japanese": "時間が経つのは早いものだ。",
+          "english": "Time passes quickly. (general truth)",
+          "source": "original"
+        },
+        {
+          "japanese": "昔はよくここで遊んだものだ。",
+          "english": "I used to play here a lot long ago. (nostalgic)",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "74062",
+        "74512",
+        "75027",
+        "75212",
+        "75525"
+      ]
+    },
+    {
+      "id": "ki-ga-suru-feel-like",
+      "pattern": "Plain form + 気がする",
+      "level": "N3",
+      "meaning_en": "feel like / have a feeling that",
+      "meaning_detailed": "〜気がする expresses an intuition, premonition, or vague feeling — less firm than 〜と思う. Used for hunches, emotional impressions, and non-evidential guesses. 気がした (past) = 'had a feeling'. 気 literally means 'spirit / mind / feeling', and the full phrase is 'there is a feeling of X'.",
+      "formation": "Plain-form predicate + 気がする. For noun/na-adj: include the copula (〜だ + 気がする or 〜な + 気がする).",
+      "formation_notes": [
+        "More tentative than 思う — expresses intuition rather than considered opinion.",
+        "Commonly used for premonitions and bodily feelings: 熱がある気がする ('I feel like I have a fever').",
+        "Contrast with 〜感じがする (similar, feeling-based) and 〜ような気がする (even more tentative).",
+        "気がした in past tense reports a previous feeling: あの時、誰かに見られている気がした."
+      ],
+      "formality": "neutral",
+      "related": [
+        "to-omou",
+        "rashii-seems",
+        "sou-da-appearance"
+      ],
+      "examples": [
+        {
+          "japanese": "雨が降る気がする。",
+          "english": "I have a feeling it's going to rain.",
+          "source": "original"
+        },
+        {
+          "japanese": "誰かに見られている気がする。",
+          "english": "I feel like someone's watching me.",
+          "source": "original"
+        },
+        {
+          "japanese": "彼は来ない気がする。",
+          "english": "I have a feeling he's not coming.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "76031",
+        "76305",
+        "77095",
+        "121149",
+        "123232"
       ]
     },
     {
@@ -20437,7 +20480,7 @@
         "Alternative expressions: てはだめ (casual), てはなりません (very formal).",
         "Opposite (permission): てもいい."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "te-mo-ii-permission",
         "te-form-basic"
@@ -20784,11 +20827,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74040",
-        "74045",
-        "74050",
-        "74057",
-        "74170"
+        "4951",
+        "74094",
+        "74128",
+        "74175",
+        "74180"
       ]
     },
     {
@@ -21150,7 +21193,7 @@
       "level": "N4",
       "meaning_en": "do things like X and Y (non-exhaustive list of actions)",
       "meaning_detailed": "〜たり〜たりする lists actions non-exhaustively — 'do things like X and Y (among others)'. Unlike the sequential 〜て form, たり does not imply any particular order or timing; it just enumerates example actions. The final する carries the tense of the whole construction. A single たり is also grammatical ('do things like X'). The pattern is one of the most common N4 constructions and is essential for describing daily routines and varied activities.",
-      "formation": "Vた form with vowel changed to り: 食べた → 食べたり, 飲んだ → 飲んだり. Chain multiple: 食べたり飲んだりする. Tense is carried by the final する: 食べたり飲んだりしました (past polite).",
+      "formation": "V-た form + り: 食べた → 食べたり, 飲んだ → 飲んだり. List actions with 〜たり〜たりする.",
       "formation_notes": [
         "Non-exhaustive: implies 'among others' — these are examples, not a complete list.",
         "Different from the sequential て-form, which orders actions in time.",
@@ -21895,7 +21938,7 @@
       "level": "N4",
       "meaning_en": "I receive the favor of X doing Y / I have X do Y",
       "meaning_detailed": "〜てもらう expresses that the speaker or in-group receives the benefit of another's action — 'I have someone do X for me'. The person performing the action takes に. The humble form 〜ていただく is used when the other party is a superior. Common as a polite request: 〜てもらえますか ('could you...?').",
-      "formation": "Subject (recipient) + に + Agent + V-て + もらう (polite: もらいます); humble: V-て + いただく.",
+      "formation": "Subject (recipient) は/が + Agent に + V-て + もらう.",
       "formation_notes": [
         "The agent (performer) takes に: 友達に手伝ってもらった ('had my friend help').",
         "Request forms: 〜てもらえますか (polite), 〜てもらえる (plain), 〜ていただけますか (very polite).",
@@ -22261,59 +22304,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4726",
-        "4925",
-        "74013",
-        "74026",
-        "74033"
-      ]
-    },
-    {
-      "id": "te-goran-try-casual",
-      "pattern": "V-て form + ごらん(なさい)",
-      "level": "N4",
-      "meaning_en": "try doing (warm / parental suggestion)",
-      "meaning_detailed": "〜てごらん is a casual, often parental or warm form of 'try doing X'. It overlaps with 〜てみる but carries a recommending nuance — 'give it a try, I think you'll like it'. The longer form 〜てごらんなさい is slightly more polite/instructive. Typical of parent-to-child or teacher-to-student contexts, and friends suggesting something enthusiastically.",
-      "formation": "V-て + ごらん (casual); V-て + ごらんなさい (slightly more polite/parental).",
-      "formation_notes": [
-        "Warmer and more recommending than 〜てみる alone.",
-        "Not polite enough for strangers or business contexts — use 〜てみてください instead.",
-        "ごらん comes from ご覧 ('look / honorable seeing') but is purely a grammatical auxiliary here.",
-        "Common in children's stories and parental speech."
-      ],
-      "formality": "casual",
-      "related": [
-        "te-miru",
-        "te-kudasai-request",
-        "nasai-command"
-      ],
-      "examples": [
-        {
-          "japanese": "この本を読んでごらん。面白いよ。",
-          "english": "Try reading this book. It's interesting.",
-          "source": "original"
-        },
-        {
-          "japanese": "やってごらんなさい。",
-          "english": "Go on, try it.",
-          "source": "original"
-        },
-        {
-          "japanese": "食べてごらん、おいしいから。",
-          "english": "Try eating it, it's delicious.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "195954",
-        "203535",
-        "224144",
-        "226618",
-        "230641"
+        "4858",
+        "5002",
+        "74064",
+        "74119",
+        "74125"
       ]
     },
     {
@@ -22364,54 +22359,6 @@
       ]
     },
     {
-      "id": "ki-ga-suru-feel-like",
-      "pattern": "Plain form + 気がする",
-      "level": "N4",
-      "meaning_en": "feel like / have a feeling that",
-      "meaning_detailed": "〜気がする expresses an intuition, premonition, or vague feeling — less firm than 〜と思う. Used for hunches, emotional impressions, and non-evidential guesses. 気がした (past) = 'had a feeling'. 気 literally means 'spirit / mind / feeling', and the full phrase is 'there is a feeling of X'.",
-      "formation": "Plain-form predicate + 気がする. For noun/na-adj: include the copula (〜だ + 気がする or 〜な + 気がする).",
-      "formation_notes": [
-        "More tentative than 思う — expresses intuition rather than considered opinion.",
-        "Commonly used for premonitions and bodily feelings: 熱がある気がする ('I feel like I have a fever').",
-        "Contrast with 〜感じがする (similar, feeling-based) and 〜ような気がする (even more tentative).",
-        "気がした in past tense reports a previous feeling: あの時、誰かに見られている気がした."
-      ],
-      "formality": "neutral",
-      "related": [
-        "to-omou",
-        "rashii-seems",
-        "sou-da-appearance"
-      ],
-      "examples": [
-        {
-          "japanese": "雨が降る気がする。",
-          "english": "I have a feeling it's going to rain.",
-          "source": "original"
-        },
-        {
-          "japanese": "誰かに見られている気がする。",
-          "english": "I feel like someone's watching me.",
-          "source": "original"
-        },
-        {
-          "japanese": "彼は来ない気がする。",
-          "english": "I have a feeling he's not coming.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "76031",
-        "76305",
-        "77095",
-        "121149",
-        "123232"
-      ]
-    },
-    {
       "id": "tai-to-omou-want-to-think",
       "pattern": "Verb stem + たいと思う",
       "level": "N4",
@@ -22424,7 +22371,7 @@
         "Frames the desire as a thought rather than an assertion.",
         "Do not use 〜たいと思う for third-person wishes — third-person uses 〜たがる / 〜たがっている."
       ],
-      "formality": "formal",
+      "formality": "neutral",
       "related": [
         "tai-desire",
         "to-omou",
@@ -22885,7 +22832,7 @@
       "formation": "Plain: いらっしゃる. Polite: いらっしゃいます (note irregular — い dropped before ます). Te-form: いらっしゃって. Imperative: いらっしゃい.",
       "formation_notes": [
         "One verb covers three meanings — context disambiguates.",
-        "Polite form is IRREGULAR: いらっしゃいます, not いらっしゃります.",
+        "Polite form is IRREGULAR: ます-stem uses いらっしゃい (not the expected いらっしゃり), so polite is いらっしゃいます.",
         "Fixed phrase いらっしゃいませ is used by shops to welcome customers.",
         "Also used as a polite greeting: 先生、いらっしゃいますか — 'Is the teacher in?'"
       ],
@@ -23331,11 +23278,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74344",
-        "76676",
-        "77088",
-        "85779",
-        "87884"
+        "74032",
+        "74076",
+        "74234",
+        "74354",
+        "74383"
       ]
     },
     {
@@ -23481,53 +23428,6 @@
         "95575",
         "146932",
         "150146"
-      ]
-    },
-    {
-      "id": "tatoe-temo",
-      "pattern": "たとえ + V-て form + も",
-      "level": "N4",
-      "meaning_en": "even if (hypothetical emphatic)",
-      "meaning_detailed": "たとえ〜ても is an emphatic form of 〜ても, prefixing the adverb たとえ ('even / supposing') to make the hypothetical concessive stronger — 'even if (unlikely) X, Y'. It is often used when the main clause expresses firm resolve or principle against a challenging hypothetical. The basic 〜ても pattern is the base; たとえ just adds emphasis.",
-      "formation": "たとえ + V-て + も; たとえ + i-adj 〜くても; たとえ + na-adj / noun + でも.",
-      "formation_notes": [
-        "たとえ is an adverb meaning 'even / supposing / for example' in this construction.",
-        "Main clause often expresses firm resolve: even if X happens, I will / will not Y.",
-        "More emphatic than bare 〜ても — the たとえ signals the hypothetical is especially strong or unlikely.",
-        "Written: 例え (kanji form) is possible but たとえ in hiragana is more common in this construction."
-      ],
-      "formality": "neutral",
-      "related": [
-        "v-temo-even-if",
-        "te-mo-ii-permission"
-      ],
-      "examples": [
-        {
-          "japanese": "たとえ雨が降っても、行きます。",
-          "english": "Even if it rains, I'll go.",
-          "source": "original"
-        },
-        {
-          "japanese": "たとえ難しくても、諦めません。",
-          "english": "Even if it's difficult, I won't give up.",
-          "source": "original"
-        },
-        {
-          "japanese": "たとえお金があっても、幸せとは限らない。",
-          "english": "Even if you have money, you're not necessarily happy.",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "77696",
-        "77717",
-        "94039",
-        "114395",
-        "151159"
       ]
     },
     {
@@ -23867,53 +23767,6 @@
       ]
     },
     {
-      "id": "mono-da-general",
-      "pattern": "Plain form + ものだ",
-      "level": "N4",
-      "meaning_en": "it's natural / should be / generally (general truth or tendency)",
-      "meaning_detailed": "〜ものだ expresses a general truth, an expected state of affairs, or a common tendency — 'that's just how things are'. It is used to state something that the speaker considers universally or normatively true. Distinct from ものだ expressing nostalgia about the past ('used to do X') and from ものではない ('shouldn't / isn't done'). The past-tense form ものだった can express nostalgia: 'used to ___'.",
-      "formation": "V plain / i-adj + ものだ; na-adj + な + ものだ; noun + の + ものだ.",
-      "formation_notes": [
-        "Expresses general tendencies, common truths, or normative expectations.",
-        "Negative: 〜ものではない ('it's not done / shouldn't be done') — more strongly normative.",
-        "Past: V plain past + ものだ = nostalgic 'used to do' (子供のころ、よく公園で遊んだものだ).",
-        "Distinct from 〜ものがある (more advanced 'there is something X about it' — N2/N1)."
-      ],
-      "formality": "neutral",
-      "related": [
-        "koto-nominalizer",
-        "noun-modifying-clause"
-      ],
-      "examples": [
-        {
-          "japanese": "子供は元気なものだ。",
-          "english": "Children are naturally energetic.",
-          "source": "original"
-        },
-        {
-          "japanese": "時間が経つのは早いものだ。",
-          "english": "Time passes quickly. (general truth)",
-          "source": "original"
-        },
-        {
-          "japanese": "昔はよくここで遊んだものだ。",
-          "english": "I used to play here a lot long ago. (nostalgic)",
-          "source": "original"
-        }
-      ],
-      "review_status": "draft",
-      "sources": [
-        "General Japanese grammar knowledge (non-copyrightable facts)."
-      ],
-      "tatoeba_pattern_matches": [
-        "74062",
-        "74512",
-        "75027",
-        "75212",
-        "75525"
-      ]
-    },
-    {
       "id": "soredemo-even-so",
       "pattern": "それでも (sentence-initial)",
       "level": "N4",
@@ -23959,6 +23812,151 @@
         "75700",
         "76486",
         "107624"
+      ]
+    },
+    {
+      "id": "sou-da-appearance",
+      "pattern": "Verb-stem / い-adj stem / な-adj root + そう(だ/です)",
+      "level": "N4",
+      "meaning_en": "looks like / seems (appearance-based judgment)",
+      "meaning_detailed": "そうだ attached to a verb stem, い-adjective stem, or na-adjective root expresses a judgment based on appearance — 'it looks like', 'it seems'. The speaker is making an inference from visual or situational evidence, not reporting something they heard. This is structurally distinct from the hearsay そうだ which attaches to plain form.",
+      "formation": "Verb ます-stem + そう; い-adj drop い + そう (高い → 高そう); な-adj root + そう (元気 → 元気そう). Exceptions: いい → よさそう, ない → なさそう.",
+      "formation_notes": [
+        "For verbs, use the ます-stem: 食べる → 食べそう, 降る → 降りそう.",
+        "Negative of verb appearance: 〜そうにない / 〜そうもない (doesn't look like).",
+        "Negative of い-adjective appearance: 〜くなさそう (高くない → 高くなさそう).",
+        "Functions as a な-adjective grammatically: おいしそうな料理, 元気そうに見える."
+      ],
+      "formality": "neutral",
+      "related": [
+        "sou-da-hearsay",
+        "you-da-appearance",
+        "mitai-looks-like",
+        "rashii-seems"
+      ],
+      "examples": [
+        {
+          "japanese": "雨が降りそうです。",
+          "english": "It looks like it's going to rain.",
+          "source": "original"
+        },
+        {
+          "japanese": "このケーキはおいしそうですね。",
+          "english": "This cake looks delicious, doesn't it?",
+          "source": "original"
+        },
+        {
+          "japanese": "彼は元気そうに見える。",
+          "english": "He looks energetic.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "4925",
+        "74484",
+        "74707",
+        "74823",
+        "75020"
+      ]
+    },
+    {
+      "id": "sou-da-hearsay",
+      "pattern": "Plain form + そう(だ/です)",
+      "level": "N4",
+      "meaning_en": "I heard that / apparently (reported speech)",
+      "meaning_detailed": "When そうだ attaches to a plain-form predicate (not a verb stem), it expresses hearsay — 'I heard that ___'. The speaker is reporting information received from another source rather than making their own judgment. The source can be named with 〜によると ('according to ___'). Structurally distinct from appearance-based そうだ, which attaches to the verb stem.",
+      "formation": "Plain-form verb / i-adj / na-adj / noun + だ (for nouns and na-adj) + そうだ. Examples: 食べるそうだ, 食べたそうだ, 高いそうだ, 学生だそうだ, 元気だそうだ.",
+      "formation_notes": [
+        "Note: for nouns and na-adjectives, the だ is retained before そうだ (学生だそうだ, not 学生そうだ — the latter would be an appearance-based construction).",
+        "No distinct past form for the hearsay そうだ itself — the tense is inside the reported clause (食べたそうだ = 'I heard they ate').",
+        "Cannot be negated as a whole unit — negate the reported content instead (来ないそうだ = 'I heard they're not coming').",
+        "The source of the hearsay is commonly introduced with 〜によると or 〜の話では."
+      ],
+      "formality": "neutral",
+      "related": [
+        "sou-da-appearance",
+        "to-iu",
+        "rashii-seems",
+        "you-da-appearance"
+      ],
+      "examples": [
+        {
+          "japanese": "天気予報によると、明日は雨だそうです。",
+          "english": "According to the weather forecast, it will rain tomorrow.",
+          "source": "original"
+        },
+        {
+          "japanese": "田中さんは来月結婚するそうです。",
+          "english": "I heard Mr. Tanaka is getting married next month.",
+          "source": "original"
+        },
+        {
+          "japanese": "あの店のラーメンはおいしいそうだ。",
+          "english": "I hear the ramen at that restaurant is good.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "4925",
+        "74484",
+        "74707",
+        "74823",
+        "75020"
+      ]
+    },
+    {
+      "id": "you-ka-to-omou",
+      "pattern": "Verb volitional + かと思う",
+      "level": "N4",
+      "meaning_en": "thinking of doing / half-considering",
+      "meaning_detailed": "〜ようかと思う expresses that the speaker is considering doing X, but with some hesitation or uncertainty — 'thinking of doing X / half-considering'. Less committed than 〜ようと思う (intend to do). Often used for tentative plans. Neutral / formal register.",
+      "formation": "V volitional + かと思う.",
+      "formation_notes": [
+        "Tentative consideration — less committed than 〜ようと思う.",
+        "Similar to 〜ようと思っている but with the か adding doubt.",
+        "Common in tentative planning: 留学しようかと思っている.",
+        "Neutral register."
+      ],
+      "formality": "neutral",
+      "related": [
+        "you-to-omou-volitional-intent",
+        "to-omou",
+        "tsumori-intention"
+      ],
+      "examples": [
+        {
+          "japanese": "留学しようかと思っています。",
+          "english": "I'm considering studying abroad.",
+          "source": "original"
+        },
+        {
+          "japanese": "会社を辞めようかと思っている。",
+          "english": "I'm thinking of quitting the company.",
+          "source": "original"
+        },
+        {
+          "japanese": "新しいパソコンを買おうかと思う。",
+          "english": "I'm thinking of buying a new computer.",
+          "source": "original"
+        }
+      ],
+      "review_status": "draft",
+      "sources": [
+        "General Japanese grammar knowledge (non-copyrightable facts)."
+      ],
+      "tatoeba_pattern_matches": [
+        "77081",
+        "216615",
+        "225507",
+        "235848"
       ]
     },
     {
@@ -24632,12 +24630,12 @@
       "pattern": "X + から",
       "level": "N5",
       "meaning_en": "marks the starting point: from (place/time)",
-      "meaning_detailed": "から marks the starting point of an action or movement — 'from' a place or 'since/from' a time. It is often paired with まで to express a range ('from X until Y'). A separate use of から is 'because', covered in N4.",
+      "meaning_detailed": "から marks the starting point of an action or movement — 'from' a place or 'since/from' a time. It is often paired with まで to express a range ('from X until Y'). A separate use of から is 'because' (also N5 — see kara-cause).",
       "formation": "Noun (place or time) + から",
       "formation_notes": [
         "Place: 家から学校まで ('from home to school').",
         "Time: 九時から五時まで ('from 9 to 5').",
-        "The 'because' meaning attaches to verbs/adjectives/sentences, not nouns, and is covered at N4."
+        "The 'because' meaning attaches to verbs/adjectives/sentences, not nouns, and is also N5 (see kara-cause)."
       ],
       "formality": "neutral",
       "related": [
@@ -24908,11 +24906,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4925",
-        "4996",
-        "74107",
-        "74148",
-        "74152"
+        "74022",
+        "74286",
+        "74427",
+        "74753",
+        "75068"
       ]
     },
     {
@@ -24952,11 +24950,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4954",
-        "74019",
-        "74086",
-        "74100",
-        "74164"
+        "74022",
+        "74026",
+        "74027",
+        "74036",
+        "74062"
       ]
     },
     {
@@ -26013,7 +26011,7 @@
       "meaning_detailed": "ないでください is the negative counterpart of てください. It attaches でください to the ない-form of a verb and expresses 'please do not do X'.",
       "formation": "Verb-ない + でください (drop nothing from the ない-form; just append でください)",
       "formation_notes": [
-        "Note the space: 食べないでください, not 食べなくてください.",
+        "Note the form: 食べないでください, not 食べなくてください.",
         "The particle で here comes from the て-form of the auxiliary ない (via ないで), not from the particle で."
       ],
       "formality": "formal",
@@ -26735,12 +26733,11 @@
       "level": "N5",
       "meaning_en": "how much (price / quantity)",
       "meaning_detailed": "いくら is the interrogative 'how much', primarily used for asking prices but also for uncountable amounts (quantity, time). The most common usage is これはいくらですか ('how much is this?'). In compound usages like いくらでも ('any amount') and いくら〜ても ('no matter how much'), it takes on broader senses.",
-      "formation": "いくら (as standalone question); いくら + でも ('any amount'); いくら + 〜ても ('no matter how much').",
+      "formation": "いくら + ですか (asking price/amount).",
       "formation_notes": [
         "Most common for prices: いくらですか.",
         "Also for quantity of uncountables: water, time, effort.",
-        "Compound: いくらでも ('any amount / as much as you want').",
-        "Concessive: いくら〜ても ('no matter how much X')."
+        "Compound: いくらでも ('any amount / as much as you want')."
       ],
       "formality": "neutral",
       "related": [
@@ -26760,8 +26757,8 @@
           "source": "original"
         },
         {
-          "japanese": "いくら食べても太らない。",
-          "english": "No matter how much I eat, I don't gain weight.",
+          "japanese": "全部でいくらですか。",
+          "english": "How much is it altogether?",
           "source": "original"
         }
       ],
@@ -26919,7 +26916,7 @@
       "meaning_detailed": "〜分 (ふん / ぷん) is the counter for minutes — both clock-time minutes and duration. Reading changes between ふん (voiceless) and ぷん (voiced / geminated) depending on the preceding number. Several numbers have irregular or combined forms. Common contexts: clock time (3時10分), duration (10分), distance by time (駅から5分).",
       "formation": "Number + 分. Reading: ぷん after 1/3/4/6/8/10; ふん after 2/5/7/9. Half-hour fixed form: 半 (はん, for 30 minutes).",
       "formation_notes": [
-        "Reading rules: 1ぷん, 2ふん, 3ぷん, 4ぷん, 5ふん, 6ぷん, 7ふん, 8ぷん, 10ぷん.",
+        "Reading rules: 1ぷん, 2ふん, 3ぷん, 4ぷん, 5ふん, 6ぷん, 7ふん, 8ぷん, 9ふん, 10ぷん.",
         "Half-hour 30 minutes is often written as 半: 3時半 ('3:30').",
         "Used for both clock minutes and duration.",
         "Same kanji 分 has other readings (ぶん for 'share') and meanings."
@@ -27214,7 +27211,7 @@
       "pattern": "i-adjective + です",
       "level": "N5",
       "meaning_en": "polite ending for i-adjective predicates",
-      "meaning_detailed": "When an i-adjective forms the predicate of a sentence, appending です makes the sentence polite without changing the meaning — 高い → 高いです ('it is expensive', polite). Unlike with nouns and na-adjectives, this です does NOT conjugate with tense or negation on i-adjectives: past is 高かったです (NOT 高いでした), negative is 高くないです (NOT 高くありません usually, though that's also grammatical). This is a common learner confusion: the です after an i-adjective is purely a politeness marker, not a copula.",
+      "meaning_detailed": "When an i-adjective forms the predicate of a sentence, appending です makes the sentence polite without changing the meaning — 高い → 高いです ('it is expensive', polite). Unlike with nouns and na-adjectives, this です does NOT conjugate with tense or negation on i-adjectives: past is 高かったです (NOT 高いでした), negative is 高くないです or 高くありません (both are standard polite negatives). This is a common learner confusion: the です after an i-adjective is purely a politeness marker, not a copula.",
       "formation": "i-adjective (dictionary form or conjugated form) + です. Past: 〜かったです. Negative: 〜くないです or 〜くありません.",
       "formation_notes": [
         "です after i-adj is a politeness marker, NOT a copula — it does not conjugate for tense or negation.",

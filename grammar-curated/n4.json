@@ -588,7 +588,7 @@
       "Alternative expressions: てはだめ (casual), てはなりません (very formal).",
       "Opposite (permission): てもいい."
     ],
-    "formality": "formal",
+    "formality": "neutral",
     "related": [
       "te-mo-ii-permission",
       "te-form-basic"
@@ -1195,7 +1195,7 @@
     "level": "N4",
     "meaning_en": "do things like X and Y (non-exhaustive list of actions)",
     "meaning_detailed": "〜たり〜たりする lists actions non-exhaustively — 'do things like X and Y (among others)'. Unlike the sequential 〜て form, たり does not imply any particular order or timing; it just enumerates example actions. The final する carries the tense of the whole construction. A single たり is also grammatical ('do things like X'). The pattern is one of the most common N4 constructions and is essential for describing daily routines and varied activities.",
-    "formation": "Vた form with vowel changed to り: 食べた → 食べたり, 飲んだ → 飲んだり. Chain multiple: 食べたり飲んだりする. Tense is carried by the final する: 食べたり飲んだりしました (past polite).",
+    "formation": "V-た form + り: 食べた → 食べたり, 飲んだ → 飲んだり. List actions with 〜たり〜たりする.",
     "formation_notes": [
       "Non-exhaustive: implies 'among others' — these are examples, not a complete list.",
       "Different from the sequential て-form, which orders actions in time.",
@@ -1845,7 +1845,7 @@
     "level": "N4",
     "meaning_en": "I receive the favor of X doing Y / I have X do Y",
     "meaning_detailed": "〜てもらう expresses that the speaker or in-group receives the benefit of another's action — 'I have someone do X for me'. The person performing the action takes に. The humble form 〜ていただく is used when the other party is a superior. Common as a polite request: 〜てもらえますか ('could you...?').",
-    "formation": "Subject (recipient) + に + Agent + V-て + もらう (polite: もらいます); humble: V-て + いただく.",
+    "formation": "Subject (recipient) は/が + Agent に + V-て + もらう.",
     "formation_notes": [
       "The agent (performer) takes に: 友達に手伝ってもらった ('had my friend help').",
       "Request forms: 〜てもらえますか (polite), 〜てもらえる (plain), 〜ていただけますか (very polite).",
@@ -2169,47 +2169,6 @@
     ]
   },
   {
-    "id": "te-goran-try-casual",
-    "pattern": "V-て form + ごらん(なさい)",
-    "level": "N4",
-    "meaning_en": "try doing (warm / parental suggestion)",
-    "meaning_detailed": "〜てごらん is a casual, often parental or warm form of 'try doing X'. It overlaps with 〜てみる but carries a recommending nuance — 'give it a try, I think you'll like it'. The longer form 〜てごらんなさい is slightly more polite/instructive. Typical of parent-to-child or teacher-to-student contexts, and friends suggesting something enthusiastically.",
-    "formation": "V-て + ごらん (casual); V-て + ごらんなさい (slightly more polite/parental).",
-    "formation_notes": [
-      "Warmer and more recommending than 〜てみる alone.",
-      "Not polite enough for strangers or business contexts — use 〜てみてください instead.",
-      "ごらん comes from ご覧 ('look / honorable seeing') but is purely a grammatical auxiliary here.",
-      "Common in children's stories and parental speech."
-    ],
-    "formality": "casual",
-    "related": [
-      "te-miru",
-      "te-kudasai-request",
-      "nasai-command"
-    ],
-    "examples": [
-      {
-        "japanese": "この本を読んでごらん。面白いよ。",
-        "english": "Try reading this book. It's interesting.",
-        "source": "original"
-      },
-      {
-        "japanese": "やってごらんなさい。",
-        "english": "Go on, try it.",
-        "source": "original"
-      },
-      {
-        "japanese": "食べてごらん、おいしいから。",
-        "english": "Try eating it, it's delicious.",
-        "source": "original"
-      }
-    ],
-    "review_status": "draft",
-    "sources": [
-      "General Japanese grammar knowledge (non-copyrightable facts)."
-    ]
-  },
-  {
     "id": "sou-iu-kou-iu",
     "pattern": "こういう / そういう / ああいう / どういう + noun",
     "level": "N4",
@@ -2250,47 +2209,6 @@
     ]
   },
   {
-    "id": "ki-ga-suru-feel-like",
-    "pattern": "Plain form + 気がする",
-    "level": "N4",
-    "meaning_en": "feel like / have a feeling that",
-    "meaning_detailed": "〜気がする expresses an intuition, premonition, or vague feeling — less firm than 〜と思う. Used for hunches, emotional impressions, and non-evidential guesses. 気がした (past) = 'had a feeling'. 気 literally means 'spirit / mind / feeling', and the full phrase is 'there is a feeling of X'.",
-    "formation": "Plain-form predicate + 気がする. For noun/na-adj: include the copula (〜だ + 気がする or 〜な + 気がする).",
-    "formation_notes": [
-      "More tentative than 思う — expresses intuition rather than considered opinion.",
-      "Commonly used for premonitions and bodily feelings: 熱がある気がする ('I feel like I have a fever').",
-      "Contrast with 〜感じがする (similar, feeling-based) and 〜ような気がする (even more tentative).",
-      "気がした in past tense reports a previous feeling: あの時、誰かに見られている気がした."
-    ],
-    "formality": "neutral",
-    "related": [
-      "to-omou",
-      "rashii-seems",
-      "sou-da-appearance"
-    ],
-    "examples": [
-      {
-        "japanese": "雨が降る気がする。",
-        "english": "I have a feeling it's going to rain.",
-        "source": "original"
-      },
-      {
-        "japanese": "誰かに見られている気がする。",
-        "english": "I feel like someone's watching me.",
-        "source": "original"
-      },
-      {
-        "japanese": "彼は来ない気がする。",
-        "english": "I have a feeling he's not coming.",
-        "source": "original"
-      }
-    ],
-    "review_status": "draft",
-    "sources": [
-      "General Japanese grammar knowledge (non-copyrightable facts)."
-    ]
-  },
-  {
     "id": "tai-to-omou-want-to-think",
     "pattern": "Verb stem + たいと思う",
     "level": "N4",
@@ -2303,7 +2221,7 @@
       "Frames the desire as a thought rather than an assertion.",
       "Do not use 〜たいと思う for third-person wishes — third-person uses 〜たがる / 〜たがっている."
     ],
-    "formality": "formal",
+    "formality": "neutral",
     "related": [
       "tai-desire",
       "to-omou",
@@ -2706,7 +2624,7 @@
     "formation": "Plain: いらっしゃる. Polite: いらっしゃいます (note irregular — い dropped before ます). Te-form: いらっしゃって. Imperative: いらっしゃい.",
     "formation_notes": [
       "One verb covers three meanings — context disambiguates.",
-      "Polite form is IRREGULAR: いらっしゃいます, not いらっしゃります.",
+      "Polite form is IRREGULAR: ます-stem uses いらっしゃい (not the expected いらっしゃり), so polite is いらっしゃいます.",
       "Fixed phrase いらっしゃいませ is used by shops to welcome customers.",
       "Also used as a polite greeting: 先生、いらっしゃいますか — 'Is the teacher in?'"
     ],
@@ -3228,46 +3146,6 @@
     ]
   },
   {
-    "id": "tatoe-temo",
-    "pattern": "たとえ + V-て form + も",
-    "level": "N4",
-    "meaning_en": "even if (hypothetical emphatic)",
-    "meaning_detailed": "たとえ〜ても is an emphatic form of 〜ても, prefixing the adverb たとえ ('even / supposing') to make the hypothetical concessive stronger — 'even if (unlikely) X, Y'. It is often used when the main clause expresses firm resolve or principle against a challenging hypothetical. The basic 〜ても pattern is the base; たとえ just adds emphasis.",
-    "formation": "たとえ + V-て + も; たとえ + i-adj 〜くても; たとえ + na-adj / noun + でも.",
-    "formation_notes": [
-      "たとえ is an adverb meaning 'even / supposing / for example' in this construction.",
-      "Main clause often expresses firm resolve: even if X happens, I will / will not Y.",
-      "More emphatic than bare 〜ても — the たとえ signals the hypothetical is especially strong or unlikely.",
-      "Written: 例え (kanji form) is possible but たとえ in hiragana is more common in this construction."
-    ],
-    "formality": "neutral",
-    "related": [
-      "v-temo-even-if",
-      "te-mo-ii-permission"
-    ],
-    "examples": [
-      {
-        "japanese": "たとえ雨が降っても、行きます。",
-        "english": "Even if it rains, I'll go.",
-        "source": "original"
-      },
-      {
-        "japanese": "たとえ難しくても、諦めません。",
-        "english": "Even if it's difficult, I won't give up.",
-        "source": "original"
-      },
-      {
-        "japanese": "たとえお金があっても、幸せとは限らない。",
-        "english": "Even if you have money, you're not necessarily happy.",
-        "source": "original"
-      }
-    ],
-    "review_status": "draft",
-    "sources": [
-      "General Japanese grammar knowledge (non-copyrightable facts)."
-    ]
-  },
-  {
     "id": "dakara-so",
     "pattern": "だから (sentence-initial)",
     "level": "N4",
@@ -3555,46 +3433,6 @@
     ]
   },
   {
-    "id": "mono-da-general",
-    "pattern": "Plain form + ものだ",
-    "level": "N4",
-    "meaning_en": "it's natural / should be / generally (general truth or tendency)",
-    "meaning_detailed": "〜ものだ expresses a general truth, an expected state of affairs, or a common tendency — 'that's just how things are'. It is used to state something that the speaker considers universally or normatively true. Distinct from ものだ expressing nostalgia about the past ('used to do X') and from ものではない ('shouldn't / isn't done'). The past-tense form ものだった can express nostalgia: 'used to ___'.",
-    "formation": "V plain / i-adj + ものだ; na-adj + な + ものだ; noun + の + ものだ.",
-    "formation_notes": [
-      "Expresses general tendencies, common truths, or normative expectations.",
-      "Negative: 〜ものではない ('it's not done / shouldn't be done') — more strongly normative.",
-      "Past: V plain past + ものだ = nostalgic 'used to do' (子供のころ、よく公園で遊んだものだ).",
-      "Distinct from 〜ものがある (more advanced 'there is something X about it' — N2/N1)."
-    ],
-    "formality": "neutral",
-    "related": [
-      "koto-nominalizer",
-      "noun-modifying-clause"
-    ],
-    "examples": [
-      {
-        "japanese": "子供は元気なものだ。",
-        "english": "Children are naturally energetic.",
-        "source": "original"
-      },
-      {
-        "japanese": "時間が経つのは早いものだ。",
-        "english": "Time passes quickly. (general truth)",
-        "source": "original"
-      },
-      {
-        "japanese": "昔はよくここで遊んだものだ。",
-        "english": "I used to play here a lot long ago. (nostalgic)",
-        "source": "original"
-      }
-    ],
-    "review_status": "draft",
-    "sources": [
-      "General Japanese grammar knowledge (non-copyrightable facts)."
-    ]
-  },
-  {
     "id": "soredemo-even-so",
     "pattern": "それでも (sentence-initial)",
     "level": "N4",
@@ -3627,6 +3465,131 @@
       {
         "japanese": "難しい。それでも、やってみる価値がある。",
         "english": "It's difficult. Nonetheless, it's worth trying.",
+        "source": "original"
+      }
+    ],
+    "review_status": "draft",
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
+  },
+  {
+    "id": "sou-da-appearance",
+    "pattern": "Verb-stem / い-adj stem / な-adj root + そう(だ/です)",
+    "level": "N4",
+    "meaning_en": "looks like / seems (appearance-based judgment)",
+    "meaning_detailed": "そうだ attached to a verb stem, い-adjective stem, or na-adjective root expresses a judgment based on appearance — 'it looks like', 'it seems'. The speaker is making an inference from visual or situational evidence, not reporting something they heard. This is structurally distinct from the hearsay そうだ which attaches to plain form.",
+    "formation": "Verb ます-stem + そう; い-adj drop い + そう (高い → 高そう); な-adj root + そう (元気 → 元気そう). Exceptions: いい → よさそう, ない → なさそう.",
+    "formation_notes": [
+      "For verbs, use the ます-stem: 食べる → 食べそう, 降る → 降りそう.",
+      "Negative of verb appearance: 〜そうにない / 〜そうもない (doesn't look like).",
+      "Negative of い-adjective appearance: 〜くなさそう (高くない → 高くなさそう).",
+      "Functions as a な-adjective grammatically: おいしそうな料理, 元気そうに見える."
+    ],
+    "formality": "neutral",
+    "related": [
+      "sou-da-hearsay",
+      "you-da-appearance",
+      "mitai-looks-like",
+      "rashii-seems"
+    ],
+    "examples": [
+      {
+        "japanese": "雨が降りそうです。",
+        "english": "It looks like it's going to rain.",
+        "source": "original"
+      },
+      {
+        "japanese": "このケーキはおいしそうですね。",
+        "english": "This cake looks delicious, doesn't it?",
+        "source": "original"
+      },
+      {
+        "japanese": "彼は元気そうに見える。",
+        "english": "He looks energetic.",
+        "source": "original"
+      }
+    ],
+    "review_status": "draft",
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
+  },
+  {
+    "id": "sou-da-hearsay",
+    "pattern": "Plain form + そう(だ/です)",
+    "level": "N4",
+    "meaning_en": "I heard that / apparently (reported speech)",
+    "meaning_detailed": "When そうだ attaches to a plain-form predicate (not a verb stem), it expresses hearsay — 'I heard that ___'. The speaker is reporting information received from another source rather than making their own judgment. The source can be named with 〜によると ('according to ___'). Structurally distinct from appearance-based そうだ, which attaches to the verb stem.",
+    "formation": "Plain-form verb / i-adj / na-adj / noun + だ (for nouns and na-adj) + そうだ. Examples: 食べるそうだ, 食べたそうだ, 高いそうだ, 学生だそうだ, 元気だそうだ.",
+    "formation_notes": [
+      "Note: for nouns and na-adjectives, the だ is retained before そうだ (学生だそうだ, not 学生そうだ — the latter would be an appearance-based construction).",
+      "No distinct past form for the hearsay そうだ itself — the tense is inside the reported clause (食べたそうだ = 'I heard they ate').",
+      "Cannot be negated as a whole unit — negate the reported content instead (来ないそうだ = 'I heard they're not coming').",
+      "The source of the hearsay is commonly introduced with 〜によると or 〜の話では."
+    ],
+    "formality": "neutral",
+    "related": [
+      "sou-da-appearance",
+      "to-iu",
+      "rashii-seems",
+      "you-da-appearance"
+    ],
+    "examples": [
+      {
+        "japanese": "天気予報によると、明日は雨だそうです。",
+        "english": "According to the weather forecast, it will rain tomorrow.",
+        "source": "original"
+      },
+      {
+        "japanese": "田中さんは来月結婚するそうです。",
+        "english": "I heard Mr. Tanaka is getting married next month.",
+        "source": "original"
+      },
+      {
+        "japanese": "あの店のラーメンはおいしいそうだ。",
+        "english": "I hear the ramen at that restaurant is good.",
+        "source": "original"
+      }
+    ],
+    "review_status": "draft",
+    "sources": [
+      "General Japanese grammar knowledge (non-copyrightable facts)."
+    ]
+  },
+  {
+    "id": "you-ka-to-omou",
+    "pattern": "Verb volitional + かと思う",
+    "level": "N4",
+    "meaning_en": "thinking of doing / half-considering",
+    "meaning_detailed": "〜ようかと思う expresses that the speaker is considering doing X, but with some hesitation or uncertainty — 'thinking of doing X / half-considering'. Less committed than 〜ようと思う (intend to do). Often used for tentative plans. Neutral / formal register.",
+    "formation": "V volitional + かと思う.",
+    "formation_notes": [
+      "Tentative consideration — less committed than 〜ようと思う.",
+      "Similar to 〜ようと思っている but with the か adding doubt.",
+      "Common in tentative planning: 留学しようかと思っている.",
+      "Neutral register."
+    ],
+    "formality": "neutral",
+    "related": [
+      "you-to-omou-volitional-intent",
+      "to-omou",
+      "tsumori-intention"
+    ],
+    "examples": [
+      {
+        "japanese": "留学しようかと思っています。",
+        "english": "I'm considering studying abroad.",
+        "source": "original"
+      },
+      {
+        "japanese": "会社を辞めようかと思っている。",
+        "english": "I'm thinking of quitting the company.",
+        "source": "original"
+      },
+      {
+        "japanese": "新しいパソコンを買おうかと思う。",
+        "english": "I'm thinking of buying a new computer.",
         "source": "original"
       }
     ],
