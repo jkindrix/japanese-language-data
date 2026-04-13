@@ -34,8 +34,8 @@ Before submitting, please check:
 ## Verification
 
 - [ ] `just build` succeeds
-- [ ] `just validate` — 19/19 data files validate
-- [ ] `just test` — all tests pass (count: )
+- [ ] `just validate` — all data files validate
+- [ ] `just test` — all tests pass
 - [ ] `just ci` — end-to-end, leaves git status clean (byte-reproducibility)
 - [ ] `manifest.json.counts` accurate for any file-count changes
 - [ ] `CHANGELOG.md` entry added under `[Unreleased]`

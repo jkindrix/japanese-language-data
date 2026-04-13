@@ -5,40 +5,72 @@
   "description": "Maps individual kanji within compound words to their readings (ruby text). Each entry provides the segmented reading alignment for a (text, reading) pair from JmdictFurigana.",
   "schemaVersion": "0.9.0",
   "type": "object",
-  "required": ["metadata", "entries"],
+  "required": [
+    "metadata",
+    "entries"
+  ],
   "additionalProperties": false,
   "properties": {
     "metadata": {
-      "$ref": "#/$defs/metadata"
+      "$ref": "#/$defs/metadata",
+      "description": "Build metadata: source provenance, license, generation date, counts, field documentation, and attribution."
     },
     "entries": {
       "type": "array",
       "items": {
         "$ref": "#/$defs/furiganaEntry"
-      }
+      },
+      "description": "Array of data entries."
     }
   },
   "$defs": {
     "metadata": {
       "type": "object",
-      "required": ["source", "license", "generated", "count", "field_notes"],
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "count",
+        "field_notes"
+      ],
       "properties": {
-        "source": { "type": "string" },
-        "source_url": { "type": "string", "format": "uri" },
-        "license": { "type": "string" },
-        "generated": { "type": "string", "format": "date" },
-        "count": { "type": "integer", "minimum": 0 },
-        "attribution": { "type": "string" },
+        "source": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "attribution": {
+          "type": "string"
+        },
         "field_notes": {
           "type": "object",
-          "additionalProperties": { "type": "string" }
+          "additionalProperties": {
+            "type": "string"
+          }
         }
       },
       "additionalProperties": false
     },
     "furiganaEntry": {
       "type": "object",
-      "required": ["text", "reading", "segments"],
+      "required": [
+        "text",
+        "reading",
+        "segments"
+      ],
       "properties": {
         "text": {
           "type": "string",
@@ -61,7 +93,9 @@
     },
     "segment": {
       "type": "object",
-      "required": ["ruby"],
+      "required": [
+        "ruby"
+      ],
       "properties": {
         "ruby": {
           "type": "string",

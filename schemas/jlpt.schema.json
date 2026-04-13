@@ -12,13 +12,15 @@
   "additionalProperties": false,
   "properties": {
     "metadata": {
-      "$ref": "#/$defs/metadata"
+      "$ref": "#/$defs/metadata",
+      "description": "Build metadata: source provenance, license, generation date, counts, field documentation, and attribution."
     },
     "classifications": {
       "type": "array",
       "items": {
         "$ref": "#/$defs/classificationEntry"
-      }
+      },
+      "description": "Array of JLPT level classification entries."
     }
   },
   "$defs": {

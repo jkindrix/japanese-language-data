@@ -4,7 +4,14 @@
 
 This document is a start-to-finish walkthrough of how to get from "I want to help" to "my review is merged." If any step is unclear, open an issue with the `grammar-review` label and say what wasn't obvious — the friction you hit is a bug in this document.
 
-For the per-entry checklist (what a reviewer actually checks on each grammar point), see [`grammar-review-checklist.md`](grammar-review-checklist.md).
+### Quick reference
+
+| Step | Document |
+|------|----------|
+| 1. Read this document | You are here |
+| 2. Signal availability | Open a [Grammar Review Availability](https://github.com/jkindrix/japanese-language-data/issues/new?template=grammar-review-availability.md) issue |
+| 3. Review each entry using | [`grammar-review-checklist.md`](grammar-review-checklist.md) |
+| 4. Submit your batch | Open a PR using the grammar review section of the PR template |
 
 ---
 

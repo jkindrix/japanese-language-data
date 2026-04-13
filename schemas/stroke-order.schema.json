@@ -12,7 +12,8 @@
   "additionalProperties": false,
   "properties": {
     "metadata": {
-      "$ref": "#/$defs/metadata"
+      "$ref": "#/$defs/metadata",
+      "description": "Build metadata: source provenance, license, generation date, counts, field documentation, and attribution."
     },
     "characters": {
       "type": "object",

@@ -5,36 +5,95 @@
   "description": "Words with ateji (phonetic kanji spelling) — kanji used for their sound rather than their meaning. Extracted from JMdict entries where a kanji writing carries the 'ateji' tag. Recognizing ateji helps learners avoid wasted effort analyzing kanji semantically in words where the kanji serve only as phonetic markers.",
   "schemaVersion": "0.9.0",
   "type": "object",
-  "required": ["metadata", "entries"],
+  "required": [
+    "metadata",
+    "entries"
+  ],
   "additionalProperties": false,
   "properties": {
     "metadata": {
       "type": "object",
-      "required": ["source", "license", "generated", "count", "field_notes"],
+      "required": [
+        "source",
+        "license",
+        "generated",
+        "count",
+        "field_notes"
+      ],
       "properties": {
-        "source": { "type": "string" },
-        "source_url": { "type": "string", "format": "uri" },
-        "license": { "type": "string" },
-        "generated": { "type": "string", "format": "date" },
-        "count": { "type": "integer", "minimum": 0 },
-        "field_notes": { "type": "object", "additionalProperties": { "type": "string" } }
+        "source": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_notes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "description": "Build metadata: source provenance, license, generation date, counts, field documentation, and attribution."
     },
     "entries": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["word_id", "text", "reading", "meanings"],
+        "required": [
+          "word_id",
+          "text",
+          "reading",
+          "meanings"
+        ],
         "properties": {
-          "word_id": { "type": "string" },
-          "text": { "type": "string" },
-          "reading": { "type": "string" },
-          "meanings": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
-          "jlpt_waller": { "type": ["string", "null"], "enum": ["N1", "N2", "N3", "N4", "N5", null] }
+          "word_id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "reading": {
+            "type": "string"
+          },
+          "meanings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "jlpt_waller": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "N1",
+              "N2",
+              "N3",
+              "N4",
+              "N5",
+              null
+            ]
+          }
         },
         "additionalProperties": false
-      }
+      },
+      "description": "Array of data entries."
     }
   }
 }

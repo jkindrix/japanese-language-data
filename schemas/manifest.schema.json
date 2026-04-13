@@ -18,7 +18,8 @@
   "properties": {
     "project": {
       "type": "string",
-      "const": "japanese-language-data"
+      "const": "japanese-language-data",
+      "description": "Project identifier string."
     },
     "version": {
       "type": "string",
@@ -72,7 +73,8 @@
       }
     },
     "grammar_curation_status": {
-      "$ref": "#/$defs/grammarCurationStatus"
+      "$ref": "#/$defs/grammarCurationStatus",
+      "description": "Summary of grammar entry review coverage and operational status."
     },
     "next_actions": {
       "type": "array",
