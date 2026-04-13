@@ -85,7 +85,14 @@ def _build_word_lookup(words_data: dict) -> dict[str, tuple[str, str]]:
                 lookup[text] = (wid, primary_reading)
         for k in kana_list:
             text = k.get("text", "")
-            if text and text not in lookup:
+            if not text:
+                continue
+            if text not in lookup:
+                lookup[text] = (wid, primary_reading)
+            elif primary_reading == text and lookup[text][1] != text:
+                # Prefer entries whose primary reading matches the lookup
+                # key. E.g., particle は (reading は) should win over
+                # 羽 (reading はね) for the key は.
                 lookup[text] = (wid, primary_reading)
     return lookup
 

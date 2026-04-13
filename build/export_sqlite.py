@@ -342,8 +342,9 @@ def export() -> None:
     radicals_data = _load_json(DATA_DIR / "core" / "radicals.json")
     if radicals_data:
         rows = [
-            (r.get("character", ""), r.get("kangxi_number"),
-             r.get("stroke_count"), r.get("meaning_en"))
+            (r.get("radical", ""), r.get("classical_number"),
+             r.get("stroke_count"),
+             ", ".join(r.get("meanings", [])) if r.get("meanings") else None)
             for r in radicals_data.get("radicals", [])
         ]
         conn.executemany("INSERT OR IGNORE INTO radicals VALUES (?,?,?,?)", rows)

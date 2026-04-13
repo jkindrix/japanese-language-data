@@ -141,8 +141,9 @@ def build() -> None:
                 f"Derived from {total_sentences:,} sentences across "
                 + " + ".join(corpus_sources)
                 + ". Surface-form substring matching (not morphological analysis). "
-                "Overcounts short words, undercounts inflected forms. Useful for "
-                "relative ranking, not absolute frequency."
+                "Overcounts short words whose readings match grammatical substrings; "
+                "undercounts inflected forms. Top-ranked entries may be false positives. "
+                "For reliable word frequency, prefer MeCab-tokenized lists."
             ),
             "kind": "word",
             "attribution": (
@@ -157,8 +158,12 @@ def build() -> None:
                 "methodology": (
                     "Simple substring matching of kanji writings (≥2 chars) and kana "
                     "readings (≥3 chars) against sentence Japanese text. Not morphological "
-                    "analysis — inflected forms are undercounted, short words overcounted. "
-                    "Suitable for relative ranking and study prioritization."
+                    "analysis — inflected forms are undercounted, and words whose kana "
+                    "readings match common grammatical substrings are overcounted "
+                    "(e.g., してい matches していた, ました matches the verb ending). "
+                    "Top-ranked entries may be false positives. For reliable rankings, "
+                    "prefer the MeCab-tokenized frequency lists (frequency-wikipedia.json, "
+                    "frequency-jesc.json, frequency-tatoeba.json)."
                 ),
             },
         },

@@ -2,9 +2,9 @@
   "metadata": {
     "source": "Corpus-derived word frequency from project sentence data",
     "license": "CC-BY-SA 4.0",
-    "generated": "2026-04-12",
+    "generated": "2026-04-13",
     "count": 14647,
-    "corpus": "Derived from 25,980 sentences across data/corpus/sentences.json. Surface-form substring matching (not morphological analysis). Overcounts short words, undercounts inflected forms. Useful for relative ranking, not absolute frequency.",
+    "corpus": "Derived from 25,980 sentences across data/corpus/sentences.json. Surface-form substring matching (not morphological analysis). Overcounts short words whose readings match grammatical substrings; undercounts inflected forms. Top-ranked entries may be false positives. For reliable word frequency, prefer MeCab-tokenized lists.",
     "kind": "word",
     "attribution": "Frequency counts derived from Tatoeba (CC-BY-2.0-FR) and KFTT (CC-BY-SA 3.0) sentence corpora aggregated by this project.",
     "field_notes": {
@@ -12,7 +12,7 @@
       "reading": "Primary kana reading of the word.",
       "rank": "Rank by sentence count. 1 = appears in the most sentences.",
       "count": "Number of sentences containing this word (surface-form match).",
-      "methodology": "Simple substring matching of kanji writings (≥2 chars) and kana readings (≥3 chars) against sentence Japanese text. Not morphological analysis — inflected forms are undercounted, short words overcounted. Suitable for relative ranking and study prioritization."
+      "methodology": "Simple substring matching of kanji writings (≥2 chars) and kana readings (≥3 chars) against sentence Japanese text. Not morphological analysis — inflected forms are undercounted, and words whose kana readings match common grammatical substrings are overcounted (e.g., してい matches していた, ました matches the verb ending). Top-ranked entries may be false positives. For reliable rankings, prefer the MeCab-tokenized frequency lists (frequency-wikipedia.json, frequency-jesc.json, frequency-tatoeba.json)."
     }
   },
   "entries": [
