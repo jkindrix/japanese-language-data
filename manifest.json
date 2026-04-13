@@ -181,7 +181,7 @@
     "data/enrichment/ateji.json": 239,
     "data/enrichment/jukugo-compounds.json": 14350,
     "data/enrichment/jlpt-classifications.json": 11099,
-    "data/enrichment/sentence-difficulty.json": 702197,
+    "data/enrichment/sentence-difficulty.json": 4355291,
     "data/enrichment/frequency-tatoeba.json": 12298,
     "data/enrichment/stroke-order-index.json": 13108,
     "data/grammar/grammar.json": 595,

@@ -1,7 +1,7 @@
 """Sentence difficulty scoring transform.
 
-Computes an estimated JLPT difficulty level for each sentence in the
-Tatoeba curated corpus based on the vocabulary and kanji it contains.
+Computes an estimated JLPT difficulty level for every sentence across
+all available corpora based on the vocabulary and kanji each contains.
 
 Method: for each sentence, find all known vocabulary words (by surface-
 form substring match), look up their JLPT levels, and assign the
@@ -9,7 +9,11 @@ sentence's difficulty as the hardest (highest N-number, i.e., N1 is
 hardest) JLPT level required to understand it.
 
 Input:
-    data/corpus/sentences.json
+    data/corpus/sentences.json          (always required)
+    data/corpus/sentences-tatoeba-full.json  (optional, gitignored)
+    data/corpus/sentences-kftt.json          (optional, gitignored)
+    data/corpus/sentences-jesc.json          (optional, gitignored)
+    data/corpus/sentences-wikimatrix.json    (optional, gitignored)
     data/core/words.json
     data/enrichment/jlpt-classifications.json
 
@@ -26,10 +30,19 @@ from build.pipeline import BUILD_DATE
 log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SENTENCES_JSON = REPO_ROOT / "data" / "corpus" / "sentences.json"
+CORPUS_DIR = REPO_ROOT / "data" / "corpus"
 WORDS_JSON = REPO_ROOT / "data" / "core" / "words.json"
 JLPT_JSON = REPO_ROOT / "data" / "enrichment" / "jlpt-classifications.json"
 OUT = REPO_ROOT / "data" / "enrichment" / "sentence-difficulty.json"
+
+# (file name, source tag) — first is required, rest are optional
+CORPUS_SOURCES: list[tuple[str, str]] = [
+    ("sentences.json", "tatoeba"),
+    ("sentences-tatoeba-full.json", "tatoeba-full"),
+    ("sentences-kftt.json", "kftt"),
+    ("sentences-jesc.json", "jesc"),
+    ("sentences-wikimatrix.json", "wikimatrix"),
+]
 
 LEVEL_ORDER = {"N5": 1, "N4": 2, "N3": 3, "N2": 4, "N1": 5}
 LEVEL_FROM_INT = {1: "N5", 2: "N4", 3: "N3", 4: "N2", 5: "N1"}
@@ -83,25 +96,50 @@ def _build_kanji_jlpt_lookup(jlpt_data: dict) -> dict[str, str]:
     return lookup
 
 
+def _build_char_index(word_lookup: dict[str, str]) -> dict[str, list[tuple[str, str]]]:
+    """Index words by first character for fast candidate filtering."""
+    from collections import defaultdict
+    index: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    for text, level in word_lookup.items():
+        index[text[0]].append((text, level))
+    return dict(index)
+
+
 def _score_sentence(
     japanese: str,
     word_lookup: dict[str, str],
     kanji_lookup: dict[str, str],
+    char_index: dict[str, list[tuple[str, str]]] | None = None,
 ) -> tuple[str | None, int, list[str]]:
     """Score a sentence's difficulty.
 
     Returns (level, level_int, matched_words).
+
+    When *char_index* is provided (built by ``_build_char_index``),
+    only words whose first character appears in the sentence are
+    tested — typically a ~50x reduction in comparisons.
     """
     max_level = 0
     matched: list[str] = []
 
-    # Check vocabulary matches
-    for text, level in word_lookup.items():
-        if text in japanese:
-            lvl = LEVEL_ORDER.get(level, 0)
-            if lvl > max_level:
-                max_level = lvl
-            matched.append(text)
+    if char_index is not None:
+        # Fast path: only check words whose first char is in the sentence
+        sentence_chars = set(japanese)
+        for char in sentence_chars:
+            for text, level in char_index.get(char, ()):
+                if text in japanese:
+                    lvl = LEVEL_ORDER.get(level, 0)
+                    if lvl > max_level:
+                        max_level = lvl
+                    matched.append(text)
+    else:
+        # Fallback: brute-force scan (kept for backward compat with tests)
+        for text, level in word_lookup.items():
+            if text in japanese:
+                lvl = LEVEL_ORDER.get(level, 0)
+                if lvl > max_level:
+                    max_level = lvl
+                matched.append(text)
 
     # Check individual kanji
     for char in japanese:
@@ -116,64 +154,84 @@ def _score_sentence(
 
 
 def build() -> None:
-    for req in (SENTENCES_JSON, WORDS_JSON, JLPT_JSON):
+    for req in (WORDS_JSON, JLPT_JSON):
         if not req.exists():
             raise FileNotFoundError(f"Required: {req}")
 
-    log.info("[diff]     loading data")
-    sentences_data = json.loads(SENTENCES_JSON.read_text(encoding="utf-8"))
+    # The first corpus (curated Tatoeba) is required; others are optional
+    primary = CORPUS_DIR / CORPUS_SOURCES[0][0]
+    if not primary.exists():
+        raise FileNotFoundError(f"Required: {primary}")
+
+    log.info("loading JLPT lookups")
     words_data = json.loads(WORDS_JSON.read_text(encoding="utf-8"))
     jlpt_data = json.loads(JLPT_JSON.read_text(encoding="utf-8"))
 
     word_lookup = _build_word_jlpt_lookup(words_data, jlpt_data)
     kanji_lookup = _build_kanji_jlpt_lookup(jlpt_data)
+    char_index = _build_char_index(word_lookup)
     log.info(f"{len(word_lookup):,} word forms, {len(kanji_lookup):,} kanji with JLPT levels")
 
     entries: list[dict] = []
     level_counts: dict[str, int] = {"N5": 0, "N4": 0, "N3": 0, "N2": 0, "N1": 0, "unscored": 0}
+    corpora_scored: list[str] = []
 
-    for s in sentences_data.get("sentences", []):
-        sid = s.get("id", "")
-        japanese = s.get("japanese", "")
-        if not japanese:
+    for filename, source_tag in CORPUS_SOURCES:
+        corpus_path = CORPUS_DIR / filename
+        if not corpus_path.exists():
+            log.info(f"skipping {filename} (not built)")
             continue
 
-        level, level_int, _ = _score_sentence(japanese, word_lookup, kanji_lookup)
+        corpus_data = json.loads(corpus_path.read_text(encoding="utf-8"))
+        sentences = corpus_data.get("sentences", [])
+        corpus_count = 0
 
-        entries.append({
-            "sentence_id": sid,
-            "estimated_level": level,
-            "level_numeric": level_int,
-        })
+        for s in sentences:
+            sid = s.get("id", "")
+            japanese = s.get("japanese", "")
+            if not japanese:
+                continue
 
-        if level:
-            level_counts[level] += 1
-        else:
-            level_counts["unscored"] += 1
+            level, level_int, _ = _score_sentence(japanese, word_lookup, kanji_lookup, char_index)
 
-    log.info(f"scored {len(entries):,} sentences")
+            entries.append({
+                "sentence_id": sid,
+                "source": source_tag,
+                "estimated_level": level,
+                "level_numeric": level_int,
+            })
+
+            if level:
+                level_counts[level] += 1
+            else:
+                level_counts["unscored"] += 1
+            corpus_count += 1
+
+        log.info(f"{source_tag}: {corpus_count:,} sentences scored")
+        corpora_scored.append(source_tag)
+
+    log.info(f"total: {len(entries):,} sentences across {len(corpora_scored)} corpora")
     for lvl in ("N5", "N4", "N3", "N2", "N1", "unscored"):
-        log.info(f"{lvl}: {level_counts[lvl]:,}")
+        log.info(f"  {lvl}: {level_counts[lvl]:,}")
 
     output = {
         "metadata": {
-            "source": "Derived from sentences.json + JLPT classifications",
+            "source": "Derived from all sentence corpora + JLPT classifications",
             "license": "CC-BY-SA 4.0",
             "generated": BUILD_DATE,
             "count": len(entries),
             "level_distribution": level_counts,
             "methodology": (
-                "Each sentence is scored by finding the hardest JLPT level "
-                "required to understand it. Vocabulary is matched by surface-form "
-                "substring (kanji ≥2 chars, kana ≥3 chars). Individual kanji are "
-                "also checked. The sentence's level is the maximum JLPT level "
-                "across all matched vocabulary and kanji. Sentences with no "
-                "JLPT-classified content are marked null (unscored)."
+                "Each sentence scored by the hardest JLPT level required. "
+                "Vocabulary matched by surface-form substring, individual kanji "
+                "checked against JLPT kanji list. Covers all available sentence "
+                f"corpora: {', '.join(corpora_scored)}."
             ),
             "field_notes": {
-                "sentence_id": "Tatoeba sentence ID (join with sentences.json).",
-                "estimated_level": "Estimated JLPT level (N5=easiest, N1=hardest). Null if no JLPT vocabulary found.",
-                "level_numeric": "Numeric difficulty: 1=N5, 2=N4, 3=N3, 4=N2, 5=N1, 0=unscored.",
+                "sentence_id": "Sentence ID (join with the source corpus file).",
+                "source": "Which corpus: 'tatoeba', 'tatoeba-full', 'kftt', 'jesc', or 'wikimatrix'.",
+                "estimated_level": "Estimated JLPT level (N5=easiest, N1=hardest). Null if unscored.",
+                "level_numeric": "Numeric: 1=N5, 2=N4, 3=N3, 4=N2, 5=N1, 0=unscored.",
             },
         },
         "entries": entries,

@@ -85,7 +85,9 @@
           "enum": [
             "tatoeba",
             "tatoeba-full",
-            "kftt"
+            "kftt",
+            "jesc",
+            "wikimatrix"
           ],
           "description": "Which corpus this sentence belongs to."
         },

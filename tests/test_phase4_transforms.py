@@ -225,6 +225,60 @@ class TestSentenceDifficultyHelpers:
         assert LEVEL_FROM_INT[1] == "N5"
         assert LEVEL_FROM_INT[5] == "N1"
 
+    def test_build_multi_corpus(self, tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+        import build.transform.sentence_difficulty as sd
+
+        corpus_dir = tmp_path / "corpus"
+        corpus_dir.mkdir()
+
+        # Curated corpus (required)
+        curated = {"sentences": [
+            {"id": "1", "japanese": "食べる", "english": "eat"},
+        ]}
+        (corpus_dir / "sentences.json").write_text(
+            json.dumps(curated), encoding="utf-8"
+        )
+
+        # Second corpus (optional)
+        kftt = {"sentences": [
+            {"id": "kftt-1", "japanese": "難しい本", "english": "difficult book"},
+        ]}
+        (corpus_dir / "sentences-kftt.json").write_text(
+            json.dumps(kftt), encoding="utf-8"
+        )
+
+        # JLPT + words data
+        words = {"words": [
+            {"id": "100", "kanji": [{"text": "食べる"}], "kana": [], "sense": []},
+            {"id": "200", "kanji": [{"text": "難しい"}], "kana": [], "sense": []},
+        ]}
+        jlpt = {"classifications": [
+            {"kind": "vocab", "jmdict_seq": "100", "level": "N5"},
+            {"kind": "vocab", "jmdict_seq": "200", "level": "N3"},
+        ]}
+        (tmp_path / "words.json").write_text(json.dumps(words), encoding="utf-8")
+        (tmp_path / "jlpt.json").write_text(json.dumps(jlpt), encoding="utf-8")
+
+        out = tmp_path / "out.json"
+        monkeypatch.setattr(sd, "CORPUS_DIR", corpus_dir)
+        monkeypatch.setattr(sd, "WORDS_JSON", tmp_path / "words.json")
+        monkeypatch.setattr(sd, "JLPT_JSON", tmp_path / "jlpt.json")
+        monkeypatch.setattr(sd, "OUT", out)
+        monkeypatch.setattr(sd, "REPO_ROOT", tmp_path)
+
+        sd.build()
+
+        result = json.loads(out.read_text(encoding="utf-8"))
+        assert result["metadata"]["count"] == 2
+        sources = {e["source"] for e in result["entries"]}
+        assert sources == {"tatoeba", "kftt"}
+        # Verify source field is present and correct
+        tatoeba_entry = [e for e in result["entries"] if e["source"] == "tatoeba"][0]
+        assert tatoeba_entry["sentence_id"] == "1"
+        kftt_entry = [e for e in result["entries"] if e["source"] == "kftt"][0]
+        assert kftt_entry["sentence_id"] == "kftt-1"
+        assert kftt_entry["estimated_level"] == "N3"
+
 
 # ---------------------------------------------------------------------------
 # sentences_full
