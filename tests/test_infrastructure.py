@@ -130,12 +130,15 @@ def test_download_with_retries_succeeds_on_first_try(tmp_path: Path) -> None:
     dest = tmp_path / "output.bin"
     payload = b"hello world"
 
+    mock_raw = MagicMock()
+    mock_raw.stream = MagicMock(return_value=iter([payload]))
+
     mock_response = MagicMock()
     mock_response.__enter__ = MagicMock(return_value=mock_response)
     mock_response.__exit__ = MagicMock(return_value=False)
     mock_response.raise_for_status = MagicMock()
     mock_response.headers = {}
-    mock_response.iter_content = MagicMock(return_value=[payload])
+    mock_response.raw = mock_raw
 
     mock_session = MagicMock()
     mock_session.get = MagicMock(return_value=mock_response)

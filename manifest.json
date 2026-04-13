@@ -2,7 +2,7 @@
   "project": "japanese-language-data",
   "version": "0.8.0",
   "phase": 4,
-  "phase_description": "Phase 4 active (v0.8.0+). Grammar: 595 entries, 90.3% pattern-matched. Radicals: 242/253 (95.7%) with Kangxi meanings. Pitch accent: 131,389 total (124,011 Kanjium + 7,378 Wiktionary). Frequency: 4 sources (newspaper, subtitles, web, Wikipedia). Sentence corpus: 469,829 total. Exports: Yomitan, SQLite, Anki .apkg. 468 tests, 81% coverage. Remaining: native-speaker review recruitment.",
+  "phase_description": "Phase 4 active (v0.8.0+). Sentence corpus: 4,355,291 total (Tatoeba 258K + KFTT 444K + JESC 2.8M + WikiMatrix 852K). WordNet: 596,612 semantic relations (559K synonym + 37K hypernym). Grammar: 595 entries, 90.3% pattern-matched. Radicals: 242/253 (95.7%) with Kangxi meanings. Pitch accent: 131,389 total. Frequency: 6 sources. Exports: Yomitan, SQLite, Anki .apkg.",
   "generated": "2026-04-12",
   "license": "CC-BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -123,16 +123,37 @@
     "leeds-frequency": {
       "url": "https://web.archive.org/web/2023/http://corpus.leeds.ac.uk/frqc/internet-jp.num",
       "license": "CC-BY (Creative Commons Attribution)",
-      "description": "Leeds University Internet Japanese Word Frequency List (~15K lemmas, web corpus, ChaSen-tokenized). Via Wayback Machine (original server down).",
+      "description": "Leeds University Internet Japanese Word Frequency List (~15K lemmas, web corpus).",
       "sha256": "d2911d7a3297b0a57893cb796cd15f3d8a2cea5208ed222b9f9fa6f14fed055b",
       "size_bytes": 287685
     },
     "opensubtitles-frequency": {
       "url": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/ja/ja_full.txt",
       "license": "MIT (code); data derived from OpenSubtitles",
-      "description": "Japanese word frequency from OpenSubtitles 2018 via hermitdave/FrequencyWords. Spoken/media register (movies, TV, anime).",
+      "description": "Japanese word frequency from OpenSubtitles 2018 via hermitdave/FrequencyWords.",
       "sha256": "581dd106a134ff9f2706e23cde9fe95cd24d96ead6357cd3bd3bba9e166a764e",
       "size_bytes": 404869
+    },
+    "jesc": {
+      "url": "https://nlp.stanford.edu/projects/jesc/data/raw.tar.gz",
+      "license": "CC-BY-SA 4.0",
+      "description": "JESC (Japanese-English Subtitle Corpus) — ~2.8M conversational JP-EN sentence pairs from movie/TV subtitles.",
+      "sha256": "4034d62b7ce60f3ec3b3b6c8c347e5a7fd4be5021c8d8987957b670e12f906d5",
+      "size_bytes": 102198198
+    },
+    "wikimatrix": {
+      "url": "https://object.pouta.csc.fi/OPUS-WikiMatrix/v1/moses/en-ja.txt.zip",
+      "license": "CC-BY-SA 4.0",
+      "description": "WikiMatrix ja-en — ~852K parallel sentence pairs mined from Wikipedia via LASER embeddings.",
+      "sha256": "ee721e4eff49342cb42f6533c74d66f90165d05566bd5e545666e61571a44898",
+      "size_bytes": 101538927
+    },
+    "wordnet-ja": {
+      "url": "https://github.com/bond-lab/wnja/releases/download/v1.1/wnjpn.db.gz",
+      "license": "NICT permissive (BSD-style, no fee/royalty)",
+      "description": "Japanese WordNet (wn-ja) v1.1 — 94K Japanese words, 158K senses, 283K semantic relations.",
+      "sha256": "64a14dcfe3ba296566e91a70a2fc0616e85cf2ee7b7fd8cdcbc66c8b12a505a5",
+      "size_bytes": 60390049
     }
   },
   "counts": {
@@ -174,7 +195,10 @@
     "data/cross-refs/radical-to-kanji.json": 253,
     "data/cross-refs/kanji-to-sentences.json": 2543,
     "data/cross-refs/word-to-grammar.json": 1577,
-    "data/cross-refs/word-relations.json": 2283
+    "data/cross-refs/word-relations.json": 2283,
+    "data/corpus/sentences-jesc.json": 2801388,
+    "data/corpus/sentences-wikimatrix.json": 851706,
+    "data/cross-refs/wordnet-synonyms.json": 596612
   },
   "grammar_curation_status": {
     "total_entries": 595,

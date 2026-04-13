@@ -193,6 +193,30 @@ SOURCES: tuple[Source, ...] = (
         description="Leeds University Internet Japanese Word Frequency List (~15K lemmas, web corpus).",
         license="CC-BY (Creative Commons Attribution)",
     ),
+    # ---- JESC subtitle corpus ------------------------------------------------
+    Source(
+        name="jesc",
+        url="https://nlp.stanford.edu/projects/jesc/data/raw.tar.gz",
+        cache_path="jesc/raw.tar.gz",
+        description="JESC (Japanese-English Subtitle Corpus) — ~2.8M conversational JP-EN sentence pairs from movie/TV subtitles.",
+        license="CC-BY-SA 4.0",
+    ),
+    # ---- WikiMatrix parallel corpus ------------------------------------------
+    Source(
+        name="wikimatrix",
+        url="https://object.pouta.csc.fi/OPUS-WikiMatrix/v1/moses/en-ja.txt.zip",
+        cache_path="wikimatrix/en-ja.txt.zip",
+        description="WikiMatrix ja-en — ~852K parallel sentence pairs mined from Wikipedia via LASER embeddings.",
+        license="CC-BY-SA 4.0",
+    ),
+    # ---- Japanese WordNet (NICT) ---------------------------------------------
+    Source(
+        name="wordnet-ja",
+        url="https://github.com/bond-lab/wnja/releases/download/v1.1/wnjpn.db.gz",
+        cache_path="wordnet/wnjpn.db.gz",
+        description="Japanese WordNet (wn-ja) v1.1 — 94K Japanese words, 158K senses, 283K semantic relations.",
+        license="NICT permissive (BSD-style, no fee/royalty)",
+    ),
     # ---- Phase 4 additions --------------------------------------------------
     # Wikipedia "Kangxi radicals" article, pinned to revision 1346511063 via
     # index.php's action=raw endpoint. This returns the raw wikitext for that
@@ -209,9 +233,9 @@ SOURCES: tuple[Source, ...] = (
 )
 
 
-# Maximum file size we'll accept (100 MB). Protects against corrupted
+# Maximum file size we'll accept (150 MB). Protects against corrupted
 # upstream URLs pointing to unexpectedly large files.
-MAX_DOWNLOAD_BYTES = 100 * 1024 * 1024
+MAX_DOWNLOAD_BYTES = 150 * 1024 * 1024
 
 # Retry policy for transient network failures.
 MAX_RETRIES = 3
@@ -245,6 +269,12 @@ def _build_session() -> requests.Session:
         f"(https://github.com/jkindrix/japanese-language-data; "
         f"reproducible-build fetcher)"
     )
+    # Prevent automatic decompression of content. Some servers (e.g.,
+    # Stanford NLP) set Content-Encoding: x-gzip on .tar.gz files,
+    # which causes requests to auto-decompress the response body. For a
+    # content-addressed download cache we need the raw bytes so the
+    # SHA256 hash matches the file on disk.
+    session.headers["Accept-Encoding"] = "identity"
     return session
 
 
@@ -270,9 +300,16 @@ def _download(url: str, destination: Path, session: requests.Session) -> None:
                     f"(limit {MAX_DOWNLOAD_BYTES:,}). Check the URL."
                 )
 
+            # Disable automatic decompression so we get the raw bytes
+            # on disk. Some servers (e.g., Stanford NLP) set
+            # Content-Encoding on .tar.gz files, causing requests to
+            # decompress the body. For a content-addressed cache we
+            # need the file byte-identical to what the server stores.
+            response.raw.decode_content = False
+
             written = 0
             with tmp_path.open("wb") as handle:
-                for chunk in response.iter_content(chunk_size=65536):
+                for chunk in response.raw.stream(65536):
                     if chunk:
                         written += len(chunk)
                         if written > MAX_DOWNLOAD_BYTES:

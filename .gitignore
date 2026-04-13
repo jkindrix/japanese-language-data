@@ -40,6 +40,9 @@ sources/leeds/
 sources/common-voice/
 sources/aozora/
 sources/tatoeba-full/
+sources/jesc/
+sources/wikimatrix/
+sources/wordnet/
 sources/jmdict-furigana/
 sources/*.tgz
 sources/*.zip
@@ -64,6 +67,15 @@ data/corpus/sentences-kftt.json
 
 # Full Tatoeba corpus (~80 MB) — built on demand, committed as release artifact
 data/corpus/sentences-tatoeba-full.json
+
+# JESC subtitle corpus (~large) — built on demand, committed as release artifact
+data/corpus/sentences-jesc.json
+
+# WikiMatrix parallel corpus (~large) — built on demand, committed as release artifact
+data/corpus/sentences-wikimatrix.json
+
+# WordNet synonym data (~large) — built on demand
+data/cross-refs/wordnet-synonyms.json
 
 # Full-JMdict cross-references (built alongside words-full.json)
 data/cross-refs/kanji-to-words-full.json

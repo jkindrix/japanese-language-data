@@ -127,6 +127,7 @@ def _build_stages() -> list[Stage]:
         frequency_web,
         frequency_wikipedia,
         grammar,
+        jesc,
         jukugo,
         jlpt,
         kana,
@@ -137,6 +138,8 @@ def _build_stages() -> list[Stage]:
         radicals,
         sentences,
         stroke_order,
+        wikimatrix,
+        wordnet,
         words,
     )
 
@@ -156,6 +159,9 @@ def _build_stages() -> list[Stage]:
         Stage("frequency", "Frequency rankings (newspaper corpus from KANJIDIC2).", frequency.build, phase=2),
         Stage("sentences", "Example sentences from Tatoeba via jmdict-examples.", sentences.build, phase=1),
         Stage("kftt", "KFTT parallel corpus (~440k JP-EN sentence pairs from Wikipedia Kyoto articles).", kftt.build, phase=4),
+        Stage("jesc", "JESC subtitle corpus (~2.8M conversational JP-EN sentence pairs).", jesc.build, phase=4),
+        Stage("wikimatrix", "WikiMatrix ja-en (~852K Wikipedia-mined parallel sentence pairs).", wikimatrix.build, phase=4),
+        Stage("wordnet", "Japanese WordNet synonym groups and hypernym relations.", wordnet.build, phase=4),
         Stage("conjugations", "Auto-generated verb and adjective conjugation tables.", conjugations.build, phase=3),
         # ---- Core transforms that read enrichment outputs ----
         Stage("kanji", "Kanji entries from KANJIDIC2, enriched with radical components and JLPT level.", kanji.build, phase=1),
