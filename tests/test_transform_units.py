@@ -4058,7 +4058,8 @@ def test_kanji_build_with_mock_source(tmp_path: Path, monkeypatch) -> None:
 
 def test_sentences_build(tmp_path: Path, monkeypatch) -> None:
     """Full build() with a mock tgz."""
-    import io, tarfile
+    import io
+    import tarfile
     from build.transform import sentences as mod
 
     source_data = {"words": [{
@@ -4106,7 +4107,8 @@ def test_sentences_build(tmp_path: Path, monkeypatch) -> None:
 
 def test_sentences_build_skips_no_japanese(tmp_path: Path, monkeypatch) -> None:
     """Entries with no Japanese text are skipped."""
-    import io, tarfile
+    import io
+    import tarfile
     from build.transform import sentences as mod
 
     source_data = {"words": [{
@@ -4139,7 +4141,8 @@ def test_sentences_build_skips_no_japanese(tmp_path: Path, monkeypatch) -> None:
 # ---------------------------------------------------------------------------
 
 def test_expressions_build(tmp_path: Path, monkeypatch) -> None:
-    import io, tarfile
+    import io
+    import tarfile
     from build.transform import expressions as mod
 
     source_data = {"version": "test", "dictDate": "2024-01-01", "words": [{
@@ -4223,7 +4226,8 @@ def test_kftt_build_missing_source(tmp_path: Path, monkeypatch) -> None:
 # ---------------------------------------------------------------------------
 
 def test_frequency_build(tmp_path: Path, monkeypatch) -> None:
-    import io, tarfile
+    import io
+    import tarfile
     from build.transform import frequency as mod
 
     source_data = {"version": "test", "characters": [
@@ -4298,7 +4302,8 @@ def test_pitch_build_missing_source(tmp_path: Path, monkeypatch) -> None:
 # ---------------------------------------------------------------------------
 
 def test_names_build(tmp_path: Path, monkeypatch) -> None:
-    import io, tarfile
+    import io
+    import tarfile
     from build.transform import names as mod
 
     source_data = {"version": "test", "tags": {"person": "personal name"},
@@ -4540,7 +4545,8 @@ def test_frequency_corpus_build(tmp_path: Path, monkeypatch) -> None:
 # ---------------------------------------------------------------------------
 
 def test_words_build(tmp_path: Path, monkeypatch) -> None:
-    import io, tarfile
+    import io
+    import tarfile
     from build.transform import words as mod
 
     source_data = {
@@ -4585,7 +4591,8 @@ def test_words_build(tmp_path: Path, monkeypatch) -> None:
 
 def test_words_build_with_jlpt_force_include(tmp_path: Path, monkeypatch) -> None:
     """JLPT-listed words not flagged common are force-included."""
-    import io, tarfile
+    import io
+    import tarfile
     from build.transform import words as mod
 
     source_data = {

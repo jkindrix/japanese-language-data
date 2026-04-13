@@ -42,8 +42,8 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ### Added — infrastructure
 
-- **133 new tests** (317 → 450): Unit tests for frequency_subtitles, export_sqlite insert functions, furigana mock-build, kftt tarball extraction, grammar pattern extraction, stroke_order edge cases, sentences dedup, expressions filter, cross_links build, grammar multi-candidate matching, Anki note model builders. Full build() integration tests for export_anki, export_sqlite, grammar, cross_links, stroke_order, kanji, sentences, expressions, kftt, frequency, pitch, names, frequency_web, frequency_wikipedia, common_voice, and aozora modules. Coverage: 47% → 77%.
-- **Coverage floor bumped** from 45% to 77% (`pyproject.toml`).
+- **151 new tests** (317 → 468): Unit tests for frequency_subtitles, export_sqlite insert functions, furigana mock-build, kftt tarball extraction, grammar pattern extraction, stroke_order edge cases, sentences dedup, expressions filter, cross_links build, grammar multi-candidate matching, Anki note model builders. Full build() integration tests for export_anki, export_sqlite, grammar, cross_links, stroke_order, kanji, sentences, expressions, kftt, frequency, pitch, names, frequency_web, frequency_wikipedia, frequency_corpus, words (with JLPT force-include), common_voice, aozora, pipeline ordering, check_upstream, kana builders. Coverage: 47% → 81%.
+- **Coverage floor bumped** from 45% to 80% (`pyproject.toml`).
 - **MeCab dependency** added to requirements.txt (`mecab-python3`, `unidic-lite`) for Wikipedia frequency tokenization.
 
 ### Fixed — pipeline
@@ -62,9 +62,9 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ### Verification
 
-- 450 tests, all passing.
-- 31 data files validated against schemas + semantic integrity checks.
-- Coverage: 77% (fail-under: 77%).
+- 468 tests, all passing.
+- 34 data files validated against schemas + semantic integrity checks.
+- Coverage: 81% (fail-under: 80%).
 - Lint clean.
 
 ## [0.8.0] — 2026-04-12

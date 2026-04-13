@@ -89,7 +89,7 @@ Status values:
 - **Format**: MP3 audio + transcript TSV.
 - **Effort to integrate**: Low for transcripts, medium for bundled audio.
 - **Value**: Open speech dataset usable for any purpose; good for STT/speech modeling. Limited learner value directly but useful for building apps with voice features.
-- **Status**: EVALUATED. CC0 makes this the most compatible audio corpus. Integration path: download TSV transcript metadata (not audio files — too large), convert to `data/phase4/common-voice-transcripts.json`, create audio manifest with download URLs. Estimated effort: 1.5–2.5 hours. Deferred to a dedicated session due to ~2 GB download requirement. Transcripts-only integration is straightforward; audio bundling is impractical for git.
+- **Status**: **PIPELINE READY**. Transform code delivered (`build/transform/common_voice.py`). Requires manual download (Mozilla account authentication) of `validated.tsv` to `sources/common-voice/`. Output: `data/phase4/common-voice-transcripts.json` (gitignored, built on demand). Deduplicates by NFKC text, aggregates vote counts. CC-0.
 
 ---
 
@@ -104,8 +104,8 @@ Status values:
 - **Format**: Plain text, XHTML, or annotated XHTML. Ruby (furigana) preserved in some works.
 - **Effort to integrate**: High. Per-work license audit, text normalization, metadata extraction (author, era, genre), splitting for manageable units.
 - **Value**: Enormous for reading practice, classical Japanese exposure, literary vocabulary, historical context.
-- **Status**: EVALUATED / DEFERRED. High value but dominated by legal friction: Japanese copyright law requires per-work audit (death + 70 years). Estimated effort: 11–17 hours, 6–10 of which is license auditing. Even a curated selection of "famous works" requires checking ~100+ individual works. Deferred until a dedicated effort can be committed.
-- **Recommendation**: Start with a small curated selection (famous works, broadly used in Japanese language education) rather than bulk-importing everything. Pre-Meiji works (pre-1868) are safest from a copyright perspective.
+- **Status**: **DELIVERED (v0.8.0+)**. Initial curated corpus of 14 public-domain works by 7 authors (Soseki, Akutagawa, Dazai, Miyazawa, Nakajima, Mori, Higuchi — all died before 1955). Transform: `build/transform/aozora.py`. Output: `data/phase4/aozora-corpus.json` (gitignored, built on demand). ~620K chars with ruby extraction. Catalog auto-downloaded from aozora.gr.jp.
+- **Recommendation**: Expand the curated selection beyond the initial 14 works. All authors with 著作権なし in the catalog and death year ≤1967 are safe.
 
 ### Wikipedia Japanese
 
@@ -127,8 +127,8 @@ Status values:
 - **License**: CC-BY-SA 4.0 (compatible).
 - **Effort to integrate**: Medium-high. Wiktionary entries are free-form and inconsistent; extracting structured data (readings, pitch, meanings, examples) requires per-template parsing.
 - **Value**: Secondary coverage of vocabulary that JMdict may lack; per-entry etymology notes; pitch accent for some modern terms. Filling the post-2022 Kanjium gap is one concrete use case.
-- **Status**: EVALUATED. High value for the post-2022 Kanjium pitch accent gap specifically. Estimated effort: 5–7 hours (1h download, 2–4h per-template parsing with mwparserfromhell, 1h dedup and integration). The hard part is that Wiktionary pronunciation sections use inconsistent templates across entries ��� no single parser covers all notation formats. Realistic outcome: capture 60–70% of well-formed pitch entries. A targeted extraction for pitch accent is recommended over bulk import.
-- **Recommendation**: Start with a targeted extraction for the post-2022 pitch accent gap rather than a bulk import. Requires `mwparserfromhell` dependency and a dedicated session.
+- **Status**: **DELIVERED (v0.8.0+)**. Pitch accent extracted from Japanese Wiktionary via kaikki.org/wiktextract pre-processed JSONL. 7,378 entries not in Kanjium, covering post-2022 vocabulary gap. Accent type tags (Heiban, Atamadaka, Nakadaka, Odaka) converted to numeric mora positions. Output: `data/enrichment/pitch-accent-wiktionary.json`. Did NOT require mwparserfromhell — used kaikki.org structured data instead.
+- **Recommendation**: Re-extract periodically from kaikki.org as Wiktionary coverage grows. The committed JSON is the version pin (kaikki.org URLs are not stable).
 
 ### KFTT (Kyoto Free Translation Task)
 

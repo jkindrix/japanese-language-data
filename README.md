@@ -96,7 +96,7 @@ All files are schema-validated JSON with metadata headers crediting upstream sou
 git clone https://github.com/jkindrix/japanese-language-data.git
 cd japanese-language-data
 python3 -m venv .venv && . .venv/bin/activate
-pip install -r build/requirements.txt
+pip install -r build/requirements.txt  # includes MeCab tokenizer for Wikipedia frequency
 just fetch    # download pinned upstream sources
 just build    # transform and cross-link
 just validate # schema-check every output

@@ -2,7 +2,7 @@
   "project": "japanese-language-data",
   "version": "0.8.0",
   "phase": 4,
-  "phase_description": "Phase 4 active (v0.8.0+). Grammar: 595 entries, 90.3% pattern-matched. Radicals: 242/253 (95.7%) with Kangxi meanings. Pitch accent: 131,389 total (124,011 Kanjium + 7,378 Wiktionary). Frequency: 4 sources (newspaper, subtitles, web, Wikipedia). Sentence corpus: 469,829 total. Exports: Yomitan, SQLite, Anki .apkg. 450 tests, 77% coverage. Remaining: native-speaker review recruitment.",
+  "phase_description": "Phase 4 active (v0.8.0+). Grammar: 595 entries, 90.3% pattern-matched. Radicals: 242/253 (95.7%) with Kangxi meanings. Pitch accent: 131,389 total (124,011 Kanjium + 7,378 Wiktionary). Frequency: 4 sources (newspaper, subtitles, web, Wikipedia). Sentence corpus: 469,829 total. Exports: Yomitan, SQLite, Anki .apkg. 468 tests, 81% coverage. Remaining: native-speaker review recruitment.",
   "generated": "2026-04-12",
   "license": "CC-BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -196,6 +196,6 @@
     "Recruit native-speaker reviewers to move grammar entries from draft → native_speaker_reviewed (see docs/grammar-review.md for the operational review workflow).",
     "Expand grammar-to-sentence linking — current 90.3% pattern match rate (Tatoeba + KFTT) may improve with broader corpus matching or relaxed normalization.",
     "Phase 4 candidates: post-2022 Wiktionary pitch accent fill, Aozora Bunko literary corpus, Mozilla Common Voice transcripts (CC0). See docs/phase4-candidates.md.",
-    "Increase direct unit test coverage toward 85%+ (currently 77%; fail-under at 77%)."
+    "Increase direct unit test coverage toward 85%+ (currently 81%; fail-under at 80%)."
   ]
 }
