@@ -37,6 +37,7 @@ SCHEMA_MAP: dict[str, str] = {
     "data/optional/names.json": "name.schema.json",
     "data/corpus/sentences.json": "sentence.schema.json",
     "data/corpus/sentences-kftt.json": "sentence.schema.json",
+    "data/corpus/sentences-tatoeba-full.json": "sentence.schema.json",
     "data/enrichment/pitch-accent.json": "pitch-accent.schema.json",
     "data/enrichment/frequency-newspaper.json": "frequency.schema.json",
     "data/enrichment/frequency-modern.json": "frequency.schema.json",

@@ -39,6 +39,7 @@ sources/opensubtitles/
 sources/leeds/
 sources/common-voice/
 sources/aozora/
+sources/tatoeba-full/
 sources/jmdict-furigana/
 sources/*.tgz
 sources/*.zip
@@ -56,6 +57,9 @@ data/core/words-full.json
 
 # KFTT sentence corpus (~220 MB) — built on demand, committed as release artifact
 data/corpus/sentences-kftt.json
+
+# Full Tatoeba corpus (~80 MB) — built on demand, committed as release artifact
+data/corpus/sentences-tatoeba-full.json
 
 # Full-JMdict cross-references (built alongside words-full.json)
 data/cross-refs/kanji-to-words-full.json

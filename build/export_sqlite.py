@@ -360,6 +360,11 @@ def export() -> None:
         n = _insert_sentences(conn, kftt_data, "kftt")
         print(f"[sqlite]   sentences (kftt): {n:,}")
 
+    tatoeba_full_data = _load_json(DATA_DIR / "corpus" / "sentences-tatoeba-full.json")
+    if tatoeba_full_data:
+        n = _insert_sentences(conn, tatoeba_full_data, "tatoeba-full")
+        print(f"[sqlite]   sentences (tatoeba-full): {n:,}")
+
     # Grammar
     grammar_data = _load_json(DATA_DIR / "grammar" / "grammar.json")
     if grammar_data:

@@ -146,6 +146,7 @@
     "data/optional/names.json": null,
     "data/corpus/sentences.json": 25980,
     "data/corpus/sentences-kftt.json": 443849,
+    "data/corpus/sentences-tatoeba-full.json": 232368,
     "data/enrichment/pitch-accent.json": 124011,
     "data/enrichment/pitch-accent-wiktionary.json": 7378,
     "data/enrichment/frequency-newspaper.json": 2501,
