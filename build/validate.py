@@ -66,6 +66,7 @@ SCHEMA_MAP: dict[str, str] = {
     "data/corpus/sentences-jesc.json": "sentence.schema.json",
     "data/corpus/sentences-wikimatrix.json": "sentence.schema.json",
     "data/enrichment/frequency-tatoeba.json": "frequency.schema.json",
+    "data/enrichment/frequency-jesc.json": "frequency.schema.json",
     "data/enrichment/sentence-difficulty.json": "sentence-difficulty.schema.json",
     "data/cross-refs/wordnet-synonyms.json": "wordnet.schema.json",
     "data/cross-refs/word-relations.json": "word-relations.schema.json",
