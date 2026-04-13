@@ -16,6 +16,12 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
+_(Nothing yet.)_
+
+---
+
+## [0.9.0] — 2026-04-13
+
 ### Added — new data
 
 - **OpenSubtitles subtitle frequency** (`data/enrichment/frequency-subtitles.json`): 8,598 vocabulary-matched word frequency entries from the OpenSubtitles 2018 Japanese subtitle corpus (movies, TV, anime). Provides spoken-media frequency as an openly-licensed substitute for the license-blocked JPDB data. Source: hermitdave/FrequencyWords (MIT license). New upstream source pinned in `manifest.json` with SHA256 verification.
