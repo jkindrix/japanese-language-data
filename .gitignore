@@ -52,6 +52,10 @@ sources/*.wikitext
 # Optional data files not built by default
 data/optional/*.json
 
+# Large enrichment files — built on demand
+data/enrichment/sentence-difficulty.json
+data/enrichment/frequency-tatoeba.json
+
 # Full word list (216k entries, ~150 MB) — built on demand, committed as release artifact
 data/core/words-full.json
 
