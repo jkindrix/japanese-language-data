@@ -64,6 +64,8 @@ SCHEMA_MAP: dict[str, str] = {
     "data/enrichment/jukugo-compounds.json": "jukugo.schema.json",
     "data/cross-refs/word-to-grammar.json": "cross-refs.schema.json",
     "data/cross-refs/grammar-to-sentences.json": "cross-refs.schema.json",
+    "data/cross-refs/sentence-to-words.json": "cross-refs.schema.json",
+    "data/cross-refs/grammar-to-words.json": "cross-refs.schema.json",
     "data/cross-refs/kanji-to-sentences-full.json": "cross-refs.schema.json",
     "data/corpus/sentences-jesc.json": "sentence.schema.json",
     "data/corpus/sentences-wikimatrix.json": "sentence.schema.json",

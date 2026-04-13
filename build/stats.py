@@ -82,6 +82,8 @@ TARGET_FILES: list[tuple[str, str]] = [
     ("data/cross-refs/kanji-to-sentences.json", "mapping"),
     ("data/cross-refs/word-to-grammar.json", "mapping"),
     ("data/cross-refs/grammar-to-sentences.json", "mapping"),
+    ("data/cross-refs/sentence-to-words.json", "mapping"),
+    ("data/cross-refs/grammar-to-words.json", "mapping"),
     ("data/cross-refs/kanji-to-sentences-full.json", "mapping"),
     ("data/cross-refs/word-relations.json", "relations"),
     ("data/corpus/sentences-jesc.json", "sentences"),

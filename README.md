@@ -93,6 +93,8 @@ As of the current build (see `manifest.json` for live counts), the `data/` direc
 | `data/cross-refs/word-to-grammar.json` | Generated from `grammar.json` | 1,577 | ✓ | Every word → list of grammar point IDs matched by text |
 | `data/cross-refs/word-relations.json` | JMdict xref/antonym fields | 2,283 | ✓ | JMdict-curated word-to-word relations (related + antonym) |
 | `data/cross-refs/grammar-to-sentences.json` | Extracted from `grammar.json` | 537 | ✓ | Every grammar point → sentence IDs demonstrating the pattern |
+| `data/cross-refs/sentence-to-words.json` | Inverted from word-to-sentences | 15,263 | ✓ | Every sentence → word IDs it contains (reverse lookup) |
+| `data/cross-refs/grammar-to-words.json` | Inverted from word-to-grammar | 595 | ✓ | Every grammar point → associated word IDs (reverse lookup) |
 | `data/cross-refs/wordnet-synonyms.json` | Japanese WordNet (wn-ja) | 596,612 | gitignored | Synonym and hypernym relations from WordNet. Built on demand. |
 | `data/cross-refs/kanji-to-sentences-full.json` | All 5 corpora | 7,317 | gitignored | Every kanji → sentence IDs across all 4.35M sentences. Built on demand. |
 

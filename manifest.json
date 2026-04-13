@@ -201,6 +201,8 @@
     "data/corpus/sentences-wikimatrix.json": 851706,
     "data/cross-refs/wordnet-synonyms.json": 596612,
     "data/cross-refs/grammar-to-sentences.json": 537,
+    "data/cross-refs/sentence-to-words.json": 15263,
+    "data/cross-refs/grammar-to-words.json": 595,
     "data/cross-refs/kanji-to-sentences-full.json": 7317
   },
   "grammar_curation_status": {

@@ -37,6 +37,14 @@ Generated files:
         Each grammar point → list of sentence IDs demonstrating it,
         extracted from the pattern-matching embedded in grammar.json.
 
+    * ``data/cross-refs/sentence-to-words.json``
+        Each sentence ID → list of word IDs appearing in that sentence.
+        Reverse of word-to-sentences.
+
+    * ``data/cross-refs/grammar-to-words.json``
+        Each grammar point → list of word IDs associated with it.
+        Reverse of word-to-grammar.
+
     * ``data/cross-refs/kanji-to-sentences-full.json``  (gitignored)
         Same as kanji-to-sentences.json but across ALL corpora
         (4.35M sentences), not just the curated 26K.
@@ -436,6 +444,46 @@ def build() -> None:
                 "sentence_id",
                 ["data/grammar/grammar.json"],
                 {"mapping": "Enables 'show me sentences using this grammar pattern' queries. Sentence IDs may be Tatoeba IDs (plain) or KFTT IDs (prefixed 'kftt:')."},
+            )
+
+    # sentence-to-words: reverse of word-to-sentences (dict inversion)
+    sentence_to_words: dict[str, list[str]] = {}
+    for wid, sids in word_to_sentences.items():
+        for sid in sids:
+            sentence_to_words.setdefault(sid, []).append(wid)
+    # Sort values for determinism
+    for sid in sentence_to_words:
+        sentence_to_words[sid].sort()
+    if sentence_to_words:
+        log.info(f"sentence→words: {len(sentence_to_words):,}")
+        _write_xref(
+            OUT_DIR / "sentence-to-words.json",
+            sentence_to_words,
+            "Sentence ID → list of word IDs that appear in this sentence.",
+            "sentence_id",
+            "word_id",
+            ["data/core/words.json", "data/corpus/sentences.json"],
+            {"mapping": "Reverse of word-to-sentences. Enables 'what vocabulary does this sentence teach?' queries."},
+        )
+
+    # grammar-to-words: reverse of word-to-grammar (dict inversion)
+    if word_to_grammar:
+        grammar_to_words: dict[str, list[str]] = {}
+        for wid, gids in word_to_grammar.items():
+            for gid in gids:
+                grammar_to_words.setdefault(gid, []).append(wid)
+        for gid in grammar_to_words:
+            grammar_to_words[gid].sort()
+        if grammar_to_words:
+            log.info(f"grammar→words: {len(grammar_to_words):,}")
+            _write_xref(
+                OUT_DIR / "grammar-to-words.json",
+                grammar_to_words,
+                "Grammar point ID → list of word IDs associated with this grammar pattern.",
+                "grammar_id",
+                "word_id",
+                ["data/grammar/grammar.json", "data/core/words.json"],
+                {"mapping": "Reverse of word-to-grammar. Enables 'what vocabulary relates to this grammar?' queries."},
             )
 
     # kanji-to-sentences-full: scan ALL corpora for kanji occurrences
