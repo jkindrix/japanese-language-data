@@ -22,12 +22,15 @@ License: CC-0 (public domain).
 """
 
 from __future__ import annotations
+import logging
 
 import csv
 import json
 import unicodedata
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TSV = REPO_ROOT / "sources" / "common-voice" / "validated.tsv"
@@ -48,7 +51,7 @@ def build() -> None:
             f"place it at {SOURCE_TSV}. See docs/phase4-candidates.md."
         )
 
-    print(f"[cv]       loading {SOURCE_TSV.name}")
+    log.info(f"loading {SOURCE_TSV.name}")
 
     seen: dict[str, dict] = {}
     total_rows = 0
@@ -86,10 +89,10 @@ def build() -> None:
     for e in entries:
         del e["text_normalized"]
 
-    print(f"[cv]       {total_rows:,} rows, {len(entries):,} unique transcripts")
+    log.info(f"{total_rows:,} rows, {len(entries):,} unique transcripts")
     if entries:
         high_quality = sum(1 for e in entries if e["up_votes"] > e["down_votes"])
-        print(f"[cv]       high-quality (up > down votes): {high_quality:,}")
+        log.info(f"high-quality (up > down votes): {high_quality:,}")
 
     output = {
         "metadata": {
@@ -124,4 +127,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[cv]       wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")

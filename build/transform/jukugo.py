@@ -13,10 +13,13 @@ Output: ``data/enrichment/jukugo-compounds.json``
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 WORDS_JSON = REPO_ROOT / "data" / "core" / "words.json"
@@ -91,7 +94,7 @@ def build() -> None:
     if not KANJI_JSON.exists():
         raise FileNotFoundError(f"Required: {KANJI_JSON}")
 
-    print("[jukugo]   loading words and kanji data")
+    log.info("[jukugo]   loading words and kanji data")
     words_data = json.loads(WORDS_JSON.read_text(encoding="utf-8"))
     kanji_data = json.loads(KANJI_JSON.read_text(encoding="utf-8"))
 
@@ -102,14 +105,14 @@ def build() -> None:
         kanji_meanings[ch] = meanings.get("en", []) or []
 
     compounds = _extract_compounds(words_data, kanji_meanings)
-    print(f"[jukugo]   {len(compounds):,} multi-kanji compounds extracted")
+    log.info(f"{len(compounds):,} multi-kanji compounds extracted")
 
     by_count = {}
     for c in compounds:
         n = c["kanji_count"]
         by_count[n] = by_count.get(n, 0) + 1
     for n in sorted(by_count):
-        print(f"[jukugo]     {n}-kanji: {by_count[n]:,}")
+        log.info(f"{n}-kanji: {by_count[n]:,}")
 
     output = {
         "metadata": {
@@ -136,7 +139,7 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[jukugo]   wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")
 
 
 if __name__ == "__main__":

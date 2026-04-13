@@ -23,10 +23,13 @@ in the metadata ``coverage_date`` field.
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE = REPO_ROOT / "sources" / "kanjium" / "accents.txt"
@@ -65,7 +68,7 @@ def _count_morae(reading: str) -> int:
 
 
 def build() -> None:
-    print(f"[pitch]    loading {SOURCE.name}")
+    log.info(f"loading {SOURCE.name}")
     if not SOURCE.exists():
         raise FileNotFoundError(f"Source not cached: {SOURCE} (run just fetch first)")
 
@@ -98,7 +101,7 @@ def build() -> None:
                 "mora_count": _count_morae(effective_reading) or None,
             })
 
-    print(f"[pitch]    parsed {len(entries):,} entries  (malformed skipped: {malformed_lines:,})")
+    log.info(f"parsed {len(entries):,} entries  (malformed skipped: {malformed_lines:,})")
 
     null_mora = sum(1 for e in entries if e.get("mora_count") is None)
 
@@ -137,4 +140,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[pitch]    wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")

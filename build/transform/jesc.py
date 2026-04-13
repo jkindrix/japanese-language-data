@@ -16,6 +16,7 @@ Reference: Pryzant et al. "JESC: Japanese-English Subtitle Corpus"
 """
 
 from __future__ import annotations
+import logging
 
 import json
 import tarfile
@@ -23,13 +24,15 @@ from pathlib import Path
 
 from build.pipeline import BUILD_DATE
 
+log = logging.getLogger(__name__)
+
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jesc" / "raw.tar.gz"
 OUT = REPO_ROOT / "data" / "corpus" / "sentences-jesc.json"
 
 
 def build() -> None:
-    print(f"[jesc]     loading {SOURCE_TGZ.name}")
+    log.info(f"loading {SOURCE_TGZ.name}")
     if not SOURCE_TGZ.exists():
         raise FileNotFoundError(
             f"Source not cached: {SOURCE_TGZ} (run just fetch first)"
@@ -81,7 +84,7 @@ def build() -> None:
                 "english_contributor": None,
             })
 
-    print(f"[jesc]     total: {len(entries):,} sentence pairs ({skipped:,} skipped)")
+    log.info(f"total: {len(entries):,} sentence pairs ({skipped:,} skipped)")
 
     output = {
         "metadata": {
@@ -113,4 +116,4 @@ def build() -> None:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
     size = OUT.stat().st_size
-    print(f"[jesc]     wrote {OUT.relative_to(REPO_ROOT)} ({size:,} bytes)")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)} ({size:,} bytes)")

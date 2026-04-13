@@ -26,6 +26,7 @@ in the SVG. This matches KanjiVG's convention: one path per stroke.
 """
 
 from __future__ import annotations
+import logging
 
 import json
 import re
@@ -33,6 +34,8 @@ import shutil
 import zipfile
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_ZIP = REPO_ROOT / "sources" / "kanjivg" / "kanjivg-main.zip"
@@ -78,7 +81,7 @@ def _count_strokes(svg_text: str) -> int:
 
 
 def build() -> None:
-    print(f"[stroke]   extracting {SOURCE_ZIP.name}")
+    log.info(f"extracting {SOURCE_ZIP.name}")
 
     # Ensure clean output directory — stroke order is a full re-extract
     if OUT_DIR.exists():
@@ -88,9 +91,9 @@ def build() -> None:
     # Filter to characters in kanji.json if available
     kanji_set = _load_kanji_set()
     if kanji_set:
-        print(f"[stroke]   filtering to {len(kanji_set):,} characters in data/core/kanji.json")
+        log.info(f"filtering to {len(kanji_set):,} characters in data/core/kanji.json")
     else:
-        print("[stroke]   no kanji.json found; including every SVG in the ZIP")
+        log.info("[stroke]   no kanji.json found; including every SVG in the ZIP")
 
     # Build character-to-codepoint map for the filter
     expected_codepoints: set[str] | None = None
@@ -142,7 +145,7 @@ def build() -> None:
                 "unicode": f"{codepoint:05x}",
             }
 
-    print(f"[stroke]   total SVGs in ZIP: {total_svgs:,}  written: {written:,}")
+    log.info(f"total SVGs in ZIP: {total_svgs:,}  written: {written:,}")
 
     # For kanji in our dataset without a stroke order SVG, record them with svg=null.
     # Iterate in sorted order so the insertion sequence is deterministic: the
@@ -158,7 +161,7 @@ def build() -> None:
                         "stroke_count": None,
                         "unicode": f"{ord(ch):05x}",
                     }
-        print(f"[stroke]   kanji without SVG (recorded as null): {missing:,}")
+        log.info(f"kanji without SVG (recorded as null): {missing:,}")
 
     # Review recommendation #9: compute stroke-count mismatches against
     # KANJIDIC2 and record in metadata so consumers are aware that
@@ -187,7 +190,7 @@ def build() -> None:
                     "kanjivg_count": kvg_count,
                 })
         mismatches.sort(key=lambda m: m["character"])
-        print(f"[stroke]   stroke-count mismatches vs KANJIDIC2: {len(mismatches):,}")
+        log.info(f"stroke-count mismatches vs KANJIDIC2: {len(mismatches):,}")
 
     warnings: list[str] = []
     if mismatches:
@@ -239,4 +242,4 @@ def build() -> None:
     with OUT_INDEX.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[stroke]   wrote {OUT_INDEX.relative_to(REPO_ROOT)} ({len(index_entries):,} entries)")
+    log.info(f"wrote {OUT_INDEX.relative_to(REPO_ROOT)} ({len(index_entries):,} entries)")

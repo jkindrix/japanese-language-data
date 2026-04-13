@@ -27,11 +27,14 @@ Output: ``data/enrichment/jlpt-classifications.json`` conforming to
 """
 
 from __future__ import annotations
+import logging
 
 import csv
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 VOCAB_DIR = REPO_ROOT / "sources" / "waller-jlpt"
@@ -139,38 +142,38 @@ def _parse_kanji_jlpt(path: Path, retrieved: str) -> list[dict]:
 def build() -> None:
     retrieved = BUILD_DATE
 
-    print("[jlpt]     parsing Waller vocab CSVs (via stephenmk/yomitan-jlpt-vocab)")
+    log.info("[jlpt]     parsing Waller vocab CSVs (via stephenmk/yomitan-jlpt-vocab)")
     all_classifications: list[dict] = []
     per_level_counts: dict[str, int] = {}
     for level, filename in VOCAB_FILES.items():
         path = VOCAB_DIR / filename
         if not path.exists():
-            print(f"[jlpt]     WARNING: missing {path}, skipping {level}")
+            log.info(f"WARNING: missing {path}, skipping {level}")
             continue
         vocab_entries = _parse_vocab_csv(path, level, retrieved)
         per_level_counts[f"vocab_{level}"] = len(vocab_entries)
         all_classifications.extend(vocab_entries)
-        print(f"[jlpt]       {level} vocab: {len(vocab_entries):,}")
+        log.info(f"{level} vocab: {len(vocab_entries):,}")
 
-    print("[jlpt]     parsing kanji JLPT levels (via davidluzgouveia/kanji-data)")
+    log.info("[jlpt]     parsing kanji JLPT levels (via davidluzgouveia/kanji-data)")
     kanji_entries = _parse_kanji_jlpt(KANJI_JSON, retrieved)
     # Count per level
     from collections import Counter
     kanji_level_counts = Counter(e["level"] for e in kanji_entries)
     for level in ("N1", "N2", "N3", "N4", "N5"):
         per_level_counts[f"kanji_{level}"] = kanji_level_counts.get(level, 0)
-        print(f"[jlpt]       {level} kanji: {kanji_level_counts.get(level, 0):,}")
+        log.info(f"{level} kanji: {kanji_level_counts.get(level, 0):,}")
     all_classifications.extend(kanji_entries)
 
-    print("[jlpt]     parsing curated grammar JLPT levels (from grammar-curated/)")
+    log.info("[jlpt]     parsing curated grammar JLPT levels (from grammar-curated/)")
     grammar_entries = _parse_curated_grammar(retrieved)
     grammar_level_counts = Counter(e["level"] for e in grammar_entries)
     for level in ("N5", "N4", "N3", "N2", "N1"):
         per_level_counts[f"grammar_{level}"] = grammar_level_counts.get(level, 0)
-        print(f"[jlpt]       {level} grammar: {grammar_level_counts.get(level, 0):,}")
+        log.info(f"{level} grammar: {grammar_level_counts.get(level, 0):,}")
     all_classifications.extend(grammar_entries)
 
-    print(f"[jlpt]     total: {len(all_classifications):,}")
+    log.info(f"total: {len(all_classifications):,}")
 
     output = {
         "metadata": {
@@ -222,4 +225,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[jlpt]     wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")

@@ -40,12 +40,15 @@ radicals_total) so consumers can see the exact state.
 """
 
 from __future__ import annotations
+import logging
 
 import json
 import re
 import tarfile
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 KRADFILE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "kradfile.json.tgz"
@@ -326,19 +329,19 @@ def _load_kangxi_mapping() -> dict[str, dict]:
 
 
 def build() -> None:
-    print(f"[radicals] loading {KRADFILE_TGZ.name} and {RADKFILE_TGZ.name}")
+    log.info(f"loading {KRADFILE_TGZ.name} and {RADKFILE_TGZ.name}")
     krad = _load_source(KRADFILE_TGZ)
     radk = _load_source(RADKFILE_TGZ)
 
     kangxi_map = _load_kangxi_mapping()
     if kangxi_map:
-        print(
-            f"[radicals] loaded Wikipedia Kangxi mapping: "
+        log.info(
+            f"loaded Wikipedia Kangxi mapping: "
             f"{len(kangxi_map):,} character → Kangxi entries "
             f"(214 primary + alternates)"
         )
     else:
-        print("[radicals] Wikipedia Kangxi mapping unavailable — meanings will stay empty")
+        log.info("[radicals] Wikipedia Kangxi mapping unavailable — meanings will stay empty")
 
     # Build an auxiliary index from Kangxi number → primary entry so the
     # alias table can resolve variant → number → meanings in one hop.
@@ -386,15 +389,15 @@ def build() -> None:
 
     total = len(radicals_list)
     coverage_pct = (100.0 * matched / total) if total else 0.0
-    print(
-        f"[radicals] kanji_to_radicals: {len(kanji_to_radicals):,}  "
+    log.info(
+        f"kanji_to_radicals: {len(kanji_to_radicals):,}  "
         f"radicals: {total:,}  "
         f"with Kangxi mapping: {matched:,} ({coverage_pct:.1f}%, "
         f"of which {matched_via_alias} via the curated alias table)"
     )
     if unmatched:
         preview = "".join(unmatched[:20]) + ("..." if len(unmatched) > 20 else "")
-        print(f"[radicals] radicals without Wikipedia match: {len(unmatched)} ({preview})")
+        log.info(f"radicals without Wikipedia match: {len(unmatched)} ({preview})")
 
     if kangxi_map:
         warning = (
@@ -468,4 +471,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[radicals] wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")

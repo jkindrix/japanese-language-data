@@ -17,11 +17,14 @@ Output: ``data/grammar/expressions.json`` conforming to
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
 from build.utils import load_json_from_tgz, load_vocab_jlpt_map, is_common
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "jmdict-examples-eng.json.tgz"
@@ -42,7 +45,7 @@ def _is_common(word: dict) -> bool:
 
 
 def build() -> None:
-    print(f"[exp]      loading {SOURCE_TGZ.name}")
+    log.info(f"loading {SOURCE_TGZ.name}")
     source = _load_source()
     upstream_words = source.get("words", [])
 
@@ -87,7 +90,7 @@ def build() -> None:
 
     total = len(expressions)
     common_count = sum(1 for e in expressions if e["common"])
-    print(f"[exp]      extracted {total:,} expressions  (common: {common_count:,})")
+    log.info(f"extracted {total:,} expressions  (common: {common_count:,})")
 
     output = {
         "metadata": {
@@ -122,4 +125,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[exp]      wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")

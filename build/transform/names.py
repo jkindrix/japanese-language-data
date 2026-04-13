@@ -18,11 +18,14 @@ metadata header with attribution.
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
 from build.utils import load_json_from_tgz
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "jmnedict-all.json.tgz"
@@ -45,12 +48,12 @@ def _transform_name(entry: dict) -> dict:
 
 
 def build() -> None:
-    print(f"[names]    loading {SOURCE_TGZ.name}")
+    log.info(f"loading {SOURCE_TGZ.name}")
     source = load_json_from_tgz(SOURCE_TGZ)
     upstream_words = source.get("words", [])
     upstream_tags = source.get("tags", {}) or {}
 
-    print(f"[names]    transforming {len(upstream_words):,} entries")
+    log.info(f"transforming {len(upstream_words):,} entries")
     entries = [_transform_name(w) for w in upstream_words]
 
     output = {
@@ -86,4 +89,4 @@ def build() -> None:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
     size = OUT.stat().st_size
-    print(f"[names]    wrote {OUT.relative_to(REPO_ROOT)} ({len(entries):,} entries, {size:,} bytes)")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)} ({len(entries):,} entries, {size:,} bytes)")

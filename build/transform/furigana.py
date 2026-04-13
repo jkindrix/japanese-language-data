@@ -13,10 +13,13 @@ Output: ``data/enrichment/furigana.json``
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_JSON = REPO_ROOT / "sources" / "jmdict-furigana" / "JmdictFurigana.json"
@@ -31,11 +34,11 @@ def build() -> None:
             f"Download from https://github.com/Doublevil/JmdictFurigana/releases"
         )
 
-    print(f"[furigana] loading {SOURCE_JSON.name}")
+    log.info(f"loading {SOURCE_JSON.name}")
     # JmdictFurigana uses UTF-8 BOM
     raw = SOURCE_JSON.read_text(encoding="utf-8-sig")
     source_entries = json.loads(raw)
-    print(f"[furigana] {len(source_entries):,} upstream entries")
+    log.info(f"{len(source_entries):,} upstream entries")
 
     # Load words.json to get the set of known word texts
     if WORDS_JSON.exists():
@@ -49,7 +52,7 @@ def build() -> None:
                     kana_text = kn.get("text", "")
                     if kanji_text and kana_text:
                         known_pairs.add((kanji_text, kana_text))
-        print(f"[furigana] {len(known_pairs):,} known (text, reading) pairs from words.json")
+        log.info(f"{len(known_pairs):,} known (text, reading) pairs from words.json")
     else:
         known_pairs = None
 
@@ -78,7 +81,7 @@ def build() -> None:
             "segments": furigana,
         })
 
-    print(f"[furigana] {len(entries):,} entries after filtering")
+    log.info(f"{len(entries):,} entries after filtering")
 
     output = {
         "metadata": {
@@ -112,7 +115,7 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[furigana] wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")
 
 
 if __name__ == "__main__":

@@ -43,10 +43,13 @@ to keep the committed files reasonable in size.
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 KANJI_JSON = REPO_ROOT / "data" / "core" / "kanji.json"
@@ -253,7 +256,7 @@ def _write_xref(out_path: Path, mapping: dict, direction: str, key_type: str, va
     with out_path.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[xref]     wrote {out_path.relative_to(REPO_ROOT)} ({len(mapping):,} keys)")
+    log.info(f"wrote {out_path.relative_to(REPO_ROOT)} ({len(mapping):,} keys)")
 
 
 def build() -> None:
@@ -270,7 +273,7 @@ def build() -> None:
             f"Run the preceding transforms before cross_links."
         )
 
-    print("[xref]     loading words, kanji, radicals")
+    log.info("[xref]     loading words, kanji, radicals")
     words_data = _load_json(WORDS_JSON)
     radicals_data = _load_json(RADICALS_JSON)
     kanji_data = _load_json(KANJI_JSON)
@@ -278,8 +281,8 @@ def build() -> None:
 
     kanji_to_words, word_to_kanji, word_to_sentences = _build_word_cross_refs(words_data)
     reading_to_words = _build_reading_to_words(words_data)
-    print(
-        f"[xref]     kanji→words: {len(kanji_to_words):,}  "
+    log.info(
+        f"kanji→words: {len(kanji_to_words):,}  "
         f"words→kanji: {len(word_to_kanji):,}  "
         f"words→sentences: {len(word_to_sentences):,}  "
         f"reading→words: {len(reading_to_words):,}"
@@ -291,15 +294,15 @@ def build() -> None:
     # consumers can detect this integrity gap at read time.
     orphan_chars = sorted(ch for ch in kanji_to_words if ch not in kanji_char_set)
     if orphan_chars:
-        print(
-            f"[xref]     WARNING: {len(orphan_chars)} characters in kanji-to-words "
+        log.warning(
+            f"{len(orphan_chars)} characters in kanji-to-words "
             f"are not in kanji.json: {''.join(orphan_chars[:20])}"
             + ("..." if len(orphan_chars) > 20 else "")
         )
 
     # kanji-to-radicals comes directly from radicals.json
     kanji_to_radicals = radicals_data.get("kanji_to_radicals", {})
-    print(f"[xref]     kanji→radicals: {len(kanji_to_radicals):,}")
+    log.info(f"kanji→radicals: {len(kanji_to_radicals):,}")
 
     _write_xref(
         OUT_DIR / "kanji-to-words.json",
@@ -354,7 +357,7 @@ def build() -> None:
 
     # radical-to-kanji: reverse of kanji-to-radicals
     radical_to_kanji = _build_radical_to_kanji(kanji_to_radicals)
-    print(f"[xref]     radical→kanji: {len(radical_to_kanji):,}")
+    log.info(f"radical→kanji: {len(radical_to_kanji):,}")
     _write_xref(
         OUT_DIR / "radical-to-kanji.json",
         radical_to_kanji,
@@ -369,7 +372,7 @@ def build() -> None:
     if SENTENCES_JSON.exists():
         sentences_data = _load_json(SENTENCES_JSON)
         kanji_to_sentences = _build_kanji_to_sentences(sentences_data)
-        print(f"[xref]     kanji→sentences: {len(kanji_to_sentences):,}")
+        log.info(f"kanji→sentences: {len(kanji_to_sentences):,}")
         _write_xref(
             OUT_DIR / "kanji-to-sentences.json",
             kanji_to_sentences,
@@ -386,7 +389,7 @@ def build() -> None:
         word_text_lookup = _build_word_text_lookup(words_data)
         word_to_grammar = _build_word_to_grammar(grammar_data, word_text_lookup)
         if word_to_grammar:
-            print(f"[xref]     word→grammar: {len(word_to_grammar):,}")
+            log.info(f"word→grammar: {len(word_to_grammar):,}")
             _write_xref(
                 OUT_DIR / "word-to-grammar.json",
                 word_to_grammar,
@@ -401,13 +404,13 @@ def build() -> None:
     # words-full.json). These cover the entire 216k-entry JMdict, not just
     # the 23k common subset. Much higher kanji-to-words coverage.
     if WORDS_FULL_JSON.exists():
-        print("[xref]     building full-JMdict cross-references (from words-full.json)")
+        log.info("[xref]     building full-JMdict cross-references (from words-full.json)")
         words_full_data = _load_json(WORDS_FULL_JSON)
         full_k2w, full_w2k, full_w2s = _build_word_cross_refs(words_full_data)
         full_r2w = _build_reading_to_words(words_full_data)
         full_orphans = sorted(ch for ch in full_k2w if ch not in kanji_char_set)
-        print(
-            f"[xref]     full: kanji→words: {len(full_k2w):,}  "
+        log.info(
+            f"full: kanji→words: {len(full_k2w):,}  "
             f"words→kanji: {len(full_w2k):,}  "
             f"words→sentences: {len(full_w2s):,}  "
             f"reading→words: {len(full_r2w):,}"

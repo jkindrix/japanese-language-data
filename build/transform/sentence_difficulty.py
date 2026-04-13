@@ -17,10 +17,13 @@ Output: ``data/enrichment/sentence-difficulty.json``
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SENTENCES_JSON = REPO_ROOT / "data" / "corpus" / "sentences.json"
@@ -117,14 +120,14 @@ def build() -> None:
         if not req.exists():
             raise FileNotFoundError(f"Required: {req}")
 
-    print("[diff]     loading data")
+    log.info("[diff]     loading data")
     sentences_data = json.loads(SENTENCES_JSON.read_text(encoding="utf-8"))
     words_data = json.loads(WORDS_JSON.read_text(encoding="utf-8"))
     jlpt_data = json.loads(JLPT_JSON.read_text(encoding="utf-8"))
 
     word_lookup = _build_word_jlpt_lookup(words_data, jlpt_data)
     kanji_lookup = _build_kanji_jlpt_lookup(jlpt_data)
-    print(f"[diff]     {len(word_lookup):,} word forms, {len(kanji_lookup):,} kanji with JLPT levels")
+    log.info(f"{len(word_lookup):,} word forms, {len(kanji_lookup):,} kanji with JLPT levels")
 
     entries: list[dict] = []
     level_counts: dict[str, int] = {"N5": 0, "N4": 0, "N3": 0, "N2": 0, "N1": 0, "unscored": 0}
@@ -148,9 +151,9 @@ def build() -> None:
         else:
             level_counts["unscored"] += 1
 
-    print(f"[diff]     scored {len(entries):,} sentences")
+    log.info(f"scored {len(entries):,} sentences")
     for lvl in ("N5", "N4", "N3", "N2", "N1", "unscored"):
-        print(f"[diff]       {lvl}: {level_counts[lvl]:,}")
+        log.info(f"{lvl}: {level_counts[lvl]:,}")
 
     output = {
         "metadata": {
@@ -180,4 +183,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[diff]     wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")

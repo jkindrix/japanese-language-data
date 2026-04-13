@@ -19,11 +19,14 @@ License: CC-BY 2.0 FR (Tatoeba sentence text).
 """
 
 from __future__ import annotations
+import logging
 
 import bz2
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_DIR = REPO_ROOT / "sources" / "tatoeba-full"
@@ -67,27 +70,27 @@ def build() -> None:
                 f"Download from https://downloads.tatoeba.org/exports/"
             )
 
-    print("[sent-f]   loading Japanese sentences")
+    log.info("[sent-f]   loading Japanese sentences")
     jpn = _load_sentences(JPN_BZ2)
-    print(f"[sent-f]   {len(jpn):,} Japanese sentences")
+    log.info(f"{len(jpn):,} Japanese sentences")
 
-    print("[sent-f]   loading English sentences")
+    log.info("[sent-f]   loading English sentences")
     eng = _load_sentences(ENG_BZ2)
-    print(f"[sent-f]   {len(eng):,} English sentences")
+    log.info(f"{len(eng):,} English sentences")
 
-    print("[sent-f]   loading translation links (this takes a moment)")
+    log.info("[sent-f]   loading translation links (this takes a moment)")
     jpn_ids = set(jpn.keys())
     eng_ids = set(eng.keys())
     links = _load_links(LINKS_CSV, jpn_ids, eng_ids)
     linked_count = sum(1 for v in links.values() if v)
-    print(f"[sent-f]   {linked_count:,} Japanese sentences have English translations")
+    log.info(f"{linked_count:,} Japanese sentences have English translations")
 
     # Load curated IDs to mark overlap
     curated_ids: set[str] = set()
     if CURATED_JSON.exists():
         curated = json.loads(CURATED_JSON.read_text(encoding="utf-8"))
         curated_ids = {s["id"] for s in curated.get("sentences", [])}
-        print(f"[sent-f]   {len(curated_ids):,} curated sentence IDs (for overlap marking)")
+        log.info(f"{len(curated_ids):,} curated sentence IDs (for overlap marking)")
 
     # Build entries — only include sentences that have an English translation
     entries: list[dict] = []
@@ -111,9 +114,9 @@ def build() -> None:
             "english_contributor": None,
         })
 
-    print(f"[sent-f]   {len(entries):,} JP-EN sentence pairs")
+    log.info(f"{len(entries):,} JP-EN sentence pairs")
     curated_overlap = sum(1 for e in entries if e["curated"])
-    print(f"[sent-f]   {curated_overlap:,} overlap with curated subset")
+    log.info(f"{curated_overlap:,} overlap with curated subset")
 
     output = {
         "metadata": {
@@ -146,4 +149,4 @@ def build() -> None:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
     size = OUT.stat().st_size
-    print(f"[sent-f]   wrote {OUT.relative_to(REPO_ROOT)} ({size:,} bytes, {size/1024/1024:.1f} MB)")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)} ({size:,} bytes, {size/1024/1024:.1f} MB)")

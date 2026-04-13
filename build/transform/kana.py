@@ -31,10 +31,13 @@ differs, the alternative is listed in ``romaji_alt``.
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 OUT = REPO_ROOT / "data" / "core" / "kana.json"
@@ -412,7 +415,7 @@ def _build_long_vowel() -> list[dict]:
 
 
 def build() -> None:
-    print("[kana]     building hand-curated kana dataset")
+    log.info("[kana]     building hand-curated kana dataset")
     entries: list[dict] = []
     entries.extend(_build_basic())
     entries.extend(_build_dakuten())
@@ -426,7 +429,7 @@ def build() -> None:
 
     hira_count = sum(1 for e in entries if e["script"] == "hiragana")
     kata_count = sum(1 for e in entries if e["script"] == "katakana")
-    print(f"[kana]     total: {len(entries)}  hiragana: {hira_count}  katakana: {kata_count}")
+    log.info(f"total: {len(entries)}  hiragana: {hira_count}  katakana: {kata_count}")
 
     output = {
         "metadata": {
@@ -454,4 +457,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[kana]     wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")

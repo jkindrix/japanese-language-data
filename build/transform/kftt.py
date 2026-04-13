@@ -18,11 +18,14 @@ Tatoeba IDs.
 """
 
 from __future__ import annotations
+import logging
 
 import json
 import tarfile
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "kftt" / "kftt-data-1.0.tar.gz"
@@ -44,7 +47,7 @@ def _read_lines_from_tar(tf: tarfile.TarFile, member_suffix: str) -> list[str]:
 
 
 def build() -> None:
-    print(f"[kftt]     loading {SOURCE_TGZ.name}")
+    log.info(f"loading {SOURCE_TGZ.name}")
     if not SOURCE_TGZ.exists():
         raise FileNotFoundError(
             f"Source not cached: {SOURCE_TGZ} (run just fetch first)"
@@ -83,9 +86,9 @@ def build() -> None:
                     "english_contributor": None,
                 })
                 split_count += 1
-            print(f"[kftt]       {split}: {split_count:,} pairs")
+            log.info(f"{split}: {split_count:,} pairs")
 
-    print(f"[kftt]     total: {len(entries):,} sentence pairs")
+    log.info(f"total: {len(entries):,} sentence pairs")
 
     output = {
         "metadata": {
@@ -117,4 +120,4 @@ def build() -> None:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
     size = OUT.stat().st_size
-    print(f"[kftt]     wrote {OUT.relative_to(REPO_ROOT)} ({size:,} bytes)")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)} ({size:,} bytes)")

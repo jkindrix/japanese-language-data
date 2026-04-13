@@ -18,11 +18,14 @@ Output: ``data/enrichment/frequency-subtitles.json`` conforming to
 """
 
 from __future__ import annotations
+import logging
 
 import json
 import re
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_FILE = REPO_ROOT / "sources" / "opensubtitles" / "ja_full.txt"
@@ -101,14 +104,14 @@ def build() -> None:
     if not WORDS_JSON.exists():
         raise FileNotFoundError(f"Required: {WORDS_JSON}")
 
-    print(f"[freq-s]   loading {SOURCE_FILE.name}")
+    log.info(f"loading {SOURCE_FILE.name}")
     raw_entries = _parse_frequency_file(SOURCE_FILE)
-    print(f"[freq-s]   {len(raw_entries):,} entries after Japanese text filter")
+    log.info(f"{len(raw_entries):,} entries after Japanese text filter")
 
-    print("[freq-s]   loading words.json for vocabulary matching")
+    log.info("[freq-s]   loading words.json for vocabulary matching")
     words_data = json.loads(WORDS_JSON.read_text(encoding="utf-8"))
     word_lookup = _build_word_lookup(words_data)
-    print(f"[freq-s]   {len(word_lookup):,} known word surface forms")
+    log.info(f"{len(word_lookup):,} known word surface forms")
 
     # Match against known vocabulary, preserving frequency order.
     # Track matched word IDs to avoid duplicate entries (multiple
@@ -134,9 +137,9 @@ def build() -> None:
             "count": count,
         })
 
-    print(f"[freq-s]   {len(entries):,} words matched against vocabulary")
+    log.info(f"{len(entries):,} words matched against vocabulary")
     if entries:
-        print(f"[freq-s]   top-10: {', '.join(e['text'] for e in entries[:10])}")
+        log.info(f"top-10: {', '.join(e['text'] for e in entries[:10])}")
 
     output = {
         "metadata": {
@@ -182,7 +185,7 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[freq-s]   wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")
 
 
 if __name__ == "__main__":

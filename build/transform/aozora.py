@@ -17,6 +17,7 @@ License: Japanese public domain (per-work, verified via catalog flag).
 """
 
 from __future__ import annotations
+import logging
 
 import csv
 import json
@@ -29,6 +30,8 @@ from pathlib import Path
 import requests
 
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CATALOG_URL = "https://www.aozora.gr.jp/index_pages/list_person_all_extended_utf8.zip"
@@ -117,13 +120,13 @@ CURATED_WORKS = [
 class _TextExtractor(HTMLParser):
     """Extract plain text from Aozora XHTML, stripping ruby annotations."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self._text_parts: list[str] = []
         self._skip = False
         self._in_body = False
 
-    def handle_starttag(self, tag, attrs):
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         if tag == "body":
             self._in_body = True
         if tag in ("rt", "rp"):
@@ -131,7 +134,7 @@ class _TextExtractor(HTMLParser):
         if tag in ("br",):
             self._text_parts.append("\n")
 
-    def handle_endtag(self, tag):
+    def handle_endtag(self, tag: str) -> None:
         if tag in ("rt", "rp"):
             self._skip = False
         if tag == "body":
@@ -139,7 +142,7 @@ class _TextExtractor(HTMLParser):
         if tag in ("p", "div", "h1", "h2", "h3", "h4"):
             self._text_parts.append("\n")
 
-    def handle_data(self, data):
+    def handle_data(self, data: str) -> None:
         if self._in_body and not self._skip:
             self._text_parts.append(data)
 
@@ -154,7 +157,7 @@ class _TextExtractor(HTMLParser):
 class _RubyExtractor(HTMLParser):
     """Extract (kanji, furigana) pairs from ruby tags."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self._pairs: list[tuple[str, str]] = []
         self._in_rb = False
@@ -162,7 +165,7 @@ class _RubyExtractor(HTMLParser):
         self._rb_text = ""
         self._rt_text = ""
 
-    def handle_starttag(self, tag, attrs):
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         if tag == "rb":
             self._in_rb = True
             self._rb_text = ""
@@ -170,7 +173,7 @@ class _RubyExtractor(HTMLParser):
             self._in_rt = True
             self._rt_text = ""
 
-    def handle_endtag(self, tag):
+    def handle_endtag(self, tag: str) -> None:
         if tag == "rb":
             self._in_rb = False
         elif tag == "rt":
@@ -178,7 +181,7 @@ class _RubyExtractor(HTMLParser):
             if self._rb_text and self._rt_text:
                 self._pairs.append((self._rb_text, self._rt_text))
 
-    def handle_data(self, data):
+    def handle_data(self, data: str) -> None:
         if self._in_rb:
             self._rb_text += data
         elif self._in_rt:
@@ -193,14 +196,14 @@ def _download_catalog() -> None:
     CATALOG_DIR.mkdir(parents=True, exist_ok=True)
     if CATALOG_CSV.exists():
         return
-    print("[aozora]   downloading catalog...")
+    log.info("[aozora]   downloading catalog...")
     resp = requests.get(CATALOG_URL, timeout=60)
     resp.raise_for_status()
     with zipfile.ZipFile(BytesIO(resp.content)) as zf:
         for name in zf.namelist():
             if name.endswith("_utf8.csv"):
                 CATALOG_CSV.write_bytes(zf.read(name))
-                print(f"[aozora]   extracted {CATALOG_CSV.name}")
+                log.info(f"extracted {CATALOG_CSV.name}")
                 return
     raise RuntimeError("No UTF-8 CSV found in catalog ZIP")
 
@@ -227,7 +230,7 @@ def _download_work(work_id: str, url: str) -> str:
     if cache_path.exists():
         return cache_path.read_text(encoding="utf-8", errors="replace")
 
-    print(f"[aozora]     downloading {work_id}...")
+    log.info(f"downloading {work_id}...")
     resp = requests.get(url, timeout=60)
     resp.raise_for_status()
 
@@ -254,7 +257,7 @@ def _download_work(work_id: str, url: str) -> str:
 
 
 def build() -> None:
-    print("[aozora]   Aozora Bunko curated corpus")
+    log.info("[aozora]   Aozora Bunko curated corpus")
 
     _download_catalog()
 
@@ -262,13 +265,13 @@ def build() -> None:
     for work_id, title, author, reason in CURATED_WORKS:
         url = _find_work_url(work_id)
         if not url:
-            print(f"[aozora]     WARNING: no URL for {work_id} ({title}), skipping")
+            log.info(f"WARNING: no URL for {work_id} ({title}), skipping")
             continue
 
         try:
             html = _download_work(work_id, url)
         except Exception as e:
-            print(f"[aozora]     WARNING: download failed for {work_id}: {e}")
+            log.info(f"WARNING: download failed for {work_id}: {e}")
             continue
 
         extractor = _TextExtractor()
@@ -293,9 +296,9 @@ def build() -> None:
             "text": text,
             "ruby_pairs": [{"kanji": k, "reading": r} for k, r in ruby_pairs[:500]],
         })
-        print(f"[aozora]     {title} ({author}): {char_count:,} chars, {sentence_count} sentences, {len(ruby_pairs)} ruby")
+        log.info(f"{title} ({author}): {char_count:,} chars, {sentence_count} sentences, {len(ruby_pairs)} ruby")
 
-    print(f"[aozora]   total: {len(entries)} works")
+    log.info(f"total: {len(entries)} works")
 
     output = {
         "metadata": {
@@ -324,4 +327,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[aozora]   wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")

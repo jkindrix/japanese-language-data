@@ -17,6 +17,7 @@ Project: https://bond-lab.github.io/wnja/
 """
 
 from __future__ import annotations
+import logging
 
 import gzip
 import json
@@ -27,13 +28,15 @@ from pathlib import Path
 
 from build.pipeline import BUILD_DATE
 
+log = logging.getLogger(__name__)
+
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_GZ = REPO_ROOT / "sources" / "wordnet" / "wnjpn.db.gz"
 OUT = REPO_ROOT / "data" / "cross-refs" / "wordnet-synonyms.json"
 
 
 def build() -> None:
-    print(f"[wordnet]  loading {SOURCE_GZ.name}")
+    log.info(f"loading {SOURCE_GZ.name}")
     if not SOURCE_GZ.exists():
         raise FileNotFoundError(
             f"Source not cached: {SOURCE_GZ} (run just fetch first)"
@@ -106,7 +109,7 @@ def _extract(conn: sqlite3.Connection) -> None:
                         "definition_en": definition,
                     })
 
-    print(f"[wordnet]  synonym pairs: {len(synonym_pairs):,}")
+    log.info(f"synonym pairs: {len(synonym_pairs):,}")
 
     # --- Step 5: Extract hypernym pairs between Japanese words ---
     # Find synsets linked by 'hype' where both have Japanese words
@@ -137,7 +140,7 @@ def _extract(conn: sqlite3.Connection) -> None:
                 "definition_en": synset_def_en.get(child_synset, ""),
             })
 
-    print(f"[wordnet]  hypernym pairs: {len(hypernym_pairs):,}")
+    log.info(f"hypernym pairs: {len(hypernym_pairs):,}")
 
     # --- Step 6: Build synset groups for output ---
     synset_groups: list[dict] = []
@@ -152,14 +155,14 @@ def _extract(conn: sqlite3.Connection) -> None:
         })
 
     all_relations = synonym_pairs + hypernym_pairs
-    print(f"[wordnet]  total relations: {len(all_relations):,}")
-    print(f"[wordnet]  synset groups (2+ words): {len(synset_groups):,}")
+    log.info(f"total relations: {len(all_relations):,}")
+    log.info(f"synset groups (2+ words): {len(synset_groups):,}")
 
     # Count unique Japanese words involved
     all_words = set()
     for synset_id, words in synset_words.items():
         all_words.update(words)
-    print(f"[wordnet]  unique Japanese words: {len(all_words):,}")
+    log.info(f"unique Japanese words: {len(all_words):,}")
 
     output = {
         "metadata": {
@@ -197,4 +200,4 @@ def _extract(conn: sqlite3.Connection) -> None:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
     size = OUT.stat().st_size
-    print(f"[wordnet]  wrote {OUT.relative_to(REPO_ROOT)} ({size:,} bytes)")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)} ({size:,} bytes)")

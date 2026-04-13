@@ -36,11 +36,14 @@ structure into our schema's flatter form:
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
 from build.utils import load_json_from_tgz, load_vocab_jlpt_map, is_common
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "jmdict-examples-eng.json.tgz"
@@ -151,18 +154,18 @@ def _metadata(source: dict, count: int, filter_note: str, tags: dict) -> dict:
 
 def build() -> None:
     """Build words.json (common only) and words-full.json (gitignored)."""
-    print(f"[words]    loading {SOURCE_TGZ.name}")
+    log.info(f"loading {SOURCE_TGZ.name}")
     source = _load_source()
     upstream_words = source.get("words", [])
     upstream_tags = source.get("tags", {}) or {}
 
     jlpt_map = _load_vocab_jlpt_map()
     if jlpt_map:
-        print(f"[words]    found JLPT enrichment: {len(jlpt_map):,} words classified")
+        log.info(f"found JLPT enrichment: {len(jlpt_map):,} words classified")
     else:
-        print("[words]    no JLPT enrichment file; jlpt_waller will be null")
+        log.info("[words]    no JLPT enrichment file; jlpt_waller will be null")
 
-    print(f"[words]    transforming {len(upstream_words):,} entries")
+    log.info(f"transforming {len(upstream_words):,} entries")
     all_entries = [_transform_word(w, jlpt_map) for w in upstream_words]
     common_entries = [w for w in all_entries if _is_common(w)]
 
@@ -178,13 +181,13 @@ def build() -> None:
         ]
         if jlpt_additions:
             common_entries.extend(jlpt_additions)
-            print(f"[words]    force-included {len(jlpt_additions):,} JLPT-listed words not flagged common by JMdict")
+            log.info(f"force-included {len(jlpt_additions):,} JLPT-listed words not flagged common by JMdict")
 
-    print(f"[words]    common: {len(common_entries):,}  full: {len(all_entries):,}")
+    log.info(f"common: {len(common_entries):,}  full: {len(all_entries):,}")
 
     enriched_jlpt_common = sum(1 for w in common_entries if w.get("jlpt_waller"))
     enriched_jlpt_full = sum(1 for w in all_entries if w.get("jlpt_waller"))
-    print(f"[words]    enriched jlpt_waller: common={enriched_jlpt_common:,} full={enriched_jlpt_full:,}")
+    log.info(f"enriched jlpt_waller: common={enriched_jlpt_common:,} full={enriched_jlpt_full:,}")
 
     OUT_COMMON.parent.mkdir(parents=True, exist_ok=True)
 
@@ -204,7 +207,7 @@ def build() -> None:
         json.dump(output_common, f, ensure_ascii=False, indent=2)
         f.write("\n")
     size = OUT_COMMON.stat().st_size
-    print(f"[words]    wrote {OUT_COMMON.relative_to(REPO_ROOT)} ({size:,} bytes)")
+    log.info(f"wrote {OUT_COMMON.relative_to(REPO_ROOT)} ({size:,} bytes)")
 
     # Full dataset — gitignored, built on demand
     output_full = {
@@ -222,4 +225,4 @@ def build() -> None:
         json.dump(output_full, f, ensure_ascii=False, indent=2)
         f.write("\n")
     size_full = OUT_FULL.stat().st_size
-    print(f"[words]    wrote {OUT_FULL.relative_to(REPO_ROOT)} ({size_full:,} bytes, gitignored)")
+    log.info(f"wrote {OUT_FULL.relative_to(REPO_ROOT)} ({size_full:,} bytes, gitignored)")

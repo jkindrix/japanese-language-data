@@ -47,11 +47,14 @@ class (rare; most entries have a single class).
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
 from build.utils import load_json_from_tgz, is_common
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "jmdict-examples-eng.json.tgz"
@@ -405,7 +408,7 @@ def _compute_display_forms(
 
 
 def build() -> None:
-    print(f"[conj]     loading {SOURCE_TGZ.name}")
+    log.info(f"loading {SOURCE_TGZ.name}")
     source = _load_source()
     upstream_words = source.get("words", [])
 
@@ -470,11 +473,11 @@ def build() -> None:
             else:
                 skipped += 1
 
-    print(f"[conj]     generated {len(entries):,} conjugation tables")
+    log.info(f"generated {len(entries):,} conjugation tables")
     for cls in sorted(by_class):
-        print(f"[conj]       {cls}: {by_class[cls]:,}")
+        log.info(f"{cls}: {by_class[cls]:,}")
     if skipped:
-        print(f"[conj]     skipped {skipped:,} candidates (word class not supported or form mismatch)")
+        log.info(f"skipped {skipped:,} candidates (word class not supported or form mismatch)")
 
     output = {
         "metadata": {
@@ -514,4 +517,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[conj]     wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")

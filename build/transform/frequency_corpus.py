@@ -22,10 +22,13 @@ Output: ``data/enrichment/frequency-corpus.json`` conforming to
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 WORDS_JSON = REPO_ROOT / "data" / "core" / "words.json"
@@ -73,7 +76,7 @@ def build() -> None:
     if not SENTENCES_JSON.exists():
         raise FileNotFoundError(f"Required: {SENTENCES_JSON}")
 
-    print("[freq-c]   loading words and sentences")
+    log.info("[freq-c]   loading words and sentences")
     words_data = _load_json(WORDS_JSON)
     sentences_data = _load_json(SENTENCES_JSON)
 
@@ -87,10 +90,10 @@ def build() -> None:
     # with an Aho-Corasick implementation or MeCab tokenization.
 
     total_sentences = len(sentences)
-    print(f"[freq-c]   {total_sentences:,} sentences loaded from {len(corpus_sources)} source(s)")
+    log.info(f"{total_sentences:,} sentences loaded from {len(corpus_sources)} source(s)")
 
     surface_forms = _collect_surface_forms(words_data)
-    print(f"[freq-c]   {len(surface_forms):,} surface forms to match")
+    log.info(f"{len(surface_forms):,} surface forms to match")
 
     # Build metadata maps before matching
     word_readings: dict[str, str] = {}
@@ -124,9 +127,9 @@ def build() -> None:
             "count": count,
         })
 
-    print(f"[freq-c]   {len(entries):,} words ranked by corpus frequency")
+    log.info(f"{len(entries):,} words ranked by corpus frequency")
     if entries:
-        print(f"[freq-c]   top-10: {', '.join(e['text'] for e in entries[:10])}")
+        log.info(f"top-10: {', '.join(e['text'] for e in entries[:10])}")
 
     output = {
         "metadata": {
@@ -166,7 +169,7 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[freq-c]   wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")
 
 
 if __name__ == "__main__":

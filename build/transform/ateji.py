@@ -16,10 +16,13 @@ Output: ``data/enrichment/ateji.json``
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 WORDS_JSON = REPO_ROOT / "data" / "core" / "words.json"
@@ -61,10 +64,10 @@ def build() -> None:
     if not WORDS_JSON.exists():
         raise FileNotFoundError(f"Required: {WORDS_JSON}")
 
-    print("[ateji]    loading words.json")
+    log.info("[ateji]    loading words.json")
     words_data = json.loads(WORDS_JSON.read_text(encoding="utf-8"))
     entries = _extract_ateji(words_data)
-    print(f"[ateji]    {len(entries):,} ateji entries extracted")
+    log.info(f"{len(entries):,} ateji entries extracted")
 
     output = {
         "metadata": {
@@ -88,7 +91,7 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[ateji]    wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")
 
 
 if __name__ == "__main__":

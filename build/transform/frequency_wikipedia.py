@@ -18,12 +18,15 @@ Requires: mecab-python3, unidic-lite (pip install mecab-python3 unidic-lite)
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from collections import Counter
 from pathlib import Path
 
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 KFTT_JSON = REPO_ROOT / "data" / "corpus" / "sentences-kftt.json"
@@ -105,19 +108,19 @@ def build() -> None:
     if not WORDS_JSON.exists():
         raise FileNotFoundError(f"Required: {WORDS_JSON}")
 
-    print("[freq-wp]  loading KFTT corpus")
+    log.info("[freq-wp]  loading KFTT corpus")
     kftt_data = json.loads(KFTT_JSON.read_text(encoding="utf-8"))
     sentences = [s["japanese"] for s in kftt_data.get("sentences", []) if s.get("japanese")]
-    print(f"[freq-wp]  {len(sentences):,} sentences")
+    log.info(f"{len(sentences):,} sentences")
 
-    print("[freq-wp]  tokenizing with MeCab...")
+    log.info("[freq-wp]  tokenizing with MeCab...")
     lemma_counts = _tokenize_sentences(sentences)
-    print(f"[freq-wp]  {len(lemma_counts):,} unique lemmas")
+    log.info(f"{len(lemma_counts):,} unique lemmas")
 
-    print("[freq-wp]  loading words.json for vocabulary matching")
+    log.info("[freq-wp]  loading words.json for vocabulary matching")
     words_data = json.loads(WORDS_JSON.read_text(encoding="utf-8"))
     word_lookup = _build_word_lookup(words_data)
-    print(f"[freq-wp]  {len(word_lookup):,} known word surface forms")
+    log.info(f"{len(word_lookup):,} known word surface forms")
 
     # Match against known vocabulary
     seen_wids: set[str] = set()
@@ -136,9 +139,9 @@ def build() -> None:
             "count": count,
         })
 
-    print(f"[freq-wp]  {len(matched):,} words matched against vocabulary")
+    log.info(f"{len(matched):,} words matched against vocabulary")
     if matched:
-        print(f"[freq-wp]  top-10: {', '.join(e['text'] for e in matched[:10])}")
+        log.info(f"top-10: {', '.join(e['text'] for e in matched[:10])}")
 
     output = {
         "metadata": {
@@ -179,4 +182,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[freq-wp]  wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")

@@ -20,11 +20,14 @@ an unfiltered sentences file from the full Tatoeba export.
 """
 
 from __future__ import annotations
+import logging
 
 import json
 import tarfile
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "jmdict-examples-eng.json.tgz"
@@ -43,7 +46,7 @@ def _load_source() -> dict:
 
 
 def build() -> None:
-    print(f"[sentences] loading {SOURCE_TGZ.name}")
+    log.info(f"loading {SOURCE_TGZ.name}")
     source = _load_source()
     upstream_words = source.get("words", [])
 
@@ -88,7 +91,7 @@ def build() -> None:
                 }
 
     sentences = sorted(seen.values(), key=lambda s: int(s["id"]) if s["id"].isdigit() else 0)
-    print(f"[sentences] {total_refs:,} upstream references, {len(sentences):,} unique sentences")
+    log.info(f"{total_refs:,} upstream references, {len(sentences):,} unique sentences")
 
     output = {
         "metadata": {
@@ -123,4 +126,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[sentences] wrote {OUT.relative_to(REPO_ROOT)} ({len(sentences):,} entries)")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)} ({len(sentences):,} entries)")

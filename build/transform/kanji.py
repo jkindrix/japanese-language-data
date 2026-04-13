@@ -34,11 +34,14 @@ Known gaps tracked in ``docs/upstream-issues.md``:
 """
 
 from __future__ import annotations
+import logging
 
 import json
 import tarfile
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "kanjidic2-all.json.tgz"
@@ -308,28 +311,28 @@ def _metadata(source_meta: dict, count: int, filter_note: str = "") -> dict:
 
 def build() -> None:
     """Build kanji.json and kanji-joyo.json from KANJIDIC2."""
-    print(f"[kanji]    loading {SOURCE_TGZ.name}")
+    log.info(f"loading {SOURCE_TGZ.name}")
     source = _load_source()
     characters = source.get("characters", [])
 
     jlpt_map = _load_kanji_jlpt_map()
     radical_map = _load_radical_components_map()
     if jlpt_map:
-        print(f"[kanji]    found JLPT enrichment: {len(jlpt_map):,} kanji classified")
+        log.info(f"found JLPT enrichment: {len(jlpt_map):,} kanji classified")
     else:
-        print("[kanji]    no JLPT enrichment file; jlpt_waller will be null")
+        log.info("[kanji]    no JLPT enrichment file; jlpt_waller will be null")
     if radical_map:
-        print(f"[kanji]    found radical enrichment: {len(radical_map):,} kanji → components")
+        log.info(f"found radical enrichment: {len(radical_map):,} kanji → components")
     else:
-        print("[kanji]    no radical enrichment file; radical_components will be empty")
+        log.info("[kanji]    no radical enrichment file; radical_components will be empty")
 
-    print(f"[kanji]    transforming {len(characters):,} characters")
+    log.info(f"transforming {len(characters):,} characters")
     kanji_entries = [_transform_character(c, jlpt_map, radical_map) for c in characters]
 
     # Coverage stats
     enriched_jlpt = sum(1 for k in kanji_entries if k.get("jlpt_waller"))
     enriched_radicals = sum(1 for k in kanji_entries if k.get("radical_components"))
-    print(f"[kanji]    enriched: jlpt_waller={enriched_jlpt:,} radical_components={enriched_radicals:,}")
+    log.info(f"enriched: jlpt_waller={enriched_jlpt:,} radical_components={enriched_radicals:,}")
 
     OUT_FULL.parent.mkdir(parents=True, exist_ok=True)
     output_full = {
@@ -339,7 +342,7 @@ def build() -> None:
     with OUT_FULL.open("w", encoding="utf-8") as f:
         json.dump(output_full, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[kanji]    wrote {OUT_FULL.relative_to(REPO_ROOT)} ({len(kanji_entries):,} entries)")
+    log.info(f"wrote {OUT_FULL.relative_to(REPO_ROOT)} ({len(kanji_entries):,} entries)")
 
     # Derived Jōyō view
     joyo_entries = [k for k in kanji_entries if k.get("grade") in JOYO_GRADES]
@@ -354,7 +357,7 @@ def build() -> None:
     with OUT_JOYO.open("w", encoding="utf-8") as f:
         json.dump(output_joyo, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[kanji]    wrote {OUT_JOYO.relative_to(REPO_ROOT)} ({len(joyo_entries):,} entries)")
+    log.info(f"wrote {OUT_JOYO.relative_to(REPO_ROOT)} ({len(joyo_entries):,} entries)")
 
     # Derived Jinmeiyō view (kanji approved for personal-name use)
     jinmeiyo_entries = [k for k in kanji_entries if k.get("grade") in JINMEIYO_GRADES]
@@ -369,4 +372,4 @@ def build() -> None:
     with OUT_JINMEIYO.open("w", encoding="utf-8") as f:
         json.dump(output_jinmeiyo, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[kanji]    wrote {OUT_JINMEIYO.relative_to(REPO_ROOT)} ({len(jinmeiyo_entries):,} entries)")
+    log.info(f"wrote {OUT_JINMEIYO.relative_to(REPO_ROOT)} ({len(jinmeiyo_entries):,} entries)")

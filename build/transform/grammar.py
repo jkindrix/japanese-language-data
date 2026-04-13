@@ -35,10 +35,13 @@ computes review coverage stats, and writes the output.
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CURATED_DIR = REPO_ROOT / "grammar-curated"
@@ -288,7 +291,7 @@ def _link_examples_to_tatoeba(
 
 
 def build() -> None:
-    print(f"[grammar]  loading curated files from {CURATED_DIR.relative_to(REPO_ROOT)}/")
+    log.info(f"loading curated files from {CURATED_DIR.relative_to(REPO_ROOT)}/")
     if not CURATED_DIR.exists():
         import warnings
         warnings.warn(
@@ -297,12 +300,12 @@ def build() -> None:
             f"that the repository is complete.",
             stacklevel=2,
         )
-        print("[grammar]  WARNING: no curated directory found; emitting empty grammar.json")
+        log.info("[grammar]  WARNING: no curated directory found; emitting empty grammar.json")
         entries: list[dict] = []
     else:
         entries = []
         source_files = sorted(CURATED_DIR.glob("*.json"))
-        print(f"[grammar]  found {len(source_files)} curated file(s)")
+        log.info(f"found {len(source_files)} curated file(s)")
         seen_ids: set[str] = set()
         for sf in source_files:
             data = json.loads(sf.read_text(encoding="utf-8"))
@@ -315,7 +318,7 @@ def build() -> None:
                     raise ValueError(f"Duplicate grammar id {gid!r} in {sf.name}")
                 seen_ids.add(gid)
                 entries.append(entry)
-            print(f"[grammar]    {sf.name}: {len(data):,} entries")
+            log.info(f"{sf.name}: {len(data):,} entries")
 
         # D2 fix: validate that every 'related' reference resolves to a known entry.
         # Broken cross-references are a hard error and fail the build.
@@ -346,8 +349,8 @@ def build() -> None:
             entries, exact_index, normalized_index,
         )
         link_rate_pct = (100.0 * linked_examples / total_examples) if total_examples else 0.0
-        print(
-            f"[grammar]  Tatoeba linkage: {linked_examples}/{total_examples} "
+        log.info(
+            f"Tatoeba linkage: {linked_examples}/{total_examples} "
             f"({link_rate_pct:.2f}%) examples matched "
             f"(exact + {linked_via_norm} via normalization)"
         )
@@ -356,7 +359,7 @@ def build() -> None:
         linked_examples = 0
         link_rate_pct = 0.0
         if not exact_index:
-            print("[grammar]  Tatoeba linkage: skipped (sentences.json not built)")
+            log.info("[grammar]  Tatoeba linkage: skipped (sentences.json not built)")
 
     # Pattern-based sentence matching: search sentence corpora for sentences
     # that contain the grammar pattern's Japanese core. This is a separate,
@@ -400,8 +403,8 @@ def build() -> None:
         # Store matches on each entry
         for entry in entries:
             entry["tatoeba_pattern_matches"] = pattern_matches.get(entry["id"], [])
-        print(
-            f"[grammar]  pattern matching: {pattern_match_count}/{len(entries)} "
+        log.info(
+            f"pattern matching: {pattern_match_count}/{len(entries)} "
             f"points matched ({100*pattern_match_count/len(entries):.1f}%), "
             f"{pattern_total_matches} total sentence matches"
             + (f" (incl. {kftt_match_count} from KFTT)" if kftt_match_count else "")
@@ -419,11 +422,11 @@ def build() -> None:
         st = e.get("review_status", "draft")
         by_status[st] = by_status.get(st, 0) + 1
 
-    print(f"[grammar]  total entries: {len(entries):,}")
+    log.info(f"total entries: {len(entries):,}")
     for lvl in ("N5", "N4", "N3", "N2", "N1"):
         if lvl in by_level:
-            print(f"[grammar]    {lvl}: {by_level[lvl]:,}")
-    print(f"[grammar]  by review status: {by_status}")
+            log.info(f"{lvl}: {by_level[lvl]:,}")
+    log.info(f"by review status: {by_status}")
 
     # Curation outliers — structural heuristics that flag entries a
     # reviewer might prioritize. These are NOT quality judgements; they
@@ -442,8 +445,8 @@ def build() -> None:
         e["id"] for e in entries
         if not (e.get("formation_notes") or [])
     )
-    print(
-        f"[grammar]  outliers: sparse_examples={len(sparse_examples)} "
+    log.info(
+        f"outliers: sparse_examples={len(sparse_examples)} "
         f"no_related={len(no_related)} "
         f"no_formation_notes={len(no_formation_notes)}"
     )
@@ -537,4 +540,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[grammar]  wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")

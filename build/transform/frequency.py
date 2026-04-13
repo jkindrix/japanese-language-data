@@ -16,11 +16,14 @@ preserved, and entries without a frequency rank are not emitted.
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
 from build.utils import load_json_from_tgz
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_TGZ = REPO_ROOT / "sources" / "jmdict-simplified" / "kanjidic2-all.json.tgz"
@@ -32,7 +35,7 @@ def _load_source() -> dict:
 
 
 def build() -> None:
-    print(f"[freq]     loading {SOURCE_TGZ.name}")
+    log.info(f"loading {SOURCE_TGZ.name}")
     source = _load_source()
     characters = source.get("characters", [])
 
@@ -50,7 +53,7 @@ def build() -> None:
         })
 
     entries.sort(key=lambda e: e["rank"])
-    print(f"[freq]     extracted {len(entries):,} ranked kanji")
+    log.info(f"extracted {len(entries):,} ranked kanji")
 
     output = {
         "metadata": {
@@ -85,4 +88,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[freq]     wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")

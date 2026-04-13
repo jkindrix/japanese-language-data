@@ -14,10 +14,13 @@ Output: ``data/cross-refs/word-relations.json``
 """
 
 from __future__ import annotations
+import logging
 
 import json
 from pathlib import Path
 from build.pipeline import BUILD_DATE
+
+log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 WORDS_JSON = REPO_ROOT / "data" / "core" / "words.json"
@@ -28,7 +31,7 @@ def build() -> None:
     if not WORDS_JSON.exists():
         raise FileNotFoundError(f"Required: {WORDS_JSON}")
 
-    print("[rel]      loading words.json")
+    log.info("[rel]      loading words.json")
     words_data = json.loads(WORDS_JSON.read_text(encoding="utf-8"))
 
     # Build text → word_id lookup for resolving references
@@ -93,9 +96,9 @@ def build() -> None:
             seen.add(key)
             deduped.append(pair)
 
-    print(f"[rel]      related: {len(related_pairs):,} raw → {sum(1 for p in deduped if p['relation'] == 'related'):,} deduped")
-    print(f"[rel]      antonym: {len(antonym_pairs):,} raw → {sum(1 for p in deduped if p['relation'] == 'antonym'):,} deduped")
-    print(f"[rel]      unresolved references: {unresolved:,}")
+    log.info(f"related: {len(related_pairs):,} raw → {sum(1 for p in deduped if p['relation'] == 'related'):,} deduped")
+    log.info(f"antonym: {len(antonym_pairs):,} raw → {sum(1 for p in deduped if p['relation'] == 'antonym'):,} deduped")
+    log.info(f"unresolved references: {unresolved:,}")
 
     output = {
         "metadata": {
@@ -125,4 +128,4 @@ def build() -> None:
     with OUT.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"[rel]      wrote {OUT.relative_to(REPO_ROOT)}")
+    log.info(f"wrote {OUT.relative_to(REPO_ROOT)}")
