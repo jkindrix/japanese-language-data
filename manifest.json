@@ -172,7 +172,8 @@
     "data/cross-refs/reading-to-words.json": 24927,
     "data/cross-refs/radical-to-kanji.json": 253,
     "data/cross-refs/kanji-to-sentences.json": 2543,
-    "data/cross-refs/word-to-grammar.json": 1577
+    "data/cross-refs/word-to-grammar.json": 1577,
+    "data/cross-refs/word-relations.json": 2283
   },
   "grammar_curation_status": {
     "total_entries": 595,
