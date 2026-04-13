@@ -32,7 +32,7 @@
       "link_rate_pct": 0.22,
       "method": "Two-pass text match against data/corpus/sentences.json: first exact, then conservatively normalized (trailing sentence-final punctuation and whitespace stripped). Normalization never collapses kanji/kana variants or changes width/case.",
       "pattern_match_points": 537,
-      "pattern_match_total": 2097,
+      "pattern_match_total": 2087,
       "pattern_match_pct": 90.25,
       "pattern_match_method": "Separate from example-text linkage. Extracts the Japanese core of each grammar pattern and searches sentences.json for sentences containing it. Up to 5 matches per grammar point. Stored in tatoeba_pattern_matches[] on each entry."
     },
@@ -376,7 +376,7 @@
     },
     {
       "id": "ikan-ni-yorazu",
-      "pattern": "Noun + (の) + いかんによらず / いかんを問わず",
+      "pattern": "Noun + (の) + いかんによらず / いかんを問わず / いかんにかかわらず",
       "level": "N1",
       "meaning_en": "regardless of / irrespective of (formal)",
       "meaning_detailed": "〜いかんによらず and 〜いかんを問わず are formal variants of 〜にかかわらず — 'regardless of X'. Very formal, common in legal, official, and business contexts. Builds on the formal いかん ('how / depending on').",
@@ -415,9 +415,7 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "kftt:kftt-72211",
-        "kftt:kftt-88307",
-        "kftt:kftt-91017"
+        "125054"
       ]
     },
     {
@@ -1423,7 +1421,7 @@
     },
     {
       "id": "n-ga-tame",
-      "pattern": "Verb dict-form + んがため(に)",
+      "pattern": "V ない-stem + んがため(に)",
       "level": "N1",
       "meaning_en": "in order to / for the purpose of (literary)",
       "meaning_detailed": "〜んがため(に) is a literary / archaic purpose marker meaning 'in order to X'. More formal and older-sounding than 〜ために or 〜ように. Rare in modern speech, common in essays, historical writing, and formal prose. Irregular: する → せんがため.",
@@ -1462,10 +1460,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "kftt:kftt-13689",
-        "kftt:kftt-18547",
-        "kftt:kftt-221337",
-        "kftt:kftt-229474"
+        "4932",
+        "4951",
+        "4988",
+        "4995",
+        "74027"
       ]
     },
     {
@@ -2367,8 +2366,8 @@
           "source": "original"
         },
         {
-          "japanese": "昔ながらの味が楽しめる。",
-          "english": "You can enjoy the traditional flavor.",
+          "japanese": "彼は生まれながらにして才能に恵まれている。",
+          "english": "He has been blessed with talent since birth.",
           "source": "original"
         }
       ],
@@ -4685,7 +4684,7 @@
           "source": "original"
         },
         {
-          "japanese": "これが幸せでなくてなんだろう。",
+          "japanese": "これが幸せでなくてなんであろう。",
           "english": "If this isn't happiness, then what is?",
           "source": "original"
         }
@@ -5467,7 +5466,7 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "191515"
+        "116473"
       ]
     },
     {
@@ -5868,11 +5867,7 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74702",
-        "74802",
-        "75432",
-        "76996",
-        "77006"
+        "230442"
       ]
     },
     {
@@ -7973,11 +7968,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74717",
-        "76337",
-        "142512",
-        "146102",
-        "173773"
+        "74482",
+        "149501",
+        "187492",
+        "217258",
+        "229108"
       ]
     },
     {
@@ -8212,11 +8207,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4726",
-        "4925",
-        "74013",
-        "74026",
-        "74033"
+        "103259",
+        "114313",
+        "141195",
+        "186159",
+        "207356"
       ]
     },
     {
@@ -8948,8 +8943,8 @@
           "source": "original"
         },
         {
-          "japanese": "努力すれば報われる、というものではないかもしれない。",
-          "english": "Making an effort doesn't always guarantee a reward, perhaps.",
+          "japanese": "苦労して手に入れたものほど大切にする、というものだ。",
+          "english": "The harder something is to obtain, the more you treasure it — that's how it is.",
           "source": "original"
         }
       ],
@@ -10009,11 +10004,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74186",
-        "82698",
-        "121243",
-        "144666",
-        "174900"
+        "77183",
+        "179369",
+        "180083",
+        "188807",
+        "192722"
       ]
     },
     {
@@ -11167,11 +11162,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "76945",
-        "77013",
-        "83200",
-        "197417",
-        "197418"
+        "75271",
+        "115928",
+        "167880",
+        "183409",
+        "201790"
       ]
     },
     {
@@ -11733,8 +11728,8 @@
       ],
       "examples": [
         {
-          "japanese": "彼は強そうでいて、実は優しい。",
-          "english": "He seems tough, but he's actually kind.",
+          "japanese": "彼は強いようでいて、実は優しい。",
+          "english": "He seems strong, but is actually gentle.",
           "source": "original"
         },
         {
@@ -11801,11 +11796,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4726",
-        "4925",
-        "74013",
-        "74026",
-        "74033"
+        "74440",
+        "75273",
+        "75860",
+        "76755",
+        "76863"
       ]
     },
     {
@@ -12786,7 +12781,7 @@
           "source": "original"
         },
         {
-          "japanese": "この報告書は正式な記録ものとして保管してください。",
+          "japanese": "この報告書は正式な記録として保管してください。",
           "english": "Please keep this report as an official record.",
           "source": "original"
         },
@@ -13534,11 +13529,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "75601",
-        "76341",
-        "76606",
-        "76662",
-        "84074"
+        "74872",
+        "76840",
+        "78664",
+        "116307",
+        "157615"
       ]
     },
     {
@@ -14732,11 +14727,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4932",
-        "4951",
-        "4988",
-        "4995",
-        "74027"
+        "74027",
+        "74167",
+        "74290",
+        "74342",
+        "74399"
       ]
     },
     {
@@ -14779,11 +14774,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74022",
-        "74141",
-        "74286",
-        "74403",
-        "74427"
+        "74450",
+        "74635",
+        "74876",
+        "76169",
+        "76336"
       ]
     },
     {
@@ -15246,11 +15241,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "121292",
-        "138461",
-        "143617",
-        "144378",
-        "151057"
+        "75373",
+        "75999",
+        "76146",
+        "76195",
+        "76230"
       ]
     },
     {
@@ -15714,11 +15709,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4726",
-        "4925",
-        "74013",
-        "74026",
-        "74033"
+        "74241",
+        "79126",
+        "122956",
+        "140438",
+        "141009"
       ]
     },
     {
@@ -16375,11 +16370,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74257",
-        "74400",
-        "75094",
-        "76000",
-        "87699"
+        "76323",
+        "76729",
+        "92608",
+        "96945",
+        "105098"
       ]
     },
     {
@@ -16512,11 +16507,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74909",
-        "82663",
-        "90838",
-        "122516",
-        "122732"
+        "74190",
+        "74211",
+        "75389",
+        "75722",
+        "75855"
       ]
     },
     {
@@ -16625,8 +16620,8 @@
       ],
       "formality": "neutral",
       "related": [
-        "ni-shitagatte",
-        "ba-hodo"
+        "ba-hodo",
+        "ni-shitagatte"
       ],
       "examples": [
         {
@@ -16688,7 +16683,7 @@
         },
         {
           "japanese": "彼は感謝とともに、そのお礼を受け取った。",
-          "english": "He received the thanks together with gratitude.",
+          "english": "He received the thank-you gift with gratitude.",
           "source": "original"
         }
       ],
@@ -16745,11 +16740,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74095",
-        "74591",
-        "75284",
-        "76234",
-        "76416"
+        "74087",
+        "74192",
+        "74246",
+        "74453",
+        "74518"
       ]
     },
     {
@@ -17669,11 +17664,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "98043",
-        "124029",
-        "161071",
-        "213568",
-        "236419"
+        "76033",
+        "113513",
+        "113518",
+        "168105",
+        "212506"
       ]
     },
     {
@@ -17810,11 +17805,10 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4726",
-        "4925",
-        "74013",
-        "74026",
-        "74033"
+        "126294",
+        "141499",
+        "145572",
+        "185225"
       ]
     },
     {
@@ -17857,11 +17851,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4726",
-        "4925",
-        "74013",
-        "74026",
-        "74033"
+        "74720",
+        "75631",
+        "75705",
+        "76859",
+        "80263"
       ]
     },
     {
@@ -17951,11 +17945,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4726",
-        "4925",
-        "74013",
-        "74026",
-        "74033"
+        "74380",
+        "75119",
+        "75150",
+        "75507",
+        "75712"
       ]
     },
     {
@@ -18790,11 +18784,8 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "171828",
-        "172502",
-        "179319",
-        "213568",
-        "230971"
+        "116346",
+        "127355"
       ]
     },
     {
@@ -20827,11 +20818,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "4951",
-        "74094",
-        "74128",
-        "74175",
-        "74180"
+        "74040",
+        "74045",
+        "74050",
+        "74057",
+        "74170"
       ]
     },
     {
@@ -21276,8 +21267,7 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "75163",
-        "75165"
+        "75163"
       ]
     },
     {
@@ -21321,11 +21311,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74026",
-        "74237",
-        "74493",
-        "76381",
-        "76916"
+        "4991",
+        "74050",
+        "74061",
+        "74083",
+        "74128"
       ]
     },
     {
@@ -22351,11 +22341,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74256",
-        "74312",
-        "75287",
-        "75556",
-        "75954"
+        "143956",
+        "170047",
+        "202078",
+        "234721",
+        "234722"
       ]
     },
     {
@@ -23042,11 +23032,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74041",
-        "74308",
-        "74944",
-        "75130",
-        "75271"
+        "74525",
+        "74651",
+        "74705",
+        "74883",
+        "75550"
       ]
     },
     {
@@ -24906,11 +24896,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74022",
-        "74286",
-        "74427",
-        "74753",
-        "75068"
+        "74669",
+        "74742",
+        "75047",
+        "75168",
+        "75674"
       ]
     },
     {
@@ -24950,11 +24940,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "74022",
-        "74026",
-        "74027",
-        "74036",
-        "74062"
+        "4995",
+        "74099",
+        "74159",
+        "74378",
+        "74790"
       ]
     },
     {

@@ -2491,8 +2491,8 @@
     ],
     "formality": "neutral",
     "related": [
-      "ni-shitagatte",
-      "ba-hodo"
+      "ba-hodo",
+      "ni-shitagatte"
     ],
     "examples": [
       {
@@ -2547,7 +2547,7 @@
       },
       {
         "japanese": "彼は感謝とともに、そのお礼を受け取った。",
-        "english": "He received the thanks together with gratitude.",
+        "english": "He received the thank-you gift with gratitude.",
         "source": "original"
       }
     ],

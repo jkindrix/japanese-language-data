@@ -1812,8 +1812,8 @@
         "source": "original"
       },
       {
-        "japanese": "努力すれば報われる、というものではないかもしれない。",
-        "english": "Making an effort doesn't always guarantee a reward, perhaps.",
+        "japanese": "苦労して手に入れたものほど大切にする、というものだ。",
+        "english": "The harder something is to obtain, the more you treasure it — that's how it is.",
         "source": "original"
       }
     ],
@@ -4283,8 +4283,8 @@
     ],
     "examples": [
       {
-        "japanese": "彼は強そうでいて、実は優しい。",
-        "english": "He seems tough, but he's actually kind.",
+        "japanese": "彼は強いようでいて、実は優しい。",
+        "english": "He seems strong, but is actually gentle.",
         "source": "original"
       },
       {
@@ -5218,7 +5218,7 @@
         "source": "original"
       },
       {
-        "japanese": "この報告書は正式な記録ものとして保管してください。",
+        "japanese": "この報告書は正式な記録として保管してください。",
         "english": "Please keep this report as an official record.",
         "source": "original"
       },

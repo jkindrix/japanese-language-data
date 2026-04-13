@@ -285,7 +285,7 @@
   },
   {
     "id": "ikan-ni-yorazu",
-    "pattern": "Noun + (の) + いかんによらず / いかんを問わず",
+    "pattern": "Noun + (の) + いかんによらず / いかんを問わず / いかんにかかわらず",
     "level": "N1",
     "meaning_en": "regardless of / irrespective of (formal)",
     "meaning_detailed": "〜いかんによらず and 〜いかんを問わず are formal variants of 〜にかかわらず — 'regardless of X'. Very formal, common in legal, official, and business contexts. Builds on the formal いかん ('how / depending on').",
@@ -1224,7 +1224,7 @@
   },
   {
     "id": "n-ga-tame",
-    "pattern": "Verb dict-form + んがため(に)",
+    "pattern": "V ない-stem + んがため(に)",
     "level": "N1",
     "meaning_en": "in order to / for the purpose of (literary)",
     "meaning_detailed": "〜んがため(に) is a literary / archaic purpose marker meaning 'in order to X'. More formal and older-sounding than 〜ために or 〜ように. Rare in modern speech, common in essays, historical writing, and formal prose. Irregular: する → せんがため.",
@@ -2071,8 +2071,8 @@
         "source": "original"
       },
       {
-        "japanese": "昔ながらの味が楽しめる。",
-        "english": "You can enjoy the traditional flavor.",
+        "japanese": "彼は生まれながらにして才能に恵まれている。",
+        "english": "He has been blessed with talent since birth.",
         "source": "original"
       }
     ],
@@ -4152,7 +4152,7 @@
         "source": "original"
       },
       {
-        "japanese": "これが幸せでなくてなんだろう。",
+        "japanese": "これが幸せでなくてなんであろう。",
         "english": "If this isn't happiness, then what is?",
         "source": "original"
       }
