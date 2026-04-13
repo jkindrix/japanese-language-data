@@ -81,6 +81,9 @@ TARGET_FILES: list[tuple[str, str]] = [
     ("data/cross-refs/kanji-to-sentences.json", "mapping"),
     ("data/cross-refs/word-to-grammar.json", "mapping"),
     ("data/cross-refs/word-relations.json", "relations"),
+    ("data/corpus/sentences-jesc.json", "sentences"),
+    ("data/corpus/sentences-wikimatrix.json", "sentences"),
+    ("data/cross-refs/wordnet-synonyms.json", "relations"),
 ]
 
 
@@ -123,6 +126,17 @@ DERIVED_PATHS = {
 # Paths that are gitignored build artifacts, not committed to the repo.
 GITIGNORED_PATHS = {
     "data/core/words-full.json",
+    "data/corpus/sentences-kftt.json",
+    "data/corpus/sentences-tatoeba-full.json",
+    "data/corpus/sentences-jesc.json",
+    "data/corpus/sentences-wikimatrix.json",
+    "data/enrichment/sentence-difficulty.json",
+    "data/enrichment/frequency-tatoeba.json",
+    "data/cross-refs/wordnet-synonyms.json",
+    "data/cross-refs/kanji-to-words-full.json",
+    "data/cross-refs/word-to-kanji-full.json",
+    "data/cross-refs/reading-to-words-full.json",
+    "data/optional/names.json",
 }
 
 
