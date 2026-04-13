@@ -27,10 +27,22 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 - **Leeds web-corpus frequency** (`data/enrichment/frequency-web.json`): 11,038 vocabulary-matched word frequency entries from the Leeds University Internet Japanese Word Frequency List (~253M-token web corpus, ChaSen-tokenized). Provides web-text register frequency. Source pinned via Wayback Machine (CC-BY).
 - **Wiktionary pitch accent supplement** (`data/enrichment/pitch-accent-wiktionary.json`): 7,378 entries extracted from Japanese Wiktionary via kaikki.org/wiktextract. Covers post-2022 vocabulary not in Kanjium. Accent type tags converted to numeric mora positions. CC-BY-SA 4.0.
 - **Wikipedia-derived word frequency** (`data/enrichment/frequency-wikipedia.json`): 14,553 vocabulary-matched word frequency entries from MeCab tokenization of the KFTT Wikipedia corpus (443,849 sentences). Provides formal/encyclopedic written Japanese frequency.
+- **Full Tatoeba JP-EN corpus** (`data/corpus/sentences-tatoeba-full.json`, built on demand): 232,368 sentence pairs — the complete CC-BY Tatoeba Japanese-English parallel corpus, vs. the 25,980 curated subset shipped in `sentences.json`.
+- **JESC subtitle corpus** (`data/corpus/sentences-jesc.json`, built on demand): 2,801,388 conversational sentence pairs from the Japanese-English Subtitle Corpus (movie/TV subtitles). CC-BY-SA 4.0.
+- **WikiMatrix corpus** (`data/corpus/sentences-wikimatrix.json`, built on demand): 851,706 sentence pairs mined from Wikipedia via LASER embeddings. CC-BY-SA 4.0.
+- **Japanese WordNet** (`data/enrichment/wordnet-synonyms.json`, built on demand): 596,612 semantic relations (559,545 synonym pairs + 37,067 hypernym pairs) across 87,995 unique Japanese words from wn-ja v1.1. NICT permissive license.
+- **Word relations** (`data/cross-refs/word-relations.json`): 2,283 cross-reference and antonym pairs extracted from JMdict `xref` and `ant` fields. Enables "related words" and "opposite words" lookups.
+- **Tatoeba word frequency** (`data/enrichment/frequency-tatoeba.json`, built on demand): 12,298 vocabulary-matched word frequency entries from MeCab tokenization of the full 232K Tatoeba sentences. Provides conversational register frequency.
+- **JESC word frequency** (`data/enrichment/frequency-jesc.json`, built on demand): 14,678 vocabulary-matched word frequency entries from MeCab tokenization of the JESC subtitle corpus. Provides spoken/conversational register frequency.
+- **Sentence difficulty scoring** (`data/enrichment/sentence-difficulty.json`, built on demand): JLPT-based difficulty estimates for 4,355,291 sentences across all 5 corpora (Tatoeba curated, Tatoeba full, KFTT, JESC, WikiMatrix). Level distribution: N5=146K, N4=237K, N3=847K, N2=456K, N1=2.48M, unscored=189K.
+- **Grammar-to-sentences index** (`data/cross-refs/grammar-to-sentences.json`): 537 grammar points mapped to 2,094 pattern-matched sentence IDs. Enables "show me sentences using this grammar point."
+- **Sentence-to-words reverse index** (`data/cross-refs/sentence-to-words.json`): 15,263 sentences mapped back to word IDs. Reverse of word-to-sentences. Enables "what vocabulary does this sentence teach?"
+- **Grammar-to-words reverse index** (`data/cross-refs/grammar-to-words.json`): 595 grammar points mapped to related word IDs. Reverse of word-to-grammar. Enables "what vocabulary relates to this grammar point?"
+- **Kanji-to-sentences full** (`data/cross-refs/kanji-to-sentences-full.json`, built on demand): 7,317 kanji with 28.1M sentence references across all 4.35M sentences in 5 corpora (vs. 2,543 kanji / 26K sentences in the curated-only version).
 
 ### Added — Phase 4 pipelines
 
-- **Aozora Bunko curated corpus** (`data/phase4/aozora-corpus.json`, built on demand): 14 public-domain literary works by 7 authors (Soseki, Akutagawa, Dazai, Miyazawa, Nakajima, Mori, Higuchi). ~620K chars with ruby (furigana) extraction. All authors died before 1955, definitively public domain.
+- **Aozora Bunko curated corpus** (`data/phase4/aozora-corpus.json`, built on demand): 47 public-domain literary works (expanded from initial 14) with ruby (furigana) extraction. All authors died before 1955, definitively public domain.
 - **Common Voice JA transcript pipeline** (`data/phase4/common-voice-transcripts.json`, built on demand): Pipeline for extracting unique Japanese transcripts from Mozilla Common Voice. Requires manual download (Mozilla account authentication). CC-0.
 
 ### Added — distribution
@@ -42,9 +54,16 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ### Added — infrastructure
 
-- **151 new tests** (317 → 468): Unit tests for frequency_subtitles, export_sqlite insert functions, furigana mock-build, kftt tarball extraction, grammar pattern extraction, stroke_order edge cases, sentences dedup, expressions filter, cross_links build, grammar multi-candidate matching, Anki note model builders. Full build() integration tests for export_anki, export_sqlite, grammar, cross_links, stroke_order, kanji, sentences, expressions, kftt, frequency, pitch, names, frequency_web, frequency_wikipedia, frequency_corpus, words (with JLPT force-include), common_voice, aozora, pipeline ordering, check_upstream, kana builders. Coverage: 47% → 81%.
+- **203 new tests** (317 → 520): Unit tests for frequency_subtitles, export_sqlite insert functions, furigana mock-build, kftt tarball extraction, grammar pattern extraction, stroke_order edge cases, sentences dedup, expressions filter, cross_links build, grammar multi-candidate matching, Anki note model builders, sentence_difficulty, sentences_full, word_relations, wordnet, jesc, wikimatrix transforms. Full build() integration tests for export_anki, export_sqlite, grammar, cross_links, stroke_order, kanji, sentences, expressions, kftt, frequency, pitch, names, frequency_web, frequency_wikipedia, frequency_corpus, words (with JLPT force-include), common_voice, aozora, pipeline ordering, check_upstream, kana builders. Coverage: 47% → 81%.
+- **4 new JSON Schemas**: `sentence-difficulty.schema.json`, `wordnet.schema.json`, `word-relations.schema.json`, `aozora.schema.json`. Schema-validated files: 34 → 49.
 - **Coverage floor bumped** from 45% to 80% (`pyproject.toml`).
 - **MeCab dependency** added to requirements.txt (`mecab-python3`, `unidic-lite`) for Wikipedia frequency tokenization.
+
+### Changed
+
+- **Structured logging migration**: All 180 `print()` calls across 31 transform modules replaced with `logging.getLogger(__name__)`. Each module now uses structured `log.info()` consistent with `pipeline.py`'s logging setup.
+- **Sentence corpus total**: 469,829 → 4,355,291 sentences (6.2x increase) with addition of JESC, WikiMatrix, and full Tatoeba corpora.
+- **Word relations total**: 2,283 → 598,895 relations (262x increase) with addition of Japanese WordNet synonym/hypernym pairs.
 
 ### Fixed — pipeline
 
@@ -62,8 +81,8 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ### Verification
 
-- 468 tests, all passing.
-- 34 data files validated against schemas + semantic integrity checks.
+- 520 tests, all passing.
+- 49 data files validated against schemas + semantic integrity checks.
 - Coverage: 81% (fail-under: 80%).
 - Lint clean.
 

@@ -2,7 +2,7 @@
 
 **A unified, cross-linked, reproducible, openly-licensed dataset for learning Japanese.**
 
-Status: **Phase 4 — Active.** Core data stable across Phases 1–3. Phase 4 deliverables: Kangxi radicals (242/253, 95.7%), 595 hand-curated grammar points (all JLPT levels, 88.1% with sentence matches), KFTT parallel corpus (443,849 sentences), JmdictFurigana integration (28,920 entries), corpus-derived word frequency (14,647 ranked), 3 new cross-reference indices. Every grammar entry remains `review_status: draft` — native-speaker review is the most important remaining work. See `docs/phase4-candidates.md` for pending candidates.
+Status: **Phase 4 — Active.** Core data stable across Phases 1–3. Phase 4 deliverables: Kangxi radicals (242/253, 95.7%), 595 hand-curated grammar points (all JLPT levels, 90.3% with sentence matches), KFTT parallel corpus (443,849 sentences), JmdictFurigana integration (28,920 entries), corpus-derived word frequency (14,647 ranked), 7 new cross-reference indices. Every grammar entry remains `review_status: draft` — native-speaker review is the most important remaining work. See `docs/phase4-candidates.md` for pending candidates.
 
 ---
 
@@ -58,7 +58,7 @@ As of the current build (see `manifest.json` for live counts), the `data/` direc
 | `data/enrichment/counter-words.json` | JMdict `ctr` POS entries via words.json | 125 | ✓ | Counter-word (josushi) index for counter-word study and lookup |
 | `data/enrichment/ateji.json` | JMdict `ateji` kanji tags via words.json | 239 | ✓ | Ateji (phonetic kanji spelling) index — words where kanji are used for sound, not meaning |
 | `data/enrichment/jukugo-compounds.json` | Derived from words.json + kanji.json | 14,350 | ✓ | Multi-kanji compound index with per-character meaning decomposition from KANJIDIC2 |
-| `data/enrichment/sentence-difficulty.json` | Derived from sentence corpora + JLPT | 702,197 | gitignored | JLPT-based difficulty estimate for every sentence across all corpora. Built on demand. |
+| `data/enrichment/sentence-difficulty.json` | Derived from sentence corpora + JLPT | 4,355,291 | gitignored | JLPT-based difficulty estimate for every sentence across all 5 corpora. Built on demand. Count is sum of corpus slices (Tatoeba curated + full, KFTT, JESC, WikiMatrix); ~26K curated sentences overlap with Tatoeba full. |
 | `data/enrichment/frequency-tatoeba.json` | Derived from Tatoeba sentences | 12,298 | gitignored | Tatoeba corpus-derived word frequency. Built on demand. |
 
 ### Corpus
@@ -76,7 +76,7 @@ As of the current build (see `manifest.json` for live counts), the `data/` direc
 | File | Source(s) | Count | Committed? | Description |
 |---|---|---:|---|---|
 | `data/grammar/grammar.json` | **Original curation** (Phase 3) | 595 | ✓ | Structured grammar points with patterns, examples, related refs, formality, JLPT level. All entries `review_status: draft` — native-speaker review pending. Target: 500–700. |
-| `data/grammar/conjugations.json` | Derived from `words.json` | 3,507 | ✓ | Verb and adjective conjugation tables (ichidan, godan including v5k-s/v5u-s/v5aru/v5r-i edge cases, suru-verbs, i- and na-adjectives) |
+| `data/grammar/conjugations.json` | Derived from `words.json` | 3,511 | ✓ | Verb and adjective conjugation tables (ichidan, godan including v5k-s/v5u-s/v5aru/v5r-i edge cases, suru-verbs, i-adjectives, irregular i-adjectives (いい), and na-adjectives) |
 | `data/grammar/expressions.json` | Extracted from JMdict `exp` entries | 13,220 | ✓ | Lexical grammar patterns tagged as expressions in JMdict |
 
 ### Cross-references

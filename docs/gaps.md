@@ -88,6 +88,18 @@ KanjiVG SVGs contain rich structural metadata (radical decomposition embedded in
 
 Many modern kanji have historical forms (kyūjitai) that appear in older texts, place names, and personal names. JMdict and KANJIDIC2 include `variant` fields for these, which we preserve. There is no comprehensive kyūjitai → shinjitai mapping dataset, though — and that gap is inherited from upstream.
 
+### RADKFILE radical design characteristics (UPSTREAM)
+
+RADKFILE (our source for radical-to-kanji decomposition) has three design characteristics that affect our data:
+
+1. **Representative kanji as radicals.** RADKFILE uses whole kanji as stand-ins for radical components that aren't standalone characters. For example, 汁 (juice) represents the water-dot radical 氵, 忙 (busy) represents the heart-side radical 忄, and 化 (change) represents the person-side radical 亻. Our `KANGXI_ALIASES` table maps these to their Kangxi parents (e.g., 汁→#85 水, 忙→#61 心, 化→#9 人), which is correct for Kangxi indexing but means the data conflates "kanji that represent this radical component" with "variant forms of this radical." This is inherent to RADKFILE's design.
+
+2. **4 Kangxi radicals absent.** Kangxi #23 (匸 hiding enclosure), #35 (夊 go slowly), #114 (禸 track), and #122 (罒 net) are not in RADKFILE's 253-radical set. RADKFILE merges visually similar radicals (e.g., 匸 into 匚, 夊 into 夂) rather than maintaining all 214 Kangxi distinctions.
+
+3. **Grass radical uses 艾.** Kangxi #140 (艸/艹 grass) is represented by 艾 (mugwort) in RADKFILE, which is the kanji RADKFILE chose as the representative for the grass-crown component. Neither 艸 nor 艹 appears in RADKFILE.
+
+These are data source characteristics, not bugs in our alias table. Consumers should be aware that the `radicals.json` entries reflect RADKFILE's decomposition system, which is designed for practical kanji lookup rather than strict Kangxi radical classification.
+
 ### Hentaigana (INTENTIONAL)
 
 Hentaigana are obsolete variant forms of hiragana used in pre-modern Japanese. They have been assigned Unicode code points but are essentially never used in modern writing. Out of scope.
@@ -119,6 +131,18 @@ Dictionaries tell you word meanings; collocation databases tell you which words 
 ### Formality / register markers beyond JMdict's tagging (EFFORT)
 
 JMdict has tags for `hum` (humble), `pol` (polite), `hon` (honorific), `fam` (familiar), `vulg` (vulgar), etc. These are useful but not comprehensive; nuance about when to use what register is largely absent. Bridging this gap is arguably a grammar concern rather than a lexical one, and could be addressed partially in the grammar corpus (Phase 3) under formality-related patterns.
+
+### Word frequency data characteristics (UPSTREAM)
+
+The project ships 7 frequency lists from different sources and methodologies. Consumers should be aware of these characteristics:
+
+1. **frequency-corpus.json** uses surface-form substring matching, not morphological analysis. Top-ranked entries may be false positives where a word's kana reading matches a common grammatical substring (e.g., してい matching していた). For reliable word frequency rankings, prefer the MeCab-tokenized lists (frequency-wikipedia.json, frequency-jesc.json, frequency-tatoeba.json).
+
+2. **frequency-subtitles.json** (OpenSubtitles via FrequencyWords) is missing several core verbs (する, いる, ない, なる) due to upstream tokenization limitations. Rankings are reliable for words that are present, but absence from this list does not mean a word is rare.
+
+3. **frequency-wikipedia.json, frequency-tatoeba.json, frequency-jesc.json** use MeCab/UniDic tokenization, which produces archaic kanji lemma forms for common words: 為る (する), 居る (いる), 有る (ある), 其の (その), 無い (ない). The rankings are correct; the display forms follow UniDic's lemmatization convention rather than modern common spellings.
+
+4. **frequency-newspaper.json** provides kanji-only frequency (no words) from KANJIDIC2 — it covers the top ~2,500 most common kanji in newspapers.
 
 ---
 

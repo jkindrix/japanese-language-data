@@ -44,6 +44,7 @@ japanese-language-data/
 ├── LICENSE                    CC-BY-SA 4.0 + upstream license obligations
 ├── ATTRIBUTION.md             Per-source attribution wording
 ├── CHANGELOG.md               Version history with upstream pins
+├── CODE_OF_CONDUCT.md         Community code of conduct
 ├── manifest.json              Current repo version, source pins, build date, counts
 │
 ├── docs/                      Documentation of every non-obvious thing
@@ -63,26 +64,38 @@ japanese-language-data/
 │   └── upstream-issues.md     Log of errors/gaps to file upstream
 │
 ├── schemas/                   JSON Schema files (Draft 2020-12)
+│   ├── aozora.schema.json
+│   ├── ateji.schema.json
 │   ├── conjugations.schema.json
+│   ├── counter-words.schema.json
 │   ├── cross-refs.schema.json
 │   ├── expressions.schema.json
 │   ├── frequency.schema.json
+│   ├── furigana.schema.json
 │   ├── grammar.schema.json
 │   ├── jlpt.schema.json
+│   ├── jukugo.schema.json
 │   ├── kana.schema.json
 │   ├── kanji.schema.json
 │   ├── manifest.schema.json
 │   ├── name.schema.json
 │   ├── pitch-accent.schema.json
 │   ├── radical.schema.json
+│   ├── sentence-difficulty.schema.json
 │   ├── sentence.schema.json
 │   ├── stroke-order.schema.json
+│   ├── word-relations.schema.json
+│   ├── wordnet.schema.json
 │   └── word.schema.json
 │
 ├── build/                     Reproducible pipeline source code
 │   ├── __init__.py
 │   ├── bump_release.py        Version bump automation
+│   ├── check_upstream.py      Upstream source freshness checker
 │   ├── constants.py           Shared path constants
+│   ├── export_anki.py         Anki .apkg deck export
+│   ├── export_sqlite.py       SQLite database export
+│   ├── export_yomitan.py      Yomitan dictionary export
 │   ├── fetch.py               Download + cache upstream sources
 │   ├── pipeline.py            Orchestrate the full build
 │   ├── utils.py               Shared transform utilities
@@ -91,19 +104,37 @@ japanese-language-data/
 │   ├── requirements.txt       Pinned Python dependencies
 │   └── transform/             Per-domain transformation modules
 │       ├── __init__.py
+│       ├── aozora.py
+│       ├── ateji.py
+│       ├── common_voice.py
 │       ├── conjugations.py
+│       ├── counters.py
 │       ├── cross_links.py
 │       ├── expressions.py
 │       ├── frequency.py
+│       ├── frequency_corpus.py
+│       ├── frequency_jesc.py
+│       ├── frequency_subtitles.py
+│       ├── frequency_web.py
+│       ├── frequency_wikipedia.py
+│       ├── furigana.py
 │       ├── grammar.py
+│       ├── jesc.py
 │       ├── jlpt.py
+│       ├── jukugo.py
 │       ├── kana.py
 │       ├── kanji.py
+│       ├── kftt.py
 │       ├── names.py
 │       ├── pitch.py
 │       ├── radicals.py
+│       ├── sentence_difficulty.py
 │       ├── sentences.py
+│       ├── sentences_full.py
 │       ├── stroke_order.py
+│       ├── wikimatrix.py
+│       ├── wordnet.py
+│       ├── word_relations.py
 │       └── words.py
 │
 ├── sources/                   (gitignored) Cached upstream downloads
@@ -113,37 +144,76 @@ japanese-language-data/
 │   ├── core/                  Foundation layer
 │   │   ├── kana.json
 │   │   ├── kanji.json
-│   │   ├── words.json
+│   │   ├── kanji-jinmeiyo.json
+│   │   ├── kanji-joyo.json
 │   │   ├── radicals.json
+│   │   ├── words.json
+│   │   ├── words-full.json
 │   │   └── (names.json in data/optional/, not here)
 │   ├── enrichment/            Derived or augmenting metadata
 │   │   ├── stroke-order/          Per-character SVG files from KanjiVG
 │   │   ├── stroke-order-index.json
-│   │   ├── pitch-accent.json
+│   │   ├── ateji.json
+│   │   ├── counter-words.json
+│   │   ├── frequency-corpus.json
+│   │   ├── frequency-jesc.json
 │   │   ├── frequency-newspaper.json
-│   │   ├── frequency-modern.json
-│   │   └── jlpt-classifications.json
+│   │   ├── frequency-subtitles.json
+│   │   ├── frequency-tatoeba.json
+│   │   ├── frequency-web.json
+│   │   ├── frequency-wikipedia.json
+│   │   ├── furigana.json
+│   │   ├── jlpt-classifications.json
+│   │   ├── jukugo-compounds.json
+│   │   ├── pitch-accent.json
+│   │   ├── pitch-accent-wiktionary.json
+│   │   └── sentence-difficulty.json
 │   ├── corpus/                Example data
-│   │   └── sentences.json     Tatoeba JA–EN pairs
+│   │   ├── sentences.json         Tatoeba JA–EN pairs
+│   │   ├── sentences-jesc.json
+│   │   ├── sentences-kftt.json
+│   │   ├── sentences-tatoeba-full.json
+│   │   └── sentences-wikimatrix.json
 │   ├── grammar/               Original curation (Phase 3)
 │   │   ├── grammar.json
 │   │   ├── conjugations.json
 │   │   └── expressions.json
 │   ├── cross-refs/            Cross-reference indices
+│   │   ├── grammar-to-sentences.json
+│   │   ├── grammar-to-words.json
+│   │   ├── kanji-to-radicals.json
+│   │   ├── kanji-to-sentences.json
+│   │   ├── kanji-to-sentences-full.json
 │   │   ├── kanji-to-words.json
+│   │   ├── kanji-to-words-full.json
+│   │   ├── radical-to-kanji.json
+│   │   ├── reading-to-words.json
+│   │   ├── reading-to-words-full.json
+│   │   ├── sentence-to-words.json
+│   │   ├── word-relations.json
+│   │   ├── word-to-grammar.json
 │   │   ├── word-to-kanji.json
+│   │   ├── word-to-kanji-full.json
 │   │   ├── word-to-sentences.json
-│   │   └── kanji-to-radicals.json
-│   └── optional/              (gitignored) Opt-in large data
-│       └── names.json         JMnedict, ~720k entries
+│   │   └── wordnet-synonyms.json
+│   ├── optional/              (gitignored) Opt-in large data
+│   │   └── names.json         JMnedict, ~720k entries
+│   └── phase4/                Phase 4 pipeline outputs
+│       └── aozora-corpus.json Curated Aozora Bunko literary corpus
 │
-├── tests/                     Pytest test suite (200+ tests)
+├── dist/                      Exported distribution formats
+│   ├── japanese-language-data.apkg    Anki flashcard deck
+│   ├── japanese-language-data.sqlite  SQLite database
+│   └── japanese-language-data.zip     Bundled ZIP archive
+│
+├── tests/                     Pytest test suite (520 tests)
 │   ├── __init__.py
-│   ├── test_data_integrity.py Regression tests and data invariants
-│   ├── test_docs.py           Documentation and release metadata
-│   ├── test_infrastructure.py Pipeline DAG, fetch, validation tests
+│   ├── test_data_integrity.py   Regression tests and data invariants
+│   ├── test_docs.py             Documentation and release metadata
+│   ├── test_infrastructure.py   Pipeline DAG, fetch, validation tests
+│   ├── test_phase4_transforms.py  Phase 4 transform tests
 │   ├── test_schema_negative.py  Negative validation tests
-│   ├── test_schemas.py        Schema self-validity tests
+│   ├── test_schemas.py          Schema self-validity tests
 │   └── test_transform_units.py  Transform function unit tests
 │
 ├── grammar-curated/           Hand-curated grammar input files
@@ -157,8 +227,9 @@ japanese-language-data/
 │
 ├── .github/                   CI workflow + issue/PR templates
 │   ├── workflows/build.yml    CI pipeline with reproducibility check
-│   ├── ISSUE_TEMPLATE/        6 issue templates
-│   └── PULL_REQUEST_TEMPLATE.md
+│   ├── ISSUE_TEMPLATE/        6 issue templates + config.yml chooser
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── dependabot.yml         Dependency update automation
 │
 ├── justfile                   Task runner recipes
 ├── pyproject.toml             Pytest + coverage configuration
@@ -276,11 +347,11 @@ Every release is tagged in git (`v0.1.0`, etc.) and each tag has a corresponding
 
 ### Phase timeline
 
-- **Phase 0** (current): Scaffolding, documentation, schemas, pipeline skeleton. No data files yet. Versions 0.0.x.
+- **Phase 0**: Scaffolding, documentation, schemas, pipeline skeleton. No data files yet. Versions 0.0.x.
 - **Phase 1**: Core foundation — kanji, words, names (optional), radicals, sentences, kana, and their cross-links. First build that produces usable data. Target version 0.1.0.
 - **Phase 2**: Enrichment — stroke order, pitch accent, frequency, JLPT. Cross-link expansion. Target version 0.2.0.
 - **Phase 3**: Grammar dataset — original curation, JMdict expression extraction, conjugation generation. This is the original-work phase. Target version 0.3.0 for initial release, with incremental patch versions as coverage fills in.
-- **Phase 4** (active): Supplementary data sources and extended coverage. Delivered: KFTT corpus (443,849 sentences), JmdictFurigana (28,920 entries), OpenSubtitles frequency (8,598 words), Leeds web frequency (11,038 words), Wikipedia frequency (14,553 words), Wiktionary pitch accent (7,378 entries), counter-words (125), ateji (239), jukugo compounds (14,350), Anki .apkg export (36,822 cards). Pipelines ready: Common Voice JA transcripts, Aozora Bunko curated corpus. See `docs/phase4-candidates.md`.
+- **Phase 4** (current): Supplementary data sources and extended coverage. Delivered: KFTT corpus (443,849 sentences), JESC subtitle corpus (2,801,388 sentences), WikiMatrix (851,706 sentences), full Tatoeba corpus (232,368 sentences), Japanese WordNet (596,612 semantic relations), JmdictFurigana (28,920 entries), 7 word frequency lists, Wiktionary pitch accent (7,378 entries), counter-words (125), ateji (239), jukugo compounds (14,350), word relations (2,283 pairs), sentence difficulty scoring (4,355,291 entries), 7 new cross-reference indices, exports (Anki .apkg, SQLite, Yomitan). Pipelines ready: Common Voice JA transcripts, Aozora Bunko curated corpus (47 works). See `docs/phase4-candidates.md`.
 - **1.0.0**: Tagged when Phases 1–3 have stable schemas, complete core coverage, and the grammar dataset has reached its first stable milestone (N5 and N4 fully covered with native-speaker review, at minimum).
 
 ---
@@ -308,11 +379,21 @@ Maps every kanji to its component radicals using KRADFILE. Used for radical-base
 Delivered cross-references beyond the core set:
 
 - `word-to-grammar.json`: word → grammar patterns that reference it in examples (1,577 words, delivered in Phase 3)
+- `grammar-to-words.json`: grammar pattern → words referenced in its examples
+- `grammar-to-sentences.json`: grammar pattern → example sentence IDs
 - `reading-to-words.json`: kana reading → word IDs (IME-style reverse lookup, 24,927 readings)
+- `reading-to-words-full.json`: full-corpus variant of reading-to-words
+- `kanji-to-words-full.json`: full-corpus variant of kanji-to-words
+- `kanji-to-sentences.json`: kanji → example sentence IDs
+- `kanji-to-sentences-full.json`: full-corpus variant of kanji-to-sentences
+- `word-to-kanji-full.json`: full-corpus variant of word-to-kanji
+- `radical-to-kanji.json`: radical → kanji containing it (reverse of kanji-to-radicals)
+- `sentence-to-words.json`: sentence → word IDs it contains
+- `word-relations.json`: semantic word relationships
+- `wordnet-synonyms.json`: WordNet-derived synonym mappings
 
 Future cross-references may include:
 
-- `grammar-to-sentences.json`: grammar pattern → example sentence IDs
 - `kanji-to-compounds.json`: kanji → list of multi-kanji compounds containing it
 
 ---

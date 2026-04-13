@@ -17,7 +17,7 @@ By submitting a contribution, you agree that your contribution will be released 
 
 ### Native-speaker reviewers for grammar
 
-The grammar dataset (Phase 3) is our largest original contribution and the area where we most need help. As of v0.7.1, all 595 entries carry `review_status: "draft"` — every one of them was written by the project author from general grammar knowledge and awaits expert eyes.
+The grammar dataset (Phase 3) is our largest original contribution and the area where we most need help. As of v0.8.0, all 595 entries carry `review_status: "draft"` — every one of them was written by the project author from general grammar knowledge and awaits expert eyes.
 
 **There is a full reviewer workflow documented at [`docs/grammar-review.md`](grammar-review.md), with a per-entry checklist at [`docs/grammar-review-checklist.md`](grammar-review-checklist.md).** If you are considering reviewing, read those documents first — they cover eligibility, the two review tracks (`community_reviewed` and `native_speaker_reviewed`), how to claim a slice, how to record a review, and how to handle disagreement.
 
@@ -53,7 +53,7 @@ Filing with us is fine — we'll triage and file upstream. Include:
 
 ### Data contributions
 
-- **Additional grammar entries** at any JLPT level — all five levels now have community-standard coverage (595 total entries as of v0.7.0) but there is always room for patterns we missed, more nuanced explanations, or additional example sentences
+- **Additional grammar entries** at any JLPT level — all five levels now have community-standard coverage (595 total entries as of v0.8.0) but there is always room for patterns we missed, more nuanced explanations, or additional example sentences
 - **Example sentences** for grammar points, if you can provide natural Japanese sentences with attribution (Tatoeba contribution is preferred — we'll pull from upstream — but curated examples specific to grammar teaching are welcome)
 - **Kana chart extensions** (e.g., obsolete kana, historical forms if relevant)
 - **Cross-reference additions** — new kinds of cross-references that would be useful

@@ -180,7 +180,7 @@ jq -r '[.grammar_points[].level] | group_by(.) | map({level: .[0], count: length
 
 ## Working with large files
 
-The committed `data/core/words.json` (22,580 common entries, ~45 MB) loads comfortably in any language. The full `data/core/words-full.json` (216,173 entries, ~285 MB) requires more care.
+The committed `data/core/words.json` (23,119 common entries, ~45 MB) loads comfortably in any language. The full `data/core/words-full.json` (216,173 entries, ~285 MB) requires more care.
 
 ### Prefer the common subset
 
@@ -190,7 +190,7 @@ Unless you specifically need rare, archaic, or specialized vocabulary, use `word
 
 | File | Entries | Disk | In-memory (Python dict) |
 |---|---:|---:|---:|
-| `words.json` | 22,580 | ~45 MB | ~120 MB |
+| `words.json` | 23,119 | ~45 MB | ~120 MB |
 | `words-full.json` | 216,173 | ~285 MB | ~800 MB |
 | `kanji.json` | 13,108 | ~17 MB | ~60 MB |
 | `pitch-accent.json` | 124,011 | ~17 MB | ~80 MB |
