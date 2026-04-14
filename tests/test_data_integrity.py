@@ -15,13 +15,22 @@ from pathlib import Path
 
 import pytest
 
+pytestmark = pytest.mark.slow
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
+_cache: dict[str, dict | None] = {}
+
+
 def _load_if_exists(path: Path) -> dict | None:
-    if not path.exists():
-        return None
-    return json.loads(path.read_text(encoding="utf-8"))
+    key = str(path)
+    if key not in _cache:
+        if not path.exists():
+            _cache[key] = None
+        else:
+            _cache[key] = json.loads(path.read_text(encoding="utf-8"))
+    return _cache[key]
 
 
 # ---------------------------------------------------------------------------

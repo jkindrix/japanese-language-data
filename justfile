@@ -114,6 +114,12 @@ test:
     @printf '{{cyan}}==> Running tests{{reset}}\n'
     {{python}} -m pytest tests/ -v
 
+# Run fast tests only (skip tests that load large data files)
+[group('validate')]
+test-fast:
+    @printf '{{cyan}}==> Running fast tests (skipping data-loading tests){{reset}}\n'
+    {{python}} -m pytest tests/ -v -m "not slow"
+
 # Run the test suite with code coverage report
 [group('validate')]
 test-cov:

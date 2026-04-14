@@ -1,5 +1,8 @@
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = [
+    "slow: tests that load large data files from data/ (deselect with -m 'not slow')",
+]
 
 [tool.coverage.run]
 source = ["build"]
