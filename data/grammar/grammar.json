@@ -32,7 +32,7 @@
       "link_rate_pct": 0.22,
       "method": "Two-pass text match against data/corpus/sentences.json: first exact, then conservatively normalized (trailing sentence-final punctuation and whitespace stripped). Normalization never collapses kanji/kana variants or changes width/case.",
       "pattern_match_points": 537,
-      "pattern_match_total": 2095,
+      "pattern_match_total": 2097,
       "pattern_match_pct": 90.25,
       "pattern_match_method": "Separate from example-text linkage. Extracts the Japanese core of each grammar pattern and searches sentences.json for sentences containing it. Up to 5 matches per grammar point. Stored in tatoeba_pattern_matches[] on each entry."
     },
@@ -48,7 +48,7 @@
       "formation_notes": "Additional notes on formation, irregular cases, and exceptions.",
       "formality": "Register: very_formal / formal / neutral / casual / intimate / vulgar.",
       "related": "IDs of related grammar points.",
-      "examples": "Example sentences. Phase 3 examples are original (written by the project author, source: original). A future patch may cross-reference with Tatoeba sentence IDs by text match.",
+      "examples": "Example sentences. Phase 3 examples are original (written by the project author, source: original). Examples may be linked to corpus sentences via text match (sentence_id field, '{source}-{n}' format).",
       "review_status": "One of: draft (not reviewed), community_reviewed (checked by community contributor), native_speaker_reviewed (verified by a native Japanese speaker). ALL initial Phase 3 entries are draft.",
       "reviewer_notes": "Log of review comments. Empty on draft entries.",
       "sources": "References consulted (or in the case of Phase 3 initial entries, general background) when writing this entry. NOT a list of sources we copied — we did not copy. The source field is for transparency about provenance of the factual claims."
@@ -5867,11 +5867,7 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74702",
-        "tatoeba-74802",
-        "tatoeba-75432",
-        "tatoeba-76996",
-        "tatoeba-77006"
+        "tatoeba-230442"
       ]
     },
     {
@@ -6736,11 +6732,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74269",
-        "tatoeba-93030",
-        "tatoeba-105107",
-        "tatoeba-114108",
-        "tatoeba-114109"
+        "tatoeba-75246",
+        "tatoeba-113317",
+        "tatoeba-121934",
+        "tatoeba-123616",
+        "tatoeba-144622"
       ]
     },
     {
@@ -8164,11 +8160,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74024",
-        "tatoeba-74088",
-        "tatoeba-74606",
-        "tatoeba-74616",
-        "tatoeba-74646"
+        "tatoeba-4726",
+        "tatoeba-4925",
+        "tatoeba-74013",
+        "tatoeba-74026",
+        "tatoeba-74033"
       ]
     },
     {
@@ -8211,11 +8207,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-103259",
-        "tatoeba-114313",
-        "tatoeba-141195",
-        "tatoeba-186159",
-        "tatoeba-207356"
+        "tatoeba-4726",
+        "tatoeba-4925",
+        "tatoeba-74013",
+        "tatoeba-74026",
+        "tatoeba-74033"
       ]
     },
     {
@@ -8539,9 +8535,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-75809",
-        "tatoeba-180344",
-        "tatoeba-226360"
+        "tatoeba-77662",
+        "tatoeba-80850",
+        "tatoeba-82485",
+        "tatoeba-95807",
+        "tatoeba-137772"
       ]
     },
     {
@@ -10375,9 +10373,10 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-81580",
-        "tatoeba-176730",
-        "tatoeba-188702"
+        "tatoeba-74334",
+        "tatoeba-85739",
+        "tatoeba-207412",
+        "tatoeba-225407"
       ]
     },
     {
@@ -11801,11 +11800,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74440",
-        "tatoeba-75273",
-        "tatoeba-75860",
-        "tatoeba-76755",
-        "tatoeba-76863"
+        "tatoeba-4726",
+        "tatoeba-4925",
+        "tatoeba-74013",
+        "tatoeba-74026",
+        "tatoeba-74033"
       ]
     },
     {
@@ -12757,7 +12756,9 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-163655"
+        "tatoeba-115918",
+        "tatoeba-171747",
+        "tatoeba-200816"
       ]
     },
     {
@@ -13022,11 +13023,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-75110",
-        "tatoeba-75822",
-        "tatoeba-76078",
-        "tatoeba-76645",
-        "tatoeba-76788"
+        "tatoeba-4726",
+        "tatoeba-4925",
+        "tatoeba-74013",
+        "tatoeba-74026",
+        "tatoeba-74033"
       ]
     },
     {
@@ -13534,11 +13535,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74872",
-        "tatoeba-76840",
-        "tatoeba-78664",
-        "tatoeba-116307",
-        "tatoeba-157615"
+        "tatoeba-75601",
+        "tatoeba-76341",
+        "tatoeba-76606",
+        "tatoeba-76662",
+        "tatoeba-84074"
       ]
     },
     {
@@ -14779,11 +14780,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74022",
-        "tatoeba-74141",
-        "tatoeba-74286",
-        "tatoeba-74403",
-        "tatoeba-74427"
+        "tatoeba-74450",
+        "tatoeba-74635",
+        "tatoeba-74876",
+        "tatoeba-76169",
+        "tatoeba-76336"
       ]
     },
     {
@@ -15246,11 +15247,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-75373",
-        "tatoeba-75999",
-        "tatoeba-76146",
-        "tatoeba-76195",
-        "tatoeba-76230"
+        "tatoeba-74501",
+        "tatoeba-75156",
+        "tatoeba-75377",
+        "tatoeba-75547",
+        "tatoeba-75834"
       ]
     },
     {
@@ -15714,11 +15715,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74241",
-        "tatoeba-79126",
-        "tatoeba-122956",
-        "tatoeba-140438",
-        "tatoeba-141009"
+        "tatoeba-4726",
+        "tatoeba-4925",
+        "tatoeba-74013",
+        "tatoeba-74026",
+        "tatoeba-74033"
       ]
     },
     {
@@ -16043,10 +16044,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-116346",
-        "tatoeba-127355",
-        "tatoeba-187759",
-        "tatoeba-198292"
+        "tatoeba-74399",
+        "tatoeba-94039",
+        "tatoeba-144849",
+        "tatoeba-212849",
+        "tatoeba-9641509"
       ]
     },
     {
@@ -16374,11 +16376,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-76323",
-        "tatoeba-76729",
-        "tatoeba-92608",
-        "tatoeba-96945",
-        "tatoeba-105098"
+        "tatoeba-74257",
+        "tatoeba-74400",
+        "tatoeba-75094",
+        "tatoeba-76000",
+        "tatoeba-87699"
       ]
     },
     {
@@ -16744,11 +16746,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74087",
-        "tatoeba-74192",
-        "tatoeba-74246",
-        "tatoeba-74453",
-        "tatoeba-74518"
+        "tatoeba-74095",
+        "tatoeba-74591",
+        "tatoeba-75284",
+        "tatoeba-76234",
+        "tatoeba-76416"
       ]
     },
     {
@@ -17715,11 +17717,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74981",
-        "tatoeba-80937",
-        "tatoeba-103576",
-        "tatoeba-122205",
-        "tatoeba-167697"
+        "tatoeba-4726",
+        "tatoeba-4925",
+        "tatoeba-74013",
+        "tatoeba-74026",
+        "tatoeba-74033"
       ]
     },
     {
@@ -17809,10 +17811,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-126294",
-        "tatoeba-141499",
-        "tatoeba-145572",
-        "tatoeba-185225"
+        "tatoeba-4726",
+        "tatoeba-4925",
+        "tatoeba-74013",
+        "tatoeba-74026",
+        "tatoeba-74033"
       ]
     },
     {
@@ -17855,11 +17858,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74720",
-        "tatoeba-75631",
-        "tatoeba-75705",
-        "tatoeba-76859",
-        "tatoeba-80263"
+        "tatoeba-4726",
+        "tatoeba-4925",
+        "tatoeba-74013",
+        "tatoeba-74026",
+        "tatoeba-74033"
       ]
     },
     {
@@ -17902,11 +17905,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74229",
-        "tatoeba-74547",
-        "tatoeba-74980",
-        "tatoeba-75217",
-        "tatoeba-75845"
+        "tatoeba-4726",
+        "tatoeba-4925",
+        "tatoeba-74013",
+        "tatoeba-74026",
+        "tatoeba-74033"
       ]
     },
     {
@@ -17949,11 +17952,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74380",
-        "tatoeba-75119",
-        "tatoeba-75150",
-        "tatoeba-75507",
-        "tatoeba-75712"
+        "tatoeba-4726",
+        "tatoeba-4925",
+        "tatoeba-74013",
+        "tatoeba-74026",
+        "tatoeba-74033"
       ]
     },
     {
@@ -21228,8 +21231,7 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-75163",
-        "tatoeba-75165"
+        "tatoeba-75163"
       ]
     },
     {
@@ -22256,11 +22258,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-4858",
-        "tatoeba-5002",
-        "tatoeba-74064",
-        "tatoeba-74119",
-        "tatoeba-74125"
+        "tatoeba-4726",
+        "tatoeba-4925",
+        "tatoeba-74013",
+        "tatoeba-74026",
+        "tatoeba-74033"
       ]
     },
     {
@@ -22303,11 +22305,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74104",
-        "tatoeba-74211",
-        "tatoeba-75291",
-        "tatoeba-151221",
-        "tatoeba-175840"
+        "tatoeba-74629",
+        "tatoeba-74841",
+        "tatoeba-147419",
+        "tatoeba-192821",
+        "tatoeba-225032"
       ]
     },
     {
@@ -22994,11 +22996,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74041",
-        "tatoeba-74308",
-        "tatoeba-74944",
-        "tatoeba-75130",
-        "tatoeba-75271"
+        "tatoeba-74525",
+        "tatoeba-74651",
+        "tatoeba-74705",
+        "tatoeba-74883",
+        "tatoeba-75550"
       ]
     },
     {
@@ -23230,11 +23232,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74344",
-        "tatoeba-76676",
-        "tatoeba-77088",
-        "tatoeba-85779",
-        "tatoeba-87884"
+        "tatoeba-74032",
+        "tatoeba-74076",
+        "tatoeba-74234",
+        "tatoeba-74354",
+        "tatoeba-74383"
       ]
     },
     {
@@ -24858,11 +24860,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74022",
-        "tatoeba-74286",
-        "tatoeba-74427",
-        "tatoeba-74753",
-        "tatoeba-75068"
+        "tatoeba-4925",
+        "tatoeba-4996",
+        "tatoeba-74107",
+        "tatoeba-74148",
+        "tatoeba-74152"
       ]
     },
     {
@@ -24902,11 +24904,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74022",
-        "tatoeba-74026",
-        "tatoeba-74027",
-        "tatoeba-74036",
-        "tatoeba-74062"
+        "tatoeba-4954",
+        "tatoeba-74019",
+        "tatoeba-74086",
+        "tatoeba-74100",
+        "tatoeba-74164"
       ]
     },
     {
@@ -25554,11 +25556,11 @@
         "General Japanese grammar knowledge (non-copyrightable facts)."
       ],
       "tatoeba_pattern_matches": [
-        "tatoeba-74027",
-        "tatoeba-74173",
-        "tatoeba-74269",
-        "tatoeba-74282",
-        "tatoeba-74388"
+        "tatoeba-74068",
+        "tatoeba-74182",
+        "tatoeba-74198",
+        "tatoeba-74213",
+        "tatoeba-74234"
       ]
     },
     {

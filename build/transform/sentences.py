@@ -9,10 +9,11 @@ Input: ``sources/jmdict-simplified/jmdict-examples-eng.json.tgz``
 Output: ``data/corpus/sentences.json`` conforming to
 ``schemas/sentence.schema.json``.
 
-Sentences are deduplicated by Tatoeba sentence ID. A single sentence
-referenced by multiple word senses appears exactly once in the output.
-The word → sentence cross-reference is generated separately by the
-Phase 2 cross_links transform.
+Sentences are deduplicated by Tatoeba sentence ID and emitted with a
+``tatoeba-{n}`` prefixed ID (matching the project-wide ``{source}-{n}``
+convention). A single sentence referenced by multiple word senses
+appears exactly once in the output. The word → sentence cross-reference
+is generated separately by the cross_links transform.
 
 All sentences in this file are marked ``curated: true`` because they are
 editor-selected via JMdict's curation process. Phase 2 or later may add

@@ -527,7 +527,7 @@ def build() -> None:
                 "formation_notes": "Additional notes on formation, irregular cases, and exceptions.",
                 "formality": "Register: very_formal / formal / neutral / casual / intimate / vulgar.",
                 "related": "IDs of related grammar points.",
-                "examples": "Example sentences. Phase 3 examples are original (written by the project author, source: original). A future patch may cross-reference with Tatoeba sentence IDs by text match.",
+                "examples": "Example sentences. Phase 3 examples are original (written by the project author, source: original). Examples may be linked to corpus sentences via text match (sentence_id field, '{source}-{n}' format).",
                 "review_status": "One of: draft (not reviewed), community_reviewed (checked by community contributor), native_speaker_reviewed (verified by a native Japanese speaker). ALL initial Phase 3 entries are draft.",
                 "reviewer_notes": "Log of review comments. Empty on draft entries.",
                 "sources": "References consulted (or in the case of Phase 3 initial entries, general background) when writing this entry. NOT a list of sources we copied — we did not copy. The source field is for transparency about provenance of the factual claims.",

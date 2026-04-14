@@ -49,7 +49,7 @@ As of the current build (see `manifest.json` for live counts), the `data/` direc
 | `data/enrichment/frequency-modern.json` | JPDB (license-blocked) | — | not built | Modern media frequency. Blocked on license clarification — see `docs/phase4-candidates.md`. |
 | `data/enrichment/frequency-corpus.json` | Derived from sentences.json | 14,647 | ✓ | Corpus-derived word frequency from Tatoeba. Surface-form matching; suitable for relative ranking. |
 | `data/enrichment/frequency-subtitles.json` | OpenSubtitles 2018 via FrequencyWords | 8,598 | ✓ | Spoken-media word frequency from movie/TV/anime subtitles. Matched against JMdict vocabulary. |
-| `data/enrichment/frequency-web.json` | Leeds University web corpus | 11,038 | ✓ | Web-text word frequency from a 253M-token crawl. Matched against JMdict vocabulary. CC-BY. |
+| `data/enrichment/frequency-web.json` | Leeds University web corpus | 11,050 | ✓ | Web-text word frequency from a 253M-token crawl. Matched against JMdict vocabulary. CC-BY. |
 | `data/enrichment/frequency-wikipedia.json` | KFTT corpus + MeCab | 14,553 | ✓ | Formal/encyclopedic word frequency from Wikipedia Kyoto articles. MeCab/UniDic tokenized. |
 | `data/enrichment/frequency-jesc.json` | JESC corpus + MeCab | 14,678 | gitignored | Conversational word frequency from 2.8M movie/TV subtitle sentences. MeCab/UniDic tokenized. Built on demand. |
 | `data/enrichment/pitch-accent-wiktionary.json` | Japanese Wiktionary via kaikki.org | 12,788 | ✓ | Supplementary pitch accent data for words not in Kanjium (post-2022 gap fill). Integrated into build pipeline; refreshed from upstream on rebuild. CC-BY-SA 4.0. |
@@ -90,7 +90,7 @@ As of the current build (see `manifest.json` for live counts), the `data/` direc
 | `data/cross-refs/reading-to-words.json` | Generated from `words.json` | 24,927 | ✓ | IME-style reverse lookup: kana reading → word IDs |
 | `data/cross-refs/radical-to-kanji.json` | Generated from `radicals.json` | 253 | ✓ | Reverse lookup: radical → kanji containing it |
 | `data/cross-refs/kanji-to-sentences.json` | Generated from `sentences.json` | 2,543 | ✓ | Every kanji → list of sentence IDs containing it |
-| `data/cross-refs/word-to-grammar.json` | Generated from `grammar.json` | 1,577 | ✓ | Every word → list of grammar point IDs matched by text |
+| `data/cross-refs/word-to-grammar.json` | Generated from `grammar.json` | 1,578 | ✓ | Every word → list of grammar point IDs matched by text |
 | `data/cross-refs/word-relations.json` | JMdict xref/antonym fields | 2,283 | ✓ | JMdict-curated word-to-word relations (related + antonym) |
 | `data/cross-refs/grammar-to-sentences.json` | Extracted from `grammar.json` | 537 | ✓ | Every grammar point → sentence IDs demonstrating the pattern |
 | `data/cross-refs/sentence-to-words.json` | Inverted from word-to-sentences | 15,263 | ✓ | Every sentence → word IDs it contains (reverse lookup) |
