@@ -2,7 +2,7 @@
   "project": "japanese-language-data",
   "version": "0.9.0",
   "phase": 4,
-  "phase_description": "Phase 4 active (v0.9.0). Sentence corpus: 4,355,291 corpus-slice entries across 5 sources (Tatoeba curated 26K + Tatoeba full 232K + KFTT 444K + JESC 2.8M + WikiMatrix 852K; ~26K curated/full overlap). WordNet: 596,612 semantic relations. Grammar: 595 entries, 90.3% pattern-matched, 49 formality fixes. Conjugations: 3,511 (added adj-ix). Radicals: 242/253 (95.7%). Pitch accent: 131,389. Frequency: 7 sources. Exports: Yomitan, SQLite, Anki .apkg.",
+  "phase_description": "Phase 4 active (v0.9.0). Sentence corpus: 4,355,291 corpus-slice entries across 5 sources (Tatoeba curated 26K + Tatoeba full 232K + KFTT 444K + JESC 2.8M + WikiMatrix 852K; ~26K curated/full overlap). WordNet: 596,612 semantic relations. Grammar: 595 entries, 90.3% pattern-matched, 49 formality fixes. Conjugations: 3,511 (added adj-ix). Radicals: 242/253 (95.7%). Pitch accent: 136,799 (124,011 Kanjium + 12,788 Wiktionary). Frequency: 7 sources. Exports: Yomitan, SQLite, Anki .apkg.",
   "generated": "2026-04-14",
   "license": "CC-BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
