@@ -79,11 +79,11 @@ OUT_DIR = REPO_ROOT / "data" / "cross-refs"
 # All sentence corpora — for expanded cross-refs (gitignored outputs)
 CORPUS_DIR = REPO_ROOT / "data" / "corpus"
 ALL_SENTENCE_FILES: list[tuple[str, str]] = [
-    ("sentences.json", ""),                    # curated: IDs are plain integers
-    ("sentences-tatoeba-full.json", ""),        # full Tatoeba: IDs are plain integers
-    ("sentences-kftt.json", ""),                # KFTT: IDs already prefixed "kftt-"
-    ("sentences-jesc.json", ""),                # JESC: IDs already prefixed "jesc-"
-    ("sentences-wikimatrix.json", ""),          # WikiMatrix: IDs already prefixed "wikimatrix-"
+    ("sentences.json", ""),                    # curated Tatoeba: IDs prefixed "tatoeba-"
+    ("sentences-tatoeba-full.json", ""),        # full Tatoeba: IDs prefixed "tatoeba-"
+    ("sentences-kftt.json", ""),                # KFTT: IDs prefixed "kftt-"
+    ("sentences-jesc.json", ""),                # JESC: IDs prefixed "jesc-"
+    ("sentences-wikimatrix.json", ""),          # WikiMatrix: IDs prefixed "wikimatrix-"
 ]
 
 
@@ -443,7 +443,7 @@ def build() -> None:
                 "grammar_id",
                 "sentence_id",
                 ["data/grammar/grammar.json"],
-                {"mapping": "Enables 'show me sentences using this grammar pattern' queries. Sentence IDs may be Tatoeba IDs (plain) or KFTT IDs (prefixed 'kftt:')."},
+                {"mapping": "Enables 'show me sentences using this grammar pattern' queries. All sentence IDs use the '{source}-{n}' convention (e.g., 'tatoeba-74694', 'kftt-1')."},
             )
 
     # sentence-to-words: reverse of word-to-sentences (dict inversion)

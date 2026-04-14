@@ -127,8 +127,8 @@ Status values:
 - **License**: CC-BY-SA 4.0 (compatible).
 - **Effort to integrate**: Medium-high. Wiktionary entries are free-form and inconsistent; extracting structured data (readings, pitch, meanings, examples) requires per-template parsing.
 - **Value**: Secondary coverage of vocabulary that JMdict may lack; per-entry etymology notes; pitch accent for some modern terms. Filling the post-2022 Kanjium gap is one concrete use case.
-- **Status**: **DELIVERED (v0.8.0+)**. Pitch accent extracted from Japanese Wiktionary via kaikki.org/wiktextract pre-processed JSONL. 7,378 entries not in Kanjium, covering post-2022 vocabulary gap. Accent type tags (Heiban, Atamadaka, Nakadaka, Odaka) converted to numeric mora positions. Output: `data/enrichment/pitch-accent-wiktionary.json`. Did NOT require mwparserfromhell — used kaikki.org structured data instead.
-- **Recommendation**: Re-extract periodically from kaikki.org as Wiktionary coverage grows. The committed JSON is the version pin (kaikki.org URLs are not stable).
+- **Status**: **DELIVERED (v0.8.0+, pipeline-integrated v0.9.0+)**. Pitch accent extracted from Japanese Wiktionary via kaikki.org/wiktextract pre-processed JSONL. 12,788 entries not in Kanjium (deduplicated by (word, reading) pair), covering post-2022 vocabulary gap. Accent type tags (Heiban, Atamadaka, Nakadaka, Odaka) converted to numeric mora positions. Now integrated into the standard build pipeline (`build/transform/pitch_wiktionary.py`) with upstream source pinned in `fetch.py`. Output: `data/enrichment/pitch-accent-wiktionary.json`.
+- **Recommendation**: Refresh upstream kaikki.org data periodically (clear SHA256 in manifest.json to accept new versions). Pipeline handles extraction and deduplication automatically.
 
 ### KFTT (Kyoto Free Translation Task)
 

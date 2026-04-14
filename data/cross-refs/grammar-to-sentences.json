@@ -9,7 +9,7 @@
       "data/grammar/grammar.json"
     ],
     "field_notes": {
-      "mapping": "Enables 'show me sentences using this grammar pattern' queries. Sentence IDs may be Tatoeba IDs (plain) or KFTT IDs (prefixed 'kftt:')."
+      "mapping": "Enables 'show me sentences using this grammar pattern' queries. All sentence IDs use the '{source}-{n}' convention (e.g., 'tatoeba-74694', 'kftt-1')."
     },
     "source": "Derived cross-reference built from data/grammar/grammar.json by build/transform/cross_links.py.",
     "license": "CC-BY-SA 4.0. Inherits from the source files (EDRDG License / CC-BY-SA 4.0) and the pipeline code license (CC-BY-SA 4.0). See LICENSE and ATTRIBUTION.md for upstream details."

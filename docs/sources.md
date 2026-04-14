@@ -329,10 +329,10 @@ The `freq` field in KANJIDIC2 entries (ingested via jmdict-simplified) provides 
 ## Japanese Wiktionary pitch accent (via kaikki.org/wiktextract)
 
 - **What it is**: Pitch accent data extracted from the Japanese-edition Wiktionary (ja.wiktionary.org), pre-processed by the wiktextract project into structured JSONL.
-- **Where we use it**: `data/enrichment/pitch-accent-wiktionary.json` — supplementary pitch accent for 7,378 words not in Kanjium.
+- **Where we use it**: `data/enrichment/pitch-accent-wiktionary.json` — supplementary pitch accent for 12,788 words not in Kanjium (deduplicated by (word, reading) pair).
 - **License**: CC-BY-SA 4.0 (Wikimedia Foundation).
-- **Pinning**: The kaikki.org JSONL is updated weekly and not version-pinnable. The committed JSON file IS the version pin — regeneration requires re-downloading and re-extracting. Extraction script: `.tmp/extract_wikt_pitch.py` (ephemeral). Extraction date recorded in metadata.
-- **Methodology**: Accent type tags (Heiban, Atamadaka, Nakadaka, Odaka) from Tokyo standard pronunciation are converted to numeric mora positions. Entries already in Kanjium are excluded.
+- **Pinning**: Added to `build/fetch.py` as a pinned upstream source. The kaikki.org JSONL is updated weekly; first fetch records the SHA256, subsequent fetches verify. Hash mismatch is fatal — clear the hash in manifest.json to accept a new version. Transform: `build/transform/pitch_wiktionary.py`.
+- **Methodology**: Accent type tags (Heiban, Atamadaka, Nakadaka, Odaka) from Tokyo standard pronunciation are converted to numeric mora positions. Moraic nasals (ん) are counted correctly via romanization analysis. Entries already in Kanjium (by (word, reading) pair) are excluded. Overlap statistics are tracked in the output metadata.
 
 ---
 

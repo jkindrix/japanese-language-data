@@ -148,7 +148,7 @@ def _metadata(source: dict, count: int, filter_note: str, tags: dict) -> dict:
             "kana": "Kana-only writings with applies-to relations to specific kanji writings.",
             "sense": "Senses = translations plus metadata (parts of speech, fields, dialects, misc).",
             "sense.gloss.lang": "Translation language code (eng=English etc.) per jmdict-simplified convention.",
-            "sense.examples": "Editor-curated example sentences from Tatoeba, linked by sentence_id. The sentence_id can be used to look up the original at https://tatoeba.org/en/sentences/show/<id>.",
+            "sense.examples": "Editor-curated example sentences from Tatoeba, linked by sentence_id. IDs use the '{source}-{n}' format (e.g., 'tatoeba-12345'). Strip the 'tatoeba-' prefix to look up the original at https://tatoeba.org/en/sentences/show/{n}.",
             "jlpt_waller": "Current N1-N5 level from Jonathan Waller's JLPT lists (tanos.co.uk). For words whose JMdict entry covers multiple homographic variants assigned to different JLPT levels, the easier level (higher N-number, closer to beginner) wins. See the classifications file for all per-variant assignments.",
             "frequency_media": "Rank in modern media frequency corpus. Currently null for all entries — see data/enrichment/frequency-subtitles.json for spoken-media frequency (join by word text). Will be populated inline when a license-compatible source with sufficient coverage is available.",
             "kanji.common and kana.common": "Derived from JMdict priority markers (news1, ichi1, spec1, spec2, gai1). True = common usage.",

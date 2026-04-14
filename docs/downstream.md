@@ -45,7 +45,7 @@ Cross-reference files (`data/cross-refs/`) are already keyed by ID — load them
 | `frequency-subtitles.json` | 8,598 | 912 KB | 3 MB |
 | `frequency-web.json` | 11,038 | 1.2 MB | 5 MB |
 | `frequency-wikipedia.json` | 14,553 | 1.6 MB | 6 MB |
-| `pitch-accent-wiktionary.json` | 7,378 | 1.1 MB | 4 MB |
+| `pitch-accent-wiktionary.json` | 12,788 | 1.8 MB | 7 MB |
 | `counter-words.json` | 125 | 24 KB | <1 MB |
 | `ateji.json` | 239 | 52 KB | <1 MB |
 | `jukugo-compounds.json` | 14,350 | 8.2 MB | 25 MB |
