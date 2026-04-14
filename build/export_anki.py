@@ -161,8 +161,8 @@ def export() -> None:
     deck_kanji = genanki.Deck(DECK_ID_KANJI, f"Japanese Language Data v{version}::Kanji")
     deck_grammar = genanki.Deck(DECK_ID_GRAMMAR, f"Japanese Language Data v{version}::Grammar")
 
-    # Load enrichment lookups — Kanjium first, Wiktionary supplement as fallback
-    pitch_lookup: dict[str, str] = {}
+    # Load enrichment lookups — union positions from Kanjium + Wiktionary
+    pitch_positions: dict[str, set[int]] = {}
     for pitch_path in (
         DATA_DIR / "enrichment" / "pitch-accent.json",
         DATA_DIR / "enrichment" / "pitch-accent-wiktionary.json",
@@ -172,8 +172,14 @@ def export() -> None:
             for e in pitch_data.get("entries", []):
                 key = e.get("word", "")
                 positions = e.get("pitch_positions", [])
-                if key and positions and key not in pitch_lookup:
-                    pitch_lookup[key] = "/".join(str(p) for p in positions)
+                if key and positions:
+                    if key not in pitch_positions:
+                        pitch_positions[key] = set(positions)
+                    else:
+                        pitch_positions[key].update(positions)
+    pitch_lookup: dict[str, str] = {
+        k: "/".join(str(p) for p in sorted(v)) for k, v in pitch_positions.items()
+    }
 
     # Vocabulary cards
     words_data = _load_json(DATA_DIR / "core" / "words.json")

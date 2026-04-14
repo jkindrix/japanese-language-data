@@ -46,11 +46,12 @@ def _build_tag_bank(words_data: dict) -> list[list]:
 def _load_pitch_lookup() -> dict[tuple[str, str], str]:
     """Build (word, reading) → pitch notation from all pitch accent sources.
 
-    Loads Kanjium first, then Wiktionary supplement (entries not already
-    in Kanjium). Returns a compact string like '0' (heiban), '1'
+    Loads Kanjium first, then Wiktionary supplement. For overlapping
+    entries, unions the pitch positions from both sources (both are valid
+    accepted patterns). Returns a compact string like '0' (heiban), '1'
     (atamadaka), 'N' (drop after mora N). Multiple positions joined with '/'.
     """
-    lookup: dict[tuple[str, str], str] = {}
+    lookup: dict[tuple[str, str], set[int]] = {}
     for path in (PITCH_JSON, PITCH_WIKT_JSON):
         if not path.exists():
             continue
@@ -62,8 +63,10 @@ def _load_pitch_lookup() -> dict[tuple[str, str], str]:
             if word and positions:
                 key = (word, reading)
                 if key not in lookup:
-                    lookup[key] = "/".join(str(p) for p in positions)
-    return lookup
+                    lookup[key] = set(positions)
+                else:
+                    lookup[key].update(positions)
+    return {k: "/".join(str(p) for p in sorted(v)) for k, v in lookup.items()}
 
 
 def _load_freq_lookup() -> dict[str, int]:

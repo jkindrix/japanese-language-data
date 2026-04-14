@@ -217,6 +217,19 @@ SOURCES: tuple[Source, ...] = (
         description="Japanese WordNet (wn-ja) v1.1 — 94K Japanese words, 158K senses, 283K semantic relations.",
         license="NICT permissive (BSD-style, no fee/royalty)",
     ),
+    # ---- Wiktionary pitch accent (Phase 4) -----------------------------------
+    # kaikki.org pre-extracts Japanese Wiktionary into JSONL weekly. This URL
+    # is not version-pinnable (same URL, different content each week). We
+    # treat it like any other source: the first fetch records the SHA256,
+    # subsequent fetches verify. When kaikki.org updates, the hash mismatch
+    # is fatal — clear the hash in manifest.json to accept the new version.
+    Source(
+        name="wiktionary-pitch-ja",
+        url="https://kaikki.org/dictionary/downloads/ja/ja-extract.jsonl.gz",
+        cache_path="wiktionary-pitch/ja-extract.jsonl.gz",
+        description="Japanese Wiktionary pitch accent via kaikki.org/wiktextract (weekly updates, Tokyo standard accent).",
+        license="CC-BY-SA 4.0",
+    ),
     # ---- Phase 4 additions --------------------------------------------------
     # Wikipedia "Kangxi radicals" article, pinned to revision 1346511063 via
     # index.php's action=raw endpoint. This returns the raw wikitext for that

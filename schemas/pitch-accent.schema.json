@@ -87,6 +87,19 @@
         "wiktextract_dump_date": {
           "type": "string",
           "description": "Date of the Wiktionary dump processed by wiktextract."
+        },
+        "overlap_stats": {
+          "type": "object",
+          "description": "Statistics for (word, reading) pairs present in both Kanjium and Wiktionary. Only present in the Wiktionary supplement file.",
+          "properties": {
+            "shared_entries": { "type": "integer", "minimum": 0 },
+            "agreements": { "type": "integer", "minimum": 0 },
+            "disagreements": { "type": "integer", "minimum": 0 },
+            "kanjium_extra_positions": { "type": "integer", "minimum": 0 },
+            "wiktionary_extra_positions": { "type": "integer", "minimum": 0 },
+            "note": { "type": "string" }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false

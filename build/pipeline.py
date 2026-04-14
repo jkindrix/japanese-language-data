@@ -60,6 +60,7 @@ STAGE_DEPENDENCIES: dict[str, set[str]] = {
     "ateji": {"words"},
     "jukugo": {"words", "kanji"},
     "grammar": {"sentences"},
+    "pitch_wiktionary": {"pitch"},
 }
 
 
@@ -137,6 +138,7 @@ def _build_stages() -> list[Stage]:
         kftt,
         names,
         pitch,
+        pitch_wiktionary,
         radicals,
         sentences,
         stroke_order,
@@ -157,6 +159,7 @@ def _build_stages() -> list[Stage]:
         Stage("kana", "Hand-curated hiragana/katakana dataset.", kana.build, phase=1),
         Stage("radicals", "Radical data from KRADFILE/RADKFILE.", radicals.build, phase=1),
         Stage("pitch", "Pitch accent data from Kanjium.", pitch.build, phase=2),
+        Stage("pitch_wiktionary", "Wiktionary pitch accent supplement (entries not in Kanjium).", pitch_wiktionary.build, phase=4),
         Stage("jlpt", "JLPT level classifications from Waller.", jlpt.build, phase=2),
         Stage("frequency", "Frequency rankings (newspaper corpus from KANJIDIC2).", frequency.build, phase=2),
         Stage("sentences", "Example sentences from Tatoeba via jmdict-examples.", sentences.build, phase=1),
