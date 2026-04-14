@@ -3,7 +3,7 @@
   "version": "0.9.0",
   "phase": 4,
   "phase_description": "Phase 4 active (v0.9.0). Sentence corpus: 4,355,291 corpus-slice entries across 5 sources (Tatoeba curated 26K + Tatoeba full 232K + KFTT 444K + JESC 2.8M + WikiMatrix 852K; ~26K curated/full overlap). WordNet: 596,612 semantic relations. Grammar: 595 entries, 90.3% pattern-matched, 49 formality fixes. Conjugations: 3,511 (added adj-ix). Radicals: 242/253 (95.7%). Pitch accent: 131,389. Frequency: 7 sources. Exports: Yomitan, SQLite, Anki .apkg.",
-  "generated": "2026-04-13",
+  "generated": "2026-04-14",
   "license": "CC-BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
   "upstream_update_obligation": "Monthly (per EDRDG License §4).",
@@ -169,7 +169,7 @@
     "data/corpus/sentences-kftt.json": 443849,
     "data/corpus/sentences-tatoeba-full.json": 232368,
     "data/enrichment/pitch-accent.json": 124011,
-    "data/enrichment/pitch-accent-wiktionary.json": 7378,
+    "data/enrichment/pitch-accent-wiktionary.json": 12788,
     "data/enrichment/frequency-newspaper.json": 2501,
     "data/enrichment/frequency-modern.json": null,
     "data/enrichment/frequency-corpus.json": 14647,
@@ -195,7 +195,7 @@
     "data/cross-refs/reading-to-words.json": 24927,
     "data/cross-refs/radical-to-kanji.json": 253,
     "data/cross-refs/kanji-to-sentences.json": 2543,
-    "data/cross-refs/word-to-grammar.json": 1577,
+    "data/cross-refs/word-to-grammar.json": 1578,
     "data/cross-refs/grammar-to-sentences.json": 537,
     "data/cross-refs/sentence-to-words.json": 15263,
     "data/cross-refs/grammar-to-words.json": 595,
@@ -230,5 +230,76 @@
     "Expand grammar-to-sentence linking — current 90.3% pattern match rate (Tatoeba + KFTT) may improve with broader corpus matching or relaxed normalization.",
     "Phase 4 remaining: expand Aozora curated selection (47 works → more), download Common Voice JA transcripts (needs Mozilla account), explore additional frequency sources. See docs/phase4-candidates.md.",
     "Increase direct unit test coverage toward 85%+ (currently 80%; fail-under at 80%). Low-coverage modules: validate.py (63%), conjugations.py (60%), aozora.py (50%)."
-  ]
+  ],
+  "stroke_order_coverage": {
+    "grade_1": {
+      "total": 80,
+      "with_svg": 80,
+      "coverage_pct": 100.0
+    },
+    "grade_2": {
+      "total": 160,
+      "with_svg": 160,
+      "coverage_pct": 100.0
+    },
+    "grade_3": {
+      "total": 200,
+      "with_svg": 200,
+      "coverage_pct": 100.0
+    },
+    "grade_4": {
+      "total": 202,
+      "with_svg": 202,
+      "coverage_pct": 100.0
+    },
+    "grade_5": {
+      "total": 193,
+      "with_svg": 193,
+      "coverage_pct": 100.0
+    },
+    "grade_6": {
+      "total": 191,
+      "with_svg": 191,
+      "coverage_pct": 100.0
+    },
+    "grade_8": {
+      "total": 1110,
+      "with_svg": 1110,
+      "coverage_pct": 100.0
+    },
+    "grade_9": {
+      "total": 651,
+      "with_svg": 644,
+      "coverage_pct": 98.9
+    },
+    "grade_10": {
+      "total": 212,
+      "with_svg": 130,
+      "coverage_pct": 61.3
+    },
+    "joyo_total": {
+      "total": 2136,
+      "with_svg": 2136,
+      "coverage_pct": 100.0
+    },
+    "all_kanji": {
+      "total": 13108,
+      "with_svg": 6416,
+      "coverage_pct": 48.9
+    }
+  },
+  "grammar_review_status": {
+    "unknown": {
+      "draft": 595,
+      "community_reviewed": 0,
+      "native_speaker_reviewed": 0,
+      "total": 595
+    },
+    "all": {
+      "draft": 595,
+      "community_reviewed": 0,
+      "native_speaker_reviewed": 0,
+      "total": 595
+    }
+  }
 }

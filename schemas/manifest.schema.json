@@ -82,6 +82,33 @@
         "type": "string"
       },
       "description": "Prioritized list of next actions for the project."
+    },
+    "stroke_order_coverage": {
+      "type": "object",
+      "description": "Stroke order SVG coverage per Joyo grade and overall.",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "total": { "type": "integer", "minimum": 0 },
+          "with_svg": { "type": "integer", "minimum": 0 },
+          "coverage_pct": { "type": "number", "minimum": 0, "maximum": 100 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "grammar_review_status": {
+      "type": "object",
+      "description": "Grammar review status breakdown by JLPT level.",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "draft": { "type": "integer", "minimum": 0 },
+          "community_reviewed": { "type": "integer", "minimum": 0 },
+          "native_speaker_reviewed": { "type": "integer", "minimum": 0 },
+          "total": { "type": "integer", "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
     }
   },
   "$defs": {

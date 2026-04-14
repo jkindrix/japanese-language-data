@@ -147,6 +147,98 @@ GITIGNORED_PATHS = {
 }
 
 
+def compute_stroke_order_coverage() -> dict[str, dict]:
+    """Compute stroke order SVG coverage per Joyo grade.
+
+    Returns a dict with per-grade counts and an overall summary.
+    Requires both kanji.json and stroke-order-index.json to exist.
+    """
+    kanji_path = REPO_ROOT / "data" / "core" / "kanji.json"
+    stroke_path = REPO_ROOT / "data" / "enrichment" / "stroke-order-index.json"
+    if not kanji_path.exists() or not stroke_path.exists():
+        return {}
+
+    kanji_data = json.loads(kanji_path.read_text(encoding="utf-8"))
+    stroke_data = json.loads(stroke_path.read_text(encoding="utf-8"))
+    characters = stroke_data.get("characters", {})
+
+    # Group kanji by grade. Joyo = grades 1-6, 8. Jinmeiyo = grades 9, 10.
+    JOYO_GRADES = {1, 2, 3, 4, 5, 6, 8}
+    grade_chars: dict[int, list[str]] = {}
+    for k in kanji_data.get("kanji", []):
+        grade = k.get("grade")
+        if grade is not None:
+            grade_chars.setdefault(grade, []).append(k["character"])
+
+    result: dict[str, dict] = {}
+    joyo_total = 0
+    joyo_with_svg = 0
+    for grade in sorted(grade_chars):
+        chars = grade_chars[grade]
+        with_svg = sum(
+            1 for ch in chars
+            if ch in characters and characters[ch].get("svg") is not None
+        )
+        label = f"grade_{grade}"
+        result[label] = {
+            "total": len(chars),
+            "with_svg": with_svg,
+            "coverage_pct": round(100.0 * with_svg / len(chars), 1) if chars else 0,
+        }
+        if grade in JOYO_GRADES:
+            joyo_total += len(chars)
+            joyo_with_svg += with_svg
+
+    # Joyo summary (grades 1-6, 8 only)
+    result["joyo_total"] = {
+        "total": joyo_total,
+        "with_svg": joyo_with_svg,
+        "coverage_pct": round(100.0 * joyo_with_svg / joyo_total, 1) if joyo_total else 0,
+    }
+
+    # Overall (all kanji in index)
+    all_total = len(characters)
+    all_with_svg = sum(1 for e in characters.values() if e.get("svg") is not None)
+    result["all_kanji"] = {
+        "total": all_total,
+        "with_svg": all_with_svg,
+        "coverage_pct": round(100.0 * all_with_svg / all_total, 1) if all_total else 0,
+    }
+
+    return result
+
+
+def compute_grammar_review_status() -> dict[str, dict]:
+    """Compute grammar review status breakdown by JLPT level.
+
+    Returns a dict with per-level and overall counts of draft,
+    community_reviewed, and native_speaker_reviewed entries.
+    """
+    grammar_path = REPO_ROOT / "data" / "grammar" / "grammar.json"
+    if not grammar_path.exists():
+        return {}
+
+    data = json.loads(grammar_path.read_text(encoding="utf-8"))
+    points = data.get("grammar_points", [])
+
+    level_status: dict[str, dict[str, int]] = {}
+    for p in points:
+        level = p.get("jlpt_level", "unknown")
+        status = p.get("review_status", "draft")
+        bucket = level_status.setdefault(level, {"draft": 0, "community_reviewed": 0, "native_speaker_reviewed": 0, "total": 0})
+        bucket[status] = bucket.get(status, 0) + 1
+        bucket["total"] += 1
+
+    # Add overall totals
+    overall = {"draft": 0, "community_reviewed": 0, "native_speaker_reviewed": 0, "total": 0}
+    for bucket in level_status.values():
+        for key in overall:
+            overall[key] += bucket[key]
+    level_status["all"] = overall
+
+    return level_status
+
+
 def print_report(counts: dict[str, int | None]) -> None:
     print(f"{'File':<48} {'Entries':>12}")
     print(f"{'-' * 48} {'-' * 12}")
@@ -169,6 +261,50 @@ def print_report(counts: dict[str, int | None]) -> None:
     print(f"{'TOTAL (all rows)':<48} {total:>12,}")
     print(f"{'UNIQUE COMMITTED (excludes derivatives + gitignored)':<48} {unique_total:>12,}")
 
+    # Stroke order coverage by grade
+    stroke_cov = compute_stroke_order_coverage()
+    if stroke_cov:
+        print()
+        print("Stroke order SVG coverage:")
+        grade_labels = {1: "Grade 1", 2: "Grade 2", 3: "Grade 3", 4: "Grade 4",
+                        5: "Grade 5", 6: "Grade 6", 8: "Secondary Joyo",
+                        9: "Jinmeiyo (9)", 10: "Jinmeiyo (10)"}
+        joyo_grades = sorted(k for k in stroke_cov if k.startswith("grade_") and int(k.split("_")[1]) in {1, 2, 3, 4, 5, 6, 8})
+        jinmeiyo_grades = sorted(k for k in stroke_cov if k.startswith("grade_") and int(k.split("_")[1]) in {9, 10})
+        for key in joyo_grades:
+            grade_num = int(key.split("_")[1])
+            info = stroke_cov[key]
+            label = grade_labels.get(grade_num, f"Grade {grade_num}")
+            print(f"  {label:<20} {info['with_svg']:>5}/{info['total']:<5} ({info['coverage_pct']}%)")
+        joyo = stroke_cov.get("joyo_total", {})
+        if joyo:
+            print(f"  {'Joyo total':<20} {joyo['with_svg']:>5}/{joyo['total']:<5} ({joyo['coverage_pct']}%)")
+        if jinmeiyo_grades:
+            for key in jinmeiyo_grades:
+                grade_num = int(key.split("_")[1])
+                info = stroke_cov[key]
+                label = grade_labels.get(grade_num, f"Grade {grade_num}")
+                print(f"  {label:<20} {info['with_svg']:>5}/{info['total']:<5} ({info['coverage_pct']}%)")
+        all_k = stroke_cov.get("all_kanji", {})
+        if all_k:
+            print(f"  {'All KANJIDIC2':<20} {all_k['with_svg']:>5}/{all_k['total']:<5} ({all_k['coverage_pct']}%)")
+
+    # Grammar review status
+    grammar_status = compute_grammar_review_status()
+    if grammar_status:
+        print()
+        print("Grammar review status:")
+        for level in ["N5", "N4", "N3", "N2", "N1"]:
+            info = grammar_status.get(level, {})
+            if not info:
+                continue
+            reviewed = info.get("community_reviewed", 0) + info.get("native_speaker_reviewed", 0)
+            print(f"  {level:<5} {reviewed:>3}/{info['total']:<3} reviewed  ({info.get('native_speaker_reviewed', 0)} native, {info.get('community_reviewed', 0)} community, {info.get('draft', 0)} draft)")
+        overall = grammar_status.get("all", {})
+        if overall:
+            reviewed = overall.get("community_reviewed", 0) + overall.get("native_speaker_reviewed", 0)
+            print(f"  {'Total':<5} {reviewed:>3}/{overall['total']:<3} reviewed")
+
 
 def update_manifest(counts: dict[str, int | None]) -> None:
     """Merge the computed counts and today's build date into manifest.json.
@@ -183,6 +319,15 @@ def update_manifest(counts: dict[str, int | None]) -> None:
         manifest = {}
     manifest["counts"] = counts
     manifest["generated"] = BUILD_DATE
+
+    # Add enrichment quality metrics
+    stroke_cov = compute_stroke_order_coverage()
+    if stroke_cov:
+        manifest["stroke_order_coverage"] = stroke_cov
+
+    grammar_status = compute_grammar_review_status()
+    if grammar_status:
+        manifest["grammar_review_status"] = grammar_status
     # Atomic write: write to a temp file in the same directory, then
     # rename.  This prevents a crash mid-write from corrupting the
     # manifest (the same pattern fetch.py uses for downloads).

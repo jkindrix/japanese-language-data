@@ -201,14 +201,29 @@ def build() -> None:
         )
     total_chars = len(index_entries)
     svg_available = sum(1 for e in index_entries.values() if e.get("svg") is not None)
+
+    # Compute Joyo-specific coverage for the warning context
+    joyo_total = 0
+    joyo_with_svg = 0
+    if KANJI_JSON.exists():
+        kanji_doc_for_cov = json.loads(KANJI_JSON.read_text(encoding="utf-8"))
+        for k in kanji_doc_for_cov.get("kanji", []):
+            if k.get("grade") is not None:
+                joyo_total += 1
+                if k["character"] in index_entries and index_entries[k["character"]].get("svg") is not None:
+                    joyo_with_svg += 1
+
     if total_chars > 0:
         coverage_pct = 100.0 * svg_available / total_chars
+        joyo_pct = (100.0 * joyo_with_svg / joyo_total) if joyo_total else 0
         if coverage_pct < 80:
             warnings.append(
-                f"Only {svg_available:,}/{total_chars:,} ({coverage_pct:.1f}%) characters "
-                f"in our kanji.json have a corresponding KanjiVG SVG. The remaining "
-                f"{total_chars - svg_available:,} characters are recorded with svg=null "
-                f"and have no stroke order data upstream."
+                f"{svg_available:,}/{total_chars:,} ({coverage_pct:.1f}%) characters "
+                f"in our kanji.json have a corresponding KanjiVG SVG. However, Joyo kanji "
+                f"(the standard set used by learners) have {joyo_pct:.1f}% coverage "
+                f"({joyo_with_svg:,}/{joyo_total:,}). The {total_chars - svg_available:,} "
+                f"characters without SVGs are predominantly rare, non-Joyo characters "
+                f"that learners are unlikely to encounter."
             )
 
     output = {
