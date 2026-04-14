@@ -179,6 +179,7 @@ def test_validate_manifest_passes() -> None:
     assert failures == [], f"manifest validation failures: {failures}"
 
 
+@pytest.mark.slow
 def test_semantic_checks_detect_no_issues_except_sort() -> None:
     """_semantic_checks against the real data files should produce at most
     the k2w-sort failure (fixed by a rebuild). No other semantic issues

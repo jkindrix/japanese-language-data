@@ -216,6 +216,7 @@ def test_semantic_checks_unsorted_cross_ref_keys(tmp_path: Path, monkeypatch) ->
 # ===================================================================
 
 
+@pytest.mark.slow
 def test_validate_all_returns_zero() -> None:
     """validate_all on the current repo data should return 0 (or at worst
     only the known k2w-sort issue which still returns 1). We accept both."""
@@ -225,6 +226,7 @@ def test_validate_all_returns_zero() -> None:
     assert rc in (0, 1), f"validate_all returned unexpected code {rc}"
 
 
+@pytest.mark.slow
 def test_main_returns_int() -> None:
     """main() delegates to validate_all and returns an int."""
     from build.validate import main
