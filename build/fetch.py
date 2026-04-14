@@ -217,6 +217,14 @@ SOURCES: tuple[Source, ...] = (
         description="Japanese WordNet (wn-ja) v1.1 — 94K Japanese words, 158K senses, 283K semantic relations.",
         license="NICT permissive (BSD-style, no fee/royalty)",
     ),
+    # ---- JmdictFurigana (Phase 4) ---------------------------------------------
+    Source(
+        name="jmdict-furigana",
+        url="https://github.com/Doublevil/JmdictFurigana/releases/download/2.3.1%2B2026-03-25/JmdictFurigana.json.zip",
+        cache_path="jmdict-furigana/JmdictFurigana.json.zip",
+        description="JmdictFurigana — per-character reading alignment (furigana) for JMdict entries.",
+        license="CC-BY-SA 4.0 (derived from JMdict, EDRDG License)",
+    ),
     # ---- Wiktionary pitch accent (Phase 4) -----------------------------------
     # kaikki.org pre-extracts Japanese Wiktionary into JSONL weekly. This URL
     # is not version-pinnable (same URL, different content each week). We

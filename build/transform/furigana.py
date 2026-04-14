@@ -16,28 +16,40 @@ from __future__ import annotations
 import logging
 
 import json
+import zipfile
 from pathlib import Path
 from build.pipeline import BUILD_DATE
 
 log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+SOURCE_ZIP = REPO_ROOT / "sources" / "jmdict-furigana" / "JmdictFurigana.json.zip"
+# Fallback: unzipped JSON for backward compatibility with pre-fetch.py setups
 SOURCE_JSON = REPO_ROOT / "sources" / "jmdict-furigana" / "JmdictFurigana.json"
 WORDS_JSON = REPO_ROOT / "data" / "core" / "words.json"
 OUT = REPO_ROOT / "data" / "enrichment" / "furigana.json"
 
 
-def build() -> None:
-    if not SOURCE_JSON.exists():
-        raise FileNotFoundError(
-            f"JmdictFurigana source not found: {SOURCE_JSON}. "
-            f"Download from https://github.com/Doublevil/JmdictFurigana/releases"
-        )
+def _load_source() -> list:
+    """Load JmdictFurigana entries from the zip or fallback to raw JSON."""
+    if SOURCE_ZIP.exists():
+        with zipfile.ZipFile(SOURCE_ZIP) as zf:
+            for name in zf.namelist():
+                if name.endswith(".json"):
+                    raw = zf.read(name).decode("utf-8-sig")
+                    return json.loads(raw)
+        raise RuntimeError(f"No JSON file found in {SOURCE_ZIP}")
+    if SOURCE_JSON.exists():
+        raw = SOURCE_JSON.read_text(encoding="utf-8-sig")
+        return json.loads(raw)
+    raise FileNotFoundError(
+        f"JmdictFurigana source not found. Run `just fetch` first."
+    )
 
-    log.info(f"loading {SOURCE_JSON.name}")
-    # JmdictFurigana uses UTF-8 BOM
-    raw = SOURCE_JSON.read_text(encoding="utf-8-sig")
-    source_entries = json.loads(raw)
+
+def build() -> None:
+    log.info(f"loading JmdictFurigana")
+    source_entries = _load_source()
     log.info(f"{len(source_entries):,} upstream entries")
 
     # Load words.json to get the set of known word texts
