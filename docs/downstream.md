@@ -43,7 +43,7 @@ Cross-reference files (`data/cross-refs/`) are already keyed by ID — load them
 | `kanji.json` | 13,108 | 17 MB | 60 MB |
 | `pitch-accent.json` | 124,011 | 17 MB | 80 MB |
 | `frequency-subtitles.json` | 8,598 | 912 KB | 3 MB |
-| `frequency-web.json` | 11,038 | 1.2 MB | 5 MB |
+| `frequency-web.json` | 11,050 | 1.2 MB | 5 MB |
 | `frequency-wikipedia.json` | 14,553 | 1.6 MB | 6 MB |
 | `pitch-accent-wiktionary.json` | 12,788 | 1.8 MB | 7 MB |
 | `counter-words.json` | 125 | 24 KB | <1 MB |
