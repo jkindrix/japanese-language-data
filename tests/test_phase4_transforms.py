@@ -233,7 +233,7 @@ class TestSentenceDifficultyHelpers:
 
         # Curated corpus (required)
         curated = {"sentences": [
-            {"id": "1", "japanese": "食べる", "english": "eat"},
+            {"id": "tatoeba-1", "japanese": "食べる", "english": "eat"},
         ]}
         (corpus_dir / "sentences.json").write_text(
             json.dumps(curated), encoding="utf-8"
@@ -274,7 +274,7 @@ class TestSentenceDifficultyHelpers:
         assert sources == {"tatoeba", "kftt"}
         # Verify source field is present and correct
         tatoeba_entry = [e for e in result["entries"] if e["source"] == "tatoeba"][0]
-        assert tatoeba_entry["sentence_id"] == "1"
+        assert tatoeba_entry["sentence_id"] == "tatoeba-1"
         kftt_entry = [e for e in result["entries"] if e["source"] == "kftt"][0]
         assert kftt_entry["sentence_id"] == "kftt-1"
         assert kftt_entry["estimated_level"] == "N3"

@@ -500,7 +500,7 @@ def test_transform_example_tatoeba() -> None:
     }
     result = _transform_example(ex)
     assert result["source"] == "tatoeba"
-    assert result["sentence_id"] == "12345"
+    assert result["sentence_id"] == "tatoeba-12345"
     assert result["japanese"] == "りんごを食べる。"
     assert result["english"] == "I eat an apple."
 
@@ -2937,7 +2937,7 @@ def test_build_word_cross_refs() -> None:
          "kanji": [{"text": "\u98df\u3079\u308b"}],
          "kana": [{"text": "\u305f\u3079\u308b"}],
          "sense": [{"examples": [
-             {"source": "tatoeba", "sentence_id": "42"}
+             {"source": "tatoeba", "sentence_id": "tatoeba-42"}
          ]}]},
     ]}
     k2w, w2k, w2s = _build_word_cross_refs(words_data)
@@ -2949,7 +2949,7 @@ def test_build_word_cross_refs() -> None:
     assert "\u98df" in w2k["100"]
     # word-to-sentences
     assert "100" in w2s
-    assert "42" in w2s["100"]
+    assert "tatoeba-42" in w2s["100"]
 
 
 def test_build_reading_to_words() -> None:
@@ -3262,7 +3262,7 @@ def _setup_sqlite_export(tmp_path, monkeypatch):
     (data_dir / "core" / "radicals.json").write_text(json.dumps(radicals), encoding="utf-8")
 
     # Corpus
-    sentences = {"sentences": [{"id": "100", "japanese": "食べます", "english": "I eat"}]}
+    sentences = {"sentences": [{"id": "tatoeba-100", "japanese": "食べます", "english": "I eat"}]}
     (data_dir / "corpus" / "sentences.json").write_text(json.dumps(sentences), encoding="utf-8")
 
     kftt = {"sentences": [{"id": "kftt-1", "japanese": "京都", "english": "Kyoto"}]}
@@ -3315,8 +3315,8 @@ def _setup_sqlite_export(tmp_path, monkeypatch):
     # Cross-refs
     for fname, mapping in [
         ("kanji-to-words.json", {"食": ["1000010"]}),
-        ("word-to-sentences.json", {"1000010": ["100"]}),
-        ("kanji-to-sentences.json", {"食": ["100"]}),
+        ("word-to-sentences.json", {"1000010": ["tatoeba-100"]}),
+        ("kanji-to-sentences.json", {"食": ["tatoeba-100"]}),
         ("radical-to-kanji.json", {"一": ["食"]}),
         ("reading-to-words.json", {"たべる": ["1000010"]}),
         ("word-to-grammar.json", {"1000010": ["n5-te"]}),
@@ -3428,7 +3428,7 @@ def test_grammar_load_tatoeba_text_index_no_file(tmp_path: Path, monkeypatch) ->
 def test_grammar_link_examples_exact(tmp_path: Path) -> None:
     from build.transform.grammar import _link_examples_to_tatoeba
 
-    text_index = {"食べます": "100"}
+    text_index = {"食べます": "tatoeba-100"}
     normalized_index = {}
     entries = [{"id": "g1", "examples": [
         {"japanese": "食べます", "source": "original"},
@@ -3438,7 +3438,7 @@ def test_grammar_link_examples_exact(tmp_path: Path) -> None:
     assert total == 1
     assert linked == 1
     assert via_norm == 0
-    assert entries[0]["examples"][0]["sentence_id"] == "100"
+    assert entries[0]["examples"][0]["sentence_id"] == "tatoeba-100"
     assert entries[0]["examples"][0]["source"] == "tatoeba"
 
 
@@ -3488,8 +3488,8 @@ def test_grammar_build_with_mock_curated(tmp_path: Path, monkeypatch) -> None:
     (curated_dir / "n5.json").write_text(json.dumps(entries), encoding="utf-8")
 
     sentences = {"sentences": [
-        {"id": "100", "japanese": "食べて待ってください", "english": "Please eat and wait"},
-        {"id": "200", "japanese": "泳いでください", "english": "Please swim"},
+        {"id": "tatoeba-100", "japanese": "食べて待ってください", "english": "Please eat and wait"},
+        {"id": "tatoeba-200", "japanese": "泳いでください", "english": "Please swim"},
     ]}
     sentences_path.write_text(json.dumps(sentences), encoding="utf-8")
 
@@ -3511,7 +3511,7 @@ def test_grammar_build_with_mock_curated(tmp_path: Path, monkeypatch) -> None:
     # Example should have been linked via exact match
     ex = result["grammar_points"][0]["examples"][0]
     assert ex["source"] == "tatoeba"
-    assert ex["sentence_id"] == "100"
+    assert ex["sentence_id"] == "tatoeba-100"
 
 
 def test_grammar_build_empty_curated_dir(tmp_path: Path, monkeypatch) -> None:
@@ -3659,7 +3659,7 @@ def test_cross_links_build_full(tmp_path: Path, monkeypatch) -> None:
 
     words = {"words": [{
         "id": "1", "kanji": [{"text": "食べる"}], "kana": [{"text": "たべる"}],
-        "sense": [{"examples": [{"sentence_id": "100"}]}],
+        "sense": [{"examples": [{"sentence_id": "tatoeba-100"}]}],
     }]}
     (data_dir / "core" / "words.json").write_text(json.dumps(words), encoding="utf-8")
 
@@ -4101,7 +4101,7 @@ def test_sentences_build(tmp_path: Path, monkeypatch) -> None:
 
     result = json.loads(out_path.read_text(encoding="utf-8"))
     assert result["metadata"]["count"] == 1  # deduped to 1
-    assert result["sentences"][0]["id"] == "100"
+    assert result["sentences"][0]["id"] == "tatoeba-100"
     assert result["sentences"][0]["curated"] is True
 
 
@@ -4293,6 +4293,106 @@ def test_pitch_build(tmp_path: Path, monkeypatch) -> None:
 def test_pitch_build_missing_source(tmp_path: Path, monkeypatch) -> None:
     from build.transform import pitch as mod
     monkeypatch.setattr(mod, "SOURCE", tmp_path / "nope.txt")
+    with pytest.raises(FileNotFoundError):
+        mod.build()
+
+
+# ---------------------------------------------------------------------------
+# pitch_wiktionary — helpers and build()
+# ---------------------------------------------------------------------------
+
+
+def test_pitch_wiktionary_parse_roman_position() -> None:
+    """Verify mora position extraction from kaikki.org romanization."""
+    from build.transform.pitch_wiktionary import _parse_roman_position
+
+    # Basic: 2 vowels before downstep
+    assert _parse_roman_position("[tàbéꜜrù]") == 2
+    # Moraic nasal counted: ń before downstep
+    assert _parse_roman_position("[shìńkóꜜkyùù]") == 3  # し(1)ん(2)こ(3)
+    # Geminate counted: doubled consonant before downstep
+    assert _parse_roman_position("[àsáꜜttè]") == 2  # あ(1)さ(2)
+    # No downstep mark → None
+    assert _parse_roman_position("[tàbérù]") is None
+    # Empty → None
+    assert _parse_roman_position("") is None
+
+
+def test_pitch_wiktionary_count_morae() -> None:
+    """Verify mora counting for kana readings."""
+    from build.transform.pitch_wiktionary import _count_morae
+
+    assert _count_morae("たべる") == 3
+    assert _count_morae("しんこきゅう") == 5  # し-ん-こ-きゅう: ゅ is small → し(1)ん(2)こ(3)き(4)う(5)
+    assert _count_morae("きょう") == 2  # き+ょ=1, う=1; ょ is small
+    assert _count_morae("") == 0
+
+
+def test_pitch_wiktionary_build(tmp_path: Path, monkeypatch) -> None:
+    """Full build() with mock Wiktionary source and Kanjium data."""
+    import gzip
+    from build.transform import pitch_wiktionary as mod
+
+    # Create mock Kanjium data (one entry: 食べる with position 2)
+    kanjium = {
+        "metadata": {"source": "test", "license": "test", "generated": "2026-01-01",
+                      "count": 1, "field_notes": {}},
+        "entries": [{"word": "食べる", "reading": "たべる", "pitch_positions": [2], "mora_count": 3}],
+    }
+    kanjium_path = tmp_path / "pitch-accent.json"
+    kanjium_path.write_text(json.dumps(kanjium), encoding="utf-8")
+
+    # Create mock Wiktionary JSONL.gz with:
+    # - 食べる (overlap with Kanjium — should be excluded from supplement)
+    # - 飲む (new — Heiban, should appear in supplement)
+    # - 深呼吸 (new — Nakadaka with ん, tests nasal counting)
+    lines = [
+        json.dumps({
+            "lang_code": "ja", "word": "食べる",
+            "sounds": [{"tags": ["Tokyo", "Nakadaka"], "other": "たべる",
+                         "roman": "[tàbéꜜrù]"}],
+        }),
+        json.dumps({
+            "lang_code": "ja", "word": "飲む",
+            "sounds": [{"tags": ["Tokyo", "Heiban"], "other": "のむ", "roman": "[nòmú]"}],
+        }),
+        json.dumps({
+            "lang_code": "ja", "word": "深呼吸",
+            "sounds": [{"tags": ["Tokyo", "Nakadaka"], "other": "しんこきゅう",
+                         "roman": "[shìńkóꜜkyùù]"}],
+        }),
+        json.dumps({"lang_code": "en", "word": "skip"}),  # non-Japanese, skipped
+    ]
+    source_path = tmp_path / "ja-extract.jsonl.gz"
+    with gzip.open(source_path, "wt", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+
+    out_path = tmp_path / "pitch-accent-wiktionary.json"
+    monkeypatch.setattr(mod, "SOURCE", source_path)
+    monkeypatch.setattr(mod, "KANJIUM_PATH", kanjium_path)
+    monkeypatch.setattr(mod, "OUT", out_path)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+
+    mod.build()
+
+    result = json.loads(out_path.read_text(encoding="utf-8"))
+    # 食べる excluded (in Kanjium); 飲む and 深呼吸 included
+    assert result["metadata"]["count"] == 2
+    words = {e["word"]: e for e in result["entries"]}
+    assert "飲む" in words
+    assert words["飲む"]["pitch_positions"] == [0]  # Heiban
+    assert "深呼吸" in words
+    assert words["深呼吸"]["pitch_positions"] == [3]  # Nakadaka: し(1)ん(2)こ(3)
+    assert "食べる" not in words  # excluded by dedup
+    # Overlap stats should reflect the 食べる overlap
+    stats = result["metadata"]["overlap_stats"]
+    assert stats["shared_entries"] == 1
+    assert stats["agreements"] == 1  # both say position 2
+
+
+def test_pitch_wiktionary_build_missing_source(tmp_path: Path, monkeypatch) -> None:
+    from build.transform import pitch_wiktionary as mod
+    monkeypatch.setattr(mod, "SOURCE", tmp_path / "nope.jsonl.gz")
     with pytest.raises(FileNotFoundError):
         mod.build()
 
