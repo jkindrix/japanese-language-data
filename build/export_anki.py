@@ -21,6 +21,7 @@ from pathlib import Path
 import genanki
 
 from build.constants import DATA_DIR, MANIFEST_PATH, REPO_ROOT
+from build.pitch_lookup import load_merged_pitch, format_pitch_string
 
 DIST_DIR = REPO_ROOT / "dist"
 OUT_APKG = DIST_DIR / "japanese-language-data.apkg"
@@ -161,25 +162,20 @@ def export() -> None:
     deck_kanji = genanki.Deck(DECK_ID_KANJI, f"Japanese Language Data v{version}::Kanji")
     deck_grammar = genanki.Deck(DECK_ID_GRAMMAR, f"Japanese Language Data v{version}::Grammar")
 
-    # Load enrichment lookups — union positions from Kanjium + Wiktionary
-    pitch_positions: dict[str, set[int]] = {}
-    for pitch_path in (
-        DATA_DIR / "enrichment" / "pitch-accent.json",
-        DATA_DIR / "enrichment" / "pitch-accent-wiktionary.json",
-    ):
-        pitch_data = _load_json(pitch_path)
-        if pitch_data:
-            for e in pitch_data.get("entries", []):
-                key = e.get("word", "")
-                positions = e.get("pitch_positions", [])
-                if key and positions:
-                    if key not in pitch_positions:
-                        pitch_positions[key] = set(positions)
-                    else:
-                        pitch_positions[key].update(positions)
-    pitch_lookup: dict[str, str] = {
-        k: "/".join(str(p) for p in sorted(v)) for k, v in pitch_positions.items()
-    }
+    # Load enrichment lookups — shared pitch accent loader (union merge)
+    # Anki uses word-only key (no reading) since cards are keyed by word text.
+    # For words with multiple readings, this picks up all positions across readings.
+    merged = load_merged_pitch()
+    pitch_lookup: dict[str, str] = {}
+    for (word, _reading), positions in merged.items():
+        formatted = format_pitch_string(positions)
+        if word not in pitch_lookup:
+            pitch_lookup[word] = formatted
+        else:
+            # Union positions across readings for the same word text
+            existing = set(int(p) for p in pitch_lookup[word].split("/"))
+            existing.update(positions)
+            pitch_lookup[word] = format_pitch_string(sorted(existing))
 
     # Vocabulary cards
     words_data = _load_json(DATA_DIR / "core" / "words.json")

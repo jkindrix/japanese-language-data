@@ -17,6 +17,7 @@ import sys
 from pathlib import Path
 
 from build.constants import DATA_DIR, MANIFEST_PATH, REPO_ROOT
+from build.pitch_lookup import load_merged_pitch_full
 
 DIST_DIR = REPO_ROOT / "dist"
 OUT_DB = DIST_DIR / "japanese-language-data.sqlite"
@@ -372,16 +373,15 @@ def export() -> None:
         n = _insert_grammar(conn, grammar_data)
         print(f"[sqlite]   grammar: {n:,}")
 
-    # Enrichment
-    pitch_data = _load_json(DATA_DIR / "enrichment" / "pitch-accent.json")
-    if pitch_data:
-        n = _insert_pitch(conn, pitch_data)
-        print(f"[sqlite]   pitch accent: {n:,}")
-
-    pitch_wikt_data = _load_json(DATA_DIR / "enrichment" / "pitch-accent-wiktionary.json")
-    if pitch_wikt_data:
-        n = _insert_pitch(conn, pitch_wikt_data)
-        print(f"[sqlite]   pitch accent (wiktionary): {n:,}")
+    # Enrichment — pitch accent (merged from Kanjium + Wiktionary via shared loader)
+    merged_pitch = load_merged_pitch_full()
+    if merged_pitch:
+        rows = [
+            (word, reading, json.dumps(sorted(entry.positions)), entry.mora_count)
+            for (word, reading), entry in merged_pitch.items()
+        ]
+        conn.executemany("INSERT OR IGNORE INTO pitch_accent VALUES (?,?,?,?)", rows)
+        print(f"[sqlite]   pitch accent (merged): {len(rows):,}")
 
     freq_data = _load_json(DATA_DIR / "enrichment" / "frequency-corpus.json")
     if freq_data:

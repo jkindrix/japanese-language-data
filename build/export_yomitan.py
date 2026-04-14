@@ -20,8 +20,7 @@ from build.constants import DATA_DIR, MANIFEST_PATH, REPO_ROOT
 DIST_DIR = REPO_ROOT / "dist"
 WORDS_JSON = DATA_DIR / "core" / "words.json"
 KANJI_JSON = DATA_DIR / "core" / "kanji.json"
-PITCH_JSON = DATA_DIR / "enrichment" / "pitch-accent.json"
-PITCH_WIKT_JSON = DATA_DIR / "enrichment" / "pitch-accent-wiktionary.json"
+from build.pitch_lookup import load_merged_pitch, format_pitch_string
 FREQ_SUB_JSON = DATA_DIR / "enrichment" / "frequency-subtitles.json"
 FREQ_WEB_JSON = DATA_DIR / "enrichment" / "frequency-web.json"
 FREQ_WIKI_JSON = DATA_DIR / "enrichment" / "frequency-wikipedia.json"
@@ -46,27 +45,11 @@ def _build_tag_bank(words_data: dict) -> list[list]:
 def _load_pitch_lookup() -> dict[tuple[str, str], str]:
     """Build (word, reading) → pitch notation from all pitch accent sources.
 
-    Loads Kanjium first, then Wiktionary supplement. For overlapping
-    entries, unions the pitch positions from both sources (both are valid
-    accepted patterns). Returns a compact string like '0' (heiban), '1'
-    (atamadaka), 'N' (drop after mora N). Multiple positions joined with '/'.
+    Delegates to the shared pitch_lookup module for loading and union
+    merging. Returns a compact string like '0', '1', '0/2/3'.
     """
-    lookup: dict[tuple[str, str], set[int]] = {}
-    for path in (PITCH_JSON, PITCH_WIKT_JSON):
-        if not path.exists():
-            continue
-        data = json.loads(path.read_text(encoding="utf-8"))
-        for e in data.get("entries", []):
-            word = e.get("word", "")
-            reading = e.get("reading", "")
-            positions = e.get("pitch_positions", [])
-            if word and positions:
-                key = (word, reading)
-                if key not in lookup:
-                    lookup[key] = set(positions)
-                else:
-                    lookup[key].update(positions)
-    return {k: "/".join(str(p) for p in sorted(v)) for k, v in lookup.items()}
+    merged = load_merged_pitch()
+    return {k: format_pitch_string(v) for k, v in merged.items()}
 
 
 def _load_freq_lookup() -> dict[str, int]:
