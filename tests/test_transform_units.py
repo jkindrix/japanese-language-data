@@ -4893,3 +4893,84 @@ def test_kana_build_long_vowel() -> None:
     entries = _build_long_vowel()
     assert len(entries) == 1
     assert entries[0]["character"] == "ー"
+
+
+# ---------------------------------------------------------------------------
+# sync_docs — table syncing and prose verification
+# ---------------------------------------------------------------------------
+
+
+def test_sync_docs_table_row_regex() -> None:
+    """The table row regex matches both README and downstream.md formats."""
+    from build.sync_docs import _TABLE_ROW_RE
+
+    # README format: | `data/core/words.json` | Source | 23,119 | ✓ | desc |
+    m = _TABLE_ROW_RE.match("| `data/core/words.json` | JMdict | 23,119 | ✓ | desc |")
+    assert m is not None
+    assert m.group(2) == "data/core/words.json"
+    assert m.group(3).strip() == "23,119"
+
+    # Downstream format: | `words.json` | 23,119 | 46 MB | 120 MB |
+    m = _TABLE_ROW_RE.match("| `words.json` | 23,119 | 46 MB | 120 MB |")
+    assert m is not None
+    assert m.group(2) == "words.json"
+    assert m.group(3).strip() == "23,119"
+
+    # Non-matching: header row
+    m = _TABLE_ROW_RE.match("| File | Count | Size |")
+    assert m is None
+
+
+def test_sync_docs_match_path() -> None:
+    """Path matching handles full paths and bare filenames."""
+    from build.sync_docs import _match_path_to_manifest
+
+    counts = {"data/core/words.json": 23119, "data/enrichment/pitch-accent.json": 124011}
+
+    # Exact match
+    assert _match_path_to_manifest("data/core/words.json", counts) == 23119
+    # Suffix match (bare filename)
+    assert _match_path_to_manifest("words.json", counts) == 23119
+    assert _match_path_to_manifest("pitch-accent.json", counts) == 124011
+    # No match
+    assert _match_path_to_manifest("nonexistent.json", counts) is None
+
+
+def test_sync_docs_updates_table(tmp_path: Path) -> None:
+    """sync_table_counts rewrites drifted counts in place."""
+    from build.sync_docs import sync_table_counts
+
+    doc = tmp_path / "test.md"
+    doc.write_text(
+        "# Header\n"
+        "| `data/core/words.json` | Source | 99,999 | ✓ | desc |\n"
+        "| `data/core/kanji.json` | Source | 13,108 | ✓ | desc |\n",
+        encoding="utf-8",
+    )
+    counts = {"data/core/words.json": 23119, "data/core/kanji.json": 13108}
+    changes = sync_table_counts(doc, counts)
+
+    assert len(changes) == 1  # only words.json was wrong
+    assert "23,119" in changes[0]
+    # Verify file was rewritten
+    text = doc.read_text(encoding="utf-8")
+    assert "23,119" in text
+    assert "99,999" not in text
+    assert "13,108" in text  # unchanged
+
+
+def test_sync_docs_verify_prose(tmp_path: Path, monkeypatch) -> None:
+    """Prose verification catches known count patterns."""
+    from build.sync_docs import verify_prose_counts, REPO_ROOT
+
+    # Create a test doc with a drifted count
+    doc = tmp_path / "docs" / "architecture.md"
+    doc.parent.mkdir(parents=True)
+    doc.write_text("Wiktionary pitch accent (7,378 entries)\n", encoding="utf-8")
+
+    monkeypatch.setattr("build.sync_docs.REPO_ROOT", tmp_path)
+    counts = {"data/enrichment/pitch-accent-wiktionary.json": 12788}
+    warnings = verify_prose_counts(counts)
+    assert len(warnings) == 1
+    assert "7,378" in warnings[0]
+    assert "12,788" in warnings[0]

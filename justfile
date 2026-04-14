@@ -88,11 +88,25 @@ validate:
     @printf '{{cyan}}==> Validating data files against schemas{{reset}}\n'
     {{python}} -m build.validate
 
-# Print entry counts and coverage stats; updates manifest.json
+# Print entry counts and coverage stats; updates manifest.json and syncs doc counts
 [group('validate')]
 stats:
     @printf '{{cyan}}==> Computing stats{{reset}}\n'
     {{python}} -m build.stats
+    @printf '{{cyan}}==> Syncing doc counts with manifest{{reset}}\n'
+    {{python}} -m build.sync_docs
+
+# Sync documentation counts with manifest.json (auto-fix tables, warn on prose drift)
+[group('validate')]
+sync-docs:
+    @printf '{{cyan}}==> Syncing doc counts{{reset}}\n'
+    {{python}} -m build.sync_docs
+
+# Verify doc counts match manifest without modifying files
+[group('validate')]
+verify-docs:
+    @printf '{{cyan}}==> Verifying doc counts{{reset}}\n'
+    {{python}} -m build.sync_docs --verify
 
 # Run the test suite
 [group('validate')]

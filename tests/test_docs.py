@@ -263,6 +263,46 @@ def test_status_files_mention_current_radical_coverage() -> None:
             )
 
 
+def test_doc_table_counts_match_manifest() -> None:
+    """README.md and docs/downstream.md table counts must match manifest.json.
+
+    This is the test-time equivalent of ``python -m build.sync_docs --verify``.
+    It catches count drift in documentation tables without requiring the
+    sync tool to run. If this test fails, run ``just sync-docs`` to fix.
+    """
+    from build.sync_docs import _load_counts, _match_path_to_manifest, _TABLE_ROW_RE, SYNC_FILES
+
+    counts = _load_counts()
+    if not counts:
+        pytest.skip("manifest.json has no counts")
+
+    mismatches: list[str] = []
+    for file_path in SYNC_FILES:
+        if not file_path.exists():
+            continue
+        text = file_path.read_text(encoding="utf-8")
+        for i, line in enumerate(text.split("\n")):
+            m = _TABLE_ROW_RE.match(line)
+            if not m:
+                continue
+            _, cell_path, old_count_str, _ = m.groups()
+            manifest_count = _match_path_to_manifest(cell_path, counts)
+            if manifest_count is None:
+                continue
+            expected = f"{manifest_count:,}"
+            if old_count_str.strip() != expected:
+                rel = file_path.relative_to(REPO_ROOT)
+                mismatches.append(
+                    f"{rel}:{i+1}: {cell_path} says {old_count_str.strip()} "
+                    f"but manifest has {expected}"
+                )
+
+    assert mismatches == [], (
+        "Doc table counts have drifted from manifest.json. "
+        "Run `just sync-docs` to fix.\n" + "\n".join(mismatches)
+    )
+
+
 def test_status_files_do_not_present_old_radical_coverage_as_current() -> None:
     """Status-claiming files must not present the old 77.9% coverage as current.
 
