@@ -9,6 +9,7 @@ transform logic or data integrity tested elsewhere.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -470,3 +471,294 @@ def test_download_with_retries_no_retry_on_404(tmp_path: Path) -> None:
     assert call_count == MAX_RETRIES, (
         f"expected {MAX_RETRIES} attempts (HTTPError is caught as OSError); got {call_count}"
     )
+
+
+# ===================================================================
+# 10. Pipeline execution loop (build/pipeline.py)
+# ===================================================================
+
+
+def test_placeholder_raises_not_implemented() -> None:
+    """_placeholder returns a callable that raises NotImplementedError
+    with the stage name and phase number in the message."""
+    from build.pipeline import _placeholder
+
+    runner = _placeholder("test_stage", 99)
+    with pytest.raises(NotImplementedError, match="test_stage.*Phase 99"):
+        runner()
+
+
+def test_run_pipeline_success(monkeypatch) -> None:
+    """run_pipeline returns 0 when all stages succeed."""
+    from build import pipeline as pipeline_mod
+    from build.pipeline import Stage
+
+    stages = [Stage("ok_stage", "desc", lambda: None, phase=1)]
+    monkeypatch.setattr(pipeline_mod, "_build_stages", lambda: stages)
+    rc = pipeline_mod.run_pipeline(only=["ok_stage"])
+    assert rc == 0
+
+
+def test_run_pipeline_not_implemented_is_not_failure(monkeypatch) -> None:
+    """Stages raising NotImplementedError are logged as pending, not failures.
+    run_pipeline should return 0."""
+    from build import pipeline as pipeline_mod
+    from build.pipeline import Stage, _placeholder
+
+    stages = [Stage("stub", "desc", _placeholder("stub", 9), phase=9)]
+    monkeypatch.setattr(pipeline_mod, "_build_stages", lambda: stages)
+    rc = pipeline_mod.run_pipeline(only=["stub"])
+    assert rc == 0
+
+
+def test_run_pipeline_generic_exception_is_failure(monkeypatch) -> None:
+    """A stage raising RuntimeError should be recorded as a failure,
+    and run_pipeline should return 1."""
+    from build import pipeline as pipeline_mod
+    from build.pipeline import Stage
+
+    def bad_runner():
+        raise RuntimeError("stage broke")
+
+    stages = [Stage("bad", "desc", bad_runner, phase=1)]
+    monkeypatch.setattr(pipeline_mod, "_build_stages", lambda: stages)
+    rc = pipeline_mod.run_pipeline(only=["bad"])
+    assert rc == 1
+
+
+def test_run_pipeline_timeout_is_failure(monkeypatch) -> None:
+    """A stage that exceeds STAGE_TIMEOUT should be recorded as a failure."""
+    from concurrent.futures import TimeoutError as FuturesTimeout
+
+    from build import pipeline as pipeline_mod
+    from build.pipeline import Stage
+
+    def hanging_runner():
+        pass  # The mock will make it timeout
+
+    stages = [Stage("slow", "desc", hanging_runner, phase=1)]
+    monkeypatch.setattr(pipeline_mod, "_build_stages", lambda: stages)
+    # Make future.result() raise FuturesTimeout
+    monkeypatch.setattr(pipeline_mod, "STAGE_TIMEOUT", 0)
+
+    mock_future = MagicMock()
+    mock_future.result = MagicMock(side_effect=FuturesTimeout())
+
+    mock_executor = MagicMock()
+    mock_executor.__enter__ = MagicMock(return_value=mock_executor)
+    mock_executor.__exit__ = MagicMock(return_value=False)
+    mock_executor.submit = MagicMock(return_value=mock_future)
+
+    with patch.object(pipeline_mod, "ThreadPoolExecutor", return_value=mock_executor):
+        rc = pipeline_mod.run_pipeline(only=["slow"])
+    assert rc == 1
+
+
+# ===================================================================
+# 11. Pipeline CLI (build/pipeline.py main())
+# ===================================================================
+
+
+def test_main_dry_run() -> None:
+    """main() with --dry-run should return 0 without executing stages."""
+    from build.pipeline import main
+
+    rc = main(["--dry-run"])
+    assert rc == 0
+
+
+def test_main_only_flag() -> None:
+    """main() with --only should filter to the named stage."""
+    from build.pipeline import main
+
+    rc = main(["--dry-run", "--only", "kana"])
+    assert rc == 0
+
+
+def test_main_verbose_flag() -> None:
+    """main() with --verbose should not crash."""
+    from build.pipeline import main
+
+    rc = main(["--dry-run", "--verbose"])
+    assert rc == 0
+
+
+# ===================================================================
+# 12. Fetch helpers (build/fetch.py)
+# ===================================================================
+
+
+def test_sha256_known_content(tmp_path: Path) -> None:
+    """_sha256 should return the correct hash for known content."""
+    from build.fetch import _sha256
+
+    f = tmp_path / "test.bin"
+    f.write_bytes(b"hello")
+    expected = hashlib.sha256(b"hello").hexdigest()
+    assert _sha256(f) == expected
+
+
+def test_load_manifest_missing_file(tmp_path: Path, monkeypatch) -> None:
+    """_load_manifest returns {} when manifest.json does not exist."""
+    from build import fetch as fetch_mod
+
+    monkeypatch.setattr(fetch_mod, "MANIFEST_PATH", tmp_path / "nope.json")
+    result = fetch_mod._load_manifest()
+    assert result == {}
+
+
+def test_save_manifest_roundtrip(tmp_path: Path, monkeypatch) -> None:
+    """_save_manifest writes JSON that _load_manifest can read back."""
+    from build import fetch as fetch_mod
+
+    manifest_path = tmp_path / "manifest.json"
+    monkeypatch.setattr(fetch_mod, "MANIFEST_PATH", manifest_path)
+
+    data = {"version": "1.0", "sources": {"a": {"sha256": "abc"}}}
+    fetch_mod._save_manifest(data)
+    loaded = fetch_mod._load_manifest()
+    assert loaded == data
+
+
+def test_fetch_one_cache_hit(tmp_path: Path, monkeypatch) -> None:
+    """_fetch_one skips download when cached file hash matches expected."""
+    from build import fetch as fetch_mod
+    from build.fetch import Source
+
+    monkeypatch.setattr(fetch_mod, "SOURCES_DIR", tmp_path)
+
+    cache_file = tmp_path / "test" / "file.bin"
+    cache_file.parent.mkdir(parents=True)
+    cache_file.write_bytes(b"cached content")
+    file_hash = hashlib.sha256(b"cached content").hexdigest()
+
+    source = Source("test-src", "https://example.com/f", "test/file.bin", "desc", "MIT")
+    sources_meta = {"test-src": {"sha256": file_hash}}
+    mock_session = MagicMock()
+
+    fetch_mod._fetch_one(source, sources_meta, mock_session)
+    # No download should have been attempted
+    mock_session.get.assert_not_called()
+
+
+def test_fetch_one_cache_hash_mismatch(tmp_path: Path, monkeypatch) -> None:
+    """_fetch_one raises SystemExit when cached file hash doesn't match."""
+    from build import fetch as fetch_mod
+    from build.fetch import Source
+
+    monkeypatch.setattr(fetch_mod, "SOURCES_DIR", tmp_path)
+
+    cache_file = tmp_path / "test" / "file.bin"
+    cache_file.parent.mkdir(parents=True)
+    cache_file.write_bytes(b"cached content")
+
+    source = Source("test-src", "https://example.com/f", "test/file.bin", "desc", "MIT")
+    sources_meta = {"test-src": {"sha256": "wrong_hash_value"}}
+    mock_session = MagicMock()
+
+    with pytest.raises(SystemExit, match="SHA256 mismatch"):
+        fetch_mod._fetch_one(source, sources_meta, mock_session)
+
+
+def test_fetch_one_download_hash_mismatch(tmp_path: Path, monkeypatch) -> None:
+    """_fetch_one raises SystemExit when freshly downloaded file hash
+    doesn't match the expected hash in sources_meta."""
+    from build import fetch as fetch_mod
+    from build.fetch import Source
+
+    monkeypatch.setattr(fetch_mod, "SOURCES_DIR", tmp_path)
+
+    source = Source("test-src", "https://example.com/f", "test/file.bin", "desc", "MIT")
+    sources_meta = {"test-src": {"sha256": "expected_but_wrong"}}
+    mock_session = MagicMock()
+
+    def fake_download(url, dest, session):
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(b"downloaded content")
+
+    with patch.object(fetch_mod, "_download_with_retries", side_effect=fake_download):
+        with pytest.raises(SystemExit, match="SHA256 mismatch"):
+            fetch_mod._fetch_one(source, sources_meta, mock_session)
+
+
+def test_fetch_one_download_success(tmp_path: Path, monkeypatch) -> None:
+    """_fetch_one downloads and records sha256 when no cache exists."""
+    from build import fetch as fetch_mod
+    from build.fetch import Source
+
+    monkeypatch.setattr(fetch_mod, "SOURCES_DIR", tmp_path)
+
+    source = Source("test-src", "https://example.com/f", "test/file.bin", "desc", "MIT")
+    sources_meta = {}
+    mock_session = MagicMock()
+
+    content = b"fresh download"
+
+    def fake_download(url, dest, session):
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(content)
+
+    with patch.object(fetch_mod, "_download_with_retries", side_effect=fake_download):
+        fetch_mod._fetch_one(source, sources_meta, mock_session)
+
+    expected_hash = hashlib.sha256(content).hexdigest()
+    assert sources_meta["test-src"]["sha256"] == expected_hash
+
+
+def test_fetch_all_orchestration(tmp_path: Path, monkeypatch) -> None:
+    """fetch_all loads manifest, fetches sources, and saves manifest."""
+    from build import fetch as fetch_mod
+    from build.fetch import Source
+
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text('{"version": "1.0", "sources": {}}', encoding="utf-8")
+    monkeypatch.setattr(fetch_mod, "MANIFEST_PATH", manifest_path)
+    monkeypatch.setattr(fetch_mod, "SOURCES_DIR", tmp_path)
+
+    source = Source("s1", "https://example.com/f", "s1/file.bin", "desc", "MIT")
+    content = b"data"
+
+    def fake_fetch_one(src, meta, session):
+        cache = tmp_path / src.cache_path
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        cache.write_bytes(content)
+        entry = meta.setdefault(src.name, {})
+        entry["sha256"] = hashlib.sha256(content).hexdigest()
+
+    with patch.object(fetch_mod, "_fetch_one", side_effect=fake_fetch_one):
+        with patch.object(fetch_mod, "_build_session", return_value=MagicMock(close=MagicMock())):
+            result = fetch_mod.fetch_all(sources=[source])
+
+    assert "s1" in result["sources"]
+    # Verify manifest was saved to disk
+    saved = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assert "s1" in saved["sources"]
+
+
+def test_download_with_retries_5xx_retry(tmp_path: Path) -> None:
+    """5xx HTTPError is retried via the OSError branch (HTTPError inherits
+    from OSError) and succeeds on the final attempt."""
+    import requests
+    from build import fetch as fetch_mod
+    from build.fetch import MAX_RETRIES
+
+    dest = tmp_path / "output.bin"
+    call_count = 0
+
+    def fake_download_5xx(url, destination, session):
+        nonlocal call_count
+        call_count += 1
+        if call_count < MAX_RETRIES:
+            resp = MagicMock()
+            resp.status_code = 503
+            raise requests.HTTPError("503 Service Unavailable", response=resp)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes(b"ok")
+
+    with patch.object(fetch_mod, "_download", side_effect=fake_download_5xx):
+        with patch("time.sleep"):
+            fetch_mod._download_with_retries(
+                "https://example.com/file", dest, MagicMock()
+            )
+
+    assert call_count == MAX_RETRIES

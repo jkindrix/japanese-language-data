@@ -16,6 +16,7 @@ without executing them.
 from __future__ import annotations
 
 import argparse
+import fcntl
 import json
 import logging
 import sys
@@ -224,90 +225,107 @@ def run_pipeline(
         level=logging.DEBUG if verbose else logging.INFO,
     )
 
-    stages = _build_stages()
-    if not include_names:
-        stages = [s for s in stages if s.name != "names"]
-    if only:
-        stages = [s for s in stages if s.name in only]
+    from build.constants import REPO_ROOT
 
-    # Enforce the dependency DAG before running anything. This catches
-    # mis-ordered stages at startup rather than producing subtly wrong
-    # output that only appears as a byte-diff failure in CI.
-    _validate_stage_ordering(stages)
-
-    # Capture the build date once at pipeline start. This eliminates the
-    # cross-midnight race condition where a long-running build could
-    # write different dates into different output files.
-    build_date = date.today().isoformat()
-
-    log.info("Pipeline: %d stages (build date: %s)", len(stages), build_date)
-    for stage in stages:
-        log.info("  [phase %d] %s — %s", stage.phase, stage.name, stage.description)
-
-    if dry_run:
-        log.info("(dry run — no stages executed)")
-        return 0
-
-    # Make the build date available to transforms via module-level
-    # import. Transforms that write metadata.generated should use
-    # ``from build.pipeline import BUILD_DATE`` instead of calling
-    # date.today() independently. This is set once here and never
-    # changes during a pipeline run.
-    global BUILD_DATE  # noqa: PLW0603
-    BUILD_DATE = build_date
-
-    print()
-    failures: list[tuple[str, Exception]] = []
-    total_elapsed = 0.0
-    for stage in stages:
-        log.info("Running: %s", stage.name)
-        t0 = time.monotonic()
-        try:
-            # Run the stage with a timeout to prevent indefinite hangs.
-            with ThreadPoolExecutor(max_workers=1) as executor:
-                future = executor.submit(stage.runner)
-                future.result(timeout=STAGE_TIMEOUT)
-            elapsed = time.monotonic() - t0
-            total_elapsed += elapsed
-            log.info("  ok: %s (%.1fs)", stage.name, elapsed)
-        except NotImplementedError as exc:
-            elapsed = time.monotonic() - t0
-            total_elapsed += elapsed
-            log.info("  pending: %s", exc)
-        except FuturesTimeout:
-            elapsed = time.monotonic() - t0
-            total_elapsed += elapsed
-            timeout_exc = TimeoutError(
-                f"Stage '{stage.name}' timed out after {STAGE_TIMEOUT}s"
-            )
-            failures.append((stage.name, timeout_exc))
-            log.error("  TIMEOUT: %s (after %ds)", stage.name, STAGE_TIMEOUT)
-        except (RuntimeError, ValueError, FileNotFoundError, OSError,
-                KeyError, TypeError, json.JSONDecodeError) as exc:
-            elapsed = time.monotonic() - t0
-            total_elapsed += elapsed
-            failures.append((stage.name, exc))
-            log.error("  FAILED: %s (%.1fs)", exc, elapsed)
-        except Exception as exc:
-            elapsed = time.monotonic() - t0
-            total_elapsed += elapsed
-            failures.append((stage.name, exc))
-            log.error(
-                "  FAILED (unexpected %s): %s (%.1fs)",
-                type(exc).__name__, exc, elapsed,
-            )
-            traceback.print_exc()
-
-    if failures:
+    lock_path = REPO_ROOT / ".build.lock"
+    lock_file = open(lock_path, "w")  # noqa: SIM115
+    try:
+        fcntl.flock(lock_file, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError:
         log.error(
-            "%d stage(s) failed (%.1fs total):", len(failures), total_elapsed,
+            "Another build is already running (lock file: .build.lock)"
         )
-        for name, exc in failures:
-            log.error("  %s: %s", name, exc)
+        lock_file.close()
         return 1
 
-    log.info("Pipeline complete (%.1fs total).", total_elapsed)
-    return 0
+    try:
+        stages = _build_stages()
+        if not include_names:
+            stages = [s for s in stages if s.name != "names"]
+        if only:
+            stages = [s for s in stages if s.name in only]
+
+        # Enforce the dependency DAG before running anything. This catches
+        # mis-ordered stages at startup rather than producing subtly wrong
+        # output that only appears as a byte-diff failure in CI.
+        _validate_stage_ordering(stages)
+
+        # Capture the build date once at pipeline start. This eliminates the
+        # cross-midnight race condition where a long-running build could
+        # write different dates into different output files.
+        build_date = date.today().isoformat()
+
+        log.info("Pipeline: %d stages (build date: %s)", len(stages), build_date)
+        for stage in stages:
+            log.info("  [phase %d] %s — %s", stage.phase, stage.name, stage.description)
+
+        if dry_run:
+            log.info("(dry run — no stages executed)")
+            return 0
+
+        # Make the build date available to transforms via module-level
+        # import. Transforms that write metadata.generated should use
+        # ``from build.pipeline import BUILD_DATE`` instead of calling
+        # date.today() independently. This is set once here and never
+        # changes during a pipeline run.
+        global BUILD_DATE  # noqa: PLW0603
+        BUILD_DATE = build_date
+
+        print()
+        failures: list[tuple[str, Exception]] = []
+        total_elapsed = 0.0
+        for stage in stages:
+            log.info("Running: %s", stage.name)
+            t0 = time.monotonic()
+            try:
+                # Run the stage with a timeout to prevent indefinite hangs.
+                with ThreadPoolExecutor(max_workers=1) as executor:
+                    future = executor.submit(stage.runner)
+                    future.result(timeout=STAGE_TIMEOUT)
+                elapsed = time.monotonic() - t0
+                total_elapsed += elapsed
+                log.info("  ok: %s (%.1fs)", stage.name, elapsed)
+            except NotImplementedError as exc:
+                elapsed = time.monotonic() - t0
+                total_elapsed += elapsed
+                log.info("  pending: %s", exc)
+            except FuturesTimeout:
+                elapsed = time.monotonic() - t0
+                total_elapsed += elapsed
+                timeout_exc = TimeoutError(
+                    f"Stage '{stage.name}' timed out after {STAGE_TIMEOUT}s"
+                )
+                failures.append((stage.name, timeout_exc))
+                log.error("  TIMEOUT: %s (after %ds)", stage.name, STAGE_TIMEOUT)
+            except (RuntimeError, ValueError, FileNotFoundError, OSError,
+                    KeyError, TypeError, json.JSONDecodeError) as exc:
+                elapsed = time.monotonic() - t0
+                total_elapsed += elapsed
+                failures.append((stage.name, exc))
+                log.error("  FAILED: %s (%.1fs)", exc, elapsed)
+            except Exception as exc:
+                elapsed = time.monotonic() - t0
+                total_elapsed += elapsed
+                failures.append((stage.name, exc))
+                log.error(
+                    "  FAILED (unexpected %s): %s (%.1fs)",
+                    type(exc).__name__, exc, elapsed,
+                )
+                traceback.print_exc()
+
+        if failures:
+            log.error(
+                "%d stage(s) failed (%.1fs total):", len(failures), total_elapsed,
+            )
+            for name, exc in failures:
+                log.error("  %s: %s", name, exc)
+            return 1
+
+        log.info("Pipeline complete (%.1fs total).", total_elapsed)
+        return 0
+    finally:
+        fcntl.flock(lock_file, fcntl.LOCK_UN)
+        lock_file.close()
 
 
 # Build date for the current pipeline run. Set by run_pipeline() at

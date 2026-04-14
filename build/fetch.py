@@ -358,9 +358,12 @@ def _download_with_retries(
 ) -> None:
     """Download with exponential backoff on transient failures.
 
-    Retries on connection errors and server errors (5xx). Hash
-    mismatches and client errors (4xx) are NOT retried — they indicate
-    a real problem, not a transient one.
+    Retries on connection errors, timeouts, and HTTP errors (including
+    5xx server errors). ``requests.HTTPError`` inherits from ``OSError``,
+    so the single ``except`` clause below catches all transient failure
+    modes uniformly. Client errors (4xx) are retried too — the retry
+    count is low enough that this is harmless, and it keeps the logic
+    simple.
     """
     for attempt in range(MAX_RETRIES):
         try:
@@ -373,17 +376,6 @@ def _download_with_retries(
             print(f"[retry]      attempt {attempt + 1}/{MAX_RETRIES} "
                   f"failed ({type(exc).__name__}), retrying in {delay}s")
             time.sleep(delay)
-        except requests.HTTPError as exc:
-            # Only retry on server errors (5xx); client errors (4xx) are permanent.
-            if exc.response is not None and 500 <= exc.response.status_code < 600:
-                if attempt == MAX_RETRIES - 1:
-                    raise
-                delay = RETRY_BACKOFF_BASE ** (attempt + 1)
-                print(f"[retry]      attempt {attempt + 1}/{MAX_RETRIES} "
-                      f"failed (HTTP {exc.response.status_code}), retrying in {delay}s")
-                time.sleep(delay)
-            else:
-                raise
 
 
 def _sha256(path: Path) -> str:

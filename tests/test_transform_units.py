@@ -4986,3 +4986,84 @@ def test_sync_docs_verify_prose(tmp_path: Path, monkeypatch) -> None:
     assert len(warnings) == 1
     assert "7,378" in warnings[0]
     assert "12,788" in warnings[0]
+
+
+# ===========================================================================
+# conjugations.py — additional coverage for uncovered branches
+# ===========================================================================
+
+
+def test_conjugate_na_adjective_genki() -> None:
+    """na-adjective with a different stem than the existing test (元気)."""
+    from build.transform.conjugations import _conjugate_na_adjective
+
+    forms = _conjugate_na_adjective("げんき")
+    assert forms["dictionary"] == "げんきだ"
+    assert forms["polite_nonpast"] == "げんきです"
+    assert forms["polite_past"] == "げんきでした"
+    assert forms["polite_negative"] == "げんきではありません"
+    assert forms["polite_past_negative"] == "げんきではありませんでした"
+    assert forms["te_form"] == "げんきで"
+    assert forms["nai_form"] == "げんきではない"
+    assert forms["ta_form"] == "げんきだった"
+    assert forms["nakatta_form"] == "げんきではなかった"
+    assert forms["attributive"] == "げんきな"
+
+
+def test_conjugate_ix_adjective_ii() -> None:
+    """adj-ix いい: all inflected forms must use よ- stem, not い-."""
+    from build.transform.conjugations import _conjugate_ix_adjective
+
+    forms = _conjugate_ix_adjective("いい")
+    assert forms is not None
+    assert forms["dictionary"] == "いい"
+    assert forms["negative"] == "よくない"
+    assert forms["past"] == "よかった"
+    assert forms["past_negative"] == "よくなかった"
+    assert forms["adverbial"] == "よく"
+    assert forms["te_form"] == "よくて"
+    assert forms["conditional_ba"] == "よければ"
+    assert forms["conditional_tara"] == "よかったら"
+
+
+def test_conjugate_ix_adjective_kakkoii() -> None:
+    """adj-ix compound かっこいい: stem かっこ + よ-."""
+    from build.transform.conjugations import _conjugate_ix_adjective
+
+    forms = _conjugate_ix_adjective("かっこいい")
+    assert forms is not None
+    assert forms["dictionary"] == "かっこいい"
+    assert forms["negative"] == "かっこよくない"
+    assert forms["past"] == "かっこよかった"
+
+
+def test_conjugate_ix_adjective_rejects_non_ii() -> None:
+    """adj-ix must return None for stems not ending in いい."""
+    from build.transform.conjugations import _conjugate_ix_adjective
+
+    assert _conjugate_ix_adjective("たかい") is None
+
+
+def test_conjugate_godan_v5r_i_dearu_compound() -> None:
+    """v5r-i compound である: suppletive negative + blanked slots."""
+    from build.transform.conjugations import _conjugate_godan
+
+    forms = _conjugate_godan("である", "v5r-i")
+    assert forms is not None
+    assert forms["nai_form"] == "でない"
+    assert forms["nakatta_form"] == "でなかった"
+    for slot in ("potential", "passive", "causative",
+                 "imperative", "volitional", "conditional_ba"):
+        assert forms[slot] == "", f"{slot} should be blank for である"
+
+
+def test_conjugate_godan_v5r_standard() -> None:
+    """Standard v5r verb (not v5r-i): 帰る (かえる)."""
+    from build.transform.conjugations import _conjugate_godan
+
+    forms = _conjugate_godan("かえる", "v5r")
+    assert forms is not None
+    assert forms["polite_nonpast"] == "かえります"
+    assert forms["te_form"] == "かえって"
+    assert forms["nai_form"] == "かえらない"
+    assert forms["potential"] == "かえれる"

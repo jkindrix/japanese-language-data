@@ -245,7 +245,16 @@ def _build_kanji_to_sentences(sentences_data: dict) -> dict[str, list[str]]:
     return kanji_to_sentences
 
 
-def _write_xref(out_path: Path, mapping: dict, direction: str, key_type: str, value_type: str, source_files: list[str], notes: dict | None = None, extra_metadata: dict | None = None) -> None:
+def _write_xref(
+    out_path: Path,
+    mapping: dict,
+    direction: str,
+    key_type: str,
+    value_type: str,
+    source_files: list[str],
+    notes: dict | None = None,
+    extra_metadata: dict | None = None,
+) -> None:
     """Write a single cross-reference file per schemas/cross-refs.schema.json.
 
     Keys in *mapping* are sorted for deterministic output — the built

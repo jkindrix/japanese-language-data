@@ -117,6 +117,9 @@ Thumbs.db
 .env.local
 .envrc
 
+# Build lock (prevents concurrent pipeline runs)
+.build.lock
+
 # Temporary
 *.tmp
 *.log
