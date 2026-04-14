@@ -36,6 +36,17 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 - **Stroke order coverage reporting**: `build/stats.py` now reports per-Joyo-grade SVG coverage (100% for all Joyo grades 1–6 and 8) alongside the overall 48.9% figure. `manifest.json` includes `stroke_order_coverage` with per-grade breakdowns. The stroke order transform warning now contextualizes the low overall percentage against the 100% Joyo coverage.
 - **Grammar review status reporting**: `build/stats.py` now reports per-JLPT-level review status breakdown (draft/community_reviewed/native_speaker_reviewed). `manifest.json` includes `grammar_review_status` with per-level counts.
 - **Pitch accent overlap statistics**: `data/enrichment/pitch-accent-wiktionary.json` metadata now includes `overlap_stats` tracking agreement/disagreement rates between Kanjium and Wiktionary for shared entries.
+- **Doc count auto-sync** (`build/sync_docs.py`): New tool reads manifest.json counts and updates markdown table counts in README.md and docs/downstream.md automatically. Runs as part of `just stats` (and therefore `just build`). Prose count references are verified and warned about without auto-editing. New recipes: `just sync-docs`, `just verify-docs`.
+- **Build-date consistency test**: `test_committed_data_files_have_consistent_build_dates` verifies all committed data files have the same `metadata.generated` date. Catches partial rebuilds where code changed but only some stages re-ran.
+- **Shared pitch accent loader** (`build/pitch_lookup.py`): Extracted from duplicated merge logic across Yomitan, Anki, and SQLite exports. Single source of truth for how Kanjium and Wiktionary pitch accent data are combined (union semantics).
+
+### Fixed
+
+- **Moraic nasal counting bug**: The Wiktionary pitch accent extraction undercounted mora positions for Nakadaka entries containing ん. The romanization parser (`parse_roman_position`) counted vowels and geminates but not moraic nasals (ń/ǹ in kaikki.org romanization). This caused 135 false disagreements with Kanjium where the Wiktionary position was systematically off by one. After fix: 92.9% agreement on 4,289 overlapping entries (304 remaining disagreements are genuine accent variation).
+- **Wiktionary deduplication scope**: Previous extraction deduplicated against Kanjium by word text only, dropping Wiktionary entries that had the same word spelling but a different reading. Now deduplicates by (word, reading) pair, recovering 5,410 valid supplement entries.
+- **SQLite pitch accent data loss**: SQLite export previously inserted Kanjium and Wiktionary separately with `INSERT OR IGNORE`, silently dropping Wiktionary-unique positions for overlapping entries. Now uses the shared union merge.
+- **3 pipeline-orphaned transforms**: `furigana`, `word_relations`, and `frequency_corpus` transforms produced committed data files but were not registered as pipeline stages. They were never run by `just build`, causing build-date inconsistency. Now registered with correct dependencies.
+- **JmdictFurigana fetch gap**: The furigana source was the only upstream with a manifest SHA256 entry but no `fetch.py` registration — it wasn't downloaded or hash-verified by `just fetch`. Now pinned like all other sources.
 
 ### Fixed — documentation
 
