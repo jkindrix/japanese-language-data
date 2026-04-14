@@ -204,7 +204,7 @@
                   "string",
                   "null"
                 ],
-                "description": "Tatoeba sentence ID if this example is sourced from Tatoeba."
+                "description": "Sentence ID in '{source}-{n}' format (e.g., 'tatoeba-12345') if this example is linked to a corpus sentence."
               },
               "source": {
                 "type": "string",
@@ -256,7 +256,7 @@
           "items": {
             "type": "string"
           },
-          "description": "Tatoeba sentence IDs where the grammar pattern appears in the sentence text. Found via pattern-string search, not example-text matching. Up to 5 per grammar point."
+          "description": "Sentence IDs (in '{source}-{n}' format, e.g., 'tatoeba-74694', 'kftt-1') where the grammar pattern appears in the sentence text. Found via pattern-string search, not example-text matching. Up to 5 per grammar point."
         }
       },
       "additionalProperties": false

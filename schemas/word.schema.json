@@ -346,7 +346,7 @@
               },
               "sentence_id": {
                 "type": "string",
-                "description": "Tatoeba sentence ID, stable across upstream revisions."
+                "description": "Sentence ID in '{source}-{n}' format (e.g., 'tatoeba-12345'). Strip the source prefix to look up on Tatoeba."
               },
               "word_form": {
                 "type": "string",
