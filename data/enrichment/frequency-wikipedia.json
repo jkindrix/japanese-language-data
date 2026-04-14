@@ -3,7 +3,7 @@
     "source": "Wikipedia Japanese via KFTT corpus, tokenized with MeCab/UniDic",
     "source_url": "https://www.phontron.com/kftt/",
     "license": "CC-BY-SA 3.0 (KFTT) / CC-BY-SA 4.0 (Wikipedia)",
-    "generated": "2026-04-12",
+    "generated": "2026-04-14",
     "count": 14553,
     "corpus": "Word frequencies from MeCab tokenization of the KFTT corpus (443,849 Wikipedia Kyoto article sentences, 6,475,932 total tokens). Lemmatized to dictionary form via UniDic. Represents formal/encyclopedic written Japanese. Complements frequency-newspaper.json (kanji), frequency-subtitles.json (spoken media), and frequency-web.json (web text).",
     "kind": "word",

@@ -2744,7 +2744,7 @@ def test_extract_ateji_no_ateji() -> None:
 # ---------------------------------------------------------------------------
 
 def test_load_pitch_lookup(tmp_path: Path, monkeypatch) -> None:
-    from build import export_yomitan as ym
+    import build.pitch_lookup as pl
     pitch_file = tmp_path / "pitch.json"
     pitch_file.write_text(json.dumps({
         "entries": [
@@ -2754,17 +2754,25 @@ def test_load_pitch_lookup(tmp_path: Path, monkeypatch) -> None:
              "pitch_positions": [0], "mora_count": 4},
         ]
     }, ensure_ascii=False), encoding="utf-8")
-    monkeypatch.setattr(ym, "PITCH_JSON", pitch_file)
+    # Use the shared loader directly (parameterized paths)
+    merged = pl.load_merged_pitch(kanjium_path=pitch_file, wiktionary_path=tmp_path / "none.json")
+    assert ("\u98df\u3079\u308b", "\u305f\u3079\u308b") in merged
+    assert merged[("\u98df\u3079\u308b", "\u305f\u3079\u308b")] == [0]
+    # Also verify the Yomitan wrapper still works
+    from build import export_yomitan as ym
+    monkeypatch.setattr(pl, "PITCH_JSON", pitch_file)
+    monkeypatch.setattr(pl, "PITCH_WIKT_JSON", tmp_path / "none.json")
     lookup = ym._load_pitch_lookup()
-    assert ("\u98df\u3079\u308b", "\u305f\u3079\u308b") in lookup
     assert lookup[("\u98df\u3079\u308b", "\u305f\u3079\u308b")] == "0"
 
 
-def test_load_pitch_lookup_missing_file(tmp_path: Path, monkeypatch) -> None:
-    from build import export_yomitan as ym
-    monkeypatch.setattr(ym, "PITCH_JSON", tmp_path / "nonexistent.json")
-    monkeypatch.setattr(ym, "PITCH_WIKT_JSON", tmp_path / "nonexistent2.json")
-    assert ym._load_pitch_lookup() == {}
+def test_load_pitch_lookup_missing_file(tmp_path: Path) -> None:
+    import build.pitch_lookup as pl
+    result = pl.load_merged_pitch(
+        kanjium_path=tmp_path / "nonexistent.json",
+        wiktionary_path=tmp_path / "nonexistent2.json",
+    )
+    assert result == {}
 
 
 def test_load_freq_lookup(tmp_path: Path, monkeypatch) -> None:
@@ -3238,6 +3246,7 @@ def test_anki_main_returns_zero(tmp_path: Path, monkeypatch) -> None:
 def _setup_sqlite_export(tmp_path, monkeypatch):
     """Shared helper: create mock data files and monkeypatch the sqlite module."""
     import build.export_sqlite as mod
+    import build.pitch_lookup as pl
 
     data_dir = tmp_path / "data"
     for sub in ("core", "enrichment", "grammar", "corpus", "cross-refs"):
@@ -3276,7 +3285,7 @@ def _setup_sqlite_export(tmp_path, monkeypatch):
     (data_dir / "grammar" / "grammar.json").write_text(json.dumps(grammar), encoding="utf-8")
 
     # Enrichment
-    pitch = {"entries": [{"text": "食べる", "reading": "たべる", "pitch_positions": [2], "mora_count": 3}]}
+    pitch = {"entries": [{"word": "食べる", "reading": "たべる", "pitch_positions": [2], "mora_count": 3}]}
     (data_dir / "enrichment" / "pitch-accent.json").write_text(json.dumps(pitch), encoding="utf-8")
 
     freq = {"entries": [{"text": "食べる", "reading": "たべる", "rank": 100, "count": 5000}]}
@@ -3337,6 +3346,9 @@ def _setup_sqlite_export(tmp_path, monkeypatch):
     monkeypatch.setattr(mod, "MANIFEST_PATH", manifest_path)
     monkeypatch.setattr("build.export_sqlite.DATA_DIR", data_dir)
     monkeypatch.setattr("build.export_sqlite.REPO_ROOT", tmp_path)
+    # Point the shared pitch loader at the mock data
+    monkeypatch.setattr(pl, "PITCH_JSON", data_dir / "enrichment" / "pitch-accent.json")
+    monkeypatch.setattr(pl, "PITCH_WIKT_JSON", data_dir / "enrichment" / "pitch-accent-wiktionary.json")
 
     return mod, out_db
 

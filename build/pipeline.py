@@ -61,6 +61,9 @@ STAGE_DEPENDENCIES: dict[str, set[str]] = {
     "jukugo": {"words", "kanji"},
     "grammar": {"sentences"},
     "pitch_wiktionary": {"pitch"},
+    "furigana": {"words"},
+    "word_relations": {"words"},
+    "frequency_corpus": {"words", "sentences"},
 }
 
 
@@ -125,10 +128,12 @@ def _build_stages() -> list[Stage]:
         cross_links,
         expressions,
         frequency,
+        frequency_corpus,
         frequency_jesc,
         frequency_subtitles,
         frequency_web,
         frequency_wikipedia,
+        furigana,
         grammar,
         jesc,
         jukugo,
@@ -143,6 +148,7 @@ def _build_stages() -> list[Stage]:
         sentences,
         stroke_order,
         wikimatrix,
+        word_relations,
         wordnet,
         words,
     )
@@ -181,6 +187,9 @@ def _build_stages() -> list[Stage]:
         Stage("counters", "Counter-word (josushi) index extracted from JMdict 'ctr' POS tag.", counters.build, phase=4),
         Stage("ateji", "Ateji (phonetic kanji spelling) index from JMdict kanji tags.", ateji.build, phase=4),
         Stage("jukugo", "Multi-kanji compound (jukugo) index with per-character decomposition.", jukugo.build, phase=4),
+        Stage("furigana", "Per-character furigana alignment from JmdictFurigana.", furigana.build, phase=4),
+        Stage("word_relations", "Word cross-references and antonyms from JMdict xref/ant fields.", word_relations.build, phase=4),
+        Stage("frequency_corpus", "Corpus-derived word frequency from Tatoeba sentence matching.", frequency_corpus.build, phase=2),
         # ---- Grammar (Phase 3 — must run before cross_links for word-to-grammar index) ----
         Stage("grammar", "Curated Japanese grammar dataset (original, from grammar-curated/).", grammar.build, phase=3),
         Stage("expressions", "Lexicalized grammar patterns extracted from JMdict 'exp' entries.", expressions.build, phase=3),

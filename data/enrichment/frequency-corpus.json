@@ -2,7 +2,7 @@
   "metadata": {
     "source": "Corpus-derived word frequency from project sentence data",
     "license": "CC-BY-SA 4.0",
-    "generated": "2026-04-13",
+    "generated": "2026-04-14",
     "count": 14647,
     "corpus": "Derived from 25,980 sentences across data/corpus/sentences.json. Surface-form substring matching (not morphological analysis). Overcounts short words whose readings match grammatical substrings; undercounts inflected forms. Top-ranked entries may be false positives. For reliable word frequency, prefer MeCab-tokenized lists.",
     "kind": "word",

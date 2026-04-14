@@ -525,11 +525,11 @@
       "tatoeba-75627"
     ],
     "humble-o-suru": [
-      "tatoeba-4858",
-      "tatoeba-5002",
-      "tatoeba-74064",
-      "tatoeba-74119",
-      "tatoeba-74125"
+      "tatoeba-4726",
+      "tatoeba-4925",
+      "tatoeba-74013",
+      "tatoeba-74026",
+      "tatoeba-74033"
     ],
     "i-adj-desu-politeness": [
       "tatoeba-4914",
@@ -701,7 +701,9 @@
       "tatoeba-151896"
     ],
     "ka-to-iu-to": [
-      "tatoeba-163655"
+      "tatoeba-115918",
+      "tatoeba-171747",
+      "tatoeba-200816"
     ],
     "ka-to-omou-to": [
       "tatoeba-225507",
@@ -756,9 +758,10 @@
       "tatoeba-213549"
     ],
     "kara-miru-to": [
-      "tatoeba-81580",
-      "tatoeba-176730",
-      "tatoeba-188702"
+      "tatoeba-74334",
+      "tatoeba-85739",
+      "tatoeba-207412",
+      "tatoeba-225407"
     ],
     "kara-ni-wa": [
       "tatoeba-75551",
@@ -827,11 +830,11 @@
       "tatoeba-123232"
     ],
     "kiri-only": [
-      "tatoeba-74087",
-      "tatoeba-74192",
-      "tatoeba-74246",
-      "tatoeba-74453",
-      "tatoeba-74518"
+      "tatoeba-74095",
+      "tatoeba-74591",
+      "tatoeba-75284",
+      "tatoeba-76234",
+      "tatoeba-76416"
     ],
     "kitte-no": [
       "tatoeba-74847",
@@ -872,18 +875,18 @@
       "tatoeba-187542"
     ],
     "kono-sono-ano-dono-attributive": [
-      "tatoeba-74022",
-      "tatoeba-74026",
-      "tatoeba-74027",
-      "tatoeba-74036",
-      "tatoeba-74062"
+      "tatoeba-4954",
+      "tatoeba-74019",
+      "tatoeba-74086",
+      "tatoeba-74100",
+      "tatoeba-74164"
     ],
     "kore-sore-are-demonstratives": [
-      "tatoeba-74022",
-      "tatoeba-74286",
-      "tatoeba-74427",
-      "tatoeba-74753",
-      "tatoeba-75068"
+      "tatoeba-74669",
+      "tatoeba-74742",
+      "tatoeba-75047",
+      "tatoeba-75168",
+      "tatoeba-75674"
     ],
     "koso-are": [
       "kftt-100506",
@@ -1055,11 +1058,11 @@
       "tatoeba-74646"
     ],
     "mairu-humble": [
-      "tatoeba-74041",
-      "tatoeba-74308",
-      "tatoeba-74944",
-      "tatoeba-75130",
-      "tatoeba-75271"
+      "tatoeba-74525",
+      "tatoeba-74651",
+      "tatoeba-74705",
+      "tatoeba-74883",
+      "tatoeba-75550"
     ],
     "majiki-unacceptable": [
       "tatoeba-8318782"
@@ -1191,11 +1194,11 @@
       "tatoeba-93380"
     ],
     "mono-reason-assertion": [
-      "tatoeba-75403",
-      "tatoeba-75516",
-      "tatoeba-75614",
-      "tatoeba-75652",
-      "tatoeba-75913"
+      "tatoeba-74045",
+      "tatoeba-74062",
+      "tatoeba-74082",
+      "tatoeba-74169",
+      "tatoeba-74185"
     ],
     "mono-to-shite": [
       "tatoeba-188297",
@@ -1409,11 +1412,11 @@
       "tatoeba-75035"
     ],
     "nakucha-nakya": [
-      "tatoeba-75373",
-      "tatoeba-75999",
-      "tatoeba-76146",
-      "tatoeba-76195",
-      "tatoeba-76230"
+      "tatoeba-74501",
+      "tatoeba-75156",
+      "tatoeba-75377",
+      "tatoeba-75547",
+      "tatoeba-75834"
     ],
     "nakute-mo-ii": [
       "tatoeba-75458",
@@ -1454,10 +1457,11 @@
       "tatoeba-219110"
     ],
     "naoshi-redo": [
-      "tatoeba-126294",
-      "tatoeba-141499",
-      "tatoeba-145572",
-      "tatoeba-185225"
+      "tatoeba-4726",
+      "tatoeba-4925",
+      "tatoeba-74013",
+      "tatoeba-74026",
+      "tatoeba-74033"
     ],
     "nara-conditional": [
       "tatoeba-74210",
@@ -1722,11 +1726,11 @@
       "kftt-56308"
     ],
     "ni-shiro-ni-seyo": [
-      "tatoeba-74482",
-      "tatoeba-149501",
-      "tatoeba-187492",
-      "tatoeba-217258",
-      "tatoeba-229108"
+      "tatoeba-74717",
+      "tatoeba-76337",
+      "tatoeba-142512",
+      "tatoeba-146102",
+      "tatoeba-173773"
     ],
     "ni-shitagatte": [
       "tatoeba-75101",
@@ -1898,11 +1902,11 @@
       "tatoeba-150658"
     ],
     "no-moto-de": [
-      "tatoeba-74186",
-      "tatoeba-82698",
-      "tatoeba-121243",
-      "tatoeba-144666",
-      "tatoeba-174900"
+      "tatoeba-77183",
+      "tatoeba-179369",
+      "tatoeba-180083",
+      "tatoeba-188807",
+      "tatoeba-192722"
     ],
     "no-ue-nai": [
       "tatoeba-76097",
@@ -2048,11 +2052,11 @@
       "tatoeba-76863"
     ],
     "sae-sureba-if-only": [
-      "tatoeba-74440",
-      "tatoeba-75273",
-      "tatoeba-75860",
-      "tatoeba-76755",
-      "tatoeba-76863"
+      "tatoeba-4726",
+      "tatoeba-4925",
+      "tatoeba-74013",
+      "tatoeba-74026",
+      "tatoeba-74033"
     ],
     "sai-ni": [
       "tatoeba-74428",
@@ -3009,9 +3013,11 @@
       "tatoeba-629091"
     ],
     "wo-tsuujite-through": [
-      "tatoeba-75809",
-      "tatoeba-180344",
-      "tatoeba-226360"
+      "tatoeba-77662",
+      "tatoeba-80850",
+      "tatoeba-82485",
+      "tatoeba-95807",
+      "tatoeba-137772"
     ],
     "wo-yogi-naku-sareru": [
       "kftt-6392",
@@ -3083,10 +3089,11 @@
       "kftt-253298"
     ],
     "you-ga-nai-no-way": [
-      "tatoeba-116346",
-      "tatoeba-127355",
-      "tatoeba-187759",
-      "tatoeba-198292"
+      "tatoeba-74399",
+      "tatoeba-94039",
+      "tatoeba-144849",
+      "tatoeba-212849",
+      "tatoeba-9641509"
     ],
     "you-ka-to-omou": [
       "tatoeba-77081",

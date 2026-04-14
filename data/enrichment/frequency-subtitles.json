@@ -2,12 +2,12 @@
   "metadata": {
     "source": "OpenSubtitles 2018 word frequency via hermitdave/FrequencyWords",
     "source_url": "https://github.com/hermitdave/FrequencyWords",
-    "license": "MIT (FrequencyWords code); data derived from OpenSubtitles (open parallel corpus). Frequency counts are non-copyrightable facts.",
-    "generated": "2026-04-12",
+    "license": "CC-BY-SA 4.0 (FrequencyWords content); MIT (FrequencyWords code). Data derived from OpenSubtitles parallel corpus.",
+    "generated": "2026-04-14",
     "count": 8598,
     "corpus": "Word frequencies from OpenSubtitles 2018 Japanese subtitle corpus. Covers spoken/media Japanese: movies, TV drama, anime. Pre-tokenized by OpenSubtitles; matched against JMdict vocabulary (51,557 surface forms) to filter tokenization noise. 8,598 of 33,910 raw entries matched.",
     "kind": "word",
-    "attribution": "Frequency data from FrequencyWords by Hermit Dave (https://github.com/hermitdave/FrequencyWords, MIT license), derived from the OpenSubtitles parallel corpus (https://www.opensubtitles.org/). Matched against JMdict vocabulary for quality filtering.",
+    "attribution": "Frequency data from FrequencyWords by Hermit Dave (https://github.com/hermitdave/FrequencyWords, CC-BY-SA 4.0), derived from the OpenSubtitles parallel corpus (https://www.opensubtitles.org/). Matched against JMdict vocabulary for quality filtering.",
     "field_notes": {
       "text": "Primary writing of the word (kanji or kana, matching a words.json entry).",
       "reading": "Primary kana reading of the word.",

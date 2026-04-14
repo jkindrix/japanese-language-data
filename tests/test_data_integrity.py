@@ -633,3 +633,66 @@ def test_all_data_files_count_matches_entries() -> None:
         actual = len(payload) if payload else 0
         assert meta_count == actual, \
             f"{rel_path}: metadata.count={meta_count} but actual={actual}"
+
+
+# ---------------------------------------------------------------------------
+# Build-date consistency: all committed data files should have the same
+# metadata.generated date (matching manifest.json.generated). A mismatch
+# means some stages were rebuilt but not others — run `just build` to fix.
+# ---------------------------------------------------------------------------
+
+def test_committed_data_files_have_consistent_build_dates() -> None:
+    """All committed data files must have the same metadata.generated date.
+
+    This catches partial rebuilds where code was changed and some stages
+    re-ran but others didn't, leaving baked-in metadata stale.
+    Fix: run ``just build`` to rebuild all stages consistently.
+    """
+    manifest_path = REPO_ROOT / "manifest.json"
+    if not manifest_path.exists():
+        pytest.skip("manifest.json not found")
+
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    expected_date = manifest.get("generated")
+    if not expected_date:
+        pytest.skip("manifest.json has no generated date")
+
+    # Gitignored files are excluded — they're built on demand and may
+    # legitimately have different dates or not exist at all.
+    gitignored = {
+        "data/core/words-full.json",
+        "data/corpus/sentences-kftt.json",
+        "data/corpus/sentences-tatoeba-full.json",
+        "data/corpus/sentences-jesc.json",
+        "data/corpus/sentences-wikimatrix.json",
+        "data/enrichment/sentence-difficulty.json",
+        "data/enrichment/frequency-tatoeba.json",
+        "data/enrichment/frequency-jesc.json",
+        "data/cross-refs/wordnet-synonyms.json",
+        "data/cross-refs/kanji-to-words-full.json",
+        "data/cross-refs/word-to-kanji-full.json",
+        "data/cross-refs/reading-to-words-full.json",
+        "data/cross-refs/kanji-to-sentences-full.json",
+        "data/optional/names.json",
+    }
+
+    mismatches: list[str] = []
+    import glob
+    for path_str in sorted(glob.glob("data/**/*.json", recursive=True)):
+        rel = str(Path(path_str))
+        if rel in gitignored or rel.startswith("data/phase4/"):
+            continue
+        try:
+            data = json.loads(Path(path_str).read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        generated = data.get("metadata", {}).get("generated")
+        if generated and generated != expected_date:
+            mismatches.append(f"{rel}: generated={generated} (expected {expected_date})")
+
+    assert mismatches == [], (
+        "Some data files have a different metadata.generated date than "
+        f"manifest.json ({expected_date}). This means a partial rebuild "
+        "occurred. Run `just build` to rebuild all stages consistently.\n"
+        + "\n".join(mismatches)
+    )

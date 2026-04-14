@@ -3,7 +3,7 @@
     "source": "Leeds University Internet Japanese Word Frequency List",
     "source_url": "http://corpus.leeds.ac.uk/frqc/internet-jp.num",
     "license": "Creative Commons Attribution (CC-BY)",
-    "generated": "2026-04-13",
+    "generated": "2026-04-14",
     "count": 11050,
     "corpus": "Word frequencies from a 253-million-token web-crawled Japanese corpus tokenized with ChaSen. Lemmatized to dictionary forms. Covers web-text register (news, blogs, forums). Complements frequency-newspaper.json (kanji only, newspaper) and frequency-subtitles.json (spoken media).",
     "kind": "word",

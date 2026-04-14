@@ -4,7 +4,7 @@
     "source_url": "https://www.edrdg.org/wiki/index.php/KANJIDIC_Project",
     "license": "CC-BY-SA 4.0 (EDRDG License)",
     "source_version": "3.6.2",
-    "generated": "2026-04-12",
+    "generated": "2026-04-14",
     "count": 2501,
     "corpus": "Newspaper corpus analysis. Represents the most frequently used kanji in Japanese newspapers. Only the top ~2,500 most common kanji are ranked; rarer kanji have no frequency data.",
     "kind": "kanji",

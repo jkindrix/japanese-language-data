@@ -3,7 +3,7 @@
     "source": "JMdict 'ateji' kanji writing tags via words.json",
     "source_url": "https://github.com/scriptin/jmdict-simplified",
     "license": "CC-BY-SA 4.0 (EDRDG License)",
-    "generated": "2026-04-12",
+    "generated": "2026-04-14",
     "count": 239,
     "field_notes": {
       "word_id": "JMdict entry ID. Join with data/core/words.json for full entry.",
