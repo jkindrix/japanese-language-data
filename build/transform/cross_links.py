@@ -14,9 +14,9 @@ Generated files:
         Inverse: each word ID → list of kanji characters it contains.
 
     * ``data/cross-refs/word-to-sentences.json``
-        Each word ID → list of Tatoeba sentence IDs that illustrate it.
-        Populated from the example references embedded in each word's
-        senses (from jmdict-examples).
+        Each word ID → list of sentence IDs (in '{source}-{n}' format)
+        that illustrate it. Populated from the example references
+        embedded in each word's senses (from jmdict-examples).
 
     * ``data/cross-refs/kanji-to-radicals.json``
         Each kanji → its component radicals, from KRADFILE (via

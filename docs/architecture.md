@@ -370,7 +370,7 @@ Inverse of the above: maps every word ID to the list of kanji characters in any 
 
 ### `word-to-sentences.json`
 
-Maps every word ID to the list of Tatoeba sentence IDs that are confirmed examples of that word. Initially populated from the `jmdict-examples-eng` variant (editor-curated); may be extended in later phases.
+Maps every word ID to the list of sentence IDs (in `{source}-{n}` format, e.g., `tatoeba-74694`) that are confirmed examples of that word. Initially populated from the `jmdict-examples-eng` variant (editor-curated); may be extended in later phases.
 
 ### `kanji-to-radicals.json`
 

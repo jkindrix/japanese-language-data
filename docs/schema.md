@@ -87,7 +87,7 @@ Every entry in a payload has a stable identifier when possible:
 
 - Words use the JMdict `id` field
 - Kanji use the character itself as the primary key (it is unique within the set)
-- Sentences use the Tatoeba sentence ID
+- Sentences use IDs in `{source}-{n}` format (e.g., `tatoeba-74694`, `kftt-1`)
 - Grammar points use a project-assigned UUID or slug
 
 Entries have a consistent shape within a file. Optional fields are either always present with empty values or always absent (we prefer always-present-with-empty-values, per the "explicit over implicit" principle).

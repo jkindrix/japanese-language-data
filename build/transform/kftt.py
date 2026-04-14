@@ -105,7 +105,7 @@ def build() -> None:
                 "See https://www.phontron.com/kftt/"
             ),
             "field_notes": {
-                "id": "Sequential ID prefixed 'kftt-' to distinguish from Tatoeba sentence IDs.",
+                "id": "Sequential ID prefixed 'kftt-'. All sentence IDs across the project use a '{source}-{n}' convention.",
                 "japanese": "Raw (untokenized) Japanese text from KFTT orig/ split.",
                 "english": "Aligned English translation.",
                 "curated": "False — these are machine-aligned Wikipedia sentence pairs, not editor-curated.",
