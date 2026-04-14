@@ -216,6 +216,129 @@ def test_semantic_checks_unsorted_cross_ref_keys(tmp_path: Path, monkeypatch) ->
 # ===================================================================
 
 
+# ===================================================================
+# 5. Remaining semantic check branches
+# ===================================================================
+
+
+def test_semantic_checks_w2s_dangling(tmp_path: Path, monkeypatch) -> None:
+    """Dangling sentence refs in word-to-sentences must be detected."""
+    import build.validate as validate_mod
+    import build.constants as constants_mod
+
+    fake = tmp_path / "data"
+    (fake / "core").mkdir(parents=True)
+    (fake / "corpus").mkdir(parents=True)
+    (fake / "cross-refs").mkdir(parents=True)
+
+    words = {"metadata": {}, "words": [{"id": "1"}]}
+    sentences = {"metadata": {}, "sentences": [{"id": "s1"}]}
+    w2s = {"metadata": {}, "mapping": {"1": ["s1", "s_missing"]}}
+
+    (fake / "core" / "words.json").write_text(json.dumps(words), encoding="utf-8")
+    (fake / "corpus" / "sentences.json").write_text(json.dumps(sentences), encoding="utf-8")
+    (fake / "cross-refs" / "word-to-sentences.json").write_text(json.dumps(w2s), encoding="utf-8")
+
+    monkeypatch.setattr(constants_mod, "DATA_DIR", fake)
+    monkeypatch.setattr(validate_mod, "DATA_DIR", fake)
+
+    failures = validate_mod._semantic_checks()
+    assert any(n == "w2s-dangling" for n, _ in failures)
+
+
+def test_semantic_checks_k2r_missing_radicals(tmp_path: Path, monkeypatch) -> None:
+    """Missing radicals in kanji-to-radicals must be detected."""
+    import build.validate as validate_mod
+    import build.constants as constants_mod
+
+    fake = tmp_path / "data"
+    (fake / "core").mkdir(parents=True)
+    (fake / "cross-refs").mkdir(parents=True)
+
+    kanji = {"metadata": {}, "kanji": [{"character": "日"}]}
+    radicals = {"metadata": {}, "radicals": [{"radical": "一"}]}
+    k2r = {"metadata": {}, "mapping": {"日": ["一", "MISSING"]}}
+
+    (fake / "core" / "kanji.json").write_text(json.dumps(kanji), encoding="utf-8")
+    (fake / "core" / "radicals.json").write_text(json.dumps(radicals), encoding="utf-8")
+    (fake / "cross-refs" / "kanji-to-radicals.json").write_text(json.dumps(k2r), encoding="utf-8")
+
+    monkeypatch.setattr(constants_mod, "DATA_DIR", fake)
+    monkeypatch.setattr(validate_mod, "DATA_DIR", fake)
+
+    failures = validate_mod._semantic_checks()
+    assert any(n == "k2r-missing-radicals" for n, _ in failures)
+
+
+def test_semantic_checks_w2g_dangling(tmp_path: Path, monkeypatch) -> None:
+    """Dangling grammar refs in word-to-grammar must be detected."""
+    import build.validate as validate_mod
+    import build.constants as constants_mod
+
+    fake = tmp_path / "data"
+    (fake / "grammar").mkdir(parents=True)
+    (fake / "cross-refs").mkdir(parents=True)
+
+    grammar = {"metadata": {}, "grammar_points": [{"id": "g1"}]}
+    w2g = {"metadata": {}, "mapping": {"1": ["g1", "g_missing"]}}
+
+    (fake / "grammar" / "grammar.json").write_text(json.dumps(grammar), encoding="utf-8")
+    (fake / "cross-refs" / "word-to-grammar.json").write_text(json.dumps(w2g), encoding="utf-8")
+
+    monkeypatch.setattr(constants_mod, "DATA_DIR", fake)
+    monkeypatch.setattr(validate_mod, "DATA_DIR", fake)
+
+    failures = validate_mod._semantic_checks()
+    assert any(n == "w2g-dangling" for n, _ in failures)
+
+
+def test_semantic_checks_w2k_orphan_words(tmp_path: Path, monkeypatch) -> None:
+    """Orphan word IDs in word-to-kanji must be detected."""
+    import build.validate as validate_mod
+    import build.constants as constants_mod
+
+    fake = tmp_path / "data"
+    (fake / "core").mkdir(parents=True)
+    (fake / "cross-refs").mkdir(parents=True)
+
+    words = {"metadata": {}, "words": [{"id": "1"}]}
+    w2k = {"metadata": {}, "mapping": {"1": ["日"], "999": ["月"]}}
+
+    (fake / "core" / "words.json").write_text(json.dumps(words), encoding="utf-8")
+    (fake / "cross-refs" / "word-to-kanji.json").write_text(json.dumps(w2k), encoding="utf-8")
+
+    monkeypatch.setattr(constants_mod, "DATA_DIR", fake)
+    monkeypatch.setattr(validate_mod, "DATA_DIR", fake)
+
+    failures = validate_mod._semantic_checks()
+    assert any(n == "w2k-orphan-words" for n, _ in failures)
+
+
+def test_semantic_checks_k2w_orphan_threshold(tmp_path: Path, monkeypatch) -> None:
+    """k2w-orphans fires only when orphan count exceeds threshold."""
+    import build.validate as validate_mod
+    import build.constants as constants_mod
+
+    fake = tmp_path / "data"
+    (fake / "core").mkdir(parents=True)
+    (fake / "cross-refs").mkdir(parents=True)
+
+    kanji = {"metadata": {}, "kanji": [{"character": "日"}]}
+    # Build mapping with 201 orphan keys (threshold is 200)
+    mapping = {f"orphan{i}": ["w1"] for i in range(201)}
+    mapping["日"] = ["w1"]
+    k2w = {"metadata": {}, "mapping": mapping}
+
+    (fake / "core" / "kanji.json").write_text(json.dumps(kanji), encoding="utf-8")
+    (fake / "cross-refs" / "kanji-to-words.json").write_text(json.dumps(k2w), encoding="utf-8")
+
+    monkeypatch.setattr(constants_mod, "DATA_DIR", fake)
+    monkeypatch.setattr(validate_mod, "DATA_DIR", fake)
+
+    failures = validate_mod._semantic_checks()
+    assert any(n == "k2w-orphans" for n, _ in failures)
+
+
 @pytest.mark.slow
 def test_validate_all_returns_zero() -> None:
     """validate_all on the current repo data should return 0 (or at worst

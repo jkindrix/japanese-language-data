@@ -5067,3 +5067,56 @@ def test_conjugate_godan_v5r_standard() -> None:
     assert forms["te_form"] == "かえって"
     assert forms["nai_form"] == "かえらない"
     assert forms["potential"] == "かえれる"
+
+
+def test_conjugations_build_with_synthetic_data(tmp_path: Path, monkeypatch) -> None:
+    """conjugations.build() end-to-end with a minimal synthetic word list."""
+    from unittest.mock import patch as _patch
+    import build.transform.conjugations as conj_mod
+
+    # Minimal word list: one ichidan verb, one godan, one adj-i, one adj-na
+    synthetic_source = {
+        "words": [
+            {
+                "id": "1",
+                "kanji": [{"text": "食べる", "common": True}],
+                "kana": [{"text": "たべる", "common": True}],
+                "sense": [{"partOfSpeech": ["v1"], "gloss": []}],
+            },
+            {
+                "id": "2",
+                "kanji": [{"text": "書く", "common": True}],
+                "kana": [{"text": "かく", "common": True}],
+                "sense": [{"partOfSpeech": ["v5k"], "gloss": []}],
+            },
+            {
+                "id": "3",
+                "kanji": [{"text": "高い", "common": True}],
+                "kana": [{"text": "たかい", "common": True}],
+                "sense": [{"partOfSpeech": ["adj-i"], "gloss": []}],
+            },
+            {
+                "id": "4",
+                "kanji": [{"text": "静か", "common": True}],
+                "kana": [{"text": "しずか", "common": True}],
+                "sense": [{"partOfSpeech": ["adj-na"], "gloss": []}],
+            },
+        ],
+    }
+
+    out_path = tmp_path / "conjugations.json"
+    monkeypatch.setattr(conj_mod, "OUT", out_path)
+    monkeypatch.setattr(conj_mod, "REPO_ROOT", tmp_path)
+
+    with _patch.object(conj_mod, "_load_source", return_value=synthetic_source):
+        conj_mod.build()
+
+    assert out_path.exists()
+    data = json.loads(out_path.read_text(encoding="utf-8"))
+    entries = data["entries"]
+    classes = {e["class"] for e in entries}
+    assert "v1" in classes
+    assert "v5k" in classes
+    assert "adj-i" in classes
+    assert "adj-na" in classes
+    assert data["metadata"]["count"] == len(entries)

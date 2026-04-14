@@ -763,3 +763,41 @@ def test_download_with_retries_5xx_retry(tmp_path: Path) -> None:
             )
 
     assert call_count == MAX_RETRIES
+
+
+# ===================================================================
+# 13. Pipeline lock contention (build/pipeline.py lines 234-239)
+# ===================================================================
+
+
+def test_run_pipeline_returns_1_when_lock_held(tmp_path: Path) -> None:
+    """run_pipeline must return 1 when another build holds the lock."""
+    import fcntl
+    from build import constants as constants_mod
+
+    lock_path = tmp_path / ".build.lock"
+    lock_file = open(lock_path, "w")
+    fcntl.flock(lock_file, fcntl.LOCK_EX | fcntl.LOCK_NB)
+
+    try:
+        with patch.object(constants_mod, "REPO_ROOT", tmp_path):
+            from build.pipeline import run_pipeline
+            rc = run_pipeline(dry_run=True)
+        assert rc == 1
+    finally:
+        fcntl.flock(lock_file, fcntl.LOCK_UN)
+        lock_file.close()
+
+
+# ===================================================================
+# 14. Fetch main() entry point (build/fetch.py lines 493-497)
+# ===================================================================
+
+
+def test_fetch_main_returns_zero() -> None:
+    """fetch.main() should return 0 when fetch_all succeeds."""
+    from build import fetch as fetch_mod
+
+    with patch.object(fetch_mod, "fetch_all", return_value={}):
+        rc = fetch_mod.main()
+    assert rc == 0
