@@ -16,7 +16,38 @@ Upstream source versions used for each release are recorded in `manifest.json` a
 
 ## [Unreleased]
 
-_(Nothing yet.)_
+### Changed — breaking
+
+- **Sentence ID convention**: All sentence IDs now use `{source}-{n}` format consistently. Tatoeba IDs changed from plain numeric (`"74694"`) to prefixed (`"tatoeba-74694"`). KFTT, JESC, and WikiMatrix IDs were already prefixed and are unchanged. This affects: `data/corpus/sentences.json`, all cross-reference files containing sentence IDs, word example `sentence_id` fields, and grammar `tatoeba_pattern_matches` arrays. Consumers parsing sentence IDs must update to expect the `tatoeba-` prefix.
+- **Grammar pattern match IDs**: Removed redundant `kftt:kftt-{n}` double-prefix in `grammar-to-sentences.json`. KFTT pattern matches now use `kftt-{n}` directly (matching the KFTT corpus file ID format).
+
+### Changed
+
+- **Wiktionary pitch accent pipeline integration**: Moved from manual one-shot extraction (`.tmp/extract_wikt_pitch.py`) to a proper build pipeline stage (`build/transform/pitch_wiktionary.py`). Added `wiktionary-pitch-ja` to `build/fetch.py` as a pinned upstream source with SHA256 verification. Entry count increased from 7,378 to 12,788 — recovered 5,410 entries that were silently dropped by a word-only deduplication bug (now deduplicates by (word, reading) pair).
+- **Pitch accent export merge**: Yomitan and Anki exports now use union semantics when merging Kanjium and Wiktionary pitch accent data (previously first-wins, which discarded valid Wiktionary-only accent variants for overlapping entries).
+
+### Fixed
+
+- **Moraic nasal counting bug**: The Wiktionary pitch accent extraction undercounted mora positions for Nakadaka entries containing ん. The romanization parser (`parse_roman_position`) counted vowels and geminates but not moraic nasals (ń/ǹ in kaikki.org romanization). This caused 135 false disagreements with Kanjium where the Wiktionary position was systematically off by one. After fix: 92.9% agreement on 4,289 overlapping entries (304 remaining disagreements are genuine accent variation).
+- **Wiktionary deduplication scope**: Previous extraction deduplicated against Kanjium by word text only, dropping Wiktionary entries that had the same word spelling but a different reading. Now deduplicates by (word, reading) pair, recovering 5,410 valid supplement entries.
+
+### Added
+
+- **Stroke order coverage reporting**: `build/stats.py` now reports per-Joyo-grade SVG coverage (100% for all Joyo grades 1–6 and 8) alongside the overall 48.9% figure. `manifest.json` includes `stroke_order_coverage` with per-grade breakdowns. The stroke order transform warning now contextualizes the low overall percentage against the 100% Joyo coverage.
+- **Grammar review status reporting**: `build/stats.py` now reports per-JLPT-level review status breakdown (draft/community_reviewed/native_speaker_reviewed). `manifest.json` includes `grammar_review_status` with per-level counts.
+- **Pitch accent overlap statistics**: `data/enrichment/pitch-accent-wiktionary.json` metadata now includes `overlap_stats` tracking agreement/disagreement rates between Kanjium and Wiktionary for shared entries.
+
+### Fixed — documentation
+
+- **Grammar review version reference**: Updated stale "v0.7.2" reference in `docs/gaps.md` to v0.9.0.
+- **Grammar review priority**: Added N5+N4 triage priority guidance to `docs/grammar-review.md`, `docs/contributing.md`, and `README.md`. Clarified that v1.0.0 is blocked on N5+N4 native-speaker review (166 entries).
+- **Conjugated pitch accent roadmap**: `docs/gaps.md` now explicitly states this feature is not scheduled for any current or planned phase (previously ambiguously "not currently scheduled").
+- **Stroke order coverage in README**: Table now states "100% coverage of Joyo kanji" instead of only showing the raw 6,416 SVG count.
+- **Sentence schema ID description**: Updated to document the `{source}-{n}` convention.
+
+### Removed
+
+- **Obsolete extraction script**: Deleted `.tmp/extract_wikt_pitch.py` (replaced by `build/transform/pitch_wiktionary.py`).
 
 ---
 

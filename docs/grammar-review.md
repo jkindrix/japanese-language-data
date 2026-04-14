@@ -77,6 +77,8 @@ Open a second GitHub issue using the [`grammar-review-batch`](/.github/ISSUE_TEM
 
 The claim is not exclusive by policy — two reviewers can cover the same slice if they want to — but it is informative, and the project will try to avoid assigning the same slice to multiple reviewers simultaneously.
 
+**Priority guidance**: N5 (77 entries) and N4 (89 entries) are the highest-priority slices — these are the foundation grammar for beginners, where errors cause the most damage, and where review is a hard blocker for the v1.0.0 release (see `docs/architecture.md`). If you're unsure where to start, start with N5. N3–N1 reviews are welcome and valued but are not release-blocking.
+
 Default slice size: **10–20 entries per PR**. Smaller PRs are easier to review; larger ones are easier for the reviewer to batch efficiently. Use your judgment.
 
 ### 3. Fork and branch

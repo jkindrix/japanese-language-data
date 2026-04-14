@@ -44,6 +44,7 @@ sources/jesc/
 sources/wikimatrix/
 sources/wordnet/
 sources/jmdict-furigana/
+sources/wiktionary-pitch/
 sources/*.tgz
 sources/*.zip
 sources/*.tar.bz2
@@ -95,6 +96,9 @@ dist/
 # Scratch space for experiments — never committed
 scratch/*
 !scratch/.gitkeep
+
+# Temporary working directory — never committed
+.tmp/
 
 # IDE and editor
 .vscode/

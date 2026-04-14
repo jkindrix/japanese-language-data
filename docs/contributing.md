@@ -17,7 +17,7 @@ By submitting a contribution, you agree that your contribution will be released 
 
 ### Native-speaker reviewers for grammar
 
-The grammar dataset (Phase 3) is our largest original contribution and the area where we most need help. As of v0.8.0, all 595 entries carry `review_status: "draft"` — every one of them was written by the project author from general grammar knowledge and awaits expert eyes.
+The grammar dataset (Phase 3) is our largest original contribution and the area where we most need help. As of v0.9.0, all 595 entries carry `review_status: "draft"` — every one of them was written by the project author from general grammar knowledge and awaits expert eyes. **The v1.0.0 release is blocked on N5 and N4 (166 entries) achieving native-speaker review.** If you can review even 10 entries at the N5 level, that directly unblocks the project's next milestone.
 
 **There is a full reviewer workflow documented at [`docs/grammar-review.md`](grammar-review.md), with a per-entry checklist at [`docs/grammar-review-checklist.md`](grammar-review-checklist.md).** If you are considering reviewing, read those documents first — they cover eligibility, the two review tracks (`community_reviewed` and `native_speaker_reviewed`), how to claim a slice, how to record a review, and how to handle disagreement.
 

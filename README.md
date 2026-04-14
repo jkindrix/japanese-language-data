@@ -42,7 +42,7 @@ As of the current build (see `manifest.json` for live counts), the `data/` direc
 
 | File | Source(s) | Count | Committed? | Description |
 |---|---|---:|---|---|
-| `data/enrichment/stroke-order/*.svg` | KanjiVG | 6,416 | ✓ | One SVG per kanji with stroke order metadata |
+| `data/enrichment/stroke-order/*.svg` | KanjiVG | 6,416 | ✓ | One SVG per kanji with stroke order metadata. **100% coverage of Joyo kanji** (2,136/2,136); remaining gaps are rare non-Joyo characters. |
 | `data/enrichment/stroke-order-index.json` | Generated from KanjiVG | 13,108 | ✓ | Character → SVG filename lookup (null for characters without a KanjiVG SVG) |
 | `data/enrichment/pitch-accent.json` | Kanjium `accents.txt` | 124,011 | ✓ | Word → pitch accent mora positions |
 | `data/enrichment/frequency-newspaper.json` | KANJIDIC2 | 2,501 | ✓ | Newspaper frequency rank (kanji) |
@@ -136,7 +136,7 @@ See `docs/architecture.md` for the full architectural overview, data flow, direc
 
 Contributions welcome — see `docs/contributing.md`. We especially need:
 
-- **Native-speaker review** for the grammar dataset (Phase 3). All 595 grammar entries currently carry `review_status: draft`. There is a complete reviewer workflow at `docs/grammar-review.md` with a per-entry checklist at `docs/grammar-review-checklist.md`. This is the single most impactful contribution you can make.
+- **Native-speaker review** for the grammar dataset (Phase 3). All 595 grammar entries currently carry `review_status: draft`. **The v1.0.0 release is blocked on N5+N4 (166 entries) achieving native-speaker review** — even reviewing 10 entries directly unblocks the project's next milestone. There is a complete reviewer workflow at `docs/grammar-review.md` with a per-entry checklist at `docs/grammar-review-checklist.md`. Eligible reviewers: native speakers, Japanese linguistics backgrounds, Japanese teaching experience, or JLPT N1 holders.
 - **Error reports** for existing entries (these get filed upstream where applicable)
 - **Additional enrichment sources** to integrate
 - **Schema improvements** for edge cases we haven't modeled

@@ -28,7 +28,7 @@ All 595 grammar entries carry `review_status: "draft"` — they were written fro
 
 **The review pipeline now exists** (added in v0.7.2): `docs/grammar-review.md` documents the full workflow from "I want to help" to "my review is merged," `docs/grammar-review-checklist.md` provides a per-entry checklist, and issue templates for reviewer availability and slice-claiming are in `.github/ISSUE_TEMPLATE/`. The review status state machine (`draft` → `community_reviewed` / `native_speaker_reviewed`) is enforced by `test_grammar_review_status_state_machine`.
 
-**Zero native-speaker reviewers are engaged as of v0.7.2.** This is the single weakest dimension of the project — the content exists, the infrastructure exists, but the humans are missing. See `docs/contributing.md § Urgent needs` for how to get involved.
+**Zero native-speaker reviewers are engaged as of v0.9.0.** This is the single weakest dimension of the project — the content exists, the infrastructure exists, but the humans are missing. The v1.0.0 release is blocked on N5+N4 (166 entries) achieving `native_speaker_reviewed` status (see `docs/architecture.md`). See `docs/contributing.md § Urgent needs` for how to get involved.
 
 The gap is *explicit* in the schema: no consumer can mistake a draft entry for a reviewed one. The `curation_outliers` metadata in `data/grammar/grammar.json` surfaces the entries most in need of review attention (sparse examples, missing related links, missing formation notes).
 
@@ -48,7 +48,9 @@ Japanese has substantial dialect variation (Kansai, Tohoku, Kyushu, Okinawan, et
 
 ### Pitch accent for post-2022 vocabulary (PARTIALLY ADDRESSED)
 
-Kanjium's pitch data was last substantially updated around 2022. A supplementary extraction from Japanese Wiktionary (`data/enrichment/pitch-accent-wiktionary.json`, 7,378 entries) fills part of the gap — these are words with pitch accent data on ja.wiktionary.org that are not in Kanjium. Combined coverage: 131,389 entries (124,011 Kanjium + 7,378 Wiktionary).
+Kanjium's pitch data was last substantially updated around 2022. A supplementary extraction from Japanese Wiktionary (`data/enrichment/pitch-accent-wiktionary.json`, 12,788 entries) fills part of the gap — these are words with pitch accent data on ja.wiktionary.org that are not in Kanjium. Combined coverage: 136,799 entries (124,011 Kanjium + 12,788 Wiktionary). The Wiktionary supplement is now integrated into the standard build pipeline (`build/transform/pitch_wiktionary.py`) and is refreshed when the upstream kaikki.org source is updated (dedup by (word, reading) pair).
+
+Overlap analysis: 4,289 (word, reading) pairs exist in both sources. Of these, 92.9% agree exactly; 7.1% disagree (mostly one source recording additional accepted accent variants). Export modules use union semantics — merging positions from both sources for overlapping entries.
 
 The remaining gap: vocabulary that has no pitch accent entry in either Kanjium or Wiktionary. This primarily affects very recent loanwords and niche technical terms. Consumers should still handle the "no pitch data" case gracefully.
 
@@ -56,7 +58,7 @@ The remaining gap: vocabulary that has no pitch accent entry in either Kanjium o
 
 Pitch accent shifts when verbs conjugate (e.g., the accent position in the dictionary form vs. the te-form vs. the masu form). Kanjium provides dictionary-form accents; we do not currently compute or look up accents for conjugated forms.
 
-A well-understood algorithm for this exists (Haraguchi and others), but implementing it is a phase's worth of work and is not currently scheduled. Consumers needing conjugated-form pitch accents should use OJAD's Suzuki-kun or a similar tool directly.
+A well-understood algorithm for this exists (Haraguchi and others), but implementing it is a phase's worth of work. **This feature is not scheduled for any current or planned phase** — it is not in `docs/phase4-candidates.md` and will not be added without a dedicated contributor. Consumers needing conjugated-form pitch accents should use OJAD's Suzuki-kun or a similar tool directly.
 
 ### Audio recordings (DEFERRED / LICENSE)
 
