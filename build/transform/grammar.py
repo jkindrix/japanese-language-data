@@ -394,9 +394,9 @@ def build() -> None:
             if unmatched_entries:
                 kftt_matches, kftt_match_count, kftt_total = \
                     _find_pattern_matches(unmatched_entries, kftt_tuples)
-                # Merge KFTT matches (prefix IDs with "kftt:" to distinguish source)
+                # Merge KFTT matches (IDs already have "kftt-" prefix from the KFTT transform)
                 for gid, sids in kftt_matches.items():
-                    pattern_matches[gid] = [f"kftt:{sid}" for sid in sids]
+                    pattern_matches[gid] = list(sids)
                 pattern_match_count += kftt_match_count
                 pattern_total_matches += kftt_total
 

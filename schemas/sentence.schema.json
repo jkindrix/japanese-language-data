@@ -81,7 +81,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "Tatoeba sentence ID."
+          "description": "Sentence ID in '{source}-{n}' format (e.g., 'tatoeba-74694', 'kftt-1', 'jesc-1', 'wikimatrix-1'). The prefix identifies the source corpus."
         },
         "japanese": {
           "type": "string",

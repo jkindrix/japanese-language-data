@@ -357,11 +357,11 @@ def build() -> None:
     _write_xref(
         OUT_DIR / "word-to-sentences.json",
         word_to_sentences,
-        "Word ID → list of Tatoeba sentence IDs from editor-curated examples.",
+        "Word ID → list of sentence IDs from editor-curated examples. IDs use the 'tatoeba-{n}' format.",
         "word_id",
         "sentence_id",
         ["data/core/words.json", "data/corpus/sentences.json"],
-        {"sentence_ids": "Resolve at https://tatoeba.org/en/sentences/show/<id> for audio, alternative translations, and community discussion."},
+        {"sentence_ids": "All sentence IDs use a '{source}-{n}' convention. For Tatoeba, strip 'tatoeba-' to get the Tatoeba ID for lookup at https://tatoeba.org/en/sentences/show/{n}."},
     )
     _write_xref(
         OUT_DIR / "kanji-to-radicals.json",
@@ -402,11 +402,11 @@ def build() -> None:
         _write_xref(
             OUT_DIR / "kanji-to-sentences.json",
             kanji_to_sentences,
-            "Kanji character → list of Tatoeba sentence IDs whose Japanese text contains that kanji.",
+            "Kanji character → list of sentence IDs whose Japanese text contains that kanji. IDs use the 'tatoeba-{n}' format.",
             "kanji_char",
             "sentence_id",
             ["data/corpus/sentences.json"],
-            {"mapping": "Enables 'show me example sentences with 食' queries. Scope is the Tatoeba curated corpus."},
+            {"mapping": "Enables 'show me example sentences with 食' queries. Scope is the Tatoeba curated corpus. Sentence IDs use '{source}-{n}' convention."},
         )
 
     # word-to-grammar: which grammar points reference a word (text matching)

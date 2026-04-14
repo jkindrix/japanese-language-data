@@ -102,12 +102,13 @@ def build() -> None:
         # Use the first English translation
         eng_text = eng.get(eng_ids_for_sentence[0], "")
 
+        prefixed_id = f"tatoeba-{sid}"
         entries.append({
-            "id": sid,
+            "id": prefixed_id,
             "japanese": jpn[sid],
             "english": eng_text,
             "translation_id": eng_ids_for_sentence[0],
-            "curated": sid in curated_ids,
+            "curated": prefixed_id in curated_ids,
             "license_flag": "CC-BY-2.0-FR",
             "has_audio": False,
             "japanese_contributor": None,
@@ -133,7 +134,7 @@ def build() -> None:
                 "in sentences.json."
             ),
             "field_notes": {
-                "id": "Tatoeba sentence ID. View at https://tatoeba.org/en/sentences/show/<id>.",
+                "id": "Sentence ID in 'tatoeba-{n}' format. View at https://tatoeba.org/en/sentences/show/{n} (strip the 'tatoeba-' prefix).",
                 "japanese": "Japanese sentence text as contributed to Tatoeba.",
                 "english": "English translation (first available link).",
                 "translation_id": "Tatoeba ID of the English translation sentence.",

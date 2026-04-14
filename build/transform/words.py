@@ -76,9 +76,13 @@ def _transform_example(ex: dict) -> dict:
         elif lang == "eng":
             english = text
 
+    # Prefix sentence IDs with their source for consistent identification
+    # across the project. Tatoeba IDs become "tatoeba-{n}".
+    prefixed_id = f"{source_name}-{sentence_id}" if source_name and sentence_id else sentence_id
+
     return {
         "source": source_name,
-        "sentence_id": sentence_id,
+        "sentence_id": prefixed_id,
         "word_form": ex.get("text", ""),
         "japanese": japanese,
         "english": english,

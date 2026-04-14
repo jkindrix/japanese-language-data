@@ -79,7 +79,7 @@ def build() -> None:
                     continue
 
                 seen[sid] = {
-                    "id": sid,
+                    "id": f"tatoeba-{sid}",
                     "japanese": japanese,
                     "english": english,
                     "translation_id": None,
@@ -90,7 +90,7 @@ def build() -> None:
                     "english_contributor": None,
                 }
 
-    sentences = sorted(seen.values(), key=lambda s: int(s["id"]) if s["id"].isdigit() else 0)
+    sentences = sorted(seen.values(), key=lambda s: int(s["id"].removeprefix("tatoeba-")) if s["id"].removeprefix("tatoeba-").isdigit() else 0)
     log.info(f"{total_refs:,} upstream references, {len(sentences):,} unique sentences")
 
     output = {
@@ -110,7 +110,7 @@ def build() -> None:
                 "upstream lookup at https://tatoeba.org/en/sentences/show/<id>."
             ),
             "field_notes": {
-                "id": "Tatoeba sentence ID. Stable across revisions. Use https://tatoeba.org/en/sentences/show/<id> to view the original with audio and alternative translations.",
+                "id": "Sentence ID in the format 'tatoeba-{n}' where n is the Tatoeba sentence ID. View the original at https://tatoeba.org/en/sentences/show/{n} (strip the 'tatoeba-' prefix). All sentence IDs across the project use a '{source}-{n}' convention for source identification.",
                 "japanese": "The Japanese sentence text as provided by Tatoeba.",
                 "english": "The English translation as linked by JMdict editors. May be empty if no English translation was associated.",
                 "curated": "True for these entries because they are editor-selected from JMdict. A later phase may add unfiltered Tatoeba sentences with curated=false.",
