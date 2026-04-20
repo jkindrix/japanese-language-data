@@ -1,6 +1,6 @@
 # Runtime dependencies for the build pipeline.
 # Pinned versions for reproducibility.
-requests==2.32.3
+requests==2.33.1
 jsonschema==4.23.0
 genanki==0.13.1
 mecab-python3==1.0.12
